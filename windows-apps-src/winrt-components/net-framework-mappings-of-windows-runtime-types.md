@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ef98f3f4a9d20e836d5f9bddbc111a232f864bf5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: dc9d71f6f02ec62fdf96161c397f7d2d7363b506
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57602614"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372508"
 ---
 # <a name="net-framework-mappings-of-windows-runtime-types"></a>Mappages .NET Framework des types Windows Runtime
 
 
 
-Le tableau suivant répertorie les mappages que .NET Framework effectue entre les types de plateforme Windows universelle (UWP) et les types .NET Framework. Dans une application Windows universelle écrite en code managé, IntelliSense affiche le type .NET Framework plutôt que le type UWP. Par exemple, si une méthode Windows Runtime prend un paramètre de type IVector&lt;string&gt;, IntelliSense affiche un paramètre de type IList&lt;string&gt;. De même, dans un composant Windows Runtime écrit en code managé, vous devez utiliser le type .NET Framework dans les signatures de membre. Lorsque l’[outil d’exportation de métadonnées Windows Runtime (Winmdexp.exe)](https://msdn.microsoft.com/library/hh925576.aspx) génère votre composant Windows Runtime, le type .NET Framework devient le type UWP correspondant.
+Le tableau suivant répertorie les mappages que .NET Framework effectue entre les types de plateforme Windows universelle (UWP) et les types .NET Framework. Dans une application Windows universelle écrite en code managé, IntelliSense affiche le type .NET Framework plutôt que le type UWP. Par exemple, si une méthode Windows Runtime prend un paramètre de type IVector&lt;string&gt;, IntelliSense affiche un paramètre de type IList&lt;string&gt;. De même, dans un composant Windows Runtime écrit en code managé, vous devez utiliser le type .NET Framework dans les signatures de membre. Lorsque l’[outil d’exportation de métadonnées Windows Runtime (Winmdexp.exe)](https://docs.microsoft.com/dotnet/framework/tools/winmdexp-exe-windows-runtime-metadata-export-tool) génère votre composant Windows Runtime, le type .NET Framework devient le type UWP correspondant.
 
 ## <a name="mapping-tables"></a>Tableaux des mappages
 
@@ -59,7 +59,7 @@ Tableau 1 : UWP types qui correspondent aux types .NET Framework avec un autre 
 
 Tableau 2 : UWP types qui correspondent aux types .NET Framework avec les mêmes nom et espace de noms.
 
-| Espace de noms                           | Type               | Assembly .NET Framework                   |
+| Espace de noms                           | type               | Assembly .NET Framework                   |
 |-------------------------------------|--------------------|-------------------------------------------|
 | Windows.UI                          | Color              | System.Runtime.WindowsRuntime.dll         |
 | Windows.Foundation                  | Point              | System.Runtime.WindowsRuntime.dll         |

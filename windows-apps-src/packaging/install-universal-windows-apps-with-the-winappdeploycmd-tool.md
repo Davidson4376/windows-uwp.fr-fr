@@ -6,12 +6,12 @@ ms.date: 09/30/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 479c4410384613b22ba86bc976a360125bb73c3a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 06107691a4551ae2af05e63c1db810485273dc9b
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57632804"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372812"
 ---
 # <a name="install-apps-with-the-winappdeploycmdexe-tool"></a>Installer des applications avec l’outil WinAppDeployCmd.exe
 
@@ -20,7 +20,7 @@ Déploiement d’applications Windows (WinAppDeployCmd.exe) est un outil de lign
 
 Vous devez simplement le SDK Windows 10 installé pour exécuter l’outil WinAppDeployCmd à partir d’une invite de commandes ou un fichier de script. Lorsque vous installez une application avec WinAppDeployCmd.exe, il utilise le fichier de.appx/.msix ou AppxManifest (pour les fichiers libres) charger votre application sur un appareil Windows 10. Cette commande n’installe pas le certificat nécessaire pour votre application. Pour exécuter l’application, l’appareil Windows 10 doit être en mode développeur ou déjà le certificat est installé.
 
-Pour un déploiement vers des appareils mobiles, vous devez d’abord créer un package. Pour plus d’informations, voir [cet article](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps).
+Pour un déploiement vers des appareils mobiles, vous devez d’abord créer un package. Pour plus d’informations, voir [cet article](https://docs.microsoft.com/windows/uwp/packaging/packaging-uwp-apps).
 
 Le **WinAppDeployCmd.exe** outil se trouve ici sur votre PC Windows 10 : **C:\\Program Files (x86)\\Windows Kits\\10\\bin\\&lt;Version_sdk&gt;\\x86\\WinAppDeployCmd.exe** () selon votre chemin d’installation pour le Kit de développement). 
 > [!NOTE]
@@ -60,7 +60,7 @@ Vous pouvez installer ou désinstaller une application sur l’appareil cible, o
 Le tableau suivant décrit les commandes pour **WinAppDeployCmd.exe**.
 
 
-| **Commande**  | **Description**                                                     |
+| **Command**  | **Description**                                                     |
 |--------------|---------------------------------------------------------------------|
 | appareils      | Affiche la liste des périphériques réseau disponibles.                         |
 | installer      | Installe un package d’application UWP sur l’appareil cible.                     |
@@ -77,7 +77,7 @@ Le tableau suivant décrit les commandes pour **WinAppDeployCmd.exe**.
 Le tableau suivant décrit les options pour **WinAppDeployCmd.exe**.
 
 
-| **Commande**  | **Description**  |
+| **Command**  | **Description**  |
 |--------------|------------------|
 | -h (-help)       | Affiche les commandes, les options et les arguments. |
 | -ip              | Adresse IP de l’appareil cible. |
@@ -96,10 +96,10 @@ Le tableau suivant décrit les options pour **WinAppDeployCmd.exe**.
 
 Le tableau suivant décrit les options pour **WinAppDeployCmd.exe**.
 
-| **argument**           | **Description**                                                              |
+| **Argument**           | **Description**                                                              |
 |------------------------|------------------------------------------------------------------------------|
 | &lt;x&gt;              | Délai d’expiration en secondes. (La valeur par défaut est 10)                                          |
-| &lt;adresse&gt;        | Adresse IP ou identificateur unique de l’appareil cible.                        |
+| &lt;address&gt;        | Adresse IP ou identificateur unique de l’appareil cible.                        |
 | &lt;a&gt;&lt;b&gt; ... | Chemin d’accès de dépendance pour chacune des dépendances du package d’application.                    |
 | &lt;p&gt;              | Un PIN alphanumérique indiqué dans les paramètres de l’appareil pour établir une connexion. |
 | &lt;path&gt;           | Chemin d’accès au système de fichiers.                                                            |

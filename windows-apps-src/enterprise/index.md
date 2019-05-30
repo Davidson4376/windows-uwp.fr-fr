@@ -6,12 +6,12 @@ ms.date: 08/30/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: fae4d5b57ac5cfb5c47fca1a2f3476cd16a56534
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a44a1adb8685ad182620b4c68024176628b9204d
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582632"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369665"
 ---
 # <a name="enterprise"></a>Entreprise
 
@@ -102,9 +102,9 @@ Windows 10 fournit une suite de fonctionnalités de sécurité qui permet aux d
 
 | Rubrique | Description |
 |-------|-------------|
-| [Présentation du développement d’applications Windows sécurisées](https://msdn.microsoft.com/library/windows/apps/mt622741) | Cet article introductif décrit les différentes fonctionnalités d’entreprise Windows lors des phases d’authentification, de données en transit et de données au repos. Il explique également comment vous pouvez intégrer ces phases dans vos applications. Il couvre une large gamme de rubriques et vise essentiellement à aider les architectes d’application à mieux comprendre les fonctionnalités Windows qui facilitent et accélèrent la création d’applications de plateforme Windows universelle. |
-| [Authentification et identité des utilisateurs](https://msdn.microsoft.com/library/windows/apps/mt270184) | Les applications UWP disposent de plusieurs options pour l’authentification des utilisateurs qui sont décrites dans cet article. Pour l’entreprise, l’utilisation de la nouvelle fonctionnalité Microsoft Passport est fortement recommandée. Microsoft Passport remplace les mots de passe par la méthode d’authentification à 2 facteurs (2FA) forte en vérifiant les informations d’identification existantes et en créant des informations d’identification spécifiques à l’appareil, protégées par un mouvement de l’utilisateur reposant sur l’entrée de son code PIN ou par la biométrie. |
-| [Chiffrement](https://msdn.microsoft.com/library/windows/apps/mt270191) | La section relative au chiffrement fournit une vue d’ensemble des fonctionnalités de chiffrement disponibles pour les applications UWP. Les articles comprennent des procédures pas à pas introductives pour chiffrer facilement les données professionnelles sensibles et couvrent également des sujets avancés tels que la manipulation des clés de chiffrement et l’utilisation des codes d’authentification de message (MAC), codes de hachage et signatures. |
+| [Présentation du développement d’applications Windows sécurisées](https://docs.microsoft.com/windows/uwp/security/intro-to-secure-windows-app-development) | Cet article introductif décrit les différentes fonctionnalités d’entreprise Windows lors des phases d’authentification, de données en transit et de données au repos. Il explique également comment vous pouvez intégrer ces phases dans vos applications. Il couvre une large gamme de rubriques et vise essentiellement à aider les architectes d’application à mieux comprendre les fonctionnalités Windows qui facilitent et accélèrent la création d’applications de plateforme Windows universelle. |
+| [Authentification et identité des utilisateurs](https://docs.microsoft.com/windows/uwp/security/authentication-and-user-identity) | Les applications UWP disposent de plusieurs options pour l’authentification des utilisateurs qui sont décrites dans cet article. Pour l’entreprise, l’utilisation de la nouvelle fonctionnalité Microsoft Passport est fortement recommandée. Microsoft Passport remplace les mots de passe par la méthode d’authentification à 2 facteurs (2FA) forte en vérifiant les informations d’identification existantes et en créant des informations d’identification spécifiques à l’appareil, protégées par un mouvement de l’utilisateur reposant sur l’entrée de son code PIN ou par la biométrie. |
+| [Chiffrement](https://docs.microsoft.com/windows/uwp/security/cryptography) | La section relative au chiffrement fournit une vue d’ensemble des fonctionnalités de chiffrement disponibles pour les applications UWP. Les articles comprennent des procédures pas à pas introductives pour chiffrer facilement les données professionnelles sensibles et couvrent également des sujets avancés tels que la manipulation des clés de chiffrement et l’utilisation des codes d’authentification de message (MAC), codes de hachage et signatures. |
 | [Protection des informations Windows (WIP)](wip-hub.md) | Il s’agit d’une rubrique de hub destinée aux développeurs abordant de manière exhaustive la relation de la Protection des informations Windows avec les fichiers, les mémoires tampons, le Presse-papiers, la mise en réseau, les tâches en arrière-plan et la protection des données verrouillées. |
 
 ## <a name="data-binding-and-databases"></a>Liaison de données et bases de données
@@ -113,8 +113,8 @@ La liaison de données est un moyen dont dispose l’interface utilisateur de vo
 
 | Rubrique | Description |
 |-------|-------------|
-| [Vue d’ensemble de la liaison de données](https://msdn.microsoft.com/library/windows/apps/mt269383) | Cette rubrique vous montre comment lier un contrôle (ou tout autre élément d’IU) à un seul élément, ou comment lier un contrôle d’éléments à une collection d’éléments dans une application UWP (plateforme Windows universelle). Elle explique également comment contrôler le rendu des éléments, implémenter un affichage des détails en fonction d’une sélection et convertir des données pour l’affichage. |
-| [Entity Framework 7 pour UWP](https://msdn.microsoft.com/library/windows/apps/mt592863) | Entity Framework 7, qui prend en charge UWP, vous permet d’exécuter facilement des requêtes complexes dans de grands ensembles de données. Dans cette procédure pas à pas, vous allez générer une application UWP qui propose un accès de base aux données d’une base de données SQLite locale à l’aide d’Entity Framework. |
+| [Vue d’ensemble de la liaison de données](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-quickstart) | Cette rubrique vous montre comment lier un contrôle (ou tout autre élément d’IU) à un seul élément, ou comment lier un contrôle d’éléments à une collection d’éléments dans une application UWP (plateforme Windows universelle). Elle explique également comment contrôler le rendu des éléments, implémenter un affichage des détails en fonction d’une sélection et convertir des données pour l’affichage. |
+| [Entity Framework 7 pour UWP](https://docs.microsoft.com/windows/uwp/data-access/entity-framework-7-with-sqlite-for-csharp-apps) | Entity Framework 7, qui prend en charge UWP, vous permet d’exécuter facilement des requêtes complexes dans de grands ensembles de données. Dans cette procédure pas à pas, vous allez générer une application UWP qui propose un accès de base aux données d’une base de données SQLite locale à l’aide d’Entity Framework. |
 | [Base de données SQLite locale](https://channel9.msdn.com/Series/A-Developers-Guide-to-Windows-10/10) | Cette vidéo est un guide du développeur complet sur l’utilisation de SQLite, la solution recommandée pour les bases de données d’applications locales. Visitez [SQLite](https://www.sqlite.org/download.html) pour télécharger la dernière version pour UWP, ou utilisez la version fournie avec le Kit de développement logiciel (SDK) Windows 10. |
 
 ## <a name="networking-and-data-serialization"></a>Réseau et sérialisation des données
@@ -123,10 +123,10 @@ Les applications métier ont souvent besoin de communiquer avec des données ou 
 
 | Rubrique | Description |
 |-------|-------------|
-| [Notions de base relatives aux réseaux](https://msdn.microsoft.com/library/windows/apps/mt280233) | Cette procédure pas à pas explique les concepts de mise en réseau de base pertinents pour toutes les applications UWP, quels que soient les protocoles de communication utilisés.  |
-| [Quelle technologie réseau ?](https://msdn.microsoft.com/library/windows/apps/mt280235) | Une vue d’ensemble des technologies de réseau disponibles pour les applications UWP, avec des conseils qui vous aideront à choisir les technologies appropriées pour votre application. |
-| [Sérialisation XML et SOAP](https://msdn.microsoft.com/library/90c86ass.aspx) | La sérialisation XML convertit les objets en un flux XML conforme à un langage XSD (définition de schéma XML) spécifique. Pour effectuer une conversion entre XML et une classe fortement typée, vous pouvez utiliser la classe [XDocument](https://msdn.microsoft.com/library/system.xml.linq.xdocument.aspx) native ou une bibliothèque externe. |
-| [Sérialisation JSON](https://msdn.microsoft.com/library/windows/apps/br240639) | La sérialisation JSON (JavaScript Object Notation) est un format populaire utilisé pour la communication avec les API REST. Le [Newtonsoft Json.NET](https://www.newtonsoft.com/json), qui est entièrement pris en charge par les applications UWP. |
+| [Notions de base relatives aux réseaux](https://docs.microsoft.com/windows/uwp/networking/networking-basics) | Cette procédure pas à pas explique les concepts de mise en réseau de base pertinents pour toutes les applications UWP, quels que soient les protocoles de communication utilisés.  |
+| [Quelle technologie réseau ?](https://docs.microsoft.com/windows/uwp/networking/which-networking-technology) | Une vue d’ensemble des technologies de réseau disponibles pour les applications UWP, avec des conseils qui vous aideront à choisir les technologies appropriées pour votre application. |
+| [Sérialisation XML et SOAP](https://docs.microsoft.com/dotnet/framework/serialization/xml-and-soap-serialization) | La sérialisation XML convertit les objets en un flux XML conforme à un langage XSD (définition de schéma XML) spécifique. Pour effectuer une conversion entre XML et une classe fortement typée, vous pouvez utiliser la classe [XDocument](https://docs.microsoft.com/dotnet/api/system.xml.linq.xdocument?redirectedfrom=MSDN) native ou une bibliothèque externe. |
+| [Sérialisation JSON](https://docs.microsoft.com/uwp/api/Windows.Data.Json) | La sérialisation JSON (JavaScript Object Notation) est un format populaire utilisé pour la communication avec les API REST. Le [Newtonsoft Json.NET](https://www.newtonsoft.com/json), qui est entièrement pris en charge par les applications UWP. |
 
 ## <a name="devices"></a>Appareils
 
@@ -134,9 +134,9 @@ Afin d’interagir avec des outils métier comme des imprimantes, des scanneurs 
 
 | Rubrique  | Description |
 |--------|-------------|
-| [Énumérer les appareils](https://msdn.microsoft.com/library/windows/apps/mt187355) | Cet article décrit comment utiliser l’espace de noms [Windows.Devices.Enumeration](https://msdn.microsoft.com/library/windows/apps/br225459) pour rechercher des appareils connectés au système, en interne, en externe ou détectables sur les protocoles sans fil ou réseau. Commencez ici si vous créez une application qui fonctionne avec des appareils. |
-| [Impression et numérisation](https://msdn.microsoft.com/library/windows/apps/mt204544) | Explique comment imprimer et numériser à partir de votre application, et notamment comment se connecter aux appareils métier (par exemple, les systèmes de point de vente (PDV), les imprimantes de reçus ainsi que les scanneurs à chargeur à grande capacité) et comment les utiliser. |
-| [Bluetooth](https://msdn.microsoft.com/library/windows/apps/mt270288) | Outre l’utilisation des connexions Bluetooth traditionnelles pour envoyer et recevoir des données ou contrôler les appareils, Windows 10 permet d’utiliser la technologie Bluetooth Low Energy (BTLE) pour envoyer ou recevoir des balises en arrière-plan. Utilisez-la pour afficher des notifications ou activer des fonctionnalités quand un utilisateur s’approche d’un emplacement particulier ou le quitte. |
+| [Énumérer les appareils](https://docs.microsoft.com/windows/uwp/devices-sensors/enumerate-devices) | Cet article décrit comment utiliser l’espace de noms [Windows.Devices.Enumeration](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration) pour rechercher des appareils connectés au système, en interne, en externe ou détectables sur les protocoles sans fil ou réseau. Commencez ici si vous créez une application qui fonctionne avec des appareils. |
+| [Impression et numérisation](https://docs.microsoft.com/windows/uwp/devices-sensors/printing-and-scanning) | Explique comment imprimer et numériser à partir de votre application, et notamment comment se connecter aux appareils métier (par exemple, les systèmes de point de vente (PDV), les imprimantes de reçus ainsi que les scanneurs à chargeur à grande capacité) et comment les utiliser. |
+| [Bluetooth](https://docs.microsoft.com/windows/uwp/devices-sensors/bluetooth) | Outre l’utilisation des connexions Bluetooth traditionnelles pour envoyer et recevoir des données ou contrôler les appareils, Windows 10 permet d’utiliser la technologie Bluetooth Low Energy (BTLE) pour envoyer ou recevoir des balises en arrière-plan. Utilisez-la pour afficher des notifications ou activer des fonctionnalités quand un utilisateur s’approche d’un emplacement particulier ou le quitte. |
 | [Stockage partagé d’entreprise](enterprise-shared-storage.md) | Dans les scénarios où l’appareil est verrouillé, découvrez comment partager les données au sein de la même application, entre les instances d’une application ou entre les applications. |
 
 ## <a name="device-targeting"></a>Ciblage des appareils
@@ -145,7 +145,7 @@ Aujourd’hui, de nombreux utilisateurs travaillent avec leur propre téléphone
 
 | Rubrique | Description |
 |-------|-------------|
-| [Guide des applications UWP](https://msdn.microsoft.com/library/windows/apps/dn894631) | Dans ce guide introductif, vous allez vous familiariser avec la plateforme UWP Windows 10. Vous découvrirez, entre autres, ce qu’est une famille d’appareils et comment déterminer celle à cibler, quels sont les nouveaux volets et contrôles d’interface utilisateur permettant d’adapter votre interface utilisateur à différents facteurs de forme d’appareil, et comment utiliser et contrôler la surface d’API disponible dans votre application. |
+| [Guide des applications UWP](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide) | Dans ce guide introductif, vous allez vous familiariser avec la plateforme UWP Windows 10. Vous découvrirez, entre autres, ce qu’est une famille d’appareils et comment déterminer celle à cibler, quels sont les nouveaux volets et contrôles d’interface utilisateur permettant d’adapter votre interface utilisateur à différents facteurs de forme d’appareil, et comment utiliser et contrôler la surface d’API disponible dans votre application. |
 | [Exemple de code d’IU XAML adaptative](https://go.microsoft.com/fwlink/p/?LinkId=619992) | Cet exemple de code montre toutes les options de disposition et tous les contrôles possibles pour votre application, quel que soit le type d’appareil. Il vous permet d’interagir avec les panneaux pour découvrir comment obtenir les dispositions que vous recherchez. En plus de vous présenter la façon dont chaque contrôle répond à différents facteurs de forme, l’application réagit et indique les différentes méthodes permettant d’obtenir une interface utilisateur adaptative. |
 | [Rubrique Xamarin](/xamarin/) | Xamarin pour le ciblage du téléphone |
 
@@ -155,7 +155,7 @@ Vous disposez d’options pour la distribution des applications aux utilisateurs
 
 | Rubrique | Description |
 |-------|-------------|
-| [Distribuer des applications métier aux entreprises](https://msdn.microsoft.com/library/windows/apps/mt608995) | Vous pouvez publier des applications métier directement à l’attention des entreprises pour une acquisition en volume via le Microsoft Store pour Entreprises, sans mettre vos applications à la disposition du grand public. |
+| [Distribuer des applications métier aux entreprises](https://docs.microsoft.com/windows/uwp/publish/distribute-lob-apps-to-enterprises) | Vous pouvez publier des applications métier directement à l’attention des entreprises pour une acquisition en volume via le Microsoft Store pour Entreprises, sans mettre vos applications à la disposition du grand public. |
 | [Chargement de la version test des applications](https://technet.microsoft.com/library/mt269549) | Lorsque vous chargez de manière indépendante une application, vous déployez un package d’application signée sur un appareil. Vous conservez la signature, l’hébergement et le déploiement de ces applications. Le processus de chargement indépendant d’applications est simplifié pour Windows 10.             |
 | [Publier des applications sur le Microsoft Store](https://dev.windows.com/publish) | Le Microsoft Store unifié vous permet de publier et de gérer toutes vos applications pour l’ensemble des appareils Windows. Personnalisez la disponibilité de votre application à l’aide d’une tarification par marché, de contrôles de distribution et de visibilité et d’autres options. |
 

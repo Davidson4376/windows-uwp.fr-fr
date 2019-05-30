@@ -6,25 +6,25 @@ ms.topic: article
 keywords: Windows 10 uwp, Store, aux services analytique Microsoft Store API, insights
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 5545d27668b23e5b7ae91201421dfa4c92f9c8ed
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 8f6f4b2df1cda14bc1f363a1f9100e416f26489b
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57618134"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372464"
 ---
 # <a name="get-insights-data-for-your-desktop-application"></a>Obtenir les données d’analyse pour votre application de bureau
 
 Utilisez cette méthode dans l’API d’analytique Microsoft Store pour obtenir des insights données relatifs aux métriques d’intégrité pour une application de bureau que vous avez ajoutés à la [programme d’Application de bureau Windows](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program). Ces données sont également disponibles dans le [rapport d’intégrité](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#health-report) pour les applications de bureau dans l’espace partenaires.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes :
 
 * Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](access-analytics-data-using-windows-store-services.md#prerequisites) relatives à l’API d’analyse du Microsoft Store.
 * [Obtenez un jeton d’accès Azure AD](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 
-## <a name="request"></a>Requête
+## <a name="request"></a>Demande
 
 
 ### <a name="request-syntax"></a>Syntaxe de la requête
@@ -36,19 +36,19 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 
 ### <a name="request-header"></a>En-tête de requête
 
-| En-tête        | Type   | Description                                                                 |
+| Header        | type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | chaîne | Obligatoire. Le jeton d’accès Azure AD sous la forme **PORTEUR** &lt; *jeton*&gt;. |
 
 
 ### <a name="request-parameters"></a>Paramètres de la requête
 
-| Paramètre        | Type   |  Description      |  Obligatoire  
+| Paramètre        | type   |  Description      |  Obligatoire  
 |---------------|--------|---------------|------|
-| applicationId | chaîne | L’ID de produit de l’application de bureau pour lequel vous souhaitez obtenir des insights données. Pour obtenir l’ID de produit d’une application de bureau, ouvrez un [analytique de rapports pour votre application de bureau partenaires](https://msdn.microsoft.com/library/windows/desktop/mt826504) (telles que la **rapport d’intégrité**) et récupérer l’ID de produit dans l’URL. Si vous ne spécifiez pas ce paramètre, le corps de réponse contiennent des données insights pour toutes les applications inscrites à votre compte.  |  Non  |
+| applicationId | chaîne | L’ID de produit de l’application de bureau pour lequel vous souhaitez obtenir des insights données. Pour obtenir l’ID de produit d’une application de bureau, ouvrez un [analytique de rapports pour votre application de bureau partenaires](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program) (telles que la **rapport d’intégrité**) et récupérer l’ID de produit dans l’URL. Si vous ne spécifiez pas ce paramètre, le corps de réponse contiennent des données insights pour toutes les applications inscrites à votre compte.  |  Non  |
 | startDate | date | La date de début dans la plage de dates des données insights à récupérer. La valeur par défaut est de 30 jours avant la date actuelle. |  Non  |
 | endDate | date | La date de fin dans la plage de dates des données insights à récupérer. La valeur par défaut est la date actuelle. |  Non  |
-| filter | chaîne  | Une ou plusieurs instructions qui filtrent les lignes de la réponse. Chaque instruction comporte un champ Nom dans le corps de la réponse et une valeur, qui sont associés aux opérateurs **eq** ou **ne**, et les instructions peuvent être combinées à l’aide des opérateurs **and** ou **or**. Les valeurs de chaîne doivent être entourées par des guillemets dans le paramètre *filter*. Par exemple, *filtre = eq 'd’acquisition de type de données'*. <p/><p/>Cette méthode prend uniquement le filtre **intégrité**.  | Non   |
+| Filter | chaîne  | Une ou plusieurs instructions qui filtrent les lignes de la réponse. Chaque instruction comporte un champ Nom dans le corps de la réponse et une valeur, qui sont associés aux opérateurs **eq** ou **ne**, et les instructions peuvent être combinées à l’aide des opérateurs **and** ou **or**. Les valeurs de chaîne doivent être entourées par des guillemets dans le paramètre *filter*. Par exemple, *filtre = eq 'd’acquisition de type de données'* . <p/><p/>Cette méthode prend uniquement le filtre **intégrité**.  | Non   |
 
 ### <a name="request-example"></a>Exemple de requête
 
@@ -63,9 +63,9 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>Corps de la réponse
 
-| Valeur      | Type   | Description                  |
+| Value      | type   | Description                  |
 |------------|--------|-------------------------------------------------------|
-| Valeur      | tableau  | Un tableau d’objets qui contiennent des données pour l’application insights. Pour plus d’informations sur les données de chaque objet, consultez le [les valeurs Insight](#insight-values) section ci-dessous.                                                                                                                      |
+| Value      | tableau  | Un tableau d’objets qui contiennent des données pour l’application insights. Pour plus d’informations sur les données de chaque objet, consultez le [les valeurs Insight](#insight-values) section ci-dessous.                                                                                                                      |
 | TotalCount | entier    | Nombre total de lignes dans les résultats de la requête.                 |
 
 
@@ -73,17 +73,17 @@ Authorization: Bearer <your access token>
 
 Les éléments du tableau *Value* comportent les valeurs suivantes :
 
-| Valeur               | Type   | Description                           |
+| Value               | type   | Description                           |
 |---------------------|--------|-------------------------------------------|
 | applicationId       | chaîne | L’ID de produit de l’application de bureau pour lequel vous avez récupéré des données insights.     |
 | insightDate                | chaîne | La date sur laquelle nous avons identifié la modification dans une mesure spécifique. Cette date représente la fin de la semaine dans lequel nous avons détecté une augmentation significative ou diminuer dans une mesure par rapport à la semaine auparavant. |
-| Type de données     | chaîne | Chaîne qui spécifie la zone analytique général qui informe cette information. Actuellement, cette méthode prend uniquement en charge **intégrité**.    |
+| dataType     | chaîne | Chaîne qui spécifie la zone analytique général qui informe cette information. Actuellement, cette méthode prend uniquement en charge **intégrité**.    |
 | insightDetail          | tableau | Un ou plusieurs [InsightDetail valeurs](#insightdetail-values) qui représentent les détails pour obtenir des informations en cours.    |
 
 
 ### <a name="insightdetail-values"></a>Valeurs InsightDetail
 
-| Valeur               | Type   | Description                           |
+| Value               | type   | Description                           |
 |---------------------|--------|-------------------------------------------|
 | FactName           | chaîne | Chaîne qui indique la mesure décrivant l’insight actuelle ou la dimension actuelle. Actuellement, cette méthode prend uniquement en charge la valeur **Comptetoucher**.  |
 | SubDimensions         | tableau |  Un ou plusieurs objets qui décrivent une mesure unique pour l’analyse.   |

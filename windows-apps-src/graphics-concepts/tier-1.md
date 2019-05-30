@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ae76111f6feefa0bb63fd18516e033050cc06fc
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3aeb30fca8e9fbad21f274162aab3106afcf2e45
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57589884"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370840"
 ---
 # <a name="tier-1"></a>Niveau 1
 
@@ -52,7 +52,7 @@ Les ressources de diffusion en continu avec des mipmaps n’étant pas des multi
 
 Pour basculer entre faisant référence à des vignettes dans un pool de vignette via un [tampon](introduction-to-buffers.md) ressource à référencer les vignettes mêmes via un [Texture](introduction-to-textures.md) ressource, ou vice versa, la dernière mise à jour des mappages de vignette ou la copie des mappages de mosaïque qui définit les mappages à ces vignette les vignettes de pool doivent être de la même dimension de ressource (mémoire tampon par rapport à la Texture\*) en tant que la dimension de ressource qui sera utilisée pour accéder aux vignettes. Sinon, le comportement ne sera pas défini, y compris la possibilité de réinitialiser l’appareil.
 
-Par exemple, il n’est pas correct de mettre à jour les mappages de tuiles pour définir des mappages de tuiles pour une mémoire tampon, puis de mettre à jour les mappages de tuiles pour les mêmes tuiles dans le pool de tuiles via une ressource [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff471525) et d’accéder aux tuiles via la mémoire tampon. Les solutions alternatives consistent à redéfinir les mappages de tuiles pour une ressource lors du basculement entre la mémoire tampon et la texture (ou vice versa) partageant les tuiles ou simplement ne jamais de partager des tuiles dans un pool de tuiles entre des ressources de mémoire tampon et des ressources de texture.
+Par exemple, il n’est pas correct de mettre à jour les mappages de tuiles pour définir des mappages de tuiles pour une mémoire tampon, puis de mettre à jour les mappages de tuiles pour les mêmes tuiles dans le pool de tuiles via une ressource [**Texture2D**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d) et d’accéder aux tuiles via la mémoire tampon. Les solutions alternatives consistent à redéfinir les mappages de tuiles pour une ressource lors du basculement entre la mémoire tampon et la texture (ou vice versa) partageant les tuiles ou simplement ne jamais de partager des tuiles dans un pool de tuiles entre des ressources de mémoire tampon et des ressources de texture.
 
 ### <a name="span-idminmaxreductionfilteringspanspan-idminmaxreductionfilteringspanspan-idminmaxreductionfilteringspanminmax-reduction-filtering"></a><span id="Min_Max_reduction_filtering"></span><span id="min_max_reduction_filtering"></span><span id="MIN_MAX_REDUCTION_FILTERING"></span>Filtrage de réduction Min/Max
 

@@ -7,12 +7,12 @@ ms.date: 11/07/2017
 ms.topic: article
 keywords: windows 10, uwp, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
-ms.openlocfilehash: fb16f682e5e1f57196737a6e15a9ffbadbfd0e84
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: e262a647e8c37d088c3a5b081076275a52cb8071
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57626984"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363737"
 ---
 # <a name="make-your-app-localizable"></a>Rendre votre application localisable
 
@@ -80,7 +80,7 @@ L'utilisation d'une voix ou d'un ton informel dans vos chaînes est un bon choix
 
 Peuso-localisez votre application pour découvrir tout problème d'adaptabilité. La pseudo-localisation est un type de localisation test ou de test de divulgation. Vous produisez un ensemble de ressources qui ne sont pas réellement traduites. Elles en ont seulement l'apparence. Vos chaînes sont environ 40 % plus longues que les chaînes de votre langue par défaut. Par exemple, elles contiennent des séparateurs afin que vous puissiez avoir un aperçu de leur possible tronquage dans l'interface utilisateur.
 
-## <a name="deployment-considerations"></a>Considérations relatives au déploiement
+## <a name="deployment-considerations"></a>Points à prendre en considération pour le déploiement
 
 Lorsque vous installez une application qui contient les données de la langue localisée, vous constaterez peut-être que seule la langue par défaut est disponible pour l’application même si vous avez inclus au départ les ressources pour plusieurs langues. Il s’agit, car le processus d’installation est optimisé pour installer uniquement les ressources de langue qui correspond à la langue actuelle et la culture de l’appareil. Par conséquent, si votre appareil est configuré pour en-US, uniquement les ressources de langue en-US sont installés avec votre application.
 
@@ -135,14 +135,14 @@ Une fois que les chaînes ont été séparées en fichiers de ressources, elles 
 Envisagez ces options.
 
 - **Les fichiers de ressources peuvent être traduites en les ouvrant directement dans le projet.** Cette approche fonctionne bien pour un projet qui possède un volume réduit de chaînes devant être traduites en deux ou trois langues. Elle est adaptée pour un scénario dans lequel un développeur parlerait plusieurs langues et accepterait de traiter le processus de traduction. Cette approche a l’avantage d’être rapide, de ne requérir aucun outil et de minimiser les risques d’erreurs de traduction. Mais elle n’est pas évolutive. En particulier, les ressources dans les différentes langues peuvent aisément se désynchroniser, ce qui peut entraîner de mauvaises expériences utilisateur et des difficultés de maintenance.
-- **Les fichiers de ressources de chaîne sont au format texte XML ou ResJSON, donc pu être remis pour la traduction à l’aide de n’importe quel éditeur de texte. Les versions traduites des fichiers sont copiés puis réintégré dans le projet.** Cette approche présente un risque, car les traducteurs pourraient modifier accidentellement les balises XML. Cependant, elle permet le déroulement de la traduction en dehors du projet Microsoft Visual Studio. Cette approche pourrait bien fonctionner pour les projets devant être traduits vers un nombre réduit de langues. Le format XLIFF est un format XML spécifiquement conçu pour être utilisé en localisation et devrait être bien pris en charge par les prestataires de localisation et les outils de localisation. Vous pouvez utiliser le [Kit de ressources pour application multilingue](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj572370.aspx) pour générer des fichiers XLIFF à partir d’autres fichiers de ressources, tels que les fichiers .resw ou .resjson.
+- **Les fichiers de ressources de chaîne sont au format texte XML ou ResJSON, donc pu être remis pour la traduction à l’aide de n’importe quel éditeur de texte. Les versions traduites des fichiers sont copiés puis réintégré dans le projet.** Cette approche présente un risque, car les traducteurs pourraient modifier accidentellement les balises XML. Cependant, elle permet le déroulement de la traduction en dehors du projet Microsoft Visual Studio. Cette approche pourrait bien fonctionner pour les projets devant être traduits vers un nombre réduit de langues. Le format XLIFF est un format XML spécifiquement conçu pour être utilisé en localisation et devrait être bien pris en charge par les prestataires de localisation et les outils de localisation. Vous pouvez utiliser le [Kit de ressources pour application multilingue](https://docs.microsoft.com/previous-versions/windows/apps/jj572370(v=win.10)) pour générer des fichiers XLIFF à partir d’autres fichiers de ressources, tels que les fichiers .resw ou .resjson.
 
 > [!NOTE]
 > Localisation peut également être nécessaire pour les autres ressources, y compris les images et les fichiers audio.
 
 Vous devez également envisager les éléments suivants :
 
-- **Outils de localisation** un certain nombre d’outils de localisation sont disponible pour l’analyse des fichiers de ressources et n’autorisant que les chaînes traduisibles à être modifié par des traducteurs. Cette approche réduit le risque qu’un traducteur modifie accidentellement les balises XML. Elle présente cependant l’inconvénient d’introduire un nouvel outil et un nouveau processus dans le processus de localisation. Un outil de localisation est approprié pour les projets avec un volume élevé de chaînes, mais un nombre réduit de langues. Pour en savoir plus, voir [Comment utiliser le Kit de ressources pour application multilingue](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj572370.aspx).
+- **Outils de localisation** un certain nombre d’outils de localisation sont disponible pour l’analyse des fichiers de ressources et n’autorisant que les chaînes traduisibles à être modifié par des traducteurs. Cette approche réduit le risque qu’un traducteur modifie accidentellement les balises XML. Elle présente cependant l’inconvénient d’introduire un nouvel outil et un nouveau processus dans le processus de localisation. Un outil de localisation est approprié pour les projets avec un volume élevé de chaînes, mais un nombre réduit de langues. Pour en savoir plus, voir [Comment utiliser le Kit de ressources pour application multilingue](https://docs.microsoft.com/previous-versions/windows/apps/jj572370(v=win.10)).
 - **Les fournisseurs de localisation** envisagez d’utiliser un fournisseur de localisation si votre application contient des chaînes étendues qui doivent être traduites en un grand nombre de langues. Un prestataire de localisation peut conseiller des outils et des processus, ainsi que traduire vos fichiers de ressources. Il s’agit d’une solution idéale, mais c’est aussi l’option la plus coûteuse et elle peut augmenter le délai de traitement de votre contenu traduit.
 
 ## <a name="keep-access-keys-and-labels-consistent"></a>Utiliser des touches d’accès rapide et des étiquettes cohérentes

@@ -6,19 +6,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 48cea8c1a3a3c35a53a3376c48e3192c94caf709
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f5605c115c409771ce8dc9ddfeb1a4922e04aece
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57620774"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372846"
 ---
 # <a name="getting-started-choosing-a-programming-language"></a>Bien démarrer : Choix d’un langage de programmation
 
 
 ## <a name="choosing-a-programming-language"></a>Choix d’un langage de programmation
 
-Avant d’aller plus loin, vous devez connaître les langages de programmation permettant de développer des applications pour la plateforme Windows universelle (UWP). Bien que les procédures pas à pas du présent article utilisent le langage C#, vous pouvez développer des applications pour la plateforme Windows universelle (UWP) à l’aide d’un ou de plusieurs langages de programmation (voir [Langages, outils et infrastructures](https://msdn.microsoft.com/library/windows/apps/dn465799)).
+Avant d’aller plus loin, vous devez connaître les langages de programmation permettant de développer des applications pour la plateforme Windows universelle (UWP). Bien que les procédures pas à pas du présent article utilisent le langage C#, vous pouvez développer des applications pour la plateforme Windows universelle (UWP) à l’aide d’un ou de plusieurs langages de programmation (voir [Langages, outils et infrastructures](https://docs.microsoft.com/previous-versions/windows/apps/dn465799(v=win.10))).
 
 Vous pouvez développer à l’aide des langages C++, C#, Microsoft Visual Basic et JavaScript. JavaScript utilise le balisage HTML5 pour la disposition de l’interface utilisateur et les autres langages utilisent un langage de balisage appelé *XAML (Extensible Application Markup Language)* pour décrire leur interface utilisateur.
 
@@ -29,10 +29,10 @@ Bien que l’article se concentre ici sur C#, les autres langages offrent des av
 -   [Créer votre première application UWP à l’aide de JavaScript](../get-started/create-a-hello-world-app-js-uwp.md)
 
 **Remarque**  pour les applications qui utilisent des graphiques 3D, les normes OpenGL et OpenGL ES ne sont pas disponibles en mode natif pour les applications UWP. Si vous préférez ne pas réécrire votre code OpenGL ES dans Microsoft DirectX, vous pourriez être intéressé par **Angle**. Angle est un projet en cours conçu pour convertir OpenGL en DirectX en transformant des appels d’API OpenGL en appels d’API DirectX. Pour en savoir plus, consultez les rubriques suivantes :
--   [angle](https://code.google.com/p/angleproject/)
--   [Créer votre première application UWP à l’aide de DirectX](https://msdn.microsoft.com/library/windows/apps/br229580)
+-   [Angle](https://code.google.com/p/angleproject/)
+-   [Créer votre première application UWP à l’aide de DirectX](https://docs.microsoft.com/previous-versions/windows/apps/br229580(v=win.10))
 -   [Exemples d’applications UWP qui utilisent DirectX](https://go.microsoft.com/fwlink/p/?LinkId=263603)
--   [Où se trouve le SDK DirectX ?](https://msdn.microsoft.com/library/windows/desktop/ee663275)
+-   [Où se trouve le SDK DirectX ?](https://docs.microsoft.com/windows/desktop/directx-sdk--august-2009-)
 
 ## <a name="giving-c-a-go"></a>Essayer C#
 

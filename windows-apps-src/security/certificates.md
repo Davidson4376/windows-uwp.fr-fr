@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, sécurité
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ee96628fd90ec9eea998abf312c5da11bff3826
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 28419df1a37ff640db7246b54e50da5bfce9fedb
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57624354"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372618"
 ---
 # <a name="intro-to-certificates"></a>Présentation de certificats
 
@@ -53,7 +53,7 @@ La norme de certificat de clé publique X.509 a été révisée au fil du temps.
 
 ![certificat x.509 versions 1, 2 et 3](images/x509certificateversions.png)
 
-Certains de ces champs et extensions peuvent être spécifiés directement lorsque vous utilisez la classe [**CertificateRequestProperties**](https://msdn.microsoft.com/library/windows/apps/br212079) pour créer une demande de certificat. La plupart ne peuvent pas. Ces champs peuvent être complétés par l’autorité émettrice ou rester vides. Pour plus d’informations sur les champs, voir les sections suivantes :
+Certains de ces champs et extensions peuvent être spécifiés directement lorsque vous utilisez la classe [**CertificateRequestProperties**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Certificates.CertificateRequestProperties) pour créer une demande de certificat. La plupart ne peuvent pas. Ces champs peuvent être complétés par l’autorité émettrice ou rester vides. Pour plus d’informations sur les champs, voir les sections suivantes :
 
 ### <a name="version-1-fields"></a>Champs version 1
 
@@ -64,7 +64,7 @@ Certains de ces champs et extensions peuvent être spécifiés directement lorsq
 | Algorithme de signature | Contient un identificateur d’objet (OID) qui indique l’algorithme utilisé par l’autorité de certification pour signer le certificat. Par exemple, 1.2.840.113549.1.1.5 indique un algorithme de hachage SHA-1 associé à l’algorithme de chiffrement RSA de RSA Laboratories. |
 | Émetteur | Contient le nom unique X.500 de l’autorité de certification qui a créé et signé le certificat. |
 | Validité | Indique l’intervalle de temps pendant lequel le certificat est valable. Les dates jusqu’à fin 2049 utilisent le format UTC (temps universel coordonné) (Heure de Greenwich) (yymmddhhmmssz). Les dates à partir du 1er janvier 2050 utilisent le format de temps généralisé (yyyymmddhhmmssz). |
-| Objet | Contient le nom unique X.500 de l’entité associée à la clé publique incluse dans le certificat. |
+| Subject | Contient le nom unique X.500 de l’entité associée à la clé publique incluse dans le certificat. |
 | Clé publique | Contient la clé publique et des informations sur l’algorithme associé. |
 
 ### <a name="version-2-fields"></a>Champs version 2

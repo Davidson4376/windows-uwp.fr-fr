@@ -7,19 +7,19 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c55a12dfa7757a48874b6857c95af592e818c2b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 25ee9960e55100eaf743d73d7007e9bcf51342ee
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57590764"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370723"
 ---
 # <a name="bc7-format"></a>Format BC7
 
 
 Le format BC7 est un format de compression de texture utilisé pour compresser des données RVB et RVBA en haute qualité.
 
-Pour plus d’informations sur les modes bloc du format BC7, consultez [Référence des modes de format BC7](https://msdn.microsoft.com/library/windows/desktop/hh308954).
+Pour plus d’informations sur les modes bloc du format BC7, consultez [Référence des modes de format BC7](https://docs.microsoft.com/windows/desktop/direct3d11/bc7-format-mode-reference).
 
 ## <a name="span-idabout-bc7-dxgi-format-bc7spanspan-idabout-bc7-dxgi-format-bc7spanspan-idabout-bc7-dxgi-format-bc7spanabout-bc7dxgiformatbc7"></a><span id="About-BC7-DXGI-FORMAT-BC7"></span><span id="about-bc7-dxgi-format-bc7"></span><span id="ABOUT-BC7-DXGI-FORMAT-BC7"></span>À propos de BC7/DXGI\_FORMAT\_BC7
 
@@ -30,7 +30,7 @@ BC7 est spécifié par le suivant DXGI\_valeurs d’énumération de FORMAT :
 -   **DXGI\_FORMAT\_BC7\_UNORM**.
 -   **DXGI\_FORMAT\_BC7\_UNORM\_SRVB**.
 
-Le format BC7 peut être utilisé pour les ressources de texture [Texture2D](https://msdn.microsoft.com/library/windows/desktop/bb205277) (y compris les tableaux), Texture3D ou TextureCube (y compris les tableaux). De même, ce format s’applique à toutes les surfaces de carte MIP associées à ces ressources.
+Le format BC7 peut être utilisé pour les ressources de texture [Texture2D](https://docs.microsoft.com/windows/desktop/direct3d10/d3d10-graphics-reference-resource-structures) (y compris les tableaux), Texture3D ou TextureCube (y compris les tableaux). De même, ce format s’applique à toutes les surfaces de carte MIP associées à ces ressources.
 
 BC7 utilise une taille de bloc fixe de 16 octets (128 bits) et une taille de vignette fixe de 4 x 4 texels. Comme pour les formats BC précédents, les images de texture d'une taille supérieure à la taille de vignette prise en charge (4 x 4) sont compressées à l’aide de plusieurs blocs. Cette identité d’adressage s’applique également aux images 3D, aux cartes MIP, aux cartes de cube et aux tableaux de textures. Toutes les vignettes de l’image doivent être au même format.
 
@@ -57,9 +57,9 @@ Le tableau suivant répertorie les composants de chaque type de bloc.
 
 | Le bloc BC7 contient...     | bits de mode | bits de rotation | bit de sélecteur d’index | bits de partition | points de terminaison compressés | bit P    | index compressés |
 |---------------------------|-----------|---------------|--------------------|----------------|----------------------|----------|--------------------|
-| composants de couleur uniquement     | obligatoire  | Non applicable           | Non applicable                | obligatoire       | obligatoire             | facultatif | obligatoire           |
-| couleur + alpha combinés    | obligatoire  | Non applicable           | Non applicable                | facultatif       | obligatoire             | facultatif | obligatoire           |
-| couleur et alpha distincts | obligatoire  | obligatoire      | facultatif           | Non applicable            | obligatoire             | Non applicable      | obligatoire           |
+| composants de couleur uniquement     | obligatoire  | N/A           | N/A                | obligatoire       | obligatoire             | facultatif | obligatoire           |
+| couleur + alpha combinés    | obligatoire  | N/A           | N/A                | facultatif       | obligatoire             | facultatif | obligatoire           |
+| couleur et alpha distincts | obligatoire  | obligatoire      | facultatif           | N/A            | obligatoire             | N/A      | obligatoire           |
 
  
 

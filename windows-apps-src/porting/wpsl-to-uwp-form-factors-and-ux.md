@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9efa6cae8994c12ce742aac0a6301346d6eae0d1
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: efd024838194876532dc3a1925f9c43430513cda
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57622064"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370736"
 ---
 #  <a name="porting-windowsphone-silverlight-to-uwp-for-form-factor-and-ux"></a>Portage de Silverlight de Windows Phone vers UWP pour le facteur de forme et l’expérience utilisateur
 
@@ -48,15 +48,15 @@ Nous avons décrit les facteurs qui entrent en jeu dans une connaissance approfo
 
 La version mobile de l’application propose uniquement une orientation en mode portrait, car cette dernière offre les meilleures proportions pour afficher la liste de livres. Nous procéderions de même pour afficher une page de texte, qui apparaît mieux sous la forme d’une colonne unique sur les appareils mobiles. Or, un écran de PC ou de tablette est plus grand, quelle que soit l’orientation. Sur ces types d’appareil, les limitations associées aux écrans d’appareils mobiles semblent donc inutiles.
 
-Si vous exécutez un zoom optique sur l’application afin que le contenu s’affiche comme sur un appareil mobile (en plus gros caractères), vous ne tirez pas parti des avantages proposés par l’appareil, ni de l’espace supplémentaire qu’il offre. Par ailleurs, cela ne sert pas les intérêts de l’utilisateur. Nous devons penser à afficher davantage de contenu, plutôt que le même contenu en plus gros caractères. Même sur une phablette, nous pourrions afficher davantage de lignes de contenu. Ainsi, nous pourrions exploiter l’espace supplémentaire afin d’afficher d’autres contenus (comme des publicités), ou nous pourrions remplacer la zone de liste par une vue de liste, qui pourrait placer les éléments dans plusieurs colonnes (si possible) afin de valoriser l’espace. Voir [Recommandations en matière de contrôles d’affichages de liste et d’affichages de grille](https://msdn.microsoft.com/library/windows/apps/mt186889).
+Si vous exécutez un zoom optique sur l’application afin que le contenu s’affiche comme sur un appareil mobile (en plus gros caractères), vous ne tirez pas parti des avantages proposés par l’appareil, ni de l’espace supplémentaire qu’il offre. Par ailleurs, cela ne sert pas les intérêts de l’utilisateur. Nous devons penser à afficher davantage de contenu, plutôt que le même contenu en plus gros caractères. Même sur une phablette, nous pourrions afficher davantage de lignes de contenu. Ainsi, nous pourrions exploiter l’espace supplémentaire afin d’afficher d’autres contenus (comme des publicités), ou nous pourrions remplacer la zone de liste par une vue de liste, qui pourrait placer les éléments dans plusieurs colonnes (si possible) afin de valoriser l’espace. Voir [Recommandations en matière de contrôles d’affichages de liste et d’affichages de grille](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists).
 
-En plus de nouveaux contrôles tels que la vue liste et l’affichage de grille, la plupart des types de disposition établie à partir de Windows Phone Silverlight ont des équivalents dans la plateforme Windows universelle (UWP). Exemples : [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267), [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) et [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635). Le portage de la majorité des fonctions de l’interface utilisateur qui utilisent ces types doit être clair. Toutefois, recherchez toujours d’autres méthodes pour tirer parti des fonctions de disposition dynamiques de ces panneaux de disposition, afin de proposer le redimensionnement et la redisposition automatiques sur les appareils de tailles différentes.
+En plus de nouveaux contrôles tels que la vue liste et l’affichage de grille, la plupart des types de disposition établie à partir de Windows Phone Silverlight ont des équivalents dans la plateforme Windows universelle (UWP). Exemples : [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas), [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) et [**StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel). Le portage de la majorité des fonctions de l’interface utilisateur qui utilisent ces types doit être clair. Toutefois, recherchez toujours d’autres méthodes pour tirer parti des fonctions de disposition dynamiques de ces panneaux de disposition, afin de proposer le redimensionnement et la redisposition automatiques sur les appareils de tailles différentes.
 
 Au-delà de la disposition dynamique intégrée aux contrôles du système et des panneaux de disposition, nous pouvons utiliser une nouvelle fonctionnalité de Windows 10 appelée [ADAPTATIF Gestionnaire d’état visuel](wpsl-to-uwp-porting-xaml-and-ui.md).
 
 ## <a name="input-modalities"></a>Modalités d’entrée
 
-Une interface de Windows Phone Silverlight est tactile spécifique. L’interface de votre application portée doit évidemment proposer des interactions tactiles ; toutefois, vous avez la possibilité de proposer d’autres modalités d’entrée, comme des interactions par le biais d’un clavier et d’une souris. Dans UWP, les entrées effectuées à l’aide d’une souris, d’un stylet et de fonctions tactiles sont regroupées en une seule catégorie : les *entrées de pointeur*. Pour en savoir plus, voir [Gérer les entrées du pointeur](https://msdn.microsoft.com/library/windows/apps/mt404610) et [Interactions avec le clavier](https://msdn.microsoft.com/library/windows/apps/mt185607).
+Une interface de Windows Phone Silverlight est tactile spécifique. L’interface de votre application portée doit évidemment proposer des interactions tactiles ; toutefois, vous avez la possibilité de proposer d’autres modalités d’entrée, comme des interactions par le biais d’un clavier et d’une souris. Dans UWP, les entrées effectuées à l’aide d’une souris, d’un stylet et de fonctions tactiles sont regroupées en une seule catégorie : les *entrées de pointeur*. Pour en savoir plus, voir [Gérer les entrées du pointeur](https://docs.microsoft.com/windows/uwp/input-and-devices/handle-pointer-input) et [Interactions avec le clavier](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions).
 
 ## <a name="maximizing-markup-and-code-re-use"></a>Valorisation de la réutilisation du code et du balisage
 
@@ -65,8 +65,8 @@ Reportez-vous à la liste [Valorisation de la réutilisation du code et du balis
 ## <a name="more-info-and-design-guidelines"></a>Informations supplémentaires et recommandations de conception
 
 -   [Concevoir des applications UWP](https://developer.microsoft.com/en-us/windows/apps/design)
--   [Règles relatives aux polices](https://msdn.microsoft.com/library/windows/apps/hh700394)
--   [Plan de différents facteurs de forme](https://msdn.microsoft.com/library/windows/apps/dn958435)
+-   [Règles relatives aux polices](https://docs.microsoft.com/windows/uwp/controls-and-patterns/fonts)
+-   [Plan de différents facteurs de forme](https://docs.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design)
 
 ## <a name="related-topics"></a>Rubriques connexes
 

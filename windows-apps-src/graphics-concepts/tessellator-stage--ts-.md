@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 7768d63405281d3155affc6c9f09c62568761718
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b8960d9723460fcbb8cec71da0998958cac8a6e8
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57607394"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370943"
 ---
 # <a name="tessellator-ts-stage"></a>Étape Tessellator (TS)
 
@@ -52,7 +52,7 @@ Avantages du pavage :
 
 Le pipeline graphique Direct3D implémente le pavage en fonction du matériel, qui transfère le travail de l’unité centrale vers le GPU. Cela peut contribuer à améliorer largement les performances si une application met en œuvre un grand nombre de cibles de morphing et/ou des modèles d'apparence/de déformation plus sophistiqués.
 
-Le tessellator est une étape à fonctions fixes initialisée en liant un [nuanceur de coque](hull-shader-stage--hs-.md) au pipeline. (consultez [How To : Initialiser l’étape du Paveur](https://msdn.microsoft.com/library/windows/desktop/ff476341)). L’objectif de l’étape tessellator consiste à subdiviser un domaine (quad, tri ou ligne) dans un grand nombre d’objets plus petit (triangles, points ou lignes). Le tessellator permet de décomposer un domaine canonique est un système coordonné normalisé (de zéro à un). Par exemple, un domaine quad est fractionné en carré-unité.
+Le tessellator est une étape à fonctions fixes initialisée en liant un [nuanceur de coque](hull-shader-stage--hs-.md) au pipeline. (consultez [How To : Initialiser l’étape du Paveur](https://docs.microsoft.com/windows/desktop/direct3d11/direct3d-11-advanced-stages-tessellator-initialize)). L’objectif de l’étape tessellator consiste à subdiviser un domaine (quad, tri ou ligne) dans un grand nombre d’objets plus petit (triangles, points ou lignes). Le tessellator permet de décomposer un domaine canonique est un système coordonné normalisé (de zéro à un). Par exemple, un domaine quad est fractionné en carré-unité.
 
 ### <a name="span-idphasesinthetessellatortsstagespanspan-idphasesinthetessellatortsstagespanspan-idphasesinthetessellatortsstagespanphases-in-the-tessellator-ts-stage"></a><span id="Phases_in_the_Tessellator__TS__stage"></span><span id="phases_in_the_tessellator__ts__stage"></span><span id="PHASES_IN_THE_TESSELLATOR__TS__STAGE"></span>Phases dans l’étape du Paveur (TS)
 
@@ -63,7 +63,7 @@ L’étape Tessellator (TS) se compose de deux phases :
 
     | Type de partitionnement | Plage                       |
     |----------------------|-----------------------------|
-    | Fractions de seconde\_impair      | \[1... 63\]                  |
+    | Fractions de seconde\_impair      | \[1...63\]                  |
     | Fractions de seconde\_même     | Plage de TessFactor : \[2..64\] |
     | Entier              | Plage de TessFactor : \[1..64\] |
     | Pow2                 | Plage de TessFactor : \[1..64\] |

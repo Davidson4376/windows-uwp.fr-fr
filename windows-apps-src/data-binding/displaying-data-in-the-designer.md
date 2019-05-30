@@ -6,19 +6,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c72af86edd3d0a20ab8a0f062b5e0ccf8608e8a9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 6e7b3cd9185e64d701571532d0b632c270476492
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653434"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362561"
 ---
 <a name="sample-data-on-the-design-surface-and-for-prototyping"></a>Exemples de données sur l’aire de conception et pour la création d’un prototype
 =============================================================================================
 
 
 
-**Remarque**  le degré auquel vous avez besoin d’exemples de données, et combien il vous aidera, varie selon que vos liaisons utilisent le [extension de balisage {Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) ou le [extension de balisage {x : Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783). Les techniques décrites dans cette rubrique sont basées sur l’utilisation d’une [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713), afin qu’elles soient appropriées uniquement pour **{Binding}**. Si vous utilisez **{x:Bind}**, vos liaisons affichent au moins les valeurs d’espace réservé sur la surface de conception (même pour les contrôles d’éléments), si bien que vous n’avez pas tout à fait le même besoin d’exemples de données.
+**Remarque**  le degré auquel vous avez besoin d’exemples de données, et combien il vous aidera, varie selon que vos liaisons utilisent le [extension de balisage {Binding}](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension) ou le [extension de balisage {x : Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension). Les techniques décrites dans cette rubrique sont basées sur l’utilisation d’une [**DataContext**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext), afin qu’elles soient appropriées uniquement pour **{Binding}** . Si vous utilisez **{x:Bind}** , vos liaisons affichent au moins les valeurs d’espace réservé sur la surface de conception (même pour les contrôles d’éléments), si bien que vous n’avez pas tout à fait le même besoin d’exemples de données.
 
 Il peut être impossible ou non souhaitable (peut-être pour des raisons de confidentialité ou de performances) pour votre application d’afficher des données actives sur la surface de conception dans Microsoft Visual Studio ou Blend pour Visual Studio. Pour que vos contrôles soient remplis avec les données (de sorte que vous puissiez travailler sur la disposition de votre application, les modèles et les autres propriétés visuelles), vous pouvez utiliser vos exemples de données au moment de la conception de diverses manières. Les exemples de données peuvent également être vraiment utiles et permettre de gagner du temps si vous créez une application de croquis (ou de prototype). Vous pouvez utiliser des exemples de données dans votre croquis ou prototype au moment de l’exécution pour illustrer vos idées sans avoir à vous connecter aux données actives/réelles.
 
@@ -30,7 +30,7 @@ Il peut être impossible ou non souhaitable (peut-être pour des raisons de conf
 <a name="setting-datacontext-in-markup"></a>Configuration de DataContext dans le balisage
 -----------------------------
 
-Il est assez courant pour un développeur d’utiliser le code impératif (en code-behind) pour définir la propriété [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) d’un contrôle utilisateur ou de page pour afficher une instance de modèle.
+Il est assez courant pour un développeur d’utiliser le code impératif (en code-behind) pour définir la propriété [**DataContext**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext) d’un contrôle utilisateur ou de page pour afficher une instance de modèle.
 
 ``` csharp
 public MainPage()
@@ -44,7 +44,7 @@ En procédant ainsi, votre page n’est plus aussi « configurable » qu’ell
 
 ![Interface utilisateur de conception partiellement allouée.](images/displaying-data-in-the-designer-01.png)
 
-La première solution à essayer consiste à commenter l’affectation de cette propriété **DataContext** et définir **DataContext** plutôt dans le balisage de la page. Ainsi, vos données actives s’affichent au moment de la conception et de l’exécution. Pour ce faire, ouvrez d’abord votre page XAML. Ensuite, dans le **structure du Document** fenêtre, cliquez sur l’élément concevable racine (généralement avec l’étiquette  **\[Page\]**) pour le sélectionner. Dans la fenêtre **Propriétés**, recherchez la propriété **DataContext** (à l’intérieur de la catégorie Common), puis cliquez sur **Nouveau**. Cliquez sur le type de modèle de vue à partir de la boîte de dialogue **Sélectionner un objet**, puis cliquez sur **OK**.
+La première solution à essayer consiste à commenter l’affectation de cette propriété **DataContext** et définir **DataContext** plutôt dans le balisage de la page. Ainsi, vos données actives s’affichent au moment de la conception et de l’exécution. Pour ce faire, ouvrez d’abord votre page XAML. Ensuite, dans le **structure du Document** fenêtre, cliquez sur l’élément concevable racine (généralement avec l’étiquette  **\[Page\]** ) pour le sélectionner. Dans la fenêtre **Propriétés**, recherchez la propriété **DataContext** (à l’intérieur de la catégorie Common), puis cliquez sur **Nouveau**. Cliquez sur le type de modèle de vue à partir de la boîte de dialogue **Sélectionner un objet**, puis cliquez sur **OK**.
 
 ![Interface utilisateur pour la configuration de DataContext.](images/displaying-data-in-the-designer-02.png)
 
@@ -81,7 +81,7 @@ Vous pourriez utiliser un localisateur de modèle d’affichage si vous avez bes
 
 Si pour une raison quelconque, aucune des options de la section précédente ne fonctionne, vous disposez encore d’un grand nombre d’options de données au moment de la conception disponibles à partir des fonctionnalités et des attributs au moment de la conception des outils XAML. **Créer un exemple de données à partir de la classe** est une fonctionnalité utile de Blend pour Visual Studio. Vous pouvez trouver cette commande sur l’un des boutons situés en haut du panneau **Données**.
 
-Il vous suffit de spécifier une classe pour la commande à utiliser. La commande effectue ensuite deux choses importantes pour vous. Tout d’abord, elle génère un fichier XAML qui contient des exemples de données adaptés à l’hydratation d’une instance de la classe choisie et de tous ses membres, de manière récursive (en fait, les outils fonctionnement aussi bien avec des fichiers XAML ou JSON). Ensuite, elle remplit le panneau **Données** avec le schéma de la classe choisie. Vous pouvez ensuite faire glisser des membres du panneau **Données** sur la surface de conception pour effectuer différentes tâches. En fonction des éléments que vous faites glisser et de l’endroit où vous les déposez, vous pouvez ajouter des liaisons à des contrôles existants (à l’aide de **{Binding}**), ou créer de nouveaux contrôles et les lier en même temps. Dans les deux cas, l’opération définit également pour vous un contexte de données au moment de la conception (**d:DataContext**) (s’il n’est pas déjà défini) à la racine de la disposition de votre page. Ce contexte de données au moment de la conception utilise l’attribut **d:DesignData** pour obtenir ses exemples de données à partir du fichier XAML généré (que, par ailleurs, vous êtes libre de rechercher dans votre projet et de modifier pour qu’il contienne l’exemple de données voulu).
+Il vous suffit de spécifier une classe pour la commande à utiliser. La commande effectue ensuite deux choses importantes pour vous. Tout d’abord, elle génère un fichier XAML qui contient des exemples de données adaptés à l’hydratation d’une instance de la classe choisie et de tous ses membres, de manière récursive (en fait, les outils fonctionnement aussi bien avec des fichiers XAML ou JSON). Ensuite, elle remplit le panneau **Données** avec le schéma de la classe choisie. Vous pouvez ensuite faire glisser des membres du panneau **Données** sur la surface de conception pour effectuer différentes tâches. En fonction des éléments que vous faites glisser et de l’endroit où vous les déposez, vous pouvez ajouter des liaisons à des contrôles existants (à l’aide de **{Binding}** ), ou créer de nouveaux contrôles et les lier en même temps. Dans les deux cas, l’opération définit également pour vous un contexte de données au moment de la conception (**d:DataContext**) (s’il n’est pas déjà défini) à la racine de la disposition de votre page. Ce contexte de données au moment de la conception utilise l’attribut **d:DesignData** pour obtenir ses exemples de données à partir du fichier XAML généré (que, par ailleurs, vous êtes libre de rechercher dans votre projet et de modifier pour qu’il contienne l’exemple de données voulu).
 
 ``` xaml
 <Page ...
@@ -95,11 +95,11 @@ Il vous suffit de spécifier une classe pour la commande à utiliser. La command
 </Page>
 ```
 
-Les diverses déclarations xmlns signifient que les attributs portant le préfixe **d:** sont interprétés seulement au moment de la conception et ignorées au moment de l’exécution. Ainsi, l’attribut **d:DataContext** affecte la valeur de la propriété [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) uniquement au moment de la conception ; il n’a aucun effet au moment de l’exécution. Vous pouvez même définir **d:DataContext** et **DataContext** dans le balisage, si vous le souhaitez. **d:DataContext** procédera au remplacement à la conception, et **DataContext** procédera au remplacement à l’exécution. Ces mêmes règles de substitution s’appliquent à tous les attributs au moment de la conception et de l’exécution.
+Les diverses déclarations xmlns signifient que les attributs portant le préfixe **d:** sont interprétés seulement au moment de la conception et ignorées au moment de l’exécution. Ainsi, l’attribut **d:DataContext** affecte la valeur de la propriété [**DataContext**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext) uniquement au moment de la conception ; il n’a aucun effet au moment de l’exécution. Vous pouvez même définir **d:DataContext** et **DataContext** dans le balisage, si vous le souhaitez. **d:DataContext** procédera au remplacement à la conception, et **DataContext** procédera au remplacement à l’exécution. Ces mêmes règles de substitution s’appliquent à tous les attributs au moment de la conception et de l’exécution.
 
 L’attribut **d:DataContext** et tous les autres attributs au moment de la conception, sont traités dans la rubrique [Attributs au moment de la conception](https://go.microsoft.com/fwlink/p/?LinkId=272504), qui est toujours valide pour les applications de plateforme Windows universelle (UWP).
 
-[**CollectionViewSource** ](https://msdn.microsoft.com/library/windows/apps/BR209833) n’a pas un **DataContext** , mais il n’est pas un **Source** propriété. Par conséquent, il existe une propriété **d:Source** que vous pouvez utiliser pour définir des exemples de données sur une classe **CollectionViewSource** uniquement au moment de la conception.
+[**CollectionViewSource** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) n’a pas un **DataContext** , mais il n’est pas un **Source** propriété. Par conséquent, il existe une propriété **d:Source** que vous pouvez utiliser pour définir des exemples de données sur une classe **CollectionViewSource** uniquement au moment de la conception.
 
 ``` xaml
     <Page.Resources>
@@ -148,6 +148,6 @@ Pour créer un prototype, vous voulez des exemples de données au moment de la c
 
 Au lieu de spécifier une classe, vous pouvez concevoir le schéma de votre source d’exemples de données directement dans le panneau **Données**. Vous pouvez également modifier les valeurs des exemples de données dans le panneau **Données** : il est inutile d’ouvrir et de modifier un fichier (bien que vous puissiez procéder ainsi si vous préférez).
 
-La fonctionnalité **Nouvel exemple de données** utilise [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713), et non **d:DataContext**, afin que l’exemple de données soit disponible lors de la conception et l’exécution de votre croquis ou prototype. Le panneau **Données** accélère vraiment vos tâches de conception et de liaison. Par exemple, le simple fait de glisser une propriété de collection à partir du panneau **Données** sur la surface de conception génère un contrôle d’éléments liés aux données et les modèles nécessaires, le tout prêt à être généré et exécuté.
+La fonctionnalité **Nouvel exemple de données** utilise [**DataContext**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext), et non **d:DataContext**, afin que l’exemple de données soit disponible lors de la conception et l’exécution de votre croquis ou prototype. Le panneau **Données** accélère vraiment vos tâches de conception et de liaison. Par exemple, le simple fait de glisser une propriété de collection à partir du panneau **Données** sur la surface de conception génère un contrôle d’éléments liés aux données et les modèles nécessaires, le tout prêt à être généré et exécuté.
 
 ![Exemple de données pour créer un prototype.](images/displaying-data-in-the-designer-04.png)

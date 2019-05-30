@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, API de soumission au Microsoft Store, créer une extension, produit in-app, PIA
 ms.localizationpriority: medium
-ms.openlocfilehash: b358eecd1799e76573cf6d254a80e7a7971bc123
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 00eb1a865631ce51cfa065d27ed00b44c66a6757
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334167"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371266"
 ---
 # <a name="create-an-add-on"></a>Créer une extension
 
@@ -38,7 +38,7 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 
 ### <a name="request-header"></a>En-tête de requête
 
-| Header        | Type   | Description                                                                 |
+| Header        | type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | chaîne | Obligatoire. Le jeton d’accès Azure AD sous la forme **PORTEUR** &lt; *jeton*&gt;. |
 
@@ -47,10 +47,10 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 
 Le corps de la requête contient les paramètres suivants.
 
-|  Paramètre  |  Type  |  Description  |  Obligatoire  |
+|  Paramètre  |  type  |  Description  |  Obligatoire  |
 |------|------|------|------|
 |  applicationIds  |  tableau  |  Tableau qui contient l’ID Windows Store de l’application à laquelle cette extension est associée. Un seul élément est pris en charge dans ce tableau.   |  Oui  |
-|  productId  |  chaîne  |  ID de produit de l’extension. Il s’agit d’un identificateur que vous pouvez utiliser dans le code pour faire référence à l’extension. Pour plus d’informations, consultez [Définir le type et l’ID de votre produit](https://msdn.microsoft.com/windows/uwp/publish/set-your-iap-product-id).  |  Oui  |
+|  productId  |  chaîne  |  ID de produit de l’extension. Il s’agit d’un identificateur que vous pouvez utiliser dans le code pour faire référence à l’extension. Pour plus d’informations, consultez [Définir le type et l’ID de votre produit](https://docs.microsoft.com/windows/uwp/publish/set-your-iap-product-id).  |  Oui  |
 |  productType  |  chaîne  |  Type de produit de l’extension. Les valeurs suivantes sont prises en charge : **Durable** et **consommable**.  |  Oui  |
 
 

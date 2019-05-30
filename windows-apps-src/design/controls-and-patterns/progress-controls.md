@@ -12,12 +12,12 @@ design-contact: jeffarn
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a162d992390e8fc7d05d52303ec292fcf8e920a9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a409c4b940ad0e194428981f536823d880e56302
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57634424"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364490"
 ---
 # <a name="progress-controls"></a>Contrôles de progression
 
@@ -25,7 +25,7 @@ ms.locfileid: "57634424"
 
 Un contrôle de progression offre un retour à l’utilisateur lorsqu’une longue opération est en cours. Cela peut signifier que l’utilisateur ne peut pas interagir avec l’application lorsque l’indicateur de progression est visible et peut également indiquer le temps d’attente en fonction de l’indicateur utilisé.
 
-> **API importantes** : [Classe ProgressBar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.aspx), [IsIndeterminate propriété](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.isindeterminate.aspx), [ProgressRing classe](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.aspx), [propriété IsActive](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.isactive.aspx)
+> **API importantes** : [Classe ProgressBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressBar), [IsIndeterminate propriété](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressbar.isindeterminate), [ProgressRing classe](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing), [propriété IsActive](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressring.isactive)
 
 ## <a name="types-of-progress"></a>Types de progression
 
@@ -65,7 +65,7 @@ De plus, un contrôle de progression est en lecture seule et n’est pas interac
 
 Il n’est pas toujours évident de savoir quel contrôle ou quel état (déterminé ou indéterminé) utiliser lorsque vous essayez d’indiquer que quelque chose se produit. Parfois, une tâche est suffisamment évidente pour ne pas nécessiter de contrôle de progression, et parfois, même si un contrôle de progression est utilisé, une ligne de texte reste nécessaire afin d’indiquer à l’utilisateur le type d’opération en cours.
 
-### <a name="progressbar"></a>ProgressBar
+### <a name="progressbar"></a>Barre de progression
 -   **Le contrôle a une durée définie ou la fin prévisible ?**
 
     Utilisez un contrôle ProgressBar déterminé et mettez à jour le pourcentage ou la valeur en conséquence.
@@ -74,7 +74,7 @@ Il n’est pas toujours évident de savoir quel contrôle ou quel état (déterm
 
     Lorsqu’un contrôle ProgressBar est en cours d’utilisation, l’interaction est non modale, ce qui signifie généralement que l’utilisateur n’est pas bloqué tant que cette opération n’est pas terminée et peut continuer à utiliser les autres fonctionnalités de l’application dans l’intervalle.
 
--   **Mots clés**
+-   **Keywords**
 
     Si vous pensez que votre fonctionnement tourne autour de ces mots-clés ou si vous affichez du texte au cours de la progression qui correspond aux mots-clés suivants, envisagez d’utiliser un contrôle ProgressBar :
 
@@ -92,7 +92,7 @@ Il n’est pas toujours évident de savoir quel contrôle ou quel état (déterm
 
     Si tel est le cas, utilisez un contrôle ProgressRing, censé indiquer une durée d’attente inconnue pour l’utilisateur.
 
--   **Mots clés**
+-   **Keywords**
 
     Si vous pensez que votre fonctionnement tourne autour de ces mots-clés ou si vous affichez du texte au cours de la progression qui correspond aux mots-clés suivants, envisagez d’utiliser un contrôle ProgressRing :
 
@@ -187,9 +187,9 @@ Window.Current.CoreWindow.PointerCursor = new Windows.UI.Core.CoreCursor(Windows
 
 ## <a name="related-articles"></a>Articles connexes
 
-- [Classe ProgressBar](https://msdn.microsoft.com/library/windows/apps/br227529)
-- [Classe de ProgressRing](https://msdn.microsoft.com/library/windows/apps/br227538)
+- [Classe ProgressBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressBar)
+- [Classe de ProgressRing](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing)
 
 **Pour les développeurs (XAML)**
-- [Ajout de contrôles de progression](https://msdn.microsoft.com/library/windows/apps/xaml/hh780651)
+- [Ajout de contrôles de progression](https://docs.microsoft.com/previous-versions/windows/apps/hh780651(v=win.10))
 - [Comment créer une barre de progression indéterminée personnalisé pour Windows Phone](https://go.microsoft.com/fwlink/p/?LinkID=392426)

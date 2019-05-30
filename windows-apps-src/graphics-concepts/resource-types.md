@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4138fd7275f7e1f9addb7685ff0846e756701003
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 9712b4498b03460568d20d4c8e27172ad5c14360
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57661984"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362206"
 ---
 # <a name="resource-types"></a>Types de ressource
 
@@ -34,7 +34,7 @@ Il existe deux façons de spécifier intégralement la disposition (ou l’encom
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><span id="Typed"></span><span id="typed"></span><span id="TYPED"></span>Typé</p></td>
+<td align="left"><p><span id="Typed"></span><span id="typed"></span><span id="TYPED"></span>Typed</p></td>
 <td align="left"><p>Spécifiez intégralement le type lors de la création de la ressource.</p></td>
 </tr>
 <tr class="even">
@@ -110,12 +110,12 @@ Chaque étape du nuanceur permet d’utiliser jusqu’à 15 mémoires tampons c
 
 Utilisez un tampon constant pour stocker les résultats de l’étape de sortie de flux.
 
-Consultez l’article [Constantes de nuanceur (DirectX HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509581) pour obtenir un exemple de déclaration de tampon constant dans un nuanceur.
+Consultez l’article [Constantes de nuanceur (DirectX HLSL)](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-constants) pour obtenir un exemple de déclaration de tampon constant dans un nuanceur.
 
 ## <a name="span-idtextureresourcesspanspan-idtextureresourcesspanspan-idtextureresourcesspanspan-idtexture-resourcesspantexture-resources"></a><span id="Texture_Resources"></span><span id="texture_resources"></span><span id="TEXTURE_RESOURCES"></span><span id="texture-resources"></span>Ressources de texture
 
 
-Une ressource de texture est un ensemble de données structuré conçu pour stocker des texels. Contrairement aux tampons, les textures peuvent être filtrées par échantillons de textures, car elles sont lues par des unités de nuanceur. Le type de texture a une incidence sur la façon dont la texture est filtrée. Un texel représente la plus petite unité de texture pouvant être lue ou écrite par le pipeline. Chaque texel contient 1 à 4 composants, organisés dans un des formats DXGI (consultez [ **DXGI\_FORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb173059)).
+Une ressource de texture est un ensemble de données structuré conçu pour stocker des texels. Contrairement aux tampons, les textures peuvent être filtrées par échantillons de textures, car elles sont lues par des unités de nuanceur. Le type de texture a une incidence sur la façon dont la texture est filtrée. Un texel représente la plus petite unité de texture pouvant être lue ou écrite par le pipeline. Chaque texel contient 1 à 4 composants, organisés dans un des formats DXGI (consultez [ **DXGI\_FORMAT**](https://docs.microsoft.com/windows/desktop/api/dxgiformat/ne-dxgiformat-dxgi_format)).
 
 Les textures sont créés en tant que ressource structurée, ce qui permet de connaître leur taille. Chaque texture peut toutefois être typée ou non typée au moment de la création de la ressource, dès lors que le type est intégralement spécifié à l’aide d’une vue lorsque la texture est liée au pipeline.
 

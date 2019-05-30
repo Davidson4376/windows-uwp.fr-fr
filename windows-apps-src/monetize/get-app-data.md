@@ -6,12 +6,12 @@ ms.date: 02/28/2018
 ms.topic: article
 keywords: windows 10, uwp, API de soumission au Microsoft Store, données d'app
 ms.localizationpriority: medium
-ms.openlocfilehash: 23e392e2064a2a48089d1efadd1461c146e0d343
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: cfbe8df46f51b41ccdd840f609caf2c593735e1f
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57598894"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372146"
 ---
 # <a name="get-app-data"></a>Obtenir des données d’application
 
@@ -26,7 +26,7 @@ Avant de pouvoir utiliser ces méthodes, l’application doit déjà exister dan
 | GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listinappproducts` | [Obtenir des modules complémentaires pour une application](get-add-ons-for-an-app.md)         |
 | GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listflights`       | [Obtenir les vols de package pour une application](get-flights-for-an-app.md) |
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission au Microsoft Store avant d’essayer d’utiliser l’une de ces méthodes.
 
@@ -62,17 +62,17 @@ Cette ressource représente une application inscrite dans votre compte.
 
 Cette ressource a les valeurs suivantes.
 
-| Valeur           | Type    | Description       |
+| Value           | type    | Description       |
 |-----------------|---------|---------------------|
-| id            | chaîne  | ID Windows Store de l’application. Pour plus d’informations sur l’ID Windows Store, voir [Visualiser les informations d’identité des applications](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).   |
+| id            | chaîne  | ID Windows Store de l’application. Pour plus d’informations sur l’ID Windows Store, voir [Visualiser les informations d’identité des applications](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details).   |
 | primaryName   | chaîne  | Nom principal de l’application.      |
 | packageFamilyName | chaîne  | Nom de la famille de packages de l’application.      |
 | packageIdentityName          | chaîne  | Nom de l’identité du package de l’application.                       |
-| publisherName       | chaîne  | ID de l’éditeur Windows associé à l’application. Cela correspond à la **/Identity/éditeur de Package** valeur qui apparaît sur le [identité de l’application](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details) page de l’application Centre de partenaires.       |
+| publisherName       | chaîne  | ID de l’éditeur Windows associé à l’application. Cela correspond à la **/Identity/éditeur de Package** valeur qui apparaît sur le [identité de l’application](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details) page de l’application Centre de partenaires.       |
 | firstPublishedDate      | chaîne  | Date de la première publication de l’application, au format ISO 8601.   |
 | lastPublishedApplicationSubmission       | objet | [Ressource de soumission](#submission_object) qui fournit des informations sur la dernière soumission publiée de l’application.    |
 | pendingApplicationSubmission        | objet  |  [Ressource de soumission](#submission_object) qui fournit des informations sur la soumission actuellement en attente pour l’application.   |   
-| hasAdvancedListingPermission        | booléen  |  Indique si vous pouvez configurer les valeurs [gamingOptions](manage-app-submissions.md#gaming-options-object) ou [trailers](manage-app-submissions.md#trailer-object) pour les soumissions de l’application. Cette valeur est vraie pour les soumissions créées après mai 2017. |  |
+| hasAdvancedListingPermission        | booléenne  |  Indique si vous pouvez configurer les valeurs [gamingOptions](manage-app-submissions.md#gaming-options-object) ou [trailers](manage-app-submissions.md#trailer-object) pour les soumissions de l’application. Cette valeur est vraie pour les soumissions créées après mai 2017. |  |
 
 
 <span id="add-on-object" />
@@ -89,7 +89,7 @@ Cette ressource fournit des informations sur une extension.
 
 Cette ressource a les valeurs suivantes.
 
-| Valeur           | Type    | Description         |
+| Value           | type    | Description         |
 |-----------------|---------|----------------------|
 | inAppProductId            | chaîne  | ID Windows Store de l’extension. Cette valeur est fournie par le Windows Store. Exemple d’ID Windows Store : 9NBLGGH4TNMP.   |
 
@@ -121,14 +121,14 @@ Cette ressource fournit des informations sur une version d’évaluation du pack
 
 Cette ressource a les valeurs suivantes.
 
-| Valeur           | Type    | Description           |
+| Value           | type    | Description           |
 |-----------------|---------|------------------------|
 | flightId            | chaîne  | ID de la version d’évaluation du package. Cette valeur est fournie par les partenaires.  |
 | friendlyName           | chaîne  | Nom de la version d’évaluation du package, tel que spécifié par le développeur.   |
 | lastPublishedFlightSubmission       | objet | [Ressource de soumission](#submission_object) qui fournit des informations sur la dernière soumission publiée de la version d’évaluation du package.   |
 | pendingFlightSubmission        | objet  |  [Ressource de soumission](#submission_object) qui fournit des informations sur la soumission actuellement en attente pour la version d’évaluation du package.  |    
-| groupIds           | tableau  | Tableau de chaînes qui contiennent les ID des groupes de versions d’évaluation associés à la version d’évaluation du package. Pour plus d’informations sur les groupes de versions d’évaluation, voir [Versions d’évaluation du package](https://msdn.microsoft.com/windows/uwp/publish/package-flights).   |
-| rankHigherThan           | chaîne  | Nom convivial de la version d’évaluation du package classée juste en dessous de la version d’évaluation du package actuelle. Pour plus d’informations sur le classement des groupes de versions d’évaluation, voir [Versions d’évaluation de package](https://msdn.microsoft.com/windows/uwp/publish/package-flights).  |
+| groupIds           | tableau  | Tableau de chaînes qui contiennent les ID des groupes de versions d’évaluation associés à la version d’évaluation du package. Pour plus d’informations sur les groupes de versions d’évaluation, voir [Versions d’évaluation du package](https://docs.microsoft.com/windows/uwp/publish/package-flights).   |
+| rankHigherThan           | chaîne  | Nom convivial de la version d’évaluation du package classée juste en dessous de la version d’évaluation du package actuelle. Pour plus d’informations sur le classement des groupes de versions d’évaluation, voir [Versions d’évaluation de package](https://docs.microsoft.com/windows/uwp/publish/package-flights).  |
 
 
 <span id="submission_object" />
@@ -148,7 +148,7 @@ Cette ressource fournit des informations sur une soumission. L’exemple suivant
 
 Cette ressource a les valeurs suivantes.
 
-| Valeur              | Type   | Description               |
+| Value              | type   | Description               |
 |--------------------|--------|---------------------------|
 | id                 | chaîne | ID de la soumission. |
 | resourceLocation   | chaîne | Chemin relatif à ajouter à l’URI de requête ```https://manage.devcenter.microsoft.com/v1.0/my/``` de base pour récupérer les données complètes de la soumission. |

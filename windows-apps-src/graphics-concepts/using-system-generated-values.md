@@ -7,17 +7,17 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 6efe7aa27721f519ba93052abf2d0e8189f58941
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 87d4be69d9a7869f5331d30225e93a22ad9e959c
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57622314"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371250"
 ---
 # <a name="span-iddirect3dconceptsusingsystem-generatedvaluesspanusing-system-generated-values"></a><span id="direct3dconcepts.using_system-generated_values"></span>À l’aide des valeurs générées par le système
 
 
-Les valeurs générées par le système sont produites par l'[étape d'assembleur d'entrée](input-assembler-stage--ia-.md) (reposant sur les [sémantiques](https://msdn.microsoft.com/library/windows/desktop/bb509647) d'entrée fournies par l'utilisateur) afin d'accroître l'efficacité des opérations du nuanceur. L’association des données, comme un ID d’instance (visible par l’[étape du nuanceur de vertex](vertex-shader-stage--vs-.md)), un ID de vertex (visible par le nuanceur de vertex) ou un ID de primitive (visible par l’[étape du nuanceur de vertex](geometry-shader-stage--gs-.md)/[du nuanceur de pixel](pixel-shader-stage--ps-.md)) permet à une étape ultérieure de nuanceur de rechercher ces valeurs système afin d’optimiser son traitement.
+Les valeurs générées par le système sont produites par l'[étape d'assembleur d'entrée](input-assembler-stage--ia-.md) (reposant sur les [sémantiques](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics) d'entrée fournies par l'utilisateur) afin d'accroître l'efficacité des opérations du nuanceur. L’association des données, comme un ID d’instance (visible par l’[étape du nuanceur de vertex](vertex-shader-stage--vs-.md)), un ID de vertex (visible par le nuanceur de vertex) ou un ID de primitive (visible par l’[étape du nuanceur de vertex](geometry-shader-stage--gs-.md)/[du nuanceur de pixel](pixel-shader-stage--ps-.md)) permet à une étape ultérieure de nuanceur de rechercher ces valeurs système afin d’optimiser son traitement.
 
 Par exemple, l’étape de Visual Studio peut rechercher l’ID d’instance pour récupérer les données de vertex supplémentaires pour le nuanceur ou pour effectuer d’autres opérations ; les étapes GS et PS peuvent utiliser l’ID de primitive pour récupérer des données par primitive de la même manière.
 
@@ -41,7 +41,7 @@ L'[étape Pixel Shader (PS)](pixel-shader-stage--ps-.md) ne dispose pas d'entré
 
 Il n’existe aucune prise en charge pour générer automatiquement un ID de primitive pour les primitives adjacentes. Pour les types de primitives avec voisinage (par exemple, une bande de triangles avec voisinage), un ID de primitive est conservé uniquement pour les primitives intérieures (les primitives non adjacentes), comme pour un ensemble des primitives dans une bande de triangles sans voisinage.
 
-## <a name="span-idinstanceidspanspan-idinstanceidspanspan-idinstanceidspaninstanceid"></a><span id="InstanceID"></span><span id="instanceid"></span><span id="INSTANCEID"></span>ID d’instance
+## <a name="span-idinstanceidspanspan-idinstanceidspanspan-idinstanceidspaninstanceid"></a><span id="InstanceID"></span><span id="instanceid"></span><span id="INSTANCEID"></span>InstanceID
 
 
 Un ID d’instance est utilisé par chaque étape du nuanceur pour identifier l’instance de la géométrie en cours de traitement. Il s'agit d'un entier non signé 32 bits dont la valeur par défaut est 0.
@@ -62,7 +62,7 @@ Les tableaux suivants indiquent les valeurs générées par le système pour l�
 | Données de vertex    | C,U | D,U | E,U | F,U | G,U | H,U | I,U | J,U | K,U | L,U |
 |----------------|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
 | **VertexID**   | 0   | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   | 9   |
-| **ID d’instance** | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   |
+| **InstanceID** | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   |
 
  
 
@@ -71,7 +71,7 @@ L'instance de bande de triangles U a 3 primitives de triangle, avec les valeurs
 |                 |     |     |     |
 |-----------------|-----|-----|-----|
 | **PrimitiveID** | 0   | 1   | 2   |
-| **ID d’instance**  | 0   | 0   | 0   |
+| **InstanceID**  | 0   | 0   | 0   |
 
  
 
@@ -80,7 +80,7 @@ Les tableaux suivants indiquent les valeurs générées par le système pour l�
 | Données de vertex    | C,V | D,V | E,V | F,V | G,V | H,V | I,V | J,V | K,V | L,V |
 |----------------|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
 | **VertexID**   | 0   | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   | 9   |
-| **ID d’instance** | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   |
+| **InstanceID** | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   |
 
  
 
@@ -89,7 +89,7 @@ L'instance de bande de triangles V a 3 primitives de triangle, avec les valeurs
 |                 |     |     |     |
 |-----------------|-----|-----|-----|
 | **PrimitiveID** | 0   | 1   | 2   |
-| **ID d’instance**  | 1   | 1   | 1   |
+| **InstanceID**  | 1   | 1   | 1   |
 
  
 

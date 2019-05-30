@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, API de soumission au Microsoft Store, lancement du package, soumission de version d’évaluation, finaliser
 ms.assetid: e4a645f6-1f00-4af5-80d6-d2ee179acc8a
 ms.localizationpriority: medium
-ms.openlocfilehash: c2864dae721d572ef9e340eddfed0149aa0b621f
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: c7a2d0c2f5ae938d10c1b82bd74da447b510afe7
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334647"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371791"
 ---
 # <a name="finalize-the-rollout-for-a-flight-submission"></a>Finalise le lancement d’une soumission de version d’évaluation du package
 
@@ -39,16 +39,16 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 
 ### <a name="request-header"></a>En-tête de requête
 
-| Header        | Type   | Description                                                                 |
+| Header        | type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | chaîne | Obligatoire. Le jeton d’accès Azure AD sous la forme **PORTEUR** &lt; *jeton*&gt;. |
 
 
 ### <a name="request-parameters"></a>Paramètres de la requête
 
-| Nom        | Type   | Description                                                                 |
+| Nom        | type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | chaîne | Obligatoire. ID Windows Store de l’application qui contient la soumission de version d’évaluation du package avec le lancement du package que vous voulez finaliser. Pour plus d’informations sur l’ID Windows Store, voir [Visualiser les informations d’identité des applications](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
+| applicationId | chaîne | Obligatoire. ID Windows Store de l’application qui contient la soumission de version d’évaluation du package avec le lancement du package que vous voulez finaliser. Pour plus d’informations sur l’ID Windows Store, voir [Visualiser les informations d’identité des applications](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
 | flightId | chaîne | Obligatoire. ID de la version d’évaluation du package contenant la soumission avec le lancement du package que vous voulez finaliser. Cet ID est disponible dans les données de réponse des requêtes pour [créer une version d’évaluation du package](create-a-flight.md) ou [obtenir des versions d’évaluation du package pour une application](get-flights-for-an-app.md). Pour un vol a été créé dans le centre de partenaires, cet ID est également disponible dans l’URL de la page de vol de partenaires. |
 | submissionId | chaîne | Obligatoire. ID de la soumission avec le lancement du package que vous voulez finaliser. Cet ID est disponible dans les données de réponse des requêtes pour [créer une soumission de version d’évaluation de package](create-a-flight-submission.md). Pour la soumission qui a été créée dans le centre de partenaires, cet ID est également disponible dans l’URL de la page d’envoi dans l’espace partenaires.  |
 

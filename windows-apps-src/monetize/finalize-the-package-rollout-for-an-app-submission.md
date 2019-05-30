@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, API de soumission au Microsoft Store, lancement du package, soumission d'application, finaliser
 ms.assetid: c7dd39e6-5162-455a-b03b-1ed76bffcf6e
 ms.localizationpriority: medium
-ms.openlocfilehash: 7271d5892c4abbe94945a34787fbbf6b020149da
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: bfab2a56c3b8c7508042091f16a33d45b3272106
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334557"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371776"
 ---
 # <a name="finalize-the-rollout-for-an-app-submission"></a>Finalise le lancement d’une soumission d’applications
 
@@ -38,16 +38,16 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 
 ### <a name="request-header"></a>En-tête de requête
 
-| Header        | Type   | Description                                                                 |
+| Header        | type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | chaîne | Obligatoire. Le jeton d’accès Azure AD sous la forme **PORTEUR** &lt; *jeton*&gt;. |
 
 
 ### <a name="request-parameters"></a>Paramètres de la requête
 
-| Nom        | Type   | Description                                                                 |
+| Nom        | type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | chaîne | Obligatoire. ID Windows Store de l’application qui contient la soumission avec le lancementdu package que vous voulez finaliser. Pour plus d’informations sur l’ID Windows Store, voir [Visualiser les informations d’identité des applications](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
+| applicationId | chaîne | Obligatoire. ID Windows Store de l’application qui contient la soumission avec le lancementdu package que vous voulez finaliser. Pour plus d’informations sur l’ID Windows Store, voir [Visualiser les informations d’identité des applications](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
 | submissionId | chaîne | Obligatoire. ID de la soumission avec le lancement du package que vous voulez finaliser. Cet ID est disponible dans les données de réponse des requêtes pour [créer une soumission d’apps](create-an-app-submission.md). Pour la soumission qui a été créée dans le centre de partenaires, cet ID est également disponible dans l’URL de la page d’envoi dans l’espace partenaires.  |
 
 

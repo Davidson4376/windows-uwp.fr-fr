@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a0474345e21161e76fbfeebe0086e5d433b2d219
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a68623b0a61672426c9b6eef85cb7d1ddc990a19
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57607354"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370989"
 ---
 # <a name="mappings-are-into-a-tile-pool"></a>Mappages dans un pool de vignettes
 
@@ -31,13 +31,13 @@ Découvrons ensemble quel serait, dans le pire des cas, le besoin en stockage de
 
 Supposons que chacune des entrées de la table de page représente 64 bits.
 
-Pour la table des pages pire taille atteint pour une seule surface, étant donnée les limites de ressources dans Direct3D 11, supposons qu’une ressource de diffusion en continu est créée avec un format de 128 bits par élément (par exemple, float RVBA), par conséquent, une vignette de 64 Ko contient uniquement 4096 pixels. La valeur maximale prise en charge [ **Texture2DArray** ](https://msdn.microsoft.com/library/windows/desktop/ff471526) taille de 16384\*16384\*2048 (mais avec uniquement un mipmap unique) requièrent environ 1 Go de stockage dans la table des pages si entièrement remplie (à l’exclusion des mipmaps) à l’aide des entrées de table de 64 bits. Dans le pire des cas, l’ajout de mipmaps provoque l’accroissement du stockage de la table de page entièrement mappé d’environ un tiers ; il est alors d’environ 1,3 Go.
+Pour la table des pages pire taille atteint pour une seule surface, étant donnée les limites de ressources dans Direct3D 11, supposons qu’une ressource de diffusion en continu est créée avec un format de 128 bits par élément (par exemple, float RVBA), par conséquent, une vignette de 64 Ko contient uniquement 4096 pixels. La valeur maximale prise en charge [ **Texture2DArray** ](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2darray) taille de 16384\*16384\*2048 (mais avec uniquement un mipmap unique) requièrent environ 1 Go de stockage dans la table des pages si entièrement remplie (à l’exclusion des mipmaps) à l’aide des entrées de table de 64 bits. Dans le pire des cas, l’ajout de mipmaps provoque l’accroissement du stockage de la table de page entièrement mappé d’environ un tiers ; il est alors d’environ 1,3 Go.
 
 Dans cette configuration, vous aurez accès à environ 10 6 téraoctets de mémoire adressable. Toutefois, il peut exister une limite de quantité de mémoire adressable. Le cas échéant, ces volumes sont réduits, éventuellement autour d’un téraoctet.
 
-Un autre cas à prendre en compte est un seul [ **Texture2D** ](https://msdn.microsoft.com/library/windows/desktop/ff471525) diffusion en continu de la ressource de 16384\*16384 avec un format 32 bits par élément, y compris les mipmaps. L’espace requis pour une table de page entièrement renseignée sera d’environ 170 Ko, avec des entrées de table de 64 bits;
+Un autre cas à prendre en compte est un seul [ **Texture2D** ](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d) diffusion en continu de la ressource de 16384\*16384 avec un format 32 bits par élément, y compris les mipmaps. L’espace requis pour une table de page entièrement renseignée sera d’environ 170 Ko, avec des entrées de table de 64 bits;
 
-Enfin, considérons un exemple valorisant le format BC, par exemple BC7, avec 128 bits par vignette de 4x4 pixels. Un pixel comporte un octet. Un [ **Texture2DArray** ](https://msdn.microsoft.com/library/windows/desktop/ff471526) de 16384\*16384\*2048, y compris des mipmaps nécessiterait environ 85 Mo à remplir entièrement cette mémoire dans une table de pages. Cela n’est pas si mal, car cela permet à une ressource de diffusion en continu de couvrir 550 gigapixels (512 Go de mémoire dans ce cas).
+Enfin, considérons un exemple valorisant le format BC, par exemple BC7, avec 128 bits par vignette de 4x4 pixels. Un pixel comporte un octet. Un [ **Texture2DArray** ](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2darray) de 16384\*16384\*2048, y compris des mipmaps nécessiterait environ 85 Mo à remplir entièrement cette mémoire dans une table de pages. Cela n’est pas si mal, car cela permet à une ressource de diffusion en continu de couvrir 550 gigapixels (512 Go de mémoire dans ce cas).
 
 Dans la pratique, la définition de ces mappages intégraux est impossible, dans la mesure où la quantité de mémoire physique disponible est bien insuffisante pour des opérations de mappage et de référencement simultanées d’un tel volume. Cependant, avec un pool de vignettes, les applications pourraient opter pour la réutilisation des vignettes (prenons l’exemple simple de réutilisation d’une vignette de couleur noire pour les régions noires d’une image) via le pool de vignettes (mappages de table de page) comme outil pour la compression de mémoire.
 

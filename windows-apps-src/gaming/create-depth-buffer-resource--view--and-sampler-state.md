@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, jeux, direct3d, tampon de profondeur
 ms.localizationpriority: medium
-ms.openlocfilehash: f5ce1ec522a194111e175e41f82c4275cda4fbf5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: dfd45f620addcf7a3f6292ed2257bdfccc862cd3
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57613694"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368891"
 ---
 # <a name="create-depth-buffer-device-resources"></a>Créer des ressources de périphérique pour un tampon de profondeur
 
@@ -38,7 +38,7 @@ Notez que la création de ces ressources doit être incluse dans une routine de 
 ## <a name="check-feature-support"></a>Vérifier la prise en charge des fonctionnalités
 
 
-Avant de créer le mappage de profondeur, appelez le [ **CheckFeatureSupport** ](https://msdn.microsoft.com/library/windows/desktop/ff476497) méthode sur le périphérique Direct3D, demandez **D3D11\_fonctionnalité\_D3D9\_ Clichés instantanés\_prise en charge**et fournir un [ **D3D11\_fonctionnalité\_données\_D3D9\_ombre\_prise en charge** ](https://msdn.microsoft.com/library/windows/desktop/jj247569) structure.
+Avant de créer le mappage de profondeur, appelez le [ **CheckFeatureSupport** ](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkfeaturesupport) méthode sur le périphérique Direct3D, demandez **D3D11\_fonctionnalité\_D3D9\_ Clichés instantanés\_prise en charge**et fournir un [ **D3D11\_fonctionnalité\_données\_D3D9\_ombre\_prise en charge** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_feature_data_d3d9_shadow_support) structure.
 
 ```cpp
 D3D11_FEATURE_DATA_D3D9_SHADOW_SUPPORT isD3D9ShadowSupported;
@@ -82,7 +82,7 @@ HRESULT hr = pD3DDevice->CreateTexture2D(
     );
 ```
 
-Ensuite, créez les vues de ressource. Définissez la tranche MIP sur zéro dans la vue de profondeur/gabarit et les niveaux MIP sur 1 dans la vue de ressource du nuanceur. Les deux ont une dimension de texture de TEXTURE2D, et les deux doivent utiliser une mise en correspondance [ **DXGI\_FORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb173059).
+Ensuite, créez les vues de ressource. Définissez la tranche MIP sur zéro dans la vue de profondeur/gabarit et les niveaux MIP sur 1 dans la vue de ressource du nuanceur. Les deux ont une dimension de texture de TEXTURE2D, et les deux doivent utiliser une mise en correspondance [ **DXGI\_FORMAT**](https://docs.microsoft.com/windows/desktop/api/dxgiformat/ne-dxgiformat-dxgi_format).
 
 ```cpp
 D3D11_DEPTH_STENCIL_VIEW_DESC depthStencilViewDesc;

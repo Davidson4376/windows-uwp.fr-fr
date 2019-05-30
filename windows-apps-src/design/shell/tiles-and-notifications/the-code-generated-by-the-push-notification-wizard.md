@@ -7,12 +7,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ac5ca785eab39612bb3a9c6ccd58779c6241059
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: e30140a60906cb350940cc5ebd87347878845986
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57596864"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66365885"
 ---
 # <a name="code-generated-by-the-push-notification-wizard"></a>Code généré par l’Assistant Notification Push
  
@@ -216,20 +216,20 @@ La fonction sendNotifications envoie une seule notification sous forme d’une n
 
 Windows prend en charge les notifications qui ne sont pas des notifications Push. Pour obtenir des informations générales sur les notifications, voir [Choisir une méthode de remise de notification](choosing-a-notification-delivery-method.md).
 
-Les notifications toast sont faciles à utiliser. Vous pouvez retrouver un exemple dans le code du fichier Insert.js, dans la table du canal générée automatiquement. Si vous envisagez d’utiliser des notifications par vignette ou des notifications de badge, vous devez non seulement créer un modèle XML pour la vignette ou pour le badge, mais aussi spécifier l’encodage des informations empaquetées dans le modèle. Voir [Utilisation de vignettes, de badges et de notifications toast](https://msdn.microsoft.com/library/windows/apps/xaml/hh868259).
+Les notifications toast sont faciles à utiliser. Vous pouvez retrouver un exemple dans le code du fichier Insert.js, dans la table du canal générée automatiquement. Si vous envisagez d’utiliser des notifications par vignette ou des notifications de badge, vous devez non seulement créer un modèle XML pour la vignette ou pour le badge, mais aussi spécifier l’encodage des informations empaquetées dans le modèle. Voir [Utilisation de vignettes, de badges et de notifications toast](https://docs.microsoft.com/previous-versions/windows/apps/hh868259(v=win.10)).
 
 Dans la mesure où Windows répond aux notifications Push, il peut gérer la plupart de ces notifications quand l’application n’est pas en cours d’exécution. Par exemple, une notification Push peut avertir un utilisateur quand un nouveau message électronique est disponible, même si l’application de messagerie locale n’est pas en cours d’exécution. Windows gère les notifications toast en affichant un message, comme la première ligne d’un message texte. Windows gère les notifications par vignette ou les notifications de badge en mettant à jour la vignette dynamique d’une application de manière à refléter le nombre de nouveaux messages électroniques. De cette manière, vous pouvez inviter les utilisateurs de votre application à vérifier s’il existe de nouvelles informations. Votre application peut recevoir des notifications brutes quand elle est en cours d’exécution et vous pouvez les utiliser pour envoyer des données à votre application. Si votre application n’est pas en cours d’exécution, vous pouvez définir une tâche en arrière-plan pour surveiller les notifications Push.
 
-Utilisez les notifications Push conformément aux recommandations sur les applications de plateforme Windows universelle (UWP), car elles consomment les ressources de l’utilisateur et peuvent devenir gênantes si vous en abusez. Voir [Recommandations et liste de vérification sur les notifications Push](https://msdn.microsoft.com/library/windows/apps/hh761462).
+Utilisez les notifications Push conformément aux recommandations sur les applications de plateforme Windows universelle (UWP), car elles consomment les ressources de l’utilisateur et peuvent devenir gênantes si vous en abusez. Voir [Recommandations et liste de vérification sur les notifications Push](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview).
 
-Si vous mettez à jour des vignettes dynamiques avec des notifications Push, suivez également les recommandations énumérées dans [Recommandations et liste de vérification sur les vignettes et les badges](https://msdn.microsoft.com/library/windows/apps/hh465403).
+Si vous mettez à jour des vignettes dynamiques avec des notifications Push, suivez également les recommandations énumérées dans [Recommandations et liste de vérification sur les vignettes et les badges](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-creating-tiles).
 
 ## <a name="next-steps"></a>Étapes suivantes
 
 
 ### <a name="using-the-windows-push-notification-services-wns"></a>Utilisation des Services de notifications Push Windows (WNS)
 
-Vous pouvez appeler les Services de notifications Push Windows (WNS) directement si les services mobiles n’offrent pas suffisamment de flexibilité, si vous souhaitez écrire le code du serveur en C# ou Visual Basic, ou si vous disposez déjà d’un service cloud et souhaitez envoyer des notifications Push à partir de celui-ci. En appelant WNS directement, vous pouvez envoyer des notifications Push à partir de votre propre service cloud, par exemple un rôle de travail qui surveille des données à partir d’une base de données ou d’un autre service web. Votre service cloud doit s’authentifier auprès de WNS pour envoyer des notifications Push à vos applications. Voir [Comment s’authentifier auprès des services de notifications Push Windows (JavaScript)](https://msdn.microsoft.com/library/windows/apps/hh465407) ou [(C#/C++/VB)](https://msdn.microsoft.com/library/windows/apps/xaml/hh868206).
+Vous pouvez appeler les Services de notifications Push Windows (WNS) directement si les services mobiles n’offrent pas suffisamment de flexibilité, si vous souhaitez écrire le code du serveur en C# ou Visual Basic, ou si vous disposez déjà d’un service cloud et souhaitez envoyer des notifications Push à partir de celui-ci. En appelant WNS directement, vous pouvez envoyer des notifications Push à partir de votre propre service cloud, par exemple un rôle de travail qui surveille des données à partir d’une base de données ou d’un autre service web. Votre service cloud doit s’authentifier auprès de WNS pour envoyer des notifications Push à vos applications. Voir [Comment s’authentifier auprès des services de notifications Push Windows (JavaScript)](https://docs.microsoft.com/previous-versions/windows/apps/hh465407(v=win.10)) ou [(C#/C++/VB)](https://docs.microsoft.com/previous-versions/windows/apps/hh868206(v=win.10)).
 
 Vous pouvez également envoyer des notifications Push en exécutant une tâche planifiée dans votre service mobile. Voir [Planifier des travaux périodiques dans Mobile Services](https://go.microsoft.com/fwlink/p/?linkid=301694).
 
@@ -242,9 +242,9 @@ Vous pouvez également envoyer des notifications Push en exécutant une tâche p
 
 * [Vue d’ensemble des services de notifications Push Windows (WNS)](windows-push-notification-services--wns--overview.md)
 * [Vue d’ensemble des notifications brutes](raw-notification-overview.md)
-* [Connexion à Windows Azure Mobile Services (JavaScript)](https://msdn.microsoft.com/library/windows/apps/dn263160)
-* [Connexion à Windows Azure Mobile Services (C#/C+ c++ / VB)](https://msdn.microsoft.com/library/windows/apps/xaml/dn263175)
-* [Démarrage rapide : Ajout de notifications push pour un service mobile (JavaScript)](https://msdn.microsoft.com/library/windows/apps/dn263163)
+* [Connexion à Windows Azure Mobile Services (JavaScript)](https://docs.microsoft.com/previous-versions/windows/apps/dn263160(v=win.10))
+* [Connexion à Windows Azure Mobile Services (C#/C+ c++ / VB)](https://docs.microsoft.com/previous-versions/windows/apps/dn263175(v=win.10))
+* [Démarrage rapide : Ajout de notifications push pour un service mobile (JavaScript)](https://docs.microsoft.com/previous-versions/windows/apps/dn263163(v=win.10))
  
 
  

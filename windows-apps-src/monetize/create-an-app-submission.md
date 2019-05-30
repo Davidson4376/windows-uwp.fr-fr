@@ -6,12 +6,12 @@ ms.date: 07/10/2017
 ms.topic: article
 keywords: windows 10, uwp, API de soumission au Microsoft Store, créer une soumission d’apps
 ms.localizationpriority: medium
-ms.openlocfilehash: 5563b8281a713b57f98c48ae04153b19062f2f12
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: e899b203a21f8c29c9c95973871881cc618b5d55
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334937"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371220"
 ---
 # <a name="create-an-app-submission"></a>Créer une soumission d’applications
 
@@ -25,7 +25,7 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 
 * Si ce n’est pas déjà le cas, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission au Microsoft Store.
 * [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
-* Vérifiez que l’application a déjà fait l’objet d’au moins une soumission avec les informations de [classification par âge](https://msdn.microsoft.com/windows/uwp/publish/age-ratings) spécifiées.
+* Vérifiez que l’application a déjà fait l’objet d’au moins une soumission avec les informations de [classification par âge](https://docs.microsoft.com/windows/uwp/publish/age-ratings) spécifiées.
 
 ## <a name="request"></a>Demande
 
@@ -37,15 +37,15 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 
 ### <a name="request-header"></a>En-tête de requête
 
-| Header        | Type   | Description                                                                 |
+| Header        | type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | chaîne | Obligatoire. Le jeton d’accès Azure AD sous la forme **PORTEUR** &lt; *jeton*&gt;. |
 
 ### <a name="request-parameters"></a>Paramètres de la requête
 
-| Nom        | Type   | Description                                                                 |
+| Nom        | type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | chaîne | Obligatoire. ID Windows Store de l’application pour laquelle vous voulez mettre à jour une soumission. Pour plus d’informations sur l’ID Windows Store, voir [Visualiser les informations d’identité des applications](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
+| applicationId | chaîne | Obligatoire. ID Windows Store de l’application pour laquelle vous voulez mettre à jour une soumission. Pour plus d’informations sur l’ID Windows Store, voir [Visualiser les informations d’identité des applications](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
 
 ### <a name="request-body"></a>Corps de la requête
 

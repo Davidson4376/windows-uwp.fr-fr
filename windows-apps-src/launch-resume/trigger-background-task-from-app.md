@@ -5,12 +5,12 @@ ms.date: 07/06/2018
 ms.topic: article
 keywords: déclencheur de tâche en arrière-plan, tâche en arrière-plan
 ms.localizationpriority: medium
-ms.openlocfilehash: 02e4bf3d7977c9bdd675f264a37e608a5082ef4c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d5d163d36b51e414a403986d1fdd73db7925cc0b
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57608094"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371893"
 ---
 # <a name="trigger-a-background-task-from-within-your-app"></a>Déclencher une tâche en arrière-plan à partir de votre application
 
@@ -56,7 +56,7 @@ ApplicationTrigger ^ _AppTrigger = ref new ApplicationTrigger();
 
 Vous pouvez créer une condition de tâche en arrière-plan pour contrôler le moment où la tâche est exécutée. La tâche en arrière-plan ne démarrera pas tant que la condition spécifiée n’aura pas été satisfaite. Pour plus d’informations, consultez [Définir des conditions pour exécuter une tâche en arrière-plan](set-conditions-for-running-a-background-task.md).
 
-Dans cet exemple, la condition est définie sur **InternetAvailable** afin que, une fois déclenché, la tâche s’exécute uniquement une fois que l’accès à internet est disponible. Pour obtenir la liste des conditions possibles, voir [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835).
+Dans cet exemple, la condition est définie sur **InternetAvailable** afin que, une fois déclenché, la tâche s’exécute uniquement une fois que l’accès à internet est disponible. Pour obtenir la liste des conditions possibles, voir [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType).
 
 ```csharp
 SystemCondition internetCondition = new SystemCondition(SystemConditionType.InternetAvailable);
@@ -75,7 +75,7 @@ Pour des informations plus détaillées sur les conditions et les types de décl
 
 ##  <a name="call-requestaccessasync"></a>Appeler RequestAccessAsync()
 
-Avant d’inscrire la tâche en arrière-plan **ApplicationTrigger**, appelez [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700494) pour déterminer le niveau d’activité en arrière-plan que permet l’utilisateur, car l’utilisateur a peut-être désactivé l’activité en arrière-plan pour votre application. Consultez [Optimiser l’activité en arrière-plan](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity) pour plus d’informations sur les méthodes permettant aux utilisateurs de contrôler les paramètres de l’activité en arrière-plan.
+Avant d’inscrire la tâche en arrière-plan **ApplicationTrigger**, appelez [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) pour déterminer le niveau d’activité en arrière-plan que permet l’utilisateur, car l’utilisateur a peut-être désactivé l’activité en arrière-plan pour votre application. Consultez [Optimiser l’activité en arrière-plan](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity) pour plus d’informations sur les méthodes permettant aux utilisateurs de contrôler les paramètres de l’activité en arrière-plan.
 
 ```csharp
 var requestStatus = await Windows.ApplicationModel.Background.BackgroundExecutionManager.RequestAccessAsync();
@@ -132,9 +132,9 @@ var result = await _AppTrigger.RequestAsync();
 
 ## <a name="manage-resources-for-your-background-task"></a>Gérer les ressources pour votre tâche en arrière-plan
 
-Utilisez la méthode [BackgroundExecutionManager.RequestAccessAsync](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundexecutionmanager.aspx) pour déterminer si l’utilisateur a opté pour une activité limitée de votre application en arrière-plan. Tenez compte du taux d’utilisation de la batterie ; exécutez l’application en arrière-plan uniquement lorsqu’elle est nécessaire dans le cadre d’une action souhaitée par l’utilisateur. Consultez [Optimiser l’activité en arrière-plan](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity) pour plus d’informations sur les méthodes permettant aux utilisateurs de contrôler les paramètres de l’activité en arrière-plan.  
+Utilisez la méthode [BackgroundExecutionManager.RequestAccessAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager) pour déterminer si l’utilisateur a opté pour une activité limitée de votre application en arrière-plan. Tenez compte du taux d’utilisation de la batterie ; exécutez l’application en arrière-plan uniquement lorsqu’elle est nécessaire dans le cadre d’une action souhaitée par l’utilisateur. Consultez [Optimiser l’activité en arrière-plan](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity) pour plus d’informations sur les méthodes permettant aux utilisateurs de contrôler les paramètres de l’activité en arrière-plan.  
 
-- Mémoire : Le réglage d’utilisation de mémoire et d’énergie de votre application est indispensable pour garantir que le système d’exploitation permettra l’exécution de votre tâche en arrière-plan. Utilisez les [API de gestion de la mémoire](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.aspx) pour déterminer la quantité de mémoire utilisée par votre tâche en arrière-plan. Plus votre tâche en arrière-plan utilise de mémoire, plus le système d’exploitation a des difficultés à assurer son exécution lorsqu’une autre application se trouve au premier plan. L’utilisateur dispose d’un contrôle étroit sur l’ensemble des activités en arrière-plan que votre application peut exécuter, et bénéficie d’une visibilité étendue sur l’impact de cette dernière sur le taux d’utilisation de la batterie.  
+- Mémoire : Le réglage d’utilisation de mémoire et d’énergie de votre application est indispensable pour garantir que le système d’exploitation permettra l’exécution de votre tâche en arrière-plan. Utilisez les [API de gestion de la mémoire](https://docs.microsoft.com/uwp/api/windows.system.memorymanager) pour déterminer la quantité de mémoire utilisée par votre tâche en arrière-plan. Plus votre tâche en arrière-plan utilise de mémoire, plus le système d’exploitation a des difficultés à assurer son exécution lorsqu’une autre application se trouve au premier plan. L’utilisateur dispose d’un contrôle étroit sur l’ensemble des activités en arrière-plan que votre application peut exécuter, et bénéficie d’une visibilité étendue sur l’impact de cette dernière sur le taux d’utilisation de la batterie.  
 - Temps processeur : Tâches en arrière-plan sont limitées par la quantité de temps de l’utilisation d’horloge qu'elles obtient basées sur le type de déclencheur. Les tâches en arrière-plan déclenchées par le déclencheur d’application sont limitées à 10 minutes environ.
 
 Pour plus d’informations sur les contraintes de ressource appliquées aux tâches en arrière-plan, consultez [Prendre en charge votre application avec des tâches en arrière-plan](support-your-app-with-background-tasks.md).
@@ -143,7 +143,7 @@ Pour plus d’informations sur les contraintes de ressource appliquées aux tâc
 
 À compter de Windows 10, il n’est plus nécessaire pour l’utilisateur à ajouter votre application à l’écran de verrouillage pour pouvoir utiliser les tâches en arrière-plan.
 
-Une tâche en arrière-plan s’exécutera à l’aide d’un **ApplicationTrigger** uniquement si vous avez appelé [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485).
+Une tâche en arrière-plan s’exécutera à l’aide d’un **ApplicationTrigger** uniquement si vous avez appelé [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync).
 
 ## <a name="related-topics"></a>Rubriques connexes
 

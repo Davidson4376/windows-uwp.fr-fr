@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: df03c6f10f106868213fe812b2f303d7675c567b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 6850a5d2458c29c81bacc195106af697b37dd23b
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57626894"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359903"
 ---
 # <a name="test-with-the-microsoft-emulator-for-windows-10-mobile"></a>Tester à l’aide de l’émulateur Microsoft pour Windows 10 Mobile
 
@@ -41,7 +41,7 @@ Système d’exploitation
 -   64 bits
 -   Édition Professionnelle ou version supérieure
 
-Pour vérifier la configuration requise du BIOS, voir [Activation d’Hyper-V pour l’émulateur pour Windows Phone 8](https://msdn.microsoft.com/library/windows/apps/xaml/jj863509.aspx).
+Pour vérifier la configuration requise du BIOS, voir [Activation d’Hyper-V pour l’émulateur pour Windows Phone 8](https://docs.microsoft.com/previous-versions/windows/apps/jj863509(v=vs.105)).
 
 Pour vérifier la configuration requise en termes de RAM et de système d’exploitation, dans le Panneau de configuration, sélectionnez **Système et sécurité**, puis **Système**.
 
@@ -94,9 +94,9 @@ Outre les nouvelles fonctionnalités mentionnées dans la section précédente, 
 
     Sur l’émulateur en cours d’exécution, accédez à l’application **Paramètres**, sélectionnez les paramètres **système**, puis sélectionnez **langue** ou **région**. Modifiez les paramètres que vous voulez tester. Si vous y êtes invité, cliquez sur **redémarrer le téléphone** pour appliquer les nouveaux paramètres et redémarrer l’émulateur.
 
--   **Cycle de vie des applications et « tombstoning »**. Testez le comportement de votre application quand elle est désactivée ou « tombstoned » en modifiant la valeur de l’option **Tombstone sur désactivation lors du débogage** dans la page **Débogage** des propriétés du projet.
+-   **Cycle de vie des applications et « tombstoning »** . Testez le comportement de votre application quand elle est désactivée ou « tombstoned » en modifiant la valeur de l’option **Tombstone sur désactivation lors du débogage** dans la page **Débogage** des propriétés du projet.
 
--   **Stockage de dossiers local (précédemment appelé stockage isolé)**. Les données d’un stockage isolé sont conservées pendant que l’émulateur est en cours d’exécution, mais perdues une fois qu’il se ferme.
+-   **Stockage de dossiers local (précédemment appelé stockage isolé)** . Les données d’un stockage isolé sont conservées pendant que l’émulateur est en cours d’exécution, mais perdues une fois qu’il se ferme.
 
 -   **Microphone**. Nécessite et utilise le microphone de l’ordinateur hôte.
 
@@ -144,7 +144,7 @@ Le tableau suivant répertorie les touches d’un clavier matériel que vous pou
 
 Notez que dans l’émulateur build 10.0.14332, le mappage de clés matérielles de l’ordinateur a été modifié. Les valeurs dans la deuxième colonne du tableau ci-dessous représentent ces nouvelles clés. 
 
-Clés matérielles de l’ordinateur (émulateur build 10.0.14295 et versions antérieures) | Clés matérielles de l’ordinateur (émulateur build 10.0.14332 et versions antérieures) | Bouton matériel de Windows Phone | Remarques
+Clés matérielles de l’ordinateur (émulateur build 10.0.14295 et versions antérieures) | Clés matérielles de l’ordinateur (émulateur build 10.0.14332 et versions antérieures) | Bouton matériel de Windows Phone | Notes
 --------------------- | ------------------------- | ----------------------------- | -----
 F1 | WIN + ÉCHAP | RETOUR | Les pressions longues fonctionnent comme prévu.
 F2 | WIN + F2 | ÉCRAN D’ACCUEIL | Les pressions longues fonctionnent comme prévu.
@@ -155,7 +155,7 @@ F7 | WIN + F7 | APPAREIL PHOTO, COMPLET | Bouton d’appareil photo dédié.
 F9 | WIN + F9 | MONTER LE VOLUME | 
 F10 | WIN + F10 | BAISSER LE VOLUME | 
 F12 | WIN + F12 | ALIMENTATION | Appuyez sur la touche F12 à deux reprises pour activer l’écran de verrouillage. Les pressions longues fonctionnent comme prévu.
-ÉCHAP | WIN + ÉCHAP | RETOUR | Les pressions longues fonctionnent comme prévu.
+Échap | WIN + ÉCHAP | RETOUR | Les pressions longues fonctionnent comme prévu.
  
 
 
@@ -215,7 +215,7 @@ En utilisant le mode de proximité, vous pouvez injecter des messages comme s’
 -   NDEF:URI
 -   NDEF:wkt.U
 
-Vous pouvez créer ces messages en effectuant des modifications dans les fenêtres **Charge utile** ou en les fournissant dans un fichier. Pour plus d’informations sur ces types et sur leur utilisation, voir la section Remarques de la page de référence[**ProximityDevice.PublishBinaryMessage**](https://msdn.microsoft.com/library/windows/apps/Hh701129).
+Vous pouvez créer ces messages en effectuant des modifications dans les fenêtres **Charge utile** ou en les fournissant dans un fichier. Pour plus d’informations sur ces types et sur leur utilisation, voir la section Remarques de la page de référence[**ProximityDevice.PublishBinaryMessage**](https://docs.microsoft.com/uwp/api/windows.networking.proximity.proximitydevice.publishbinarymessage).
 
 Windows 8 Driver Kit (WDK) inclut un exemple de pilote présentant le même protocole que l’émulateur Windows Phone 8. Vous devez télécharger le DDK, créer cet exemple de pilote, l’installer sur un appareil Windows 8, ajouter l’adresse IP ou le nom d’hôte de l’appareil Windows 8 à la liste d’appareils, puis l’approcher d’un autre appareil Windows 8 ou d’un émulateur Windows Phone 8.
 
@@ -268,7 +268,7 @@ Vous trouverez ci-dessous une référence sur les fonctionnalités disponibles :
 
 ### <a name="smart-card-reader-mode"></a>Mode Lecteur de carte à puce
 
-L’émulateur peut être connecté à un lecteur de carte à puce sur votre ordinateur hôte, de sorte que les cartes à puce insérées ou approchées s’affichent dans l’application de votre téléphone et puissent communiquer avec des commandes APDU à l’aide de la classe [**Windows.Devices.SmartCards.SmartCardConnection**](https://msdn.microsoft.com/library/windows/apps/Dn608002). Pour cela, un lecteur de carte à puce compatible doit être connecté à votre ordinateur. Des lecteurs de carte à puce USB (NFC/sans contact et de type insertion/contact) sont largement disponibles sur le marché. Pour permettre à l’émulateur de fonctionner avec un lecteur de carte à puce connecté, vous devez d’abord choisir le mode **Lecteur de carte**. Dans ce mode, une zone de liste déroulante répertoriant tous les lecteurs de carte à puce compatibles connectés au système hôte s’affiche. Choisissez le lecteur de carte à puce à connecter dans la liste déroulante.
+L’émulateur peut être connecté à un lecteur de carte à puce sur votre ordinateur hôte, de sorte que les cartes à puce insérées ou approchées s’affichent dans l’application de votre téléphone et puissent communiquer avec des commandes APDU à l’aide de la classe [**Windows.Devices.SmartCards.SmartCardConnection**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardConnection). Pour cela, un lecteur de carte à puce compatible doit être connecté à votre ordinateur. Des lecteurs de carte à puce USB (NFC/sans contact et de type insertion/contact) sont largement disponibles sur le marché. Pour permettre à l’émulateur de fonctionner avec un lecteur de carte à puce connecté, vous devez d’abord choisir le mode **Lecteur de carte**. Dans ce mode, une zone de liste déroulante répertoriant tous les lecteurs de carte à puce compatibles connectés au système hôte s’affiche. Choisissez le lecteur de carte à puce à connecter dans la liste déroulante.
 
 Notez que certains lecteurs de carte à puce NFC ne prennent pas en charge les commandes APDU de carte de stockage PC/SC standard et certains types de cartes NFC.
 
@@ -319,7 +319,7 @@ Testez les applications qui utilisent la navigation ou le géorepérage à l’a
 
 Vous pouvez tester votre application tandis que vous simulez le déplacement d’un lieu vers un autre à différentes vitesses et selon différents profils de précision. Le simulateur d’emplacement peut vous aider à identifier les modifications de votre utilisation des API d’emplacement qui améliorent l’expérience utilisateur. Par exemple, l’outil peut vous permettre d’identifier que vous devez régler les paramètres de géorepérage, comme la taille ou la durée de résidence, pour détecter correctement les géorepérages des différents scénarios.
 
-L’onglet **Emplacement** prend en charge trois modes. Dans tous les modes, quand l’émulateur reçoit une nouvelle position, celle-ci est disponible pour déclencher l’événement [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/BR225540) ou pour répondre à un appel [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/Hh973536) de votre application de géolocalisation.
+L’onglet **Emplacement** prend en charge trois modes. Dans tous les modes, quand l’émulateur reçoit une nouvelle position, celle-ci est disponible pour déclencher l’événement [**PositionChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.positionchanged) ou pour répondre à un appel [**GetGeopositionAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync) de votre application de géolocalisation.
 
 -   Dans le mode **Punaise**, vous placez des punaises sur la carte. Lorsque vous cliquez sur **Lire tous les points**, le simulateur d’emplacement envoie l’emplacement de chaque punaise à l’émulateur l’un après l’autre, selon l’intervalle spécifié dans la zone de texte **Secondes par punaise**.
 
@@ -660,7 +660,7 @@ Pour trouver des réponses à vos questions et résoudre vos problèmes lorsque 
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Exécuter des applications de Windows Phone dans l’émulateur](https://msdn.microsoft.com/library/windows/apps/xaml/dn632391.aspx)
+* [Exécuter des applications de Windows Phone dans l’émulateur](https://docs.microsoft.com/visualstudio/debugger/run-windows-phone-apps-in-the-emulator?view=vs-2015)
 * [Archive du Kit de développement logiciel (SDK) Windows et Windows Phone](https://dev.windows.com/downloads/sdk-archive)
  
 

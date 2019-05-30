@@ -10,20 +10,20 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 5417a2cded6dab98747569acc4e6e92356361482
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d8e4a84b0e927be8e1b89e6189e80acd2d3e4266
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57595814"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371310"
 ---
 # <a name="monitor-background-task-progress-and-completion"></a>Surveiller la progression et l’achèvement des tâches en arrière-plan
 
 **API importantes**
 
-- [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786)
-- [**BackgroundTaskProgressEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224785)
-- [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781)
+- [**BackgroundTaskRegistration**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration)
+- [**BackgroundTaskProgressEventHandler**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskprogresseventhandler)
+- [**BackgroundTaskCompletedEventHandler**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskcompletedeventhandler)
 
 Découvrez comment votre application peut reconnaître la progression et l’achèvement signalés par une tâche en arrière-plan qui s’exécute hors processus. (Pour les tâches en arrière-plan in-process, vous pouvez définir des variables partagées pour signaler la progression et l’achèvement.)
 
@@ -34,7 +34,7 @@ La progression et l’achèvement des tâches en arrière-plan peuvent être sur
 ## <a name="create-an-event-handler-to-handle-completed-background-tasks"></a>Créer un gestionnaire d’événements pour gérer les tâches en arrière-plan achevées
 
 ### <a name="step-1"></a>Étape 1
-Créez une fonction de gestionnaire des événements pour gérer les tâches en arrière-plan achevées. Ce code doit suivre un encombrement spécifique, qui prend un [ **IBackgroundTaskRegistration** ](https://msdn.microsoft.com/library/windows/apps/br224803) objet et un [ **BackgroundTaskCompletedEventArgs** ](https://msdn.microsoft.com/library/windows/apps/br224778) objet.
+Créez une fonction de gestionnaire des événements pour gérer les tâches en arrière-plan achevées. Ce code doit suivre un encombrement spécifique, qui prend un [ **IBackgroundTaskRegistration** ](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskRegistration) objet et un [ **BackgroundTaskCompletedEventArgs** ](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskCompletedEventArgs) objet.
 
 Utiliser l’encombrement suivant pour le **OnCompleted** méthode de gestionnaire d’événements tâche d’arrière-plan.
 
@@ -92,7 +92,7 @@ auto completed = [this](BackgroundTaskRegistration^ task, BackgroundTaskComplete
 ## <a name="create-an-event-handler-function-to-handle-background-task-progress"></a>Créer une fonction de gestionnaire des événements pour gérer la progression des tâches en arrière-plan
 
 ### <a name="step-1"></a>Étape 1
-Créez une fonction de gestionnaire des événements pour gérer les tâches en arrière-plan achevées. Ce code doit suivre une empreinte spécifique, qui accepte un objet [**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224803) et un objet [**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782).
+Créez une fonction de gestionnaire des événements pour gérer les tâches en arrière-plan achevées. Ce code doit suivre une empreinte spécifique, qui accepte un objet [**IBackgroundTaskRegistration**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskRegistration) et un objet [**BackgroundTaskProgressEventArgs**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskProgressEventArgs).
 
 Utilisez l’empreinte suivante pour la méthode de gestionnaire des événements de tâche en arrière-plan OnProgress :
 
@@ -215,7 +215,7 @@ void SampleBackgroundTask::AttachProgressAndCompletedHandlers(IBackgroundTaskReg
 ```
 
 ### <a name="step-2"></a>Étape 2
-Lorsque l’application se lance ou accède à une nouvelle page dans laquelle l’état des tâches en arrière-plan est important, elle doit obtenir la liste des tâches en arrière-plan actuellement inscrites et les associer aux fonctions de gestionnaire des événements de progression et d’achèvement. Cette liste est conservée dans la propriété [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786).[**AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787).
+Lorsque l’application se lance ou accède à une nouvelle page dans laquelle l’état des tâches en arrière-plan est important, elle doit obtenir la liste des tâches en arrière-plan actuellement inscrites et les associer aux fonctions de gestionnaire des événements de progression et d’achèvement. Cette liste est conservée dans la propriété [**BackgroundTaskRegistration**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration).[**AllTasks**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.alltasks).
 
 Ainsi, l’[exemple de tâche en arrière-plan](https://go.microsoft.com/fwlink/p/?LinkId=618666) utilise le code suivant pour joindre les gestionnaires d’événements lorsque vous accédez à la page SampleBackgroundTask :
 

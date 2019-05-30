@@ -6,12 +6,12 @@ ms.date: 10/02/2018
 ms.topic: article
 keywords: windows 10, uwp, application de démonstration commerciale
 ms.localizationpriority: medium
-ms.openlocfilehash: 39b1323f048c1b420a2cf0b239cd9f1a9fb63ff7
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 4c9f31da8e2509c41715a13fbc0bb0322782340a
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334877"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366522"
 ---
 # <a name="add-retail-demo-rdx-features-to-your-app"></a>Ajouter des fonctionnalités de démonstration (RDX) de vente au détail à votre application
 
@@ -45,11 +45,11 @@ Cela peut être utilisé comme une liste de vérification pour vous aider à pr�
 
 Les applications prenant en charge les RDX qui ne répondent pas à ces exigences critiques seront supprimées de tous les appareils de démonstration de vente au détail dès que possible.
 
-* **Ne pas demander d’informations d’identification personnelle (PII)**. Cela inclut les informations de connexion, les informations de compte Microsoft ou contact détails.
+* **Ne pas demander d’informations d’identification personnelle (PII)** . Cela inclut les informations de connexion, les informations de compte Microsoft ou contact détails.
 
 * **Expérience sans erreur**. Votre application doit s’exécuter sans erreur. En outre, aucune fenêtre ou notification d’erreur ne doit s’afficher lorsque les clients utilisent les appareils de démonstration commerciale. Erreurs reflètent avoir un impact négatif sur l’application elle-même, votre marque, marque de l’appareil, marque du fabricant du périphérique et les marque de Microsoft.
 
-* **Applications payantes doivent avoir un mode d’évaluation**. Votre application doit soit être gratuit ou inclure un [mode d’évaluation](https://msdn.microsoft.com/windows/uwp/monetize/exclude-or-limit-features-in-a-trial-version-of-your-app). Les clients ne souhaitent pas payer pour une expérience en magasin.
+* **Applications payantes doivent avoir un mode d’évaluation**. Votre application doit soit être gratuit ou inclure un [mode d’évaluation](https://docs.microsoft.com/windows/uwp/monetize/exclude-or-limit-features-in-a-trial-version-of-your-app). Les clients ne souhaitent pas payer pour une expérience en magasin.
 
 ### <a name="high-priority-requirements"></a>Exigences de haute priorité
 
@@ -359,7 +359,7 @@ namespace MyCompany.MyApp
 
 ## <a name="related-links"></a>Liens connexes
 
-* [Store et récupérer des données d’application](https://msdn.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data)
-* [Comment créer et consommer un service d’application](https://msdn.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)
-* [Localisation de contenu de l’application](https://msdn.microsoft.com/windows/uwp/globalizing/globalizing-portal)
+* [Store et récupérer des données d’application](https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data)
+* [Comment créer et consommer un service d’application](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)
+* [Localisation de contenu de l’application](https://docs.microsoft.com/windows/uwp/globalizing/globalizing-portal)
 * [Expérience de démonstration de vente au détail (RDX)](https://docs.microsoft.com/windows-hardware/customize/desktop/retail-demo-experience)

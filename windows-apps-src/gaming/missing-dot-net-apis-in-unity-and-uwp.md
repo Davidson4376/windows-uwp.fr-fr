@@ -6,12 +6,12 @@ ms.date: 02/21/2018
 ms.topic: article
 keywords: windows 10, uwp, jeux, .net, unity
 ms.localizationpriority: medium
-ms.openlocfilehash: 247761f47b578099bf8672d9e1b2469e6506682e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 878a598c8a0b71e4ee394f7f98c215e5462b44e7
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57641784"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368431"
 ---
 # <a name="missing-net-apis-in-unity-and-uwp"></a>API .NET manquantes dans Unity et UWP
 
@@ -19,7 +19,7 @@ Lorsque vous créez un jeu UWP à l’aide de .NET, vous pouvez constater que ce
 
 En outre, certains moteurs de jeu utilisent d’autres versions de .NET qui ne sont pas entièrement compatibles avec .NET pour UWP, telles que Mono de Unity. Par conséquent, lorsque vous écrivez votre jeu, tout peut fonctionner correctement dans l’éditeur, mais lorsque vous accédez à générer pour UWP, vous pouvez obtenir ce type d’erreur : **Les type ou espace de noms 'formateurs' n’existent pas dans l’espace de noms « System.Runtime.Serialization » (vous manque-t-il une référence d’assembly ?)**
 
-Heureusement, Unity fournit certaines de ces API manquantes en tant que méthodes d’extension et les types de remplacement, qui sont décrites dans [plateforme Windows universelle : Types .NET sur la création de scripts serveur principal .NET manquants](https://docs.unity3d.com/Manual/windowsstore-missingtypes.html). Toutefois, si la fonctionnalité dont vous avez besoin n’est pas disponible ici, la rubrique [Vue d’ensemble de .NET pour les applications Windows 8.x](https://msdn.microsoft.com/library/windows/apps/br230302) explique comment vous pouvez convertir votre code pour utiliser WinRT ou .NET pour les API UWP. (Elle décrit Windows 8, mais s’applique également aux applications UWP Windows 10.)
+Heureusement, Unity fournit certaines de ces API manquantes en tant que méthodes d’extension et les types de remplacement, qui sont décrites dans [plateforme Windows universelle : Types .NET sur la création de scripts serveur principal .NET manquants](https://docs.unity3d.com/Manual/windowsstore-missingtypes.html). Toutefois, si la fonctionnalité dont vous avez besoin n’est pas disponible ici, la rubrique [Vue d’ensemble de .NET pour les applications Windows 8.x](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140)) explique comment vous pouvez convertir votre code pour utiliser WinRT ou .NET pour les API UWP. (Elle décrit Windows 8, mais s’applique également aux applications UWP Windows 10.)
 
 ## <a name="net-standard"></a>.NET Standard
 
@@ -96,7 +96,7 @@ Vous pouvez également utiliser les API [Windows.Storage](https://docs.microsoft
 
 Il est important de noter que la méthode [Close](https://docs.microsoft.com/dotnet/api/system.io.stream.close) est uniquement disponible dans .NET Standard 2.0 et versions ultérieures (même si Unity fournit une méthode d’extension). Utilisez [Dispose](https://docs.microsoft.com/dotnet/api/system.io.stream.dispose) à la place.
 
-### <a name="threading"></a>Threads
+### <a name="threading"></a>Thread
 
 Quelques types de l’espace de noms [System.Threading](https://docs.microsoft.com/dotnet/api/system.threading), par exemple [ThreadPool](https://docs.microsoft.com/dotnet/api/system.threading.threadpool), ne sont pas disponibles dans les versions précédentes de .NET Standard. Dans ces cas, vous pouvez utiliser l’espace de noms [Windows.System.Threading](https://docs.microsoft.com/uwp/api/windows.system.threading) à la place.
 
@@ -115,7 +115,7 @@ private void UsingThreads()
 
 ### <a name="security"></a>Sécurité
 
-Parmi les espaces de noms **System.Security.** *, tels que [System.Security.Cryptography.X509Certificates](https://docs.microsoft.com/dotnet/api/system.security.cryptography.x509certificates?view=netstandard-2.0), certains ne sont pas disponibles lorsque vous créez un jeu Unity pour UWP. Dans ce cas, utilisez les API **Windows.Security.*** qui couvrent la majeure partie de la même fonctionnalité.
+Parmi les espaces de noms **System.Security.** *, tels que [System.Security.Cryptography.X509Certificates](https://docs.microsoft.com/dotnet/api/system.security.cryptography.x509certificates?view=netstandard-2.0), certains ne sont pas disponibles lorsque vous créez un jeu Unity pour UWP. Dans ce cas, utilisez les API **Windows.Security.** * qui couvrent la majeure partie de la même fonctionnalité.
 
 L’exemple suivant récupère simplement les certificats à partir d’un magasin de certificats avec le nom donné :
 
@@ -138,12 +138,12 @@ Consultez [Sécurité](https://docs.microsoft.com/windows/uwp/security/) pour pl
 
 ### <a name="networking"></a>Mise en réseau
 
-Parmi les espaces de noms **System&period;Net.***, tels que [System.Net.Mail](https://docs.microsoft.com/dotnet/api/system.net.mail?view=netstandard-2.0), certains ne sont pas disponibles lorsque vous créez un jeu Unity pour UWP. Pour la plupart de ces API, utilisez les API WinRT correspondantes **Windows.Networking.** * et **Windows.Web.** * pour obtenir une fonctionnalité similaire. Consultez [Réseaux et services web](https://docs.microsoft.com/windows/uwp/networking/) pour plus d’informations.
+Parmi les espaces de noms **System&period;Net.** *, tels que [System.Net.Mail](https://docs.microsoft.com/dotnet/api/system.net.mail?view=netstandard-2.0), certains ne sont pas disponibles lorsque vous créez un jeu Unity pour UWP. Pour la plupart de ces API, utilisez les API WinRT correspondantes **Windows.Networking.** * et **Windows.Web.** * pour obtenir une fonctionnalité similaire. Consultez [Réseaux et services web](https://docs.microsoft.com/windows/uwp/networking/) pour plus d’informations.
 
 Dans le cas de **System.Net. Messagerie**, utilisez l'espace de noms [Windows.ApplicationModel.Email](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email). Consultez [Envoyer un e-mail](https://docs.microsoft.com/windows/uwp/contacts-and-calendar/sending-email) pour plus d'informations.
 
-## <a name="see-also"></a>Voir également
+## <a name="see-also"></a>Voir aussi
 
 * [Universal Windows Platform : Types .NET manquants sur la création de scripts serveur principal .NET](https://docs.unity3d.com/Manual/windowsstore-missingtypes.html)
-* [.NET pour une vue d’ensemble des applications UWP](https://msdn.microsoft.com/library/windows/apps/br230302)
+* [.NET pour une vue d’ensemble des applications UWP](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140))
 * [Guides de portage Unity UWP](https://unity3d.com/partners/microsoft/porting-guides)

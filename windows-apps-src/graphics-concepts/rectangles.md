@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ce91b47d2846f945a0e4a15f705491ab22e9dea
-ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.openlocfilehash: 9d6a3b1eb64c89f231d0334a3cbe8e58d11c58ae
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58291667"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370951"
 ---
 # <a name="rectangles"></a>Rectangles
 
@@ -21,7 +21,7 @@ Dans la programmation Direct3D et Windows, les objets à l'écran sont appelés
 ## <a name="span-idboundingrectanglesspanspan-idboundingrectanglesspanspan-idboundingrectanglesspanbounding-rectangles"></a><span id="Bounding_rectangles"></span><span id="bounding_rectangles"></span><span id="BOUNDING_RECTANGLES"></span>Rectangles englobants
 
 
-La plupart des applications utilisent la structure [**RECT**](https://msdn.microsoft.com/library/windows/desktop/dd162897) (ou un alias typedef’d) pour acheminer les informations relatives à un rectangle englobant à utiliser lors du rendu à l’écran par blitting ou lors de la détection des correspondances. En langage C++, la structure **RECT** a la définition suivante.
+La plupart des applications utilisent la structure [**RECT**](https://docs.microsoft.com/previous-versions//dd162897(v=vs.85)) (ou un alias typedef’d) pour acheminer les informations relatives à un rectangle englobant à utiliser lors du rendu à l’écran par blitting ou lors de la détection des correspondances. En langage C++, la structure **RECT** a la définition suivante.
 
 ```cpp
 typedef struct tagRECT { 

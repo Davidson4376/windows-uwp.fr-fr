@@ -6,21 +6,21 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d8805f03f8476bcae8404395c27d9d78952f782
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.openlocfilehash: 937d165d9305a3f4909383e872f49fcf08a3115c
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65984227"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371588"
 ---
 # <a name="porting-apps-to-windows10"></a>Portage d’applications sur Windows 10
 
 
 Cette section explique comment effectuer le portage de votre application sur la plateforme UWP (plateforme Windows universelle), qui permet de créer un seul package d’application Windows 10 que vos clients peuvent installer sur tous les types d’appareil. Votre application tirera ainsi profit d’un nouveau matériel formidable, de remarquables opportunités de monétisation, d’un ensemble d’API modernes, de contrôles d’interface utilisateur adaptatifs et de multiples modalités d’entrée, incluant la souris, le clavier, les fonctions tactiles et vocales.
 
-Windows Runtime (WinRT) est la technologie qui vous permet de générer des applications pour la plateforme Windows universelle (UWP). Pour plus d’informations sur WinRT et les applications pour UWP, voir [Qu’est-ce qu’une application pour la plateforme Windows Universelle (UWP) ?](https://msdn.microsoft.com/library/windows/apps/dn726767).
+Windows Runtime (WinRT) est la technologie qui vous permet de générer des applications pour la plateforme Windows universelle (UWP). Pour plus d’informations sur WinRT et les applications pour UWP, voir [Qu’est-ce qu’une application pour la plateforme Windows Universelle (UWP) ?](https://docs.microsoft.com/windows/uwp/get-started/whats-a-uwp).
 
-Ce guide relatif au portage explique les différences entre la technologie de votre application actuelle et celle de la plateforme Windows universelle (UWP). Une fois que vous aurez compris comment effectuer la transition entre ces deux technologies, vous pourrez vous plonger dans le reste du Centre de développement, qui constitue une ressource complète pour le développement d’applications UWP. Lorsque vous serez prêt, l’idéal est de commencer par lire la rubrique [Comment développer une application du Windows Store](https://msdn.microsoft.com/library/windows/apps/dn726537).
+Ce guide relatif au portage explique les différences entre la technologie de votre application actuelle et celle de la plateforme Windows universelle (UWP). Une fois que vous aurez compris comment effectuer la transition entre ces deux technologies, vous pourrez vous plonger dans le reste du Centre de développement, qui constitue une ressource complète pour le développement d’applications UWP. Lorsque vous serez prêt, l’idéal est de commencer par lire la rubrique [Comment développer une application du Windows Store](https://docs.microsoft.com/previous-versions/windows/apps/dn726537(v=win.10)).
 
 | Rubrique | Description |
 |-------|-------------|
@@ -33,6 +33,6 @@ Ce guide relatif au portage explique les différences entre la technologie de vo
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Passer de WPF et Silverlight à WinRT](https://msdn.microsoft.com/library/windows/apps/dn263237)
-* [Passer d’Android à WinRT](https://msdn.microsoft.com/library/windows/apps/jj945421)
-* [Passer du web à WinRT](https://msdn.microsoft.com/library/windows/apps/hh465151)
+* [Passer de WPF et Silverlight à WinRT](https://docs.microsoft.com/previous-versions/windows/apps/dn263237(v=win.10))
+* [Passer d’Android à WinRT](https://docs.microsoft.com/previous-versions/windows/apps/jj945421(v=win.10))
+* [Passer du web à WinRT](https://docs.microsoft.com/previous-versions/windows/apps/hh465151(v=win.10))

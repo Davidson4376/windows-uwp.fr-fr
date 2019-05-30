@@ -6,16 +6,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, jeux, casque
 ms.localizationpriority: medium
-ms.openlocfilehash: b3de68cc59c9928a52eba5caeb840e9e825eecf0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 73815fb3f1b732537e9f08932639a1eccd7ed1b0
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57627954"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368625"
 ---
 # <a name="headset"></a>Casque
 
-Cette page décrit les concepts de base de la programmation pour les casques à l’aide des API [Windows.Gaming.Input.Headset][casque] et des API associées pour la plateforme Windows universelle (UWP).
+Cette page décrit les concepts de base de la programmation pour les casques à l’aide des API [Windows.Gaming.Input.Headset][headset] et des API associées pour la plateforme Windows universelle (UWP).
 
 Voici ce que vous allez apprendre à la lecture de cet article :
 * Accéder à un casque connecté à un périphérique d’entrée ou de navigation
@@ -63,9 +63,9 @@ inputDevice.HeadsetDisconnected += ref new TypedEventHandler<IGameController^, H
 
 ## <a name="using-the-headset"></a>Utilisation du casque
 
-La classe [Casque][] est constituée de deux chaînes qui représentent les ID du point de terminaison XAudio : l’un pour la capture audio (enregistrement à partir du microphone sur casque) et l’autre pour la restitution audio (lecture via l’écouteur du casque).
+La classe [Headset][] est constituée de deux chaînes qui représentent les ID du point de terminaison XAudio : l’un pour la capture audio (enregistrement à partir du microphone sur casque) et l’autre pour la restitution audio (lecture via l’écouteur du casque).
 
-Les détails de l’utilisation du point de terminaison XAudio ne sont pas couverts ici. Pour en savoir plus, voir le [Guide de programmation XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415737.aspx) et les [informations de référence sur l’API XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415899.aspx).
+Les détails de l’utilisation du point de terminaison XAudio ne sont pas couverts ici. Pour en savoir plus, voir le [Guide de programmation XAudio2](https://docs.microsoft.com/windows/desktop/xaudio2/programming-guide) et les [informations de référence sur l’API XAudio2](https://docs.microsoft.com/windows/desktop/xaudio2/programming-reference).
 
 
 [Windows.Gaming.Input]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.aspx
@@ -73,4 +73,4 @@ Les détails de l’utilisation du point de terminaison XAudio ne sont pas couve
 [igamecontroller.headset]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.headset.aspx
 [igamecontroller.headsetconnected]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.headsetconnected.aspx
 [igamecontroller.headsetdisconnected]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.headsetdisconnected.aspx
-[Casque]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.headset.aspx
+[headset]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.headset.aspx

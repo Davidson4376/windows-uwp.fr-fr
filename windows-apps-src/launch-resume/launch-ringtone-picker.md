@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 0c17e4fb-7241-4da9-b457-d6d3a7aefccb
 ms.localizationpriority: medium
-ms.openlocfilehash: 293c755ecaf81ce80fab148a8aca92a7e3a8fa48
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 78ed118ba15f38f8914cf2046344d782cd0df71b
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57618584"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370793"
 ---
 # <a name="choose-and-save-tones-using-the-ms-tonepicker-uri-scheme"></a>Sélectionner et enregistrer des tonalités à l’aide du schéma d’URI ms-tonepicker
 
@@ -23,7 +23,7 @@ Cette rubrique explique comment utiliser le **ms-tonepicker :** Schéma d’URI
 
 ## <a name="ms-tonepicker-uri-scheme-reference"></a>ms-tonepicker: Référence de schéma d’URI
 
-Ce schéma d’URI ne transmet pas les arguments via la chaîne de schéma d’URI, mais via une classe [ValueSet](https://msdn.microsoft.com/library/windows/apps/windows.foundation.collections.valueset.aspx). Toutes les chaînes sont sensibles à la casse.
+Ce schéma d’URI ne transmet pas les arguments via la chaîne de schéma d’URI, mais via une classe [ValueSet](https://docs.microsoft.com/uwp/api/windows.foundation.collections.valueset). Toutes les chaînes sont sensibles à la casse.
 
 Les sections ci-dessous indiquent quels arguments doivent être transmis pour effectuer la tâche spécifiée.
 
@@ -43,15 +43,15 @@ if (status != LaunchQuerySupportStatus.Available)
 
 Les arguments que vous pouvez transmettre pour afficher le sélecteur de tonalités sont les suivants :
 
-| Paramètre | Type | Obligatoire | Valeurs possibles | Description |
+| Paramètre | type | Obligatoire | Valeurs possibles | Description |
 |-----------|------|----------|-------|-------------|
 | Action | chaîne | oui | « PickRingtone » | Ouvre le sélecteur de tonalités. |
 | CurrentToneFilePath | chaîne | non | Jeton de tonalité existant. | Tonalité à afficher en tant que tonalité actuelle dans le sélecteur de tonalités. Si cette valeur n’est pas définie, la première tonalité de la liste est sélectionnée par défaut.<br>Cela n’est pas réellement un chemin d’accès au fichier. Vous pouvez obtenir une valeur adaptée pour `CurrenttoneFilePath` à partir de la valeur `ToneToken` renvoyée par le sélecteur de tonalités.  |
 | TypeFilter | chaîne | non | « Sonneries », « Notifications », « Alarmes », « Aucun » | Sélectionne les tonalités à ajouter au sélecteur. Si aucun filtre n’est spécifié, toutes les tonalités s’affichent. |
 
-Valeurs renvoyées dans [LaunchUriResults.Result](https://msdn.microsoft.com/library/windows/apps/windows.system.launchuriresult.result.aspx) :
+Valeurs renvoyées dans [LaunchUriResults.Result](https://docs.microsoft.com/uwp/api/windows.system.launchuriresult.result) :
 
-| Valeurs renvoyées | Type | Valeurs possibles | Description |
+| Valeurs renvoyées | type | Valeurs possibles | Description |
 |--------------|------|-------|-------------|
 | Résultat | Int32 | 0 - succès. <br>1 - opération annulée. <br>7 - paramètres non valides. <br>8 - aucune tonalité correspondant aux critères de filtre. <br>255 - l’action spécifiée n’est pas implémentée. | Résultat de l’opération de sélection. |
 | ToneToken | chaîne | Jeton de la tonalité sélectionnée. <br>La chaîne est vide si l’utilisateur sélectionne **par défaut** dans le sélecteur. | Ce jeton peut être utilisé dans une charge utile de notification toast, ou attribué en tant que sonnerie d’appel ou de SMS d’un contact. Le paramètre est renvoyé dans le ValueSet uniquement si la valeur **Résultat** est 0. |
@@ -90,15 +90,15 @@ if (result.Status == LaunchUriStatus.Success)
 
 Les arguments que vous pouvez transmettre pour afficher l’enregistreur de tonalités sont les suivants :
 
-| Paramètre | Type | Obligatoire | Valeurs possibles | Description |
+| Paramètre | type | Obligatoire | Valeurs possibles | Description |
 |-----------|------|----------|-------|-------------|
 | Action | chaîne | oui | « SaveRingtone » | Ouvre le sélecteur pour enregistrer une sonnerie. |
-| ToneFileSharingToken | chaîne | oui | Jeton de partage de fichier [SharedStorageAccessManager](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharedstorageaccessmanager.aspx) pour l’enregistrement du fichier de la sonnerie. | Enregistre un fichier audio spécifique en tant que sonnerie. Le fichier audio doit être au format mpeg ou x-ms-wma. |
+| ToneFileSharingToken | chaîne | oui | Jeton de partage de fichier [SharedStorageAccessManager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.sharedstorageaccessmanager) pour l’enregistrement du fichier de la sonnerie. | Enregistre un fichier audio spécifique en tant que sonnerie. Le fichier audio doit être au format mpeg ou x-ms-wma. |
 | DisplayName | chaîne | non | Nom convivial de la tonalité spécifiée. | Définit le nom d’affichage à utiliser lors de l’enregistrement de la sonnerie spécifiée. |
 
-Valeurs renvoyées dans [LaunchUriResults.Result](https://msdn.microsoft.com/library/windows/apps/windows.system.launchuriresult.result.aspx) :
+Valeurs renvoyées dans [LaunchUriResults.Result](https://docs.microsoft.com/uwp/api/windows.system.launchuriresult.result) :
 
-| Valeurs renvoyées | Type | Valeurs possibles | Description |
+| Valeurs renvoyées | type | Valeurs possibles | Description |
 |--------------|------|-------|-------------|
 | Résultat | Int32 | 0 - succès.<br>1 - opération annulée par l’utilisateur.<br>2 - fichier non valide.<br>3 - type de contenu non valide.<br>4 - le fichier dépasse la taille de sonnerie maximale autorisée (1 Mo dans Windows 10).<br>5 - le fichier dépasse la longueur maximale autorisée (40 secondes).<br>6 - le fichier est protégé par la gestion des droits numériques (DRM).<br>7 - paramètres non valides. | Résultat de l’opération de sélection. |
 
@@ -154,14 +154,14 @@ if (result.Status == LaunchUriStatus.Success)
 
 Les arguments que vous pouvez transmettre pour obtenir le nom convivial d’une tonalité sont les suivants :
 
-| Paramètre | Type | Obligatoire | Valeurs possibles | Description |
+| Paramètre | type | Obligatoire | Valeurs possibles | Description |
 |-----------|------|----------|-------|-------------|
 | Action | chaîne | oui | « GetToneName » | Indique que vous souhaitez obtenir le nom convivial d’une tonalité. |
 | ToneToken | chaîne | oui | Jeton de tonalité | Jeton de tonalité à partir duquel vous souhaitez obtenir un nom d’affichage. |
 
-Valeurs renvoyées dans [LaunchUriResults.Result](https://msdn.microsoft.com/library/windows/apps/windows.system.launchuriresult.result.aspx) :
+Valeurs renvoyées dans [LaunchUriResults.Result](https://docs.microsoft.com/uwp/api/windows.system.launchuriresult.result) :
 
-| Valeur de retour | Type | Valeurs possibles | Description |
+| Valeur de retour | type | Valeurs possibles | Description |
 |--------------|------|-------|-------------|
 | Résultat | Int32 | 0 - opération de sélection réussie.<br>7 - paramètre incorrect (par exemple, aucune valeur ToneToken fournie).<br>9 - erreur lors de la lecture du nom du jeton spécifié.<br>10 - impossible de trouver le jeton de tonalité spécifié. | Résultat de l’opération de sélection.
 | DisplayName | chaîne | Nom convivial de la tonalité. | Renvoie le nom d’affichage de la tonalité sélectionnée. Ce paramètre est renvoyé dans le ValueSet uniquement si la valeur **Résultat** est 0. |

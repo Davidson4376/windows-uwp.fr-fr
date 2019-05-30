@@ -7,12 +7,12 @@ ms.date: 04/19/2019
 ms.topic: article
 keywords: Windows 10, uwp, le portail de l’appareil
 ms.localizationpriority: medium
-ms.openlocfilehash: 910e3108009704d444fb81b195f9dd9eae3daa9d
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: b2e1e2dfdb1dd52e1dd07a146badd78a6bb809fa
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63798184"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359933"
 ---
 # <a name="device-portal-core-api-reference"></a>Informations de référence sur les API principales Device Portal
 
@@ -1373,7 +1373,7 @@ Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de
 | Paramètre d’URI | Description |
 | :---          | :--- |
 | autoreboot   | (**facultatif**) True ou false. Cette valeur indique si le système redémarre automatiquement suite à un échec ou à un verrouillage. |
-| dumptype   | (**facultatif**) Type de vidage. Pour les valeurs prises en charge, consultez [Énumération CrashDumpType](https://msdn.microsoft.com/library/azure/microsoft.azure.management.insights.models.crashdumptype.aspx).|
+| dumptype   | (**facultatif**) Type de vidage. Pour les valeurs prises en charge, consultez [Énumération CrashDumpType](https://docs.microsoft.com/previous-versions/azure/reference/dn802457(v=azure.100)).|
 | maxdumpcount   | (**facultatif**) Le nombre maximal de vidages à enregistrer. |
 | overwrite   | (**facultatif**) True ou false. Cela indique s’il convient d’écraser ou non les anciens vidages lorsque le seuil du nombre de vidages défini par *maxdumpcount* est atteint. |
 
@@ -2362,7 +2362,7 @@ Vous pouvez obtenir la sous-valeur pour un schéma d’alimentation actif en uti
  
 | Méthode      | URI de requête |
 | :------     | :----- |
-| GET | /api/power/cfg/*<power scheme path>* |
+| GET | /api/power/cfg/ *<power scheme path>* |
 
 Options :
 - SCHEME_CURRENT
@@ -2500,7 +2500,7 @@ Vous pouvez obtenir la sous-valeur pour un schéma d’alimentation en utilisant
  
 | Méthode      | URI de requête |
 | :------     | :----- |
-| PUBLIER | /api/power/cfg/*<power scheme path>* |
+| PUBLIER | /api/power/cfg/ *<power scheme path>* |
 
 
 **Paramètres d’URI**

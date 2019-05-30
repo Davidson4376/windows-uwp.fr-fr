@@ -6,19 +6,19 @@ ms.date: 09/08/2017
 ms.topic: article
 keywords: windows 10, uwp, jeux, exemple, directx, structure
 ms.localizationpriority: medium
-ms.openlocfilehash: 55b933db7f9b26de2caa3877bde445f96c08d561
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a04e6714772d9b17c281f81ad93582d1fb691c9b
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653724"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368503"
 ---
 # <a name="marble-maze-application-structure"></a>Structure de l’application Marble Maze
 
 
 
 
-La structure d’une application de plateforme Windows universelle (UWP) en DirectX diffère de celle d’une application de bureau classique. Au lieu de fonctionner avec des types de handle tels que [HWND](https://msdn.microsoft.com/library/windows/desktop/aa383751) et des fonctions telles que [CreateWindow](https://msdn.microsoft.com/library/windows/desktop/ms632679), Windows Runtime fournit des interfaces comme [Windows::UI::Core::ICoreWindow](https://msdn.microsoft.com/library/windows/apps/br208296). Vous pouvez ainsi développer des applications pour UWP grâce à une approche orientée objet plus moderne. Cette section montre comment le code de l’application Marble Maze est structuré.
+La structure d’une application de plateforme Windows universelle (UWP) en DirectX diffère de celle d’une application de bureau classique. Au lieu de fonctionner avec des types de handle tels que [HWND](https://docs.microsoft.com/windows/desktop/WinProg/windows-data-types) et des fonctions telles que [CreateWindow](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-createwindowa), Windows Runtime fournit des interfaces comme [Windows::UI::Core::ICoreWindow](https://docs.microsoft.com/uwp/api/Windows.UI.Core.ICoreWindow). Vous pouvez ainsi développer des applications pour UWP grâce à une approche orientée objet plus moderne. Cette section montre comment le code de l’application Marble Maze est structuré.
 
 > [!NOTE]
 > L’exemple de code correspondant à ce document est disponible dans [l’exemple de jeu Marble Maze en DirectX](https://go.microsoft.com/fwlink/?LinkId=624011).
@@ -79,7 +79,7 @@ Pour les instructions, le projet Marble Maze inclut à la fois le format au mome
 ##  <a name="application-life-cycle"></a>Cycle de vie de l’application
 
 
-Marble Maze suit le cycle de vie d’une application pour UWP classique. Pour plus d’informations sur le cycle de vie d’une application pour UWP, voir [Cycle de vie d’une application](https://msdn.microsoft.com/library/windows/apps/mt243287).
+Marble Maze suit le cycle de vie d’une application pour UWP classique. Pour plus d’informations sur le cycle de vie d’une application pour UWP, voir [Cycle de vie d’une application](https://docs.microsoft.com/windows/uwp/launch-resume/app-lifecycle).
 
 L’initialisation d’un jeu UWP entraîne généralement celle des composants d’exécution tels que Direct3D, Direct2D et de toutes les bibliothèques de données d’entrée, audio ou physiques qu’il utilise. Il charge également des ressources spécifiques au jeu qui sont nécessaires avant son démarrage. Cette initialisation se produit une seule fois pendant une session de jeu.
 
@@ -240,7 +240,7 @@ Marble Maze effectue les tâches suivantes pour prendre en charge les fonctionna
 -   Il répond aux notifications de suspension en enregistrant son état dans un stockage persistant.
 -   Il répond aux notifications de reprise en chargeant son état à partir du stockage persistant. Il charge également l’état précédent au démarrage.
 
-Pour prendre en charge les fonctionnalités de suspension et de reprise, Marble Maze définit la classe **PersistentState**. (Voir **PersistentState.h** et **PersistentState.cpp**). Cette classe utilise l’interface [Windows::Foundation::Collections::IPropertySet](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IPropertySet) pour les propriétés de lecture et d’écriture. La classe **PersistentState** fournit des méthodes qui lisent et écrivent des types de données primitives (par exemple **bool**, **int**, **float**, [XMFLOAT3](https://msdn.microsoft.com/library/windows/desktop/ee419475) et [Platform::String](https://docs.microsoft.com/cpp/cppcx/platform-string-class)), depuis et vers un magasin de stockage.
+Pour prendre en charge les fonctionnalités de suspension et de reprise, Marble Maze définit la classe **PersistentState**. (Voir **PersistentState.h** et **PersistentState.cpp**). Cette classe utilise l’interface [Windows::Foundation::Collections::IPropertySet](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IPropertySet) pour les propriétés de lecture et d’écriture. La classe **PersistentState** fournit des méthodes qui lisent et écrivent des types de données primitives (par exemple **bool**, **int**, **float**, [XMFLOAT3](https://docs.microsoft.com/windows/desktop/api/directxmath/ns-directxmath-xmfloat3) et [Platform::String](https://docs.microsoft.com/cpp/cppcx/platform-string-class)), depuis et vers un magasin de stockage.
 
 ```cpp
 ref class PersistentState
@@ -414,7 +414,7 @@ void MarbleMazeMain::LoadState()
 > [!IMPORTANT]
 > Marble Maze ne fait pas de distinction entre le démarrage à froid (autrement dit, le démarrage initial sans événement de suspension antérieur) et la reprise à partir de l’état suspendu. Il s’agit de la conception recommandée pour toutes les applications UWP.
 
-Pour plus d’informations sur les données d’application, voir [Stocker et récupérer des paramètres et autres données d’application](https://msdn.microsoft.com/library/windows/apps/mt299098).
+Pour plus d’informations sur les données d’application, voir [Stocker et récupérer des paramètres et autres données d’application](https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data).
 
 ##  <a name="next-steps"></a>Étapes suivantes
 

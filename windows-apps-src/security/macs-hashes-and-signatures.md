@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, sécurité
 ms.localizationpriority: medium
-ms.openlocfilehash: 6517241826d06b63fd88b45237552acffbdc62da
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 78b14023f61dd3f8c27bc31f5876407ff0ed0366
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57651234"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371203"
 ---
 # <a name="macs-hashes-and-signatures"></a>Codes d’authentification des messages, hachages et signatures
 
@@ -34,11 +34,11 @@ Notez qu’Eve, une tierce personne effectuant une écoute clandestine de la con
 
 La création d’un code d’authentification des messages garantit que le message d’origine n’a pas été altéré et, en utilisant une clé secrète partagée, que le hachage du message a été signé par une personne ayant accès à cette clé privée.
 
-Vous pouvez utiliser [**MacAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241530) pour énumérer les algorithmes MAC disponibles et générer une clé symétrique. Vous pouvez utiliser des méthodes statiques sur la classe [**CryptographicEngine**](https://msdn.microsoft.com/library/windows/apps/br241490) pour effectuer le chiffrement nécessaire qui crée la valeur MAC.
+Vous pouvez utiliser [**MacAlgorithmProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.MacAlgorithmProvider) pour énumérer les algorithmes MAC disponibles et générer une clé symétrique. Vous pouvez utiliser des méthodes statiques sur la classe [**CryptographicEngine**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.CryptographicEngine) pour effectuer le chiffrement nécessaire qui crée la valeur MAC.
 
 Les signatures numériques sont l’équivalent, pour les clés publiques, des codes d’authentification de message (MAC) des clés privées. Bien que les codes d’authentification des messages (MAC, Message Authentication Codes) utilisent des clés privées pour permettre au destinataire d’un message de vérifier qu’un message n’a pas été altéré pendant la transmission, les signatures utilisent une paire clé privée/clé publique.
 
-Cet exemple montre comment utiliser la classe [**MacAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241530) pour créer un code d’authentification de message haché (HMAC, Hashed Message Authentication Code).
+Cet exemple montre comment utiliser la classe [**MacAlgorithmProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.MacAlgorithmProvider) pour créer un code d’authentification de message haché (HMAC, Hashed Message Authentication Code).
 
 ```cs
 using Windows.Security.Cryptography;
@@ -137,11 +137,11 @@ Une fonction de hachage de chiffrement prend un long bloc de données au hasard 
 
 Notez qu’Alice a envoyé un message non chiffré. Seul le hachage était chiffré. La procédure permet uniquement de s’assurer que le message d’origine n’a pas été modifié et, à l’aide de la clé publique d’Alice, que le hachage du message a été signé par quelqu’un qui a accès à la clé privée d’Alice, probablement Alice elle-même.
 
-Vous pouvez utiliser la classe [**HashAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241511) pour énumérer les algorithmes de hachage disponibles et créer une valeur [**CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498).
+Vous pouvez utiliser la classe [**HashAlgorithmProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.HashAlgorithmProvider) pour énumérer les algorithmes de hachage disponibles et créer une valeur [**CryptographicHash**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.CryptographicHash).
 
 Les signatures numériques sont l’équivalent, pour les clés publiques, des codes d’authentification de message (MAC) des clés privées. Alors que les codes MAC utilisent des clés privées pour permettre au destinataire d’un message de vérifier que celui-ci n’a pas été modifié au cours de transmission, les signatures utilisent une paire de clés privée/publique.
 
-L’objet [**CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) peut être utilisé pour hacher différentes données de manière répétée sans avoir à recréer l’objet pour chaque utilisation. La méthode [**Append**](https://msdn.microsoft.com/library/windows/apps/br241499) ajoute de nouvelles données à une mémoire tampon en vue d’être hachées. La méthode [**GetValueAndReset**](https://msdn.microsoft.com/library/windows/apps/hh701376) hache les données et réinitialise l’objet en vue d’une autre utilisation. En voici une illustration dans l’exemple suivant.
+L’objet [**CryptographicHash**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.CryptographicHash) peut être utilisé pour hacher différentes données de manière répétée sans avoir à recréer l’objet pour chaque utilisation. La méthode [**Append**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.core.cryptographichash.append) ajoute de nouvelles données à une mémoire tampon en vue d’être hachées. La méthode [**GetValueAndReset**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.core.cryptographichash.getvalueandreset) hache les données et réinitialise l’objet en vue d’une autre utilisation. En voici une illustration dans l’exemple suivant.
 
 ```cs
 public void SampleReusableHash()
@@ -191,4 +191,4 @@ Comme la plupart des opérations de signature de clé publique sont gourmandes e
 
 La signature permet uniquement de s’assurer que le message d’origine n’a pas été modifié et, à l’aide de la clé publique de l’expéditeur, que le hachage du message a été signé par quelqu’un qui a accès à la clé privée.
 
-Vous pouvez utiliser un objet [**AsymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241478) pour énumérer les algorithmes de signature disponibles et générer ou importer une paire de clés. Vous pouvez utiliser des méthodes statiques sur la classe [**CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) pour signer un message ou vérifier une signature.
+Vous pouvez utiliser un objet [**AsymmetricKeyAlgorithmProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.AsymmetricKeyAlgorithmProvider) pour énumérer les algorithmes de signature disponibles et générer ou importer une paire de clés. Vous pouvez utiliser des méthodes statiques sur la classe [**CryptographicHash**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.CryptographicHash) pour signer un message ou vérifier une signature.

@@ -5,12 +5,12 @@ ms.date: 04/21/2017
 ms.topic: article
 keywords: Windows 10, uwp, mise à jour, tâche en arrière-plan, updatetask, tâche en arrière-plan
 ms.localizationpriority: medium
-ms.openlocfilehash: 8cd7d4494340d1c5e617361f2e3d750b35ebabb9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3683595926f20fdd9f9af5929db65396b0001bcc
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57603524"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371486"
 ---
 # <a name="run-a-background-task-when-your-uwp-app-is-updated"></a>Exécuter une tâche en arrière-plan lorsque votre application UWP est mise à jour
 
@@ -26,8 +26,8 @@ Comme pour les autres types de tâches en arrière-plan, l’implémentation de 
 
 - Ajout d’un projet de composant Windows Runtime à votre solution.
 - Création d’une référence entre votre application et le composant.
-- Création d’une classe public sealed dans le composant qui implémente [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794).
-- Implémentation de la méthode [**Run**](https://msdn.microsoft.com/library/windows/apps/br224811), qui correspond au point d’entrée requis appelé lors de l’exécution de la tâche de mise à jour. Si vous envisagez de passer des appels asynchrones à partir de votre tâche en arrière-plan, la rubrique [Créer et inscrire une tâche en arrière-plan hors processus](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task) explique comment utiliser un report dans votre méthode **Run**.
+- Création d’une classe public sealed dans le composant qui implémente [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask).
+- Implémentation de la méthode [**Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.), qui correspond au point d’entrée requis appelé lors de l’exécution de la tâche de mise à jour. Si vous envisagez de passer des appels asynchrones à partir de votre tâche en arrière-plan, la rubrique [Créer et inscrire une tâche en arrière-plan hors processus](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task) explique comment utiliser un report dans votre méthode **Run**.
 
 Vous n’avez pas besoin d’inscrire cette tâche en arrière-plan (la section « Inscrire la tâche en arrière-plan à des fins d’exécution » dans la rubrique **Créer et inscrire une tâche en arrière-plan hors processus**) pour utiliser la tâche de mise à jour. Il s’agit du principal motif d’utilisation de la tâche de mise à jour car vous n’avez pas besoin d’ajouter du code à votre application pour inscrire la tâche et l’application n’a pas besoin de s’exécuter au moins une fois avant d’être mise à jour pour inscrire la tâche en arrière-plan.
 
@@ -93,6 +93,6 @@ Lorsque la tâche en arrière-plan est terminée, vous pouvez lancer l’applica
 > [!NOTE]
 > Utilisateurs de Visual Studio 2015 : Les étapes ci-dessus s’appliquent à Visual Studio 2017. Si vous utilisez Visual Studio 2015, vous pouvez utiliser les mêmes techniques pour déclencher et tester UpdateTask, sauf que Visual Studio ne s’y connectera pas. Sinon, VS 2015 vous permet de configurer un [ApplicationTrigger](https://docs.microsoft.com/windows/uwp/launch-resume/trigger-background-task-from-app) qui définit la tâche UpdateTask comme son point d’entrée et déclenche l’exécution directement depuis l’application au premier plan.
 
-## <a name="see-also"></a>Voir également
+## <a name="see-also"></a>Voir aussi
 
 [Créer et inscrire une tâche en arrière-plan hors processus](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)

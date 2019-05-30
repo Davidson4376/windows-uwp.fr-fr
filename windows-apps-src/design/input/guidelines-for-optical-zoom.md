@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5fcbaa0a3db826ef971878acd6a553dd7a836508
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b63c9191489ecae54b17cb75b8aa1af32f09fcb8
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57594964"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363598"
 ---
 # <a name="optical-zoom-and-resizing"></a>Zoom optique et redimensionnement
 
@@ -21,7 +21,7 @@ ms.locfileid: "57594964"
 
 Cet article décrit les éléments de zoom et de redimensionnement Windows. Il fournit également des recommandations en matière d’expérience utilisateur en cas d’utilisation de ces mécanismes d’interaction dans vos applications.
 
-> **API importantes** : [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084), [ **entrée (XAML)**](https://msdn.microsoft.com/library/windows/apps/br227994)
+> **API importantes** : [**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input), [**Input (XAML)** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input)
 
 Le zoom optique permet à l’utilisateur d’agrandir la vue du contenu au sein d’une zone de contenu (l’interaction s’effectue sur la zone de contenu elle-même), tandis que le redimensionnement permet de modifier la taille relative d’un ou de plusieurs objets sans modifier la vue dans la zone de contenu (dans ce cas, l’interaction s’effectue sur les objets figurant dans la zone de contenu).
 
@@ -49,7 +49,7 @@ Pour les applications prenant en charge le redimensionnement ou le zoom optique,
 -   Si des limites ou des contraintes de tailles maximale et minimale sont définies, utilisez le retour visuel pour indiquer quand l’utilisateur atteint ou dépasse ces limites.
 -   Utilisez des points d’ancrage pour influencer le comportement du zoom et du mouvement panoramique en spécifiant des points logiques où arrêter la manipulation et garantir qu’un sous-ensemble spécifique de contenu soit visible dans la fenêtre d’affichage. Prévoyez des points d’ancrage pour les niveaux de zoom ou les affichages logiques courants afin de faciliter leur sélection par l’utilisateur. Par exemple, une application de photographie peut prévoir un point d’ancrage de redimensionnement à 100 % ou, dans le cas d’une application de cartographie, les points d’ancrage peuvent s’avérer utiles dans les vues de la ville, de la province et du pays.
 
-    Les points d’ancrage permettent à l’utilisateur d’exécuter correctement ces opérations, en exigeant moins de précision dans ses mouvements. Si vous utilisez XAML, reportez-vous aux propriétés de points d’ancrage de [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527). Pour JavaScript et HTML, utilisez [**-ms-content-zoom-snap-points**](https://msdn.microsoft.com/library/hh771895).
+    Les points d’ancrage permettent à l’utilisateur d’exécuter correctement ces opérations, en exigeant moins de précision dans ses mouvements. Si vous utilisez XAML, reportez-vous aux propriétés de points d’ancrage de [**ScrollViewer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer). Pour JavaScript et HTML, utilisez [ **-ms-content-zoom-snap-points**](https://msdn.microsoft.com/library/hh771895).
 
     Il existe deux types de points d’ancrage :
 

@@ -7,24 +7,24 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: fb0e5aee9e7b3e57ebf0ebeaf3d035180e52c65b
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 1a0c632089c8c4cf84ecf6df99935671423b51a6
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63817496"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370815"
 ---
 # <a name="launch-the-windows-settings-app"></a>Lancer l’application Paramètres Windows
 
 **API importantes**
 
--   [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476)
--   [**PreferredApplicationPackageFamilyName**](https://msdn.microsoft.com/library/windows/apps/hh965482)
--   [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314)
+-   [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync)
+-   [**PreferredApplicationPackageFamilyName**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.preferredapplicationpackagefamilyname)
+-   [**DesiredRemainingView**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.desiredremainingview)
 
 Découvrez comment lancer l’application Paramètres Windows. Cette rubrique décrit la **ms-paramètres :** Schéma d’URI. Utilisez ce schéma d’URI pour lancer l’application Paramètres Windows en ouvrant des pages de paramètres spécifiques.
 
-Le lancement de l’application Paramètres est une partie importante de l’écriture d’une application prenant en charge la confidentialité. Si votre application ne peut pas accéder à une ressource sensible, nous vous recommandons de fournir à l’utilisateur un lien pratique lui permettant d’accéder aux paramètres de confidentialité relatifs à cette ressource. Pour plus d’informations, voir [Recommandations en matière d’applications prenant en charge la confidentialité](https://msdn.microsoft.com/library/windows/apps/hh768223).
+Le lancement de l’application Paramètres est une partie importante de l’écriture d’une application prenant en charge la confidentialité. Si votre application ne peut pas accéder à une ressource sensible, nous vous recommandons de fournir à l’utilisateur un lien pratique lui permettant d’accéder aux paramètres de confidentialité relatifs à cette ressource. Pour plus d’informations, voir [Recommandations en matière d’applications prenant en charge la confidentialité](https://docs.microsoft.com/windows/uwp/security/index).
 
 ## <a name="how-to-launch-the-settings-app"></a>Comment lancer l’application Paramètres
 
@@ -44,7 +44,7 @@ Dans cet exemple, un contrôle Hyperlink XAML est utilisé pour ouvrir la page d
 </TextBlock>
 ```
 
-Par ailleurs, votre application peut appeler la méthode [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) pour lancer l’application **Paramètres**. Cet exemple montre comment ouvrir la page des paramètres de confidentialité relatifs à l’appareil photo en utilisant l’URI `ms-settings:privacy-webcam`.
+Par ailleurs, votre application peut appeler la méthode [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) pour lancer l’application **Paramètres**. Cet exemple montre comment ouvrir la page des paramètres de confidentialité relatifs à l’appareil photo en utilisant l’URI `ms-settings:privacy-webcam`.
 
 ```cs
 bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-webcam"));
@@ -217,7 +217,7 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 | Barre des tâches | ms-settings:taskbar |
 | Thèmes | ms-settings:themes |
 
-## <a name="phone"></a>Téléphone
+## <a name="phone"></a>Phone
 
 |Page de paramètres| URI |
 |-------------|-----|
@@ -290,14 +290,14 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 | Messagerie | ms-settings:messaging |
 | Multitâches | ms-settings:multitasking |
 | Paramètres d'éclairage nocturne | ms-settings:nightlight |
-| Téléphone | ms-settings:phone-defaultapps |
+| Phone | ms-settings:phone-defaultapps |
 | Projection vers ce PC | ms-settings:project |
 | Expériences partagées | ms-settings:crossdevice |
 | Mode tablette | ms-settings:tabletmode |
 | Barre des tâches | ms-settings:taskbar |
 | Notifications et actions | ms-settings:notifications |
 | Bureau à distance | ms-settings:remotedesktop |
-| Téléphone | MS-paramètres : téléphone (**déconseillées dans Windows 10, version 1809 et versions ultérieure**) |
+| Phone | MS-paramètres : téléphone (**déconseillées dans Windows 10, version 1809 et versions ultérieure**) |
 | Alimentation et mise en veille | ms-settings:powersleep |
 | Son | MS-paramètres : son |
 | Stockage | ms-settings:storagesense |

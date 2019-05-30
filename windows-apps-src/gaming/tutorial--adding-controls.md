@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: windows 10, uwp, jeux, contrôles, entrée
 ms.localizationpriority: medium
-ms.openlocfilehash: 369aa076184f79aa1e43c3aac11706982a6be268
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0ff7088ec4062973d0b9d1ff6d20d7992e4135c3
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57595414"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367953"
 ---
 # <a name="add-controls"></a>Ajouter des contrôles
 
@@ -43,11 +43,11 @@ Lorsque la classe **MoveLookController** de l’exemple de jeu est initialisée,
 
 Événement | Description
 :------ | :-------
-[**CoreWindow::PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208278) | Le bouton gauche ou droit de la souris a été enfoncé (et maintenu), ou la surface tactile a été touchée.
-[**CoreWindow::PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276) |La souris a été déplacée, ou une action de déplacement a été effectuée sur la surface tactile.
-[**CoreWindow::PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) |Le bouton gauche de la souris a été relâché, ou l’objet au contact de la surface tactile a été retiré.
-[**CoreWindow::PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208275) |Le pointeur est sorti de la fenêtre principale.
-[**Windows::Devices::Input::MouseMoved**](https://msdn.microsoft.com/library/windows/apps/hh758356) | La souris a parcouru une certaine distance. Sachez que nous nous intéressons uniquement aux valeurs relatives de déplacement de la souris, et non pas à la position X-Y en cours.
+[**CoreWindow::PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerpressed) | Le bouton gauche ou droit de la souris a été enfoncé (et maintenu), ou la surface tactile a été touchée.
+[**CoreWindow::PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved) |La souris a été déplacée, ou une action de déplacement a été effectuée sur la surface tactile.
+[**CoreWindow::PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerreleased) |Le bouton gauche de la souris a été relâché, ou l’objet au contact de la surface tactile a été retiré.
+[**CoreWindow::PointerExited**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerexited) |Le pointeur est sorti de la fenêtre principale.
+[**Windows::Devices::Input::MouseMoved**](https://docs.microsoft.com/uwp/api/windows.devices.input.mousedevice.mousemoved) | La souris a parcouru une certaine distance. Sachez que nous nous intéressons uniquement aux valeurs relatives de déplacement de la souris, et non pas à la position X-Y en cours.
 
 
 Ces gestionnaires d’événements sont définis pour démarrer l’écoute de l’entrée utilisateur dès que l'objet **MoveLookController** est initialisé dans la fenêtre d’application.
@@ -84,7 +84,7 @@ Pour déterminer à quel moment le jeu doit écouter une entrée donnée, la cla
 
 État | Description
 :----- | :-------
-**Aucune** | Il s’agit de l’état initialisé pour la manette. Toute entrée est ignorée puisque le jeu n’anticipe aucune entrée de contrôleur.
+**Aucun** | Il s’agit de l’état initialisé pour la manette. Toute entrée est ignorée puisque le jeu n’anticipe aucune entrée de contrôleur.
 **WaitForInput** | Le contrôleur attend que le joueur accuse réception d'un message provenant du jeu, soit à l’aide du bouton gauche de la souris, d'un événement tactile ou du bouton Menu d'un boîtier de commande.
 **Active** | Le contrôleur est en mode de jeu actif.
 
@@ -105,7 +105,7 @@ Dans l'état **Active**, l'instance **MoveLookController** traite les événemen
 
 
 Toutes les entrées du pointeur sont suivies dans l’état **Active**, avec différents ID de pointeur correspondant à diverses actions de pointeur.
-Lorsqu’un événement [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208278) est reçu, **MoveLookController** obtient la valeur d’ID de pointeur créée par la fenêtre. L’ID de pointeur représente un type spécifique d’entrée. Par exemple, sur un périphérique tactile multipoint, plusieurs entrées actives différentes peuvent exister en même temps. Les ID permettent d’assurer le suivi de l’entrée utilisée par le joueur. Si un événement se trouve dans le rectangle de déplacement de l’écran tactile, un ID de pointeur est affecté pour suivre tous les événements de pointeur dans le rectangle de déplacement. D’autres événements de pointeur dans le rectangle de tir sont suivis séparément, avec un ID de pointeur distinct.
+Lorsqu’un événement [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerpressed) est reçu, **MoveLookController** obtient la valeur d’ID de pointeur créée par la fenêtre. L’ID de pointeur représente un type spécifique d’entrée. Par exemple, sur un périphérique tactile multipoint, plusieurs entrées actives différentes peuvent exister en même temps. Les ID permettent d’assurer le suivi de l’entrée utilisée par le joueur. Si un événement se trouve dans le rectangle de déplacement de l’écran tactile, un ID de pointeur est affecté pour suivre tous les événements de pointeur dans le rectangle de déplacement. D’autres événements de pointeur dans le rectangle de tir sont suivis séparément, avec un ID de pointeur distinct.
 
 
 > [!NOTE]
@@ -160,7 +160,7 @@ Examinons à présent l’implémentation de chacun des trois types de contrôle
 
 Si le déplacement de la souris est détecté, nous souhaitons utiliser ce déplacement pour déterminer les nouveaux tangage et lacet de la caméra. Nous y parvenons en implémentant les contrôles de souris relatifs, avec lesquels nous gérons la distance relative parcourue par la souris (écart entre le début et la fin du déplacement) par opposition à l’enregistrement des coordonnées des pixels x-y absolues du mouvement.
 
-Pour ce faire, nous obtenons les modifications dans X (déplacement horizontal) et les coordonnées Y (déplacement vertical) en examinant les champs [**MouseDelta::X**](https://msdn.microsoft.com/library/windows/apps/hh758353) et **MouseDelta::Y** sur l’objet argument [**Windows::Device::Input::MouseEventArgs::MouseDelta**](https://msdn.microsoft.com/library/windows/apps/hh758358) renvoyé par l’événement [**MouseMoved**](https://msdn.microsoft.com/library/windows/apps/hh758356).
+Pour ce faire, nous obtenons les modifications dans X (déplacement horizontal) et les coordonnées Y (déplacement vertical) en examinant les champs [**MouseDelta::X**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.MouseDelta) et **MouseDelta::Y** sur l’objet argument [**Windows::Device::Input::MouseEventArgs::MouseDelta**](https://docs.microsoft.com/uwp/api/windows.devices.input.mouseeventargs.mousedelta) renvoyé par l’événement [**MouseMoved**](https://docs.microsoft.com/uwp/api/windows.devices.input.mousedevice.mousemoved).
 
 ```cpp
 void MoveLookController::OnMouseMoved(
@@ -220,8 +220,8 @@ Interaction tactile en dehors du rectangle de déplacement et de tir | Modifier 
 
 **MoveLookController** vérifie l’ID de pointeur pour déterminer où l’événement s’est produit, et entreprend l’une des actions suivantes :
 
--   Si l’événement [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276) s’est produit dans le rectangle de déplacement ou de tir, la position du pointeur est mise à jour pour la manette.
--   Si l’événement [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276) s’est produit ailleurs dans le reste de l’écran (défini comme les contrôles de vue), la modification des tangage et lacet du vecteur de direction de la vue est calculée.
+-   Si l’événement [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved) s’est produit dans le rectangle de déplacement ou de tir, la position du pointeur est mise à jour pour la manette.
+-   Si l’événement [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved) s’est produit ailleurs dans le reste de l’écran (défini comme les contrôles de vue), la modification des tangage et lacet du vecteur de direction de la vue est calculée.
 
 
 Une fois que nous avons implémenté nos contrôles tactiles, les rectangles que nous avons tracés précédemment à l’aide de Direct2D indiquent aux joueurs où se trouvent les zones de déplacement, de tir et de vue.
@@ -401,7 +401,7 @@ Vous pouvez voir le code complet de la méthode **MoveLookController::OnPointerP
 
 Ici, **MoveLookController** attribue l’ID de pointeur du pointeur qui a déclenché l’événement à une variable spécifique qui correspond à la zone de vue. Dans le cas d’une pression tactile qui se produisent dans la région coup de œil, les **m\_lookPointerID** variable est définie sur l’ID de pointeur qui a déclenché l’événement. Une variable booléenne, **m\_lookInUse**, est également défini pour indiquer que le contrôle n’a pas encore été publié.
 
-Examinons maintenant la façon dont l’exemple de jeu gère l’événement d’écran tactile [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276).
+Examinons maintenant la façon dont l’exemple de jeu gère l’événement d’écran tactile [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved).
 
 
 Dans la méthode **MoveLookController::OnPointerMoved**, nous cherchons à savoir quel type d’ID de pointeur a été attribué à l’événement. S’il s’agit de **m_lookPointerID**, nous calculons le changement de position du pointeur.
@@ -435,9 +435,9 @@ Ensuite, nous utilisons ce delta pour calculer l'ampleur de modification de la r
 
 
 
-Pour finir, examinons la façon dont l’exemple de jeu gère l’événement d’écran tactile [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279).
+Pour finir, examinons la façon dont l’exemple de jeu gère l’événement d’écran tactile [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerreleased).
 Une fois que l’utilisateur a terminé son mouvement tactile et a retiré son doigt de l’écran, [**MoveLookController::OnPointerReleased**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L441-L500) est lancé.
-Si l’ID du pointeur qui a déclenché l’événement [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) est l’ID du pointeur de déplacement précédemment enregistré, **MoveLookController** affecte la valeur `0` à la vitesse, car le joueur a cessé de toucher la zone de vue.
+Si l’ID du pointeur qui a déclenché l’événement [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerreleased) est l’ID du pointeur de déplacement précédemment enregistré, **MoveLookController** affecte la valeur `0` à la vitesse, car le joueur a cessé de toucher la zone de vue.
 
 ```cpp
     else if (pointerID == m_lookPointerID)
@@ -469,7 +469,7 @@ Mouvement de la souris | Modifier la rotation (tangage et lacet) de la vue camé
 Bouton gauche de la souris | Tirer une sphère
 
 
-Pour utiliser le clavier, l’exemple de jeu enregistre deux nouveaux événements, [**CoreWindow::KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208271) et [**CoreWindow::KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208270), dans la méthode [**MoveLookController::InitWindow** ](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L84-L88). Ces événements gèrent la pression et le relâchement d'une touche.
+Pour utiliser le clavier, l’exemple de jeu enregistre deux nouveaux événements, [**CoreWindow::KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.keyup) et [**CoreWindow::KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.keydown), dans la méthode [**MoveLookController::InitWindow** ](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L84-L88). Ces événements gèrent la pression et le relâchement d'une touche.
 
 ```cpp
 window->KeyDown +=

@@ -6,28 +6,28 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, minuteur, threads
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ee5142997e3d4824152adf6d0b26bccb8a30f7f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 7a1a7a161734a142b5f1399798394494d05c6a49
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57613304"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371511"
 ---
 # <a name="use-a-timer-to-submit-a-work-item"></a>Utiliser un minuteur pour envoyer un élément de travail
 
 
 <b>API importantes</b>
 
--   [**Espace de noms Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/BR208383)
--   [**Espace de noms Windows.System.Threading**](https://msdn.microsoft.com/library/windows/apps/BR229642)
+-   [**Espace de noms Windows.UI.Core**](https://docs.microsoft.com/uwp/api/Windows.UI.Core)
+-   [**Espace de noms Windows.System.Threading**](https://docs.microsoft.com/uwp/api/Windows.System.Threading)
 
 Découvrez comment créer un élément de travail qui s’exécute une fois le délai du minuteur écoulé.
 
 ## <a name="create-a-single-shot-timer"></a>Créer un minuteur à déclenchement unique
 
-Utilisez la méthode [**CreateTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967921) pour créer un minuteur pour l’élément de travail. Fournissez une expression lambda qui effectue la tâche, puis utilisez le paramètre *delay* pour spécifier la durée pendant laquelle le pool de threads attend avant de pouvoir attribuer l’élément de travail à un thread disponible. Le délai est spécifié à l’aide d’une structure [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/BR225996).
+Utilisez la méthode [**CreateTimer**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.createtimer) pour créer un minuteur pour l’élément de travail. Fournissez une expression lambda qui effectue la tâche, puis utilisez le paramètre *delay* pour spécifier la durée pendant laquelle le pool de threads attend avant de pouvoir attribuer l’élément de travail à un thread disponible. Le délai est spécifié à l’aide d’une structure [**TimeSpan**](https://docs.microsoft.com/uwp/api/Windows.Foundation.TimeSpan).
 
-> **Remarque**  vous pouvez utiliser [ **CoreDispatcher.RunAsync** ](https://msdn.microsoft.com/library/windows/apps/Hh750317) pour accéder à l’interface utilisateur et afficher la progression à partir de l’élément de travail.
+> **Remarque**  vous pouvez utiliser [ **CoreDispatcher.RunAsync** ](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows) pour accéder à l’interface utilisateur et afficher la progression à partir de l’élément de travail.
 
 L’exemple suivant crée un élément de travail qui s’exécute dans trois minutes :
 
@@ -87,7 +87,7 @@ L’exemple suivant crée un élément de travail qui s’exécute dans trois mi
 
 ## <a name="provide-a-completion-handler"></a>Fournir un gestionnaire d’achèvement
 
-Si nécessaire, gérez l’annulation et l’achèvement de l’élément de travail avec un objet [**TimerDestroyedHandler**](https://msdn.microsoft.com/library/windows/apps/Hh967926). Utilisez la surcharge [**CreateTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967921) pour fournir une expression lambda supplémentaire. Celle-ci s’exécute lorsque le minuteur est annulé ou que l’élément de travail se termine.
+Si nécessaire, gérez l’annulation et l’achèvement de l’élément de travail avec un objet [**TimerDestroyedHandler**](https://docs.microsoft.com/uwp/api/windows.system.threading.timerdestroyedhandler). Utilisez la surcharge [**CreateTimer**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.createtimer) pour fournir une expression lambda supplémentaire. Celle-ci s’exécute lorsque le minuteur est annulé ou que l’élément de travail se termine.
 
 L’exemple suivant crée un minuteur qui envoie l’élément de travail, puis appelle une méthode lorsque l’élément de travail se termine ou que le minuteur est annulé :
 
@@ -207,7 +207,7 @@ L’exemple suivant crée un minuteur qui envoie l’élément de travail, puis 
 
 ## <a name="cancel-the-timer"></a>Annuler le minuteur
 
-Si le compte à rebours du minuteur se poursuit alors que l’élément de travail n’est plus nécessaire, appelez [**Cancel**](https://msdn.microsoft.com/library/windows/apps/BR230588). Le minuteur est annulé et l’élément de travail n’est pas envoyé au pool de threads.
+Si le compte à rebours du minuteur se poursuit alors que l’élément de travail n’est plus nécessaire, appelez [**Cancel**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.cancel). Le minuteur est annulé et l’élément de travail n’est pas envoyé au pool de threads.
 
 > [!div class="tabbedCodeSnippets"]
 > ``` csharp
@@ -219,7 +219,7 @@ Si le compte à rebours du minuteur se poursuit alors que l’élément de trava
 
 ## <a name="remarks"></a>Notes
 
-Les applications de plateforme Windows universelle (UWP) ne peuvent pas utiliser **Thread.Sleep**, car cela peut bloquer le thread d’interface utilisateur. Vous pouvez utiliser un objet [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587) pour créer un élément de travail à la place. Cela retarde la tâche accomplie par l’élément de travail sans bloquer le thread d’interface utilisateur.
+Les applications de plateforme Windows universelle (UWP) ne peuvent pas utiliser **Thread.Sleep**, car cela peut bloquer le thread d’interface utilisateur. Vous pouvez utiliser un objet [**ThreadPoolTimer**](https://docs.microsoft.com/uwp/api/Windows.System.Threading.ThreadPoolTimer) pour créer un élément de travail à la place. Cela retarde la tâche accomplie par l’élément de travail sans bloquer le thread d’interface utilisateur.
 
 Pour obtenir un exemple de code complet illustrant les éléments de travail, les éléments de travail de minuteur et les éléments de travail périodiques, voir l’[exemple de pool de threads](https://go.microsoft.com/fwlink/p/?linkid=255387). L’exemple de code a été écrit à l’origine pour Windows 8.1, mais le code peut être réutilisé dans Windows 10.
 

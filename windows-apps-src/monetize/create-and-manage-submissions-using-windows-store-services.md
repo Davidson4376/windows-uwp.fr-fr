@@ -6,12 +6,12 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: windows 10, uwp, API de soumission au Microsoft Store
 ms.localizationpriority: medium
-ms.openlocfilehash: c2f2638e93ecbe346cc5dccb503d94d926ddcdae
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: e8e7653174eaf31f11341a5c8e21b69ec54a6189
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58335147"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371283"
 ---
 # <a name="create-and-manage-submissions"></a>Créer et gérer des soumissions
 
@@ -46,15 +46,15 @@ Avant d’écrire le code d’appel de l’API de soumission au Microsoft Store
 
 * Préparez votre app en vue de l’utiliser avec l’API de soumission au Microsoft Store :
 
-  * Si votre application n’existe pas encore de partenaires, vous devez [créer votre application en réservant son nom dans le centre partenaires](https://msdn.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name). Vous ne pouvez pas utiliser l’API de soumission de Microsoft Store pour créer une application dans le centre de partenaires ; Vous devez travailler dans le centre de partenaires pour la créer, et puis après que vous pouvez utiliser l’API pour accéder à l’application et créer par programmation des envois pour celui-ci. En revanche, vous pouvez vous servir de l’API pour créer des extensions et des versions d’évaluation de package par programmation avant de créer des soumissions pour ces ressources.
+  * Si votre application n’existe pas encore de partenaires, vous devez [créer votre application en réservant son nom dans le centre partenaires](https://docs.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name). Vous ne pouvez pas utiliser l’API de soumission de Microsoft Store pour créer une application dans le centre de partenaires ; Vous devez travailler dans le centre de partenaires pour la créer, et puis après que vous pouvez utiliser l’API pour accéder à l’application et créer par programmation des envois pour celui-ci. En revanche, vous pouvez vous servir de l’API pour créer des extensions et des versions d’évaluation de package par programmation avant de créer des soumissions pour ces ressources.
 
-  * Avant de pouvoir créer une soumission pour une application donnée à l’aide de cette API, vous devez d’abord [créer une soumission de l’application dans le centre partenaires](https://msdn.microsoft.com/windows/uwp/publish/app-submissions), y compris la réponse à la [âge des évaluations](https://msdn.microsoft.com/windows/uwp/publish/age-ratings) questionnaire. Après quoi, vous pourrez créer des soumissions par programmation pour cette application à l’aide de l’API. Vous n’avez pas besoin de créer une soumission d’extension ou de version d’évaluation de package avant d’utiliser l’API pour ces types de soumission.
+  * Avant de pouvoir créer une soumission pour une application donnée à l’aide de cette API, vous devez d’abord [créer une soumission de l’application dans le centre partenaires](https://docs.microsoft.com/windows/uwp/publish/app-submissions), y compris la réponse à la [âge des évaluations](https://docs.microsoft.com/windows/uwp/publish/age-ratings) questionnaire. Après quoi, vous pourrez créer des soumissions par programmation pour cette application à l’aide de l’API. Vous n’avez pas besoin de créer une soumission d’extension ou de version d’évaluation de package avant d’utiliser l’API pour ces types de soumission.
 
-  * Si vous créez ou mettez à jour une soumission d’application et que vous devez inclure un package d’application, [préparez le package d’application](https://msdn.microsoft.com/windows/uwp/publish/app-package-requirements).
+  * Si vous créez ou mettez à jour une soumission d’application et que vous devez inclure un package d’application, [préparez le package d’application](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements).
 
-  * Si vous créez ou mettez à jour une soumission d’application et que vous devez inclure des captures d’écran ou des images à des fins de présentation sur le Store, [préparez les captures d’écran et les images de l’application](https://msdn.microsoft.com/windows/uwp/publish/app-screenshots-and-images).
+  * Si vous créez ou mettez à jour une soumission d’application et que vous devez inclure des captures d’écran ou des images à des fins de présentation sur le Store, [préparez les captures d’écran et les images de l’application](https://docs.microsoft.com/windows/uwp/publish/app-screenshots-and-images).
 
-  * Si vous créez ou mettez à jour une soumission d’extension et que vous devez inclure une icône, [préparez le package l’icône](https://msdn.microsoft.com/windows/uwp/publish/create-iap-descriptions#icon).
+  * Si vous créez ou mettez à jour une soumission d’extension et que vous devez inclure une icône, [préparez le package l’icône](https://docs.microsoft.com/windows/uwp/publish/create-iap-descriptions).
 
 <span id="associate-an-azure-ad-application-with-your-windows-partner-center-account" />
 

@@ -6,12 +6,12 @@ ms.date: 04/17/2018
 ms.topic: article
 keywords: windows 10, uwp, API de soumission au Microsoft Store, valider une soumission d'applications
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e44f5672c817f9e1ab00df341a2fd78b23f2944
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 36c645303a86bc28f12fa8e31b8a83653c167664
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334147"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371996"
 ---
 # <a name="commit-an-app-submission"></a>Valider une soumission d’application
 
@@ -38,16 +38,16 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 
 ### <a name="request-header"></a>En-tête de requête
 
-| Header        | Type   | Description                                                                 |
+| Header        | type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | chaîne | Obligatoire. Le jeton d’accès Azure AD sous la forme **PORTEUR** &lt; *jeton*&gt;. |
 
 
 ### <a name="request-parameters"></a>Paramètres de la requête
 
-| Nom        | Type   | Description                                                                 |
+| Nom        | type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | chaîne | Obligatoire. L’ID Windows Store de l’application qui contient la soumission à valider. Pour plus d’informations sur l’ID Windows Store, voir [Visualiser les informations d’identité des applications](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
+| applicationId | chaîne | Obligatoire. L’ID Windows Store de l’application qui contient la soumission à valider. Pour plus d’informations sur l’ID Windows Store, voir [Visualiser les informations d’identité des applications](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
 | submissionId | chaîne | Obligatoire. ID de la soumission à valider. Cet ID est disponible dans les données de réponse des requêtes pour [créer une soumission d’apps](create-an-app-submission.md). Pour la soumission qui a été créée dans le centre de partenaires, cet ID est également disponible dans l’URL de la page d’envoi dans l’espace partenaires.  |
 
 ### <a name="request-body"></a>Corps de la requête
@@ -75,7 +75,7 @@ L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à c
 
 ### <a name="response-body"></a>Corps de la réponse
 
-| Value      | Type   | Description                                                                                                                                                                                                                                                                         |
+| Value      | type   | Description                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | status           | chaîne  | État de la soumission. Les valeurs possibles sont les suivantes : <ul><li>Aucune</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publication</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>  |
 

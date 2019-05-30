@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, API de soumission au Microsoft Store, lancement du package, soumission d’app, interrompre
 ms.assetid: 4ce79fe3-deda-4d31-b938-d672c3869051
 ms.localizationpriority: medium
-ms.openlocfilehash: 5262089a2eab57ff84f399637fd98e58ec3e13ed
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 00588b91db2a2536ca7c0a1a5e6748c26b3eb2fc
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334667"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372056"
 ---
 # <a name="halt-the-rollout-for-an-app-submission"></a>Interrompre le lancement d’une soumission d’applications
 
@@ -42,16 +42,16 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 
 ### <a name="request-header"></a>En-tête de requête
 
-| Header        | Type   | Description                                                                 |
+| Header        | type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | chaîne | Obligatoire. Le jeton d’accès Azure AD sous la forme **PORTEUR** &lt; *jeton*&gt;. |
 
 
 ### <a name="request-parameters"></a>Paramètres de la requête
 
-| Nom        | Type   | Description                                                                 |
+| Nom        | type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | chaîne | Obligatoire. ID Windows Store de l’application qui contient la soumission avec le lancement du package que vous voulez arrêter. Pour plus d’informations sur l’ID Windows Store, voir [Visualiser les informations d’identité des applications](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
+| applicationId | chaîne | Obligatoire. ID Windows Store de l’application qui contient la soumission avec le lancement du package que vous voulez arrêter. Pour plus d’informations sur l’ID Windows Store, voir [Visualiser les informations d’identité des applications](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
 | submissionId | chaîne | Obligatoire. ID de la soumission avec le lancement du package que vous voulez arrêter. Cet ID est disponible dans les données de réponse des requêtes pour [créer une soumission d’apps](create-an-app-submission.md). Pour la soumission qui a été créée dans le centre de partenaires, cet ID est également disponible dans l’URL de la page d’envoi dans l’espace partenaires.  |
 
 

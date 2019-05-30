@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, sécurité
 ms.assetid: 89f3d331-20cd-457b-83e8-1a22aaab2658
 ms.localizationpriority: medium
-ms.openlocfilehash: fb1ff6431b3ccf609b7362db819569c2f6cebc48
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0ddadde2502e8512ba38dc30c6ac24d22631d62c
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57657014"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372645"
 ---
 # <a name="windows-unlock-with-windows-hello-companion-iot-devices"></a>Déverrouillage Windows avec les appareils (IoT) complémentaires
 
@@ -50,7 +50,7 @@ L’infrastructure du dispositif complémentaire Windows Hello est implémentée
 
 L’intégration avec l’infrastructure du dispositif complémentaire Windows Hello nécessite les éléments suivants :
 
-- une application de [plateforme Windows universelle (UWP)](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide) pour le dispositif complémentaire Windows Hello, téléchargée à partir du Windows Store ; 
+- une application de [plateforme Windows universelle (UWP)](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide) pour le dispositif complémentaire Windows Hello, téléchargée à partir du Windows Store ; 
 - la possibilité de créer deux clés HMAC 256 bits sur le dispositif complémentaire Windows Hello et de générer un HMAC avec ce dernier (à l’aide de SHA-256).
 - une bonne configuration des paramètres de sécurité sur le Bureau Windows 10. Le service d’authentification par dispositif complémentaire nécessite ce PIN avant de pouvoir accueillir un dispositif complémentaire Windows Hello. Les utilisateurs doivent configurer ce PIN dans Paramètres &gt; Comptes &gt; Options de connexion.
 
@@ -187,7 +187,7 @@ L’implémentation de ces fonctionnalités nécessite que l’application du di
 
 ## <a name="windows-hello-companion-device-framework-api-model"></a>Modèle d’API d’infrastructure du dispositif complémentaire Windows Hello
 
-### <a name="overview"></a>Vue d’ensemble
+### <a name="overview"></a>Vue d'ensemble
 
 Une application du dispositif complémentaire Windows Hello doit contenir deux composants : une application au premier plan avec une interface utilisateur responsable de l’inscription et de la désinscription du dispositif, et une tâche en arrière-plan qui gère l’authentification.
 
@@ -201,7 +201,7 @@ Le processus global de l’API se déroule comme suit :
     * S’assurer que l’application du dispositif complémentaire Windows Hello stocke des clés HMAC (si elles sont prises en charge) et qu’elle en supprime les copies
 2. Inscrire votre tâche en arrière-plan
 3. Attendre l’événement approprié dans la tâche en arrière-plan
-    * WaitingForUserConfirmation : Attendez que cet événement si l’action/mouvement utilisateur sur le côté du périphérique Windows Hello Compagnon est nécessaire pour démarrer le flux d’authentification
+    * WaitingForUserConfirmation: Attendez que cet événement si l’action/mouvement utilisateur sur le côté du périphérique Windows Hello Compagnon est nécessaire pour démarrer le flux d’authentification
     * CollectingCredential : Attendez que cet événement si l’appareil mobile Windows Hello s’appuie sur le mouvement d’action/utilisateur sur le PC pour démarrer le flux d’authentification (par exemple, en atteignant la barre d’espace)
     * Autre déclencheur, comme une carte à puce : Veillez à interroger pour l’état actuel de l’authentification appeler l’API de droite.
 4. Tenir l’utilisateur informé des messages d’erreur ou des étapes suivantes nécessaires en appelant la méthode ShowNotificationMessageAsync. Appeler uniquement cette API une fois qu’un signal d’intention est capturé.
@@ -634,7 +634,7 @@ Les messages d’erreur s’affichent systématiquement et apparaissent après l
 
 Les messages d’erreur et d’aide sont les suivants. Le nom du dispositif est un paramètre transmis par l’application du dispositif complémentaire dans le cadre de la méthode ShowNotificationMessageAsync.
 
-**Conseils**
+**Guidance**
 
 - « Effectuez un balayage vers le haut ou appuyez sur la barre d’espace pour vous connecter avec *nom de l’appareil*. »
 - « Configuration de votre appareil compagnon. Veuillez patienter ou utilisez une autre option de connexion. »

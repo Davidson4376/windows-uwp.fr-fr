@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b6290fba9d4194df78c39902b8d96e952134682
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: eb0e870aa467641f82d24f03278a199ab56d0c8d
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57607414"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370974"
 ---
 # <a name="streaming-resources-texture-sampling-features"></a>Fonctionnalités d’échantillonnage de texture des ressources de diffusion en continu
 
@@ -27,12 +27,12 @@ Les fonctionnalités d’échantillonnage de texture décrites ici requièrent l
 ## <a name="span-idshaderstatusfeedbackaboutmappedareasspanspan-idshaderstatusfeedbackaboutmappedareasspanspan-idshaderstatusfeedbackaboutmappedareasspanshader-status-feedback-about-mapped-areas"></a><span id="Shader_status_feedback_about_mapped_areas"></span><span id="shader_status_feedback_about_mapped_areas"></span><span id="SHADER_STATUS_FEEDBACK_ABOUT_MAPPED_AREAS"></span>Commentaires d’état de nuanceur sur des domaines mappés
 
 
-Les instructions de nuanceur qui agissent en lecture et/ou en écriture sur une ressource de diffusion en continu entraînent un enregistrement des informations d'état. Cet état est présenté en tant que valeur de retour supplémentaire facultative sur chaque instruction d'accès aux ressources située dans un registre temp 32 bits. Les contenus de la valeur de retour sont opaques. Autrement dit, la lecture directe par le programme de nuanceur n’est pas autorisée. Mais vous pouvez utiliser la fonction [**CheckAccessFullyMapped**](https://msdn.microsoft.com/library/windows/desktop/dn292083) pour extraire les informations d’état.
+Les instructions de nuanceur qui agissent en lecture et/ou en écriture sur une ressource de diffusion en continu entraînent un enregistrement des informations d'état. Cet état est présenté en tant que valeur de retour supplémentaire facultative sur chaque instruction d'accès aux ressources située dans un registre temp 32 bits. Les contenus de la valeur de retour sont opaques. Autrement dit, la lecture directe par le programme de nuanceur n’est pas autorisée. Mais vous pouvez utiliser la fonction [**CheckAccessFullyMapped**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/checkaccessfullymapped) pour extraire les informations d’état.
 
 ## <a name="span-idfullymappedcheckspanspan-idfullymappedcheckspanspan-idfullymappedcheckspanfully-mapped-check"></a><span id="Fully_mapped_check"></span><span id="fully_mapped_check"></span><span id="FULLY_MAPPED_CHECK"></span>Vérification entièrement mappée
 
 
-La fonction [**CheckAccessFullyMapped**](https://msdn.microsoft.com/library/windows/desktop/dn292083) interprète l’état renvoyé à partir d’un accès à la mémoire et indique si toutes les données auxquelles vous accédez ont été mappées dans la ressource. **CheckAccessFullyMapped** renvoie la valeur true (0xFFFFFFFF) si les données a été mappées ou false (0x00000000) si les données n'ont pas été mappées.
+La fonction [**CheckAccessFullyMapped**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/checkaccessfullymapped) interprète l’état renvoyé à partir d’un accès à la mémoire et indique si toutes les données auxquelles vous accédez ont été mappées dans la ressource. **CheckAccessFullyMapped** renvoie la valeur true (0xFFFFFFFF) si les données a été mappées ou false (0x00000000) si les données n'ont pas été mappées.
 
 Lors des opérations de filtrage, il arrive parfois que le poids d’un texel donné soit égal à 0.0. Un exemple est un exemple linéaire avec les coordonnées de texture qui se trouvent directement sur un centre de texel : 3 autres texels (ils sont celles qui peut varier par matériel) contribuent au filtre, mais avec un poids de 0. Ces texels d'un poids de 0 n'ont aucune influence sur le résultat du filtre, donc s'ils tombent sur les vignettes **NULL**, ils ne sont pas considérés comme un accès non mappé. Notez que la même garantie s’applique aux filtres de texture qui incluent plusieurs niveaux mip ; si les texels qui figurent sur l'un des mipmaps ne sont pas mappés, mais que le poids de ces texels est de 0, ces texels ne considérés comme un accès non mappés.
 
@@ -40,7 +40,7 @@ Lors de l’échantillonnage à partir d’un format qui a moins de 4 composants
 
 Le nuanceur peut vérifier l’état et poursuivre toutes les mesures à suivre en cas d’échec. Par exemple, une mesure à suivre peut prendre la forme d'une journalisation des échecs (par exemple, via l'écriture d'un accès sans ordre) et/ou de l'émission d'une autre lecture limitée à un niveau de détail plus grand connu pour être mappé. Une application peut également souhaiter enregistrer les accès réussis afin d’avoir une idée de la partie de l’ensemble de vignettes mappé à laquelle vous avez accédé.
 
-La journalisation peut s'avérer compliquée car aucun mécanisme ne permet de consigner le nombre exact de vignettes auxquelles vous avez accédé. L’application peut émettre des hypothèses conservatrices basées sur la connaissance des coordonnées utilisées pour l'accès, ainsi que l'utilisation des instructions de niveau de détail ; par exemple, [**tex2Dlod**](https://msdn.microsoft.com/library/windows/desktop/bb509680)) renvoie le calcul du niveau de détail du matériel.
+La journalisation peut s'avérer compliquée car aucun mécanisme ne permet de consigner le nombre exact de vignettes auxquelles vous avez accédé. L’application peut émettre des hypothèses conservatrices basées sur la connaissance des coordonnées utilisées pour l'accès, ainsi que l'utilisation des instructions de niveau de détail ; par exemple, [**tex2Dlod**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-tex2dlod)) renvoie le calcul du niveau de détail du matériel.
 
 En outre, de nombreux accès concernent les mêmes vignettes, c'est pourquoi une journalisation redondante peut survenir et possiblement entraîner la saturation de la mémoire. Il peut être pratique si le matériel peut être accordé ne pas besoin de rapport vignette accès si elles ont été signalés à un autre emplacement avant la possibilité. L’état d'un suivi de ce type peut être réinitialisé à partir de l’API (probablement aux limites de l'image).
 
@@ -49,11 +49,11 @@ En outre, de nombreux accès concernent les mêmes vignettes, c'est pourquoi une
 
 Pour aider les nuanceurs à éviter les ressources de diffusion en continu mipmappées qui sont reconnues comme non mappées, la plupart des instructions de nuanceur qui impliquent l’utilisation d’un échantillon (filtrage) ont un mode qui permet au nuanceur de transmettre un paramètre de clamp MinLOD float32 supplémentaire à l’échantillon de texture. Cette valeur figure dans l'espace du numéro de mipmap, par opposition à la ressource sous-jacente.
 
-Le matériel exécute` max(fShaderMinLODClamp,fComputedLOD) `au même emplacement dans le calcul du niveau de détail où survient le clamp MinLOD, qui est également un [**max**](https://msdn.microsoft.com/library/windows/desktop/bb509624)().
+Le matériel exécute` max(fShaderMinLODClamp,fComputedLOD) `au même emplacement dans le calcul du niveau de détail où survient le clamp MinLOD, qui est également un [**max**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-max)().
 
 Si le résultat de l’application de la bride LOD par exemple et n’importe quel autres pinces LOD définis dans l’échantillonneur est un ensemble vide, le résultat est le même accès aux limites du résultat en tant que crochet minLOD par ressource : 0 pour les composants dans le format de surface et les valeurs par défaut pour les composants manquants.
 
-L’instruction LOD (par exemple, [**tex2Dlod**](https://msdn.microsoft.com/library/windows/desktop/bb509680)), qui a permis de restaurer le clamp minLOD par échantillon décrit ici, renvoie à la fois un niveau de détail limité et non limité. Le niveau de détail limité renvoyé par cette instruction LOD reflète l'ensemble des limitations, compris la limitation par ressource, mais pas la limitation par échantillon. La limitation par échantillon est contrôlée et connue par le nuanceur, de manière à ce que si nécessaire, l'auteur du nuanceur puisse appliquer manuellement cette limitation à la valeur de retour des instructions au niveau du détail.
+L’instruction LOD (par exemple, [**tex2Dlod**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-tex2dlod)), qui a permis de restaurer le clamp minLOD par échantillon décrit ici, renvoie à la fois un niveau de détail limité et non limité. Le niveau de détail limité renvoyé par cette instruction LOD reflète l'ensemble des limitations, compris la limitation par ressource, mais pas la limitation par échantillon. La limitation par échantillon est contrôlée et connue par le nuanceur, de manière à ce que si nécessaire, l'auteur du nuanceur puisse appliquer manuellement cette limitation à la valeur de retour des instructions au niveau du détail.
 
 ## <a name="span-idminmaxreductionfilteringspanspan-idminmaxreductionfilteringspanspan-idminmaxreductionfilteringspanminmax-reduction-filtering"></a><span id="Min_Max_reduction_filtering"></span><span id="min_max_reduction_filtering"></span><span id="MIN_MAX_REDUCTION_FILTERING"></span>Filtrage de réduction Min/Max
 

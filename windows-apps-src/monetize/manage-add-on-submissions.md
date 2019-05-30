@@ -6,12 +6,12 @@ ms.date: 04/17/2018
 ms.topic: article
 keywords: windows 10, uwp, API de soumission au Microsoft Store, soumissions d'extension, produit dans l'app, FAI
 ms.localizationpriority: medium
-ms.openlocfilehash: d3bf92e308d42b9dd93539ebbe44525067f23b6f
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: e6e75483ca6c01958a4b8bda2c5c3bb60e764eff
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58335127"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372481"
 ---
 # <a name="manage-add-on-submissions"></a>Gérer les soumissions d’extensions
 
@@ -94,7 +94,7 @@ Pour créer une soumission pour une extension, suivez ce processus.
     > [!NOTE]
     > Un URI SAS permet d’accéder à une ressource sécurisée dans le stockage Azure sans besoin de clés de compte. Pour plus d’informations générales sur l’URI SAP et leur utilisation avec le stockage Blob Azure, consultez [Signatures d’accès partagé, partie 1 : Présentation du modèle SAP](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1) et [Signatures d’accès partagé, partie 2 : Créer et utiliser une signature d’accès partagé avec Blob storage](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/).
 
-4. Si vous ajoutez de nouvelles icônes pour la soumission, [préparez-les](https://msdn.microsoft.com/windows/uwp/publish/create-iap-descriptions#icon) et ajoutez-les à une archive ZIP.
+4. Si vous ajoutez de nouvelles icônes pour la soumission, [préparez-les](https://docs.microsoft.com/windows/uwp/publish/create-iap-descriptions) et ajoutez-les à une archive ZIP.
 
 5. Mettez à jour les données de la [soumission d'extension](#add-on-submission-object) avec toutes les modifications requises pour la nouvelle soumission et lancez la méthode suivante pour mettre à jour la soumission. Pour plus d’informations, voir [Mettre à jour une soumission d’extension](update-an-add-on-submission.md).
 
@@ -110,7 +110,7 @@ Pour créer une soumission pour une extension, suivez ce processus.
     * [Stockage Azure SDK pour Java](https://docs.microsoft.com/azure/storage/storage-java-how-to-use-blob-storage)
     * [Stockage Azure SDK pour Python](https://docs.microsoft.com/azure/storage/storage-python-how-to-use-blob-storage)
 
-    L’exemple de code suivant en C# montre comment charger une archive ZIP vers le stockage d’objets blob Azure à l’aide de la classe [CloudBlockBlob](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.storage.blob.cloudblockblob.aspx) incluse dans la bibliothèque cliente de stockage Azure pour .NET. Cet exemple repose sur le principe que l’archive ZIP a déjà été écrite dans un objet de flux.
+    L’exemple de code suivant en C# montre comment charger une archive ZIP vers le stockage d’objets blob Azure à l’aide de la classe [CloudBlockBlob](https://docs.microsoft.com/dotnet/api/microsoft.windowsazure.storage.blob.cloudblockblob?redirectedfrom=MSDN) incluse dans la bibliothèque cliente de stockage Azure pour .NET. Cet exemple repose sur le principe que l’archive ZIP a déjà été écrite dans un objet de flux.
 
     ```csharp
     string sasUrl = "https://productingestionbin1.blob.core.windows.net/ingestion/26920f66-b592-4439-9a9d-fb0f014902ec?sv=2014-02-14&sr=b&sig=usAN0kNFNnYE2tGQBI%2BARQWejX1Guiz7hdFtRhyK%2Bog%3D&se=2016-06-17T20:45:51Z&sp=rwl";
@@ -228,7 +228,7 @@ Cette ressource décrit une soumission d’extension.
 
 Cette ressource a les valeurs suivantes.
 
-| Value      | Type   | Description        |
+| Value      | type   | Description        |
 |------------|--------|----------------------|
 | id            | chaîne  | ID de la soumission. Cet ID est disponible dans les données de réponse des requêtes pour [créer une soumission d’extension](create-an-add-on-submission.md), [obtenir toutes les extensions](get-all-add-ons.md) et [obtenir une extension](get-an-add-on.md). Pour la soumission qui a été créée dans le centre de partenaires, cet ID est également disponible dans l’URL de la page d’envoi dans l’espace partenaires.  |
 | contentType           | chaîne  |  [Type de contenu](../publish/enter-add-on-properties.md#content-type) qui est fourni dans l’extension. Les valeurs possibles sont les suivantes : <ul><li>NotSet</li><li>BookDownload</li><li>EMagazine</li><li>ENewspaper</li><li>MusicDownload</li><li>MusicStream</li><li>OnlineDataStorage</li><li>VideoDownload</li><li>VideoStream</li><li>Asp</li><li>OnlineDownload</li></ul> |  
@@ -251,7 +251,7 @@ Cette ressource a les valeurs suivantes.
 
 Cette ressource contient des  [informations de référencement pour une extension](../publish/create-add-on-store-listings.md). Cette ressource a les valeurs suivantes.
 
-| Value           | Type    | Description       |
+| Value           | type    | Description       |
 |-----------------|---------|------|
 |  description               |    chaîne     |   Description du listing d’extensions.   |     
 |  icon               |   objet      |[Ressource d’icône](#icon-object) qui contient les données de l’icône du listing d’extensions.    |
@@ -263,7 +263,7 @@ Cette ressource contient des  [informations de référencement pour une extensio
 
 Cette ressource contient les données d’icône du listing d’extensions. Cette ressource a les valeurs suivantes.
 
-| Value           | Type    | Description     |
+| Value           | type    | Description     |
 |-----------------|---------|------|
 |  fileName               |    chaîne     |   Nom du fichier d’icône dans l’archive ZIP que vous avez chargé pour la soumission. L'icône doit prendre la forme d’un fichier PNG de 300 x 300 pixels exactement.   |     
 |  fileStatus               |   chaîne      |  État du fichier d’icône. Les valeurs possibles sont les suivantes : <ul><li>Aucune</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>   |
@@ -274,12 +274,12 @@ Cette ressource contient les données d’icône du listing d’extensions. Cett
 
 Cette ressource contient des informations de tarification pour l’extension. Cette ressource a les valeurs suivantes.
 
-| Value           | Type    | Description    |
+| Value           | type    | Description    |
 |-----------------|---------|------|
-|  marketSpecificPricings               |    objet     |  Dictionnaire de paires clé/valeur, où chaque clé est un code de pays à deux lettres ISO 3166-1 alpha-2 et chaque valeur est un [niveau de prix](#price-tiers). Ces éléments représentent les [prix personnalisés de votre extension sur des marchés spécifiques](https://msdn.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability#markets-and-custom-prices). Tous les éléments de ce dictionnaire remplacent le prix de base spécifié par la valeur *priceId* du marché spécifié.     |     
+|  marketSpecificPricings               |    objet     |  Dictionnaire de paires clé/valeur, où chaque clé est un code de pays à deux lettres ISO 3166-1 alpha-2 et chaque valeur est un [niveau de prix](#price-tiers). Ces éléments représentent les [prix personnalisés de votre extension sur des marchés spécifiques](https://docs.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability). Tous les éléments de ce dictionnaire remplacent le prix de base spécifié par la valeur *priceId* du marché spécifié.     |     
 |  sales               |   tableau      |  **Deprecated**. Tableau des [ressources de ventes](#sale-object) qui contiennent des informations commerciales pour l’extension.     |     
-|  priceId               |   chaîne      |  [Niveau de prix](#price-tiers) qui spécifie le [prix de base](https://msdn.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability#base-price) de l’extension.    |    
-|  isAdvancedPricingModel               |   booléen      |  Si la valeur **true** est définie, votre compte de développeur dispose d’un accès à la plage étendue de tarification, de 0,99 à 1999,99 dollars. Si la valeur **false** est définie, votre compte de développeur dispose d’un accès à la plage initiale de tarification, de 0,99 à 999,99 dollars. Pour plus d’informations sur les différents niveaux, voir [Niveaux de prix](#price-tiers).<br/><br/>**Remarque**&nbsp;&nbsp;Ce champ est en lecture seule.   |
+|  priceId               |   chaîne      |  [Niveau de prix](#price-tiers) qui spécifie le [prix de base](https://docs.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability) de l’extension.    |    
+|  isAdvancedPricingModel               |   booléenne      |  Si la valeur **true** est définie, votre compte de développeur dispose d’un accès à la plage étendue de tarification, de 0,99 à 1999,99 dollars. Si la valeur **false** est définie, votre compte de développeur dispose d’un accès à la plage initiale de tarification, de 0,99 à 999,99 dollars. Pour plus d’informations sur les différents niveaux, voir [Niveaux de prix](#price-tiers).<br/><br/>**Remarque**&nbsp;&nbsp;Ce champ est en lecture seule.   |
 
 
 <span id="sale-object" />
@@ -295,13 +295,13 @@ Cette ressource contient des informations commerciales sur une extension.
 
 Cette ressource a les valeurs suivantes.
 
-| Value           | Type    | Description           |
+| Value           | type    | Description           |
 |-----------------|---------|------|
 |  name               |    chaîne     |   Nom de la vente.    |     
 |  basePriceId               |   chaîne      |  [Niveau de prix](#price-tiers) à utiliser pour le prix de base de la vente.    |     
 |  startDate               |   chaîne      |   Date de début de la vente au format ISO 8601.  |     
 |  endDate               |   chaîne      |  Date de fin de la vente au format ISO 8601.      |     
-|  marketSpecificPricings               |   objet      |   Dictionnaire de paires clé/valeur, où chaque clé est un code de pays à deux lettres ISO 3166-1 alpha-2 et chaque valeur est un [niveau de prix](#price-tiers). Ces éléments représentent les [prix personnalisés de votre extension sur des marchés spécifiques](https://msdn.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability#markets-and-custom-pricess). Tous les éléments de ce dictionnaire remplacent le prix de base spécifié par la valeur *basePriceId* du marché spécifié.    |
+|  marketSpecificPricings               |   objet      |   Dictionnaire de paires clé/valeur, où chaque clé est un code de pays à deux lettres ISO 3166-1 alpha-2 et chaque valeur est un [niveau de prix](#price-tiers). Ces éléments représentent les [prix personnalisés de votre extension sur des marchés spécifiques](https://docs.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability). Tous les éléments de ce dictionnaire remplacent le prix de base spécifié par la valeur *basePriceId* du marché spécifié.    |
 
 <span id="status-details-object" />
 
@@ -309,7 +309,7 @@ Cette ressource a les valeurs suivantes.
 
 Cette ressource contient des détails supplémentaires sur l’état d’une soumission. Cette ressource a les valeurs suivantes.
 
-| Value           | Type    | Description       |
+| Value           | type    | Description       |
 |-----------------|---------|------|
 |  erreurs               |    objet     |   Tableau des [ressources des détails d’état](#status-detail-object) qui contiennent les détails d’erreur de la soumission.   |     
 |  warnings               |   objet      | Tableau des [ressources des détails d’état](#status-detail-object) qui contiennent les détails d’avertissement de la soumission.     |
@@ -321,7 +321,7 @@ Cette ressource contient des détails supplémentaires sur l’état d’une sou
 
 Cette ressource contient des informations supplémentaires sur les éventuels erreurs ou avertissements pour une soumission. Cette ressource a les valeurs suivantes.
 
-| Value           | Type    | Description    |
+| Value           | type    | Description    |
 |-----------------|---------|------|
 |  code               |    chaîne     |   [Code d’état de soumission](#submission-status-code) qui décrit le type d’erreur ou d’avertissement.   |     
 |  détails               |     chaîne    |  Message contenant des détails sur le problème.     |
@@ -332,7 +332,7 @@ Cette ressource contient des informations supplémentaires sur les éventuels er
 
 Cette ressource donne accès aux données du rapport de certification d’une soumission. Cette ressource a les valeurs suivantes.
 
-| Value           | Type    | Description               |
+| Value           | type    | Description               |
 |-----------------|---------|------|
 |     date            |    chaîne     |  Date et heure de que la génération du rapport, au format ISO 8601.    |
 |     reportUrl            |    chaîne     |  URL vous permettant d’accéder au rapport.    |
@@ -352,7 +352,7 @@ Les valeurs suivantes représentent les niveaux de prix disponibles dans la [res
 |  Base               |   Le niveau de prix n’est pas défini ; utilisez le prix de base de l’extension.      |     
 |  NotAvailable              |   L’extension n’est pas disponible dans la région spécifiée.    |     
 |  Libre              |   L’extension est gratuite.    |    
-|  Tier*xxxx*               |   Une chaîne spécifiant le niveau de prix d’une extension, au format **Tier<em>xxxx</em>**. Actuellement, les plages suivantes de tarification sont prises en charge :<br/><br/><ul><li>Si la valeur *isAdvancedPricingModel* de la [ressource de tarification](#pricing-object) est **true**, les valeurs de tarification disponibles pour votre compte sont **Tier1012** - **Tier1424**.</li><li>Si la valeur *isAdvancedPricingModel* de la [ressource de tarification](#pricing-object) est **false**, les valeurs de tarification disponibles pour votre compte sont **Tier2** - **Tier96**.</li></ul>Pour afficher le tableau complet des niveaux de prix disponibles pour votre compte de développeur, y compris les tarifs propres à chaque marché qui sont associés à chaque niveau, accédez à la **tarification et disponibilité** page pour une de vos envois d’application dans Centre de partenaire et cliquez sur le **afficher la table** lien dans le **marchés et des prix personnalisés** section (certains comptes de développeur, ce lien est dans le **tarification** section).     |
+|  Tier*xxxx*               |   Une chaîne spécifiant le niveau de prix d’une extension, au format **Tier<em>xxxx</em>** . Actuellement, les plages suivantes de tarification sont prises en charge :<br/><br/><ul><li>Si la valeur *isAdvancedPricingModel* de la [ressource de tarification](#pricing-object) est **true**, les valeurs de tarification disponibles pour votre compte sont **Tier1012** - **Tier1424**.</li><li>Si la valeur *isAdvancedPricingModel* de la [ressource de tarification](#pricing-object) est **false**, les valeurs de tarification disponibles pour votre compte sont **Tier2** - **Tier96**.</li></ul>Pour afficher le tableau complet des niveaux de prix disponibles pour votre compte de développeur, y compris les tarifs propres à chaque marché qui sont associés à chaque niveau, accédez à la **tarification et disponibilité** page pour une de vos envois d’application dans Centre de partenaire et cliquez sur le **afficher la table** lien dans le **marchés et des prix personnalisés** section (certains comptes de développeur, ce lien est dans le **tarification** section).     |
 
 <span id="submission-status-code" />
 
@@ -383,4 +383,4 @@ Les valeurs suivantes représentent le code d’état d’une soumission.
 
 * [Créer et gérer des envois à l’aide des services de Microsoft Store](create-and-manage-submissions-using-windows-store-services.md)
 * [Gérer les modules complémentaires à l’aide de l’API de soumission de Microsoft Store](manage-add-ons.md)
-* [Soumissions de module complémentaire dans l’espace partenaires](https://msdn.microsoft.com/windows/uwp/publish/iap-submissions)
+* [Soumissions de module complémentaire dans l’espace partenaires](https://docs.microsoft.com/windows/uwp/publish/iap-submissions)

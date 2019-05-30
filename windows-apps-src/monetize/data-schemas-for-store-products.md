@@ -5,18 +5,18 @@ ms.date: 09/26/2017
 ms.topic: article
 keywords: windows 10, uwp, ExtendedJsonData, produits du Microsoft Store, schéma
 ms.localizationpriority: medium
-ms.openlocfilehash: 344052c18178a121fd9c8d133bdd1abe5a4ad886
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 77f63ce409a576b3c873d95df0d2e8d0f0933808
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334838"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372534"
 ---
 # <a name="data-schemas-for-store-products"></a>Schémas de données des produits du Windows Store
 
-Lorsque vous soumettez un produit (par exemple, une application ou une extension) dans le Windows Store, celui-ci gère un ensemble complet de données pour le produit et ses licences. Dans le code de votre application, vous pouvez accéder par programme à certaines de ces données à l’aide des propriétés de l'espace de noms [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx). Par exemple, vous pouvez récupérer la description et le prix de l’application actuelle ou de son extension à l’aide des propriétés [StoreProduct.Description](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.Description) et [StoreProduct.Price](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.Price).
+Lorsque vous soumettez un produit (par exemple, une application ou une extension) dans le Windows Store, celui-ci gère un ensemble complet de données pour le produit et ses licences. Dans le code de votre application, vous pouvez accéder par programme à certaines de ces données à l’aide des propriétés de l'espace de noms [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store). Par exemple, vous pouvez récupérer la description et le prix de l’application actuelle ou de son extension à l’aide des propriétés [StoreProduct.Description](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.Description) et [StoreProduct.Price](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.Price).
 
-Toutefois, la plupart des données des produits du Windows Store ne sont pas exposées par des propriétés prédéfinies dans l'espace de noms [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx). Pour accéder à toutes les données d’un produit dans votre code, vous pouvez utiliser à la place les propriétés générales suivantes :
+Toutefois, la plupart des données des produits du Windows Store ne sont pas exposées par des propriétés prédéfinies dans l'espace de noms [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store). Pour accéder à toutes les données d’un produit dans votre code, vous pouvez utiliser à la place les propriétés générales suivantes :
 
 * [StoreProduct.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.ExtendedJsonData)
 * [StoreSku.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.ExtendedJsonData)

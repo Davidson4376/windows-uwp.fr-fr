@@ -6,12 +6,12 @@ ms.topic: article
 keywords: prise en main, uwp, Windows 10, piste d'apprentissage, paramètres, enregistrer des paramètres, charger des paramètres
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 4aa56bf24d2dfa1fd4ae1947a5b0edf7f312ea2f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 490dd8f0f3841fae089626ec9c283d54cc0d8cd9
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57614634"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370497"
 ---
 # <a name="save-and-load-settings-in-a-uwp-app"></a>Enregistrer et charger des paramètres dans une application UWP
 
@@ -86,7 +86,7 @@ Voici un résumé rapide des API et d'autres documents utiles pour vous aider à
 
 | API | Description |
 |------|---------------|
-| [ApplicationData.LocalSettings](https://msdn.microsoft.com/library/windows/apps/windows.storage.applicationdata.temporaryfolder) | Obtient le conteneur de paramètres d'application du magasin de données d'application locales. |
+| [ApplicationData.LocalSettings](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.temporaryfolder) | Obtient le conteneur de paramètres d'application du magasin de données d'application locales. |
 | [ApplicationData.RoamingSettings](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingsettings) | Obtient le conteneur de paramètres d'application du magasin de données d'application itinérantes. |
 | [ApplicationDataContainer](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer) | Conteneur de paramètres d’application qui prend en charge la création, la suppression, l'énumération et le parcours de la hiérarchie du conteneur. |
 | [Windows.UI.ApplicationSettings Namespace](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings) | Fournit des classes que vous utiliserez pour définir les paramètres d’application qui s’affichent dans le volet des paramètres de Windows Shell. |

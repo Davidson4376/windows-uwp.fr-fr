@@ -6,21 +6,21 @@ ms.date: 06/06/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4426cbc2e2d3c6e7d980b0733b6deb5178025abb
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 407c76c41d4a8620e2168e8e03dd2a3e24d73b61
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57624094"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369572"
 ---
 # <a name="use-the-orientation-sensor"></a>Utiliser le capteur d’orientation
 
 
 **API importantes**
 
--   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
--   [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371)
--   [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399)
+-   [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
+-   [**OrientationSensor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.OrientationSensor)
+-   [**SimpleOrientation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.SimpleOrientation)
 
 **Exemples**
 
@@ -29,11 +29,11 @@ ms.locfileid: "57624094"
 
 Découvrez comment utiliser les capteurs d’orientation pour déterminer l’orientation de l’appareil.
 
-Il existe deux types de capteur d’orientation API inclus dans le [ **Windows.Devices.Sensors** ](https://msdn.microsoft.com/library/windows/apps/BR206408) espace de noms : [**OrientationSensor** ](https://msdn.microsoft.com/library/windows/apps/BR206371) et [ **SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399). Même si tous deux sont des capteurs d’orientation, ils sont utilisés à des fins très différentes. Toutefois, étant donné que les deux sont des capteurs d’orientation, ils sont traités tous les deux dans cet article.
+Il existe deux types de capteur d’orientation API inclus dans le [ **Windows.Devices.Sensors** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors) espace de noms : [**OrientationSensor** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.OrientationSensor) et [ **SimpleOrientation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.SimpleOrientation). Même si tous deux sont des capteurs d’orientation, ils sont utilisés à des fins très différentes. Toutefois, étant donné que les deux sont des capteurs d’orientation, ils sont traités tous les deux dans cet article.
 
-L’API [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) est utilisée pour les applications 3D pour obtenir un quaternion et une matrice de rotation. Un quaternion peut être plus facilement interprété comme une rotation d’un point de \[x, y, z\] autour d’un axe arbitraire (contrairement à une matrice de rotation, qui représente les rotations autour des trois axes). Les quaternions s’appuient sur des mathématiques quelque peu exotiques en ce sens qu’elles impliquent les propriétés géométriques des nombres complexes et les propriétés mathématiques des nombres imaginaires. Toutefois, leur utilisation est simple, et les infrastructures telles que DirectX les prennent en charge. Une application en 3D peut utiliser le capteur d’orientation pour régler la perspective de l’utilisateur. Ce capteur associe les entrées de l’accéléromètre, du gyromètre et de la boussole.
+L’API [**OrientationSensor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.OrientationSensor) est utilisée pour les applications 3D pour obtenir un quaternion et une matrice de rotation. Un quaternion peut être plus facilement interprété comme une rotation d’un point de \[x, y, z\] autour d’un axe arbitraire (contrairement à une matrice de rotation, qui représente les rotations autour des trois axes). Les quaternions s’appuient sur des mathématiques quelque peu exotiques en ce sens qu’elles impliquent les propriétés géométriques des nombres complexes et les propriétés mathématiques des nombres imaginaires. Toutefois, leur utilisation est simple, et les infrastructures telles que DirectX les prennent en charge. Une application en 3D peut utiliser le capteur d’orientation pour régler la perspective de l’utilisateur. Ce capteur associe les entrées de l’accéléromètre, du gyromètre et de la boussole.
 
-L’API [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399) permet de déterminer l’orientation de l’appareil en termes de définition comme portrait vers le haut, portrait vers le bas, paysage à gauche, paysage à droite. Il peut également détecter si un appareil est face vers le haut ou face vers le bas. Au lieu de retourner des propriétés telles que « portrait vers le haut » ou « paysage gauche », ce capteur retourne une valeur de rotation : « Pas pivoté », « Rotated90DegreesCounterclockwise » et ainsi de suite. Le tableau suivant établit une correspondance entre les propriétés d’orientation courantes et les lectures du capteur.
+L’API [**SimpleOrientation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.SimpleOrientation) permet de déterminer l’orientation de l’appareil en termes de définition comme portrait vers le haut, portrait vers le bas, paysage à gauche, paysage à droite. Il peut également détecter si un appareil est face vers le haut ou face vers le bas. Au lieu de retourner des propriétés telles que « portrait vers le haut » ou « paysage gauche », ce capteur retourne une valeur de rotation : « Pas pivoté », « Rotated90DegreesCounterclockwise » et ainsi de suite. Le tableau suivant établit une correspondance entre les propriétés d’orientation courantes et les lectures du capteur.
 
 | Orientation     | Lecture du capteur correspondante      |
 |-----------------|-----------------------------------|
@@ -42,7 +42,7 @@ L’API [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/
 | Portrait vers le bas   | Rotation180DegrésSensAntiHoraire |
 | Paysage à droite | Rotation270DegrésSensAntiHoraire |
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 Vous devez être familiarisé avec Extensible Application Markup Language (XAML), Microsoft Visual C#et les événements.
 
@@ -54,7 +54,7 @@ Cette section se divise en deux sous-sections. La première sous-section vous p
 
 ###  <a name="instructions"></a>Instructions
 
--   Créez un projet en choisissant une **Application vide (Windows universel)** dans les modèles de projet **Visual C#**.
+-   Créez un projet en choisissant une **Application vide (Windows universel)** dans les modèles de projet **Visual C#** .
 
 -   Ouvrez le fichier MainPage.xaml.cs de votre projet et remplacez le code existant par ce qui suit.
 
@@ -216,7 +216,7 @@ Cette section se divise en deux sous-sections. La première sous-section vous p
 
 ### <a name="instructions"></a>Instructions
 
--   Créez un projet en choisissant une **Application vide (Windows universel)** dans les modèles de projet **Visual C#**.
+-   Créez un projet en choisissant une **Application vide (Windows universel)** dans les modèles de projet **Visual C#** .
 
 -   Ouvrez le fichier MainPage.xaml.cs de votre projet et remplacez le code existant par ce qui suit.
 

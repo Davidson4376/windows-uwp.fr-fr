@@ -7,21 +7,21 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: c9c232bc60bbbb3cccc16618d82ec23452c58ee8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5b63fdeeffd4b95afab6556b6f0318732ff988b0
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57645954"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370904"
 ---
 # <a name="texture3d-subresource-tiling"></a>Restitution de la sous-ressource Texture3D sous forme de mosaïque
 
 
-Ce tableau montre comment des sous-ressources [**Texture3D**](https://msdn.microsoft.com/library/windows/desktop/ff471562) sont restituées sous forme de tuiles. Les valeurs figurant dans ce tableau ne prennent pas en compte le package de fin de mip.
+Ce tableau montre comment des sous-ressources [**Texture3D**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture3d) sont restituées sous forme de tuiles. Les valeurs figurant dans ce tableau ne prennent pas en compte le package de fin de mip.
 
-Ce tableau prend les tuiles [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff471525) et divise les dimensions x/y par 4 et ajoute 16 couches de profondeur. Toutes les tuiles du premier plan (plan 2D de tuiles définissant les 16 premières couches de profondeur) apparaissent avant les plans ultérieurs.
+Ce tableau prend les tuiles [**Texture2D**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d) et divise les dimensions x/y par 4 et ajoute 16 couches de profondeur. Toutes les tuiles du premier plan (plan 2D de tuiles définissant les 16 premières couches de profondeur) apparaissent avant les plans ultérieurs.
 
-**Remarque**  La prise en charge de   [**Texture3D**](https://msdn.microsoft.com/library/windows/desktop/ff471562) dans les ressources de diffusion en continu n’est pas disponible dans l’implémentation initiale des ressources de diffusion en continu, mais les formes de tuiles souhaitées sont répertoriées ici pour la prise en charge possible avec une version ultérieure.
+**Remarque**  La prise en charge de   [**Texture3D**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture3d) dans les ressources de diffusion en continu n’est pas disponible dans l’implémentation initiale des ressources de diffusion en continu, mais les formes de tuiles souhaitées sont répertoriées ici pour la prise en charge possible avec une version ultérieure.
 
  
 

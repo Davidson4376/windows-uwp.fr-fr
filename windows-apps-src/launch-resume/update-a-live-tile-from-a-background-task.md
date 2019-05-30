@@ -7,19 +7,19 @@ ms.date: 01/11/2018
 ms.topic: article
 keywords: Windows 10, uwp, les tâches en arrière-plan
 ms.localizationpriority: medium
-ms.openlocfilehash: 0148be96d9c5994d2fe16e7a0adedee16c8469de
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 280f2253fda7de816ee753798dcab754d58ae847
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63816887"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370551"
 ---
 # <a name="update-a-live-tile-from-a-background-task"></a>Mettre à jour une vignette dynamique à partir d’une tâche en arrière-plan
 
 **API importantes**
 
--   [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)
--   [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
+-   [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
+-   [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
 
 Utilisez une tâche en arrière-plan pour mettre à jour une vignette dynamique de votre application avec du contenu actualisé.
 
@@ -39,7 +39,7 @@ Pour activer une vignette dynamique pour votre application, ajoutez un nouveau p
 ## <a name="implement-the-background-task"></a>Implémenter la tâche en arrière-plan
 
 
-Implémentez l’interface [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) pour créer une classe qui met à jour la vignette dynamique de votre application. Votre tâche en arrière-plan va dans la méthode Run. Dans ce cas, la tâche obtient un flux de syndication pour les blogs MSDN. Pour éviter la fermeture prématurée de la tâche lorsque du code asynchrone est encore en cours d’exécution, obtenez un report.
+Implémentez l’interface [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) pour créer une classe qui met à jour la vignette dynamique de votre application. Votre tâche en arrière-plan va dans la méthode Run. Dans ce cas, la tâche obtient un flux de syndication pour les blogs MSDN. Pour éviter la fermeture prématurée de la tâche lorsque du code asynchrone est encore en cours d’exécution, obtenez un report.
 
 1.  Dans l’Explorateur de solutions, renommez le fichier généré automatiquement, Class1.cs, sous la forme BlogFeedBackgroundTask.cs.
 2.  Dans BlogFeedBackgroundTask.cs, remplacez le code généré automatiquement par le code stub pour la classe **BlogFeedBackgroundTask**.
@@ -159,7 +159,7 @@ Pour configurer le manifeste du package, ouvrez-le et ajoutez une nouvelle décl
 ## <a name="register-the-background-task"></a>Inscrire la tâche en arrière-plan
 
 
-Créez un élément [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) pour inscrire votre tâche.
+Créez un élément [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) pour inscrire votre tâche.
 
 > **Remarque**  à compter de Windows 8.1, les paramètres d’enregistrement de tâche en arrière-plan sont validées au moment de l’inscription. Si l’un des paramètres d’inscription n’est pas valide, une erreur est renvoyée. Votre application doit être en mesure de gérer les scénarios dans lesquels l’inscription de la tâche en arrière-plan échoue. Par exemple utilisez une instruction conditionnelle pour rechercher les erreurs d’inscription, puis retentez l’inscription qui a échoué avec d’autres valeurs de paramètre.
  
@@ -256,11 +256,11 @@ Pour déboguer la tâche en arrière-plan, définissez un point d’arrêt dans 
 ## <a name="related-topics"></a>Rubriques connexes
 
 
-* [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
-* [**TileUpdateManager**](https://msdn.microsoft.com/library/windows/apps/br208622)
-* [**TileNotification**](https://msdn.microsoft.com/library/windows/apps/br208616)
+* [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
+* [**TileUpdateManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdateManager)
+* [**TileNotification**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileNotification)
 * [Prendre en charge votre application avec des tâches en arrière-plan](support-your-app-with-background-tasks.md)
-* [Instructions et liste de contrôle pour les vignettes et de badges](https://msdn.microsoft.com/library/windows/apps/hh465403)
+* [Instructions et liste de contrôle pour les vignettes et de badges](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-creating-tiles)
 
  
 

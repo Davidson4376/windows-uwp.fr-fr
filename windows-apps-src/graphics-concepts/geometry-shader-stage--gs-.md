@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 63c678f4b2dde1a5e35c0131b5154493c9703951
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0ea3e7ec73b042eeef560af3d88754afdfa5b441
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57623374"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370459"
 ---
 # <a name="geometry-shader-gs-stage"></a>Étape Geometry Shader (GS)
 
@@ -28,7 +28,7 @@ L’étape du nuanceur de géométrie traite des primitives complètes : triang
 
 Le nuanceur de géométrie prend également en charge l’amplification et le filtrage de géométrie limités. Pour une primitive d’entrée donnée, le nuanceur de géométrie peut ignorer la primitive ou émettre une ou plusieurs nouvelles primitives.
 
-L’étape du nuanceur de géométrie (GS) est une étape de nuanceur programmable ; elle apparaît sous la forme d’un bloc arrondi dans le diagramme du [pipeline graphique](graphics-pipeline.md). Cette étape du nuanceur expose sa propre fonctionnalité unique, qui repose sur les modèles de nuanceur (voir l’article [Noyau de nuanceur commun](https://msdn.microsoft.com/library/windows/desktop/bb509580)).
+L’étape du nuanceur de géométrie (GS) est une étape de nuanceur programmable ; elle apparaît sous la forme d’un bloc arrondi dans le diagramme du [pipeline graphique](graphics-pipeline.md). Cette étape du nuanceur expose sa propre fonctionnalité unique, qui repose sur les modèles de nuanceur (voir l’article [Noyau de nuanceur commun](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-common-core)).
 
 L’étape du nuanceur de géométrie est bien adaptée à différents algorithmes, notamment :
 
@@ -62,7 +62,7 @@ Abréviations de vertex courantes :
 ## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Sortie
 
 
-L’étape du nuanceur de géométrie (GS) peut produire en sortie plusieurs vertex formant une seule topologie sélectionnée. Les topologies de sortie du nuanceur de géométrie disponibles sont **tristrip**, **linestrip** et **pointlist**. Le nombre de primitives émises peut varier librement au sein d’une invocation du nuanceur de géométrie, bien que le nombre maximal de vertex pouvant être émis doive être déclaré de manière statique. Les longueurs de bande émises à partir d’une invocation du nuanceur de géométrie peuvent être arbitraires, et d’autres bandes peuvent être créées par le biais de la fonction HLSL [RestartStrip](https://msdn.microsoft.com/library/windows/desktop/bb509660).
+L’étape du nuanceur de géométrie (GS) peut produire en sortie plusieurs vertex formant une seule topologie sélectionnée. Les topologies de sortie du nuanceur de géométrie disponibles sont **tristrip**, **linestrip** et **pointlist**. Le nombre de primitives émises peut varier librement au sein d’une invocation du nuanceur de géométrie, bien que le nombre maximal de vertex pouvant être émis doive être déclaré de manière statique. Les longueurs de bande émises à partir d’une invocation du nuanceur de géométrie peuvent être arbitraires, et d’autres bandes peuvent être créées par le biais de la fonction HLSL [RestartStrip](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-so-restartstrip).
 
 L’exécution d’une instance du nuanceur de géométrie est effectuée de manière atomique à partir d’autres invocations, à ceci près que les données ajoutées aux flux sont des données en série. Les sorties d’une invocation donnée d’un nuanceur de géométrie sont indépendantes des autres invocations (bien que l’ordre soit respecté). Un nuanceur de géométrie générant des bandes de triangles démarrera une nouvelle bande à chaque invocation.
 

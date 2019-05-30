@@ -6,19 +6,19 @@ keywords: windows 10, uwp, essai, achat in-app, PIA, Windows.ApplicationModel.S
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 38590282a95e29ab240486e9c4a3f9cb9afe229c
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 868f9f5742122df861f5c7c62bc147372307033f
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58335097"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371802"
 ---
 # <a name="exclude-or-limit-features-in-a-trial-version"></a>Exclure ou limiter des fonctionnalités de la version d’évaluation
 
 Si vous donnez aux clients la possibilité d’utiliser votre application gratuitement pendant une période d’évaluation, vous pouvez leur donner envie de mettre à niveau vers la version complète de votre application en excluant ou en limitant certaines fonctionnalités pendant la période d’évaluation. Choisissez les fonctionnalités à limiter avant de commencer à coder, puis faites en sorte que votre application ne les rende disponibles qu’à l’achat de la licence complète. Vous pouvez également activer certaines fonctionnalités, telles que des bannières ou des filigranes, qui ne s’afficheront que pendant la période d’évaluation, avant l’achat de votre application par un client.
 
 > [!IMPORTANT]
-> Cet article explique comment utiliser des membres de l’espace de noms [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) pour activer la fonctionnalité de version d'essai. Cet espace de noms n’est plus mis à jour avec de nouvelles fonctionnalités et nous vous recommandons d’utiliser l'espace de noms [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) à la place. Le **Windows.Services.Store** espace de noms prend en charge les types de module complémentaire dernière, telles que géré par le Store de modules complémentaires consommables et des abonnements et est conçu pour être compatible avec des types futurs des produits et fonctionnalités pris en charge par le partenaire Le centre et le Store. L'espace de noms **Windows.Services.Store** a été introduit dans Windows 10, version 1607 et peut être utilisé uniquement dans les projets qui ciblent **Windows 10 Anniversary Edition (version 10.0 ; build 14393)** ou une version ultérieure dans Visual Studio. Pour plus d’informations sur la mise en place de la fonctionnalité de version d'évaluation à l'aide de l'espace de noms **Windows.Services.Store**, consultez [cet article](implement-a-trial-version-of-your-app.md).
+> Cet article explique comment utiliser des membres de l’espace de noms [Windows.ApplicationModel.Store](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store) pour activer la fonctionnalité de version d'essai. Cet espace de noms n’est plus mis à jour avec de nouvelles fonctionnalités et nous vous recommandons d’utiliser l'espace de noms [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) à la place. Le **Windows.Services.Store** espace de noms prend en charge les types de module complémentaire dernière, telles que géré par le Store de modules complémentaires consommables et des abonnements et est conçu pour être compatible avec des types futurs des produits et fonctionnalités pris en charge par le partenaire Le centre et le Store. L'espace de noms **Windows.Services.Store** a été introduit dans Windows 10, version 1607 et peut être utilisé uniquement dans les projets qui ciblent **Windows 10 Anniversary Edition (version 10.0 ; build 14393)** ou une version ultérieure dans Visual Studio. Pour plus d’informations sur la mise en place de la fonctionnalité de version d'évaluation à l'aide de l'espace de noms **Windows.Services.Store**, consultez [cet article](implement-a-trial-version-of-your-app.md).
 
 ## <a name="prerequisites"></a>Prérequis
 
@@ -26,7 +26,7 @@ Application Windows dans laquelle ajouter des fonctionnalités que les clients p
 
 ## <a name="step-1-pick-the-features-you-want-to-enable-or-disable-during-the-trial-period"></a>Étape 1 : Sélectionner les fonctionnalités que vous souhaitez activer ou désactiver la période d’essai
 
-L’état actuel de la licence de votre application est stocké dans les propriétés de la classe [LicenseInformation](https://msdn.microsoft.com/library/windows/apps/br225157). D’une manière générale, vous placez les fonctions qui dépendent de l’état de la licence dans un bloc conditionnel, comme nous le décrivons à l’étape suivante. Lorsque vous développez ces fonctionnalités, assurez-vous de pouvoir les implémenter de telle manière qu’elles fonctionnent avec tous les états de la licence.
+L’état actuel de la licence de votre application est stocké dans les propriétés de la classe [LicenseInformation](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.LicenseInformation). D’une manière générale, vous placez les fonctions qui dépendent de l’état de la licence dans un bloc conditionnel, comme nous le décrivons à l’étape suivante. Lorsque vous développez ces fonctionnalités, assurez-vous de pouvoir les implémenter de telle manière qu’elles fonctionnent avec tous les états de la licence.
 
 Décidez également comment vous voulez gérer les modifications apportées à la licence de l’application lorsque celle-ci est en cours d’exécution. La version d’évaluation de votre application peut être entièrement fonctionnelle, mais comporter des bandeaux publicitaires intégrés à l’application, contrairement à la version payante. La version d’évaluation de votre application peut également être privée de certaines fonctionnalités ou afficher régulièrement des messages demandant à l’utilisateur de l’acheter.
 
@@ -61,9 +61,9 @@ Si vous voulez détecter la modification de la licence et exécuter une action q
 
 ## <a name="step-2-initialize-the-license-info"></a>Étape 2 : Initialiser les informations de licence
 
-Lors de l’initialisation de votre application, recherchez l’objet [LicenseInformation](https://msdn.microsoft.com/library/windows/apps/br225157) de votre application, comme indiqué dans cet exemple. Nous supposons que **licenseInformation** est une variable globale ou un champ global de type **LicenseInformation**.
+Lors de l’initialisation de votre application, recherchez l’objet [LicenseInformation](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.LicenseInformation) de votre application, comme indiqué dans cet exemple. Nous supposons que **licenseInformation** est une variable globale ou un champ global de type **LicenseInformation**.
 
-Pour le moment, vous obtenez des informations de licence simulées, en utilisant [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766) à la place de [CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779765). Avant de soumettre la version finale de votre application au **Windows Store**, vous devez remplacer tous les références **CurrentAppSimulator** par des références **CurrentApp** dans votre code.
+Pour le moment, vous obtenez des informations de licence simulées, en utilisant [CurrentAppSimulator](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentAppSimulator) à la place de [CurrentApp](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentApp). Avant de soumettre la version finale de votre application au **Windows Store**, vous devez remplacer tous les références **CurrentAppSimulator** par des références **CurrentApp** dans votre code.
 
 > [!div class="tabbedCodeSnippets"]
 [!code-csharp[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#InitializeLicenseTest)]
@@ -111,14 +111,14 @@ Après avoir testé votre application à l’aide du serveur de licences simulé
 
 Prenez soin d’expliquer à vos clients comment votre application se comportera pendant et après la période d’évaluation gratuite afin qu’ils ne soient pas surpris.
 
-Pour plus d’informations sur la description de votre application, voir [Créer des descriptions d’application](https://msdn.microsoft.com/library/windows/apps/mt148529).
+Pour plus d’informations sur la description de votre application, voir [Créer des descriptions d’application](https://docs.microsoft.com/windows/uwp/publish/create-app-descriptions).
 
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Exemple de Store (illustre les versions d’évaluation et les achats dans l’application)](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)
-* [Ensemble d’application tarification et disponibilité](https://msdn.microsoft.com/library/windows/apps/mt148548)
-* [CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779765)
-* [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766)
+* [Ensemble d’application tarification et disponibilité](https://docs.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability)
+* [CurrentApp](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentApp)
+* [CurrentAppSimulator](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentAppSimulator)
  
 
  

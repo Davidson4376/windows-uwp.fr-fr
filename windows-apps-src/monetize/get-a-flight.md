@@ -6,12 +6,12 @@ ms.date: 04/17/2018
 ms.topic: article
 keywords: windows 10, uwp, API de soumission au Microsoft Store, version d’évaluation, version d'évaluation du package
 ms.localizationpriority: medium
-ms.openlocfilehash: e4f96d503d52abe71cff6fcdd1295c862e551e09
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 3a02a299682610cd516067acefc795df9512a268
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334387"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371764"
 ---
 # <a name="get-a-package-flight"></a>Obtient une version d’évaluation du package
 
@@ -35,14 +35,14 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 
 ### <a name="request-header"></a>En-tête de requête
 
-| Header        | Type   | Description                                                                 |
+| Header        | type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | chaîne | Obligatoire. Le jeton d’accès Azure AD sous la forme **PORTEUR** &lt; *jeton*&gt;. |
 
 
 ### <a name="request-parameters"></a>Paramètres de la requête
 
-| Nom        | Type   | Description                                                                 |
+| Nom        | type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | chaîne | Obligatoire. ID Windows Store de l’application qui contient la version d’évaluation du package à obtenir. L’ID de Store pour l’application est disponible dans le centre de partenaires.  |
 | flightId | chaîne | Obligatoire. ID de la version d’évaluation du package à obtenir. Cet ID est disponible dans les données de réponse des requêtes pour [créer une version d’évaluation du package](create-a-flight.md) ou [obtenir des versions d’évaluation du package pour une application](get-flights-for-an-app.md). Pour un vol a été créé dans le centre de partenaires, cet ID est également disponible dans l’URL de la page de vol de partenaires.  |
@@ -86,14 +86,14 @@ L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à c
 
 ### <a name="response-body"></a>Corps de la réponse
 
-| Value      | Type   | Description                                                                                                                                                                                                                                                                         |
+| Value      | type   | Description                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | flightId            | chaîne  | ID de la version d’évaluation du package. Cette valeur est fournie par les partenaires.  |
 | friendlyName           | chaîne  | Nom de la version d’évaluation du package, tel que spécifié par le développeur.   |  
 | lastPublishedFlightSubmission       | objet | Objet qui fournit des informations sur la dernière soumission publiée de la version d’évaluation du package. Pour plus d’informations, voir la section [Objet de la soumission](#submission_object) ci-dessous.  |
 | pendingFlightSubmission        | objet  |  Objet qui fournit des informations sur la soumission actuellement en attente pour la version d’évaluation du package. Pour plus d’informations, voir la section [Objet de la soumission](#submission_object) ci-dessous.  |   
-| groupIds           | tableau  | Tableau de chaînes qui contiennent les ID des groupes de versions d’évaluation associés à la version d’évaluation du package. Pour plus d’informations sur les groupes de versions d’évaluation, voir [Versions d’évaluation du package](https://msdn.microsoft.com/windows/uwp/publish/package-flights).   |
-| rankHigherThan           | chaîne  | Nom convivial de la version d’évaluation du package classée juste en dessous de la version d’évaluation du package actuelle. Pour plus d’informations sur le classement des groupes de versions d’évaluation, voir [Versions d’évaluation de package](https://msdn.microsoft.com/windows/uwp/publish/package-flights).  |
+| groupIds           | tableau  | Tableau de chaînes qui contiennent les ID des groupes de versions d’évaluation associés à la version d’évaluation du package. Pour plus d’informations sur les groupes de versions d’évaluation, voir [Versions d’évaluation du package](https://docs.microsoft.com/windows/uwp/publish/package-flights).   |
+| rankHigherThan           | chaîne  | Nom convivial de la version d’évaluation du package classée juste en dessous de la version d’évaluation du package actuelle. Pour plus d’informations sur le classement des groupes de versions d’évaluation, voir [Versions d’évaluation de package](https://docs.microsoft.com/windows/uwp/publish/package-flights).  |
 
 
 <span id="submission_object" />
@@ -102,7 +102,7 @@ L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à c
 
 Les valeurs *lastPublishedFlightSubmission* et *pendingFlightSubmission* dans le corps de la réponse contiennent des objets qui fournissent des informations sur les ressources d’une soumission de version d’évaluation du package. Ces objets ont les valeurs suivantes.
 
-| Value           | Type    | Description                                                                                                                                                                                                                          |
+| Value           | type    | Description                                                                                                                                                                                                                          |
 |-----------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | id            | chaîne  | ID de la soumission.    |
 | resourceLocation   | chaîne  | Chemin relatif à ajouter à l’URI de requête `https://manage.devcenter.microsoft.com/v1.0/my/` de base pour récupérer les données complètes de la soumission.               |

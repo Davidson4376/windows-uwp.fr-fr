@@ -8,12 +8,12 @@ ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 063106362a36aa32d0874be15dd589b5fb573409
-ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
+ms.openlocfilehash: 291c16d14428f8c6476b12fbadf00f84c26a4235
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66214949"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359482"
 ---
 # <a name="integrate-your-packaged-desktop-app-with-windows-10-and-uwp"></a>Intégrer votre application de bureau empaquetée avec Windows 10 et UWP
 
@@ -99,7 +99,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 
 Pour vous assurer que les utilisateurs d’ouvrir votre nouvelle application empaquetée par défaut pour certains types de fichiers au lieu d’ouvrir la version de bureau de votre application.
 
-Pour ce faire, vous devez spécifier l’[identificateur programmatique (ProgID)](https://msdn.microsoft.com/library/windows/desktop/cc144152.aspx) de chaque application à partir de laquelle vous souhaitez hériter des associations de fichiers.
+Pour ce faire, vous devez spécifier l’[identificateur programmatique (ProgID)](https://docs.microsoft.com/windows/desktop/shell/fa-progids) de chaque application à partir de laquelle vous souhaitez hériter des associations de fichiers.
 
 #### <a name="xml-namespaces"></a>Espaces de noms XML
 
@@ -123,8 +123,8 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 |Nom |Description |
 |-------|-------------|
 |Category |Toujours ``windows.fileTypeAssociation``.
-|Nom |Un ID unique pour votre application. Cet ID est utilisé en interne pour générer un [identificateur programmatique (ProgID)](https://msdn.microsoft.com/library/windows/desktop/cc144152.aspx) associé à votre association de type de fichier. Vous pouvez utiliser cet ID pour gérer les modifications dans les futures versions de votre application. |
-|MigrationProgId |Le [identificateur programmatique (ProgID)](https://msdn.microsoft.com/library/windows/desktop/cc144152.aspx) qui décrit l’application, le composant et la version de l’application de bureau à partir de laquelle vous voulez hériter des associations de fichiers.|
+|Nom |Un ID unique pour votre application. Cet ID est utilisé en interne pour générer un [identificateur programmatique (ProgID)](https://docs.microsoft.com/windows/desktop/shell/fa-progids) associé à votre association de type de fichier. Vous pouvez utiliser cet ID pour gérer les modifications dans les futures versions de votre application. |
+|MigrationProgId |Le [identificateur programmatique (ProgID)](https://docs.microsoft.com/windows/desktop/shell/fa-progids) qui décrit l’application, le composant et la version de l’application de bureau à partir de laquelle vous voulez hériter des associations de fichiers.|
 
 #### <a name="example"></a>Exemple
 
@@ -182,7 +182,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 |Nom |Description |
 |-------|-------------|
 |Category |Toujours ``windows.fileTypeAssociation``.
-|Nom |Un ID unique pour votre application. Cet ID est utilisé en interne pour générer un [identificateur programmatique (ProgID)](https://msdn.microsoft.com/library/windows/desktop/cc144152.aspx) associé à votre association de type de fichier. Vous pouvez utiliser cet ID pour gérer les modifications dans les futures versions de votre application.   |
+|Nom |Un ID unique pour votre application. Cet ID est utilisé en interne pour générer un [identificateur programmatique (ProgID)](https://docs.microsoft.com/windows/desktop/shell/fa-progids) associé à votre association de type de fichier. Vous pouvez utiliser cet ID pour gérer les modifications dans les futures versions de votre application.   |
 |FileType |L’extension de fichier prise en charge par votre application. |
 
 #### <a name="example"></a>Exemple
@@ -410,7 +410,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 
 Utilisez une extension pour identifier ces dossiers. Ainsi, le système est en mesure de trouver et de charger les fichiers que vous avez placés dans ces dossiers. Considérez cette extension comme le remplacement de la variable d'environnement _%PATH%_ .
 
-Si vous n'utilisez pas cette extension, le système recherche le graphique de dépendance de package de ce processus, le dossier racine du package, puis le répertoire système ( _%SystemRoot%\system32_) dans cet ordre. Pour plus d’informations, consultez [Ordre de recherche des applications Windows](https://msdn.microsoft.com/library/windows/desktop/ms682586.aspx#_search_order_for_windows_store_apps).
+Si vous n'utilisez pas cette extension, le système recherche le graphique de dépendance de package de ce processus, le dossier racine du package, puis le répertoire système ( _%SystemRoot%\system32_) dans cet ordre. Pour plus d’informations, consultez [Ordre de recherche des applications Windows](https://docs.microsoft.com/windows/desktop/Dlls/dynamic-link-library-search-order).
 
 Chaque package peut contenir uniquement l'une de ces extensions. En d'autres termes, vous pouvez ajouter l'une d'elles à votre package principale, puis en ajouter une à chacun de vos [packages facultatifs et ensembles relatifs](https://docs.microsoft.com/windows/uwp/packaging/optional-packages).
 
@@ -673,7 +673,7 @@ Vous pouvez associer une ou plusieurs valeurs prédéfinies pour vos types de fi
 
 Dans l’Explorateur de fichiers, les utilisateurs peuvent regrouper ces fichiers à l’aide de ce champ. Les composants du système utilisent également ce champ à différentes fins, telles que l’indexation.
 
-Pour plus d’informations sur le champ **Type** et les valeurs que vous pouvez utiliser pour ce champ, consultez [Utilisation des noms de type](https://msdn.microsoft.com/library/windows/desktop/cc144136.aspx).
+Pour plus d’informations sur le champ **Type** et les valeurs que vous pouvez utiliser pour ce champ, consultez [Utilisation des noms de type](https://docs.microsoft.com/windows/desktop/properties/building-property-handlers-user-friendly-kind-names).
 
 #### <a name="xml-namespaces"></a>Espaces de noms XML
 
@@ -702,7 +702,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 |Category |Toujours ``windows.fileTypeAssociation``.
 |Nom |Un ID unique pour votre application. |
 |FileType |Les extensions de fichier appropriées. |
-|valeur |Une [Valeur de type](https://msdn.microsoft.com/en-us/library/windows/desktop/cc144136.aspx#kind_hierarchy) valide. |
+|valeur |Une [Valeur de type](https://docs.microsoft.com/windows/desktop/properties/building-property-handlers-user-friendly-kind-names) valide. |
 
 #### <a name="example"></a>Exemple
 
@@ -1069,8 +1069,8 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/3
 |DropTargetHandler |L’ID de classe de l’application qui implémente le [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) interface. Les fichiers du média amovibles sont transmis à la méthode [Drop](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget.drop?view=visualstudiosdk-2017#Microsoft_VisualStudio_OLE_Interop_IDropTarget_Drop_Microsoft_VisualStudio_OLE_Interop_IDataObject_System_UInt32_Microsoft_VisualStudio_OLE_Interop_POINTL_System_UInt32__) de votre implémentation [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017).  |
 |Paramètres |Vous n'êtes pas obligé d'implémenter l'interface [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) pour tous les événements de contenu. Pour tous les événements de contenu, vous avez la possibilité de fournir des paramètres de ligne de commande au lieu d'implémenter l'interface [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017). Pour ces événements, lecture automatique démarre votre application à l’aide de ces paramètres de ligne de commande. Vous pouvez analyser ces paramètres dans le code d'initialisation de votre application afin de déterminer s'il a été démarré par la lecture automatique, puis fournir votre implémentation par défaut. |
 |DeviceEvent |Le nom d’un événement d'appareil qui envoie une invite aux utilisateurs avec vos éléments ``ActionDisplayName`` et ``ProviderDisplayName``. Un événement d'appareil est déclenché lorsqu’un appareil est connecté au PC. Les événements d'appareil commencent par la chaîne ``WPD``. Ils sont répertoriés [ici](https://docs.microsoft.com/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference). |
-|HWEventHandler |L’ID de classe de l’application qui implémente le [IHWEventHandler](https://msdn.microsoft.com/library/windows/desktop/bb775492.aspx) interface. |
-|InitCmdLine |Le paramètre de chaîne que vous souhaitez transmettre dans la méthode [Initialiser](https://msdn.microsoft.com/en-us/library/windows/desktop/bb775495.aspx) de l'interface [IHWEventHandler](https://msdn.microsoft.com/library/windows/desktop/bb775492.aspx). |
+|HWEventHandler |L’ID de classe de l’application qui implémente le [IHWEventHandler](https://docs.microsoft.com/windows/desktop/api/shobjidl/nn-shobjidl-ihweventhandler) interface. |
+|InitCmdLine |Le paramètre de chaîne que vous souhaitez transmettre dans la méthode [Initialiser](https://docs.microsoft.com/windows/desktop/api/shobjidl/nf-shobjidl-ihweventhandler-initialize) de l'interface [IHWEventHandler](https://docs.microsoft.com/windows/desktop/api/shobjidl/nn-shobjidl-ihweventhandler). |
 
 ### <a name="example"></a>Exemple
 
@@ -1101,14 +1101,14 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/3
 
 Si votre application est ouverte quand les utilisateurs installent une mise à jour à ce dernier, l’application se ferme.
 
-Si vous souhaitez que cette application à redémarrer après la mise à jour est terminée, appelez le [RegisterApplicationRestart](https://msdn.microsoft.com/library/windows/desktop/aa373347.aspx) fonction dans chaque processus que vous souhaitez redémarrer.
+Si vous souhaitez que cette application à redémarrer après la mise à jour est terminée, appelez le [RegisterApplicationRestart](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-registerapplicationrestart) fonction dans chaque processus que vous souhaitez redémarrer.
 
-Chaque fenêtre active dans votre application reçoit un [WM_QUERYENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376890.aspx) message. À ce stade, votre application peut appeler le [RegisterApplicationRestart](https://msdn.microsoft.com/library/windows/desktop/aa373347.aspx) fonction à nouveau pour mettre à jour la ligne de commande si nécessaire.
+Chaque fenêtre active dans votre application reçoit un [WM_QUERYENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-queryendsession) message. À ce stade, votre application peut appeler le [RegisterApplicationRestart](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-registerapplicationrestart) fonction à nouveau pour mettre à jour la ligne de commande si nécessaire.
 
-Quand chaque fenêtre active dans votre application reçoit le [WM_ENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376889.aspx) message, votre application doit enregistrer les données et les arrêter.
+Quand chaque fenêtre active dans votre application reçoit le [WM_ENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-endsession) message, votre application doit enregistrer les données et les arrêter.
 
 >[!NOTE]
-Vos fenêtres actives également recevoir le [WM_CLOSE](https://msdn.microsoft.com/library/windows/desktop/ms632617.aspx) message au cas où l’application ne gère pas la [WM_ENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376889.aspx) message.
+Vos fenêtres actives également recevoir le [WM_CLOSE](https://docs.microsoft.com/windows/desktop/winmsg/wm-close) message au cas où l’application ne gère pas la [WM_ENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-endsession) message.
 
 À ce stade, votre application doit le fermer son propre processus de 30 secondes ou la plateforme procède à leur arrêt forcé.
 

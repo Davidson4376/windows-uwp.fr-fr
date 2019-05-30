@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3212128a5fda9f6c5c811b2725b97f64655588b1
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c53d93735d097aed3fe6e6f24912e659ad7d28a7
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57617624"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66358702"
 ---
 # <a name="getting-started-with-uwp-for-ios-developers"></a>Prise en main UWP pour les développeurs iOS
 
@@ -32,10 +32,10 @@ Pour vous familiariser avec ces procédures pas à pas, vous aurez besoin d’un
 | [Mise en route : Choix d’un langage de programmation](getting-started-choosing-a-programming-language.md) | Avant d’aller plus loin, vous devez connaître les langages de programmation possibles lorsque vous développez des applications UWP. |
 | [Mise en route : L’utilisation de Visual Studio](getting-started-getting-around-in-visual-studio.md) | Revenons au projet que nous avons créé précédemment et voyons comment s’y retrouver dans l’environnement de développement intégré (IDE) de Visual Studio. |
 | [Mise en route : Contrôles communs](getting-started-common-controls.md) | Voici quelques contrôles communs que vous utiliserez dans vos applications et leurs équivalents dans iOS. |
-| [Mise en route : Navigation](getting-started-navigation.md) | Une des manières de gérer la navigation dans une application Windows 10 consiste à utiliser la classe [Frame](https://msdn.microsoft.com/library/windows/apps/br242682). La procédure pas à pas suivante vous montre comment tester et mettre en pratique cette opération. |
+| [Mise en route : Navigation](getting-started-navigation.md) | Une des manières de gérer la navigation dans une application Windows 10 consiste à utiliser la classe [Frame](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame). La procédure pas à pas suivante vous montre comment tester et mettre en pratique cette opération. |
 | [Mise en route : Animation](getting-started-animation.md) | Les animations dans les applications Windows peuvent être créées par programme, mais aussi être définies de manière déclarative avec XAML (Extensible Application Markup Language). |
 | [Mise en route : Et maintenant ?](getting-started-what-next.md) | Avec ces informations de base, vous pouvez commencer à écrire des applications de plateforme Windows universelle (UWP, Universal Windows Platform) plus intéressantes. Pour les étapes suivantes, lisez les rubriques qui suivent, démarrez Visual Studio, puis commencez à écrire du code. |
-| [Mappage de concept d’application Windows](https://msdn.microsoft.com//windows/uwp/porting/android-ios-uwp-map) | Comment interpréter les concepts iOS en termes de fonctionnalités Windows (et Android) |
+| [Mappage de concept d’application Windows](https://docs.microsoft.com/windows/uwp/porting/android-ios-uwp-map) | Comment interpréter les concepts iOS en termes de fonctionnalités Windows (et Android) |
 
  
 

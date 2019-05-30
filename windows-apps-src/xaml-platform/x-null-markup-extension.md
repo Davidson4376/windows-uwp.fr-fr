@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f0d6fd8f194a3c9c98fb969034cab5a3e9e2f0de
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0589249c65d301e3e74b305b92842fe4d3f61929
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57619624"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372286"
 ---
 # <a name="xnull-markup-extension"></a>Extension de balisage {x:Null}
 
@@ -30,11 +30,11 @@ En XAML, un balisage spécifie une valeur **null** pour une propriété.
 
 La valeur par défaut initiale peut varier selon les propriétés de dépendance, et n’est pas nécessairement **null**. De plus, de nombreuses propriétés de dépendance n’acceptent pas **null** en tant que valeur (via le balisage ou le code), en raison de leur implémentation interne. Le cas échéant, la définition d’une valeur d’attribut XAML avec **{x:Null}** peut engendrer une exception d’analyse.
 
-Certains types Windows Runtime ont la valeur Nullable. Quand un type Nullable n’a pas déjà la valeur **null** comme valeur par défaut, vous pouvez utiliser **{x:Null}** pour définir la valeur **null** en XAML. Si vous utilisez des extensions du composant Visual C++ (C++ / c++ / CX), les types nullables sont représentés en tant que [ **Platform::IBox<T>**](https://msdn.microsoft.com/library/windows/apps/xaml/jj606120.aspx). Si vous utilisez des langages Microsoft .NET, les types Nullable sont représentés par [**Nullable<T>**](https://msdn.microsoft.com/library/windows/apps/xaml/b3h38hb0.aspx).
+Certains types Windows Runtime ont la valeur Nullable. Quand un type Nullable n’a pas déjà la valeur **null** comme valeur par défaut, vous pouvez utiliser **{x:Null}** pour définir la valeur **null** en XAML. Si vous utilisez des extensions du composant Visual C++ (C++ / c++ / CX), les types nullables sont représentés en tant que [ **Platform::IBox<T>** ](https://docs.microsoft.com/cpp/cppcx/platform-ibox-interface). Si vous utilisez des langages Microsoft .NET, les types Nullable sont représentés par [**Nullable<T>** ](https://docs.microsoft.com/dotnet/api/system.nullable-1?redirectedfrom=MSDN).
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [**Nullable<T>**](https://msdn.microsoft.com/library/windows/apps/xaml/b3h38hb0.aspx)
-* [**IReference<T>**](https://msdn.microsoft.com/library/windows/apps/br225864)
+* [**Nullable<T>** ](https://docs.microsoft.com/dotnet/api/system.nullable-1?redirectedfrom=MSDN)
+* [**IReference<T>** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.IReference_T_)
  
 

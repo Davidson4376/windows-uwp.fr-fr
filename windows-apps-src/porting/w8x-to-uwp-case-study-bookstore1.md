@@ -6,17 +6,17 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e0b8ffbebdca920bc6cc584dd735062a364d1d9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: fad621eb9b6ef9ef863240644ae0fa46d41baacc
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57627934"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371603"
 ---
 # <a name="windows-runtime-8x-to-uwp-case-study-bookstore1"></a>Windows Runtime 8.x à UWP les étude de cas : Bookstore1
 
 
-Cette rubrique présente une étude de cas de portage d’une application très simple de 8.1 universelle à une application de plateforme Windows universelle (UWP) de Windows 10. Une application universelle 8.1 est celle qui génère un package d’application pour Windows 8.1 et un package d’application différent pour Windows Phone 8.1. Avec Windows 10, vous pouvez créer un package d’application unique vos clients peuvent installer sur un large éventail d’appareils, et c’est ce que nous allons faire dans cette étude de cas. Voir le [Guide des applications UWP](https://msdn.microsoft.com/library/windows/apps/dn894631).
+Cette rubrique présente une étude de cas de portage d’une application très simple de 8.1 universelle à une application de plateforme Windows universelle (UWP) de Windows 10. Une application universelle 8.1 est celle qui génère un package d’application pour Windows 8.1 et un package d’application différent pour Windows Phone 8.1. Avec Windows 10, vous pouvez créer un package d’application unique vos clients peuvent installer sur un large éventail d’appareils, et c’est ce que nous allons faire dans cette étude de cas. Voir le [Guide des applications UWP](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide).
 
 L’application que nous porterons se compose d’une classe **ListBox** liée à un modèle d’affichage. Ce modèle comporte une liste de livres qui indique leur titre, leur auteur et leur couverture. Les images de couverture de livre possèdent l’attribut **Action de génération** défini sur **Contenu** et l’attribut **Copier dans le répertoire de sortie** défini sur **Ne pas copier**.
 

@@ -6,32 +6,32 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, élément de travail périodique, threads, minuteurs
 ms.localizationpriority: medium
-ms.openlocfilehash: 05ed3b4bc4fa6dbe1119dca40d22107e94cea576
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: cf3a5817e459c7089eafb8f2c38d58b0e8eef03c
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57636904"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371560"
 ---
 # <a name="create-a-periodic-work-item"></a>Créer un élément de travail périodique
 
 
 <b>API importantes</b>
 
--   [**CreatePeriodicTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967915)
--   [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587)
+-   [**CreatePeriodicTimer**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.createperiodictimer)
+-   [**ThreadPoolTimer**](https://docs.microsoft.com/uwp/api/Windows.System.Threading.ThreadPoolTimer)
 
 Découvrez comment créer un élément de travail qui se reproduit régulièrement.
 
 ## <a name="create-the-periodic-work-item"></a>Créer l’élément de travail périodique
 
-Utilisez la méthode [**CreatePeriodicTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967915) pour créer un élément de travail périodique. Fournissez une expression lambda qui effectue la tâche, puis utilisez le paramètre *period* pour spécifier l’intervalle entre les envois. La période est spécifiée à l’aide d’une structure [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/BR225996). L’élément de travail est renvoyé chaque fois que la période est écoulée ; vérifiez donc que la période est suffisamment longue pour que la tâche s’accomplisse.
+Utilisez la méthode [**CreatePeriodicTimer**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.createperiodictimer) pour créer un élément de travail périodique. Fournissez une expression lambda qui effectue la tâche, puis utilisez le paramètre *period* pour spécifier l’intervalle entre les envois. La période est spécifiée à l’aide d’une structure [**TimeSpan**](https://docs.microsoft.com/uwp/api/Windows.Foundation.TimeSpan). L’élément de travail est renvoyé chaque fois que la période est écoulée ; vérifiez donc que la période est suffisamment longue pour que la tâche s’accomplisse.
 
-[**CreateTimer** ](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.createtimer.aspx) retourne un [ **ThreadPoolTimer** ](https://msdn.microsoft.com/library/windows/apps/BR230587) objet. Stockez cet objet au cas où le minuteur devrait être annulé.
+[**CreateTimer** ](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.createtimer) retourne un [ **ThreadPoolTimer** ](https://docs.microsoft.com/uwp/api/Windows.System.Threading.ThreadPoolTimer) objet. Stockez cet objet au cas où le minuteur devrait être annulé.
 
 > **Remarque**  éviter de spécifier une valeur égale à zéro (ou toute valeur inférieure à 1 milliseconde) pour l’intervalle. Sinon, cela amène le minuteur périodique à se comporter comme un minuteur à déclenchement unique.
 
-> **Remarque**  vous pouvez utiliser [ **CoreDispatcher.RunAsync** ](https://msdn.microsoft.com/library/windows/apps/Hh750317) pour accéder à l’interface utilisateur et afficher la progression à partir de l’élément de travail.
+> **Remarque**  vous pouvez utiliser [ **CoreDispatcher.RunAsync** ](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows) pour accéder à l’interface utilisateur et afficher la progression à partir de l’élément de travail.
 
 L’exemple suivant crée un élément de travail qui s’exécute une fois toutes les 60 secondes :
 
@@ -87,7 +87,7 @@ L’exemple suivant crée un élément de travail qui s’exécute une fois tout
 
 ## <a name="handle-cancellation-of-the-periodic-work-item-optional"></a>Gérer l’annulation de l’élément périodique (facultatif)
 
-Si nécessaire, vous pouvez gérer l’annulation du minuteur périodique avec un objet [**TimerDestroyedHandler**](https://msdn.microsoft.com/library/windows/apps/Hh967926). Utilisez la surcharge [**CreatePeriodicTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967915) pour fournir une expression lambda supplémentaire qui gère l’annulation de l’élément de travail périodique.
+Si nécessaire, vous pouvez gérer l’annulation du minuteur périodique avec un objet [**TimerDestroyedHandler**](https://docs.microsoft.com/uwp/api/windows.system.threading.timerdestroyedhandler). Utilisez la surcharge [**CreatePeriodicTimer**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.createperiodictimer) pour fournir une expression lambda supplémentaire qui gère l’annulation de l’élément de travail périodique.
 
 L’exemple suivant crée un élément de travail périodique qui se reproduit toutes les 60 secondes et fournit également un gestionnaire d’annulation :
 
@@ -186,7 +186,7 @@ L’exemple suivant crée un élément de travail périodique qui se reproduit t
 
 ## <a name="cancel-the-timer"></a>Annuler le minuteur
 
-Si nécessaire, appelez la méthode [**Cancel**](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.cancel.aspx) pour mettre fin à la répétition de l’élément de travail périodique. Si l’élément de travail est en cours d’exécution lorsque le minuteur périodique est annulé, il est autorisé à se terminer. L’objet [**TimerDestroyedHandler**](https://msdn.microsoft.com/library/windows/apps/Hh967926) (s’il est fourni) est appelé lorsque toutes les instances de l’élément de travail périodique sont terminées.
+Si nécessaire, appelez la méthode [**Cancel**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.cancel) pour mettre fin à la répétition de l’élément de travail périodique. Si l’élément de travail est en cours d’exécution lorsque le minuteur périodique est annulé, il est autorisé à se terminer. L’objet [**TimerDestroyedHandler**](https://docs.microsoft.com/uwp/api/windows.system.threading.timerdestroyedhandler) (s’il est fourni) est appelé lorsque toutes les instances de l’élément de travail périodique sont terminées.
 
 > [!div class="tabbedCodeSnippets"]
 > ``` csharp

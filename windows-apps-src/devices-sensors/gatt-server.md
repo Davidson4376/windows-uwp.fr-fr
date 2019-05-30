@@ -5,19 +5,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 551f8b925ffd56950ba893da7b81fefb4579f558
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f59ae45486ee72f9d901898f6b03674e6b3e299c
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57635134"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370088"
 ---
 # <a name="bluetooth-gatt-server"></a>Serveur GATT Bluetooth
 
 
 **API importantes**
-- [**Windows.Devices.Bluetooth**](https://msdn.microsoft.com/library/windows/apps/Dn263413)
-- [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://msdn.microsoft.com/library/windows/apps/Dn297685)
+- [**Windows.Devices.Bluetooth**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth)
+- [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile)
 
 
 Cet article présente les API du serveur de profil d’attribut générique (GATT) Bluetooth pour les applications de plateforme Windows universelle (UWP), ainsi qu’un exemple de code illustrant les tâches de serveur GATT courantes : 
@@ -27,7 +27,7 @@ Cet article présente les API du serveur de profil d’attribut générique (GAT
 - Répondre aux demandes de lecture et d’écriture
 - Envoyer des notifications aux clients abonnés
 
-## <a name="overview"></a>Vue d’ensemble
+## <a name="overview"></a>Vue d'ensemble
 Windows joue généralement le rôle de client. Toutefois, de nombreux scénarios nécessitent que Windows se comporte également comme un serveur GATT Bluetooth Low Energy (BLE). La quasi-totalité des scénarios relatifs aux appareils IoT, ainsi que la plupart des communications BLE multiplateforme, exigent que Windows joue le rôle de serveur GATT. En outre, l’envoi de notifications aux appareils wearable à proximité constitue un scénario de plus en plus courant qui nécessite également l’emploi de cette technologie.  
 > Avant de poursuivre, veillez à assimiler tous les concepts abordés dans la [documentation relative au client GATT](gatt-client.md).  
 
@@ -40,7 +40,7 @@ Votre application peut déclarer un ou plusieurs services qui seront publiés pa
 Chacun des services, caractéristiques et descripteurs est défini par son propre UUID 128 bits unique.
 > Toutes les API Windows utilisent le terme GUID, mais la norme Bluetooth désigne cet identificateur sous le terme d’UUID. Dans notre cas, ces deux termes sont interchangeables, et nous continuerons donc à employer le terme UUID. 
 
-Si l’attribut est standard et défini par le groupe d’intérêt spécial (SIG) Bluetooth, un identificateur court 16 bits lui est associé (par exemple, l’UUID du niveau de batterie est 0000**2A19**-0000-1000-8000-00805F9B34FB, et l’ID court correspondant est 0x2A19). Ces UUID standard sont utilisés dans les articles concernant [GattServiceUuids](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.bluetooth.genericattributeprofile.gattserviceuuids.aspx) et [GattCharacteristicUuids](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.bluetooth.genericattributeprofile.gattcharacteristicuuids.aspx).
+Si l’attribut est standard et défini par le groupe d’intérêt spécial (SIG) Bluetooth, un identificateur court 16 bits lui est associé (par exemple, l’UUID du niveau de batterie est 0000**2A19**-0000-1000-8000-00805F9B34FB, et l’ID court correspondant est 0x2A19). Ces UUID standard sont utilisés dans les articles concernant [GattServiceUuids](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.genericattributeprofile.gattserviceuuids) et [GattCharacteristicUuids](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.genericattributeprofile.gattcharacteristicuuids).
 
 Si votre application implémente son propre service personnalisé, vous devrez générer un UUID personnalisé. Vous pouvez effectuer cette opération très facilement dans Visual Studio à l’aide des commandes Outils -> Créer un Guid (en utilisant l’option 5 pour obtenir ce GUID au format « xxxxxxxx-xxxx-...xxxx »). Vous pourrez alors utiliser cet UUID pour déclarer de nouveaux services, caractéristiques ou descripteurs locaux.
 

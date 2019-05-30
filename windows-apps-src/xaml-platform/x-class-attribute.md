@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8eb1238499355cf37b3f5113dbb10c456de55961
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: dcda1677a8b5d289fd4c5e86db69212004f00824
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57624764"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371103"
 ---
 # <a name="xclass-attribute"></a>Attribut x:Class
 
@@ -36,7 +36,7 @@ Configure la compilation XAML afin de joindre des classes partielles entre le ba
 
 ## <a name="remarks"></a>Notes
 
-Il est possible de déclarer **x:Class** en tant qu’attribut pour un élément qui est la racine d’une arborescence d’objets/d’un fichier XAML et qui est compilé par des actions de génération, ou pour la racine de la classe [**Application**](https://msdn.microsoft.com/library/windows/apps/br242324) dans la définition d’application d’une application compilée. La déclaration de **x:Class** sur un élément autre qu’un nœud racine, et dans toutes les circonstances pour un fichier XAML qui n’est pas compilé avec l’action de génération **Page**, engendre une erreur au moment de la compilation.
+Il est possible de déclarer **x:Class** en tant qu’attribut pour un élément qui est la racine d’une arborescence d’objets/d’un fichier XAML et qui est compilé par des actions de génération, ou pour la racine de la classe [**Application**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Application) dans la définition d’application d’une application compilée. La déclaration de **x:Class** sur un élément autre qu’un nœud racine, et dans toutes les circonstances pour un fichier XAML qui n’est pas compilé avec l’action de génération **Page**, engendre une erreur au moment de la compilation.
 
 La classe utilisée en tant que **x:Class** ne peut pas être une classe imbriquée.
 

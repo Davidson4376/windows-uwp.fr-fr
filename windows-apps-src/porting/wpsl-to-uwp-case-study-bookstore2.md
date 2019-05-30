@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ae1b0c272af5939deba73ff7a07797207d7caaa4
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: e3b6ab53e5e9f0b36e6bdeb047b48766cda7a2a5
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57651004"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372391"
 ---
 # <a name="windowsphone-silverlight-to-uwp-case-study-bookstore2"></a>Silverlight de Windows Phone à l’étude de cas UWP : Bookstore2
 
@@ -58,7 +58,7 @@ Dans le fichier MainPage.xaml, apportez les modifications de portage initiales c
 -   Remplacez l’élément « clr-namespace » par « using » dans la déclaration de préfixe d’espace de noms restante.
 -   Supprimez les éléments `SupportedOrientations="Portrait"` et `Orientation="Portrait"`, puis configurez l’option **Portrait** dans le manifeste du package d’application du nouveau projet.
 -   Supprimez l’élément `shell:SystemTray.IsVisible="True"`.
--   Les types des convertisseurs d’éléments de la liste de raccourcis (qui sont présents dans le balisage en tant que ressources) ont été déplacés vers l’espace de noms [**Windows.UI.Xaml.Controls.Primitives**](https://msdn.microsoft.com/library/windows/apps/br209818). Par conséquent, ajoutez la déclaration de préfixe d’espace de noms Windows\_l’interface utilisateur\_Xaml\_contrôles\_Primitives et mappez-le à **Windows.UI.Xaml.Controls.Primitives**. Dans les ressources des convertisseurs d’éléments de la liste de raccourcis, remplacez le préfixe `phone:` par `Windows_UI_Xaml_Controls_Primitives:`.
+-   Les types des convertisseurs d’éléments de la liste de raccourcis (qui sont présents dans le balisage en tant que ressources) ont été déplacés vers l’espace de noms [**Windows.UI.Xaml.Controls.Primitives**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives). Par conséquent, ajoutez la déclaration de préfixe d’espace de noms Windows\_l’interface utilisateur\_Xaml\_contrôles\_Primitives et mappez-le à **Windows.UI.Xaml.Controls.Primitives**. Dans les ressources des convertisseurs d’éléments de la liste de raccourcis, remplacez le préfixe `phone:` par `Windows_UI_Xaml_Controls_Primitives:`.
 -   Comme nous l’avons fait dans le cas de [Bookstore1](wpsl-to-uwp-case-study-bookstore1.md), remplacez toutes les références au style `PhoneTextExtraLargeStyle` **TextBlock** par une référence au style `SubtitleTextBlockStyle`, remplacez le style `PhoneTextSubtleStyle` par `SubtitleTextBlockStyle`, le style `PhoneTextNormalStyle` par `CaptionTextBlockStyle`, puis le style `PhoneTextTitle1Style` par `HeaderTextBlockStyle`.
 -   Il existe une seule exception dans `BookTemplate`. Le style du second élément **TextBlock** doit référencer `CaptionTextBlockStyle`.
 -   Supprimez l’attribut FontFamily de l’élément **TextBlock** dans `AuthorGroupHeaderTemplate` et définissez l’arrière-plan de l’élément **Border** pour qu’il référence `SystemControlBackgroundAccentBrush` au lieu de `PhoneAccentBrush`.
@@ -67,7 +67,7 @@ Dans le fichier MainPage.xaml, apportez les modifications de portage initiales c
 ## <a name="replacing-the-longlistselector"></a>Remplacement de l’élément LongListSelector
 
 
-La procédure de remplacement de l’élément **LongListSelector** par un contrôle [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) comprend plusieurs étapes. Nous allons nous concentrer sur ces dernières. Un élément **LongListSelector** est directement lié à la source de données groupées, mais un élément **SemanticZoom** contient des contrôles [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) ou [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) qui sont liés de manière indirecte aux données, par l’intermédiaire d’un adaptateur [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833). L’élément **CollectionViewSource** doit être présent dans le balisage en tant que ressource ; nous pouvons donc commencer par l’ajouter au balisage dans le fichier MainPage.xaml, dans `<Page.Resources>`.
+La procédure de remplacement de l’élément **LongListSelector** par un contrôle [**SemanticZoom**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom) comprend plusieurs étapes. Nous allons nous concentrer sur ces dernières. Un élément **LongListSelector** est directement lié à la source de données groupées, mais un élément **SemanticZoom** contient des contrôles [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) ou [**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView) qui sont liés de manière indirecte aux données, par l’intermédiaire d’un adaptateur [**CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource). L’élément **CollectionViewSource** doit être présent dans le balisage en tant que ressource ; nous pouvons donc commencer par l’ajouter au balisage dans le fichier MainPage.xaml, dans `<Page.Resources>`.
 
 ```xml
     <CollectionViewSource
@@ -142,7 +142,7 @@ Une largeur minimale de 548 epx est appropriée pour ce cas d’utilisation, car
 
 Avant d’aborder la partie consacrée au Gestionnaire d’état visuel adaptatif, nous devons commencer par concevoir l’état large, ce qui implique l’ajout de nouveaux éléments visuels et modèles à notre balisage. Ces étapes décrivent comment effectuer cette opération. Au moyen des conventions d’affectation de noms pour les éléments visuels et les modèles, nous allons inclure le mot « wide » dans le nom de tout élément ou modèle destiné à l’état large. Si un élément ou modèle ne contient pas le mot « wide », vous pouvez supposer qu’il s’agit de l’état étroit, qui constitue l’état par défaut et dont les valeurs de propriété sont définies en tant que valeurs locales sur les éléments visuels dans la page. Seules les valeurs de propriété relatives à l’état large sont définies par le biais d’un état visuel réel dans le balisage.
 
--   Effectuez une copie du contrôle [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) dans le balisage et définissez `x:Name="narrowSeZo"` sur cette copie. Sur l’original, définissez à la fois `x:Name="wideSeZo"` et `Visibility="Collapsed"` afin que l’élément large ne soit pas visible par défaut.
+-   Effectuez une copie du contrôle [**SemanticZoom**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom) dans le balisage et définissez `x:Name="narrowSeZo"` sur cette copie. Sur l’original, définissez à la fois `x:Name="wideSeZo"` et `Visibility="Collapsed"` afin que l’élément large ne soit pas visible par défaut.
 -   Dans `wideSeZo`, remplacez les éléments **ListView** par des éléments **GridView** dans la vue avec zoom avant et dans la vue avec zoom arrière.
 -   Effectuez une copie des trois ressources `AuthorGroupHeaderTemplate`, `ZoomedOutAuthorTemplate` et `BookTemplate`, puis ajoutez le mot `Wide` aux clés de ces copies. Mettez également à jour l’élément `wideSeZo` pour qu’il référence les clés de ces nouvelles ressources.
 -   Remplacez le contenu de l’élément `AuthorGroupHeaderTemplateWide` par `<TextBlock Style="{StaticResource SubheaderTextBlockStyle}" Text="{Binding Name}"/>`.
@@ -220,7 +220,7 @@ Il ne reste plus qu’à procéder à quelques adaptations de stylisation finale
 
 -   Dans `AuthorGroupHeaderTemplate`, définissez `Foreground="White"` sur l’élément **TextBlock** afin qu’il apparaisse correctement lors de l’exécution sur la famille d’appareils mobiles.
 -   Ajoutez `FontWeight="SemiBold"` à l’élément **TextBlock** dans `AuthorGroupHeaderTemplate` et `ZoomedOutAuthorTemplate`.
--   Dans `narrowSeZo`, les en-têtes de groupe et les auteurs affichés dans la vue avec zoom arrière sont alignés à gauche et non étirés. Nous allons donc travailler sur cet aspect. Nous allons créer un élément [**HeaderContainerStyle**](https://msdn.microsoft.com/library/windows/apps/dn251841) pour la vue avec zoom avant, l’élément [**HorizontalContentAlignment**](https://msdn.microsoft.com/library/windows/apps/br209417) étant défini sur la valeur `Stretch`. Nous créerons également un élément [**ItemContainerStyle**](https://msdn.microsoft.com/library/windows/apps/br242817) pour la vue avec zoom arrière contenant ce même élément [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817). Voici ce que cela donne.
+-   Dans `narrowSeZo`, les en-têtes de groupe et les auteurs affichés dans la vue avec zoom arrière sont alignés à gauche et non étirés. Nous allons donc travailler sur cet aspect. Nous allons créer un élément [**HeaderContainerStyle**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.groupstyle.headercontainerstyle) pour la vue avec zoom avant, l’élément [**HorizontalContentAlignment**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.horizontalcontentalignment) étant défini sur la valeur `Stretch`. Nous créerons également un élément [**ItemContainerStyle**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle) pour la vue avec zoom arrière contenant ce même élément [**Setter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter). Voici ce que cela donne.
 
 ```xml
    <Style x:Key="AuthorGroupHeaderContainerStyle" TargetType="ListViewHeaderItem">
@@ -272,7 +272,7 @@ Cette section contient un exemple illustrant les fonctions qui s’offrent à no
 
 Lorsque nous lions l’élément **CollectionViewSource.Source** à « Authors », nous signalons simplement que chaque auteur de la liste d’auteurs est un groupe d’*éléments quelconques*. Nous laissons à l’élément **CollectionViewSource** le soin de déterminer que la classe Author est, en l’occurrence, un groupe associé à BookSku. Cela fonctionne, mais peut s’avérer rigide. Que se passe-t-il si nous voulons que la classe Author corresponde *aussi bien* à un groupe de BookSku *qu’à* un groupe d’adresses géographiques correspondant aux lieux où l’auteur a vécu ? La classe Author ne peut pas *correspondre* à ces deux groupes. En revanche, elle peut *inclure* autant de groupes que vous le souhaitez. La solution est là : utilisons le modèle *has-a-group* à la place (ou en plus) du modèle *is-a-group* que nous avons appliqué jusqu’à présent. Voici comment procéder :
 
--   Modifiez la classe Author afin qu’elle ne dérive plus de l’élément **List&lt;T&gt;**.
+-   Modifiez la classe Author afin qu’elle ne dérive plus de l’élément **List&lt;T&gt;** .
 -   Ajoutez ce champ à 
 -   Ajoutez cette propriété à 
 -   Bien entendu, nous pouvons répéter ces deux étapes de manière à ajouter autant de groupes que nous le voulons.

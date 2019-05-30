@@ -7,22 +7,22 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2175ce19824068a850ff70340b467f09e5c76540
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 2e193ab7bce31c1f13cb40f04902922c6ff21056
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592744"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370914"
 ---
 # <a name="texture2d-and-texture2darray-subresource-tiling"></a>Restitution des sous-ressources Texture2D et Texture2DArray sous forme de mosaïque
 
 
-Les tableaux suivants montrent comment des sous-ressources [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff471525) et [**Texture2DArray**](https://msdn.microsoft.com/library/windows/desktop/ff471526) sont restituées sous forme de tuiles. Les valeurs figurant dans ces tableaux ne prennent pas en compte le package de fin de mip.
+Les tableaux suivants montrent comment des sous-ressources [**Texture2D**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d) et [**Texture2DArray**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2darray) sont restituées sous forme de tuiles. Les valeurs figurant dans ces tableaux ne prennent pas en compte le package de fin de mip.
 
 ## <a name="span-idsubresources-with-multisample-counts-of-1spanspan-idsubresources-with-multisample-counts-of-1spanspan-idsubresources-with-multisample-counts-of-1spansubresources-with-multisample-counts-of-1"></a><span id="Subresources-with-multisample-counts-of-1"></span><span id="subresources-with-multisample-counts-of-1"></span><span id="SUBRESOURCES-WITH-MULTISAMPLE-COUNTS-OF-1"></span>Sous-ressources avec le nombre d’échantillonnage multiple de 1
 
 
-Le tableau suivant montre comment des sous-ressources [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff471525) et [**Texture2DArray**](https://msdn.microsoft.com/library/windows/desktop/ff471526) avec un nombre d’échantillonnage multiple de 1 sont restituées sous forme de tuiles.
+Le tableau suivant montre comment des sous-ressources [**Texture2D**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d) et [**Texture2DArray**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2darray) avec un nombre d’échantillonnage multiple de 1 sont restituées sous forme de tuiles.
 
 | Bits/pixel (1 exemple/pixel) | Dimensions de la tuile (pixels, l x h) |
 |-----------------------------|-------------------------------|
@@ -41,7 +41,7 @@ Nombre de bits de format non pris en charge avec la diffusion en continu de ress
 ## <a name="span-idsubresources-with-various-multisample-countsspanspan-idsubresources-with-various-multisample-countsspanspan-idsubresources-with-various-multisample-countsspansubresources-with-various-multisample-counts"></a><span id="Subresources-with-various-multisample-counts"></span><span id="subresources-with-various-multisample-counts"></span><span id="SUBRESOURCES-WITH-VARIOUS-MULTISAMPLE-COUNTS"></span>Sous-ressources avec différents nombres échantillonnage multiple
 
 
-Le tableau suivant montre comment des sous-ressources [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff471525) et [**Texture2DArray**](https://msdn.microsoft.com/library/windows/desktop/ff471526) avec plusieurs échantillonnages multiples sont restituées sous forme de tuiles.
+Le tableau suivant montre comment des sous-ressources [**Texture2D**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d) et [**Texture2DArray**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2darray) avec plusieurs échantillonnages multiples sont restituées sous forme de tuiles.
 
 | Bits/pixel (1 exemple/pixel) | Dimensions de la tuile (pixels, l x h) |
 |-----------------------------|-------------------------------|

@@ -5,12 +5,12 @@ ms.date: 01/03/2019
 ms.topic: article
 keywords: windows 10 s, toujours connecté, applications ARM32 sur ARM, windows 10 sur ARM, résolution des problèmes
 ms.localizationpriority: medium
-ms.openlocfilehash: 3431b12fc6f6b6ba2d870400ec4f6684f8290a61
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: ddf28627838ebc8cb2df620c398f3803c026cb17
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63815281"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366833"
 ---
 # <a name="troubleshooting-arm-uwp-apps"></a>Résolution des problèmes ARM des applications UWP
 
@@ -33,7 +33,7 @@ Applications universelles Windows Platform (UWP) qui ne sont pas correctement g�
 
 Ces problèmes peuvent être résolus par : supprimer les dépendances non disponibles et la reconstruction de l’application en utilisant les dernières versions Microsoft Visual Studio et SDK UWP ; ou, en dernier recours, suppression de l’application ARM à partir du Microsoft Store, afin que la version de l’application (si disponible) est téléchargée sur les ordinateurs des utilisateurs de x86.
 
-Pour plus d’informations sur les API .NET disponibles pour les applications UWP, consultez [.NET pour les applications UWP](https://msdn.microsoft.com/library/windows/apps/mt185501.aspx)
+Pour plus d’informations sur les API .NET disponibles pour les applications UWP, consultez [.NET pour les applications UWP](https://docs.microsoft.com/dotnet/api/index?view=dotnet-uwp-10.0)
 
 ### <a name="compiling-an-app-with-an-older-version-of-visual-studio-and-sdk"></a>Compilation d'une application avec une version antérieure de Visual Studio et du kit SDK
 Si vous rencontrez des problèmes, veillez à utiliser les dernières versions de Microsoft Visual Studio et du kit SDK Windows pour compiler votre application. Applications compilées avec une version antérieure de Visual Studio et du kit SDK peuvent rencontrer des problèmes qui ont été résolus dans les versions ultérieures.

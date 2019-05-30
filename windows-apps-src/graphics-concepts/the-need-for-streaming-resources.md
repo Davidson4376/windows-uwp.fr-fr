@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e0354b0e727e84d562bf63779e74be72f87198f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f5b44e60e3490f39a91724bf038aa8066de11bf0
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57632174"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370889"
 ---
 # <a name="the-need-for-streaming-resources"></a>Besoin en ressources de diffusion en continu
 
@@ -33,7 +33,7 @@ Dans un système graphique (autrement dit, le système d’exploitation, le pilo
 
 Pour une [mise en mémoire tampon](introduction-to-buffers.md), l’ensemble des données représente la sous-ressource.
 
-Pour une [texture](textures.md) (par exemple, une [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff471525)), chaque niveau mip représente une sous-ressource. Pour un tableau de textures (par exemple [**Texture2DArray**](https://msdn.microsoft.com/library/windows/desktop/ff471526)), chaque niveau mip à une section de tableau donnée est une sous-ressource. Le système graphique permet uniquement de gérer le mappage des allocations à ce niveau de granularité de sous-ressources. Dans le contexte des ressources de diffusion en continu, le « mappage » fait référence à la visibilité des données par le GPU.
+Pour une [texture](textures.md) (par exemple, une [**Texture2D**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d)), chaque niveau mip représente une sous-ressource. Pour un tableau de textures (par exemple [**Texture2DArray**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2darray)), chaque niveau mip à une section de tableau donnée est une sous-ressource. Le système graphique permet uniquement de gérer le mappage des allocations à ce niveau de granularité de sous-ressources. Dans le contexte des ressources de diffusion en continu, le « mappage » fait référence à la visibilité des données par le GPU.
 
 ## <a name="span-idwithouttilingcantaccessonlyasmallportionofmipmapchainspanspan-idwithouttilingcantaccessonlyasmallportionofmipmapchainspanspan-idwithouttilingcantaccessonlyasmallportionofmipmapchainspanwithout-tiling-cant-access-only-a-small-portion-of-mipmap-chain"></a><span id="Without_tiling__can_t_access_only_a_small_portion_of_mipmap_chain"></span><span id="without_tiling__can_t_access_only_a_small_portion_of_mipmap_chain"></span><span id="WITHOUT_TILING__CAN_T_ACCESS_ONLY_A_SMALL_PORTION_OF_MIPMAP_CHAIN"></span>Sans mosaïque, ne peut pas accéder uniquement une petite portion de chaîne mipmap
 
@@ -47,7 +47,7 @@ En réalité, sans la prise en charge des ressources de diffusion en continu, le
 
 La pagination logicielle permet de diviser la surface en tuiles suffisamment petites pour le matériel utilisé.
 
-Direct3D prend en charge les surfaces [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff471525) avec jusqu’à 16 384 pixels sur un côté donné. Une image de 16 384 de large par 16 384 de haut et de 4 octets par pixel consomme 1 Go de mémoire vidéo (et l’ajout de mipmaps double cette consommation). Dans la pratique, il est rare d’utiliser la totalité d’1 Go dans une simple opération de rendu.
+Direct3D prend en charge les surfaces [**Texture2D**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d) avec jusqu’à 16 384 pixels sur un côté donné. Une image de 16 384 de large par 16 384 de haut et de 4 octets par pixel consomme 1 Go de mémoire vidéo (et l’ajout de mipmaps double cette consommation). Dans la pratique, il est rare d’utiliser la totalité d’1 Go dans une simple opération de rendu.
 
 Certains développeurs de jeu modèlent des surfaces de terrain d’une taille de 128 Ko par 128 Ko. Pour faire fonctionner ces surfaces sur le GPU existant, il faut diviser la surface en tuiles suffisamment petites pour le matériel utilisé. L’application doit déterminer les tuiles pouvant être nécessaires et les charger dans un cache de textures sur le GPU, un système de pagination logiciel.
 

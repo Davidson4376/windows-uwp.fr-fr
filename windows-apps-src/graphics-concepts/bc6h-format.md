@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: f147f4c30d2a662806df5928fc79178522b9b6a6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 50c8fa623130412688f14307fa46540c81f38554
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57633094"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370485"
 ---
 # <a name="bc6h-format"></a>Format BC6H
 
@@ -40,7 +40,7 @@ BC6H est spécifié par le suivant DXGI\_valeurs d’énumération de FORMAT :
 
  
 
-Le format BC6H peut être utilisé pour les ressources de texture [Texture2D](https://msdn.microsoft.com/library/windows/desktop/bb205277) (y compris les tableaux), Texture3D ou TextureCube (y compris les tableaux). De même, ce format s’applique à toutes les surfaces de carte MIP associées à ces ressources.
+Le format BC6H peut être utilisé pour les ressources de texture [Texture2D](https://docs.microsoft.com/windows/desktop/direct3d10/d3d10-graphics-reference-resource-structures) (y compris les tableaux), Texture3D ou TextureCube (y compris les tableaux). De même, ce format s’applique à toutes les surfaces de carte MIP associées à ces ressources.
 
 BC6H utilise une taille de bloc fixe de 16 octets (128 bits) et une taille de vignette fixe de 4 x 4 texels. Comme pour les formats BC précédents, les images de texture d'une taille supérieure à la taille de vignette prise en charge (4 x 4) sont compressées à l’aide de plusieurs blocs. Cette identité d’adressage s’applique également aux images 3D, aux mipmaps, aux cartes de cube et aux tableaux de textures. Toutes les vignettes de l’image doivent être au même format.
 
@@ -143,18 +143,18 @@ Les noms de champs dans le tableau ci-dessus sont définis comme suit :
 |-------|-------------------|
 | m     | mode              |
 | d     | index de forme       |
-| rw    | Endpt\[0\]. Un\[0\] |
-| rx    | Endpt\[0\]. B\[0\] |
-| ry    | Endpt\[1\]. Un\[0\] |
-| rz    | Endpt\[1\]. B\[0\] |
-| gw    | Endpt\[0\]. Un\[1\] |
-| gx    | Endpt\[0\]. B\[1\] |
-| gy    | Endpt\[1\]. Un\[1\] |
-| gz    | Endpt\[1\]. B\[1\] |
-| bw    | Endpt\[0\]. Un\[2\] |
-| bx    | Endpt\[0\]. B\[2\] |
-| par    | Endpt\[1\]. Un\[2\] |
-| bz    | Endpt\[1\]. B\[2\] |
+| rw    | endpt\[0\].A\[0\] |
+| rx    | endpt\[0\].B\[0\] |
+| ry    | endpt\[1\].A\[0\] |
+| rz    | endpt\[1\].B\[0\] |
+| gw    | endpt\[0\].A\[1\] |
+| gx    | endpt\[0\].B\[1\] |
+| gy    | endpt\[1\].A\[1\] |
+| gz    | endpt\[1\].B\[1\] |
+| bw    | endpt\[0\].A\[2\] |
+| bx    | endpt\[0\].B\[2\] |
+| par    | endpt\[1\].A\[2\] |
+| bz    | endpt\[1\].B\[2\] |
 
  
 

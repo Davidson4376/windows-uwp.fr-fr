@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, acpi, gpio, i2c, spi, uefi
 ms.assetid: 2fbdfc78-3a43-4828-ae55-fd3789da7b34
 ms.localizationpriority: medium
-ms.openlocfilehash: 442b3b9328212a5115384b5175b519b76286dd28
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f41bf9f56b63f59844bec976e9d6e5e3d650b271
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57620304"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370271"
 ---
 # <a name="enable-usermode-access-to-gpio-i2c-and-spi"></a>Activer l’accès en mode utilisateur à GPIO, I2C et SPI
 
@@ -41,7 +41,7 @@ Device(RHPX)
 * _CID : ID compatible. Il doit s’agir de « MSFT8000 ».
 * _UID : ID unique. Définissez ce paramètre sur 1.
 
-Nous allons ensuite déclarer chacune des ressources GPIO et SPB qui doivent être exposées au mode utilisateur. L’ordre dans lequel les ressources sont déclarées est important, car les index de ressource sont utilisés pour associer les propriétés avec des ressources. Si plusieurs bus I2C ou SPI sont exposés, le premier bus déclaré est considéré comme le bus « par défaut » pour ce type et sera l’instance renvoyée par les méthodes `GetDefaultAsync()` de [Windows.Devices.I2c.I2cController](https://msdn.microsoft.com/library/windows/apps/windows.devices.i2c.i2ccontroller.aspx) et [Windows.Devices.Spi.SpiController](https://msdn.microsoft.com/library/windows/apps/windows.devices.spi.spicontroller.aspx).
+Nous allons ensuite déclarer chacune des ressources GPIO et SPB qui doivent être exposées au mode utilisateur. L’ordre dans lequel les ressources sont déclarées est important, car les index de ressource sont utilisés pour associer les propriétés avec des ressources. Si plusieurs bus I2C ou SPI sont exposés, le premier bus déclaré est considéré comme le bus « par défaut » pour ce type et sera l’instance renvoyée par les méthodes `GetDefaultAsync()` de [Windows.Devices.I2c.I2cController](https://docs.microsoft.com/uwp/api/windows.devices.i2c.i2ccontroller) et [Windows.Devices.Spi.SpiController](https://docs.microsoft.com/uwp/api/windows.devices.spi.spicontroller).
 
 ### <a name="spi"></a>SPI
 
@@ -156,7 +156,7 @@ Cela crée un bus nommé « SPI1 » et l’associe à l’index de ressource 
 #### <a name="spi-driver-requirements"></a>Exigences liées au pilote SPI
 
 * Doit utiliser `SpbCx` ou être compatible SpbCx
-* Doit avoir réussi les [tests SPI dans MITT](https://msdn.microsoft.com/library/windows/hardware/dn919873.aspx)
+* Doit avoir réussi les [tests SPI dans MITT](https://docs.microsoft.com/windows-hardware/drivers/spb/spi-tests-in-mitt)
 * Doit prendre en charge une vitesse d’horloge de 4 MHz
 * Doit prendre en charge la longueur des données de 8 bits
 * Doit prendre en charge tous les Modes de SPI : 0, 1, 2, 3
@@ -201,7 +201,7 @@ Les champs suivants sont des espaces réservés pour les valeurs spécifiées pa
 #### <a name="i2c-driver-requirements"></a>Exigences liées au pilote I2C
 
 * Doit utiliser SpbCx ou être compatible SpbCx
-* Doit avoir réussi les [tests I2C dans MITT](https://msdn.microsoft.com/library/windows/hardware/dn919852.aspx)
+* Doit avoir réussi les [tests I2C dans MITT](https://docs.microsoft.com/windows-hardware/drivers/spb/run-mitt-tests-for-an-i2c-controller-)
 * Doit prendre en charge l’adressage 7 bits
 * Doit prendre en charge une vitesse d’horloge de 100 KHz
 * Doit prendre en charge une vitesse d’horloge de 400 KHz
@@ -228,7 +228,7 @@ GpioInt(Edge, ActiveBoth, Shared, PullUp, 0, “\\_SB.GPI0”,) { 5 }
 
 Les conditions suivantes doivent être respectées lors de la déclaration des broches GPIO :
 
-* Seuls les contrôleurs GPIO mappés en mémoire sont pris en charge. Les contrôleurs GPIO interfacés sur I2C/SPI ne sont pas pris en charge. Le pilote du contrôleur est un contrôleur mappé en mémoire s’il définit l’indicateur [MemoryMappedController](https://msdn.microsoft.com/library/windows/hardware/hh439449.aspx) dans la structure [CLIENT_CONTROLLER_BASIC_INFORMATION](https://msdn.microsoft.com/library/windows/hardware/hh439358.aspx) en réponse au rappel [CLIENT_QueryControllerBasicInformation](https://msdn.microsoft.com/library/windows/hardware/hh439399.aspx).
+* Seuls les contrôleurs GPIO mappés en mémoire sont pris en charge. Les contrôleurs GPIO interfacés sur I2C/SPI ne sont pas pris en charge. Le pilote du contrôleur est un contrôleur mappé en mémoire s’il définit l’indicateur [MemoryMappedController](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/ns-gpioclx-_controller_attribute_flags) dans la structure [CLIENT_CONTROLLER_BASIC_INFORMATION](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/ns-gpioclx-_client_controller_basic_information) en réponse au rappel [CLIENT_QueryControllerBasicInformation](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_query_controller_basic_information).
 * Chaque broche nécessite une ressource GpioIO et une ressource GpioInt. La ressource GpioInt doit immédiatement suivre la ressource GpioIO et doit faire référence au même numéro de broche.
 * Les ressources GPIO doivent être classées par numéro de broche croissant.
 * Chaque ressource GpioIO et GpioInt doit contenir exactement un numéro de broche dans la liste des broches.
@@ -282,7 +282,7 @@ Si la numérotation native de broche est utilisée, vous devez également spéci
 Package (2) { “GPIO-PinCount”, 54 },
 ```
 
-La propriété **PinCount** doit correspondre à la valeur renvoyée par le biais de la propriété **TotalPins** dans le rappel [CLIENT_QueryControllerBasicInformation](https://msdn.microsoft.com/library/windows/hardware/hh439399.aspx) du pilote `GpioClx`.
+La propriété **PinCount** doit correspondre à la valeur renvoyée par le biais de la propriété **TotalPins** dans le rappel [CLIENT_QueryControllerBasicInformation](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/gpioclx/nc-gpioclx-gpio_client_query_controller_basic_information) du pilote `GpioClx`.
 
 Choisissez le modèle de numérotation le plus compatible avec la documentation publiée existante pour votre carte. Par exemple, Raspberry Pi utilise la numérotation native de broche car de nombreux diagrammes de brochage existants utilisent les numéros de broche BCM2835. MinnowBoardMax utilise la numérotation séquentielle de broche car il y a peu de diagrammes de brochage existants, et la numérotation séquentielle de broche simplifie l’expérience du développeur car seules 10 broches sur plus de 200 sont exposées. La décision d’utiliser la numérotation séquentielle ou native de broche doit avoir pour objet de réduire la confusion du développeur.
 
@@ -331,9 +331,9 @@ Ce code affecte le nom convivial « UART2 » au contrôleur, qui est l’ident
 
 Le multiplexage de broche est la capacité d’utiliser la même broche physique pour différentes fonctions. Il est possible d’acheminer plusieurs appareils sur puce, par exemple un contrôleur I2C, un contrôleur SPI et un contrôleur GPIO, vers la même broche physique sur un SOC. Le bloc mux contrôle quelle fonction est active sur la broche à tout moment. Généralement, le microprogramme est chargé de déterminer les affectations de fonction au démarrage, et ces affectations restent statiques tout au long de la session de démarrage. Le multiplexage de broche au moment de l’exécution ajoute la capacité de reconfigurer les affectations de fonction de la broche à l’exécution. Le fait de laisser les utilisateurs choisir la fonction d’une broche à l’exécution accélère le développement en leur permettant de reconfigurer rapidement les broches d’une carte. En outre, cela permet au matériel de prendre en charge un plus large éventail d’applications qu’une configuration statique.
 
-Les utilisateurs profitent de la prise en charge du multiplexage pour GPIO, I2C, SPI et UART sans écrire de code supplémentaire. Quand un utilisateur ouvre un GPIO ou un bus en utilisant [OpenPin()](https://msdn.microsoft.com/library/dn960157.aspx) ou [FromIdAsync()](https://msdn.microsoft.com/windows.devices.i2c.i2cdevice.fromidasync), les broches physiques sous-jacentes sont automatiquement multiplexées sur la fonction demandée. Si les broches sont déjà utilisées par une autre fonction, l’appel à OpenPin() ou FromIdAsync() échoue. Lorsque l’utilisateur ferme l’appareil en supprimant l’objet [GpioPin](https://msdn.microsoft.com/library/windows/apps/windows.devices.gpio.gpiopin.aspx), [I2cDevice](https://msdn.microsoft.com/library/windows/apps/windows.devices.i2c.i2cdevice.aspx), [SpiDevice](https://msdn.microsoft.com/library/windows/apps/windows.devices.spi.spidevice.aspx) ou [SerialDevice](https://msdn.microsoft.com/library/windows/apps/windows.devices.serialcommunication.serialdevice.aspx), les broches sont libérées, ce qui permet de les ouvrir ultérieurement pour une autre fonction.
+Les utilisateurs profitent de la prise en charge du multiplexage pour GPIO, I2C, SPI et UART sans écrire de code supplémentaire. Quand un utilisateur ouvre un GPIO ou un bus en utilisant [OpenPin()](https://docs.microsoft.com/uwp/api/windows.devices.gpio.gpiocontroller.openpin) ou [FromIdAsync()](https://docs.microsoft.com/uwp/api/windows.devices.i2c.i2cdevice.fromidasync), les broches physiques sous-jacentes sont automatiquement multiplexées sur la fonction demandée. Si les broches sont déjà utilisées par une autre fonction, l’appel à OpenPin() ou FromIdAsync() échoue. Lorsque l’utilisateur ferme l’appareil en supprimant l’objet [GpioPin](https://docs.microsoft.com/uwp/api/windows.devices.gpio.gpiopin), [I2cDevice](https://docs.microsoft.com/uwp/api/windows.devices.i2c.i2cdevice), [SpiDevice](https://docs.microsoft.com/uwp/api/windows.devices.spi.spidevice) ou [SerialDevice](https://docs.microsoft.com/uwp/api/windows.devices.serialcommunication.serialdevice), les broches sont libérées, ce qui permet de les ouvrir ultérieurement pour une autre fonction.
 
-Windows contient la prise en charge intégrée pour le multiplexage de broche dans les infrastructures [GpioClx](https://msdn.microsoft.com/library/windows/hardware/hh439515.aspx), [SpbCx](https://msdn.microsoft.com/library/windows/hardware/hh406203.aspx) et [SerCx](https://msdn.microsoft.com/library/windows/hardware/dn265349.aspx). Ces infrastructures fonctionnent ensemble pour basculer automatiquement une broche vers la fonction appropriée lors de l’accès à une broche ou un bus GPIO. L’accès aux broches fait l’objet d’un arbitrage pour éviter les conflits entre plusieurs clients. Outre cette prise en charge intégrée, les interfaces et les protocoles de multiplexage de broche ont un usage général et peuvent être étendus pour prendre en charge des scénarios et des appareils supplémentaires.
+Windows contient la prise en charge intégrée pour le multiplexage de broche dans les infrastructures [GpioClx](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index), [SpbCx](https://docs.microsoft.com/windows-hardware/drivers/spb/spb-framework-extension) et [SerCx](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/index). Ces infrastructures fonctionnent ensemble pour basculer automatiquement une broche vers la fonction appropriée lors de l’accès à une broche ou un bus GPIO. L’accès aux broches fait l’objet d’un arbitrage pour éviter les conflits entre plusieurs clients. Outre cette prise en charge intégrée, les interfaces et les protocoles de multiplexage de broche ont un usage général et peuvent être étendus pour prendre en charge des scénarios et des appareils supplémentaires.
 
 Ce document décrit tout d’abord les interfaces et les protocoles sous-jacents impliqués dans le multiplexage de broche et décrit comment ajouter la prise en charge du multiplexage de broche aux pilotes de contrôleurs GpioClx, SpbCx et SerCx.
 
@@ -353,8 +353,8 @@ La séquence des opérations impliquées dans le multiplexage de broche est pré
 
 ![Interaction du serveur client de multiplexage de broche](images/usermode-access-diagram-1.png)
 
-1. Le client reçoit les ressources MsftFunctionConfig à partir du microprogramme ACPI dans son rappel [EvtDevicePrepareHardware()](https://msdn.microsoft.com/library/windows/hardware/ff540880.aspx).
-2. Le client utilise la fonction d’assistance du concentrateur de ressources `RESOURCE_HUB_CREATE_PATH_FROM_ID()` pour créer un chemin d’accès à partir de l’ID de ressource, puis ouvre un handle vers le chemin d’accès (à l’aide de [ZwCreateFile()](https://msdn.microsoft.com/library/windows/hardware/ff566424.aspx), [IoGetDeviceObjectPointer()](https://msdn.microsoft.com/library/windows/hardware/ff549198.aspx) ou [WdfIoTargetOpen()](https://msdn.microsoft.com/library/windows/hardware/ff548634.aspx)).
+1. Le client reçoit les ressources MsftFunctionConfig à partir du microprogramme ACPI dans son rappel [EvtDevicePrepareHardware()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware).
+2. Le client utilise la fonction d’assistance du concentrateur de ressources `RESOURCE_HUB_CREATE_PATH_FROM_ID()` pour créer un chemin d’accès à partir de l’ID de ressource, puis ouvre un handle vers le chemin d’accès (à l’aide de [ZwCreateFile()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/ntifs/nf-ntifs-ntcreatefile), [IoGetDeviceObjectPointer()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdm/nf-wdm-iogetdeviceobjectpointer) ou [WdfIoTargetOpen()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetopen)).
 3. Le serveur extrait l’ID du concentrateur de ressources à partir du chemin d’accès au fichier à l’aide des fonctions d’assistance du concentrateur de ressources `RESOURCE_HUB_ID_FROM_FILE_NAME()`, puis interroge le concentrateur de ressources pour récupérer le descripteur des ressources.
 4. Le serveur effectue un arbitrage du partage pour chaque broche dans le descripteur et termine la requête IRP_MJ_CREATE.
 5. Le client émet une requête *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* sur le handle reçu.
@@ -369,7 +369,7 @@ Cette section explique comment un client utilise la fonctionnalité de multiplex
 
 #### <a name="parsing-resources"></a>Analyse des ressources
 
-Un pilote WDF reçoit des ressources `MsftFunctionConfig()` dans sa routine [EvtDevicePrepareHardware()](https://msdn.microsoft.com/library/windows/hardware/ff540880.aspx). Les ressources MsftFunctionConfig peuvent être identifiées par les champs suivants :
+Un pilote WDF reçoit des ressources `MsftFunctionConfig()` dans sa routine [EvtDevicePrepareHardware()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nc-wdfdevice-evt_wdf_device_prepare_hardware). Les ressources MsftFunctionConfig peuvent être identifiées par les champs suivants :
 
 ```cpp
 CM_PARTIAL_RESOURCE_DESCRIPTOR::Type = CmResourceTypeConnection
@@ -504,7 +504,7 @@ NTSTATUS AcquireFunctionConfigResource (
 }
 ```
 
-Le pilote doit stocker le WDFIOTARGET dans l’une de ses zones de contexte afin de pouvoir être fermé ultérieurement. Lorsque le pilote est prêt à libérer la configuration du multiplexage, il doit fermer le handle de ressource en appelant la méthode [WdfObjectDelete()](https://msdn.microsoft.com/library/windows/hardware/ff548734.aspx) ou [WdfIoTargetClose()](https://msdn.microsoft.com/library/windows/hardware/ff548586.aspx) si vous avez l’intention de réutiliser le WDFIOTARGET.
+Le pilote doit stocker le WDFIOTARGET dans l’une de ses zones de contexte afin de pouvoir être fermé ultérieurement. Lorsque le pilote est prêt à libérer la configuration du multiplexage, il doit fermer le handle de ressource en appelant la méthode [WdfObjectDelete()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfobject/nf-wdfobject-wdfobjectdelete) ou [WdfIoTargetClose()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfiotarget/nf-wdfiotarget-wdfiotargetclose) si vous avez l’intention de réutiliser le WDFIOTARGET.
 
 ```cpp
     WdfObjectDelete(resourceHandle);
@@ -532,7 +532,7 @@ L’arbitrage global du partage réussit si l’arbitrage du partage réussit po
 
 Si l’arbitrage du partage échoue, la requête doit être effectuée avec *STATUS_GPIO_INCOMPATIBLE_CONNECT_MODE*. Si l’arbitrage du partage réussit, la requête doit être effectuée avec *STATUS_SUCCESS*.
 
-Le mode de partage de la requête entrante doit être récupéré à partir du descripteur MsftFunctionConfig, et non [IrpSp-&gt;Parameters.Create.ShareAccess](https://msdn.microsoft.com/library/windows/hardware/ff548630.aspx).
+Le mode de partage de la requête entrante doit être récupéré à partir du descripteur MsftFunctionConfig, et non [IrpSp-&gt;Parameters.Create.ShareAccess](https://docs.microsoft.com/windows-hardware/drivers/ifs/irp-mj-create).
 
 #### <a name="handling-ioctlgpiocommitfunctionconfigpins-requests"></a>Gestion des demandes IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS
 
@@ -614,7 +614,7 @@ En plus des ressources de mémoire et d’interruption généralement requises p
 * CLIENT_ConnectFunctionConfigPins : appelée par `GpioClx` pour commander le pilote miniport et appliquer la configuration du multiplexage spécifiée.
 * CLIENT_DisconnectFunctionConfigPins : appelée par `GpioClx` pour commander le pilote miniport et rétablir la configuration du multiplexage.
 
-Consultez la page [Fonctions de rappel d’événement GpioClx](https://msdn.microsoft.com/library/windows/hardware/hh439464.aspx) pour une description de ces routines.
+Consultez la page [Fonctions de rappel d’événement GpioClx](https://docs.microsoft.com/previous-versions//hh439464(v=vs.85)) pour une description de ces routines.
 
 Outre ces deux nouvelles DDI, les DDI existantes doivent être auditées pour la compatibilité du multiplexage de broche :
 
@@ -633,11 +633,11 @@ Le diagramme suivant montre les dépendances entre chacun de ces composants. Com
 
 Au moment de l’initialisation de l’appareil, les infrastructures `SpbCx` et `SerCx` analysent toutes les ressources `MsftFunctionConfig()` fournies sous forme de ressources matérielles à l’appareil. SpbCx/SerCx obtiennent et libèrent ensuite à la demande les ressources de multiplexage de broche.
 
-`SpbCx` applique la configuration de muxing de code confidentiel dans son *IRP_MJ_CREATE* gestionnaire, juste avant d’appeler le pilote client [EvtSpbTargetConnect()](https://msdn.microsoft.com/library/windows/hardware/hh450818.aspx) rappel. Si la configuration du multiplexage n’a pas pu être appliquée, le rappel `EvtSpbTargetConnect()` du pilote de contrôleur ne sera pas appelé. Par conséquent, un pilote de contrôleur SPB peut supposer que les broches sont multiplexées sur la fonction SPB avant que `EvtSpbTargetConnect()` soit appelée.
+`SpbCx` applique la configuration de muxing de code confidentiel dans son *IRP_MJ_CREATE* gestionnaire, juste avant d’appeler le pilote client [EvtSpbTargetConnect()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/spbcx/nc-spbcx-evt_spb_target_connect) rappel. Si la configuration du multiplexage n’a pas pu être appliquée, le rappel `EvtSpbTargetConnect()` du pilote de contrôleur ne sera pas appelé. Par conséquent, un pilote de contrôleur SPB peut supposer que les broches sont multiplexées sur la fonction SPB avant que `EvtSpbTargetConnect()` soit appelée.
 
-`SpbCx` Rétablit la configuration des broches muxing dans son *IRP_MJ_CLOSE* gestionnaire, juste après l’appel du pilote de contrôleur [EvtSpbTargetDisconnect()](https://msdn.microsoft.com/library/windows/hardware/hh450820.aspx) rappel. Résultat : les broches sont multiplexées sur la fonction SPB chaque fois qu’un pilote de périphérique ouvre un handle sur le pilote de contrôleur SPB, et sont à nouveau multiplexées lorsque le pilote de périphérique ferme son handle.
+`SpbCx` Rétablit la configuration des broches muxing dans son *IRP_MJ_CLOSE* gestionnaire, juste après l’appel du pilote de contrôleur [EvtSpbTargetDisconnect()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/spbcx/nc-spbcx-evt_spb_target_disconnect) rappel. Résultat : les broches sont multiplexées sur la fonction SPB chaque fois qu’un pilote de périphérique ouvre un handle sur le pilote de contrôleur SPB, et sont à nouveau multiplexées lorsque le pilote de périphérique ferme son handle.
 
-`SerCx` se comporte de la même façon. `SerCx` acquiert tous `MsftFunctionConfig()` ressources dans son *IRP_MJ_CREATE* Gestionnaire juste avant d’appeler le pilote de contrôleur [EvtSerCx2FileOpen()](https://msdn.microsoft.com/library/windows/hardware/dn265209.aspx) rappel et libère toutes les ressources dans son IRP_MJ_CLOSE Gestionnaire, juste après l’appel du pilote de contrôleur [EvtSerCx2FileClose](https://msdn.microsoft.com/library/windows/hardware/dn265208.aspx) rappel.
+`SerCx` se comporte de la même façon. `SerCx` acquiert tous `MsftFunctionConfig()` ressources dans son *IRP_MJ_CREATE* Gestionnaire juste avant d’appeler le pilote de contrôleur [EvtSerCx2FileOpen()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_fileopen) rappel et libère toutes les ressources dans son IRP_MJ_CLOSE Gestionnaire, juste après l’appel du pilote de contrôleur [EvtSerCx2FileClose](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_fileclose) rappel.
 
 Avec le multiplexage de broche dynamique, les pilotes de contrôleur `SerCx` et `SpbCx` doivent pouvoir tolérer les broches multiplexées à partir de la fonction SPB/UART à certains moments. Les pilotes de contrôleur doivent supposer que les broches ne seront pas multiplexées jusqu’à ce que `EvtSpbTargetConnect()` ou `EvtSerCx2FileOpen()` soit appelée. Les broches ne sont pas nécessairement mixées sur la fonction SPB/UART pendant les rappels suivants. La liste suivante n’est pas complète, mais représente les routines PNP les plus courantes implémentées par les pilotes de contrôleur.
 

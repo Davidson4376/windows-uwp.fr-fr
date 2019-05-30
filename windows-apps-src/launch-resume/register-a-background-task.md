@@ -6,21 +6,21 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, les tâches en arrière-plan
 ms.localizationpriority: medium
-ms.openlocfilehash: e586e85e15202e0186afe481ec18b32c2f480712
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 087f60ae3a16ad4cd38137d692fe079ce6c58bf4
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57660784"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371741"
 ---
 # <a name="register-a-background-task"></a>Inscrire une tâche en arrière-plan
 
 
 **API importantes**
 
--   [**Classe de BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786)
--   [**Classe BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
--   [**Classe de SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834)
+-   [**Classe de BackgroundTaskRegistration**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration)
+-   [**Classe BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
+-   [**Classe de SystemCondition**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemCondition)
 
 Découvrez comment créer une fonction que vous pouvez réutiliser pour inscrire la plupart des tâches en arrière-plan en toute sécurité.
 
@@ -30,13 +30,13 @@ Cette rubrique décrit une fonction utilitaire chargée d’inscrire les tâches
 
 **Remarque**  
 
-Les applications Windows universelles doivent appeler l’élément [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) avant d’inscrire n’importe quel type de déclencheur en arrière-plan.
+Les applications Windows universelles doivent appeler l’élément [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) avant d’inscrire n’importe quel type de déclencheur en arrière-plan.
 
-Pour vous assurer que votre application Windows universelle continue de s’exécuter correctement après la publication d’une mise à jour, vous devez appeler [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471), puis [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) lorsque votre application est lancée après avoir été mise à jour. Pour plus d’informations, voir [Recommandations en matière de tâches en arrière-plan](guidelines-for-background-tasks.md).
+Pour vous assurer que votre application Windows universelle continue de s’exécuter correctement après la publication d’une mise à jour, vous devez appeler [**RemoveAccess**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.removeaccess), puis [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) lorsque votre application est lancée après avoir été mise à jour. Pour plus d’informations, voir [Recommandations en matière de tâches en arrière-plan](guidelines-for-background-tasks.md).
 
 ## <a name="define-the-method-signature-and-return-type"></a>Définir la signature de la méthode et le type de retour
 
-Cette méthode contient le point d’entrée de la tâche, son nom, un déclencheur de tâche en arrière-plan créé à l’avance et un objet [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) pour la tâche en arrière-plan (facultatif). Cette méthode renvoie un objet [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786).
+Cette méthode contient le point d’entrée de la tâche, son nom, un déclencheur de tâche en arrière-plan créé à l’avance et un objet [**SystemCondition**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemCondition) pour la tâche en arrière-plan (facultatif). Cette méthode renvoie un objet [**BackgroundTaskRegistration**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration).
 
 > [!Important]
 > `taskEntryPoint` -pour les tâches en arrière-plan qui s’exécutent dans hors processus, cela doit être construite comme nom d’espace de noms, «. » et le nom de la classe qui contient votre classe en arrière-plan. La chaîne est sensible à la casse.  Par exemple, si vous avez un espace de noms « MyBackgroundTasks » et une classe « BackgroundTask1 » contenant votre code de classe en arrière-plan, la chaîne pour `taskEntryPoint` serait « MyBackgroundTasks.BackgroundTask1 ».
@@ -72,11 +72,11 @@ Cette méthode contient le point d’entrée de la tâche, son nom, un déclench
 
 Vérifiez si la tâche est déjà inscrite. Cette vérification est primordiale car, si la tâche est inscrite plusieurs fois, elle sera exécutée plusieurs fois à chaque fois qu’elle est déclenchée, ce qui peut aboutir à une utilisation excessive du processeur et entraîner un comportement inattendu.
 
-Pour rechercher des inscriptions existantes, vous pouvez interroger la propriété [**BackgroundTaskRegistration.AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787) et examiner le résultat. Vérifiez le nom de chaque instance. S’il correspond au nom de la tâche que vous inscrivez, sortez de la boucle et définissez une variable d’indicateur afin que votre code puisse choisir un chemin différent lors de la prochaine étape.
+Pour rechercher des inscriptions existantes, vous pouvez interroger la propriété [**BackgroundTaskRegistration.AllTasks**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.alltasks) et examiner le résultat. Vérifiez le nom de chaque instance. S’il correspond au nom de la tâche que vous inscrivez, sortez de la boucle et définissez une variable d’indicateur afin que votre code puisse choisir un chemin différent lors de la prochaine étape.
 
 > **Remarque**  utiliser des noms de tâches en arrière-plan qui sont uniques à votre application. Assurez-vous que chaque tâche en arrière-plan possède un nom unique.
 
-Le code qui suit inscrit une tâche en arrière-plan à l’aide de l’objet [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) créé au cours de la dernière étape :
+Le code qui suit inscrit une tâche en arrière-plan à l’aide de l’objet [**SystemTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTrigger) créé au cours de la dernière étape :
 
 > [!div class="tabbedCodeSnippets"]
 > ``` csharp
@@ -145,7 +145,7 @@ Le code qui suit inscrit une tâche en arrière-plan à l’aide de l’objet [*
 
 Vérifiez si la tâche a été trouvée dans la liste des inscriptions de tâches en arrière-plan existantes. Dans l’affirmative, renvoyez cette instance de la tâche.
 
-Inscrivez ensuite la tâche à l’aide d’un nouvel objet [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768). Le code doit vérifier si le paramètre de condition est Null. Si cela n’est pas le cas, ajoutez la condition à l’objet d’inscription. Renvoyez l’objet [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786) renvoyé par la méthode [**BackgroundTaskBuilder.Register**](https://msdn.microsoft.com/library/windows/apps/br224772).
+Inscrivez ensuite la tâche à l’aide d’un nouvel objet [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder). Le code doit vérifier si le paramètre de condition est Null. Si cela n’est pas le cas, ajoutez la condition à l’objet d’inscription. Renvoyez l’objet [**BackgroundTaskRegistration**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration) renvoyé par la méthode [**BackgroundTaskBuilder.Register**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.register).
 
 > **Remarque**  paramètres d’enregistrement de tâche en arrière-plan sont validées au moment de l’inscription. Si l’un des paramètres d’inscription n’est pas valide, une erreur est renvoyée. Vérifiez que votre application gère de manière fluide les scénarios dans lesquels l’inscription de la tâche en arrière-plan échoue. En revanche, si votre application dépend d’un objet d’inscription valide après la tentative d’inscription d’une tâche, elle peut se bloquer.
 > **Remarque** Si vous inscrivez une tâche en arrière-plan qui s’exécute dans le même processus que votre application, envoyez `String.Empty` ou `null` pour le paramètre `taskEntryPoint`.

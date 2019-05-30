@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, jeux, mise à l’échelle de chaînes d’échange, superpositions, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 12aede6c4af61c4b86d1f1090a2ec3d0e5ecce68
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 77e5dac007654449fcfbe2053fda65b123e073fa
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57644194"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368346"
 ---
 # <a name="swap-chain-scaling-and-overlays"></a>Mise à l’échelle et superpositions de chaînes d’échange
 
@@ -119,7 +119,7 @@ Quand votre jeu s’exécute sur du matériel de bas niveau ou sur du matériel 
 ## <a name="create-a-hardware-overlay-swap-chain-for-ui-elements"></a>Créer une chaîne de permutation de surcouche vidéo matérielle pour les éléments d’interface utilisateur
 
 
-Quand vous effectuez une mise à l’échelle d’une chaîne de permutation, tenez compte de l’inconvénient suivant : la mise à l’échelle de l’interface utilisateur est réduite également, ce qui peut la rendre floue et difficile à utiliser. Sur les appareils qui prennent en charge les chaînes de permutation de surcouche vidéo matérielle, ce problème peut être résolu. Pour ce faire, il suffit d’effectuer le rendu de l’interface utilisateur à la résolution native dans une chaîne de permutation distincte du contenu de jeu en temps réel. Notez que cette technique ne s’applique qu’aux chaînes de permutation [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225). Elle ne peut pas être utilisée avec l’interopérabilité XAML.
+Quand vous effectuez une mise à l’échelle d’une chaîne de permutation, tenez compte de l’inconvénient suivant : la mise à l’échelle de l’interface utilisateur est réduite également, ce qui peut la rendre floue et difficile à utiliser. Sur les appareils qui prennent en charge les chaînes de permutation de surcouche vidéo matérielle, ce problème peut être résolu. Pour ce faire, il suffit d’effectuer le rendu de l’interface utilisateur à la résolution native dans une chaîne de permutation distincte du contenu de jeu en temps réel. Notez que cette technique ne s’applique qu’aux chaînes de permutation [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow). Elle ne peut pas être utilisée avec l’interopérabilité XAML.
 
 Procédez comme suit pour créer une chaîne de permutation de premier plan qui utilise la fonctionnalité de surcouche vidéo matérielle. Ces étapes doivent être effectuées après la création de la chaîne de permutation pour le contenu de jeu en temps réel, comme décrit ci-dessus.
 
@@ -142,7 +142,7 @@ Procédez comme suit pour créer une chaîne de permutation de premier plan qui 
         );
     ```
 
-    L’adaptateur DXGI prend en charge les superpositions si l’adaptateur de sortie retourne True pour [**SupportsOverlays**](https://msdn.microsoft.com/library/windows/desktop/dn280411).
+    L’adaptateur DXGI prend en charge les superpositions si l’adaptateur de sortie retourne True pour [**SupportsOverlays**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgioutput2-supportsoverlays).
 
     ```cpp
     m_overlaySupportExists = dxgiOutput2->SupportsOverlays() ? true : false;
@@ -152,11 +152,11 @@ Procédez comme suit pour créer une chaîne de permutation de premier plan qui 
 
      
 
-2.  Créez la chaîne d’échange de premier plan avec [**IDXGIFactory2::CreateSwapChainForCoreWindow**](https://msdn.microsoft.com/library/windows/desktop/hh404559). Les options suivantes doivent être définies le [ **DXGI\_échange\_chaîne\_DESC1** ](https://msdn.microsoft.com/library/windows/desktop/hh404528) fourni à la *pDesc* paramètre :
+2.  Créez la chaîne d’échange de premier plan avec [**IDXGIFactory2::CreateSwapChainForCoreWindow**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgifactory2-createswapchainforcorewindow). Les options suivantes doivent être définies le [ **DXGI\_échange\_chaîne\_DESC1** ](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/ns-dxgi1_2-dxgi_swap_chain_desc1) fourni à la *pDesc* paramètre :
 
-    -   Spécifiez le [ **DXGI\_échange\_chaîne\_indicateur\_premier plan\_couche** ](https://msdn.microsoft.com/library/windows/desktop/bb173076) échanger l’indicateur de chaîne pour indiquer une chaîne de permutation de premier plan.
-    -   Utilisez le [ **DXGI\_ALPHA\_MODE\_PRÉMULTIPLIÉE** ](https://msdn.microsoft.com/library/windows/desktop/hh404496) indicateur en mode alpha. Les chaînes d’échange de premier plan sont toujours prémultipliées.
-    -   Définir le [ **DXGI\_mise à l’échelle\_NONE** ](https://msdn.microsoft.com/library/windows/desktop/hh404526) indicateur. Les chaînes d’échange de premier plan s’exécutent toujours à la résolution native.
+    -   Spécifiez le [ **DXGI\_échange\_chaîne\_indicateur\_premier plan\_couche** ](https://docs.microsoft.com/windows/desktop/api/dxgi/ne-dxgi-dxgi_swap_chain_flag) échanger l’indicateur de chaîne pour indiquer une chaîne de permutation de premier plan.
+    -   Utilisez le [ **DXGI\_ALPHA\_MODE\_PRÉMULTIPLIÉE** ](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/ne-dxgi1_2-dxgi_alpha_mode) indicateur en mode alpha. Les chaînes d’échange de premier plan sont toujours prémultipliées.
+    -   Définir le [ **DXGI\_mise à l’échelle\_NONE** ](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/ne-dxgi1_2-dxgi_scaling) indicateur. Les chaînes d’échange de premier plan s’exécutent toujours à la résolution native.
 
     ```cpp
      foregroundSwapChainDesc.Flags = DXGI_SWAP_CHAIN_FLAG_FOREGROUND_LAYER;
@@ -164,7 +164,7 @@ Procédez comme suit pour créer une chaîne de permutation de premier plan qui 
      foregroundSwapChainDesc.AlphaMode = DXGI_ALPHA_MODE_PREMULTIPLIED; // Foreground swap chain alpha values must be premultiplied.
     ```
 
-    > **Remarque**    définir le [ **DXGI\_échange\_chaîne\_indicateur\_premier plan\_couche** ](https://msdn.microsoft.com/library/windows/desktop/bb173076) à nouveau chaque heure de que la chaîne de permutation est redimensionnée.
+    > **Remarque**    définir le [ **DXGI\_échange\_chaîne\_indicateur\_premier plan\_couche** ](https://docs.microsoft.com/windows/desktop/api/dxgi/ne-dxgi-dxgi_swap_chain_flag) à nouveau chaque heure de que la chaîne de permutation est redimensionnée.
 
     ```cpp
     HRESULT hr = m_foregroundSwapChain->ResizeBuffers(
@@ -199,7 +199,7 @@ Procédez comme suit pour créer une chaîne de permutation de premier plan qui 
 
 4.  Les chaînes de permutation de premier plan utilisent toujours un alpha prémultiplié. Les valeurs de couleur de chaque pixel sont censées être déjà multipliées par la valeur alpha avant la présentation de l’image. Par exemple, un pixel BVRA (bleu/vert/rouge/alpha) 100 % blanc, ayant 50 % d’alpha, a la valeur (0.5, 0.5, 0.5, 0.5).
 
-    L’étape premultiplication alpha est possible dans l’étape de fusion de sortie en appliquant un état de fusion d’application (consultez [ **ID3D11BlendState**](https://msdn.microsoft.com/library/windows/desktop/ff476349)) avec le [ **D3D11\_ RESTITUER\_cible\_BLEND\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476200) la structure **SrcBlend** champ la valeur **D3D11\_SRC\_ALPHA**. Il est également possible d’utiliser des valeurs alpha prémultipliées.
+    L’étape premultiplication alpha est possible dans l’étape de fusion de sortie en appliquant un état de fusion d’application (consultez [ **ID3D11BlendState**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11blendstate)) avec le [ **D3D11\_ RESTITUER\_cible\_BLEND\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_render_target_blend_desc) la structure **SrcBlend** champ la valeur **D3D11\_SRC\_ALPHA**. Il est également possible d’utiliser des valeurs alpha prémultipliées.
 
     Si l’étape de prémultiplication alpha n’est pas effectuée, les couleurs de la chaîne de permutation de premier plan seront plus brillantes que prévu.
 

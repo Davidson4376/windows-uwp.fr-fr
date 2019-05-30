@@ -6,12 +6,12 @@ ms.date: 03/06/2017
 ms.topic: article
 keywords: windows 10, uwp, première application, hello word
 ms.localizationpriority: medium
-ms.openlocfilehash: 433536673efb9d2f17d822599051030b219ed02f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d9a7f0302dfdc9f9fa980f0fe93a3371328f9e5c
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57642154"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367433"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>Créer une application « Hello World » (XAML)
 
@@ -19,7 +19,7 @@ Ce didacticiel vous apprend à utiliser XAML et C# pour créer un simple « Hel
 
 Vous allez apprendre à effectuer les opérations suivantes :
 
--   Créer un nouveau **Visual Studio 2017** projet qui cible **Windows 10** et **UWP**.
+-   Créer un nouveau **Visual Studio** projet qui cible **Windows 10** et **UWP**.
 -   écrire du code XAML pour modifier l’interface utilisateur de votre page de démarrage ;
 -   exécuter le projet sur l’ordinateur local dans Visual Studio ;
 -   utilisez un objet SpeechSynthesizer pour faire parler l’application quand vous appuyez sur un bouton.
@@ -42,7 +42,7 @@ Vous allez apprendre à effectuer les opérations suivantes :
 
 ## <a name="step-1-create-a-new-project-in-visual-studio"></a>Étape 1 : Créer un nouveau projet dans Visual Studio.
 
-1.  Lancez Visual Studio 2017.
+1.  Ouvrez Visual Studio.
 
 2.  À partir de la **fichier** menu, sélectionnez **Nouveau > projet** pour ouvrir le *nouveau projet* boîte de dialogue.
 
@@ -52,7 +52,7 @@ Vous allez apprendre à effectuer les opérations suivantes :
 
     ![Comment répéter la procédure d’installation](images/win10-cs-install.png)
 
-4.  Choisissez le modèle **Application vide (Windows universel)**, puis entrez « HelloWorld » comme **Nom**. Sélectionnez **OK**.
+4.  Choisissez le modèle **Application vide (Windows universel)** , puis entrez « HelloWorld » comme **Nom**. Sélectionnez **OK**.
 
     ![Fenêtre Nouveau projet](images/win10-cs-01.png)
 
@@ -76,7 +76,7 @@ Même si le modèle **Application vide (Windows universel)** est dépouillé, il
 
 Pour afficher et modifier un fichier de votre projet, double-cliquez dessus dans l’**Explorateur de solutions**. Développez un fichier XAML à la manière d’un dossier pour afficher le fichier de code qui lui est associé. Les fichiers XAML s’ouvrent en mode Fractionné avec l’aire de conception et l’éditeur XAML tous deux affichés.
 > [!NOTE]
-> Qu’est-ce que le XAML ? XAML (Extensible Application Markup Language) est le langage utilisé pour définir l’interface utilisateur de votre application. Vous pouvez entrer son code manuellement ou le créer avec les outils de conception Visual Studio. Un fichier .xaml s’accompagne d’un fichier code-behind .xaml.cs qui contient la logique. Ensemble, les fichiers XAML et code-behind forment une classe à part entière. Pour plus d’informations, voir [Vue d’ensemble du langage XAML](https://msdn.microsoft.com/library/windows/apps/Mt185595).
+> Qu’est-ce que le XAML ? XAML (Extensible Application Markup Language) est le langage utilisé pour définir l’interface utilisateur de votre application. Vous pouvez entrer son code manuellement ou le créer avec les outils de conception Visual Studio. Un fichier .xaml s’accompagne d’un fichier code-behind .xaml.cs qui contient la logique. Ensemble, les fichiers XAML et code-behind forment une classe à part entière. Pour plus d’informations, voir [Vue d’ensemble du langage XAML](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-overview).
 
 *App.XAML et App.xaml.cs*
 
@@ -89,7 +89,7 @@ Pour afficher et modifier un fichier de votre projet, double-cliquez dessus dans
 
 -   MainPage.xaml est le fichier dans lequel vous définissez l’interface utilisateur de votre application. Vous pouvez y ajouter directement des éléments en utilisant du balisage XAML ou vous pouvez utiliser les outils de conception fournis avec Visual Studio.
 -   MainPage.xaml.cs est la page code-behind de MainPage.xaml. Cette page vous permet d’ajouter la logique de votre application et les gestionnaires d’événements.
--   Ces deux fichiers définissent ensemble une nouvelle classe appelée `MainPage`, qui hérite de l’élément [**Page**](https://msdn.microsoft.com/library/windows/apps/BR227503), dans l’espace de noms `HelloWorld`.
+-   Ces deux fichiers définissent ensemble une nouvelle classe appelée `MainPage`, qui hérite de l’élément [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page), dans l’espace de noms `HelloWorld`.
 
 *Package.appxmanifest*
 -   Fichier manifeste qui décrit votre application : nom, description, vignette, page de démarrage, etc.
@@ -151,7 +151,7 @@ Le bouton figurant dans l’aire de conception est alors mis à jour pour prése
 
 Par défaut, l’application s’exécute sur l’ordinateur local. Le menu des périphériques cibles vous offre plusieurs options pour le débogage de votre application sur des périphériques de la famille des ordinateurs de bureau.
 
--   **Simulateur**
+-   **Simulator**
 -   **Ordinateur local**
 -   **Ordinateur distant**
 
@@ -160,11 +160,11 @@ Par défaut, l’application s’exécute sur l’ordinateur local. Le menu des 
 1.  Dans le menu des appareils cibles (![Menu Démarrer le débogage](images/startdebug-full.png)) figurant sur la barre d’outils **Standard**, assurez-vous que l’option **Ordinateur local** est sélectionnée. (Il s’agit de la sélection par défaut.)
 2.  Cliquez sur le bouton **Démarrer le débogage** (![Bouton Démarrer le débogage](images/startdebug-sm.png)) de la barre d’outils.
 
-   –ou–
+   - ou -
 
    Dans le menu **Déboguer**, cliquez sur **Démarrer le débogage**.
 
-   –ou–
+   - ou -
 
    Appuyez sur F5.
 
@@ -182,11 +182,11 @@ Félicitations ! Vous venez de générer votre première application UWP, même
 
    Cliquez sur le bouton **Arrêter le débogage** (![Bouton Arrêter le débogage](images/stopdebug.png)) dans la barre d’outils.
 
-   –ou–
+   - ou -
 
    Dans le menu **Déboguer**, cliquez sur **Arrêter le débogage**.
 
-   –ou–
+   - ou -
 
    Fermez la fenêtre de l’application.
 
@@ -226,12 +226,12 @@ Assurez-vous que la signature de méthode inclut désormais la **async** mot cl�
 
 ### <a name="what-did-we-just-do"></a>Que venons-nous de faire ?
 
-Ce code utilise certaines API Windows pour créer un objet de synthèse vocale et lui donne du texte à prononcer. (Pour plus d’informations sur l’utilisation de SpeechSynthesis, voir la documentation [Espace de noms SpeechSynthesis](https://msdn.microsoft.com/library/windows/apps/windows.media.speechsynthesis.aspx).)
+Ce code utilise certaines API Windows pour créer un objet de synthèse vocale et lui donne du texte à prononcer. (Pour plus d’informations sur l’utilisation de SpeechSynthesis, voir la documentation [Espace de noms SpeechSynthesis](https://docs.microsoft.com/uwp/api/windows.media.speechsynthesis).)
 
 Quand vous exécutez l’application et que vous cliquez sur le bouton, votre ordinateur (ou téléphone) prononce « Hello World ! ».
 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Félicitations, vous avez créé votre première application pour Windows 10 et la plateforme Windows universelle.
 

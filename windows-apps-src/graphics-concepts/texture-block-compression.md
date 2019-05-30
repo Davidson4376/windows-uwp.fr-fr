@@ -7,21 +7,21 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: dec33768eff90b9bd35a3ea60f3158fce663345e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a8d88ad4db56b40490f2fc4d034b1569eb0850ba
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57640184"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370923"
 ---
 # <a name="texture-block-compression"></a>Compression de blocs de texture
 
 
 La prise en charge de la compression de blocs (BC) pour les textures a été étendue dans Direct3D 11 pour inclure les algorithmes BC6H et BC7. L'algorithme BC6H prend en charge les données de source de couleur à plage dynamique élevée, tandis que l'algorithme BC7 offre une compression de meilleure qualité globale avec un nombre réduit d'artéfacts pour les données source RVB standards.
 
-Pour plus d’informations sur la prise en charge de l’algorithme de compression de blocs avant Direct3D 11 et la prise en charge des formats BC1 à BC5, voir [Compression de blocs (Direct3D 10)](https://msdn.microsoft.com/library/windows/desktop/bb694531).
+Pour plus d’informations sur la prise en charge de l’algorithme de compression de blocs avant Direct3D 11 et la prise en charge des formats BC1 à BC5, voir [Compression de blocs (Direct3D 10)](https://docs.microsoft.com/windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-block-compression).
 
-**Remarque sur les Formats de fichier :  ** Les formats de compression de texture BC6H et BC7 utilisent le format de fichier DDS pour stocker les données de texture compressé. Pour plus d’informations, voir le [Guide de programmation pour DDS](https://msdn.microsoft.com/library/windows/desktop/bb943991).
+**Remarque sur les Formats de fichier :  ** Les formats de compression de texture BC6H et BC7 utilisent le format de fichier DDS pour stocker les données de texture compressé. Pour plus d’informations, voir le [Guide de programmation pour DDS](https://docs.microsoft.com/windows/desktop/direct3ddds/dx-graphics-dds-pguide).
 
 ## <a name="span-idblockcompressionformatssupportedindirect3d11spanspan-idblockcompressionformatssupportedindirect3d11spanspan-idblockcompressionformatssupportedindirect3d11spanblock-compression-formats-supported-in-direct3d-11"></a><span id="Block_Compression_Formats_Supported_in_Direct3D_11"></span><span id="block_compression_formats_supported_in_direct3d_11"></span><span id="BLOCK_COMPRESSION_FORMATS_SUPPORTED_IN_DIRECT3D_11"></span>Bloquer les Formats de Compression pris en charge dans Direct3D 11
 
@@ -46,9 +46,9 @@ Les formats BC1, BC2 et BC3 sont équivalents aux formats de compression de text
 
 | Format de compression de blocs | Format DXGI                                                                           | Format Direct3D 9 équivalent                               | Octets par bloc de pixels 4 x 4 |
 |--------------------------|---------------------------------------------------------------------------------------|------------------------------------------------------------|---------------------------|
-| BC1                      | DXGI\_FORMAT\_BC1\_UNORM, DXGI\_FORMAT\_BC1\_UNORM\_SRVB, DXGI\_FORMAT\_BC1\_TYPELESS | D3DFMT\_DXT1, FourCC = « DXT1 »                                | 8                         |
-| BC2                      | DXGI\_FORMAT\_BC2\_UNORM, DXGI\_FORMAT\_BC2\_UNORM\_SRVB, DXGI\_FORMAT\_BC2\_TYPELESS | D3DFMT\_DXT2\*, FourCC = « DXT2 », D3DFMT\_DXT3, FourCC = « DXT3 » | 16                        |
-| BC3                      | DXGI\_FORMAT\_BC3\_UNORM, DXGI\_FORMAT\_BC3\_UNORM\_SRVB, DXGI\_FORMAT\_BC3\_TYPELESS | D3DFMT\_DXT4\*, FourCC = « DXT4 », D3DFMT\_DXT5, FourCC = « DXT5 » | 16                        |
+| BC1                      | DXGI\_FORMAT\_BC1\_UNORM, DXGI\_FORMAT\_BC1\_UNORM\_SRVB, DXGI\_FORMAT\_BC1\_TYPELESS | D3DFMT\_DXT1, FourCC="DXT1"                                | 8                         |
+| BC2                      | DXGI\_FORMAT\_BC2\_UNORM, DXGI\_FORMAT\_BC2\_UNORM\_SRVB, DXGI\_FORMAT\_BC2\_TYPELESS | D3DFMT\_DXT2\*, FourCC="DXT2", D3DFMT\_DXT3, FourCC="DXT3" | 16                        |
+| BC3                      | DXGI\_FORMAT\_BC3\_UNORM, DXGI\_FORMAT\_BC3\_UNORM\_SRVB, DXGI\_FORMAT\_BC3\_TYPELESS | D3DFMT\_DXT4\*, FourCC="DXT4", D3DFMT\_DXT5, FourCC="DXT5" | 16                        |
 
  
 
@@ -67,11 +67,11 @@ Les formats BC1, BC2 et BC3 sont équivalents aux formats de compression de text
 ## <a name="span-idbc6hformatspanspan-idbc6hformatspanspan-idbc6hformatspanbc6h-format"></a><span id="BC6H_Format"></span><span id="bc6h_format"></span><span id="BC6H_FORMAT"></span>Format de BC6H
 
 
-Pour plus d’informations sur ce format, voir la documentation sur le [Format BC6H](https://msdn.microsoft.com/library/windows/desktop/hh308952).
+Pour plus d’informations sur ce format, voir la documentation sur le [Format BC6H](https://docs.microsoft.com/windows/desktop/direct3d11/bc6h-format).
 
 | Format de compression de blocs | Format DXGI                                                                      | Format Direct3D 9 équivalent | Octets par bloc de pixels 4 x 4 |
 |--------------------------|----------------------------------------------------------------------------------|------------------------------|---------------------------|
-| BC6H                     | DXGI\_FORMAT\_BC6H\_UF16, DXGI\_FORMAT\_BC6H\_SF16, DXGI\_FORMAT\_BC6H\_TYPELESS | Non applicable                          | 16                        |
+| BC6H                     | DXGI\_FORMAT\_BC6H\_UF16, DXGI\_FORMAT\_BC6H\_SF16, DXGI\_FORMAT\_BC6H\_TYPELESS | N/A                          | 16                        |
 
  
 
@@ -80,11 +80,11 @@ Le format BC6H peut sélectionner différents modes de codage pour chaque bloc d
 ## <a name="span-idbc7formatspanspan-idbc7formatspanspan-idbc7formatspanbc7-format"></a><span id="BC7_Format"></span><span id="bc7_format"></span><span id="BC7_FORMAT"></span>Format de BC7
 
 
-Pour plus d’informations sur ce format, voir la documentation sur le [Format BC7](https://msdn.microsoft.com/library/windows/desktop/hh308953).
+Pour plus d’informations sur ce format, voir la documentation sur le [Format BC7](https://docs.microsoft.com/windows/desktop/direct3d11/bc7-format).
 
 | Format de compression de blocs | Format DXGI                                                                           | Format Direct3D 9 équivalent | Octets par bloc de pixels 4 x 4 |
 |--------------------------|---------------------------------------------------------------------------------------|------------------------------|---------------------------|
-| BC7                      | DXGI\_FORMAT\_BC7\_UNORM, DXGI\_FORMAT\_BC7\_UNORM\_SRVB, DXGI\_FORMAT\_BC7\_TYPELESS | Non applicable                          | 16                        |
+| BC7                      | DXGI\_FORMAT\_BC7\_UNORM, DXGI\_FORMAT\_BC7\_UNORM\_SRVB, DXGI\_FORMAT\_BC7\_TYPELESS | N/A                          | 16                        |
 
  
 
@@ -95,7 +95,7 @@ Le format BC7 peut sélectionner différents modes de codage pour chaque bloc de
 
 [Annexes](appendix.md)
 
-[Textures](https://msdn.microsoft.com/library/windows/desktop/ff476902)
+[Textures](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources-textures)
 
  
 

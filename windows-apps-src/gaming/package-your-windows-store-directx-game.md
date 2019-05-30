@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, jeux, directx, package
 ms.localizationpriority: medium
-ms.openlocfilehash: 631ba2c278c72f406a0fdd8a6d6d8d8a14c9eb05
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 27ea422982ce991de20e67649bc0925a60547cd8
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57635404"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368316"
 ---
 #  <a name="package-your-universal-windows-platform-uwp-directx-game"></a>Empaqueter votre jeu de plateforme Windows universelle (UWP) DirectX
 
@@ -22,7 +22,7 @@ Outre le modèle de package d’application, Windows 10 prend en charge des offr
 -   Les packages d’application qui contiennent des fichiers exécutables et de bibliothèques spécifiques à la plateforme. Un jeu UWP peut compter jusqu’à trois packages d’application : un par architecture d’UC x86, x64 et ARM. L’ensemble du code et des données spécifiques à cette plateforme matérielle doit être inclus dans son package d’application. Ce dernier doit également contenir toutes les ressources principales pour que le jeu s’exécute avec un niveau de fidélité et de performance de base.
 -   Les packs de ressources contiennent des données non spécifiques d’une plateforme étendues ou facultatives telles que les ressources de jeu (textures, maillages, son et texte). Un jeu UWP peut comporter un ou plusieurs packs de ressources, notamment pour les textures ou les ressources haute définition, les ressources de niveau de fonctionnalité DirectX 11 ou supérieur, ou les ressources spécifiques d’une langue.
 
-Pour plus d’informations sur les ensembles d’applications et sur les packages d’application, voir [Définition des ressources d’application](https://msdn.microsoft.com/library/windows/apps/xaml/hh965321).
+Pour plus d’informations sur les ensembles d’applications et sur les packages d’application, voir [Définition des ressources d’application](https://docs.microsoft.com/previous-versions/windows/apps/hh965321(v=win.10)).
 
 Même si vous pouvez placer la totalité du contenu dans vos packages d’application, cette approche est inefficace et redondante. Pourquoi recourir au même fichier de texture de grande taille répliqué trois fois pour chaque plateforme, notamment pour les plateformes ARM qui ne l’utiliseront peut-être pas ? Votre objectif va consister à limiter le volume du contenu à télécharger. Les utilisateurs peuvent ainsi commencer plus rapidement à jouer à votre jeu, en gagnant de l’espace sur leur appareil et en économisant d’éventuels frais de bande passante limitée.
 
@@ -83,7 +83,7 @@ Lorsque vous configurez votre application pour prendre en charge les ressources 
 
      
 
--   Utilisez les API dans [**Windows.ApplicationModel.Resources**](https://msdn.microsoft.com/library/windows/apps/br206022) et [**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) pour spécifier et charger les ressources spécifiques aux paramètres régionaux de votre application. En outre, utilisez des références de ressources qui n’incluent pas les paramètres régionaux spécifiques, car ces API déterminent les paramètres régionaux appropriés en fonction des paramètres de l’utilisateur, puis récupèrent la ressource appropriée pour l’utilisateur.
+-   Utilisez les API dans [**Windows.ApplicationModel.Resources**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources) et [**Windows.ApplicationModel.Resources.Core**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core) pour spécifier et charger les ressources spécifiques aux paramètres régionaux de votre application. En outre, utilisez des références de ressources qui n’incluent pas les paramètres régionaux spécifiques, car ces API déterminent les paramètres régionaux appropriés en fonction des paramètres de l’utilisateur, puis récupèrent la ressource appropriée pour l’utilisateur.
 -   Dans Microsoft Visual Studio 2015, sélectionnez **projet -> Store -> créer un Package d’application...**  et créer le package.
 
 ## <a name="defining-scaling-factor-resource-packs"></a>Définition des packs de ressources du facteur d’échelle
@@ -100,7 +100,7 @@ Quand vous configurez votre application pour prendre en charge des packs de ress
 
      
 
--   Utilisez les API dans [**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) pour charger les ressources. Les références de ressources doivent être généralisées (sans suffixe), en laissant de côté la variation d’échelle spécifique. Le système récupère la ressource d’échelle appropriée pour l’affichage et les paramètres de l’utilisateur.
+-   Utilisez les API dans [**Windows.ApplicationModel.Resources.Core**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core) pour charger les ressources. Les références de ressources doivent être généralisées (sans suffixe), en laissant de côté la variation d’échelle spécifique. Le système récupère la ressource d’échelle appropriée pour l’affichage et les paramètres de l’utilisateur.
 -   Dans Visual Studio 2015, sélectionnez **projet -> Store -> créer un Package d’application...**  et créer le package.
 
 ## <a name="defining-directx-feature-level-resource-packs"></a>Définition des packs de ressources de niveau de fonctionnalité DirectX
@@ -110,7 +110,7 @@ Les niveaux de fonctionnalités DirectX correspondent aux jeux de fonctionnalit�
 
 Votre pack d’application de référence doit utiliser les formats de compression de texture de base : BC1, BC2 ou BC3. Ces formats peuvent être consommés par tout appareil UWP, depuis les plateformes ARM à faible résolution jusqu’aux stations de travail multi-GPU et ordinateurs multimédias.
 
-La prise en charge du format de texture au niveau de fonctionnalité DirectX 10 ou supérieur doit être ajouté dans un pack de ressources pour conserver de l’espace disque en local et de la bande passante de téléchargement. Cela permet d’utiliser des schémas de compression avancés pour la version 11, comme BC6H et BC7. (Pour plus d’informations, consultez [la compression de bloc de Texture dans Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/hh308955).) Ces formats sont plus efficaces pour les ressources de texture haute résolution pris en charge par des GPU actuels, et leur utilisation améliore le coup de œil, les performances et les exigences d’espace de votre jeu sur les plates-formes haut de gamme.
+La prise en charge du format de texture au niveau de fonctionnalité DirectX 10 ou supérieur doit être ajouté dans un pack de ressources pour conserver de l’espace disque en local et de la bande passante de téléchargement. Cela permet d’utiliser des schémas de compression avancés pour la version 11, comme BC6H et BC7. (Pour plus d’informations, consultez [la compression de bloc de Texture dans Direct3D 11](https://docs.microsoft.com/windows/desktop/direct3d11/texture-block-compression-in-direct3d-11).) Ces formats sont plus efficaces pour les ressources de texture haute résolution pris en charge par des GPU actuels, et leur utilisation améliore le coup de œil, les performances et les exigences d’espace de votre jeu sur les plates-formes haut de gamme.
 
 | Niveau de fonctionnalité DirectX | Compression de texture prise en charge |
 |-----------------------|-------------------------------|
@@ -163,7 +163,7 @@ Quand vous configurez votre application pour prendre en charge des packs de ress
     );
     ```
 
--   Utilisez les API dans [**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) pour charger les ressources. Les références de ressources doivent être généralisées (sans suffixe), en laissant de côté le niveau de fonctionnalité. Cependant, contrairement à la langue et à l’échelle, le système ne détermine pas automatiquement le niveau de fonctionnalité optimal pour un affichage donné. C’est à vous de le déterminer via la logique du code. Une fois cette opération effectuée, utilisez les API pour indiquer au système d’exploitation le niveau de fonctionnalité préféré. Le système pourra ensuite récupérer la ressource appropriée en fonction de cette préférence. Voici un exemple de code qui montre comment indiquer à votre application le niveau de fonctionnalité DirectX actuel de la plateforme :
+-   Utilisez les API dans [**Windows.ApplicationModel.Resources.Core**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core) pour charger les ressources. Les références de ressources doivent être généralisées (sans suffixe), en laissant de côté le niveau de fonctionnalité. Cependant, contrairement à la langue et à l’échelle, le système ne détermine pas automatiquement le niveau de fonctionnalité optimal pour un affichage donné. C’est à vous de le déterminer via la logique du code. Une fois cette opération effectuée, utilisez les API pour indiquer au système d’exploitation le niveau de fonctionnalité préféré. Le système pourra ensuite récupérer la ressource appropriée en fonction de cette préférence. Voici un exemple de code qui montre comment indiquer à votre application le niveau de fonctionnalité DirectX actuel de la plateforme :
     
     ```cpp
     // Set the current UI thread's MRT ResourceContext's DXFeatureLevel with the right DXFL. 
@@ -191,7 +191,7 @@ Quand vous configurez votre application pour prendre en charge des packs de ress
 
      
 
--   À présent, utilisez [**ResourceManager**](https://msdn.microsoft.com/library/windows/apps/br206078) pour localiser le fichier qui correspond au niveau de fonctionnalité actuel de DirectX. **ResourceManager** retourne [**ResourceMap**](https://msdn.microsoft.com/library/windows/apps/br206089), que vous interrogez avec [**ResourceMap::GetValue**](https://msdn.microsoft.com/library/windows/apps/br206098) (ou [**ResourceMap::TryGetValue**](https://msdn.microsoft.com/library/windows/apps/jj655438)) et un [**ResourceContext**](https://msdn.microsoft.com/library/windows/apps/br206064) fourni. Cela retourne [**ResourceCandidate**](https://msdn.microsoft.com/library/windows/apps/br206051), qui correspond le mieux au niveau de fonctionnalité DirectX spécifié par l’appel de [**SetGlobalQualifierValue**](https://msdn.microsoft.com/library/windows/apps/mt622101).
+-   À présent, utilisez [**ResourceManager**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceManager) pour localiser le fichier qui correspond au niveau de fonctionnalité actuel de DirectX. **ResourceManager** retourne [**ResourceMap**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMap), que vous interrogez avec [**ResourceMap::GetValue**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.core.resourcemap.getvalue) (ou [**ResourceMap::TryGetValue**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.core.resourcemap.trygetvalue)) et un [**ResourceContext**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceContext) fourni. Cela retourne [**ResourceCandidate**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceCandidate), qui correspond le mieux au niveau de fonctionnalité DirectX spécifié par l’appel de [**SetGlobalQualifierValue**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue).
     
     ```cpp
     // An explicit ResourceContext is needed to match the DirectX feature level for the display on which the current view is presented.
@@ -216,9 +216,9 @@ Quand vous configurez votre application pour prendre en charge des packs de ress
 ## <a name="related-topics"></a>Rubriques connexes
 
 
-* [Définition des ressources d’application](https://msdn.microsoft.com/library/windows/apps/xaml/hh965321)
-* [Empaquetage d’applications](https://msdn.microsoft.com/library/windows/apps/mt270969)
-* [Gestionnaire d’application (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767)
+* [Définition des ressources d’application](https://docs.microsoft.com/previous-versions/windows/apps/hh965321(v=win.10))
+* [Empaquetage d’applications](https://docs.microsoft.com/windows/uwp/packaging/index)
+* [Gestionnaire d’application (MakeAppx.exe)](https://docs.microsoft.com/windows/desktop/appxpkg/make-appx-package--makeappx-exe-)
 
  
 

@@ -6,12 +6,12 @@ ms.date: 06/28/2017
 ms.topic: article
 keywords: appareils Windows 10, uwp, connectés, les systèmes distants, rome, project rome
 ms.localizationpriority: medium
-ms.openlocfilehash: 3dd23603df1f1c3fac151da2aea2f8435b3ee423
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 4787b6c14408dc8ee35e26764caafc5b6e7fbdc9
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57633414"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371886"
 ---
 # <a name="connect-devices-through-remote-sessions"></a>Connecter des appareils par le biais de sessions à distance
 
@@ -57,7 +57,7 @@ using Windows.System.RemoteSystems;
 
 ## <a name="create-a-remote-session"></a>Créer une session à distance
 
-Pour créer une instance de session à distance, vous devez commencer avec un objet **[RemoteSystemSessionController](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessioncontroller)**. Utilisez la structure suivante pour créer une nouvelle session et gérer les demandes de participation à partir d’autres appareils.
+Pour créer une instance de session à distance, vous devez commencer avec un objet **[RemoteSystemSessionController](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessioncontroller)** . Utilisez la structure suivante pour créer une nouvelle session et gérer les demandes de participation à partir d’autres appareils.
 
 ```csharp
 public async void CreateSession() {
@@ -107,7 +107,7 @@ public async void CreateSession() {
 
 Si vous souhaitez empêcher que votre session à distance soit détectable publiquement, vous pouvez la définir comme étant sur invitation uniquement. Seuls les appareils qui recevront une invitation seront en mesure d’envoyer des demandes de participation. 
 
-La procédure est quasiment identique à celle indiquée ci-dessus, mais lorsque vous créerez l’instance **[RemoteSystemSessionController](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessioncontroller)**, vous transmettrez un objet **[RemoteSystemSessionOptions](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.RemoteSystemSessionOptions)** configuré.
+La procédure est quasiment identique à celle indiquée ci-dessus, mais lorsque vous créerez l’instance **[RemoteSystemSessionController](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessioncontroller)** , vous transmettrez un objet **[RemoteSystemSessionOptions](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.RemoteSystemSessionOptions)** configuré.
 
 ```csharp
 // define the session options with the invite-only designation
@@ -195,7 +195,7 @@ Un appareil peut être joint à plusieurs sessions en même temps. Pour cette ra
 
 ### <a name="receive-messages"></a>Recevoir des messages
 
-Vous pouvez échanger des messages et des données avec d’autres appareils participant à la session en utilisant une instance **[RemoteSystemSessionMessageChannel](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessionmessagechannel)**, qui représente un canal de communication unique au niveau de la session. Dès qu’il est initialisé, il commence à écouter les messages entrants.
+Vous pouvez échanger des messages et des données avec d’autres appareils participant à la session en utilisant une instance **[RemoteSystemSessionMessageChannel](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessionmessagechannel)** , qui représente un canal de communication unique au niveau de la session. Dès qu’il est initialisé, il commence à écouter les messages entrants.
 
 >[!NOTE]
 >Les messages doivent être sérialisés et désérialisés à partir de tableaux d’octets lors de l’envoi et de la réception. Cette fonctionnalité est incluse dans les exemples suivants, mais elle peut être implémentée séparément pour une modularité de code optimale. Voir l'[Example d'application](https://github.com/microsoft/Windows-appsample-remote-system-sessions)) pour obtenir un exemple sur ce point.
@@ -322,4 +322,4 @@ public async void SendMessageToListAsync(RemoteSystemSessionMessageChannel messa
 
 ## <a name="related-topics"></a>Rubriques connexes
 * [Applications connectées et les appareils (Project Rome)](connected-apps-and-devices.md)
-* [Référence de l’API de systèmes à distance](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)
+* [Référence de l’API de systèmes à distance](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems)

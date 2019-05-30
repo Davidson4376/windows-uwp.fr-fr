@@ -8,18 +8,18 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 97eae5f3-c16b-4aa5-b4a1-dd892cf32ead
 ms.localizationpriority: medium
-ms.openlocfilehash: fcbed8400b31616f92f20aa3a64a4dd8603dc7b0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0eb5a03a2a6de8624e8b414fa31c6eec51c04bbc
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57650894"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364890"
 ---
 # <a name="inking-controls"></a>Contrôles pour l’entrée manuscrite
 
 
 
-Il existe deux différents contrôles qui facilitent l’écriture manuscrite dans les applications Universal Windows Platform (UWP) : [InkCanvas](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx) et [InkToolbar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx).
+Il existe deux différents contrôles qui facilitent l’écriture manuscrite dans les applications Universal Windows Platform (UWP) : [InkCanvas](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) et [InkToolbar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar).
 
 Le contrôle InkCanvas permet de restituer une entrée de stylet sous la forme d’un trait d’encre (via les paramètres par défaut de couleur et d’épaisseur) ou d’un trait d’effacement. Ce contrôle est une superposition transparente qui n’inclut pas d’interface utilisateur intégrée permettant de modifier les propriétés de traits d’encre par défaut.
 
@@ -35,7 +35,7 @@ Par défaut, le contrôle InkToolbar comprend des boutons pour dessiner, effacer
 
 <img src="images/ink-tools-invoked-toolbar.png" width="300" alt="InkToolbar palette flyout">
 
-> **API importantes** : [InkCanvas (classe)](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx), [InkToolbar classe](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx), [InkPresenter classe](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx), [Windows.UI.Input.Inking](https://msdn.microsoft.com/library/windows/apps/br208524)
+> **API importantes** : [InkCanvas (classe)](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas), [InkToolbar classe](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar), [InkPresenter classe](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter), [Windows.UI.Input.Inking](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking)
 
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
@@ -47,7 +47,7 @@ Par défaut, les traits sont rendus sous forme d’entrée manuscrite lors de l�
 Associez InkCanvas avec un élément InkToolbar pour fournir une interface utilisateur permettant l’activation des fonctionnalités d’entrée manuscrite et la définition de propriétés d’entrée manuscrite de base, telles que la taille du trait, la couleur et la forme de la pointe du stylet.
 
 > [!NOTE] 
-> Pour une personnalisation plus complète du rendu des traits d’encre sur un élément InkCanvas, utilisez l’objet [InkPresenter](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx) sous-jacent.
+> Pour une personnalisation plus complète du rendu des traits d’encre sur un élément InkCanvas, utilisez l’objet [InkPresenter](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter) sous-jacent.
 
 ## <a name="examples"></a>Exemples
 

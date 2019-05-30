@@ -5,12 +5,12 @@ keywords: console uwp
 ms.date: 08/02/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 111ef4d5e8830485a5de3b44d69826df256d1c4d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c2dba15d78301c84f4064bcd6548d44e3c17beb2
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592104"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366354"
 ---
 # <a name="create-a-universal-windows-platform-console-app"></a>Créer une application de console de plateforme Windows universelle
 
@@ -24,7 +24,7 @@ Pour visualiser un en action, voici une vidéo sur la création d’une applicat
 
 ## <a name="use-a-uwp-console-app-template"></a>Utiliser un modèle d’application de console UWP 
 
-Pour créer une application de console UWP, commencez par installer les **modèles de projets (universels) d’application de console**, disponibles dans le [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=AndrewWhitechapelMSFT.ConsoleAppUniversal). Les modèles installés présents sont alors disponibles sous **nouveau projet** > **installé** > **autres langages**  >  **Visual C++** > **Windows universel** comme **Console application C++ / c++ / WinRT (Windows universel)** et **Console application C++ / c++ / CX (Universal Windows )**.
+Pour créer une application de console UWP, commencez par installer les **modèles de projets (universels) d’application de console**, disponibles dans le [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=AndrewWhitechapelMSFT.ConsoleAppUniversal). Les modèles installés présents sont alors disponibles sous **nouveau projet** > **installé** > **autres langages**  >  **Visual C++**  > **Windows universel** comme **Console application C++ / c++ / WinRT (Windows universel)** et **Console application C++ / c++ / CX (Universal Windows )** .
 
 ## <a name="add-your-code-to-main"></a>Ajouter votre code à main()
 
@@ -60,7 +60,7 @@ int __cdecl main()
 
 Une application de console UWP peut accéder au système de fichiers à partir du répertoire depuis lequel elle est exécutée, et à un niveau inférieur. Cela est possible, car le modèle ajoute l'extension [AppExecutionAlias](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap5-appexecutionalias) au fichier Package.appxmanifest de votre application. Cette extension permet également à l’utilisateur de saisir l’alias à partir d’une fenêtre de console pour lancer l’application. L’application n’a pas besoin de se trouver dans le chemin d’accès système pour être lancée.
 
-En outre, vous pouvez accorder un accès étendu au système de fichiers à votre application de console UWP en ajoutant la fonctionnalité restreinte `broadFileSystemAccess` comme décrit dans [Autorisations d’accès aux fichiers](https://docs.microsoft.com/windows/uwp/files/file-access-permissions). Cette fonctionnalité fonctionne avec les API se trouvant dans l'espace de noms [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/BR227346).
+En outre, vous pouvez accorder un accès étendu au système de fichiers à votre application de console UWP en ajoutant la fonctionnalité restreinte `broadFileSystemAccess` comme décrit dans [Autorisations d’accès aux fichiers](https://docs.microsoft.com/windows/uwp/files/file-access-permissions). Cette fonctionnalité fonctionne avec les API se trouvant dans l'espace de noms [**Windows.Storage**](https://docs.microsoft.com/uwp/api/Windows.Storage).
 
 Plusieurs instances d’une application de console UWP peuvent s’exécuter simultanément, car le modèle ajoute la fonctionnalité [SupportsMultipleInstances](multi-instance-uwp.md) au fichier Package.appxmanifest de votre application.
 

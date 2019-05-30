@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: fe63c527-8f06-43a5-868f-de909f5664b3
 ms.localizationpriority: medium
-ms.openlocfilehash: aff65e5f1b4771cbb33bc8b8219224042b7bf7e2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 27810fb850a54b70e620f06ea033b7c362792bfc
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57660684"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372961"
 ---
 # <a name="whats-new-for-developers-in-the-latest-update-of-uwp-on-xbox-one"></a>Nouveautés de la dernière mise à jour de la plateforme UWP sur Xbox One pour les développeurs
 
@@ -21,7 +21,7 @@ La dernière version de la plateforme Windows universelle (UWP) sur Xbox One co
 Xbox ne prend plus en charge le développement d’applications x86 ni les soumissions d’applications x86 dans le Store.
 
 ## <a name="apps-can-now-support-navigating-back-to-the-previous-app"></a>Les applications prennent désormais en charge la navigation vers l’application précédente 
-Les applications UWP sur Xbox One prennent désormais en charge la navigation vers l’application précédente. Pour ce faire, abonnez-vous à l’événement [**Windows.UI.Core.SystemNavigationManager.BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893595) et réglez la propriété **Handled** sur **false** (faux) dans votre gestionnaire d’événements.
+Les applications UWP sur Xbox One prennent désormais en charge la navigation vers l’application précédente. Pour ce faire, abonnez-vous à l’événement [**Windows.UI.Core.SystemNavigationManager.BackRequested**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.SystemNavigationManager) et réglez la propriété **Handled** sur **false** (faux) dans votre gestionnaire d’événements.
 
 > [!NOTE]
 > Pour des raisons de compatibilité, cette fonctionnalité n’est disponible que pour les applications créées avec la version la plus récente d’UWP sur Xbox One. 
@@ -41,13 +41,13 @@ Windows Device Portal (WDP) intègre désormais la prise en charge de paramèt
 ## <a name="you-can-now-switch-the-type-of-your-uwp-title-between-app-and-game"></a>Vous pouvez maintenant commuter le type de votre titre UWP entre « Application » et « Jeu »
 Le fait de commuter le type de votre titre UWP entre « Application » et « Jeu » permet de tester les scénarios du jeu sans avoir à le publier dans le Windows Store. Dans l’Accueil du développeur, sélectionnez l’application dans le volet **Jeux et applications**, appuyez sur le bouton Affichage du contrôleur, sélectionnez **Détails de l’application** et choisissez le type « Application » ou « Jeu ».
 
-## <a name="see-also"></a>Voir également
+## <a name="see-also"></a>Voir aussi
 - [Problèmes connus](known-issues.md)
 - [UWP sur Xbox One](index.md)
  - Vous pouvez désormais effectuer une capture d’écran de la console. Pour plus d’informations sur la réalisation d’une capture d’écran, voir la rubrique de référence [/ext/screenshot](wdp-media-capture-api.md).
  - L’outil peut déployer une build de fichier isolé de votre application. Pour plus d’informations sur les builds de fichier isolé, consultez la rubrique de référence [/api/app/packagemanager/register](wdp-loose-folder-register-api.md).
  - Il est possible d’accéder aux fichiers de développement sur votre console via l’Explorateur de fichiers sur votre ordinateur de développement. Pour plus d’informations sur l’accès aux fichiers via l’Explorateur de fichiers, voir la rubrique de référence [/ext/smb/developerfolder](wdp-smb-api.md).
 
-## <a name="see-also"></a>Voir également
+## <a name="see-also"></a>Voir aussi
 - [Problèmes connus](known-issues.md)
 - [UWP sur Xbox One](index.md)

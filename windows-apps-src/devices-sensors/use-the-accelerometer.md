@@ -6,20 +6,20 @@ ms.date: 06/06/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 77ee3191bc41fca672a055a708523578390860b4
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b2fe6fe4c7fe22d71e2154be2db082bb43cc4ed1
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57623704"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369691"
 ---
 # <a name="use-the-accelerometer"></a>Utiliser l’accéléromètre
 
 
 **API importantes**
 
--   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
--   [**Accéléromètre**](https://msdn.microsoft.com/library/windows/apps/BR225687)
+-   [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
+-   [**Accéléromètre**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Accelerometer)
 
 **Exemple**
 
@@ -29,7 +29,7 @@ Découvrez comment utiliser l’accéléromètre pour répondre aux mouvements d
 
 Une application de jeu simple repose sur un capteur unique, l’accéléromètre, comme périphérique d’entrée. Ces applications utilisent généralement un ou deux axes pour l’entrée, mais elles peuvent aussi utiliser l’événement poignée comme autre source d’entrée.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 Vous devez être familiarisé avec Extensible Application Markup Language (XAML), Microsoft Visual C#et les événements.
 
@@ -41,7 +41,7 @@ Cette section se divise en deux sous-sections. La première sous-section vous p
 
 ### <a name="instructions"></a>Instructions
 
--   Créez un projet en choisissant une **Application vide (Windows universel)** dans les modèles de projet **Visual C#**.
+-   Créez un projet en choisissant une **Application vide (Windows universel)** dans les modèles de projet **Visual C#** .
 
 -   Ouvrez le fichier MainPage.xaml.cs de votre projet et remplacez le code existant par ce qui suit.
 

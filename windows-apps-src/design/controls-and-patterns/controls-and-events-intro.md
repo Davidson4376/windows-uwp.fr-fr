@@ -8,18 +8,18 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ff3f89887235fc9c8d9d7afbbdea3d79bace810
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 671f33cf106eabf11b317b00d5c2a6cd9abcf3d0
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57630794"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363037"
 ---
 # <a name="intro-to-controls-and-patterns"></a>Présentation des contrôles et des modèles
 
 Dans le développement d’applications UWP, un *contrôle* est un élément d’interface utilisateur qui affiche du contenu ou permet une interaction. Pour créer l’interface utilisateur de votre application, utilisez des contrôles tels que des boutons, des zones de texte et des zones de liste modifiable pour afficher les données et obtenir les entrées utilisateur.
 
-> **API importantes** : [Espace de noms Windows.UI.Xaml.Controls](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.aspx)
+> **API importantes** : [Espace de noms Windows.UI.Xaml.Controls](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls)
 
 Un *modèle* est en quelque sorte une recette qui permet de modifier un contrôle ou d’associer plusieurs contrôles pour créer un élément nouveau. Par exemple, le [maître/détails](master-details.md) modèle est une façon que vous pouvez utiliser un [fractionnementaffichage des](split-view.md) contrôle pour la navigation de l’application. De même, vous pouvez personnaliser le modèle d’un [NavigationView](navigationview.md) contrôle pour implémenter le modèle de l’onglet.
 
@@ -144,7 +144,7 @@ Button1.Click += new RoutedEventHandler(Button_Click);
 ## <a name="related-topics"></a>Rubriques connexes
 
 -   [Index des contrôles par fonction](controls-by-function.md)
--   [Espace de noms Windows.UI.Xaml.Controls](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.aspx)
+-   [Espace de noms Windows.UI.Xaml.Controls](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls)
 -   [Disposition](../layout/index.md)
 -   [Style](../style/index.md)
 -   [Facilité d’utilisation](../usability/index.md)

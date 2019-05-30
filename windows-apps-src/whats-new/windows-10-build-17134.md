@@ -5,12 +5,12 @@ keywords: nouveautés, nouveauté, mise à jour, mises à jour, fonctionnalités
 ms.date: 04/10/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d880b2167e718b1ff66aa349c32329e6c19e5b5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 9b7fe830e07c1daf95928ab747259cb57aaa7a9f
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592984"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371338"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17134"></a>Nouveautés pour les développeurs dans Windows 10, build 17134
 
@@ -42,7 +42,7 @@ Style d’écriture | Nous avons mis à niveau et développé notre article sur 
 Fonctionnalité | Description
  :------ | :------
 Prise en main pour le développement de jeux | Vous vous intéressez au développement de jeux pour Windows 10 ? La nouvelle page [Prise en main pour le développement de jeux](../gaming/getting-started.md) vous donne une vue d’ensemble complète de ce que vous devez faire pour vous préparer, vous inscrire et soumettre vos applications et jeux.
-Cartes graphiques | Les API DXGI suivantes, qui sont liées à la préférence et à la suppression de cartes graphiques, ont été ajoutées : </br> * L’interface [IDXGIFactory6](https://msdn.microsoft.com/library/windows/desktop/mt814823) active une seule méthode qui énumère les cartes graphiques en se basant sur une préférence de GPU donnée. </br> * La fonction [DXGIDeclareAdapterRemovalSupport](https://msdn.microsoft.com/library/windows/desktop/mt814821) permet à un processus d’indiquer qu’il est résilient à toute suppression de l’un de ses périphériques graphiques. </br> * L’énumération [DXGI_GPU_PREFERENCE](https://msdn.microsoft.com/library/windows/desktop/mt814822) décrit la préférence de GPU pour l’exécution de l’application.
+Cartes graphiques | Les API DXGI suivantes, qui sont liées à la préférence et à la suppression de cartes graphiques, ont été ajoutées : </br> * L’interface [IDXGIFactory6](https://docs.microsoft.com/windows/desktop/api/dxgi1_6/nn-dxgi1_6-idxgifactory6) active une seule méthode qui énumère les cartes graphiques en se basant sur une préférence de GPU donnée. </br> * La fonction [DXGIDeclareAdapterRemovalSupport](https://docs.microsoft.com/windows/desktop/api/dxgi1_6/nf-dxgi1_6-dxgideclareadapterremovalsupport) permet à un processus d’indiquer qu’il est résilient à toute suppression de l’un de ses périphériques graphiques. </br> * L’énumération [DXGI_GPU_PREFERENCE](https://docs.microsoft.com/windows/desktop/api/dxgi1_6/ne-dxgi1_6-dxgi_gpu_preference) décrit la préférence de GPU pour l’exécution de l’application.
 
 ## <a name="develop-windows-apps"></a>Développer des applications Windows
 
@@ -114,7 +114,7 @@ Le Programme Créateurs Xbox Live permet aux développeurs de publier rapidement
 
 ### <a name="one-dev-question---why-was-docments-and-settings-renamed-users"></a>Question sur le développement : pourquoi le répertoire Documents and Settings a-t-il été renommé Users ?
 
-Curieux de savoir pourquoi le répertoire Documents and Settings a été renommé ? [Raymond Chen explique d'où vient le nom, et pourquoi il a été modifié](https://www.youtube.com/watch?v=4vDHQewVmM8&index=1&list=PLWs4_NfqMtoxjy3LrIdf2oamq1coolpZ7). Pour plus d’informations de développement sur Windows et son historique, consultez le [blog de Raymond.](https://blogs.msdn.microsoft.com/oldnewthing/)
+Curieux de savoir pourquoi le répertoire Documents and Settings a été renommé ? [Raymond Chen explique d'où vient le nom, et pourquoi il a été modifié](https://www.youtube.com/watch?v=4vDHQewVmM8&index=1&list=PLWs4_NfqMtoxjy3LrIdf2oamq1coolpZ7). Pour plus d’informations de développement sur Windows et son historique, consultez le [blog de Raymond.](https://devblogs.microsoft.com/oldnewthing/)
 
 
 ## <a name="samples"></a>Exemples

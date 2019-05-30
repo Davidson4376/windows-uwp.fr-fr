@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: e7dee32d-3756-430d-a026-32c1ee288a85
 ms.localizationpriority: medium
-ms.openlocfilehash: 4cc1bafb90b20083d55a622873dea7be5efbf5b7
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 72e45f8ef0f5684b3a712056eb367975f8e6103a
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57633484"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370348"
 ---
 # <a name="bluetooth-developer-faq"></a>FAQ sur le Bluetooth pour les développeurs
 
@@ -63,7 +63,7 @@ Dans cet exemple, nous générons le jumelage avec un périphérique sans chiffr
 
 Vous n’êtes pas contraint de le faire pour les appareils Bluetooth RFCOMM (standard). À compter de Windows 10 version 1607, vous pouvez simplement interroger les appareils à proximité et vous y connecter. L’[exemple de discussion RFCOMM](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/BluetoothRfcommChat) mis à jour présente cette fonctionnalité. 
 
-**(14393 et antérieur)** Cette fonctionnalité n’est pas disponible pour Bluetooth Low Energy (client GATT). Vous devrez donc continuer le couplage par le biais de la page Paramètres ou à l’aide des API [Windows.Devices.Enumeration](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.aspx) pour accéder à ces appareils.
+**(14393 et antérieur)** Cette fonctionnalité n’est pas disponible pour Bluetooth Low Energy (client GATT). Vous devrez donc continuer le couplage par le biais de la page Paramètres ou à l’aide des API [Windows.Devices.Enumeration](https://docs.microsoft.com/uwp/api/windows.devices.enumeration) pour accéder à ces appareils.
 
 **(15030 et ultérieur)** Le couplage d’appareils Bluetooth n’est plus nécessaire. Pour rechercher l’état actuel de l’appareil distant, utilisez les nouvelles API Async, telles que GetGattServicesAsync et GetCharacteristicsAsync. Pour plus d’informations, consultez la [documentation relative au client](gatt-client.md). 
 
@@ -82,5 +82,5 @@ Oui, toutes ces API doivent fonctionner. Ce blog décrit la procédure à suivre
 **Bluetooth LE**: Oui, toutes les fonctionnalités sont dans OneCore et doivent être disponible sur les appareils plus récente avec une pile Bluetooth LE fonctionnement. 
 > Inconvénient : Rôle de périphérique est dépendent du matériel, et certaines éditions de Windows Server ne prennent pas en charge le Bluetooth. 
 
-**Bluetooth BR/EDR (classique)**: Il existe des variations mais ensemble, ils ont très similaire prise en charge de niveau de profil. Consultez la documentation concernant [RFCOMM](send-or-receive-files-with-rfcomm.md), ainsi que ces articles sur les profils pris en charge pour [PC](https://support.microsoft.com/en-us/help/10568/windows-10-supported-bluetooth-profiles) et pour [appareils mobiles](https://support.microsoft.com/en-us/help/10569/windows-10-mobile-supported-bluetooth-profiles)
+**Bluetooth BR/EDR (classique)** : Il existe des variations mais ensemble, ils ont très similaire prise en charge de niveau de profil. Consultez la documentation concernant [RFCOMM](send-or-receive-files-with-rfcomm.md), ainsi que ces articles sur les profils pris en charge pour [PC](https://support.microsoft.com/en-us/help/10568/windows-10-supported-bluetooth-profiles) et pour [appareils mobiles](https://support.microsoft.com/en-us/help/10569/windows-10-mobile-supported-bluetooth-profiles)
 

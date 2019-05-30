@@ -10,12 +10,12 @@ design-contact: conrwi
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f6a4fef72206058874edf845d5fbbe0768c53ec
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.openlocfilehash: 5cb076de6cd9c44280bf7030a59c645f601487bd
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65984221"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370430"
 ---
 # <a name="reveal-highlight"></a>Révéler la mise en surbrillance
 
@@ -288,7 +288,7 @@ Lorsque vous activez révèlent sur un contrôle personnalisé ou re-basé sur u
 
 - [Classe de RevealBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush)
 - [Acrylic](acrylic.md)
-- [Effets de composition](https://msdn.microsoft.com/windows/uwp/graphics/composition-effects)
+- [Effets de composition](https://docs.microsoft.com/windows/uwp/graphics/composition-effects)
 - [Conception Fluent pour UWP](/windows/apps/fluent-design-system)
 - [Science dans le système : Profondeur et conception Fluent](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
 - [Science dans le système : Clair et conception Fluent](https://medium.com/microsoft-design/the-science-in-the-system-fluent-design-and-light-94a17e0b3a4f)

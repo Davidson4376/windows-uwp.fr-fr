@@ -11,24 +11,24 @@ dev_langs:
 - vb
 - cppwinrt
 - cpp
-ms.openlocfilehash: e440812861cf853810f9fee597c807b439dda426
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 6d1b97e76dc1bf15bded6f44c38a67f40babf7b6
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57599044"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370532"
 ---
 # <a name="handle-app-suspend"></a>Gérer la suspension d’une application
 
 **API importantes**
 
-- [**La suspension**](https://msdn.microsoft.com/library/windows/apps/br242341)
+- [**La suspension**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.suspending)
 
-Apprenez à enregistrer d’importantes données d’application lorsque le système suspend votre application. L’exemple inscrit un gestionnaire pour l’événement [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) et enregistre une chaîne dans un fichier.
+Apprenez à enregistrer d’importantes données d’application lorsque le système suspend votre application. L’exemple inscrit un gestionnaire pour l’événement [**Suspending**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.suspending) et enregistre une chaîne dans un fichier.
 
 ## <a name="register-the-suspending-event-handler"></a>Enregistrer le gestionnaire d’événements de suspension
 
-Enregistrez-vous pour gérer l’événement [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341), qui indique que votre application doit enregistrer ses données d’application avant que le système la suspende.
+Enregistrez-vous pour gérer l’événement [**Suspending**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.suspending), qui indique que votre application doit enregistrer ses données d’application avant que le système la suspende.
 
 ```csharp
 using System;
@@ -82,7 +82,7 @@ MainPage::MainPage()
 
 ## <a name="save-application-data-before-suspension"></a>Enregistrer des données d’application avant sa suspension
 
-Lorsque votre application traite l’événement [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341), elle a la possibilité d’enregistrer ses données d’application importantes dans la fonction du gestionnaire. L’application doit utiliser l’API de stockage [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622) pour enregistrer les données d’application simples de manière synchrone.
+Lorsque votre application traite l’événement [**Suspending**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.suspending), elle a la possibilité d’enregistrer ses données d’application importantes dans la fonction du gestionnaire. L’application doit utiliser l’API de stockage [**LocalSettings**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localsettings) pour enregistrer les données d’application simples de manière synchrone.
 
 ```csharp
 partial class MainPage
@@ -133,11 +133,11 @@ Vous devez également libérer les ressources exclusives et les descripteurs de 
 
 Le système suspend votre application chaque fois que l’utilisateur passe à une autre application, au Bureau ou à l’écran d’accueil. Le système en reprend l’exécution lorsque l’utilisateur revient à votre application. Dès lors, le contenu de vos variables et structures de données restent identiques à ce qu’elles étaient avant que le système ne suspende l’application. Le système rétablit l’application exactement dans l’état où il l’a laissée, de sorte qu’elle semble s’être exécutée en arrière-plan.
 
-Le système tente de conserver votre application et ses données en mémoire pendant sa suspension. Toutefois, si le système ne dispose pas des ressources pour conserver votre application en mémoire, il met fin à votre application. Lorsque l’utilisateur rebascule vers une application suspendue qui a été arrêtée, le système envoie un événement [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) et doit restaurer ses données d’application dans sa méthode [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335).
+Le système tente de conserver votre application et ses données en mémoire pendant sa suspension. Toutefois, si le système ne dispose pas des ressources pour conserver votre application en mémoire, il met fin à votre application. Lorsque l’utilisateur rebascule vers une application suspendue qui a été arrêtée, le système envoie un événement [**Activated**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationview.activated) et doit restaurer ses données d’application dans sa méthode [**OnLaunched**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched).
 
 Le système ne vous notifie pas de l’arrêt d’une application. Celle-ci doit donc enregistrer ses données d’application et libérer les ressources exclusives et descripteurs de fichiers au moment où elle est mise en suspens pour ensuite les restaurer lorsque l’application est activée après avoir été arrêtée.
 
-Si vous effectuez un appel asynchrone depuis votre gestionnaire, le contrôle renvoie immédiatement un retour de cet appel. Cela signifie que l’exécution peut ensuite revenir de votre gestionnaire d’événements et votre application prend l’état suivant, même si l’appel asynchrone n’est pas encore terminé. Utilisez la méthode [**GetDeferral**](https://aka.ms/Kt66iv) sur l’objet [**EnteredBackgroundEventArgs**](https://aka.ms/Ag2yh4) qui est transmis à votre gestionnaire d’événements pour retarder la suspension jusqu'à ce que vous appeliez la méthode [**Complete**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.complete.aspx) sur l’objet [**Windows.Foundation.Deferral**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.aspx) renvoyé.
+Si vous effectuez un appel asynchrone depuis votre gestionnaire, le contrôle renvoie immédiatement un retour de cet appel. Cela signifie que l’exécution peut ensuite revenir de votre gestionnaire d’événements et votre application prend l’état suivant, même si l’appel asynchrone n’est pas encore terminé. Utilisez la méthode [**GetDeferral**](https://aka.ms/Kt66iv) sur l’objet [**EnteredBackgroundEventArgs**](https://aka.ms/Ag2yh4) qui est transmis à votre gestionnaire d’événements pour retarder la suspension jusqu'à ce que vous appeliez la méthode [**Complete**](https://docs.microsoft.com/uwp/api/windows.foundation.deferral.complete) sur l’objet [**Windows.Foundation.Deferral**](https://docs.microsoft.com/uwp/api/windows.foundation.deferral) renvoyé.
 
 Un report n’augmente pas le temps d’exécution nécessaire de votre code avant l’arrêt de votre application. Cela ne retarde que l’arrêt jusqu'à ce que la méthode *Complete* soit appelée ou que la date d’échéance ne soit passée, *la première de ces deux éventualités prévalant*. Pour étendre la durée de l’état Interruption en cours, utilisez [**ExtendedExecutionSession**](run-minimized-with-extended-execution.md).
 
@@ -151,7 +151,7 @@ Un report n’augmente pas le temps d’exécution nécessaire de votre code ava
 * [Cycle de vie de l’application](app-lifecycle.md)
 * [Gérer l’activation d’une application](activate-an-app.md)
 * [Gérer la reprise d’une application](resume-an-app.md)
-* [Les instructions de l’expérience utilisateur pour le lancement, suspendre et reprendre](https://msdn.microsoft.com/library/windows/apps/dn611862)
+* [Les instructions de l’expérience utilisateur pour le lancement, suspendre et reprendre](https://docs.microsoft.com/windows/uwp/launch-resume/index)
 * [Exécution étendue](run-minimized-with-extended-execution.md)
 
  

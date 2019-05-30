@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 40df746d89757b481a47cefeaeda3f8a34091014
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: e82a0ffc0ddcf2ac1973ba446ec50dfc61a7cd1a
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57636844"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66361568"
 ---
 # <a name="playready-drm"></a>Gestion des droits numériques PlayReady
 
@@ -34,7 +34,7 @@ La liste suivante décrit les nouvelles fonctionnalités et les modifications ap
 
     La prise en charge de la protection du contenu en fonction du matériel permet la lecture sécurisée de contenu en haute définition (HD) et ultra haute définition (UHD) sur plusieurs plateformes d’appareils. Le matériel de clé (y compris les clés privées, les clés de contenu et tout autre matériel de clé utilisé pour dériver ou déverrouiller ces clés) et les échantillons vidéo compressés et non compressés déchiffrés sont protégés en tirant parti de la sécurité matérielle. Quand la gestion des droits numériques en fonction du matériel est utilisée, aucun des deux activateurs inconnus (lecture sur une sortie inconnue/lecture sur une sortie inconnue avec conversion descendante) n’a de pertinence, car le pipeline HWDRM connaît toujours la sortie utilisée. Pour plus d’informations, voir [Gestion des droits numériques en fonction du matériel](hardware-drm.md).
 
--   PlayReady n’est plus un composant d’infrastructure appX, mais un composant intégré au système d’exploitation. L’espace de noms **Microsoft.Media.PlayReadyClient** a été remplacé par [**Windows.Media.Protection.PlayReady**](https://msdn.microsoft.com/library/windows/apps/dn986454).
+-   PlayReady n’est plus un composant d’infrastructure appX, mais un composant intégré au système d’exploitation. L’espace de noms **Microsoft.Media.PlayReadyClient** a été remplacé par [**Windows.Media.Protection.PlayReady**](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.PlayReady).
 -   Les en-têtes suivants définissant les codes d’erreur PlayReady font désormais partie du Kit de développement logiciel (SDK) Windows : Windows.Media.Protection.PlayReadyErrors.h et Windows.Media.Protection.PlayReadyResults.h.
 -   Acquisition proactive de licences non persistantes.
 
@@ -69,13 +69,13 @@ La liste suivante décrit les nouvelles fonctionnalités et les modifications ap
 
 Les nouvelles interfaces, classes et énumérations suivantes ont été ajoutées à la gestion des droits numériques par PlayReady :
 
--   [**IPlayReadyLicenseAcquisitionServiceRequest** ](https://msdn.microsoft.com/library/windows/apps/dn986077) interface
--   [**IPlayReadyLicenseSession** ](https://msdn.microsoft.com/library/windows/apps/dn986080) interface
--   [**IPlayReadySecureStopServiceRequest** ](https://msdn.microsoft.com/library/windows/apps/dn986090) interface
--   [**PlayReadyLicenseSession** ](https://msdn.microsoft.com/library/windows/apps/dn986309) classe
--   [**PlayReadySecureStopIterable** ](https://msdn.microsoft.com/library/windows/apps/dn986371) classe
--   [**PlayReadySecureStopIterator** ](https://msdn.microsoft.com/library/windows/apps/dn986375) classe
--   [**PlayReadyHardwareDRMFeatures** ](https://msdn.microsoft.com/library/windows/apps/dn986265) énumérateur
+-   [**IPlayReadyLicenseAcquisitionServiceRequest**](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.PlayReady.IPlayReadyLicenseAcquisitionServiceRequest) interface
+-   [**IPlayReadyLicenseSession**](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.PlayReady.IPlayReadyLicenseSession) interface
+-   [**IPlayReadySecureStopServiceRequest**](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.PlayReady.IPlayReadySecureStopServiceRequest) interface
+-   [**PlayReadyLicenseSession** ](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.PlayReady.PlayReadyLicenseSession) classe
+-   [**PlayReadySecureStopIterable** ](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.PlayReady.PlayReadySecureStopIterable) classe
+-   [**PlayReadySecureStopIterator** ](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.PlayReady.PlayReadySecureStopIterator) classe
+-   [**PlayReadyHardwareDRMFeatures**](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.PlayReady.PlayReadyHardwareDRMFeatures) enumerator
 
 Un nouvel exemple a été créé pour montrer comment utiliser les nouvelles fonctionnalités de la gestion des droits numériques par PlayReady. L’exemple peut être téléchargé à partir de [https://go.microsoft.com/fwlink/p/?linkid=331670&clcid=0x409](https://go.microsoft.com/fwlink/p/?linkid=331670).
 
@@ -87,7 +87,7 @@ Un nouvel exemple a été créé pour montrer comment utiliser les nouvelles fon
 -   Pour tirer parti de certaines nouvelles fonctionnalités de PlayReady 3.0 (SL3000 pour les clients matériels, acquisition de plusieurs licences non persistantes en un message d’acquisition de licence, restrictions temporelles sur les licences non persistantes, etc.), le serveur PlayReady doit être la version commerciale du Kit de développement logiciel serveur Microsoft PlayReady v3.0.2769 ou version ultérieure.
 -   Selon la stratégie de protection de sortie spécifiée dans la licence de contenu, la lecture multimédia peut échouer pour les utilisateurs finaux si leur sortie connectée ne prend pas en charge ces exigences. Le tableau suivant répertorie l’ensemble des erreurs courantes qui se produisent en conséquence. Pour plus d’informations, voir les [Règles de conformité et de robustesse de PlayReady](https://www.microsoft.com/playready/licensing/compliance/).
 
-| Erreur                                                   | Valeur      | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| Erreur                                                   | Value      | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 |---------------------------------------------------------|------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | ERREUR\_GRAPHICS\_OPM\_SORTIE\_EST\_PAS\_PRISE EN CHARGE\_HDCP  | 0xC0262513 | La stratégie de protection de contenu de la licence requiert que le moniteur enclenche la protection HDCP, mais celle-ci n’a pas pu être enclenchée.                                                                                                                                                                                                                                                                                                                                                                                              |
 | MF\_E\_STRATÉGIE\_NON PRIS EN CHARGE                              | 0xC00D7159 | La stratégie de protection de contenu de la licence requiert que le moniteur enclenche la protection HDCP de type 1, mais celle-ci n’a pas pu être enclenchée.                                                                                                                                                                                                                                                                                                                                                                                |
@@ -118,7 +118,7 @@ Cette section est axée sur les scénarios de protection de sortie avec la gesti
 
 Le tableau suivant recense les mappages entre les différentes normes OPL dans la licence PlayReady et indique comment la gestion des droits numériques par PlayReady pour Windows 10 les applique.
 
-#### <a name="video"></a>Video
+#### <a name="video"></a>Vidéo
 
 <table>
     <tr>
@@ -393,7 +393,7 @@ Le tableau suivant décrit la gestion des droits numériques par PlayReady pour
 </table>
 <br/>
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 Avant de commencer la création de votre application pour UWP protégée par PlayReady, le logiciel suivant doit être installé sur votre système :
 
@@ -407,7 +407,7 @@ Avant de commencer la création de votre application pour UWP protégée par Pla
 
 Cette section inclut des informations sur la façon de migrer vos applications de Store PlayReady Windows 8.x existantes vers Windows 10.
 
-L’espace de noms pour les applications PlayReady UWP sur Windows 10 a été remplacé par **Microsoft.Media.PlayReadyClient** à [ **Windows.Media.Protection.PlayReady**](https://msdn.microsoft.com/library/windows/apps/dn986454). Cela signifie que vous devez rechercher l’ancien espace de noms et le remplacer par le nouvel espace de noms dans votre code. Vous devrez toujours référencer un fichier winmd. Il fait partie de windows.media.winmd sur le système d’exploitation Windows 10. Il se trouve sous windows.winmd et fait partie du kit de développement logiciel (SDK) Windows. Pour la plateforme Windows universelle, il est référencé sous windows.foundation.univeralappcontract.winmd.
+L’espace de noms pour les applications PlayReady UWP sur Windows 10 a été remplacé par **Microsoft.Media.PlayReadyClient** à [ **Windows.Media.Protection.PlayReady**](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.PlayReady). Cela signifie que vous devez rechercher l’ancien espace de noms et le remplacer par le nouvel espace de noms dans votre code. Vous devrez toujours référencer un fichier winmd. Il fait partie de windows.media.winmd sur le système d’exploitation Windows 10. Il se trouve sous windows.winmd et fait partie du kit de développement logiciel (SDK) Windows. Pour la plateforme Windows universelle, il est référencé sous windows.foundation.univeralappcontract.winmd.
 
 Pour lire du contenu haute définition (1080p) et ultra haute définition (UHD) protégé par PlayReady, vous devez implémenter la gestion des droits numériques en fonction du matériel par PlayReady. Pour plus d’informations sur l’implémentation de la gestion des droits numériques en fonction du matériel par PlayReady, voir [Gestion des droits numériques en fonction du matériel](hardware-drm.md).
 
@@ -519,7 +519,7 @@ Pour utiliser PlayReady DRM dans une application UWP sur Xbox One, vous devez d�
 Une fois que vous recevez d’autorisation, vous devrez ajouter un objet `<DeviceCapability>`  supplémentaire au manifeste de l’application. Vous devez l’ajouter manuellement, car aucun paramètre n’est actuellement disponible dans le concepteur de manifeste d’application. Pour le configurer, procédez comme suit :
 
 1. Le projet étant ouvert dans Visual Studio, ouvrez l’**Explorateur de solutions** et cliquez avec le bouton droit sur **Package.appxmanifest**.
-2. Sélectionnez **Ouvrir avec…**, choisissez **Éditeur XML (Texte)**, puis cliquez sur **OK**.
+2. Sélectionnez **Ouvrir avec…** , choisissez **Éditeur XML (Texte)** , puis cliquez sur **OK**.
 3. Entre les balises `<Capabilities>`, ajoutez le `<DeviceCapability>` suivant :
 
     ```xml
@@ -536,7 +536,7 @@ Vous devez tenir compte d’un dernier aspect lors de l’utilisation de PlayRea
 Utilisez l’approche qui convient pour votre produit et pour votre entreprise.
 
 
-## <a name="see-also"></a>Voir également
+## <a name="see-also"></a>Voir aussi
 - [Lecture de contenu multimédia](media-playback.md)
 
 

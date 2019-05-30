@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, API de soumission au Microsoft Store, extensions, produit in-app, PIA
 ms.localizationpriority: medium
-ms.openlocfilehash: 8211d65f04b7487aeca6f683375fe87b80d1b9a9
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 35b30d5760cb734fcdbd2df552ca5c5609414709
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334997"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66372170"
 ---
 # <a name="get-add-ons-for-an-app"></a>Obtenir des extensions pour une application
 
@@ -35,7 +35,7 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 
 ### <a name="request-header"></a>En-tête de requête
 
-| Header        | Type   | Description                                                                 |
+| Header        | type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | chaîne | Obligatoire. Le jeton d’accès Azure AD sous la forme **PORTEUR** &lt; *jeton*&gt;. |
 
@@ -43,9 +43,9 @@ Cette méthode présente la syntaxe suivante. Consultez les sections suivantes p
 ### <a name="request-parameters"></a>Paramètres de la requête
 
 
-|  Nom  |  Type  |  Description  |  Obligatoire  |
+|  Nom  |  type  |  Description  |  Obligatoire  |
 |------|------|------|------|
-|  applicationId  |  chaîne  |  ID Windows Store de l’application pour laquelle vous voulez récupérer les extensions. Pour plus d’informations sur l’ID Windows Store, voir [Visualiser les informations d’identité des applications](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |  Oui  |
+|  applicationId  |  chaîne  |  ID Windows Store de l’application pour laquelle vous voulez récupérer les extensions. Pour plus d’informations sur l’ID Windows Store, voir [Visualiser les informations d’identité des applications](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details).  |  Oui  |
 |  top  |  entier  |  Nombre d’éléments à retourner dans la requête (autrement dit, nombre d’extensions à retourner). Si l’application comporte plus d’extensions que la valeur que vous spécifiez dans la requête, le corps de la réponse comprend un chemin d’URI relatif que vous pouvez ajouter à l’URI de la méthode pour solliciter la page suivante de données.  |  Non  |
 |  skip |  entier  | Nombre d’éléments à ignorer dans la requête avant de retourner les éléments restants. Utilisez ce paramètre pour parcourir des ensembles de données. Par exemple, top=10 et skip=0 permettent de récupérer les éléments 1 à 10, top=10 et skip=10 permettent de récupérer les éléments 11 à 20, et ainsi de suite.   |  Non  |
 
@@ -95,7 +95,7 @@ L’exemple suivant montre le corps de réponse JSON renvoyé par une requête r
 
 ### <a name="response-body"></a>Corps de la réponse
 
-| Value      | Type   | Description                                                                                                                                                                                                                                                                         |
+| Value      | type   | Description                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | @nextLink  | chaîne | S’il existe des pages supplémentaires de données, cette chaîne contient un chemin relatif que vous pouvez ajouter à l’URI de requête `https://manage.devcenter.microsoft.com/v1.0/my/` de base pour solliciter la page suivante de données. Par exemple, si le paramètre *top* du corps de requête initial a la valeur 10, mais qu’il existe 50 extensions pour l’application, le corps de réponse comprendra une valeur @nextLink de `applications/{applicationid}/listinappproducts/?skip=10&top=10`, ce qui indique que vous pouvez appeler `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationid}/listinappproducts/?skip=10&top=10` pour solliciter les 10 extensions suivantes. |
 | valeur      | tableau  | Tableau d’objets qui répertorie l’ID Windows Store de chaque extension pour l’application spécifiée. Pour plus d’informations sur les données incluses dans chaque objet, voir [ressource d’extension](get-app-data.md#add-on-object).                                                                                                                           |
