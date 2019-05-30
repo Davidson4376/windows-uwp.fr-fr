@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e3faf82ab9786f6ba079e44d79b6ed49394b881
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 2db08cc577a82ddf6973cb33e41f9bdb39fdffde
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57602684"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364233"
 ---
 # <a name="text-box"></a>Zone de texte
 
@@ -24,11 +24,11 @@ Le contrôle TextBox permet à un utilisateur de taper du texte dans une applica
 
 Le contrôle TextBox comporte différentes fonctionnalités destinées à simplifier la saisie de texte. Il intègre un menu contextuel familier prenant en charge la copie et le collage de texte. Le bouton Effacer tout (« X ») permet à un utilisateur de supprimer rapidement l’ensemble du texte qui a été entré. Le contrôle intègre également des fonctionnalités de vérification de l’orthographe qui sont activées par défaut.
 
-> **API importantes** : [Classe de zone de texte](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx), [propriété Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx)
+> **API importantes** : [Classe de zone de texte](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox), [propriété Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.text)
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
-Utilisez un contrôle **TextBox** si vous souhaitez permettre à un utilisateur de saisir et de modifier du texte sans mise en forme, dans un formulaire par exemple. Vous pouvez utiliser la propriété [Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx) pour obtenir et définir le texte d’un contrôle TextBox.
+Utilisez un contrôle **TextBox** si vous souhaitez permettre à un utilisateur de saisir et de modifier du texte sans mise en forme, dans un formulaire par exemple. Vous pouvez utiliser la propriété [Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.text) pour obtenir et définir le texte d’un contrôle TextBox.
 
 Vous avez la possibilité de définir un contrôle TextBox en lecture seule, mais il doit s’agir d’un état conditionnel temporaire. Si le texte ne doit jamais être modifiable, envisagez plutôt d’utiliser un contrôle [TextBlock](text-block.md).
 
@@ -81,7 +81,7 @@ Voici la zone de texte résultant de ce code XAML.
 
 ### <a name="use-a-text-box-for-data-input-in-a-form"></a>Utiliser une zone de texte pour l’entrée de données dans un formulaire
 
-Il est courant d’utiliser une zone de texte pour accepter l’entrée de données dans un formulaire, et de recourir à la propriété [Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx) pour obtenir la chaîne de texte complète à partir de la zone de texte. Vous utilisez généralement un événement tel qu’un clic sur un bouton d’envoi pour accéder à la propriété Text, mais vous pouvez gérer l’événement [TextChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textchanged.aspx) ou [TextChanging](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textchanging.aspx) si vous avez besoin d’effectuer une opération spécifique lorsque le texte change.
+Il est courant d’utiliser une zone de texte pour accepter l’entrée de données dans un formulaire, et de recourir à la propriété [Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.text) pour obtenir la chaîne de texte complète à partir de la zone de texte. Vous utilisez généralement un événement tel qu’un clic sur un bouton d’envoi pour accéder à la propriété Text, mais vous pouvez gérer l’événement [TextChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textchanged) ou [TextChanging](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textchanging) si vous avez besoin d’effectuer une opération spécifique lorsque le texte change.
 
 Cet exemple montre comment obtenir et définir le contenu actuel d’une zone de texte.
 
@@ -95,9 +95,9 @@ string sampleText = SampleTextBox.Text;
 SampleTextBox.Text = "Sample text retrieved";
 ```
 
-Vous pouvez ajouter un contrôle [Header](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.header.aspx) (ou étiquette) et un contrôle [PlaceholderText](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.placeholdertext.aspx) (ou filigrane) à la zone de texte pour indiquer à l’utilisateur le rôle de cette zone. Si vous souhaitez personnaliser l’aspect de l’en-tête, vous pouvez définir la propriété [HeaderTemplate](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.headertemplate.aspx) au lieu de la propriété Header. Pour plus d’informations sur la conception, voir l’article *Recommandations en matière d’étiquettes*.
+Vous pouvez ajouter un contrôle [Header](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.header) (ou étiquette) et un contrôle [PlaceholderText](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.placeholdertext) (ou filigrane) à la zone de texte pour indiquer à l’utilisateur le rôle de cette zone. Si vous souhaitez personnaliser l’aspect de l’en-tête, vous pouvez définir la propriété [HeaderTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.headertemplate) au lieu de la propriété Header. Pour plus d’informations sur la conception, voir l’article *Recommandations en matière d’étiquettes*.
 
-Vous pouvez restreindre le nombre de caractères que l’utilisateur peut taper en définissant la propriété [MaxLength](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.maxlength.aspx). Toutefois, la propriété MaxLength ne limite pas la longueur du texte collé. Si cet aspect a de l’importance pour votre application, utilisez l’événement [Paste](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.paste.aspx) pour modifier le texte collé.
+Vous pouvez restreindre le nombre de caractères que l’utilisateur peut taper en définissant la propriété [MaxLength](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.maxlength). Toutefois, la propriété MaxLength ne limite pas la longueur du texte collé. Si cet aspect a de l’importance pour votre application, utilisez l’événement [Paste](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.paste) pour modifier le texte collé.
 
 La zone de texte inclut un bouton Effacer tout (« X ») qui s’affiche lorsque du texte est entré dans la zone. Quand un utilisateur clique sur le bouton « X », le texte figurant dans la zone de texte est effacé. Cette dernière se présente comme suit.
 
@@ -126,7 +126,7 @@ SampleTextBox.Text = "Sample text retrieved";
 
 ### <a name="make-a-text-box-read-only"></a>Configurer une zone de texte en lecture seule
 
-Vous pouvez configurer une zone de texte comme étant en lecture seule en définissant la propriété [IsReadOnly](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.isreadonly.aspx) sur la valeur **true**. En règle générale, vous activez/désactivez cette propriété dans le code de votre application en fonction de conditions applicables à cette dernière. Si vous avez besoin que le texte soit toujours en lecture seule, envisagez plutôt d’utiliser un contrôle TextBlock.
+Vous pouvez configurer une zone de texte comme étant en lecture seule en définissant la propriété [IsReadOnly](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.isreadonly) sur la valeur **true**. En règle générale, vous activez/désactivez cette propriété dans le code de votre application en fonction de conditions applicables à cette dernière. Si vous avez besoin que le texte soit toujours en lecture seule, envisagez plutôt d’utiliser un contrôle TextBlock.
 
 Pour configurer le contrôle TextBox en lecture seule, définissez la propriété IsReadOnly sur la valeur « true ». Par exemple, vous pouvez avoir besoin de définir un contrôle TextBox ne permettant à un utilisateur d’entrer des commentaires que sous certaines conditions. Vous pouvez alors configurer le contrôle TextBox comme étant en lecture seule jusqu’à ce que ces conditions soient remplies. Si vous souhaitez simplement afficher du texte, envisagez plutôt d’utiliser un contrôle TextBlock ou RichTextBlock.
 
@@ -138,14 +138,14 @@ IsEnabled
 
 Deux propriétés vous permettent d’indiquer si le contrôle de zone de texte peut ou non afficher du texte sur plusieurs lignes. En règle générale, vous définissez ces deux propriétés pour configurer une zone de texte multiligne.
 
-- Pour que la zone de texte autorise et afficher les caractères de saut de ligne ou de retour chariot, définissez la propriété [AcceptsReturn](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.acceptsreturn.aspx) sur **true**.
-- Pour activer la fonctionnalité de renvoi de texte à la ligne, définissez la propriété [TextWrapping](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textwrapping.aspx) sur **Wrap**. Le texte est alors automatiquement renvoyé à la ligne quand il atteint le bord de la zone de texte, quels que soient les caractères séparateurs de ligne.
+- Pour que la zone de texte autorise et afficher les caractères de saut de ligne ou de retour chariot, définissez la propriété [AcceptsReturn](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.acceptsreturn) sur **true**.
+- Pour activer la fonctionnalité de renvoi de texte à la ligne, définissez la propriété [TextWrapping](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textwrapping) sur **Wrap**. Le texte est alors automatiquement renvoyé à la ligne quand il atteint le bord de la zone de texte, quels que soient les caractères séparateurs de ligne.
 
 > **Remarque**&nbsp;&nbsp;Les contrôles TextBox et RichEditBox ne prennent pas en charge la valeur **WrapWholeWords** pour leur propriété TextWrapping. Si vous tentez d’utiliser WrapWholeWords comme valeur pour TextBox.TextWrapping ou pour RichEditBox.TextWrapping, une exception d’argument non valide est levée.
 
-Une zone de texte multiligne s’agrandit verticalement à mesure que l’utilisateur entre du texte, sauf si le contrôle est restreint par ses propriétés [Height](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.height.aspx) ou [MaxHeight](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.maxheight.aspx) ou par un conteneur parent. Vous devez vérifier qu’une zone de texte multiligne ne dépasse pas les limites de sa zone visible, et limiter son extension dans le cas contraire. Nous vous recommandons de configurer systématiquement une zone de texte multiligne sur une hauteur appropriée, et de ne pas autoriser l’augmentation progressive de cette hauteur à mesure que l’utilisateur tape du texte.
+Une zone de texte multiligne s’agrandit verticalement à mesure que l’utilisateur entre du texte, sauf si le contrôle est restreint par ses propriétés [Height](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.height) ou [MaxHeight](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.maxheight) ou par un conteneur parent. Vous devez vérifier qu’une zone de texte multiligne ne dépasse pas les limites de sa zone visible, et limiter son extension dans le cas contraire. Nous vous recommandons de configurer systématiquement une zone de texte multiligne sur une hauteur appropriée, et de ne pas autoriser l’augmentation progressive de cette hauteur à mesure que l’utilisateur tape du texte.
 
-Le défilement à l’aide d’une roulette de défilement ou d’une interaction tactile est automatiquement activé s’il y a lieu. Toutefois, les barres de défilement verticales ne sont pas visibles par défaut. Vous pouvez afficher les barres de défilement verticales en définissant [ScrollViewer.VerticalScrollBarVisibility](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.verticalscrollbarvisibility.aspx) sur **Auto** sur le contrôle ScrollViewer incorporé, comme indiqué ci-après.
+Le défilement à l’aide d’une roulette de défilement ou d’une interaction tactile est automatiquement activé s’il y a lieu. Toutefois, les barres de défilement verticales ne sont pas visibles par défaut. Vous pouvez afficher les barres de défilement verticales en définissant [ScrollViewer.VerticalScrollBarVisibility](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.verticalscrollbarvisibility) sur **Auto** sur le contrôle ScrollViewer incorporé, comme indiqué ci-après.
 
 ```xaml
 <TextBox AcceptsReturn="True" TextWrapping="Wrap"
@@ -169,9 +169,9 @@ Voici à quoi ressemble la zone de texte après un ajout de texte.
 
 ### <a name="format-the-text-display"></a>Mettre en forme l’affichage du texte
 
-Pour aligner le texte figurant dans une zone de texte, utilisez la propriété [TextAlignment](/uwp/api/windows.ui.xaml.controls.textbox.textalignment). Pour aligner la zone de texte dans la disposition de la page, utilisez les propriétés [HorizontalAlignment](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.horizontalalignment.aspx) et [VerticalAlignment](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.verticalalignment.aspx).
+Pour aligner le texte figurant dans une zone de texte, utilisez la propriété [TextAlignment](/uwp/api/windows.ui.xaml.controls.textbox.textalignment). Pour aligner la zone de texte dans la disposition de la page, utilisez les propriétés [HorizontalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.horizontalalignment) et [VerticalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.verticalalignment).
 
-Bien que la zone de texte prenne uniquement en charge du texte sans mise en forme, vous pouvez personnaliser l’affichage du texte dans la zone de texte pour l’adapter à vos besoins. Vous pouvez définir les propriétés [Control](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.aspx) standard, comme [FontFamily](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.fontfamily.aspx), [FontSize](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.fontsize.aspx), [FontStyle](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.fontstyle.aspx), [Background](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.background.aspx), [Foreground](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.foreground.aspx) et [CharacterSpacing](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.characterspacing.aspx) pour modifier l’apparence du texte. Ces propriétés affectent uniquement la façon dont le texte s’affiche localement dans la zone de texte. Par conséquent, si vous devez copier et coller ce texte dans un contrôle de texte enrichi, par exemple, aucune mise en forme n’est appliquée.
+Bien que la zone de texte prenne uniquement en charge du texte sans mise en forme, vous pouvez personnaliser l’affichage du texte dans la zone de texte pour l’adapter à vos besoins. Vous pouvez définir les propriétés [Control](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control) standard, comme [FontFamily](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.fontfamily), [FontSize](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.fontsize), [FontStyle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.fontstyle), [Background](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.background), [Foreground](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.foreground) et [CharacterSpacing](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.characterspacing) pour modifier l’apparence du texte. Ces propriétés affectent uniquement la façon dont le texte s’affiche localement dans la zone de texte. Par conséquent, si vous devez copier et coller ce texte dans un contrôle de texte enrichi, par exemple, aucune mise en forme n’est appliquée.
 
 Cet exemple montre un contrôle de zone de texte en lecture seule dont plusieurs propriétés sont définies pour personnaliser l’apparence du texte.
 
@@ -207,7 +207,7 @@ La zone de texte résultante ressemble à ce qui suit.
 
 Par défaut, les commandes figurant dans le menu contextuel de la zone de texte dépendent de l’état de cette dernière. Par exemple, le menu contextuel peut présenter les commandes ci-après lorsque la zone de texte est modifiable.
 
-Commande | Condition d’affichage
+Command | Condition d’affichage
 ------- | -------------
 Copier | L’utilisateur a sélectionné du texte.
 Cut | L’utilisateur a sélectionné du texte.
@@ -215,15 +215,15 @@ Coller | Le Presse-papiers contient du texte.
 Tout sélectionner | Le contrôle TextBox contient du texte.
 Undo | L’utilisateur a modifié du texte.
 
-Pour modifier les commandes figurant dans le menu contextuel, gérez l’événement [ContextMenuOpening](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.contextmenuopening.aspx). Pour découvrir un exemple de la procédure à suivre, voir le scénario 2 de l’[exemple de menu contextuel](https://go.microsoft.com/fwlink/p/?linkid=234891). Pour plus d’informations sur la conception, voir l’article Recommandations en matière de menus contextuels.
+Pour modifier les commandes figurant dans le menu contextuel, gérez l’événement [ContextMenuOpening](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.contextmenuopening). Pour découvrir un exemple de la procédure à suivre, voir le scénario 2 de l’[exemple de menu contextuel](https://go.microsoft.com/fwlink/p/?linkid=234891). Pour plus d’informations sur la conception, voir l’article Recommandations en matière de menus contextuels.
 
 ### <a name="select-copy-and-paste"></a>Sélectionner, copier et coller du texte
 
-Vous pouvez obtenir ou définir le texte sélectionné dans une zone de texte à l’aide de la propriété [SelectedText](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectedtext.aspx). Utilisez les propriétés [SelectionStart](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionstart.aspx) et [SelectionLength](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionlength.aspx), et les méthodes [Select](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.select.aspx) et [SelectAll](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectall.aspx) pour manipuler la sélection de texte. Pour exécuter une action spécifique lorsque l’utilisateur sélectionne ou désélectionne du texte, gérez l’événement [SelectionChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionchanged.aspx). Vous pouvez modifier la couleur de mise en surbrillance du texte sélectionné en définissant la propriété [SelectionHighlightColor](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionhighlightcolor.aspx).
+Vous pouvez obtenir ou définir le texte sélectionné dans une zone de texte à l’aide de la propriété [SelectedText](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.selectedtext). Utilisez les propriétés [SelectionStart](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.selectionstart) et [SelectionLength](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.selectionlength), et les méthodes [Select](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.select) et [SelectAll](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.selectall) pour manipuler la sélection de texte. Pour exécuter une action spécifique lorsque l’utilisateur sélectionne ou désélectionne du texte, gérez l’événement [SelectionChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.selectionchanged). Vous pouvez modifier la couleur de mise en surbrillance du texte sélectionné en définissant la propriété [SelectionHighlightColor](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.selectionhighlightcolor).
 
-Le contrôle TextBox prend en charge les opérations de copie et de collage par défaut. Vous pouvez appliquer une gestion personnalisée de l’événement [Paste](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.paste.aspx) aux contrôles de texte modifiables de votre application. Par exemple, vous pouvez supprimer les sauts de ligne d’une adresse multiligne lorsque vous collez cette dernière dans une zone de recherche d’une seule ligne. Vous pouvez également vérifier la longueur du texte collé et avertir l’utilisateur si elle dépasse la longueur maximale pouvant être enregistrée dans une base de données. Pour plus d’informations et d’exemples, voir l’événement [Paste](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.paste.aspx).
+Le contrôle TextBox prend en charge les opérations de copie et de collage par défaut. Vous pouvez appliquer une gestion personnalisée de l’événement [Paste](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.paste) aux contrôles de texte modifiables de votre application. Par exemple, vous pouvez supprimer les sauts de ligne d’une adresse multiligne lorsque vous collez cette dernière dans une zone de recherche d’une seule ligne. Vous pouvez également vérifier la longueur du texte collé et avertir l’utilisateur si elle dépasse la longueur maximale pouvant être enregistrée dans une base de données. Pour plus d’informations et d’exemples, voir l’événement [Paste](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.paste).
 
-Vous trouverez ci-dessous un exemple d’utilisation de ces propriétés et méthodes. Lorsque vous sélectionnez du texte dans la première zone de texte, ce texte s’affiche dans la seconde zone de texte, qui est en lecture seule. Les valeurs des propriétés [SelectionLength](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionlength.aspx) et [SelectionStart](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionstart.aspx) apparaissent sous la forme de deux blocs de texte. Cette opération est effectuée à l’aide de l’événement [SelectionChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionchanged.aspx).
+Vous trouverez ci-dessous un exemple d’utilisation de ces propriétés et méthodes. Lorsque vous sélectionnez du texte dans la première zone de texte, ce texte s’affiche dans la seconde zone de texte, qui est en lecture seule. Les valeurs des propriétés [SelectionLength](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.selectionlength) et [SelectionStart](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.selectionstart) apparaissent sous la forme de deux blocs de texte. Cette opération est effectuée à l’aide de l’événement [SelectionChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.selectionchanged).
 
 ```xaml
 <StackPanel>
@@ -257,13 +257,13 @@ Pour faciliter la saisie de données par les utilisateurs au moyen du clavier ta
 
 Le clavier tactile permet d’entrer du texte lorsque l’application est exécutée sur un appareil disposant d’un écran tactile. Le clavier tactile est appelé lorsque l’utilisateur appuie sur un champ d’entrée modifiable, tel qu’un contrôle TextBox ou RichEditBox. Vous pouvez nettement faciliter et accélérer la saisie de données par les utilisateurs dans votre application, en définissant l’étendue des entrées du contrôle de texte afin qu’elle corresponde au type de données attendu de la part de l’utilisateur. L’étendue des entrées fournit au système une indication sur le type d’entrée de texte attendu par le contrôle, afin que le système puisse fournir une disposition de clavier tactile spécialisée pour le type d’entrée.
 
-Par exemple, si une zone de texte est utilisée uniquement pour la saisie d’un code confidentiel à 4 chiffres, définissez la propriété [InputScope](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.inputscope.aspx) sur **Number**. Cela indique au système qu’il doit afficher la disposition du pavé numérique, ce qui permet à l’utilisateur d’entrer plus facilement le code confidentiel.
+Par exemple, si une zone de texte est utilisée uniquement pour la saisie d’un code confidentiel à 4 chiffres, définissez la propriété [InputScope](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.inputscope) sur **Number**. Cela indique au système qu’il doit afficher la disposition du pavé numérique, ce qui permet à l’utilisateur d’entrer plus facilement le code confidentiel.
 
 > **Important**&nbsp;&nbsp;L’étendue des entrées ne demande aucune validation et n’empêche pas l’utilisateur de saisir des données par le biais d’un clavier matériel ou d’un autre dispositif d’entrée. Vous restez responsable de la validation d’une entrée dans votre code, si nécessaire.
 
-Les autres propriétés qui affectent le clavier tactile sont [IsSpellCheckEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.isspellcheckenabled.aspx), [IsTextPredictionEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.istextpredictionenabled.aspx) et [PreventKeyboardDisplayOnProgrammaticFocus](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.preventkeyboarddisplayonprogrammaticfocus.aspx). (La propriété IsSpellCheckEnabled a également une incidence sur le contrôle TextBox lorsqu’un clavier matériel est utilisé.)
+Les autres propriétés qui affectent le clavier tactile sont [IsSpellCheckEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.isspellcheckenabled), [IsTextPredictionEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.istextpredictionenabled) et [PreventKeyboardDisplayOnProgrammaticFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.preventkeyboarddisplayonprogrammaticfocus). (La propriété IsSpellCheckEnabled a également une incidence sur le contrôle TextBox lorsqu’un clavier matériel est utilisé.)
 
-Pour plus d’informations et d’exemples, voir [Utiliser l’étendue des entrées pour modifier le clavier tactile](https://msdn.microsoft.com/library/windows/apps/mt280229) et la documentation relative aux propriétés.
+Pour plus d’informations et d’exemples, voir [Utiliser l’étendue des entrées pour modifier le clavier tactile](https://docs.microsoft.com/windows/uwp/design/input/use-input-scope-to-change-the-touch-keyboard) et la documentation relative aux propriétés.
 
 ## <a name="recommendations"></a>Recommandations
 
@@ -315,8 +315,8 @@ Pour plus d’informations et d’exemples, voir [Utiliser l’étendue des entr
 
 - [Contrôles de texte](text-controls.md)
 - [Instructions pour la vérification orthographique](text-controls.md)
-- [Ajout de la recherche](https://msdn.microsoft.com/library/windows/apps/hh465231)
+- [Ajout de la recherche](https://docs.microsoft.com/previous-versions/windows/apps/hh465231(v=win.10))
 - [Instructions pour l’entrée de texte](text-controls.md)
-- [Classe de zone de texte](https://msdn.microsoft.com/library/windows/apps/br209683)
-- [Classe de PasswordBox](https://msdn.microsoft.com/library/windows/apps/br227519)
+- [Classe de zone de texte](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
+- [Classe de PasswordBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
 - [String.Length, propriété](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)

@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: windows 10, uwp, jeux, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 37deaabe2586391b0f0c93359133f10830558539
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 4e4d8f43893b5f2a9a58c2eb6209ecb7d8dd1c21
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57608854"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367581"
 ---
 # <a name="game-flow-management"></a>Gestion du flux de jeu
 
@@ -283,13 +283,13 @@ Voici les gestionnaires d’événements utilisés dans cet exemple et les évé
 <tbody>
 <tr class="odd">
 <td align="left">OnActivated</td>
-<td align="left">Gère <a href="https://msdn.microsoft.com/library/windows/apps/br225018"><strong>CoreApplicationView::Activated</strong></a>. L’application de jeu ayant été amenée au premier plan, la fenêtre principale est activée.</td>
+<td align="left">Gère <a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationview.activated"><strong>CoreApplicationView::Activated</strong></a>. L’application de jeu ayant été amenée au premier plan, la fenêtre principale est activée.</td>
 </tr>
 <tr class="even">
 <td align="left">OnDpiChanged</td>
 <td align="left">Gère <a href="https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation#Windows_Graphics_Display_DisplayInformation_DpiChanged"><strong>Graphics::Display::DisplayInformation::DpiChanged</strong></a>. La résolution PPP de l’affichage a été modifiée et le jeu règle ses ressources en conséquence.
 <div class="alert">
-<strong>Remarque</strong> <a href="https://msdn.microsoft.com/library/windows/desktop/hh404559"><strong>CoreWindow</strong> </a> coordonnées sont exprimées en DIP (Device Independent Pixels) pour <a href="https://msdn.microsoft.com/library/windows/desktop/dd370987">Direct2D</a>. Par conséquent, vous devez indiquer à Direct2D la modification des PPP afin d’afficher correctement les primitives ou composants 2D.
+<strong>Remarque</strong> <a href="https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgifactory2-createswapchainforcorewindow"><strong>CoreWindow</strong> </a> coordonnées sont exprimées en DIP (Device Independent Pixels) pour <a href="https://docs.microsoft.com/windows/desktop/Direct2D/direct2d-overview">Direct2D</a>. Par conséquent, vous devez indiquer à Direct2D la modification des PPP afin d’afficher correctement les primitives ou composants 2D.
 </div>
 <div>
 </div></td>
@@ -304,27 +304,27 @@ Voici les gestionnaires d’événements utilisés dans cet exemple et les évé
 </tr>
 <tr class="odd">
 <td align="left">OnResuming</td>
-<td align="left">Gère <a href="https://msdn.microsoft.com/library/windows/apps/br205859"><strong>CoreApplication::Resuming</strong></a>. L’application de jeu restaure le jeu qui est dans un état suspendu.</td>
+<td align="left">Gère <a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.resuming"><strong>CoreApplication::Resuming</strong></a>. L’application de jeu restaure le jeu qui est dans un état suspendu.</td>
 </tr>
 <tr class="even">
 <td align="left">OnSuspending</td>
-<td align="left">Gère <a href="https://msdn.microsoft.com/library/windows/apps/br205860"><strong>CoreApplication::Suspending</strong></a>. L’application de jeu enregistre son état sur disque. Elle dispose de 5 secondes pour enregistrer l’état dans le dispositif de stockage.</td>
+<td align="left">Gère <a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.suspending"><strong>CoreApplication::Suspending</strong></a>. L’application de jeu enregistre son état sur disque. Elle dispose de 5 secondes pour enregistrer l’état dans le dispositif de stockage.</td>
 </tr>
 <tr class="odd">
 <td align="left">OnVisibilityChanged</td>
-<td align="left">Gère <a href="https://msdn.microsoft.com/library/windows/apps/hh701591"><strong>CoreWindow::VisibilityChanged</strong></a>. L’application de jeu a modifié la visibilité : elle est devenue soit visible, soit invisible car une autre application est devenue visible.</td>
+<td align="left">Gère <a href="https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.visibilitychanged"><strong>CoreWindow::VisibilityChanged</strong></a>. L’application de jeu a modifié la visibilité : elle est devenue soit visible, soit invisible car une autre application est devenue visible.</td>
 </tr>
 <tr class="even">
 <td align="left">OnWindowActivationChanged</td>
-<td align="left">Gère <a href="https://msdn.microsoft.com/library/windows/apps/br208255"><strong>CoreWindow::Activated</strong></a>. La fenêtre principale de l’application de jeu ayant été activée ou désactivée, elle doit supprimer le focus et interrompre le jeu, ou regagner le focus. Dans les deux cas, la superposition indique que le jeu est suspendu.</td>
+<td align="left">Gère <a href="https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.activated"><strong>CoreWindow::Activated</strong></a>. La fenêtre principale de l’application de jeu ayant été activée ou désactivée, elle doit supprimer le focus et interrompre le jeu, ou regagner le focus. Dans les deux cas, la superposition indique que le jeu est suspendu.</td>
 </tr>
 <tr class="odd">
 <td align="left">OnWindowClosed</td>
-<td align="left">Gère <a href="https://msdn.microsoft.com/library/windows/apps/br208261"><strong>CoreWindow::Closed</strong></a>. L’application de jeu ferme la fenêtre principale et suspend le jeu.</td>
+<td align="left">Gère <a href="https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.closed"><strong>CoreWindow::Closed</strong></a>. L’application de jeu ferme la fenêtre principale et suspend le jeu.</td>
 </tr>
 <tr class="even">
 <td align="left">OnWindowSizeChanged</td>
-<td align="left">Gère <a href="https://msdn.microsoft.com/library/windows/apps/br208283"><strong>CoreWindow::SizeChanged</strong></a>. L’application de jeu réaffecte les ressources graphiques et la superposition pour tenir compte de la modification de la taille, puis met à jour la cible de rendu.</td>
+<td align="left">Gère <a href="https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.sizechanged"><strong>CoreWindow::SizeChanged</strong></a>. L’application de jeu réaffecte les ressources graphiques et la superposition pour tenir compte de la modification de la taille, puis met à jour la cible de rendu.</td>
 </tr>
 </tbody>
 </table>

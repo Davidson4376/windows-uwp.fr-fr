@@ -6,12 +6,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ac80888019044beabc44335290bc6ad59cf377c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0e5ba7ddb6ef37b4aa54584602fc890bbabc8998
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57608134"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359352"
 ---
 # <a name="tailor-your-resources-for-language-scale-high-contrast-and-other-qualifiers"></a>Personnaliser vos ressources pour la langue, l’échelle, le contraste élevé et d’autres qualificateurs
 
@@ -114,7 +114,7 @@ Selon les outils et le flux de travail utilisés pour la création de ressources
 
 ## <a name="alternateform"></a>AlternateForm
 
-Le qualificateur `alternateform` sert à fournir une ressource sous une autre forme à des fins spéciales. En général, cela sert uniquement aux développeurs d’applications japonais pour fournir une chaîne furigana à laquelle la valeur `msft-phonetic` est réservée (voir la section « Prenez en charge les furigana pour les chaînes japonaises qui peuvent être triées » dans [Comment se préparer à la localisation](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh967762)).
+Le qualificateur `alternateform` sert à fournir une ressource sous une autre forme à des fins spéciales. En général, cela sert uniquement aux développeurs d’applications japonais pour fournir une chaîne furigana à laquelle la valeur `msft-phonetic` est réservée (voir la section « Prenez en charge les furigana pour les chaînes japonaises qui peuvent être triées » dans [Comment se préparer à la localisation](https://docs.microsoft.com/previous-versions/windows/apps/hh967762(v=win.10))).
 
 Votre système cible ou votre application doit fournir une valeur à laquelle les qualificateurs `alternateform` correspondent. N’utilisez pas le préfixe `msft-` pour vos propres valeurs de qualificateur `alternateform` personnalisées.
 
@@ -128,7 +128,7 @@ Le qualificateur `configuration` permet de charger la ressource qui correspond l
 
 Le qualificateur `contrast` permet de fournir les ressources qui correspondent le mieux aux paramètres de contraste élevé.
 
-## <a name="custom"></a>Personnalisé
+## <a name="custom"></a>Custom
 
 Votre application peut définir une valeur pour le qualificateur `custom`. Les ressources qui correspondent le mieux à cette valeur sont alors chargées. Par exemple, vous pouvez souhaiter charger des ressources en fonction de la licence de votre application. Lorsque votre application se lance, elle vérifie sa licence et utilise celle-ci comme valeur du qualificateur `custom` en appelant [SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue), comme illustré dans l’exemple de code.
 
@@ -250,7 +250,7 @@ Pour plus d’informations sur la qualification d’une ressource pour `scale` e
 
 ## <a name="targetsize"></a>TargetSize
 
-Le qualificateur `targetsize` sert principalement à spécifier des [icônes d’association de types de fichier](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh127427) ou des [icônes du protocole](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/bb266530) à afficher dans l’Explorateur de fichiers. La valeur du qualificateur représente la longueur du côté d’une image carrée en pixels bruts (physiques). La ressource dont la valeur correspond au paramètre Affichage de l’Explorateur de fichiers est chargée ou, en l’absence d'une correspondance exacte, la ressource avec la plus grande valeur suivante.
+Le qualificateur `targetsize` sert principalement à spécifier des [icônes d’association de types de fichier](https://docs.microsoft.com/windows/desktop/shell/how-to-assign-a-custom-icon-to-a-file-type) ou des [icônes du protocole](https://docs.microsoft.com/windows/desktop/search/-search-3x-wds-ph-ui-extensions) à afficher dans l’Explorateur de fichiers. La valeur du qualificateur représente la longueur du côté d’une image carrée en pixels bruts (physiques). La ressource dont la valeur correspond au paramètre Affichage de l’Explorateur de fichiers est chargée ou, en l’absence d'une correspondance exacte, la ressource avec la plus grande valeur suivante.
 
 Vous pouvez définir des ressources qui représentent plusieurs tailles de la valeur du qualificateur `targetsize` pour l’icône d’application (`/Assets/Square44x44Logo.png`) dans l’onglet Ressources visuelles du concepteur de manifeste du package d’application.
 
@@ -259,6 +259,21 @@ Pour plus d’informations sur la qualification d’une ressource pour `scale` e
 ## <a name="theme"></a>Thème
 
 Le qualificateur `theme` est utilisé pour fournir les ressources qui correspondent le mieux au paramètre de mode d’application par défaut, ou au remplacement de votre application à l’aide de [Application.RequestedTheme](/uwp/api/windows.ui.xaml.application.requestedtheme).
+
+
+## <a name="shell-light-theme-and-unplated-resources"></a>Le thème clair interpréteur de commandes et des ressources sans plaque
+Le *Windows 10 peut 2019 mettre à jour* introduit un nouveau thème « clair » pour l’interpréteur de commandes Windows. Par conséquent, certaines ressources de l’application qui ont été précédemment indiqués sur un arrière-plan foncé maintenant être apparaît sur un arrière-plan clair. Pour les applications que les applications qui fourni sans plaque d’altform actifs pour les barre des tâches et fenêtre les bascules (Alt + Tab, affichage des tâches, etc.), vous devez vérifier qu’ils ont contraste acceptable sur un arrière-plan clair.
+
+### <a name="providing-light-theme-specific-assets"></a>En fournissant des ressources spécifiques de thème clair
+Les applications qui souhaitent fournir une ressource personnalisée pour le thème clair shell peut utiliser un nouveau qualificateur de ressource autre forme : `altform-lightunplated`. Ce qualificateur reflète le qualificateur sans plaque d’altform existant. 
+
+### <a name="downlevel-considerations"></a>Considérations de niveau inférieur
+Applications ne doivent pas utiliser le `theme-light` qualificateur avec le `altform-unplated` qualificateur. Cela entraîne un comportement imprévisible sur RS5 et les versions antérieures de Windows en raison de ressources de la façon sont chargées pour la barre des tâches. Dans les versions antérieures de windows, la version de la lumière thème peut être utilisée incorrectement. Le `altform-lightunplated` qualificateur évite ce problème. 
+
+### <a name="compatibility-behavior"></a>Comportement de compatibilité
+Pour descendante compatibilité, Windows inclut une logique pour détecter les icônes de monochrome et vérifier si elle s’oppose à l’arrière-plan prévue. Si l’icône ne parvient pas à répondre aux exigences relatives au contraste, Windows recherchera une version de contraste blanc de la ressource. Si tel n’est pas disponible, Windows reviendra à l’aide de la plaque version de l’élément multimédia.
+
+
 
 ## <a name="important-apis"></a>API importantes
 
@@ -269,7 +284,7 @@ Le qualificateur `theme` est utilisé pour fournir les ressources qui correspond
 
 * [Pixels efficaces et le facteur d’échelle](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor)
 * [Système de gestion des ressources](resource-management-system.md)
-* [Comment préparer pour la localisation](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh967762)
+* [Comment préparer pour la localisation](https://docs.microsoft.com/previous-versions/windows/apps/hh967762(v=win.10))
 * [Détection de la plateforme de votre application est en cours d’exécution](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on)
 * [Vue d’ensemble des familles de périphériques](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)
 * [Localiser les chaînes de votre interface utilisateur](localize-strings-ui-manifest.md)

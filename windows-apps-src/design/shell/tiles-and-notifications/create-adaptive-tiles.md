@@ -8,18 +8,18 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 524cc15dbb7a3264d8476210f727508ea41ace87
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 08a7ca0b08a9df57d3c496f33f963fcd9d0ebfe2
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57639604"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367039"
 ---
 # <a name="create-adaptive-tiles"></a>Créer des vignettes adaptatives
 
 Modèles de vignette Adaptive sont une nouvelle fonctionnalité dans Windows 10, ce qui vous permet de concevoir votre propre contenu de notification de vignette à l’aide d’un langage de balisage simple et flexible qui s’adapte aux densités d’écran. Cet article vous indique comment créer des vignettes dynamiques adaptatives pour votre application de plateforme Windows universelle (UWP). Pour obtenir la liste complète des éléments et attributs adaptatifs, voir [Schéma des vignettes adaptatives](../tiles-and-notifications/tile-schema.md).
 
-(Si vous le souhaitez, vous pouvez toujours utiliser les modèles prédéfinis à partir de la [catalogue de modèles de vignette Windows 8](https://msdn.microsoft.com/library/windows/apps/hh761491) lors de la conception des notifications pour Windows 10.)
+(Si vous le souhaitez, vous pouvez toujours utiliser les modèles prédéfinis à partir de la [catalogue de modèles de vignette Windows 8](https://docs.microsoft.com/previous-versions/windows/apps/hh761491(v=win.10)) lors de la conception des notifications pour Windows 10.)
 
 
 ## <a name="getting-started"></a>Prise en main
@@ -284,7 +284,7 @@ Si vous ne spécifiez aucune personnalisation dans votre charge utile de notific
 
  
 
-## <a name="display-name"></a>Nom d’affichage
+## <a name="display-name"></a>Display name
 
 
 Vous pouvez remplacer le nom d’affichage d’une notification en entrant la chaîne de texte de votre choix avec l’attribut **displayName**. Comme pour la personnalisation, vous pouvez spécifier cela dans l’élément [TileVisual](../tiles-and-notifications/tile-schema.md#tilevisual), ce qui affecte toute la charge utile de notification. Vous pouvez également spécifier cela dans l’élément [TileBinding](../tiles-and-notifications/tile-schema.md#tilebinding), ce qui affecte uniquement les vignettes individuelles.
@@ -414,7 +414,7 @@ new AdaptiveText()
 
 |                                |                           |             |
 |--------------------------------|---------------------------|-------------|
-| &lt;indicateur de style texte = «\*» /&gt; | Hauteur de police               | Épaisseur de police |
+| &lt;text hint-style="\*" /&gt; | Hauteur de police               | Épaisseur de police |
 | caption                        | 12 pixels effectifs (epx) | Normale     |
 | corps                           | 15 epx                    | Normale     |
 | base                           | 15 epx                    | Semibold    |
@@ -592,19 +592,19 @@ L’attribut **hint-weight** vous permet de contrôler la largeur des colonnes. 
 </tr>
 <tr class="even">
 <td align="left">1</td>
-<td align="left">25 %</td>
+<td align="left">25%</td>
 </tr>
 <tr class="odd">
 <td align="left">1</td>
-<td align="left">25 %</td>
+<td align="left">25%</td>
 </tr>
 <tr class="even">
 <td align="left">1</td>
-<td align="left">25 %</td>
+<td align="left">25%</td>
 </tr>
 <tr class="odd">
 <td align="left">1</td>
-<td align="left">25 %</td>
+<td align="left">25%</td>
 </tr>
 <tr class="even">
 <td align="left">Poids total : 4</td>
@@ -662,7 +662,7 @@ Si vous souhaitez que les première et seconde colonnes occupent respectivement 
 </tr>
 <tr class="even">
 <td align="left">20</td>
-<td align="left">20 %</td>
+<td align="left">20%</td>
 </tr>
 <tr class="odd">
 <td align="left">80</td>

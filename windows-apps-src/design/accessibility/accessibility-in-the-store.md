@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a9991cd4a0a3fce630b1c7be64650c79daf74e6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 8f00bb9449d9e48518d16e08fa6b6665eecd2f85
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57597404"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359734"
 ---
 # <a name="accessibility-in-the-store"></a>Accessibilité dans le Windows Store  
 
@@ -40,7 +40,7 @@ Vous devez déclarer votre application comme accessible si vous l’avez créée
     * d’utiliser des raccourcis clavier pour atteindre les fonctionnalités essentielles de l’application.
     * d’utiliser les mouvements tactiles du Narrateur comme équivalents de la touche Tab et des touches de direction pour les appareils sans clavier.
 * vérifié que l’interface utilisateur de votre application est visuellement accessible, qu’elle a un coefficient de contraste de texte minimal de 4,5 pour 1, qu’elle n’utilise pas simplement la couleur pour transmettre des informations, etc. ;
-* utilisé des outils de test de l’accessibilité tels qu’[**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) et [**UIAVerify**](https://msdn.microsoft.com/library/windows/desktop/Hh920986) afin de vérifier votre implémentation de l’accessibilité, et résolu toutes les erreurs de priorité 1 signalées par ces outils ;
+* utilisé des outils de test de l’accessibilité tels qu’[**Inspect**](https://docs.microsoft.com/windows/desktop/WinAuto/inspect-objects) et [**UIAVerify**](https://docs.microsoft.com/windows/desktop/WinAuto/ui-automation-verify) afin de vérifier votre implémentation de l’accessibilité, et résolu toutes les erreurs de priorité 1 signalées par ces outils ;
 * vérifié les scénarios principaux de votre application de bout en bout à l’aide du Narrateur, de la Loupe, du Clavier visuel, d’un thème à contraste élevé et de paramètres haute résolution ajustés.
 
 Pour obtenir un examen de cette procédure et des liens vers des ressources qui vous aideront à les appliquer, voir [Liste de vérification de l’accessibilité](accessibility-checklist.md).

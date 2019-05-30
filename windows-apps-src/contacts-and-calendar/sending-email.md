@@ -6,12 +6,12 @@ keywords: contacts, e-mail, envoi
 ms.date: 10/11/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1593ab8b547a464492a35aa7d49d38f667a8210b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 524e1f12c3da0d9d06e73d84e08e2d54efde9a7e
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57626484"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66361217"
 ---
 # <a name="send-email"></a>Envoyer un courrier électronique
 
@@ -25,7 +25,7 @@ Montre comment lancer la boîte de dialogue de rédaction d’un message électr
 
 ## <a name="launch-the-compose-email-dialog"></a>Lancer la boîte de dialogue de rédaction d’un message électronique
 
-Créez un objet [**EmailMessage**](https://msdn.microsoft.com/library/windows/apps/Dn631270) et définissez les données à préremplir dans la boîte de dialogue de rédaction d’un message électronique. Appelez [**ShowComposeNewEmailAsync**](https://msdn.microsoft.com/library/windows/apps/Dn631269) pour afficher la boîte de dialogue.
+Créez un objet [**EmailMessage**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Email.EmailMessage) et définissez les données à préremplir dans la boîte de dialogue de rédaction d’un message électronique. Appelez [**ShowComposeNewEmailAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.emailmanager.showcomposenewemailasync) pour afficher la boîte de dialogue.
 
 ``` cs
 private async Task ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipient,
@@ -51,12 +51,12 @@ private async Task ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipi
 
 ## <a name="summary-and-next-steps"></a>Récapitulatif et étapes suivantes
 
-Cette rubrique vous a montré comment lancer la boîte de dialogue de rédaction d’un message électronique. Pour plus d’informations sur la sélection de contacts en tant que destinataires d’un message électronique, voir [Sélectionner des contacts](selecting-contacts.md). Voir [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/JJ635275) pour sélectionner un fichier à utiliser en pièce jointe d’un message électronique.
+Cette rubrique vous a montré comment lancer la boîte de dialogue de rédaction d’un message électronique. Pour plus d’informations sur la sélection de contacts en tant que destinataires d’un message électronique, voir [Sélectionner des contacts](selecting-contacts.md). Voir [**PickSingleFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.picksinglefileasync) pour sélectionner un fichier à utiliser en pièce jointe d’un message électronique.
 
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Sélection des contacts](selecting-contacts.md)
-* [Comment continuer à votre application Windows Phone après l’appel d’un sélecteur de fichiers](https://msdn.microsoft.com/library/windows/apps/xaml/Dn614994)
+* [Comment continuer à votre application Windows Phone après l’appel d’un sélecteur de fichiers](https://docs.microsoft.com/previous-versions/windows/apps/dn614994(v=win.10))
  
 
  

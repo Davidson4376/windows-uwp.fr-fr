@@ -6,20 +6,20 @@ ms.date: 06/06/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 940f82e5e4cff30a2756c32c80d2f3ab02ae440a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: e7ee2cac1ae53ca59b8ec60d917e39a737a049ad
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57660504"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369629"
 ---
 # <a name="use-the-gyrometer"></a>Utiliser le gyromètre
 
 
 **API importantes**
 
--   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
--   [**Gyromètre**](https://msdn.microsoft.com/library/windows/apps/BR225718)
+-   [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
+-   [**Gyromètre**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Gyrometer)
 
 **Exemple**
 
@@ -29,7 +29,7 @@ Découvrez comment utiliser le gyromètre pour détecter les changements de mouv
 
 Les gyromètres viennent compléter les accéléromètres en tant que contrôleurs de jeu. Tandis que l’accéléromètre peut mesurer le déplacement linéaire, le gyromètre mesure la vitesse angulaire ou déplacement rotatoire.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 Vous devez être familiarisé avec Extensible Application Markup Language (XAML), Microsoft Visual C#et les événements.
 
@@ -41,7 +41,7 @@ Cette section se divise en deux sous-sections. La première sous-section vous p
 
 ###  <a name="instructions"></a>Instructions
 
--   Créez un projet en choisissant une **Application vide (Windows universel)** dans les modèles de projet **Visual C#**.
+-   Créez un projet en choisissant une **Application vide (Windows universel)** dans les modèles de projet **Visual C#** .
 
 -   Ouvrez le fichier MainPage.xaml.cs de votre projet et remplacez le code existant par ce qui suit.
 

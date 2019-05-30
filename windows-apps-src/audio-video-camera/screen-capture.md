@@ -9,12 +9,12 @@ dev_langs:
 - vb
 keywords: windows 10, uwp, capture d’écran
 ms.localizationpriority: medium
-ms.openlocfilehash: 7bbe52de6e148ff86f492ee2c490e5dda388ffa1
-ms.sourcegitcommit: 703f23f0cd2037997b6540335d32d344d5604974
+ms.openlocfilehash: 5d61e5bb8e5f00a2ac5743ed1a91c470f455c9c6
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58867885"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66361449"
 ---
 # <a name="screen-capture"></a>Capture d'écran
 
@@ -216,15 +216,15 @@ Il est recommandé de ne pas utiliser si possible le thread d’interface utilis
 
 Sinon, vous pouvez extraire manuellement des images avec la méthode **Direct3D11CaptureFramePool.TryGetNextFrame** jusqu'à ce que vous obteniez toutes les images nécessaires.
 
-L’objet **Direct3D11CaptureFrame** contient les propriétés **ContentSize**, **Surface** et **SystemRelativeTime**. L’objet **SystemRelativeTime** est la durée QPC ([QueryPerformanceCounter](https://msdn.microsoft.com/library/windows/desktop/ms644904)) qui peut être utilisée pour synchroniser d’autres éléments multimédias.
+L’objet **Direct3D11CaptureFrame** contient les propriétés **ContentSize**, **Surface** et **SystemRelativeTime**. L’objet **SystemRelativeTime** est la durée QPC ([QueryPerformanceCounter](https://docs.microsoft.com/windows/desktop/api/profileapi/nf-profileapi-queryperformancecounter)) qui peut être utilisée pour synchroniser d’autres éléments multimédias.
 
 ## <a name="processing-capture-frames"></a>Traitement des images de capture
 
-Chaque image de l’objet **Direct3D11CaptureFramePool** est extraite lors de l’appel à **TryGetNextFrame** et archivée en fonction de la durée de vie de l’objet **Direct3D11CaptureFrame**. Pour les applications natives, il suffit de libérer l’objet **Direct3D11CaptureFrame** pour archiver l’image dans le pool d’images. Pour les applications gérées, il est recommandé d’utiliser la méthode **Direct3D11CaptureFrame.Dispose** (**Close** en C++). **Direct3D11CaptureFrame** implémente l’interface [IClosable](https://docs.microsoft.com/uwp/api/Windows.Foundation.IClosable), qui est projetée en tant que [IDisposable](https://msdn.microsoft.com/library/system.idisposable.aspx) pour les appelants en C#.
+Chaque image de l’objet **Direct3D11CaptureFramePool** est extraite lors de l’appel à **TryGetNextFrame** et archivée en fonction de la durée de vie de l’objet **Direct3D11CaptureFrame**. Pour les applications natives, il suffit de libérer l’objet **Direct3D11CaptureFrame** pour archiver l’image dans le pool d’images. Pour les applications gérées, il est recommandé d’utiliser la méthode **Direct3D11CaptureFrame.Dispose** (**Close** en C++). **Direct3D11CaptureFrame** implémente l’interface [IClosable](https://docs.microsoft.com/uwp/api/Windows.Foundation.IClosable), qui est projetée en tant que [IDisposable](https://docs.microsoft.com/dotnet/api/system.idisposable?redirectedfrom=MSDN) pour les appelants en C#.
 
 Les applications ne doivent pas enregistrer les références aux objets **Direct3D11CaptureFrame**, ni enregistrer les références à la surface Direct3D sous-jacente une fois que l’image a été archivée.
 
-Lors du traitement d’une image, il est recommandé que les applications utilisent le verrouillage [ID3D11Multithread](https://msdn.microsoft.com/library/windows/desktop/mt644886) sur le périphérique associé à l’objet **Direct3D11CaptureFramePool**.
+Lors du traitement d’une image, il est recommandé que les applications utilisent le verrouillage [ID3D11Multithread](https://docs.microsoft.com/windows/desktop/api/d3d11_4/nn-d3d11_4-id3d11multithread) sur le périphérique associé à l’objet **Direct3D11CaptureFramePool**.
 
 La surface Direct3D sous-jacente aura toujours la taille spécifiée lors de la création (ou de la recréation) de l’objet **Direct3D11CaptureFramePool**. Si le contenu est plus grand que l’image, il est ajusté à la taille de l’image. Si le contenu est plus petit que l’image, le reste de l’image contient des données non définies. Il est recommandé que les applications copient un sous-rectangle à l’aide de la propriété **ContentSize** pour cet objet **Direct3D11CaptureFrame** afin d’éviter l’affichage du contenu non défini.
 
@@ -638,4 +638,4 @@ Si vous souhaitez enregistrer une vidéo de votre application, vous pouvez le fa
 
 ## <a name="see-also"></a>Voir aussi
 
-* [Espace de noms Windows.Graphics.Capture](https://docs.microsoft.com/uwp/api/windows.graphics.capture)
+* [Windows.Graphics.Capture Namespace](https://docs.microsoft.com/uwp/api/windows.graphics.capture)

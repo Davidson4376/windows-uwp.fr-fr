@@ -7,12 +7,12 @@ ms.date: 10/20/2017
 ms.topic: article
 keywords: windows 10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
-ms.openlocfilehash: a5af904c099b92e399f169221cae3122f358be19
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f40a68b6e07a90bcb1ce1d646bdfc0dfb4553495
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582488"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359422"
 ---
 # <a name="app-resources-and-the-resource-management-system"></a>Ressources d’application et système de gestion des ressources
 
@@ -36,7 +36,7 @@ Pour plus d’informations sur la proposition de valeur de la localisation de vo
 | [Schémas d’URI](uri-schemes.md) | Vous pouvez utiliser plusieurs schémas d’URI (Uniform Resource Identifier) pour faire référence à des fichiers qui proviennent de votre package d’application, des dossiers de données de votre application ou du cloud. Vous pouvez également utiliser un schéma d’URI pour faire référence à des chaînes chargées à partir des fichiers de ressources (.resw) de votre application. |
 | [Préciser les ressources par défaut que votre application utilise](specify-default-resources-installed.md) | Si votre application n’a pas les ressources qui correspondent aux paramètres particuliers d’un appareil client, les ressources de l’application par défaut sont utilisées. Cette rubrique explique comment spécifier ce que sont ces ressources par défaut. |
 | [Générer des ressources dans votre package d’application, plutôt que dans un pack de ressources](build-resources-into-app-package.md) | Certains types d’applications (dictionnaires multilingues, outils de traduction, etc.) doivent remplacer le comportement par défaut d’un ensemble d’applications et créer des ressources dans le package d’application plutôt que dans des packages de ressources distincts. Cette rubrique explique la procédure à suivre. |
-| [API d’indexation de ressources de package (IRP) et systèmes de génération personnalisés](pri-apis-custom-build-systems.md) | Grâce aux [API d’indexation de ressources de package (IRP)](https://msdn.microsoft.com/library/windows/desktop/mt845690), vous pouvez développer un système de génération personnalisé pour les ressources de votre application UWP. Le système de génération pourra créer, versionner et vider (en tant que XML) les fichiers d’index de ressources de package (IRP) au niveau de complexité dont votre application UWP a besoin. |
+| [API d’indexation de ressources de package (IRP) et systèmes de génération personnalisés](pri-apis-custom-build-systems.md) | Grâce aux [API d’indexation de ressources de package (IRP)](https://docs.microsoft.com/windows/desktop/menurc/pri-indexing-reference), vous pouvez développer un système de génération personnalisé pour les ressources de votre application UWP. Le système de génération pourra créer, versionner et vider (en tant que XML) les fichiers d’index de ressources de package (IRP) au niveau de complexité dont votre application UWP a besoin. |
 | [Compiler des ressources manuellement avec MakePri.exe](compile-resources-manually-with-makepri.md) | MakePri.exe est un outil en ligne de commande que vous pouvez utiliser pour créer et vider des fichiers IRP. Il est intégré en tant qu’élément de MSBuild dans Microsoft Visual Studio, mais il peut aussi être utilisé pour la création de packages manuellement ou avec un système de génération personnalisé. |
 | [Utiliser le système de gestion des ressources Windows 10 dans une application ou un jeu hérité](using-mrt-for-converted-desktop-apps-and-games.md) | En incluant votre application ou jeu .NET ou Win32 dans un package AppX, vous pouvez exploiter le système de gestion des ressources pour charger des ressources d’application adaptées au contexte d’exécution. Cette rubrique détaillée décrit ces techniques. |
 

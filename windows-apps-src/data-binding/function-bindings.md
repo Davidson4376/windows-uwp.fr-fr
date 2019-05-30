@@ -5,17 +5,17 @@ ms.date: 02/06/2019
 ms.topic: article
 keywords: Windows 10, uwp, xBind
 ms.localizationpriority: medium
-ms.openlocfilehash: b85777c254c36cc7bf5b156569c7cef267a6c567
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 879be9591bae36a1dbcd485387fbb4ac7f502fea
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57626214"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360082"
 ---
 # <a name="functions-in-xbind"></a>Fonctions dans x:Bind
 
 > [!NOTE]
-> Pour des informations générales sur l’utilisation de la liaison de données dans votre application avec **{x : Bind}** (et pour une comparaison global entre **{x : Bind}** et **{Binding}**), consultez [données liaison en profondeur](data-binding-in-depth.md).
+> Pour des informations générales sur l’utilisation de la liaison de données dans votre application avec **{x : Bind}** (et pour une comparaison global entre **{x : Bind}** et **{Binding}** ), consultez [données liaison en profondeur](data-binding-in-depth.md).
 
 À compter de Windows 10, version 1607, **{x : Bind}** prend en charge l’utilisation d’une fonction comme niveau feuille du chemin de liaison. Cela permet de :
 
@@ -23,7 +23,7 @@ ms.locfileid: "57626214"
 - Permet aux liaisons de dépendre de plus d’un paramètre
 
 > [!NOTE]
-> Pour utiliser des fonctions avec **{x:Bind}**, la version du SDK cible de votre application doit être 14393 ou une version ultérieure. Vous ne pouvez pas utiliser des fonctions si votre application cible des versions antérieures de Windows 10. Pour plus d’informations sur les versions cibles, voir [Code adaptatif de version](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
+> Pour utiliser des fonctions avec **{x:Bind}** , la version du SDK cible de votre application doit être 14393 ou une version ultérieure. Vous ne pouvez pas utiliser des fonctions si votre application cible des versions antérieures de Windows 10. Pour plus d’informations sur les versions cibles, voir [Code adaptatif de version](https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
 
 Dans l’exemple suivant, l’arrière-plan et le premier plan de l’élément sont liés à des fonctions de conversion reposant sur le paramètre de couleur :
 

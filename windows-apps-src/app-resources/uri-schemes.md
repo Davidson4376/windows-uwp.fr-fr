@@ -6,12 +6,12 @@ ms.date: 10/16/2017
 ms.topic: article
 keywords: windows 10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d66d717d77d2797e8a483871b8d3369befb5b6b
-ms.sourcegitcommit: 46890e7f3c1287648631c5e318795f377764dbd9
+ms.openlocfilehash: f199d70fc9194f211533820a7b23e20de929752d
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58320582"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359341"
 ---
 # <a name="uri-schemes"></a>Schémas d’URI
 
@@ -249,11 +249,11 @@ ms-resource://john:password@contoso.myapp:8080/Resources/String1
 
 ### <a name="path-ms-resource"></a>Chemin d’accès (ms-resource)
 
-Le chemin d’accès identifie l’emplacement hiérarchique de la sous-arborescence [ResourceMap](/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMap?branch=live) (voir [Système de gestion des ressources](https://msdn.microsoft.com/library/windows/apps/jj552947)) et la [NamedResource](/uwp/api/Windows.ApplicationModel.Resources.Core.NamedResource?branch=live) qu’elle contient. En règle générale, cela correspond au nom de fichier (sans extension) d’un fichier de ressources (.resw) et à l’identificateur d’une ressource de chaîne figurant dans celui-ci.
+Le chemin d’accès identifie l’emplacement hiérarchique de la sous-arborescence [ResourceMap](/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMap?branch=live) (voir [Système de gestion des ressources](https://docs.microsoft.com/previous-versions/windows/apps/jj552947(v=win.10))) et la [NamedResource](/uwp/api/Windows.ApplicationModel.Resources.Core.NamedResource?branch=live) qu’elle contient. En règle générale, cela correspond au nom de fichier (sans extension) d’un fichier de ressources (.resw) et à l’identificateur d’une ressource de chaîne figurant dans celui-ci.
 
 Pour en savoir plus et voir des exemples, voir [Localiser les chaînes dans l’interface utilisateur et le manifeste du package d’application](localize-strings-ui-manifest.md) et [Prise en charge des vignettes et notifications toast pour la langue, l’échelle et le contraste élevé](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md).
 
-À l’instar des URI génériques, le composant de chemin d’accès de `ms-resource` respecte la casse. Cependant, la récupération sous-jacent n’est un [CompareStringOrdinal](https://msdn.microsoft.com/library/windows/apps/br224628) avec *ignoreCase* défini sur `true`.
+À l’instar des URI génériques, le composant de chemin d’accès de `ms-resource` respecte la casse. Cependant, la récupération sous-jacent n’est un [CompareStringOrdinal](https://docs.microsoft.com/windows/desktop/api/winstring/nf-winstring-windowscomparestringordinal) avec *ignoreCase* défini sur `true`.
 
 La forme normalisée de l’URI conserve la casse et décode les caractères RFC 3986 non réservés à l’aide du percent encoding (symbole « % » suivi d’une représentation hexadécimale à deux chiffres). Les caractères « ? », « # », « / », « * » et « ” » (le caractère de guillemet double) doivent être codés à l’aide du percent encoding dans un chemin d’accès pour représenter des données telles que les noms de fichier ou de dossier. Tous les caractères codés à l’aide du percent encoding sont décodés avant la récupération. Par conséquent, pour récupérer une ressource de chaîne à partir d’un fichier de ressources nommé `Hello#World.resw`, utiliser cet URI.
 
@@ -274,5 +274,5 @@ Les développeurs de composants spécifiques situés dans une couche au-dessus d
 * [Référencer une image ou un autre actif à partir de code et le balisage XAML](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)
 * [Store et de récupérer les paramètres et autres données d’application](../design/app-settings/store-and-retrieve-app-data.md)
 * [Localiser les chaînes dans l’interface utilisateur et le manifeste du package d’application](localize-strings-ui-manifest.md)
-* [Système de gestion des ressources](https://msdn.microsoft.com/library/windows/apps/jj552947)
+* [Système de gestion des ressources](https://docs.microsoft.com/previous-versions/windows/apps/jj552947(v=win.10))
 * [Prise en charge de la notification vignette et de toast de langage, de mise à l’échelle et de contraste élevé](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)

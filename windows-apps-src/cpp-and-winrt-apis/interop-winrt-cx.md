@@ -5,12 +5,12 @@ ms.date: 10/09/2018
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, port, migrer, interopérabilité, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: 558f3fa75e7dd599927a9d2ace256bf1feb98e77
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5394443b4832864e5b46bfbf917c04f0af6d8a19
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57621644"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360219"
 ---
 # <a name="interop-between-cwinrt-and-ccx"></a>Interopérabilité entre C++/WinRT et C++/CX
 
@@ -19,7 +19,7 @@ Stratégies pour progressivement le portage du code dans votre [C++ / c++ / CX](
 Cette rubrique montre deux fonctions d’assistance que vous pouvez utiliser pour effectuer une conversion entre C++ / c++ / CX et c++ / WinRT des objets dans le même projet. Vous pouvez les utiliser pour assurer l’interopérabilité entre le code qui utilise les projections de deux langage, ou vous pouvez utiliser les fonctions que le port de votre code à partir de C++ / c++ / CX pour C++ / c++ / WinRT.
 
 ## <a name="fromcx-and-tocx-functions"></a>Fonctions from_cx et to_cx
-La fonction d’assistance ci-dessous convertit un objet C++/CX en un objet équivalent C++/WinRT. La fonction caste un objet C++/CX vers son pointeur d’interface [**IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509) sous-jacent. Elle appelle ensuite [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521) sur ce pointeur pour rechercher l’interface par défaut de l’objet C++/WinRT. **QueryInterface** est l’équivalent de l’interface binaire d’application (ABI) Windows Runtime de l’extension safe_cast C++/CX. Puis, la fonction [**winrt::put_abi**](/uwp/cpp-ref-for-winrt/put-abi) récupère l’adresse du pointeur d’interface **IUnknown** sous-jacent d’un objet C++/WinRT afin qu’elle puisse être définie sur une autre valeur.
+La fonction d’assistance ci-dessous convertit un objet C++/CX en un objet équivalent C++/WinRT. La fonction caste un objet C++/CX vers son pointeur d’interface [**IUnknown**](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown) sous-jacent. Elle appelle ensuite [**QueryInterface**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)) sur ce pointeur pour rechercher l’interface par défaut de l’objet C++/WinRT. **QueryInterface** est l’équivalent de l’interface binaire d’application (ABI) Windows Runtime de l’extension safe_cast C++/CX. Puis, la fonction [**winrt::put_abi**](/uwp/cpp-ref-for-winrt/put-abi) récupère l’adresse du pointeur d’interface **IUnknown** sous-jacent d’un objet C++/WinRT afin qu’elle puisse être définie sur une autre valeur.
 
 ```cppwinrt
 template <typename T>
@@ -253,10 +253,10 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 ```
 
 ## <a name="important-apis"></a>API importantes
-* [Interface IUnknown](https://msdn.microsoft.com/library/windows/desktop/ms680509)
-* [QueryInterface (fonction)](https://msdn.microsoft.com/library/windows/desktop/ms682521)
-* [WinRT::get_abi (fonction)](/uwp/cpp-ref-for-winrt/get-abi)
-* [WinRT::put_abi (fonction)](/uwp/cpp-ref-for-winrt/put-abi)
+* [Interface IUnknown](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)
+* [QueryInterface (fonction)](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))
+* [winrt::get_abi function](/uwp/cpp-ref-for-winrt/get-abi)
+* [winrt::put_abi function](/uwp/cpp-ref-for-winrt/put-abi)
 
 ## <a name="related-topics"></a>Rubriques connexes
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)

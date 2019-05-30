@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp, contacts, carte de visite, annotation
 ms.assetid: 0edabd9c-ecfb-4525-bc38-53f219d744ff
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a3485635a49b1690116e7cb271435e63bee2151
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 506f0d2c778a934c3f8861493f4a512a39fe66fc
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57616434"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360454"
 ---
 # <a name="connect-your-app-to-actions-on-a-contact-card"></a>Connecter votre application à des actions sur une carte de visite
 
@@ -181,13 +181,13 @@ Tout comme avec la carte de visite, chaque onglet enregistre la dernière applic
 
 ## <a name="perform-operations-when-users-select-your-app-in-a-contact-card"></a>Effectuer des opérations au cours desquelles les utilisateurs sélectionnent votre application dans une carte de visite
 
-Remplacez la méthode [Application.OnActivated](https://msdn.microsoft.com/library/windows/apps/br242330) dans votre fichier **App.cs**, puis dirigez les utilisateurs vers une page de votre application. L’[exemple d’intégration de carte de visite](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration) vous présente une façon de procéder.
+Remplacez la méthode [Application.OnActivated](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onactivated) dans votre fichier **App.cs**, puis dirigez les utilisateurs vers une page de votre application. L’[exemple d’intégration de carte de visite](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration) vous présente une façon de procéder.
 
-Dans le fichier code-behind de la page, remplacez la méthode [Page.OnNavigatedTo](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.onnavigatedto.aspx). La carte de visite transmet à cette méthode le nom de l’opération et l’identifiant de l’utilisateur.
+Dans le fichier code-behind de la page, remplacez la méthode [Page.OnNavigatedTo](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto). La carte de visite transmet à cette méthode le nom de l’opération et l’identifiant de l’utilisateur.
 
-Pour démarrer un appel audio ou vidéo, consultez l’exemple : [Exemple de VoIP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/VoIP). Vous trouverez l’API complète dans l’espace de noms [WIndows.ApplicationModel.Calls](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.calls.aspx).
+Pour démarrer un appel audio ou vidéo, consultez l’exemple : [Exemple de VoIP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/VoIP). Vous trouverez l’API complète dans l’espace de noms [WIndows.ApplicationModel.Calls](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls).
 
-Pour simplifier la messagerie, consultez l’espace de noms [Windows.ApplicationModel.Chat](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.chat.aspx).
+Pour simplifier la messagerie, consultez l’espace de noms [Windows.ApplicationModel.Chat](https://docs.microsoft.com/uwp/api/windows.applicationmodel.chat).
 
 Vous pouvez également démarrer une autre application. C’est ce que fait ce code.
 

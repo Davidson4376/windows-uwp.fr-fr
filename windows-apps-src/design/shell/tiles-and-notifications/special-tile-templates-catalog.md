@@ -7,12 +7,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 09647347134463c8dd2d93f6b869796c8def44e2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 739abc139eabc9f773938f55c15d3e18aaf562ce
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57619804"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66365963"
 ---
 # <a name="special-tile-templates"></a>Modèles de vignette spéciaux
  
@@ -54,11 +54,11 @@ Pour les ressources non carrées, un centrage horizontal/vertical automatique et
 
 ![Dimensionnement des ressources non carrées, avec et sans badge](images/assetguidance26b.png)
 
-**Étape 2 : Créer votre mosaïque de base**
+**Étape 2 : Créer votre mosaïque de base**
 
 Vous pouvez utiliser le modèle Icônes sur les vignettes principales et secondaires. Si vous l’utilisez sur une vignette secondaire, vous devez tout d’abord créer la vignette secondaire ou utiliser une vignette secondaire déjà épinglée. Les vignettes principales sont implicitement épinglées et peuvent toujours recevoir des notifications.
 
-**Étape 3 : Envoyer une notification à votre vignette**
+**Étape 3 : Envoyer une notification à votre vignette**
 
 Bien que cette étape puisse varier si la notification est envoyée localement ou par transmission des messages par le serveur, la charge utile XML que vous envoyez reste identique. Pour envoyer une notification à une vignette locale, créez un [**TileUpdater**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater) pour votre vignette (vignette principale ou secondaire), puis envoyez une notification à la vignette qui utilise le modèle de vignette Icônes comme illustré ci-dessous. Dans l’idéal, vous devez également inclure des liaisons pour des tailles de vignettes grandes et larges à l’aide de [modèles de vignette adaptative](create-adaptive-tiles.md).
 
@@ -82,7 +82,7 @@ Voici un exemple de code pour la charge utile XML :
 
 Cette charge utile XML du modèle de vignette Icônes utilise un élément d’image qui pointe vers l’image que vous avez créée à l’étape 1. Votre vignette est maintenant prête à afficher le badge en regard de votre icône ; il ne reste plus qu’à envoyer des notifications de badge.
 
-**Étape 4 : Envoyer une notification de badge à votre vignette**
+**Étape 4 : Envoyer une notification de badge à votre vignette**
 
 Comme à l’étape 3, cette étape peut varier si la notification est envoyée localement ou par transmission des messages par le serveur. Cependant, la charge utile XML que vous envoyez reste identique. Pour envoyer une notification de badge locale, créez un [**BadgeUpdater**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.BadgeUpdater) pour votre vignette (vignette principale ou secondaire), puis envoyez une notification de badge avec la valeur souhaitée (ou effacez le badge).
 
@@ -96,7 +96,7 @@ Le badge de la vignette se met à jour en conséquence.
 
 **Étape 5 : Vue d’ensemble**
 
-L’image suivante illustre la façon dont les différentes API et charges utiles sont associées à chacun des aspects du modèle de vignette Icônes. Une [notification par vignette](https://msdn.microsoft.com/library/windows/apps/hh779724) (qui contient les éléments &lt;binding&gt;) est utilisée pour spécifier le modèle Icônes et les ressources d’image ; une [notification de badge](https://msdn.microsoft.com/library/windows/apps/hh779719) spécifie la valeur numérique, et les propriétés de vignette contrôlent le nom d’affichage de la vignette, la couleur et plus encore.
+L’image suivante illustre la façon dont les différentes API et charges utiles sont associées à chacun des aspects du modèle de vignette Icônes. Une [notification par vignette](https://docs.microsoft.com/previous-versions/windows/apps/hh779724(v=win.10)) (qui contient les éléments &lt;binding&gt;) est utilisée pour spécifier le modèle Icônes et les ressources d’image ; une [notification de badge](https://docs.microsoft.com/previous-versions/windows/apps/hh779719(v=win.10)) spécifie la valeur numérique, et les propriétés de vignette contrôlent le nom d’affichage de la vignette, la couleur et plus encore.
 
 ![API et charges utiles associées au modèle de vignette Icônes](images/iconic-template-properties-info.png)
 

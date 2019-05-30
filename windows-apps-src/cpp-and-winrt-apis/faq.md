@@ -1,16 +1,16 @@
 ---
 description: Réponses aux questions que vous êtes susceptibles de vous poser sur la création et l’utilisation d’API Windows Runtime avec C++/WinRT.
 title: Forum aux questions sur C++/WinRT
-ms.date: 10/26/2018
+ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, questions, fréquentes, FAQ, forum aux questions
 ms.localizationpriority: medium
-ms.openlocfilehash: 70aedf4034ce433b0aa529375799cf45a18ca3e0
-ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.openlocfilehash: 7ac7f8e46974b7c12b42f6d6f94052e61902b240
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58291887"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360248"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>Forum aux questions sur C++/WinRT
 Des réponses aux questions que vous êtes susceptible d’avoir sur la création et utilisation de Windows Runtime APIs avec [C++ / c++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
@@ -21,8 +21,11 @@ Des réponses aux questions que vous êtes susceptible d’avoir sur la créatio
 ## <a name="how-do-i-retarget-my-cwinrt-project-to-a-later-version-of-the-windows-sdk"></a>Comment recibler C + c++ / projet WinRT vers une version ultérieure du SDK Windows ?
 Consultez [comment recibler votre C + c++ / projet WinRT vers une version ultérieure du SDK Windows](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk).
 
+## <a name="why-wont-my-new-project-compile-now-that-ive-moved-to-cwinrt-20"></a>Pourquoi n’est pas mon nouveau projet compilé, maintenant que j’ai déplacé vers C++WinRT 2.0 ?
+Pour l’ensemble de modifications (y compris les modifications avec rupture), consultez [actualités et les changements dans C++WinRT 2.0](news.md#news-and-changes-in-cwinrt-20). Par exemple, pour la prise en charge de la coroutine (y compris les programmes d’assistance coroutine **winrt::resume_background**, **winrt::resume_foreground**, et **winrt::resume_on_signal** ), vous devrez `#include <winrt/coroutine.h>`. Si vous utilisez basées sur une plage `for` sur une collection de Windows Runtime, puis vous maintenant devrez `#include <winrt/Windows.Foundation.Collections.h>`.
+
 ## <a name="why-wont-my-new-project-compile-im-using-visual-studio-2017-version-1580-or-higher-and-sdk-version-17134"></a>Pourquoi mon nouveau projet n’est pas compilé ? J’utilise Visual Studio 2017 (version 15.8.0 ou une version ultérieure) et le SDK version 17134
-Si vous utilisez Visual Studio 2017 (version 15.8.0 ou une version ultérieure) et ciblant le SDK Windows version 10.0.17134.0 (Windows 10, version 1803), puis nouvellement créés C++/WinRT projet risque de ne pas compiler avec l’erreur «*erreur C3861 : 'from_abi' : Identificateur introuvable*» et à d’autres erreurs provenant de *base.h*. La solution consiste à une cible une version ultérieure (conforme plus) version du Kit de développement logiciel Windows ou de la propriété de projet de jeu **C/C++** > **langage** > **mode de conformité : Ne** (en outre, si **/ permissive-** apparaît dans la propriété de projet **C/C++** > **ligne de commande** sous **des Options supplémentaires** , puis le supprimer).
+Si vous utilisez Visual Studio 2017 (version 15.8.0 ou une version ultérieure) et ciblant le SDK Windows version 10.0.17134.0 (Windows 10, version 1803), puis nouvellement créés C++/WinRT projet risque de ne pas compiler avec l’erreur «*erreur C3861 : 'from_abi' : Identificateur introuvable*» et à d’autres erreurs provenant de *base.h*. La solution consiste à une cible une version ultérieure (conforme plus) version du Kit de développement logiciel Windows ou de la propriété de projet de jeu **C/C++**  > **langage** > **mode de conformité : Ne** (en outre, si **/ permissive-** apparaît dans la propriété de projet **C/C++**  > **ligne de commande** sous **des Options supplémentaires** , puis le supprimer).
 
 ## <a name="how-do-i-resolve-the-build-error-the-cwinrt-vsix-no-longer-provides-project-build-support--please-add-a-project-reference-to-the-microsoftwindowscppwinrt-nuget-package"></a>Comment pour résoudre l’erreur de build « C + c++ / WinRT VSIX ne fournit plus de prise en charge de génération de projet.  Ajoutez une référence de projet au package Nuget de Microsoft.Windows.CppWinRT » ?
 Installer le **Microsoft.Windows.CppWinRT** package NuGet dans votre projet. Pour plus d’informations, consultez [les versions antérieures de l’extension VSIX](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension).
@@ -44,7 +47,7 @@ Uniquement si la classe runtime est conçue pour être utilisée depuis l’ext�
 ## <a name="why-is-the-linker-giving-me-a-lnk2019-unresolved-external-symbol-error"></a>Pourquoi l’éditeur de liens me donne une « erreur LNK2019 : Erreur de symbole externe non résolu » ?
 Si le symbole non résolu est une API des en-têtes d’espace de noms Windows pour la projection C++/WinRT (dans l'espace de noms **winrt**), l’API est déclarée en avance dans un en-tête que vous avez inclus, mais sa définition se trouve dans un en-tête que vous n’avez pas encore inclus. Incluez l’en-tête nommé pour l’espace de noms de l’API et régénérez. Pour plus d’informations, voir [en-têtes de projection C++/WinRT](consume-apis.md#cwinrt-projection-headers).
 
-Si le symbole non résolu est une fonction gratuite de Windows Runtime, tels que [RoInitialize](https://msdn.microsoft.com/library/br224650), vous devez lier explicitement le [WindowsApp.lib](/uwp/win32-and-com/win32-apis) bibliothèque PARAPLUIE dans votre projet. La projection C++/WinRT dépend de certains de ces points d’entrée et fonctions libres (non-membres). Si vous utilisez un des modèles de projet [extension Visual Studio (VSIX) C++/WinRT](https://aka.ms/cppwinrt/vsix) pour votre application, `WindowsApp.lib` est lié automatiquement pour vous. Dans le cas contraire, vous pouvez utiliser des paramètres de lien entre projets pour l'inclure, ou le faire dans le code source.
+Si le symbole non résolu est une fonction gratuite de Windows Runtime, tels que [RoInitialize](https://docs.microsoft.com/windows/desktop/api/roapi/nf-roapi-roinitialize), vous devez lier explicitement le [WindowsApp.lib](/uwp/win32-and-com/win32-apis) bibliothèque PARAPLUIE dans votre projet. La projection C++/WinRT dépend de certains de ces points d’entrée et fonctions libres (non-membres). Si vous utilisez un des modèles de projet [extension Visual Studio (VSIX) C++/WinRT](https://aka.ms/cppwinrt/vsix) pour votre application, `WindowsApp.lib` est lié automatiquement pour vous. Dans le cas contraire, vous pouvez utiliser des paramètres de lien entre projets pour l'inclure, ou le faire dans le code source.
 
 ```cppwinrt
 #pragma comment(lib, "windowsapp")
@@ -61,7 +64,7 @@ Si vous disposez d’une classe runtime qui libère les ressources dans son dest
 ## <a name="can-i-use-llvmclang-to-compile-with-cwinrt"></a>Puis-je utiliser LLVM/Clang pour compiler avec C++/WinRT ?
 Nous ne prenons pas en charge la chaîne d’outils LLVM et Clang pour C++/WinRT, mais nous l'utilisons en interne pour valider la conformité aux normes de C++/WinRT. Par exemple, si vous souhaitez émuler ce que nous faisons en interne, vous pouvez essayer une expérience telle que celle décrite ci-dessous.
 
-Accédez à la [LLVM Download Page](https://releases.llvm.org/download.html), recherchez **Download LLVM 6.0.0** > **Pre-Built Binaries**et téléchargez **Clang for Windows (64-bit)**. Pendant l’installation, choisissez d’ajouter LLVM à la variable système PATH afin de pouvoir l'appeler à partir d’une invite de commandes. Dans le cadre de cette expérience, vous pouvez ignorer les erreurs « Failed to find MSBuild toolsets directory » (Impossible de trouver le répertoire des jeux d’outils MSBuild) ou MSVC integration install failed (Échec d'installation de l’intégration MSVC), si vous les voyez. Il existe plusieurs façons d’appeler LLVM/Clang ; l’exemple ci-dessous illustre une seule méthode.
+Accédez à la [LLVM Download Page](https://releases.llvm.org/download.html), recherchez **Download LLVM 6.0.0** > **Pre-Built Binaries**et téléchargez **Clang for Windows (64-bit)** . Pendant l’installation, choisissez d’ajouter LLVM à la variable système PATH afin de pouvoir l'appeler à partir d’une invite de commandes. Dans le cadre de cette expérience, vous pouvez ignorer les erreurs « Failed to find MSBuild toolsets directory » (Impossible de trouver le répertoire des jeux d’outils MSBuild) ou MSVC integration install failed (Échec d'installation de l’intégration MSVC), si vous les voyez. Il existe plusieurs façons d’appeler LLVM/Clang ; l’exemple ci-dessous illustre une seule méthode.
 
 ```cmd
 C:\ExperimentWithLLVMClang>type main.cpp

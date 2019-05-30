@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 01af8254-b073-445e-af4c-e474528f8aa3
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d10dbf52f0ed01d46f9e5cba83cd14d48bfc88d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 9d4910a514c9fc1f16c29056319043393506a9e2
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57639174"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366916"
 ---
 # <a name="create-a-uwp-game-in-javascript"></a>Créer un jeu UWP en JavaScript
 
@@ -51,7 +51,7 @@ Pour démarrer, le plus simple est de visiter le site GitHub, de cliquer sur le 
 
 ![Clonage du référentiel](images/JS2D_2.png)
 
-Vous pouvez également télécharger le projet sous forme de fichier zip ou utiliser une autre méthode standard pour travailler avec des [projets GitHub](https://msdn.microsoft.com/en-us/windows/uwp/get-started/get-uwp-app-samples).
+Vous pouvez également télécharger le projet sous forme de fichier zip ou utiliser une autre méthode standard pour travailler avec des [projets GitHub](https://docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples).
 
 Une fois la solution chargée dans Visual Studio, vous y verrez plusieurs fichiers, notamment les suivants :
 
@@ -122,7 +122,7 @@ Nous faisons marcher le dinosaure, en définissant les différentes images, ains
 
 Maintenant, nous allons ajouter quelques petits nuages floconneux à la scène. Lors de l'exécution du jeu, ils vont dériver à travers l’écran. L’image du nuage est déjà présente dans la solution, dans le dossier *images*.
 
-Parcourez **main.js** pour rechercher la fonction **init()**. Elle est appelée lorsque le jeu démarre, et c'est par elle que nous commençons pour configurer tous nos objets graphiques.
+Parcourez **main.js** pour rechercher la fonction **init()** . Elle est appelée lorsque le jeu démarre, et c'est par elle que nous commençons pour configurer tous nos objets graphiques.
 
 Recherchez le code suivant et supprimez les commentaires (\\) à partir de la ligne qui fait référence à l’image de cloud.
 
@@ -177,7 +177,7 @@ Nous allons maintenant faire en sorte que les nuages se déplacent. Le secret po
 
 Ce code appelle une fonction appelée **gameLoop()** entre 30 et 60 images par seconde. La vitesse exacte dépend de la vitesse de votre ordinateur.
 
-Recherchez la fonction **gameLoop()** et vers la fin, vous trouverez une fonction appelée **animateClouds()**. Modifiez-la afin qu’elle ne soit pas commentée.
+Recherchez la fonction **gameLoop()** et vers la fin, vous trouverez une fonction appelée **animateClouds()** . Modifiez-la afin qu’elle ne soit pas commentée.
 
 ```
     // Move clouds
@@ -204,7 +204,7 @@ Si vous exécutez l’application maintenant, vous constaterez que les nuages on
 
 ### <a name="4-adding-keyboard-and-mouse-input"></a>4. Ajout d’entrée clavier et souris
 
-Un jeu avec lequel vous ne pouvez pas interagir n’est pas un jeu. Nous allons donc autoriser le joueur à utiliser le clavier ou la souris pour effectuer une action. Dans la fonction **loadingComplete()**, vous pouvez voir les éléments suivants. Supprimez les commentaires.
+Un jeu avec lequel vous ne pouvez pas interagir n’est pas un jeu. Nous allons donc autoriser le joueur à utiliser le clavier ou la souris pour effectuer une action. Dans la fonction **loadingComplete()** , vous pouvez voir les éléments suivants. Supprimez les commentaires.
 
 ```
     // This code will call the method 'keyboardPressed' is the user presses a key.
@@ -261,8 +261,8 @@ Maintenant vous avez une application UWP, il est possible de publier sur le Micr
 La procédure comprend quelques étapes.
 
 1. Vous devez être [enregistré](https://developer.microsoft.com/en-us/store/register) en tant que développeur Windows.
-2. Vous devez utiliser la [liste de vérification](https://msdn.microsoft.com/windows/uwp/publish/app-submissions) de soumission d’applications.
-3. L’application doit être soumise pour [certification](https://msdn.microsoft.com/windows/uwp/publish/the-app-certification-process).
+2. Vous devez utiliser la [liste de vérification](https://docs.microsoft.com/windows/uwp/publish/app-submissions) de soumission d’applications.
+3. L’application doit être soumise pour [certification](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process).
 
 Pour plus d’informations, consultez [publication de votre application UWP](https://developer.microsoft.com/en-us/store/publish-apps).
 

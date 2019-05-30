@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, jeux, opengl, direct3d, tampons, uniformes, attributs de sommets
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a1db1890e47257412a7e2ee8e08c40164d0d927
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 9d79a4573438aec49d4aa1b828c90e72c04150de
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57656244"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368155"
 ---
 # <a name="compare-opengl-es-20-buffers-uniforms-and-vertex-attributes-to-direct3d"></a>Comparer les tampons, les uniformes et les attributs de vertex OpenGL ES 2.0 à Direct3D
 
@@ -20,9 +20,9 @@ ms.locfileid: "57656244"
 
 **API importantes**
 
--   [**ID3D11Device1::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/hh404575)
--   [**ID3D11Device1::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512)
--   [**ID3D11DeviceContext1::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454)
+-   [**ID3D11Device1::CreateBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1)
+-   [**ID3D11Device1::CreateInputLayout**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createinputlayout)
+-   [**ID3D11DeviceContext1::IASetInputLayout**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetinputlayout)
 
 Au cours du processus de portage vers Direct3D 11 depuis OpenGL ES 2.0, vous devez modifier la syntaxe et le comportement de l’API pour passer des données entre l’application et les programmes de nuanceurs.
 
@@ -34,9 +34,9 @@ Voici les principales correspondances.
 |---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | uniforme                   | Champ de tampon constant (**cbuffer**).                                                                                                                                                |
 | attribut                 | Champ d’élément de tampon de vertex, désigné par un schéma d’entrée et marqué à l’aide d’une sémantique HLSL spécifique.                                                                                |
-| objet de tampon             | mémoire tampon ; Consultez [ **D3D11\_SUBRESOURCE\_données** ](https://msdn.microsoft.com/library/windows/desktop/ff476220) et [ **D3D11\_tampon\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476092)et pour les définitions de mémoire tampon usage général. |
-| objet de tampon de trame (FBO) | Cible(s) de rendu ; voir [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582) avec [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635).                                       |
-| mémoire tampon d’arrière-plan               | Chaîne de permutation avec surface de « mémoire tampon d’arrière-plan » ; voir [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631) avec [**IDXGISurface1**](https://msdn.microsoft.com/library/windows/desktop/ff471343) attaché.                       |
+| objet de tampon             | mémoire tampon ; Consultez [ **D3D11\_SUBRESOURCE\_données** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data) et [ **D3D11\_tampon\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_buffer_desc)et pour les définitions de mémoire tampon usage général. |
+| objet de tampon de trame (FBO) | Cible(s) de rendu ; voir [**ID3D11RenderTargetView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11rendertargetview) avec [**ID3D11Texture2D**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11texture2d).                                       |
+| mémoire tampon d’arrière-plan               | Chaîne de permutation avec surface de « mémoire tampon d’arrière-plan » ; voir [**IDXGISwapChain1**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nn-dxgi1_2-idxgiswapchain1) avec [**IDXGISurface1**](https://docs.microsoft.com/windows/desktop/api/dxgi/nn-dxgi-idxgisurface1) attaché.                       |
 
  
 
@@ -73,9 +73,9 @@ D’autres tampons incluent les tampons de pixels et les pixmaps, comme les text
 
 Dans Direct3D 11, les éléments de données des tampons sont considérés comme des « sous-ressources » et peuvent varier des éléments de données de vertex individuels aux textures de carte MIP.
 
--   Remplir un [ **D3D11\_SUBRESOURCE\_données** ](https://msdn.microsoft.com/library/windows/desktop/ff476220) structure avec la configuration d’un élément de données de mémoire tampon.
--   Remplir un [ **D3D11\_tampon\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476092) structure avec la taille des éléments individuels dans la mémoire tampon, ainsi que le type de tampon.
--   Appelez [**ID3D11Device1::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/hh404575) avec ces deux structures.
+-   Remplir un [ **D3D11\_SUBRESOURCE\_données** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data) structure avec la configuration d’un élément de données de mémoire tampon.
+-   Remplir un [ **D3D11\_tampon\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_buffer_desc) structure avec la taille des éléments individuels dans la mémoire tampon, ainsi que le type de tampon.
+-   Appelez [**ID3D11Device1::CreateBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1) avec ces deux structures.
 
 Direct3D 11 : Création et remplissage d’une mémoire tampon vertex et un mémoire tampon d’index.
 
@@ -106,7 +106,7 @@ m_d3dDevice->CreateBuffer(
     
 ```
 
-Il est possible de créer des tampons de pixels ou pixmaps, tels qu’un tampon de trame, sous forme d’objets [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635). Ceux-ci peuvent être liés en tant que ressources à un [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582) ou [**ID3D11ShaderResourceView**](https://msdn.microsoft.com/library/windows/desktop/ff476628), lequel, une fois dessiné, peut s’afficher avec la chaîne de permutation associée ou être passé à un nuanceur, respectivement.
+Il est possible de créer des tampons de pixels ou pixmaps, tels qu’un tampon de trame, sous forme d’objets [**ID3D11Texture2D**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11texture2d). Ceux-ci peuvent être liés en tant que ressources à un [**ID3D11RenderTargetView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11rendertargetview) ou [**ID3D11ShaderResourceView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11shaderresourceview), lequel, une fois dessiné, peut s’afficher avec la chaîne de permutation associée ou être passé à un nuanceur, respectivement.
 
 Direct3D 11 : Création d’un objet de mémoire tampon de trame.
 
@@ -147,7 +147,7 @@ Open GL ES 2.0 : Déclaration uniforme GLSL
 uniform mat4 u_mvpMatrix;
 ```
 
-Direct3D désigne les données uniformes comme étant des « tampons constants », lesquels, à l’instar des uniformes, contiennent les données constantes fournies aux nuanceurs individuels. Comme avec les tampons uniformes, il est important de compresser les données de tampons constants dans la mémoire de la même manière que celle avec laquelle le nuanceur s’attend à les interpréter. À l’aide des types de DirectXMath (tel que [ **XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608)) au lieu de types de plateformes (telles que **float\***  ou **float\[4\]** ) garantit l’alignement de l’élément de données.
+Direct3D désigne les données uniformes comme étant des « tampons constants », lesquels, à l’instar des uniformes, contiennent les données constantes fournies aux nuanceurs individuels. Comme avec les tampons uniformes, il est important de compresser les données de tampons constants dans la mémoire de la même manière que celle avec laquelle le nuanceur s’attend à les interpréter. À l’aide des types de DirectXMath (tel que [ **XMFLOAT4**](https://docs.microsoft.com/windows/desktop/api/directxmath/ns-directxmath-xmfloat4)) au lieu de types de plateformes (telles que **float\***  ou **float\[4\]** ) garantit l’alignement de l’élément de données.
 
 Les tampons constants doivent avoir un registre de GPU associé utilisé pour référencer ces données sur le GPU. Les données sont compressées dans l’emplacement du registre comme indiqué par la disposition du tampon.
 
@@ -224,7 +224,7 @@ attribute vec4 a_position;
 attribute vec4 a_color;                     
 ```
 
-D’une certaine manière, le même processus est valable pour Direct3D. Au lieu des attributs, les données de vertex sont fournies dans des tampons d’entrée, qui incluent des mémoires tampons de vertex et les tampons d’index correspondants. Toutefois, étant donné que Direct3D ne possède pas la déclaration des « attributs », vous devez spécifier un schéma d’entrée qui déclare le composant individuel des éléments de données dans la mémoire tampon de vertex et la sémantique HLSL qui indiquent où et comment ces composants doivent être interprétés par le nuanceur de vertex. La sémantique HLSL exige que vous définissiez l’usage de chaque composant avec une chaîne spécifique qui informe le moteur de nuanceur de son objectif. Par exemple, les données de position de vertex sont marquées comme POSITION, les données normales sont marquées comme NORMAL et les données de couleurs de vertex sont marquées comme COLOR. (Autres étapes du nuanceur nécessitent également la sémantique spécifique, et cette sémantique avoir des interprétations différentes en fonction de l’étape du nuanceur.) Pour plus d’informations sur la sémantique du langage HLSL, consultez [Port votre pipeline de nuanceur](change-your-shader-loading-code.md) et [HLSL sémantique](https://msdn.microsoft.com/library/windows/desktop/bb205574).
+D’une certaine manière, le même processus est valable pour Direct3D. Au lieu des attributs, les données de vertex sont fournies dans des tampons d’entrée, qui incluent des mémoires tampons de vertex et les tampons d’index correspondants. Toutefois, étant donné que Direct3D ne possède pas la déclaration des « attributs », vous devez spécifier un schéma d’entrée qui déclare le composant individuel des éléments de données dans la mémoire tampon de vertex et la sémantique HLSL qui indiquent où et comment ces composants doivent être interprétés par le nuanceur de vertex. La sémantique HLSL exige que vous définissiez l’usage de chaque composant avec une chaîne spécifique qui informe le moteur de nuanceur de son objectif. Par exemple, les données de position de vertex sont marquées comme POSITION, les données normales sont marquées comme NORMAL et les données de couleurs de vertex sont marquées comme COLOR. (Autres étapes du nuanceur nécessitent également la sémantique spécifique, et cette sémantique avoir des interprétations différentes en fonction de l’étape du nuanceur.) Pour plus d’informations sur la sémantique du langage HLSL, consultez [Port votre pipeline de nuanceur](change-your-shader-loading-code.md) et [HLSL sémantique](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dcl-usage---ps).
 
 Collectivement, le processus de définition de la mémoire tampon de vertex et du tampon d’index et de définition du schéma d’entrée est appelé stade « d’assembly d’entrée » (stade IA) du pipeline graphique Direct3D.
 
@@ -255,7 +255,7 @@ Un schéma d’entrée est déclaré et associé avec un nuanceur de vertex en d
 -   Une coordonnée de position de vertex, représentée dans la mémoire principale sous forme de XMFLOAT3, un tableau aligné de 3 valeurs à virgule flottante 32 bits pour les coordonnées (x, y, z).
 -   Une valeur de couleur de vertex, représentée sous forme de XMFLOAT4, un tableau aligné de 4 valeurs à virgule flottante 32 bits pour la couleur (RVBA).
 
-Vous attribuez une sémantique pour chacun, ainsi qu’un type de format. Vous passez ensuite la description à la méthode [**ID3D11Device1::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512). Le schéma d’entrée est utilisé quand nous appelons la méthode [**ID3D11DeviceContext1::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454) quand vous configurez l’assembly d’entrée pendant notre méthode de rendu.
+Vous attribuez une sémantique pour chacun, ainsi qu’un type de format. Vous passez ensuite la description à la méthode [**ID3D11Device1::CreateInputLayout**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createinputlayout). Le schéma d’entrée est utilisé quand nous appelons la méthode [**ID3D11DeviceContext1::IASetInputLayout**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetinputlayout) quand vous configurez l’assembly d’entrée pendant notre méthode de rendu.
 
 Direct3D 11 : Décrivant une disposition d’entrée avec une sémantique spécifique
 

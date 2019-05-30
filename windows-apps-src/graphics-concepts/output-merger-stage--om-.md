@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 63a77048bed3ad27f2040a672d93380d0250f9aa
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 177d5a8fed47396fa694bd8fb88baea8d8b7bbb3
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57641094"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66371184"
 ---
 # <a name="output-merger-om-stage"></a>Étape Output Merger (OM)
 
@@ -37,7 +37,7 @@ La fusion combine une ou plusieurs valeurs de pixels pour créer une couleur de 
 
 ![Diagramme illustrant le fonctionnement de la fusion des données](images/d3d10-blend-state.png)
 
-De façon conceptuelle, vous pouvez imaginer que ce processus est mené deux fois à l’étape de fusion de sortie : une première fois pour fusionner les données RVB et une seconde fois pour fusionner les données alpha. Pour découvrir comment créer et définir un état de fusion à l’aide de l’API, voir [la configuration de la fonctionnalité de fusion](https://msdn.microsoft.com/library/windows/desktop/bb205072).
+De façon conceptuelle, vous pouvez imaginer que ce processus est mené deux fois à l’étape de fusion de sortie : une première fois pour fusionner les données RVB et une seconde fois pour fusionner les données alpha. Pour découvrir comment créer et définir un état de fusion à l’aide de l’API, voir [la configuration de la fonctionnalité de fusion](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-blend-state).
 
 La fusion à fonction fixe peut être activée individuellement pour chaque cible de rendu. Toutefois, il n’y a qu’un seul ensemble de contrôles de fusion. Toutes les cibles RenderTargets pour lesquelles la fusion est activée sont donc fusionnées de la même manière. Les valeurs de fusion (BlendFactor compris) sont toujours limitées à l’intervalle du format de la cible de rendu avant la fusion. Cette limitation est effectuée par cible de rendu en fonction de leur type. Seuls les formats float16, float11 et float10 ne sont pas limités, afin que les opérations de fusion puissent être réalisées avec une précision ou un intervalle au moins égal au format de sortie. Il s’agit de la seule exception. Les valeurs NaN et zéro signé sont propagées dans tous les cas (y compris les intensités de fusion de 0.0).
 

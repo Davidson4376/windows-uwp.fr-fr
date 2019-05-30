@@ -6,12 +6,12 @@ ms.date: 03/24/2017
 ms.topic: article
 keywords: Windows 10, uwp, le portail de l’appareil
 ms.localizationpriority: medium
-ms.openlocfilehash: d9e11445d77434320c8842608bf8183a078c0660
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: debc4572a26db9e849dd31f17b114f15aa9ef055
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57644464"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362492"
 ---
 # <a name="write-a-custom-plugin-for-device-portal"></a>Écrire un plug-in personnalisé pour le Portail d’appareil
 
@@ -75,7 +75,7 @@ Cette approche requiert deux nouvelles fonctionnalités, que vous devrez égalem
 ```
 
 > [!NOTE]
-> La fonctionnalité « devicePortalProvider » est restreinte (« rescap »), ce qui signifie que vous devez obtenir une approbation préalable auprès du Windows Store avant de pouvoir publier votre application sur ce dernier. Toutefois, ceci ne vous empêche pas de tester votre application localement par le biais d’un chargement indépendant. Pour plus d’informations sur les fonctionnalités restreintes, consultez l’article [Déclarations des fonctionnalités d’application](https://msdn.microsoft.com/en-us/windows/uwp/packaging/app-capability-declarations#special-and-restricted-capabilities).
+> La fonctionnalité « devicePortalProvider » est restreinte (« rescap »), ce qui signifie que vous devez obtenir une approbation préalable auprès du Windows Store avant de pouvoir publier votre application sur ce dernier. Toutefois, ceci ne vous empêche pas de tester votre application localement par le biais d’un chargement indépendant. Pour plus d’informations sur les fonctionnalités restreintes, consultez l’article [Déclarations des fonctionnalités d’application](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations).
 
 ## <a name="set-up-your-background-task-and-winrt-component"></a>Configurer votre tâche en arrière-plan et le composant WinRT
 Pour la configuration de la connexion Device Portal, votre application doit raccorder une connexion de service d’application à partir du service Device Portal à l’instance Device Portal en cours d’exécution au sein de votre application. Pour effectuer cette opération, ajoutez un nouveau composant WinRT à votre application avec une classe qui implémente [**IBackgroundTask**](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.background.ibackgroundtask).

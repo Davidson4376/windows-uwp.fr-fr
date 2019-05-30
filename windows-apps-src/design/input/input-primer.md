@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bae6e5b21369c30c8ed067fe7283c0a116d220b8
-ms.sourcegitcommit: 7676d4b4c323e665302c2dfca3c763751a47afa3
+ms.openlocfilehash: 55879c33e30564f4639b8880c3a12f4b4181245e
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58343288"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66365918"
 ---
 # <a name="interaction-primer"></a>Notions fondamentales sur les interactions
 
@@ -135,7 +135,7 @@ La dictée est généralement utilisée lorsqu’une application n’a pas besoi
 
 ### <a name="more-info"></a>Informations supplémentaires
 
-[Recommandations en matière de conception de fonctions vocales](https://msdn.microsoft.com/library/windows/apps/dn596121)
+[Recommandations en matière de conception de fonctions vocales](https://docs.microsoft.com/windows/uwp/input-and-devices/speech-interactions)
  
 
 ## <a name="pen"></a>Stylet
@@ -168,7 +168,7 @@ Il est recommandé de fournir des commandes d’interface utilisateur spécifiqu
 
 ### <a name="more-info"></a>Informations supplémentaires
 
-[Recommandations en matière de conception pour le stylet](https://msdn.microsoft.com/library/windows/apps/dn456352)
+[Recommandations en matière de conception pour le stylet](https://docs.microsoft.com/windows/uwp/input-and-devices/pen-and-stylus-interactions)
  
 
 ## <a name="touch"></a>Touch
@@ -203,7 +203,7 @@ En règle générale, une interface tactile répond aux critères suivants :
 
 ### <a name="more-info"></a>Informations supplémentaires
 
-[Recommandations en matière de conception pour l’interface tactile](https://msdn.microsoft.com/library/windows/apps/hh465370)
+[Recommandations en matière de conception pour l’interface tactile](https://docs.microsoft.com/windows/uwp/input-and-devices/guidelines-for-user-interaction)
  
 
 ## <a name="touchpad"></a>Pavé tactile
@@ -227,7 +227,7 @@ Il est recommandé de fournir des commandes d’interface utilisateur spécifiqu
 
 ### <a name="more-info"></a>Informations supplémentaires
 
-[Instructions de conception du pavé tactile](https://msdn.microsoft.com/library/windows/apps/dn456353)
+[Instructions de conception du pavé tactile](https://docs.microsoft.com/windows/uwp/input-and-devices/touch-interactions)
  
 
 ## <a name="keyboard"></a>Clavier
@@ -267,7 +267,7 @@ En règle générale, un clavier répond aux critères suivants :
 
 ### <a name="more-info"></a>Informations supplémentaires
 
-[Instructions de conception de clavier](https://msdn.microsoft.com/library/windows/apps/hh972345)
+[Instructions de conception de clavier](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)
  
 
 ## <a name="mouse"></a>Souris
@@ -294,7 +294,7 @@ Il est recommandé de fournir des commandes d’interface utilisateur spécifiqu
 
 ### <a name="more-info"></a>Informations supplémentaires
 
-[Instructions de conception de la souris](https://msdn.microsoft.com/library/windows/apps/dn456351)
+[Instructions de conception de la souris](https://docs.microsoft.com/windows/uwp/input-and-devices/mouse-interactions)
  
 
 ## <a name="gesture"></a>Mouvement

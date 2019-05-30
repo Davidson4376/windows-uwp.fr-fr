@@ -12,12 +12,12 @@ dev-contact: llongley
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: cb87bea001492e39a0f60b96f884db70b5bd28ad
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d5774b5301f7e8ce0616df72cfbf4fc81d0d0cf7
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592524"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363250"
 ---
 # <a name="command-bar-flyout"></a>Menu volant de barre de commandes
 
@@ -28,7 +28,7 @@ Le menu volant barre de commande vous permet de fournir aux utilisateurs un acc�
 > CommandBarFlyout nécessite Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) ou version ultérieure, ou le [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
 
 > - **API de plateforme**: [Classe de CommandBarFlyout](/uwp/api/windows.ui.xaml.controls.commandbarflyout), [TextCommandBarFlyout classe](/uwp/api/windows.ui.xaml.controls.textcommandbarflyout), [AppBarButton classe](/uwp/api/windows.ui.xaml.controls.appbarbutton), [AppBarToggleButton classe](/uwp/api/windows.ui.xaml.controls.appbartogglebutton), [ Classe de AppBarSeparator](/uwp/api/windows.ui.xaml.controls.appbarseparator)
->- **API de bibliothèque de l’interface utilisateur de Windows**: [Classe de CommandBarFlyout](/uwp/api/microsoft.ui.xaml.controls.commandbarflyout), [TextCommandBarFlyout classe](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout)
+>- **API de bibliothèque de l’interface utilisateur de Windows**: [CommandBarFlyout class](/uwp/api/microsoft.ui.xaml.controls.commandbarflyout), [TextCommandBarFlyout class](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout)
 
 Comme [CommandBar](app-bars.md), CommandBarFlyout a **PrimaryCommands** et **SecondaryCommands** propriétés que vous pouvez utiliser pour ajouter des commandes. Vous pouvez placer des commandes dans la collection, ou les deux. Quand et comment les commandes principales et secondaires sont affichés varient selon le mode d’affichage.
 
@@ -153,7 +153,7 @@ Vous pouvez également ajouter des commandes à la **SecondaryCommands** collect
 
 ### <a name="app-bar-buttons"></a>Boutons de la barre de l’application
 
-Vous pouvez remplir le PrimaryCommands et SecondaryCommands directement avec [AppBarButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.aspx), [AppBarToggleButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbartogglebutton.aspx), et [AppBarSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarseparator.aspx) contrôles.
+Vous pouvez remplir le PrimaryCommands et SecondaryCommands directement avec [AppBarButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarButton), [AppBarToggleButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarToggleButton), et [AppBarSeparator](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarSeparator) contrôles.
 
 Les contrôles des boutons de la barre de l’application sont caractérisés par une icône et une étiquette avec un libellé. Ces contrôles sont optimisés pour une utilisation dans une barre de commandes, et leur apparence change selon que le contrôle est affiché dans la barre de commandes ou dans le menu de dépassement de capacité.
 
@@ -384,7 +384,7 @@ Le [TextCommandBarFlyout](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyo
 
 Ce tableau montre les commandes qui sont incluses dans un TextCommandBarFlyout, et quand ils sont affichés.
 
-| Commande | Indiqué... |
+| Command | Indiqué... |
 | ------- | -------- |
 | Gras | Lorsque le contrôle de texte n’est pas en lecture seule (RichEditBox uniquement). |
 | Italic | Lorsque le contrôle de texte n’est pas en lecture seule (RichEditBox uniquement). |
@@ -411,4 +411,4 @@ TextCommandBarFlyout ne peuvent pas être personnalisé et est géré automatiqu
 ## <a name="related-articles"></a>Articles connexes
 
 - [Principes fondamentaux de conception de commande pour les applications UWP](../basics/commanding-basics.md)
-- [Classe de CommandBar](https://msdn.microsoft.com/library/windows/apps/dn279427)
+- [Classe de CommandBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar)

@@ -7,12 +7,12 @@ ms.date: 03/18/2019
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ece6c5eea6cc05a966a7eae4cd16958dddee4d4
-ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
+ms.openlocfilehash: 996bbaf4dd05ce5b24e536459c6d7d009a53fa19
+ms.sourcegitcommit: f167775291cbc566b72b0859ae6b426d848c5c89
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66215047"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266405"
 ---
 # <a name="choose-your-app-platform"></a>Choisir votre plateforme d’application
 
@@ -29,7 +29,10 @@ Toutes ces plateformes d’application vous permettent de créer des application
 
 * **API Win32**. L’API Win32 (également appelé l’API Windows) est une plateforme d’origine natif C /C++ les applications Windows qui nécessitent un accès direct au matériel et de Windows. Il fournit une expérience de développement de premier ordre sans en fonction d’un environnement d’exécution managé comme .NET et WinRT. Cela rend l’API Win32 de la plate-forme de choix pour les applications nécessitant le plus haut niveau de performances et l’accès direct au matériel système.
 
-Cet article décrit ces plateformes plus en détail et vous permet de déterminer le mieux adapté pour votre application.
+Cet article décrit ces plateformes plus en détail et vous permet de déterminer le mieux adapté pour votre application. 
+
+> [!NOTE]
+> Quelle que soit la plateforme sur laquelle application que vous choisissez, vous pouvez utiliser les nombreuses fonctionnalités de la plateforme Windows universelle (UWP) pour offrir une expérience moderne dans votre application sur Windows 10. Par exemple, même si votre application de bureau est générée à l’aide de WPF, Windows Forms ou l’API Win32, vous pouvez utiliser toujours son apparues avec UWP, comme le déploiement de package MSIX et les contrôles UWP XAML de nombreuses fonctionnalités. Pour plus d’informations, consultez [moderniser vos applications de bureau](modernize/index.md).
 
 ## <a name="uwp"></a>UWP
 

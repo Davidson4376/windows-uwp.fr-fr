@@ -5,12 +5,12 @@ ms.date: 10/25/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 291c2a922e2b2df7111da8bfc6aefb57b87e84bb
-ms.sourcegitcommit: 4bad5f9427e7db27b57bedc6d7df19077c62e8c3
+ms.openlocfilehash: d4150e7296badd3d31a9aacc7becd3d849f6affd
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65535188"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360422"
 ---
 # <a name="my-people-notifications"></a>Notifications de mes contacts
 
@@ -126,7 +126,7 @@ Lorsque vous démarrez la notification, celle-ci doit ressembler à ceci :
 ![Notification par Spritesheet](images/pizza-notification-small.gif)
 
 ## <a name="starting-the-notification"></a>Démarrage de la notification
-Pour démarrer une notification de mes contacts, nous devons convertir le modèle de notification toast en un objet [XmlDocument](https://msdn.microsoft.com/en-us/library/windows/apps/windows.data.xml.dom.xmldocument.aspx). Lorsque vous avez défini la notification toast dans un fichier XML (ici nommé « content.xml »), vous pouvez utiliser ce code pour le démarrer :
+Pour démarrer une notification de mes contacts, nous devons convertir le modèle de notification toast en un objet [XmlDocument](https://docs.microsoft.com/uwp/api/windows.data.xml.dom.xmldocument). Lorsque vous avez défini la notification toast dans un fichier XML (ici nommé « content.xml »), vous pouvez utiliser ce code pour le démarrer :
 
 ```CSharp
 string xmlText = File.ReadAllText("content.xml");

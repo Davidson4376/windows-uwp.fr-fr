@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, éducation
 ms.assetid: 2431f253-efe3-4895-b131-34653b61f13c
 ms.localizationpriority: medium
-ms.openlocfilehash: 7696cd785b4a8720f6eefb7bc897d13ffb0c7115
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 8c2333d960ba91b1d1c3d3030481108407909594
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582784"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359207"
 ---
 # <a name="develop-universal-windows-apps-for-education"></a>Développement d’applications Universal Windows pour l’éducation
 ![capture d’écran d’application Examen](images/take-a-test-screen-small.png)
@@ -38,7 +38,7 @@ La plateforme Windows Ink permet d’optimiser les applications éducatives en 
 
 
 ### <a name="microsoft-store"></a>Microsoft Store
-En règle générale, les applications éducatives sont distribuées à une organisation spécifique dans certaines circonstances. Pour plus d’informations, consultez la page [Distribuer des applications métier aux entreprises](https://msdn.microsoft.com/windows/uwp/publish/distribute-lob-apps-to-enterprises).
+En règle générale, les applications éducatives sont distribuées à une organisation spécifique dans certaines circonstances. Pour plus d’informations, consultez la page [Distribuer des applications métier aux entreprises](https://docs.microsoft.com/windows/uwp/publish/distribute-lob-apps-to-enterprises).
 
 ## <a name="related-topics"></a>Rubriques connexes
 - [Windows 10 pour l’éducation](https://technet.microsoft.com/edu/windows/index) sur le Centre informatique de Windows

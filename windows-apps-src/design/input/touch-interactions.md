@@ -8,12 +8,12 @@ keywords: entrées tactiles, pointeur, entrées, interactions avec l’utilisate
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b889fede67c7e32ff48c0e48a516f389afda820a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d5de2af483ca000909e60e94fc41d2a88a405219
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57649234"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66365181"
 ---
 # <a name="touch-interactions"></a>Interactions tactiles
 
@@ -22,7 +22,7 @@ Concevez votre application en partant du principe que l’entrée tactile sera l
 
 Sachez cependant qu’une interface utilisateur optimisée pour les entrées tactiles ne se révèle pas toujours supérieure à une interface utilisateur classique. Les deux présentent des avantages et des inconvénients qui sont propres à une technologie et une application. Lorsque l’on cible une interface utilisateur principalement tactile, il est important de connaître les différences fondamentales qui existent entre les différentes entrées : tactile (y compris le pavé tactile), stylet, souris et clavier.
 
-> **API importantes** : [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994), [ **Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383), [ **Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)
+> **API importantes** : [**Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input), [**Windows.UI.Core**](https://docs.microsoft.com/uwp/api/Windows.UI.Core), [**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input)
 
 
 De nombreux appareils sont équipés d’écrans à interaction tactile multipoint qui prennent en charge l’utilisation de plusieurs doigts (ou contacts tactiles) en tant qu’entrée. Les contacts tactiles et leurs déplacements, sont interprétés comme des mouvements et des manipulations tactiles pour prendre en charge diverses interactions utilisateur.
@@ -163,36 +163,36 @@ En outre, nous vous encourageons vivement à tenir compte des recommandations su
 
 Ajustez l’expérience d’interaction utilisateur par le biais des paramètres de panoramique/défilement et zoom de vos vues d’applications. La vue d’une application régit la manière dont un utilisateur accède à cette dernière et manipule votre application et son contenu. Les vues fournissent également des comportements tels que l’inertie, le rebond de limite de zone de contenu et les points d’ancrage.
 
-Les paramètres de panoramique et de défilement du contrôle [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527) déterminent la façon dont les utilisateurs naviguent au sein d’une vue unique quand le contenu de la vue est trop grand pour la fenêtre d’affichage. Une vue unique est par exemple la page d’un magazine ou d’un livre, la structure de dossiers d’un ordinateur, une bibliothèque de documents ou un album photo.
+Les paramètres de panoramique et de défilement du contrôle [**ScrollViewer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) déterminent la façon dont les utilisateurs naviguent au sein d’une vue unique quand le contenu de la vue est trop grand pour la fenêtre d’affichage. Une vue unique est par exemple la page d’un magazine ou d’un livre, la structure de dossiers d’un ordinateur, une bibliothèque de documents ou un album photo.
 
-Les paramètres de zoom s’appliquent à la fois au zoom optique (pris en charge par le contrôle [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527)) et au contrôle [**Semantic Zoom**](https://msdn.microsoft.com/library/windows/apps/hh702601). Le zoom sémantique est une technique optimisée pour l’interaction tactile applicable à la présentation et à la navigation de grands ensembles de contenus ou de données associés dans une même vue. Il fonctionne à l’aide de deux modes de classification (ou niveaux de zoom) distincts. Cette fonctionnalité est identique au mouvement panoramique et au défilement simple au sein d’une même vue. Ces types de défilements peuvent être utilisés en association avec le zoom sémantique.
+Les paramètres de zoom s’appliquent à la fois au zoom optique (pris en charge par le contrôle [**ScrollViewer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer)) et au contrôle [**Semantic Zoom**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom). Le zoom sémantique est une technique optimisée pour l’interaction tactile applicable à la présentation et à la navigation de grands ensembles de contenus ou de données associés dans une même vue. Il fonctionne à l’aide de deux modes de classification (ou niveaux de zoom) distincts. Cette fonctionnalité est identique au mouvement panoramique et au défilement simple au sein d’une même vue. Ces types de défilements peuvent être utilisés en association avec le zoom sémantique.
 
 Utilisez les événements et les vues de l’application pour modifier les comportements de panoramique/défilement et de zoom. Vous pouvez ainsi offrir une expérience d’interaction aussi fluide que possible via la gestion de pointeur et les événements de mouvement.
 
-Pour plus d’informations concernant les vues d’applications, voir [Contrôles, dispositions et texte](https://msdn.microsoft.com/library/windows/apps/mt228348).
+Pour plus d’informations concernant les vues d’applications, voir [Contrôles, dispositions et texte](https://docs.microsoft.com/windows/uwp/design/basics/).
 
 ## <a name="custom-touch-interactions"></a>Personnaliser des interactions tactiles
 
 
 Si vous implémentez votre propre prise en charge d’interaction, gardez à l’esprit que les utilisateurs s’attendent à disposer d’une expérience intuitive impliquant une interaction directe avec les éléments d’interface utilisateur de votre application. Nous vous recommandons de modeler vos interactions personnalisées sur les bibliothèques de contrôles de plateforme pour des raisons de cohérence et de simplicité de détection. Les contrôles de ces bibliothèques fournissent une expérience d’interaction utilisateur complète, notamment pour les interactions standard, les effets physiques animés, le retour visuel et l’accessibilité. Ne créez des interactions personnalisées que pour répondre à des exigences claires et bien définies, notamment en l’absence d’interactions de base prenant en charge votre scénario.
 
-Pour assurer une prise en charge personnalisée des entrées tactiles, vous pouvez gérer divers événements [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911). Ces événements sont regroupés en trois niveaux d’abstraction.
+Pour assurer une prise en charge personnalisée des entrées tactiles, vous pouvez gérer divers événements [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement). Ces événements sont regroupés en trois niveaux d’abstraction.
 
--   Les événements de mouvement statique sont déclenchés une fois que l’interaction se termine. Les événements de mouvement incluent [**Tapped**](https://msdn.microsoft.com/library/windows/apps/br208985), [**DoubleTapped**](https://msdn.microsoft.com/library/windows/apps/br208922), [**RightTapped**](https://msdn.microsoft.com/library/windows/apps/br208984) et [**Holding**](https://msdn.microsoft.com/library/windows/apps/br208928).
+-   Les événements de mouvement statique sont déclenchés une fois que l’interaction se termine. Les événements de mouvement incluent [**Tapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.tapped), [**DoubleTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.doubletapped), [**RightTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.righttapped) et [**Holding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.holding).
 
-    Vous pouvez désactiver les événements de mouvement sur des éléments spécifiques en définissant [**IsTapEnabled**](https://msdn.microsoft.com/library/windows/apps/br208939), [**IsDoubleTapEnabled**](https://msdn.microsoft.com/library/windows/apps/br208931), [**IsRightTapEnabled**](https://msdn.microsoft.com/library/windows/apps/br208937) et [**IsHoldingEnabled**](https://msdn.microsoft.com/library/windows/apps/br208935) sur **false**.
+    Vous pouvez désactiver les événements de mouvement sur des éléments spécifiques en définissant [**IsTapEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.istapenabled), [**IsDoubleTapEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.isdoubletapenabled), [**IsRightTapEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.isrighttapenabled) et [**IsHoldingEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.isholdingenabled) sur **false**.
 
--   Les événements de pointeur tels que [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) et [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208970) fournissent des détails de bas niveau pour chaque contact tactile, y compris le mouvement du pointeur et la capacité à distinguer les événements liés à l’appui ou au relâchement.
+-   Les événements de pointeur tels que [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed) et [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointermoved) fournissent des détails de bas niveau pour chaque contact tactile, y compris le mouvement du pointeur et la capacité à distinguer les événements liés à l’appui ou au relâchement.
 
     Un pointeur est un type d’entrée générique avec un mécanisme d’événements unifiés. Il expose les informations de base (telles que la position de l’écran) sur la source d’entrée active (entrée tactile, pavé tactile, souris ou stylet).
 
--   Les événements d’action de manipulation, tels que [**ManipulationStarted**](https://msdn.microsoft.com/library/windows/apps/br208950), indiquent une interaction en cours. L’utilisateur les déclenche en touchant un élément. Ils se poursuivent jusqu’à ce que l’utilisateur mette fin au contact ou que la manipulation soit annulée.
+-   Les événements d’action de manipulation, tels que [**ManipulationStarted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarted), indiquent une interaction en cours. L’utilisateur les déclenche en touchant un élément. Ils se poursuivent jusqu’à ce que l’utilisateur mette fin au contact ou que la manipulation soit annulée.
 
     Les événements de manipulation comprennent les interactions tactiles multipoint, telles que le zoom, le mouvement panoramique ou la rotation, et des interactions qui utilisent des données d’inertie et de vitesse, telles que le glissement. Les informations fournies par les événements de manipulation ne reflètent pas l’interaction qui s’est produite, mais comprennent des données, telles que la position, le delta de translation et la vitesse. Vous pouvez utiliser ces données tactiles pour déterminer le type d’interaction qui doit être produit.
 
 Voici l’ensemble de mouvements tactiles de base pris en charge par la plateforme UWP.
 
-| Nom           | Type                 | Description                                                                            |
+| Nom           | type                 | Description                                                                            |
 |----------------|----------------------|----------------------------------------------------------------------------------------|
 | Appuyer            | Action statique       | Brève pression de l’écran avec un doigt.                                            |
 | Appuyer de manière prolongée | Action statique       | Pression prolongée de l’écran avec un doigt.                                      |
@@ -211,7 +211,7 @@ For more info about gestures, manipulations, and interactions, see [Custom user 
 ## <a name="gesture-events"></a>Événements de mouvement
 
 
-Pour plus d’informations concernant les contrôles individuels, voir [Liste de contrôles](https://msdn.microsoft.com/library/windows/apps/mt185406).
+Pour plus d’informations concernant les contrôles individuels, voir [Liste de contrôles](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/).
 
 ## <a name="pointer-events"></a>Événements de pointeur
 
@@ -224,19 +224,19 @@ Voici une liste des événements de pointeur et leur argument d’événement as
 
 | Événement ou classe                                                       | Description                                                   |
 |----------------------------------------------------------------------|---------------------------------------------------------------|
-| [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971)             | Se produit lorsqu’un seul doigt touche l’écran.               |
-| [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972)           | Se produit quand ce même contact tactile est relâché.                |
-| [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208970)                 | Se produit lorsque l’on fait glisser le pointeur sur l’écran.         |
-| [**PointerEntered**](https://msdn.microsoft.com/library/windows/apps/br208968)             | Se produit lorsqu’un pointeur entre dans la zone de test de positionnement d’un élément. |
-| [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969)               | Se produit lorsqu’un pointeur quitte la zone de test de positionnement d’un élément.  |
-| [**PointerCanceled**](https://msdn.microsoft.com/library/windows/apps/br208964)           | Se produit lorsqu’un contact tactile est anormalement perdu.               |
-| [**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965)     | Se produit lorsqu’une capture du pointeur est effectuée par un autre élément.    |
-| [**PointerWheelChanged**](https://msdn.microsoft.com/library/windows/apps/br208973)   | Se produit lorsque la valeur delta d’une roulette de souris change.         |
-| [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076) | Fournit des données pour tous les événements de pointeur.                         |
+| [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed)             | Se produit lorsqu’un seul doigt touche l’écran.               |
+| [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased)           | Se produit quand ce même contact tactile est relâché.                |
+| [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointermoved)                 | Se produit lorsque l’on fait glisser le pointeur sur l’écran.         |
+| [**PointerEntered**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered)             | Se produit lorsqu’un pointeur entre dans la zone de test de positionnement d’un élément. |
+| [**PointerExited**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited)               | Se produit lorsqu’un pointeur quitte la zone de test de positionnement d’un élément.  |
+| [**PointerCanceled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercanceled)           | Se produit lorsqu’un contact tactile est anormalement perdu.               |
+| [**PointerCaptureLost**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost)     | Se produit lorsqu’une capture du pointeur est effectuée par un autre élément.    |
+| [**PointerWheelChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged)   | Se produit lorsque la valeur delta d’une roulette de souris change.         |
+| [**PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs) | Fournit des données pour tous les événements de pointeur.                         |
 
  
 
-L’exemple suivant indique comment utiliser les événements [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971), [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) et [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969) pour gérer une interaction d’appui sur un objet [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle).
+L’exemple suivant indique comment utiliser les événements [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed), [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased) et [**PointerExited**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited) pour gérer une interaction d’appui sur un objet [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle).
 
 Pour commencer, un élément [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) nommé `touchRectangle` est créé en XAML (Extensible Application Markup Language).
 
@@ -246,7 +246,7 @@ Pour commencer, un élément [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rec
            Height="100" Width="200" Fill="Blue" />
 </Grid>
 ```
-Ensuite, les détecteurs des événements [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971), [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) et [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969) sont spécifiés.
+Ensuite, les détecteurs des événements [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed), [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased) et [**PointerExited**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited) sont spécifiés.
 
 ```cpp
 MainPage::MainPage()
@@ -286,7 +286,7 @@ Public Sub New()
 End Sub
 ```
 
-Enfin, le gestionnaire d’événements [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) augmente les valeurs [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) et [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) de [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle), tandis que les gestionnaires d’événements [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) et [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969) redéfinissent **Height** et **Width** sur leurs valeurs de départ.
+Enfin, le gestionnaire d’événements [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed) augmente les valeurs [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) et [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) de [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle), tandis que les gestionnaires d’événements [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased) et [**PointerExited**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited) redéfinissent **Height** et **Width** sur leurs valeurs de départ.
 
 ```cpp
 // Handler for pointer exited event.
@@ -418,29 +418,29 @@ Voici une liste des événements de manipulation et de leur argument d’événe
 
 | Événement ou classe                                                                                               | Description                                                                                                                               |
 |--------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
-| [**Événement ManipulationStarting**](https://msdn.microsoft.com/library/windows/apps/br208951)                                   | Se produit lorsque le processeur de manipulation est créé.                                                                                  |
-| [**Événement de ManipulationStarted**](https://msdn.microsoft.com/library/windows/apps/br208950)                                     | Se produit lorsqu’un périphérique d’entrée entame une manipulation sur l’objet [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911).                                            |
-| [**Événement ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946)                                         | Se produit lorsque le périphérique d’entrée change de position au cours d’une manipulation.                                                                      |
-| [**Événement ManipulationInertiaStarting**](https://msdn.microsoft.com/library/windows/apps/hh702425)                | Se produit lorsque le périphérique d’entrée perd le contact avec l’objet [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) durant une manipulation et que cela entraîne un début d’inertie. |
-| [**Événement ManipulationCompleted**](https://msdn.microsoft.com/library/windows/apps/br208945)                                 | Se produit lorsque les opérations de manipulation et d’inertie sont terminées sur l’objet [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911).                                          |
-| [**ManipulationStartingRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh702132)               | Fournit des données pour l’événement [**ManipulationStarting**](https://msdn.microsoft.com/library/windows/apps/br208951).                                         |
-| [**ManipulationStartedRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh702101)                 | Fournit des données pour l’événement [**ManipulationStarted**](https://msdn.microsoft.com/library/windows/apps/br208950).                                           |
-| [**ManipulationDeltaRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh702051)                     | Fournit des données pour l’événement [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946).                                               |
-| [**ManipulationInertiaStartingRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh702074) | Fournit des données pour l’événement [**ManipulationInertiaStarting**](https://msdn.microsoft.com/library/windows/apps/br208947).                           |
-| [**ManipulationVelocities**](https://msdn.microsoft.com/library/windows/apps/br242032)                                              | Décrit la vitesse à laquelle les manipulations se produisent.                                                                                         |
-| [**ManipulationCompletedRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh702035)             | Fournit des données pour l’événement [**ManipulationCompleted**](https://msdn.microsoft.com/library/windows/apps/br208945).                                       |
+| [**Événement ManipulationStarting**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarting)                                   | Se produit lorsque le processeur de manipulation est créé.                                                                                  |
+| [**Événement de ManipulationStarted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarted)                                     | Se produit lorsqu’un périphérique d’entrée entame une manipulation sur l’objet [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement).                                            |
+| [**Événement ManipulationDelta**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationdelta)                                         | Se produit lorsque le périphérique d’entrée change de position au cours d’une manipulation.                                                                      |
+| [**Événement ManipulationInertiaStarting**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationinertiastartingevent)                | Se produit lorsque le périphérique d’entrée perd le contact avec l’objet [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) durant une manipulation et que cela entraîne un début d’inertie. |
+| [**Événement ManipulationCompleted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationcompleted)                                 | Se produit lorsque les opérations de manipulation et d’inertie sont terminées sur l’objet [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement).                                          |
+| [**ManipulationStartingRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ManipulationStartingRoutedEventArgs)               | Fournit des données pour l’événement [**ManipulationStarting**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarting).                                         |
+| [**ManipulationStartedRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ManipulationStartedRoutedEventArgs)                 | Fournit des données pour l’événement [**ManipulationStarted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarted).                                           |
+| [**ManipulationDeltaRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ManipulationDeltaRoutedEventArgs)                     | Fournit des données pour l’événement [**ManipulationDelta**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationdelta).                                               |
+| [**ManipulationInertiaStartingRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ManipulationInertiaStartingRoutedEventArgs) | Fournit des données pour l’événement [**ManipulationInertiaStarting**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationinertiastarting).                           |
+| [**ManipulationVelocities**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.ManipulationVelocities)                                              | Décrit la vitesse à laquelle les manipulations se produisent.                                                                                         |
+| [**ManipulationCompletedRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ManipulationCompletedRoutedEventArgs)             | Fournit des données pour l’événement [**ManipulationCompleted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationcompleted).                                       |
 
  
 
-Un mouvement se compose d’une série d’événements de manipulation. Chaque mouvement débute par un événement [**ManipulationStarted**](https://msdn.microsoft.com/library/windows/apps/br208950), par exemple lorsqu’un utilisateur appuie sur l’écran.
+Un mouvement se compose d’une série d’événements de manipulation. Chaque mouvement débute par un événement [**ManipulationStarted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarted), par exemple lorsqu’un utilisateur appuie sur l’écran.
 
-Puis, un ou plusieurs événements [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) sont déclenchés. Par exemple, si vous appuyez sur l’écran et faites glisser votre doigt sur celui-ci. Enfin, un événement [**ManipulationCompleted**](https://msdn.microsoft.com/library/windows/apps/br208945) est déclenché lorsque l’interaction prend fin.
+Puis, un ou plusieurs événements [**ManipulationDelta**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationdelta) sont déclenchés. Par exemple, si vous appuyez sur l’écran et faites glisser votre doigt sur celui-ci. Enfin, un événement [**ManipulationCompleted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationcompleted) est déclenché lorsque l’interaction prend fin.
 
 **Remarque**  si vous n’avez pas une analyse de l’écran tactile, vous pouvez tester votre code d’événement de manipulation dans le simulateur à l’aide d’une souris et l’interface de roulette de la souris.
 
  
 
-L’exemple suivant indique comment utiliser les événements [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) pour gérer une interaction de glissement sur l’élément [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) et de déplacement de ce dernier sur l’écran.
+L’exemple suivant indique comment utiliser les événements [**ManipulationDelta**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationdelta) pour gérer une interaction de glissement sur l’élément [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) et de déplacement de ce dernier sur l’écran.
 
 Pour commencer, un élément [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) nommé `touchRectangle` est créé en XAML avec une valeur [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) et une valeur [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) de 200.
 
@@ -452,7 +452,7 @@ Pour commencer, un élément [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rec
 </Grid>
 ```
 
-Ensuite, un élément [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/br243027) global nommé `dragTranslation` est créé pour la translation de l’élément [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle). Un détecteur d’événements [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) est spécifié sur l’élément **Rectangle**, et `dragTranslation` est ajouté à la propriété [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/br208980) de **Rectangle**.
+Ensuite, un élément [**TranslateTransform**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.TranslateTransform) global nommé `dragTranslation` est créé pour la translation de l’élément [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle). Un détecteur d’événements [**ManipulationDelta**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationdelta) est spécifié sur l’élément **Rectangle**, et `dragTranslation` est ajouté à la propriété [**RenderTransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform) de **Rectangle**.
 
 ```cpp
 // Global translation transform used for changing the position of 
@@ -523,7 +523,7 @@ Public Sub New()
 End Sub
 ```
 
-Enfin, dans le gestionnaire d’événements [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946), la position de [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) est mise à jour à l’aide de l’objet [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/br243027) sur la propriété [**Delta**](https://msdn.microsoft.com/library/windows/apps/hh702058).
+Enfin, dans le gestionnaire d’événements [**ManipulationDelta**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationdelta), la position de [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) est mise à jour à l’aide de l’objet [**TranslateTransform**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.TranslateTransform) sur la propriété [**Delta**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.manipulationdeltaroutedeventargs.delta).
 
 ```cpp
 // Handler for the ManipulationDelta event.
@@ -570,7 +570,7 @@ End Sub
 ## <a name="routed-events"></a>Événements routés
 
 
-Tous les événements de pointeur, événements de mouvement et événements de manipulation mentionnés ici sont implémentés en tant qu’*événements routés*. Cela signifie que l’événement peut éventuellement être géré par des objets autres que celui qui a initialement déclenché l’événement. Des parents successifs dans une arborescence d’objets, tels que les conteneurs parents d’un élément [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) ou l’élément [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) racine, peuvent choisir de gérer ces événements même si l’élément d’origine ne le fait pas. À l’inverse, tout objet qui gère l’événement peut marquer l’événement géré afin qu’il n’accède plus à aucun élément parent. Pour plus d’informations concernant le concept des événements routés et la façon dont il affecte votre manière d’écrire des gestionnaires pour les événements routés, voir [Vue d’ensemble des événements et des événements routés](https://msdn.microsoft.com/library/windows/apps/hh758286).
+Tous les événements de pointeur, événements de mouvement et événements de manipulation mentionnés ici sont implémentés en tant qu’*événements routés*. Cela signifie que l’événement peut éventuellement être géré par des objets autres que celui qui a initialement déclenché l’événement. Des parents successifs dans une arborescence d’objets, tels que les conteneurs parents d’un élément [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) ou l’élément [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page) racine, peuvent choisir de gérer ces événements même si l’élément d’origine ne le fait pas. À l’inverse, tout objet qui gère l’événement peut marquer l’événement géré afin qu’il n’accède plus à aucun élément parent. Pour plus d’informations concernant le concept des événements routés et la façon dont il affecte votre manière d’écrire des gestionnaires pour les événements routés, voir [Vue d’ensemble des événements et des événements routés](https://docs.microsoft.com/previous-versions/windows/apps/hh758286(v=win.10)).
 
 ## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
 

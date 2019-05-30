@@ -8,12 +8,12 @@ ms.date: 03/18/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c05b6686d31606a9510b1433339dc8829a52893
-ms.sourcegitcommit: 7a1d5198345d114c58287d8a047eadc4fe10f012
+ms.openlocfilehash: 34f8d15b971cc9ed286471010a21d1b44b84af13
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59247177"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363469"
 ---
 # <a name="guidelines-for-touch-targets"></a>Instructions pour les cibles de tactile
 
@@ -25,7 +25,7 @@ Tous les contrôles UWP ont été conçus avec des tailles de cible par défaut 
 
 Dans cette rubrique, nous décrivons ces comportements par défaut afin de vous pouvez concevoir votre application de facilité d’utilisation maximale à l’aide de contrôles de la plateforme et des contrôles personnalisés (doit votre application ont besoin).
 
-> **API importantes** : [**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383), [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084), [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
+> **API importantes** : [**Windows.UI.Core**](https://docs.microsoft.com/uwp/api/Windows.UI.Core), [**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input), [**Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input)
 
 ## <a name="fluent-standard-sizing"></a>Fluent dimensionnement Standard
 
@@ -86,15 +86,15 @@ Vous pouvez modifier ces recommandations en matière de tailles de cibles en fon
 - [Exemple d’entrée de base](https://go.microsoft.com/fwlink/p/?LinkID=620302)
 - [Exemple d’entrée à faible latence](https://go.microsoft.com/fwlink/p/?LinkID=620304)
 - [Exemple de mode d’interaction utilisateur](https://go.microsoft.com/fwlink/p/?LinkID=619894)
-- [Exemple de visuels de focus](https://go.microsoft.com/fwlink/p/?LinkID=619895)
+- [Exemple d’éléments visuels de focus](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 ### <a name="archive-samples"></a>Exemples d’archive
 
 - [Entrée : Exemple d’événements d’entrée utilisateur XAML](https://go.microsoft.com/fwlink/p/?linkid=226855)
 - [Entrée : Exemples de fonctionnalités d’appareil](https://go.microsoft.com/fwlink/p/?linkid=231530)
 - [Entrée : Exemple de test d’atteinte tactile](https://go.microsoft.com/fwlink/p/?linkid=231590)
-- [Exemple de zoom, de panoramique et de défilement XAML](https://go.microsoft.com/fwlink/p/?linkid=251717)
+- [XAML de défilement, panoramique et zoom d’exemple](https://go.microsoft.com/fwlink/p/?linkid=251717)
 - [Entrée : Exemple d’entrée manuscrite simplifiée](https://go.microsoft.com/fwlink/p/?linkid=246570)
 - [Entrée : Exemple de mouvements de Windows 8](https://go.microsoft.com/fwlink/p/?LinkId=264995)
 - [Entrée : Manipulations et exemple de mouvements (C++)](https://go.microsoft.com/fwlink/p/?linkid=231605)
-- [Exemple d’entrée tactile DirectX](https://go.microsoft.com/fwlink/p/?LinkID=231627)
+- [Exemple d’entrée tactile de DirectX](https://go.microsoft.com/fwlink/p/?LinkID=231627)

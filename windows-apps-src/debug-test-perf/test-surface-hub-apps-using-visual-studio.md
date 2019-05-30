@@ -6,12 +6,12 @@ ms.date: 10/26/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: db481fac1bdcb9e79762f52aee48574e987c4cbb
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 8a846aab77fad6f087057fe930d11ac781ed7171
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57601014"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362201"
 ---
 # <a name="test-surface-hub-apps-using-visual-studio"></a>Tester les applications de Surface Hub à l’aide de Visual Studio
 Le simulateur de Visual Studio fournit un environnement dans lequel vous pouvez concevoir, développer, déboguer et tester des applications de plateforme Windows universelle (UWP), y compris les applications que vous avez conçues pour Microsoft Surface Hub. Le simulateur n’utilise pas la même interface utilisateur en tant que Surface Hub, mais il est utile pour tester l’apparence et le comporte avec la taille de l’écran de l’appareil Surface Hub et la résolution de votre application.
@@ -90,7 +90,7 @@ Par défaut, Surface Hub installe uniquement les applications à partir du Micro
 3. Choisissez **Mode développeur** et acceptez le message d’avertissement.
 
 ### <a name="deploy-your-app-from-visual-studio"></a>Déployer votre application à partir de Visual Studio
-Pour plus d’informations sur le processus de déploiement en général, consultez [déploiement et débogage des applications UWP](https://msdn.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps).
+Pour plus d’informations sur le processus de déploiement en général, consultez [déploiement et débogage des applications UWP](https://docs.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps).
 
    > [!NOTE]
    > Cette fonctionnalité requiert Visual Studio 2015 Update 1 ou version ultérieure, mais nous vous recommandons d’utiliser la dernière version plus récente de Visual Studio. Une instance de Visual Studio à jour sera gibe vous tous les derniers développements et mises à jour de sécurité.

@@ -6,25 +6,25 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c00b406f77758266c68a16b078192517caaa14bf
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 92dca27a4cfb02f5d1bcb722683eca89ec16a6d6
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57608564"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362220"
 ---
 # <a name="optimize-your-xaml-layout"></a>Optimiser votre disposition XAML
 
 
 **API importantes**
 
--   [**Panneau de configuration**](https://msdn.microsoft.com/library/windows/apps/BR227511)
+-   [**Panel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Panel)
 
 La disposition est le processus de définition de la structure visuelle de l’interface utilisateur. Les panneaux sont le mécanisme principal utilisé pour décrire la disposition en XAML. Ce sont des objets conteneurs permettant de positionner et d’organiser les éléments d’interface qu’ils contiennent. La disposition peut s’avérer coûteuse pour une application XAML, tant au niveau de l’utilisation du processeur que de la surcharge de la mémoire. Voici quelques mesures simples que vous pouvez entreprendre pour améliorer les performances de la disposition de votre application XAML.
 
 ## <a name="reduce-layout-structure"></a>Réduire la structure de la disposition
 
-La meilleure solution pour améliorer les performances de la disposition consiste à simplifier la structure hiérarchique de l’arborescence des éléments d’interface utilisateur. Les panneaux existent dans l’arborescence visuelle, mais ce sont des éléments structurels, pas des *éléments produisant des pixels* comme une classe [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) ou [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle). Le fait de simplifier l’arborescence en réduisant le nombre d’éléments qui ne produisent pas de pixels permet généralement d’améliorer significativement les performances.
+La meilleure solution pour améliorer les performances de la disposition consiste à simplifier la structure hiérarchique de l’arborescence des éléments d’interface utilisateur. Les panneaux existent dans l’arborescence visuelle, mais ce sont des éléments structurels, pas des *éléments produisant des pixels* comme une classe [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) ou [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle). Le fait de simplifier l’arborescence en réduisant le nombre d’éléments qui ne produisent pas de pixels permet généralement d’améliorer significativement les performances.
 
 De nombreuses interfaces utilisateur sont implémentées en imbriquant des panneaux, ce qui crée des arborescences complexes et étendues de panneaux et d’éléments. L’imbrication de panneaux est pratique, mais le plus souvent il est possible d’obtenir la même interface utilisateur avec un seul panneau plus complexe. Les performances sont meilleures en utilisant un seul panneau.
 
@@ -32,7 +32,7 @@ De nombreuses interfaces utilisateur sont implémentées en imbriquant des panne
 
 Le fait de réduire la structure de la disposition de manière simple (par exemple, en réduisant un panneau imbriqué à partir de la page de niveau supérieur) n’a pas d’effet visible.
 
-Pour optimiser les performances, il faut réduire la structure de la disposition qui se répète dans l’interface utilisateur, comme dans une classe [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) ou [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705). Ces éléments [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/BR242803) utilisent une classe [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242348), qui définit une sous-arborescence d’éléments d’interface utilisateur qui est instanciée plusieurs fois. Lorsque la même sous-arborescence est dupliquée de nombreuses fois dans votre application, les améliorations des performances de cette sous-arborescence démultiplient les performances globales de votre application.
+Pour optimiser les performances, il faut réduire la structure de la disposition qui se répète dans l’interface utilisateur, comme dans une classe [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) ou [**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView). Ces éléments [**ItemsControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsControl) utilisent une classe [**DataTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate), qui définit une sous-arborescence d’éléments d’interface utilisateur qui est instanciée plusieurs fois. Lorsque la même sous-arborescence est dupliquée de nombreuses fois dans votre application, les améliorations des performances de cette sous-arborescence démultiplient les performances globales de votre application.
 
 ### <a name="examples"></a>Exemples
 
@@ -42,7 +42,7 @@ Examinez l’interface utilisateur suivante :
 
 Ces exemples montrent 3 méthodes d’implémentation de la même interface utilisateur. Chaque implémentation choisie produit un nombre quasiment identique de pixels à l’écran. Les différences se jouent dans les détails.
 
-Option 1 : Imbriqué [ **StackPanel** ](https://msdn.microsoft.com/library/windows/apps/BR209635) éléments
+Option 1 : Imbriqué [ **StackPanel** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) éléments
 
 Bien que ce modèle soit le plus simple, il utilise 5 éléments panneau et entraîne une surcharge importante.
 
@@ -70,9 +70,9 @@ Bien que ce modèle soit le plus simple, il utilise 5 éléments panneau et entr
 </StackPanel>
 ```
 
-Option 2 : Un seul [ **grille**](https://msdn.microsoft.com/library/windows/apps/BR242704)
+Option 2 : Un seul [ **grille**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid)
 
-L’élément [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) ajoute une certaine complexité, mais utilise un seul élément panneau.
+L’élément [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) ajoute une certaine complexité, mais utilise un seul élément panneau.
 
 ```xml
 <Grid>
@@ -103,9 +103,9 @@ L’élément [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR24270
 </Grid>
 ```
 
-Option 3 : Un seul [ **RelativePanel**](https://msdn.microsoft.com/library/windows/apps/Dn879546):
+Option 3 : Un seul [ **RelativePanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RelativePanel):
 
-Ce panneau unique est également un peu plus complexe que l’utilisation de panneaux imbriqués, mais peut être plus facile à comprendre et à gérer qu’un élément [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704).
+Ce panneau unique est également un peu plus complexe que l’utilisation de panneaux imbriqués, mais peut être plus facile à comprendre et à gérer qu’un élément [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid).
 
 ```xml
 <RelativePanel>
@@ -132,9 +132,9 @@ Comme ces exemples le montrent, il existe de nombreuses façons d’obtenir la m
 
 ## <a name="use-single-cell-grids-for-overlapping-ui"></a>Utiliser des grilles à cellule unique pour le chevauchement de l’interface utilisateur
 
-Il est courant qu’une interface utilisateur ait une disposition dans laquelle les éléments se chevauchent. Généralement, pour positionner les éléments de cette manière, on utilise le remplissage, les marges, les alignements et les transformations. Le contrôle [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) XAML est optimisé pour améliorer les performances de la disposition des éléments qui se chevauchent.
+Il est courant qu’une interface utilisateur ait une disposition dans laquelle les éléments se chevauchent. Généralement, pour positionner les éléments de cette manière, on utilise le remplissage, les marges, les alignements et les transformations. Le contrôle [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) XAML est optimisé pour améliorer les performances de la disposition des éléments qui se chevauchent.
 
-**Important**  pour afficher l’amélioration, utilisez une seule cellule [ **grille**](https://msdn.microsoft.com/library/windows/apps/BR242704). Ne définissez pas [**RowDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.rowdefinitions) ou [**ColumnDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.columndefinitions).
+**Important**  pour afficher l’amélioration, utilisez une seule cellule [ **grille**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid). Ne définissez pas [**RowDefinitions**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid.rowdefinitions) ou [**ColumnDefinitions**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid.columndefinitions).
 
 ### <a name="examples"></a>Exemples
 
@@ -160,9 +160,9 @@ Il est courant qu’une interface utilisateur ait une disposition dans laquelle 
 
 ## <a name="use-a-panels-built-in-border-properties"></a>Utiliser les propriétés intégrées de bordure du panneau
 
-[**Grille**](https://msdn.microsoft.com/library/windows/apps/BR242704), [ **StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635), [ **RelativePanel**](https://msdn.microsoft.com/library/windows/apps/Dn879546), et [  **ContentPresenter** ](https://msdn.microsoft.com/library/windows/apps/BR209378) contrôles ont des propriétés de bordure intégrés qui vous permettent de dessiner une bordure autour d’eux sans ajouter une autre [ **bordure** ](https://msdn.microsoft.com/library/windows/apps/BR209250) élément à votre XAML. Les nouvelles propriétés qui prennent en charge de la bordure intégrée sont : **BorderBrush**, **BorderThickness**, **CornerRadius**, et **remplissage**. Chacune d’elles est une [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/BR242362). Vous pouvez donc les utiliser avec les liaisons et les animations. Elles sont conçues pour remplacer intégralement un élément **Border** séparé.
+[**Grille**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid), [ **StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel), [ **RelativePanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RelativePanel), et [  **ContentPresenter** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentPresenter) contrôles ont des propriétés de bordure intégrés qui vous permettent de dessiner une bordure autour d’eux sans ajouter une autre [ **bordure** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Border) élément à votre XAML. Les nouvelles propriétés qui prennent en charge de la bordure intégrée sont : **BorderBrush**, **BorderThickness**, **CornerRadius**, et **remplissage**. Chacune d’elles est une [**DependencyProperty**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyProperty). Vous pouvez donc les utiliser avec les liaisons et les animations. Elles sont conçues pour remplacer intégralement un élément **Border** séparé.
 
-Si votre interface utilisateur comporte des éléments [**Border**](https://msdn.microsoft.com/library/windows/apps/BR209250) autour de ces panneaux, utilisez la bordure intégrée à la place, qui enregistre un élément supplémentaire dans la structure de la disposition de votre application. Comme mentionné précédemment, cela peut représenter une économie importante, notamment dans le cas d’une interface utilisateur répétée.
+Si votre interface utilisateur comporte des éléments [**Border**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Border) autour de ces panneaux, utilisez la bordure intégrée à la place, qui enregistre un élément supplémentaire dans la structure de la disposition de votre application. Comme mentionné précédemment, cela peut représenter une économie importante, notamment dans le cas d’une interface utilisateur répétée.
 
 ### <a name="examples"></a>Exemples
 
@@ -175,15 +175,15 @@ Si votre interface utilisateur comporte des éléments [**Border**](https://msdn
 
 ## <a name="use-sizechanged-events-to-respond-to-layout-changes"></a>Utilisez des événements **SizeChanged** pour réagir à des modifications de disposition.
 
-Le [ **FrameworkElement** ](https://msdn.microsoft.com/library/windows/apps/BR208706) classe expose deux événements similaires pour répondre aux changements de disposition : [**LayoutUpdated** ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.layoutupdated) et [ **SizeChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.sizechanged). Vous utilisez peut-être l’un de ces événements pour recevoir une notification lorsqu’un élément est redimensionné pendant la disposition. La sémantique des deux événements est différente, et le choix de l’un ou l’autre influe considérablement sur les performances.
+Le [ **FrameworkElement** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement) classe expose deux événements similaires pour répondre aux changements de disposition : [**LayoutUpdated** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.layoutupdated) et [ **SizeChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.sizechanged). Vous utilisez peut-être l’un de ces événements pour recevoir une notification lorsqu’un élément est redimensionné pendant la disposition. La sémantique des deux événements est différente, et le choix de l’un ou l’autre influe considérablement sur les performances.
 
-Pour des performances optimales, [**SizeChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.sizechanged) est presque toujours le bon choix. **SizeChanged** a une sémantique intuitive. Il est déclenché pendant la disposition lorsque la taille de [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) a été mise à jour.
+Pour des performances optimales, [**SizeChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.sizechanged) est presque toujours le bon choix. **SizeChanged** a une sémantique intuitive. Il est déclenché pendant la disposition lorsque la taille de [**FrameworkElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement) a été mise à jour.
 
-[**LayoutUpdated** ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.layoutupdated) est également déclenché pendant la disposition, mais il a une sémantique globale, il est déclenché sur chaque élément chaque fois que n’importe quel élément est mis à jour. Il est courant de faire uniquement un traitement local dans le gestionnaire d’événement, auquel cas le code est exécuté plus souvent que nécessaire. Utilisez **LayoutUpdated** seulement si vous avez besoin de savoir quand un élément est repositionné sans modification de taille (ce qui est rare).
+[**LayoutUpdated** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.layoutupdated) est également déclenché pendant la disposition, mais il a une sémantique globale, il est déclenché sur chaque élément chaque fois que n’importe quel élément est mis à jour. Il est courant de faire uniquement un traitement local dans le gestionnaire d’événement, auquel cas le code est exécuté plus souvent que nécessaire. Utilisez **LayoutUpdated** seulement si vous avez besoin de savoir quand un élément est repositionné sans modification de taille (ce qui est rare).
 
 ## <a name="choosing-between-panels"></a>Choix entre des panneaux
 
-Les performances ne sont généralement pas prises en compte lors du choix entre des panneaux individuels. Ce choix repose habituellement sur la prise en compte du panneau fournissant le comportement de disposition le plus proche de l’interface utilisateur que vous implémentez. Par exemple, si vous choisissez entre [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704), [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635)et [**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/Dn879546), vous devez choisir le panneau de configuration qui fournit le mappage le plus proche de votre modèle mental de l’implémentation.
+Les performances ne sont généralement pas prises en compte lors du choix entre des panneaux individuels. Ce choix repose habituellement sur la prise en compte du panneau fournissant le comportement de disposition le plus proche de l’interface utilisateur que vous implémentez. Par exemple, si vous choisissez entre [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid), [**StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel)et [**RelativePanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RelativePanel), vous devez choisir le panneau de configuration qui fournit le mappage le plus proche de votre modèle mental de l’implémentation.
 
 Chaque panneau XAML est optimisé pour des performances optimales, et tous les panneaux fournissent des performances similaires pour une interface utilisateur similaire.
 

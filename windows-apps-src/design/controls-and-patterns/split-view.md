@@ -12,18 +12,18 @@ design-contact: kimsea
 dev-contact: tpaine
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e0c709261b08231fa82af615d5398fd66648d4e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 7381d8d99f47a69ba7398366762a7dbb4088e04a
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57646464"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364175"
 ---
 # <a name="split-view-control"></a>Contrôle de mode fractionné
 
 Un contrôle de mode Fractionné inclut un volet pouvant être développé/réduit ainsi qu’une zone de contenu.
 
-> **API importantes** : [Classe de fractionnementaffichage des](https://msdn.microsoft.com/library/windows/apps/dn864360)
+> **API importantes** : [Classe de fractionnementaffichage des](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SplitView)
 
 Voici un exemple de l’application Microsoft Edge utilisant SplitView pour afficher son Hub.
 

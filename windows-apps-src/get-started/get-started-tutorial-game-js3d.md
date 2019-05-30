@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: fb4249b2-f93c-4993-9e4d-57a62c04be66
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c7d40765e0d12e3543f198aebd5acd15ed3aff3
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 2e1eba68d1046892a67d779d353fd9b2e6bf224e
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57595494"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366942"
 ---
 # <a name="creating-a-3d-javascript-game-using-threejs"></a>Création d’un jeu JavaScript 3D à l’aide de three.js
 
@@ -1075,7 +1075,7 @@ function lockChange() {
 
 ---
 
-C’est tout ! Que de chemin parcouru, mais nous disposons désormais d'un jeu réalisé avec **three.js**.
+C’est tout ! Que de chemin parcouru, mais nous disposons désormais d'un jeu réalisé avec **three.js**.
 
 Revenez en haut de la page pour voir le [CodePen final](#introduction) !
 
@@ -1084,7 +1084,7 @@ Revenez en haut de la page pour voir le [CodePen final](#introduction) !
 Maintenant vous avez une application UWP, il est possible de publier sur le Microsoft Store (en supposant que vous avez tout d’abord l’amélioré !) La procédure comprend quelques étapes.
 
 1.  Vous devez être [enregistré](https://developer.microsoft.com/store/register) en tant que développeur Windows.
-2.  Vous devez utiliser la [liste de vérification](https://msdn.microsoft.com/windows/uwp/publish/app-submissions) de soumission d’applications.
-3.  L’application doit être soumise pour [certification](https://msdn.microsoft.com/windows/uwp/publish/the-app-certification-process).
+2.  Vous devez utiliser la [liste de vérification](https://docs.microsoft.com/windows/uwp/publish/app-submissions) de soumission d’applications.
+3.  L’application doit être soumise pour [certification](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process).
 Pour plus d’informations, consultez [publication de votre application UWP](https://developer.microsoft.com/store/publish-apps).
 

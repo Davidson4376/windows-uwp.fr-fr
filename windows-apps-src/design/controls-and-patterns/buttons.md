@@ -13,12 +13,12 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 286b278d0c41edfbc5c008f31e5a8e28fa30f93a
-ms.sourcegitcommit: aeebfe35330aa471d22121957d9b510f6ebacbcf
+ms.openlocfilehash: 210431928c5dd7c5d5dfb99855322f1560e91dd7
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58901637"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363230"
 ---
 # <a name="buttons"></a>Boutons
 
@@ -30,7 +30,7 @@ L’infrastructure XAML fournit un contrôle de bouton standard, ainsi que plusi
 
 Commande | Description
 ------- | -----------
-[Bouton](/uwp/api/windows.ui.xaml.controls.button) | Lance une action immédiate. Peut être utilisé avec un événement de clic ou de la liaison de commande.
+[Button](/uwp/api/windows.ui.xaml.controls.button) | Lance une action immédiate. Peut être utilisé avec un événement de clic ou de la liaison de commande.
 [RepeatButton](/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton) | Un bouton qui déclenche un événement Click en continu pendant enfoncé.
 [HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton) | Un bouton qui a une mise en forme comme un lien hypertexte, utilisé pour la navigation. Voir [Liens hypertexte](hyperlinks.md) pour plus d’informations.
 [DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) | Bouton avec un chevron pour ouvrir un menu volant attaché.
@@ -120,16 +120,16 @@ private async void SubscribeButton_Click(object sender, RoutedEventArgs e)
 
 ### <a name="button-interaction"></a>Interaction de bouton
 
-Lorsque vous appuyez sur un bouton avec un doigt ou un stylet, ou lorsque vous cliquez dessus avec le bouton de la souris, le bouton déclenche l’événement [Click](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx). Si un bouton est sélectionné au clavier, une pression sur la touche Entrée ou sur la barre d’espace déclenche également l’événement Click.
+Lorsque vous appuyez sur un bouton avec un doigt ou un stylet, ou lorsque vous cliquez dessus avec le bouton de la souris, le bouton déclenche l’événement [Click](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click). Si un bouton est sélectionné au clavier, une pression sur la touche Entrée ou sur la barre d’espace déclenche également l’événement Click.
 
-Généralement, vous ne pouvez pas gérer les événements [PointerPressed](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed.aspx) de bas niveau sur un bouton, car un comportement Click lui est affecté à la place. Pour plus d’informations, voir [Vue d’ensemble des événements et des événements routés](https://msdn.microsoft.com/library/windows/apps/mt185584.aspx).
+Généralement, vous ne pouvez pas gérer les événements [PointerPressed](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed) de bas niveau sur un bouton, car un comportement Click lui est affecté à la place. Pour plus d’informations, voir [Vue d’ensemble des événements et des événements routés](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview).
 
 Vous pouvez modifier la façon dont un bouton déclenche l’événement Click en modifiant la propriété [ClickMode](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.clickmode). La valeur ClickMode par défaut est **Release**, mais vous pouvez également définir la propriété ClickMode d'un bouton sur **Hover** ou **Press**. Si ClickMode est défini sur **Hover**, l’événement Click ne peut pas être déclenché avec le clavier ou le mode tactile.
 
 
 ### <a name="button-content"></a>Contenu du bouton
 
-Le bouton est un [ContentControl](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.aspx). Sa propriété de contenu XAML est [Content](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.content.aspx), ce qui permet une syntaxe comme celle-ci pour XAML : `<Button>A button's content</Button>`. Vous pouvez définir n’importe quel objet comme contenu du bouton. Si le contenu est un objet [UIElement](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.aspx), il est affiché dans le bouton. Si le contenu est un autre type d’objet, sa représentation sous forme de chaîne est affichée dans le bouton.
+Le bouton est un [ContentControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentControl). Sa propriété de contenu XAML est [Content](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.contentcontrol.content), ce qui permet une syntaxe comme celle-ci pour XAML : `<Button>A button's content</Button>`. Vous pouvez définir n’importe quel objet comme contenu du bouton. Si le contenu est un objet [UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement), il est affiché dans le bouton. Si le contenu est un autre type d’objet, sa représentation sous forme de chaîne est affichée dans le bouton.
 
 Le contenu d’un bouton correspond généralement à du texte. Voici des recommandations de conception pour les boutons contenant du texte :
 -   Utilisez un texte concis, précis et suffisamment explicite qui décrit clairement l’action effectuée par le bouton. Généralement le texte d’un bouton est représenté par un seul mot, un verbe.
@@ -140,7 +140,7 @@ Le contenu d’un bouton correspond généralement à du texte. Voici des recomm
 
 <table>
 <tr>
-<td> <b>Vous devez :</b><br> corriger les boutons dont le texte déborde. </td>
+<td> <b>Devoir résoudre :</b><br> corriger les boutons dont le texte déborde. </td>
 <td> <img src="images/button-wraptext.png"/> </td>
 </tr>
 <tr>
@@ -148,7 +148,7 @@ Le contenu d’un bouton correspond généralement à du texte. Voici des recomm
 <td> <img src="images/button-wraptext1.png"> </td>
 </tr>
 <tr>
-<td> <b>Option 2 :</b><br> Augmentez la hauteur du bouton et ajustez le texte avec un renvoi à la ligne. </td>
+<td> <b>Option 2 :</b><br> Augmentez la hauteur du bouton et ajustez le texte avec un renvoi à la ligne. </td>
 <td> <img src="images/button-wraptext2.png"> </td>
 </tr>
 </table>
@@ -175,7 +175,7 @@ Le bouton ressemble à ceci.
 
 ## <a name="create-a-repeat-button"></a>Créer un bouton de répétition
 
-Un [RepeatButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.aspx) est un bouton qui déclenche les événements [Click](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) plusieurs fois à partir du moment où il est enfoncé jusqu’à ce qu’il soit relâché. Définissez la propriété [Delay](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.delay.aspx) pour spécifier la durée pendant laquelle RepeatButton attend entre le moment où il est actionné et le moment où il commence à répéter l’action de clic. Définissez la propriété [Interval](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.interval.aspx) pour spécifier la durée entre les répétitions de l’action de clic. Les durées pour les deux propriétés sont spécifiées en millisecondes.
+Un [RepeatButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton) est un bouton qui déclenche les événements [Click](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) plusieurs fois à partir du moment où il est enfoncé jusqu’à ce qu’il soit relâché. Définissez la propriété [Delay](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton.delay) pour spécifier la durée pendant laquelle RepeatButton attend entre le moment où il est actionné et le moment où il commence à répéter l’action de clic. Définissez la propriété [Interval](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton.interval) pour spécifier la durée entre les répétitions de l’action de clic. Les durées pour les deux propriétés sont spécifiées en millisecondes.
 
 L’exemple suivant montre deux contrôles RepeatButton dont les événements Click respectifs sont utilisés pour augmenter ou réduire la valeur affichée dans un bloc de texte.
 
@@ -268,7 +268,7 @@ private void AlignmentMenuFlyoutItem_Click(object sender, RoutedEventArgs e)
 
 > SplitButton nécessite Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) ou version ultérieure, ou le [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
 
-Un [SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) comporte deux parties qui peuvent être appelés séparément. Une partie se comporte comme un bouton standard et appelle une action immédiate. L’autre partie appelle un lanceur qui contient des options supplémentaires que l’utilisateur peut choisir.
+Un [SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) comporte deux parties qui peuvent être appelés séparément. Un composant se comporte comme un bouton standard et appelle une action immédiate. L’autre composant appelle un menu volant qui propose des options supplémentaires à l’utilisateur.
 
 > [!NOTE]
 > Lorsqu’elle est appelée avec touch, le bouton partagé se comporte comme un bouton déroulant ; les deux moitiés du bouton appeler le menu volant. Avec d’autres méthodes d’entrée, un utilisateur peut appeler moitié du bouton séparément.
@@ -376,7 +376,7 @@ public sealed partial class MainPage : Page
 
 > ToggleSplitButton nécessite Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) ou version ultérieure, ou le [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
 
-Un [ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) comporte deux parties qui peuvent être appelés séparément. Une partie se comporte comme un bouton bascule qui peut être activée ou désactivée. L’autre partie appelle un lanceur qui contient des options supplémentaires que l’utilisateur peut choisir.
+Un [ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) comporte deux parties qui peuvent être appelés séparément. Un composant se comporte comme un bouton bascule qui peut être activé ou désactivé. L’autre composant appelle un menu volant qui propose des options supplémentaires à l’utilisateur.
 
 Un bouton de fractionnement bascule sert généralement à activer ou désactiver une fonctionnalité lorsque la fonctionnalité a plusieurs options que l’utilisateur peut choisir. Par exemple, dans un éditeur de document, il peut servir à activer ou désactiver, les listes tandis que la liste déroulante permet de choisir le style de la liste.
 
@@ -535,7 +535,7 @@ Le bouton Précédent est un élément de l’interface utilisateur fournie par 
 
 ## <a name="related-articles"></a>Articles connexes
 
-- [Classe Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)
+- [Classe Button](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button)
 - [Cases d’option](radio-button.md)
 - [Cases à cocher](checkbox.md)
-- [Boutons bascule](toggles.md)
+- [Activer/désactiver commutateurs](toggles.md)

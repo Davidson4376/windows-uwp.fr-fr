@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, jeux, souris, entrée
 ms.assetid: 08c35e05-2822-4a01-85b8-44edb9b6898f
 ms.localizationpriority: medium
-ms.openlocfilehash: 71985841e6c0fa764201c179fb12408581823e5e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 1d36d81aa3f4e0124f79cf8c736b715eb91590d0
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57639654"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368195"
 ---
 # <a name="relative-mouse-movement-and-corewindow"></a>Mouvements de souris relatifs et CoreWindow
 
@@ -39,7 +39,7 @@ Avec ce modèle, l’emplacement du curseur de la souris en mode absolu est cons
 ## <a name="handling-relative-mouse-movement"></a>Gestion des mouvements de souris relatifs
 
 
-Pour accéder au delta des valeurs relatives de la souris, inscrivez-vous à l’événement [MouseDevice::MouseMoved](https://msdn.microsoft.com/library/windows/apps/xaml/windows.devices.input.mousedevice.mousemoved.aspx), comme indiqué ici.
+Pour accéder au delta des valeurs relatives de la souris, inscrivez-vous à l’événement [MouseDevice::MouseMoved](https://docs.microsoft.com/uwp/api/windows.devices.input.mousedevice.mousemoved), comme indiqué ici.
 
 
 ```cpp
@@ -85,13 +85,13 @@ void MoveLookController::OnMouseMoved(
 
 ```
 
-Le gestionnaire d’événements de cet exemple de code, **OnMouseMoved**, effectue le rendu de la vue en fonction des mouvements de la souris. La position du pointeur de la souris est passée au gestionnaire en tant qu’objet [MouseEventArgs](https://msdn.microsoft.com/library/windows/apps/xaml/windows.devices.input.mouseeventargs.aspx). 
+Le gestionnaire d’événements de cet exemple de code, **OnMouseMoved**, effectue le rendu de la vue en fonction des mouvements de la souris. La position du pointeur de la souris est passée au gestionnaire en tant qu’objet [MouseEventArgs](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.MouseEventArgs). 
 
-Ignorez le traitement des données de souris absolues de l’événement [CoreWindow::PointerMoved](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.core.corewindow.pointermoved.aspx) quand votre application passe en mode de gestion des valeurs relatives liées aux mouvements de la souris. Cependant, vous ne devez ignorer cette entrée que si l’événement **CoreWindow::PointerMoved** est survenu à la suite d’une entrée de souris (par opposition à une entrée tactile). Le curseur est masqué via l’affectation de **nullptr** à [CoreWindow::PointerCursor](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.core.corewindow.pointercursor.aspx). 
+Ignorez le traitement des données de souris absolues de l’événement [CoreWindow::PointerMoved](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved) quand votre application passe en mode de gestion des valeurs relatives liées aux mouvements de la souris. Cependant, vous ne devez ignorer cette entrée que si l’événement **CoreWindow::PointerMoved** est survenu à la suite d’une entrée de souris (par opposition à une entrée tactile). Le curseur est masqué via l’affectation de **nullptr** à [CoreWindow::PointerCursor](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointercursor). 
 
 ## <a name="returning-to-absolute-mouse-movement"></a>Retour aux mouvements de souris absolus
 
-Quand l’application sort du mode de manipulation d’objet/de scène 3D et qu’elle n’utilise plus les mouvements de souris relatifs (par exemple, quand elle revient à un écran de menu), revenez au traitement normal des mouvements de souris absolus. À ce stade, arrêtez de lire les données de souris relatives, redémarrez le traitement des événements de souris (et de pointeur) standard, puis affectez à [CoreWindow::PointerCursor](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.core.corewindow.pointercursor.aspx) une valeur non Null. 
+Quand l’application sort du mode de manipulation d’objet/de scène 3D et qu’elle n’utilise plus les mouvements de souris relatifs (par exemple, quand elle revient à un écran de menu), revenez au traitement normal des mouvements de souris absolus. À ce stade, arrêtez de lire les données de souris relatives, redémarrez le traitement des événements de souris (et de pointeur) standard, puis affectez à [CoreWindow::PointerCursor](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointercursor) une valeur non Null. 
 
 > **Remarque**  
 Quand votre application est en mode de manipulation d’objet/de scène 3D (mode de traitement des mouvements de souris relatifs sans curseur), la souris ne peut pas invoquer d’éléments d’interface utilisateur latérale, par exemple les icônes, l’historique de navigation ou la barre de l’application. Par conséquent, il est important de fournir un mécanisme de sortie de ce mode particulier, par exemple via la fameuse touche **Échap**.

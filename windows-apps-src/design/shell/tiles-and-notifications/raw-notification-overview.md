@@ -7,12 +7,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 606cc68aafa4de110f034336cd5d18bd1426a0a7
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 350565d9eccb8b19cf276c800522e28c59c9b10f
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57596364"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66361031"
 ---
 # <a name="raw-notification-overview"></a>Vue d’ensemble des notifications brutes
 
@@ -35,12 +35,12 @@ Pour donner un exemple d’application pouvant bénéficier de notifications bru
 
 Toutes les notifications brutes sont des notifications Push. C’est pourquoi la configuration requise pour envoyer et recevoir des notifications Push concerne également les notifications brutes :
 
--   Vous devez disposer d’un canal WNS valide pour envoyer des notifications brutes. Pour plus d’informations sur l’acquisition d’un canal de notification Push, voir [Comment demander, créer et enregistrer un canal de notification](https://msdn.microsoft.com/library/windows/apps/hh465412).
+-   Vous devez disposer d’un canal WNS valide pour envoyer des notifications brutes. Pour plus d’informations sur l’acquisition d’un canal de notification Push, voir [Comment demander, créer et enregistrer un canal de notification](https://docs.microsoft.com/previous-versions/windows/apps/hh465412(v=win.10)).
 -   Vous devez inclure la fonctionnalité **Internet** dans le manifeste de votre application. Vous trouverez cette option sous la forme **Internet (client)** dans l’onglet **Capacités** de l’éditeur de manifeste Microsoft Visual Studio. Pour plus d’informations, voir [**Capabilities**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-capabilities).
 
 Le corps de la notification apparaît dans un format défini par l’application. Le client reçoit les données sous la forme d’une chaîne (**HSTRING**) terminée par un caractère NULL que seule l’application doit comprendre.
 
-Si le client est hors connexion, les notifications brutes seront mises en cache par la fonctionnalité WNS uniquement si l’en-tête [X-WNS-Cache-Policy](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_cache) est inclus dans la notification. Cependant, une seule notification brute sera mise en cache et publiée dès que le périphérique est de nouveau en ligne.
+Si le client est hors connexion, les notifications brutes seront mises en cache par la fonctionnalité WNS uniquement si l’en-tête [X-WNS-Cache-Policy](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)) est inclus dans la notification. Cependant, une seule notification brute sera mise en cache et publiée dès que le périphérique est de nouveau en ligne.
 
 Il existe trois options de traitement d’une notification brute sur le client : la remise à votre application via un événement de remise de notification, l’envoi à une tâche en arrière-plan ou l’abandon. Par conséquent, si le client est hors connexion et si WNS tente d’émettre une notification brute, la notification est annulée.
 
@@ -50,12 +50,12 @@ Il existe trois options de traitement d’une notification brute sur le client :
 L’envoi d’une notification brute est similaire à l’envoi d’une notification push par vignette, toast ou badge avec les différences suivantes :
 
 -   L’en-tête HTTP Content-Type doit être défini sur « application/octet-stream ».
--   L’en-tête HTTP [X-WNS-Type](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_type) doit être défini sur « wns/raw ».
+-   L’en-tête HTTP [X-WNS-Type](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)) doit être défini sur « wns/raw ».
 -   Le corps de la notification doit contenir une charge utile de chaînes d’une taille inférieure à 5 Ko.
 
 Les notifications brutes sont des messages brefs conçus pour inciter votre application à agir, notamment en contactant directement le service pour synchroniser une grande quantité de données ou modifier un état local fondé sur le contenu des notifications. Notez que la remise des notifications Push WNS est impossible à garantir ; votre application et votre service cloud doivent donc tenir compte de l’éventualité que la notification brute ne parvienne pas au client, notamment lorsque celui-ci est hors connexion.
 
-Pour plus d’informations sur l’envoi de notifications push, consultez [Guide de démarrage rapide : Envoyer une notification push](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252).
+Pour plus d’informations sur l’envoi de notifications push, consultez [Guide de démarrage rapide : Envoyer une notification push](https://docs.microsoft.com/previous-versions/windows/apps/hh868252(v=win.10)).
 
 ## <a name="receiving-a-raw-notification"></a>Réception d’une notification brute
 
@@ -77,16 +77,16 @@ Votre application peut utiliser un événement de remise de notification ([**Pus
 Si votre application n’est pas en cours d’exécution et ne fait appel à aucune [tâche en arrière-plan](#background-tasks-triggered-by-raw-notifications)), toutes les notifications brutes transmises à cette application sont ignorées par WNS dès réception. Pour éviter de gaspiller les ressources de votre service cloud, vous pouvez envisager la mise en place d’une logique sur le service pour contrôler si l’application est active ou non. Pour ces informations, il existe deux sources : une application peut explicitement indiquer au service qu’elle est prête à recevoir des notifications et la fonctionnalité WNS peut indiquer au service quand arrêter.
 
 -   **L’application informe le service cloud**: L’application peut contacter son service pour lui indiquer que l’application est en cours d’exécution au premier plan. L’inconvénient de cette approche est que l’application peut finir par contacter votre service de manière très fréquente. En revanche, elle présente l’avantage que le service saura toujours lorsque l’application est prête à recevoir des notifications brutes entrantes. Un autre avantage réside dans le fait que, lorsque l’application contacte son service, celui-ci sait alors qu’il faut envoyer des notifications brutes à l’instance spécifique de cette application plutôt que procéder à une diffusion.
--   **Le service de cloud répond aux messages de réponse WNS** : Votre service d’application peut utiliser le [X-WNS-NotificationStatus](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_notification) et [X-WNS-DeviceConnectionStatus](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_dcs) informations retournées par WNS pour déterminer quand arrêter l’envoi de notifications brutes à l’application. Lorsque votre service envoie une notification à un canal sous la forme d’une demande POST HTTP, il peut recevoir l’un des messages suivants en guise de réponse :
+-   **Le service de cloud répond aux messages de réponse WNS** : Votre service d’application peut utiliser le [X-WNS-NotificationStatus](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)) et [X-WNS-DeviceConnectionStatus](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)) informations retournées par WNS pour déterminer quand arrêter l’envoi de notifications brutes à l’application. Lorsque votre service envoie une notification à un canal sous la forme d’une demande POST HTTP, il peut recevoir l’un des messages suivants en guise de réponse :
 
     -   **X-WNS-NotificationStatus : supprimé**: Cela indique que la notification a été pas reçue par le client. On peut raisonnablement supposer que la réponse **dropped** est générée en raison du fait que votre application ne figure plus au premier plan de l’appareil de l’utilisateur.
-    -   **X-WNS-DeviceConnectionStatus : déconnecté** ou **X-WNS-DeviceConnectionStatus : tempconnected**: Cela indique que le client de Windows n’a plus une connexion à WNS. Notez que pour recevoir ce message de WNS, vous devez le demander en définissant l’en-tête [X-WNS-RequestForStatus](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_request) dans la demande POST HTTP de la notification.
+    -   **X-WNS-DeviceConnectionStatus : déconnecté** ou **X-WNS-DeviceConnectionStatus : tempconnected**: Cela indique que le client de Windows n’a plus une connexion à WNS. Notez que pour recevoir ce message de WNS, vous devez le demander en définissant l’en-tête [X-WNS-RequestForStatus](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)) dans la demande POST HTTP de la notification.
 
     Le service cloud de votre application peut exploiter les informations incluses dans ces messages d’état pour cesser toute tentative de communication par le biais de notifications brutes. Le service peut reprendre l’envoi de notifications brutes dès que l’application le contacte, quand celle-ci revient au premier plan.
 
-    Notez qu’il est préférable de ne pas se fier aux informations [X-WNS-NotificationStatus](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_notification) pour déterminer si la notification a été correctement remise au client.
+    Notez qu’il est préférable de ne pas se fier aux informations [X-WNS-NotificationStatus](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)) pour déterminer si la notification a été correctement remise au client.
 
-    Pour plus d’informations, voir [En-têtes des demandes et des réponses des services de notifications Push](https://msdn.microsoft.com/library/windows/apps/hh465435).
+    Pour plus d’informations, voir [En-têtes des demandes et des réponses des services de notifications Push](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)).
 
 ### <a name="background-tasks-triggered-by-raw-notifications"></a>Tâches en arrière-plan déclenchées par des notifications brutes
 
@@ -117,9 +117,9 @@ Vous trouverez plus en téléchargeant le [exemple de notifications brutes](http
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Instructions pour les notifications brutes](https://msdn.microsoft.com/library/windows/apps/hh761463)
-* [Démarrage rapide : Création et enregistrement d’une tâche en arrière-plan de notification brute](https://msdn.microsoft.com/library/windows/apps/jj676800)
-* [Démarrage rapide : Interception des notifications push pour les applications en cours d’exécution](https://msdn.microsoft.com/library/windows/apps/jj709908)
+* [Instructions pour les notifications brutes](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-raw-notification-overview)
+* [Démarrage rapide : Création et enregistrement d’une tâche en arrière-plan de notification brute](https://docs.microsoft.com/previous-versions/windows/apps/jj676800(v=win.10))
+* [Démarrage rapide : Interception des notifications push pour les applications en cours d’exécution](https://docs.microsoft.com/previous-versions/windows/apps/jj709908(v=win.10))
 * [**RawNotification**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.RawNotification)
 * [**BackgroundExecutionManager.RequestAccessAsync**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundExecutionManager#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessAsync_System_String_)
  

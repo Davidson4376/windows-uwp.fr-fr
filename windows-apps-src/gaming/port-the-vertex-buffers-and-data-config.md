@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, jeux , portage, tampons de sommets, données, direct3d
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c961a8852fb1e03e4e86209f62bda821b980f8c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 8445339d442fb740e9e2aba5e9d1cb0388c746ef
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592814"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66368243"
 ---
 # <a name="port-the-vertex-buffers-and-data"></a>Porter les mémoires tampons et données de vertex
 
@@ -20,9 +20,9 @@ ms.locfileid: "57592814"
 
 **API importantes**
 
--   [**ID3DDevice::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501)
--   [**ID3DDeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456)
--   [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/bb173588)
+-   [**ID3DDevice::CreateBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer)
+-   [**ID3DDeviceContext::IASetVertexBuffers**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetvertexbuffers)
+-   [**ID3D11DeviceContext::IASetIndexBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d10/nf-d3d10-id3d10device-iasetindexbuffer)
 
 Lors de cette étape, vous allez définir les mémoires tampons de vertex qui contiendront vos maillages ainsi que les mémoires tampons d’index qui permettront aux nuanceurs de parcourir les vertex dans l’ordre indiqué.
 
@@ -130,7 +130,7 @@ Dans OpenGL ES 2.0, les dispositions d’entrée sont implicites ; vous prenez 
 
 Dans Direct3D, vous devez fournir la disposition d’entrée qui décrit la structure des données de vertex dans la mémoire tampon de vertex au moment où vous créez cette dernière (et pas avant de dessiner la géométrie). Pour cela, utilisez une disposition d’entrée qui correspond à la disposition des données de chaque vertex en mémoire. Les informations que vous indiquez ici doivent être précises et exactes. C’est très important !
 
-Ici, vous créez une description d’entrée sous forme de tableau de [ **D3D11\_d’entrée\_élément\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476180) structures.
+Ici, vous créez une description d’entrée sous forme de tableau de [ **D3D11\_d’entrée\_élément\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_input_element_desc) structures.
 
 Direct3D : Définir une description de la disposition d’entrée.
 
@@ -151,11 +151,11 @@ const D3D11_INPUT_ELEMENT_DESC vertexDesc[] =
 
 ```
 
-Cette description de disposition d’entrée définit un vertex à l’aide d’une paire de vecteurs à trois coordonnées : le premier vecteur 3D indique la position du vertex dans le système de coordonnées du modèle et le second vecteur 3D contient la valeur de couleur RVB associée au vertex. Dans cet exemple, vous utilisez trois valeurs à virgule flottante 32 bits, représentées ainsi dans le code : `XMFLOAT3(X.Xf, X.Xf, X.Xf)`. Vous devez utiliser des types de la bibliothèque [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/ee415574)si vous gérez des données qui seront utilisées par un nuanceur car ils garantissent un packaging et un alignement corrects de ces données. (Par exemple, choisissez le type [**XMFLOAT3**](https://msdn.microsoft.com/library/windows/desktop/ee419475) ou [**XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608) pour les données de vecteur et le type [**XMFLOAT4X4**](https://msdn.microsoft.com/library/windows/desktop/ee419621) pour les matrices.)
+Cette description de disposition d’entrée définit un vertex à l’aide d’une paire de vecteurs à trois coordonnées : le premier vecteur 3D indique la position du vertex dans le système de coordonnées du modèle et le second vecteur 3D contient la valeur de couleur RVB associée au vertex. Dans cet exemple, vous utilisez trois valeurs à virgule flottante 32 bits, représentées ainsi dans le code : `XMFLOAT3(X.Xf, X.Xf, X.Xf)`. Vous devez utiliser des types de la bibliothèque [DirectXMath](https://docs.microsoft.com/windows/desktop/dxmath/ovw-xnamath-reference)si vous gérez des données qui seront utilisées par un nuanceur car ils garantissent un packaging et un alignement corrects de ces données. (Par exemple, choisissez le type [**XMFLOAT3**](https://docs.microsoft.com/windows/desktop/api/directxmath/ns-directxmath-xmfloat3) ou [**XMFLOAT4**](https://docs.microsoft.com/windows/desktop/api/directxmath/ns-directxmath-xmfloat4) pour les données de vecteur et le type [**XMFLOAT4X4**](https://docs.microsoft.com/windows/desktop/api/directxmath/ns-directxmath-xmfloat4x4) pour les matrices.)
 
-Pour obtenir la liste de tous les types de format possibles, reportez-vous à [ **DXGI\_FORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb173059).
+Pour obtenir la liste de tous les types de format possibles, reportez-vous à [ **DXGI\_FORMAT**](https://docs.microsoft.com/windows/desktop/api/dxgiformat/ne-dxgiformat-dxgi_format).
 
-Créez l’objet disposition sur la base de la disposition d’entrée du vertex que vous venez de définir. Dans le code suivant, vous écrivez à **m\_inputLayout**, une variable de type **ComPtr** (qui pointe vers un objet de type [ **ID3D11InputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476575)). **fileData** contient l’objet nuanceur de vertex compilé à l’étape précédente, [Porter les nuanceurs](port-the-shader-config.md).
+Créez l’objet disposition sur la base de la disposition d’entrée du vertex que vous venez de définir. Dans le code suivant, vous écrivez à **m\_inputLayout**, une variable de type **ComPtr** (qui pointe vers un objet de type [ **ID3D11InputLayout**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11inputlayout)). **fileData** contient l’objet nuanceur de vertex compilé à l’étape précédente, [Porter les nuanceurs](port-the-shader-config.md).
 
 Direct3D : Créer la disposition d’entrée utilisée par la mémoire tampon vertex.
 
@@ -188,11 +188,11 @@ glBindBuffer(GL_ARRAY_BUFFER, renderer->vertexBuffer);
 glBufferData(GL_ARRAY_BUFFER, sizeof(VERTEX) * CUBE_VERTICES, renderer->vertices, GL_STATIC_DRAW);   
 ```
 
-Dans Direct3D, accessible via le nuanceur de mémoires tampons sont représentés en tant que [ **D3D11\_SUBRESOURCE\_données** ](https://msdn.microsoft.com/library/windows/desktop/ff476220) structures. Pour lier l’emplacement de cette mémoire tampon à l’objet de nuanceur, vous devez créer un CD3D11\_tampon\_structure DESC pour chaque mémoire tampon avec [ **ID3DDevice::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501), puis définissez la mémoire tampon du contexte de périphérique Direct3D en appelant une méthode set spécifique au type de la mémoire tampon, comme [ **ID3DDeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456).
+Dans Direct3D, accessible via le nuanceur de mémoires tampons sont représentés en tant que [ **D3D11\_SUBRESOURCE\_données** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data) structures. Pour lier l’emplacement de cette mémoire tampon à l’objet de nuanceur, vous devez créer un CD3D11\_tampon\_structure DESC pour chaque mémoire tampon avec [ **ID3DDevice::CreateBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer), puis définissez la mémoire tampon du contexte de périphérique Direct3D en appelant une méthode set spécifique au type de la mémoire tampon, comme [ **ID3DDeviceContext::IASetVertexBuffers**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetvertexbuffers).
 
 Lorsque vous définissez la mémoire tampon, vous devez configurer le stride (la taille de l’élément de données pour un vertex) ainsi que le décalage (là où commence le tableau des données de vertex) à partir du début de la mémoire.
 
-Notez que nous attribuons le pointeur vers le **vertexIndices** de tableau à la **pSysMem** champ la [ **D3D11\_SUBRESOURCE\_données** ](https://msdn.microsoft.com/library/windows/desktop/ff476220) structure. Si cela n’est pas défini correctement, votre maillage sera endommagé ou vide.
+Notez que nous attribuons le pointeur vers le **vertexIndices** de tableau à la **pSysMem** champ la [ **D3D11\_SUBRESOURCE\_données** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data) structure. Si cela n’est pas défini correctement, votre maillage sera endommagé ou vide.
 
 Direct3D : Créer et définir la mémoire tampon vertex
 
@@ -248,7 +248,7 @@ glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, renderer->indexBuffer);
 glDrawElements (GL_TRIANGLES, renderer->numIndices, GL_UNSIGNED_INT, 0);
 ```
 
-Dans Direct3D, le processus est quasiment similaire, bien qu’un peu plus technique. Fournissez la mémoire tampon d’index sous forme de sous-ressource Direct3D à l’objet [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) que vous avez créé lors de la configuration de Direct3D. Pour cela, appelez [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/bb173588) avec la sous-ressource configurée pour le tableau d’index, comme ci-dessous. (Là encore, notez que vous affectez le pointeur vers le **cubeIndices** de tableau à la **pSysMem** champ la [ **D3D11\_SUBRESOURCE\_dedonnées** ](https://msdn.microsoft.com/library/windows/desktop/ff476220) structure.)
+Dans Direct3D, le processus est quasiment similaire, bien qu’un peu plus technique. Fournissez la mémoire tampon d’index sous forme de sous-ressource Direct3D à l’objet [**ID3D11DeviceContext**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext) que vous avez créé lors de la configuration de Direct3D. Pour cela, appelez [**ID3D11DeviceContext::IASetIndexBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d10/nf-d3d10-id3d10device-iasetindexbuffer) avec la sous-ressource configurée pour le tableau d’index, comme ci-dessous. (Là encore, notez que vous affectez le pointeur vers le **cubeIndices** de tableau à la **pSysMem** champ la [ **D3D11\_SUBRESOURCE\_dedonnées** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data) structure.)
 
 Direct3D : Créer le tampon d’index.
 
@@ -274,7 +274,7 @@ m_d3dContext->IASetIndexBuffer(
   0);
 ```
 
-Vous allez ensuite dessiner les triangles en appelant [**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) (ou [**ID3D11DeviceContext::Draw**](https://msdn.microsoft.com/library/windows/desktop/ff476407) pour les vertex non indexés), comme expliqué ci-après. (Pour plus d’informations, voir l’étape suivante [Dessiner à l’écran](draw-to-the-screen.md).)
+Vous allez ensuite dessiner les triangles en appelant [**ID3D11DeviceContext::DrawIndexed**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-drawindexed) (ou [**ID3D11DeviceContext::Draw**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-draw) pour les vertex non indexés), comme expliqué ci-après. (Pour plus d’informations, voir l’étape suivante [Dessiner à l’écran](draw-to-the-screen.md).)
 
 Direct3D : Dessiner les sommets indexées.
 
@@ -301,7 +301,7 @@ m_d3dContext->DrawIndexed(
 
 ## <a name="remarks"></a>Notes
 
-Lorsque vous définissez vos structures Direct3D, séparez le code qui appelle les méthodes sur [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379) du code de la méthode qui est appelée lorsque les ressources de périphérique doivent être recréées. Dans le modèle de projet Direct3D, ce code se trouve dans les méthodes **CreateDeviceResource** de l’objet convertisseur. Le code employé pour la mise à jour du contexte de périphérique ([**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)) est placé dans la méthode **Render**, car c’est l’endroit où vous élaborez les étapes du nuanceur et liez les données requises.
+Lorsque vous définissez vos structures Direct3D, séparez le code qui appelle les méthodes sur [**ID3D11Device**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11device) du code de la méthode qui est appelée lorsque les ressources de périphérique doivent être recréées. Dans le modèle de projet Direct3D, ce code se trouve dans les méthodes **CreateDeviceResource** de l’objet convertisseur. Le code employé pour la mise à jour du contexte de périphérique ([**ID3D11DeviceContext**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext)) est placé dans la méthode **Render**, car c’est l’endroit où vous élaborez les étapes du nuanceur et liez les données requises.
 
 ## <a name="related-topics"></a>Rubriques connexes
 

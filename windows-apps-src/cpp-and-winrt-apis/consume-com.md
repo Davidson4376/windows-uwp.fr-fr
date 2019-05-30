@@ -1,16 +1,16 @@
 ---
 description: Cette rubrique utilise un exemple de code complet Direct2D pour montrer comment utiliser C++/WinRT pour consommer des classes et interfaces COM.
 title: Utiliser des composants COM avec C++/WinRT
-ms.date: 07/23/2018
+ms.date: 04/24/2019
 ms.topic: article
 keywords: Windows 10, uwp, standard, c ++, cpp, winrt, COM, composant, classe, interface
 ms.localizationpriority: medium
-ms.openlocfilehash: 16425fd6d296a4abd4ed62c0c64cd23ef1f88891
-ms.sourcegitcommit: 9031a51f9731f0b675769e097aa4d914b4854e9e
+ms.openlocfilehash: dc4acd288496d83d5d91f1bdf206be19fe2fbb06
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58618406"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66361145"
 ---
 # <a name="consume-com-components-with-cwinrt"></a>Utiliser des composants COM avec C++/WinRT
 
@@ -30,7 +30,7 @@ Pour être plus précis, nous parlons d’interagir avec l’interface *pointeur
 winrt::com_ptr<ID2D1Factory1> factory;
 ```
 
-Le code ci-dessus montre comment déclarer un pointeur intelligent non initialisé à une [ **ID2D1Factory1** ](https://msdn.microsoft.com/library/Hh404596) interface COM. Le pointeur intelligent n’est pas initialisé, donc il n’est pas encore pointant vers un **ID2D1Factory1** interface appartenant à n’importe quel objet réel (il ne pointe pas vers une interface du tout). Mais il est susceptible de faire. et (qui est un pointeur intelligent), il a la possibilité via COM décompte de références pour gérer la durée de vie de l’objet propriétaire de l’interface vers laquelle il pointe et être le moyen par lequel vous appelez des fonctions sur cette interface.
+Le code ci-dessus montre comment déclarer un pointeur intelligent non initialisé à une [ **ID2D1Factory1** ](https://docs.microsoft.com/windows/desktop/api/d2d1_1/nn-d2d1_1-id2d1factory1) interface COM. Le pointeur intelligent n’est pas initialisé, donc il n’est pas encore pointant vers un **ID2D1Factory1** interface appartenant à n’importe quel objet réel (il ne pointe pas vers une interface du tout). Mais il est susceptible de faire. et (qui est un pointeur intelligent), il a la possibilité via COM décompte de références pour gérer la durée de vie de l’objet propriétaire de l’interface vers laquelle il pointe et être le moyen par lequel vous appelez des fonctions sur cette interface.
 
 ## <a name="com-functions-that-return-an-interface-pointer-as-void"></a>Les fonctions COM qui retournent un pointeur d’interface en tant que **void**
 
@@ -46,7 +46,7 @@ D2D1CreateFactory(
 );
 ```
 
-Le code ci-dessus appelle le [ **D2D1CreateFactory** ](/windows/desktop/api/d2d1/nf-d2d1-d2d1createfactory) (fonction), qui retourne un **ID2D1Factory1** pointeur d’interface par le biais de son dernier paramètre, qui a **void \* \***  type. De nombreuses fonctions COM retournent un **void\*\***. Pour ces fonctions, utilisez [ **com_ptr::put_void** ](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrput_void-function) comme indiqué.
+Le code ci-dessus appelle le [ **D2D1CreateFactory** ](/windows/desktop/api/d2d1/nf-d2d1-d2d1createfactory) (fonction), qui retourne un **ID2D1Factory1** pointeur d’interface par le biais de son dernier paramètre, qui a **void \* \***  type. De nombreuses fonctions COM retournent un **void\*\*** . Pour ces fonctions, utilisez [ **com_ptr::put_void** ](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrput_void-function) comme indiqué.
 
 ## <a name="com-functions-that-return-a-specific-interface-pointer"></a>Fonctions COM qui retournent un pointeur d’interface spécifique
 
@@ -72,7 +72,7 @@ D2D1CreateFactory(
 
 ## <a name="com-functions-that-return-an-interface-pointer-as-iunknown"></a>Les fonctions COM qui retournent un pointeur d’interface en tant que **IUnknown**
 
-Le [ **DWriteCreateFactory** ](/windows/desktop/api/dwrite/nf-dwrite-dwritecreatefactory) fonction retourne un pointeur d’interface de fabrique DirectWrite par le biais de son dernier paramètre, qui a [ **IUnknown** ](https://msdn.microsoft.com/library/windows/desktop/ms680509)type. Pour une telle fonction, utilisez [ **com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptr_put-function), mais effectuer un cast de réinterprétation à **IUnknown**.
+Le [ **DWriteCreateFactory** ](/windows/desktop/api/dwrite/nf-dwrite-dwritecreatefactory) fonction retourne un pointeur d’interface de fabrique DirectWrite par le biais de son dernier paramètre, qui a [ **IUnknown** ](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)type. Pour une telle fonction, utilisez [ **com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptr_put-function), mais effectuer un cast de réinterprétation à **IUnknown**.
 
 ```cppwinrt
 DWriteCreateFactory(
@@ -169,7 +169,7 @@ Vous pouvez également utiliser [ **com_ptr::try_as**](/uwp/cpp-ref-for-winrt/co
 
 ## <a name="full-source-code-listing-of-a-minimal-direct2d-application"></a>Liste de code source complet d’une application Direct2D minimale
 
-Si vous souhaitez générer et exécuter cet exemple de code source, puis tout d’abord, dans Visual Studio, créez un **application Core (C++ / c++ / WinRT)**. `Direct2D` est un nom raisonnable pour le projet, mais vous pouvez le nommer comme vous le souhaitez. Ouvrez `App.cpp`, supprimer tout son contenu et collez dans la liste ci-dessous.
+Si vous souhaitez générer et exécuter cet exemple de code source, puis tout d’abord, dans Visual Studio, créez un **application Core (C++ / c++ / WinRT)** . `Direct2D` est un nom raisonnable pour le projet, mais vous pouvez le nommer comme vous le souhaitez. Ouvrez `App.cpp`, supprimer tout son contenu et collez dans la liste ci-dessous.
 
 ```cppwinrt
 #include "pch.h"
@@ -477,7 +477,7 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 
 int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 {
-    CoreApplication::Run(App());
+    CoreApplication::Run(winrt::make<App>());
 }
 ```
 

@@ -6,16 +6,16 @@ ms.date: 04/18/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c78e16a50bdca09f474d5016fdc86b6d27702d5b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 60abc29ad4f9e16dc9d37e99f94c9f30039c0087
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57598584"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360701"
 ---
 # <a name="process-audio-frames-with-mediaframereader"></a>Traiter des trames audio avec MediaFrameReader
 
-Cet article vous explique comment utiliser un objet [**MediaFrameReader**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader) avec [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture) pour obtenir des données audio à partir d’une source d’images multimédias. Pour plus d’informations sur l’utilisation d’un objet **MediaFrameReader** pour obtenir des données d’image, notamment à partir d’un appareil photo couleur, infrarouge ou de profondeur, consultez [Traiter des images multimédias avec MediaFrameReader](process-media-frames-with-mediaframereader.md). Cet article donne une vue d’ensemble du modèle d’utilisation du lecteur d’images et décrit certaines fonctionnalités supplémentaires de la classe **MediaFrameReader**, notamment l’utilisation de **MediaFrameSourceGroup** pour récupérer simultanément des images de plusieurs sources. 
+Cet article vous explique comment utiliser un objet [**MediaFrameReader**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameReader) avec [**MediaCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture) pour obtenir des données audio à partir d’une source d’images multimédias. Pour plus d’informations sur l’utilisation d’un objet **MediaFrameReader** pour obtenir des données d’image, notamment à partir d’un appareil photo couleur, infrarouge ou de profondeur, consultez [Traiter des images multimédias avec MediaFrameReader](process-media-frames-with-mediaframereader.md). Cet article donne une vue d’ensemble du modèle d’utilisation du lecteur d’images et décrit certaines fonctionnalités supplémentaires de la classe **MediaFrameReader**, notamment l’utilisation de **MediaFrameSourceGroup** pour récupérer simultanément des images de plusieurs sources. 
 
 > [!NOTE] 
 > Les fonctionnalités décrites dans cet article sont disponibles uniquement à partir de Windows 10, version 1803.
@@ -37,7 +37,7 @@ Le processus d’acquisition de trames audio est en grande partie identique à l
 
 ## <a name="select-frame-sources-and-frame-source-groups"></a>Sélectionnez des sources d’images et des groupes de sources d’images
 
-La première étape de la capture de trames audio consiste à initialiser un objet [**MediaFrameSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSource) représentant la source des données audio, par exemple un microphone ou tout autre appareil de capture audio. Pour ce faire, vous devez créer une instance de l’objet [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture). Pour cet exemple, le seul paramètre d’initialisation pour l’objet **MediaCapture** est de définir l’objet [**StreamingCaptureMode**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings.streamingcapturemode) pour indiquer que la diffusion audio doit être effectuée à partir de l’appareil de capture. 
+La première étape de la capture de trames audio consiste à initialiser un objet [**MediaFrameSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameSource) représentant la source des données audio, par exemple un microphone ou tout autre appareil de capture audio. Pour ce faire, vous devez créer une instance de l’objet [**MediaCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture). Pour cet exemple, le seul paramètre d’initialisation pour l’objet **MediaCapture** est de définir l’objet [**StreamingCaptureMode**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacaptureinitializationsettings.streamingcapturemode) pour indiquer que la diffusion audio doit être effectuée à partir de l’appareil de capture. 
 
 Après avoir appelé la méthode [**MediaCapture.InitializeAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.initializeasync), vous pouvez obtenir la liste des sources d’images multimédias accessibles avec la propriété [**FrameSources**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.framesources). Cet exemple utilise une requête Linq pour sélectionner toutes les sources d’images où l’objet [**MediaFrameSourceInfo**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourceinfo) décrivant la source d’images a un[**MediaStreamType**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourceinfo.mediastreamtype) défini sur **Audio**, pour indiquer que la source produit des données audio.
 

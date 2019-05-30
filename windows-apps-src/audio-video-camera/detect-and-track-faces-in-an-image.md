@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: fdeb3f18e6500cc0a907e725f34c0eb96d33876e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f1be694be412bbf0a4e076e8ac5753eefda74c55
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57640834"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360908"
 ---
 # <a name="detect-faces-in-images-or-videos"></a>Détecter les visages dans des images ou des vidéos
 
@@ -19,37 +19,37 @@ ms.locfileid: "57640834"
 
 \[Certaines informations sont relatives à la version préliminaire du produit qui peut être substantiellement modifié avant sa commercialisation. Microsoft exclut toute garantie, expresse ou implicite, concernant les informations fournies ici.\]
 
-Cette rubrique montre comment utiliser [**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) pour détecter des visages dans une image. [  **FaceTracker**](https://msdn.microsoft.com/library/windows/apps/dn974150) est optimisé pour suivre les visages au fil du temps dans une séquence d’images vidéo.
+Cette rubrique montre comment utiliser [**FaceDetector**](https://docs.microsoft.com/uwp/api/Windows.Media.FaceAnalysis.FaceDetector) pour détecter des visages dans une image. [  **FaceTracker**](https://docs.microsoft.com/uwp/api/Windows.Media.FaceAnalysis.FaceTracker) est optimisé pour suivre les visages au fil du temps dans une séquence d’images vidéo.
 
-Pour une autre méthode de suivi des visages à l’aide de [**FaceDetectionEffect**](https://msdn.microsoft.com/library/windows/apps/dn948776), voir [Analyse de scène pour la capture multimédia](scene-analysis-for-media-capture.md).
+Pour une autre méthode de suivi des visages à l’aide de [**FaceDetectionEffect**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.FaceDetectionEffect), voir [Analyse de scène pour la capture multimédia](scene-analysis-for-media-capture.md).
 
 Le code contenu dans cet article a été adapté à partir des exemples [Détection des visages de base](https://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409) et [Suivi des visages de base](https://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409). Vous pouvez télécharger ces exemples pour voir le code utilisé en contexte ou pour vous en servir comme point de départ pour votre propre application.
 
 ## <a name="detect-faces-in-a-single-image"></a>Détecter des visages dans une seule image
 
-La classe [**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) vous permet de détecter un ou plusieurs visages dans une image fixe.
+La classe [**FaceDetector**](https://docs.microsoft.com/uwp/api/Windows.Media.FaceAnalysis.FaceDetector) vous permet de détecter un ou plusieurs visages dans une image fixe.
 
 Cet exemple utilise des API à partir des espaces de noms suivants.
 
 [!code-cs[FaceDetectionUsing](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetFaceDetectionUsing)]
 
-Déclarez une variable de membre de classe pour l’objet [**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) et la liste d’objets [**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123) qui seront détectés dans l’image.
+Déclarez une variable de membre de classe pour l’objet [**FaceDetector**](https://docs.microsoft.com/uwp/api/Windows.Media.FaceAnalysis.FaceDetector) et la liste d’objets [**DetectedFace**](https://docs.microsoft.com/uwp/api/Windows.Media.FaceAnalysis.DetectedFace) qui seront détectés dans l’image.
 
 [!code-cs[ClassVariables1](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetClassVariables1)]
 
-La détection des visages fonctionne sur un objet [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) qui peut être créé de diverses manières. Dans cet exemple un élément [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) est utilisé pour permettre à l’utilisateur de choisir un fichier image dans lequel des visages sont détectés. Pour plus d’informations sur l’utilisation d’images bitmap de logiciel, voir [Acquisition d’images](imaging.md).
+La détection des visages fonctionne sur un objet [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap) qui peut être créé de diverses manières. Dans cet exemple un élément [**FileOpenPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker) est utilisé pour permettre à l’utilisateur de choisir un fichier image dans lequel des visages sont détectés. Pour plus d’informations sur l’utilisation d’images bitmap de logiciel, voir [Acquisition d’images](imaging.md).
 
 [!code-cs[Picker](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetPicker)]
 
-Utilisez la classe [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) pour décoder le fichier image dans un **SoftwareBitmap**. Le processus de détection des visages est plus rapide avec une image plus petite, c’est pourquoi vous voudrez peut-être réduire la taille de l’image source. Cette opération peut être réalisée lors du décodage en créant un objet [**BitmapTransform**](https://msdn.microsoft.com/library/windows/apps/br226254), en définissant les propriétés [**ScaledWidth**](https://msdn.microsoft.com/library/windows/apps/br226261) et [**ScaledHeight**](https://msdn.microsoft.com/library/windows/apps/br226260) et en les transmettant à l’appel à [**GetSoftwareBitmapAsync**](https://msdn.microsoft.com/library/windows/apps/dn887332), qui renvoie l’élément **SoftwareBitmap** décodé et mis à l’échelle.
+Utilisez la classe [**BitmapDecoder**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.BitmapDecoder) pour décoder le fichier image dans un **SoftwareBitmap**. Le processus de détection des visages est plus rapide avec une image plus petite, c’est pourquoi vous voudrez peut-être réduire la taille de l’image source. Cette opération peut être réalisée lors du décodage en créant un objet [**BitmapTransform**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.BitmapTransform), en définissant les propriétés [**ScaledWidth**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmaptransform.scaledwidth) et [**ScaledHeight**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmaptransform.scaledheight) et en les transmettant à l’appel à [**GetSoftwareBitmapAsync**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapdecoder.getsoftwarebitmapasync), qui renvoie l’élément **SoftwareBitmap** décodé et mis à l’échelle.
 
 [!code-cs[Decode](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetDecode)]
 
-Dans la version actuelle, la classe **FaceDetector** prend uniquement en charge les images dans Gray8 ou Nv12. La classe **SoftwareBitmap** fournit la méthode [**Convert**](https://msdn.microsoft.com/library/windows/apps/dn887362), qui convertit une image bitmap d’un format vers un autre. Cet exemple convertit l’image source au format de pixel Gray8 si elle n’est pas déjà dans ce format. Si vous le souhaitez, vous pouvez utiliser les méthodes [**GetSupportedBitmapPixelFormats**](https://msdn.microsoft.com/library/windows/apps/dn974140) et [**IsBitmapPixelFormatSupported**](https://msdn.microsoft.com/library/windows/apps/dn974142) pour déterminer lors de l’exécution si un format de pixel est pris en charge, au cas où l’ensemble des formats pris en charge est étendu dans les prochaines versions.
+Dans la version actuelle, la classe **FaceDetector** prend uniquement en charge les images dans Gray8 ou Nv12. La classe **SoftwareBitmap** fournit la méthode [**Convert**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.windows), qui convertit une image bitmap d’un format vers un autre. Cet exemple convertit l’image source au format de pixel Gray8 si elle n’est pas déjà dans ce format. Si vous le souhaitez, vous pouvez utiliser les méthodes [**GetSupportedBitmapPixelFormats**](https://docs.microsoft.com/uwp/api/windows.media.faceanalysis.facedetector.getsupportedbitmappixelformats) et [**IsBitmapPixelFormatSupported**](https://docs.microsoft.com/uwp/api/windows.media.faceanalysis.facedetector.isbitmappixelformatsupported) pour déterminer lors de l’exécution si un format de pixel est pris en charge, au cas où l’ensemble des formats pris en charge est étendu dans les prochaines versions.
 
 [!code-cs[Format](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetFormat)]
 
-Instanciez l’objet **FaceDetector** en appelant [**CreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn974132), puis appelez [**DetectFacesAsync**](https://msdn.microsoft.com/library/windows/apps/dn974134), en transmettant l’image bitmap mise à l’échelle à une taille raisonnable et convertie en un format de pixel pris en charge. Cette méthode renvoie une liste d’objets [**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123). **ShowDetectedFaces** est une méthode d’assistance, indiquée ci-dessous, qui dessine des cadres autour des visages de l’image.
+Instanciez l’objet **FaceDetector** en appelant [**CreateAsync**](https://docs.microsoft.com/uwp/api/windows.media.faceanalysis.facedetector.createasync), puis appelez [**DetectFacesAsync**](https://docs.microsoft.com/uwp/api/windows.media.faceanalysis.facedetector.detectfacesasync), en transmettant l’image bitmap mise à l’échelle à une taille raisonnable et convertie en un format de pixel pris en charge. Cette méthode renvoie une liste d’objets [**DetectedFace**](https://docs.microsoft.com/uwp/api/Windows.Media.FaceAnalysis.DetectedFace). **ShowDetectedFaces** est une méthode d’assistance, indiquée ci-dessous, qui dessine des cadres autour des visages de l’image.
 
 [!code-cs[Detect](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetDetect)]
 
@@ -57,7 +57,7 @@ Veillez à supprimer les objets qui ont été créés au cours du processus de d
 
 [!code-cs[Dispose](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetDispose)]
 
-Pour afficher l’image et dessiner des cadres autour des visages détectés, ajoutez un élément [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) à votre page XAML.
+Pour afficher l’image et dessiner des cadres autour des visages détectés, ajoutez un élément [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) à votre page XAML.
 
 [!code-xml[Canvas](./code/FaceDetection_Win10/cs/MainPage.xaml#SnippetCanvas)]
 
@@ -65,33 +65,33 @@ Définissez des variables de membre pour styliser les cadres dessinés.
 
 [!code-cs[ClassVariables2](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetClassVariables2)]
 
-Dans la méthode d’assistance **ShowDetectedFaces**, un nouvel élément [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/br210101) est créé et la source est définie sur un élément [**SoftwareBitmapSource**](https://msdn.microsoft.com/library/windows/apps/dn997854) créé à partir de **SoftwareBitmap** représentant l’image source. L’arrière-plan du contrôle **Canvas** XAML est défini sur le pinceau image.
+Dans la méthode d’assistance **ShowDetectedFaces**, un nouvel élément [**ImageBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.ImageBrush) est créé et la source est définie sur un élément [**SoftwareBitmapSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SoftwareBitmapSource) créé à partir de **SoftwareBitmap** représentant l’image source. L’arrière-plan du contrôle **Canvas** XAML est défini sur le pinceau image.
 
-Si la liste des visages transmise à la méthode d’assistance n’est pas vide, passez en boucle sur chaque visage de la liste et utilisez la propriété [**FaceBox**](https://msdn.microsoft.com/library/windows/apps/dn974126) de la classe [**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123) pour déterminer la position et la taille du rectangle au sein de l’image qui contient le visage. Dans la mesure où la taille du contrôle **Canvas** est très probablement différente de celle de l’image source, vous devez multiplier les coordonnées X et Y, ainsi que la largeur et la hauteur de **FaceBox** par une valeur de mise à l’échelle qui est le rapport entre la taille de l’image source et la taille réelle du contrôle **Canvas**.
+Si la liste des visages transmise à la méthode d’assistance n’est pas vide, passez en boucle sur chaque visage de la liste et utilisez la propriété [**FaceBox**](https://docs.microsoft.com/uwp/api/windows.media.faceanalysis.detectedface.facebox) de la classe [**DetectedFace**](https://docs.microsoft.com/uwp/api/Windows.Media.FaceAnalysis.DetectedFace) pour déterminer la position et la taille du rectangle au sein de l’image qui contient le visage. Dans la mesure où la taille du contrôle **Canvas** est très probablement différente de celle de l’image source, vous devez multiplier les coordonnées X et Y, ainsi que la largeur et la hauteur de **FaceBox** par une valeur de mise à l’échelle qui est le rapport entre la taille de l’image source et la taille réelle du contrôle **Canvas**.
 
 [!code-cs[ShowDetectedFaces](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetShowDetectedFaces)]
 
 ## <a name="track-faces-in-a-sequence-of-frames"></a>Suivre les visages dans une séquence d’images
 
-Si vous voulez détecter les visages d’une vidéo, il est plus efficace d’utiliser la classe [**FaceTracker**](https://msdn.microsoft.com/library/windows/apps/dn974150) que la classe [**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129), bien que les étapes d’implémentation soient très similaires. **FaceTracker** utilise les informations d’images traitées précédemment pour optimiser le processus de détection.
+Si vous voulez détecter les visages d’une vidéo, il est plus efficace d’utiliser la classe [**FaceTracker**](https://docs.microsoft.com/uwp/api/Windows.Media.FaceAnalysis.FaceTracker) que la classe [**FaceDetector**](https://docs.microsoft.com/uwp/api/Windows.Media.FaceAnalysis.FaceDetector), bien que les étapes d’implémentation soient très similaires. **FaceTracker** utilise les informations d’images traitées précédemment pour optimiser le processus de détection.
 
 [!code-cs[FaceTrackingUsing](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetFaceTrackingUsing)]
 
-Déclarez une variable de classe pour l’objet **FaceTracker**. Cet exemple utilise un élément [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/br230587) pour lancer un suivi des visages sur un intervalle défini. [SemaphoreSlim](https://msdn.microsoft.com/library/system.threading.semaphoreslim.aspx) est utilisé pour s’assurer qu’une seule opération de détection des visages s’exécute à la fois.
+Déclarez une variable de classe pour l’objet **FaceTracker**. Cet exemple utilise un élément [**ThreadPoolTimer**](https://docs.microsoft.com/uwp/api/Windows.System.Threading.ThreadPoolTimer) pour lancer un suivi des visages sur un intervalle défini. [SemaphoreSlim](https://docs.microsoft.com/dotnet/api/system.threading.semaphoreslim?redirectedfrom=MSDN) est utilisé pour s’assurer qu’une seule opération de détection des visages s’exécute à la fois.
 
 [!code-cs[ClassVariables3](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetClassVariables3)]
 
-Pour initialiser l’opération de suivi des visages, créez un nouvel objet **FaceTracker** en appelant [**CreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn974151). Initialisez l’intervalle de minuterie souhaité, puis créez le minuteur. La méthode d’assistance **ProcessCurrentVideoFrame** est appelée dès que l’intervalle spécifié est écoulé.
+Pour initialiser l’opération de suivi des visages, créez un nouvel objet **FaceTracker** en appelant [**CreateAsync**](https://docs.microsoft.com/uwp/api/windows.media.faceanalysis.facetracker.createasync). Initialisez l’intervalle de minuterie souhaité, puis créez le minuteur. La méthode d’assistance **ProcessCurrentVideoFrame** est appelée dès que l’intervalle spécifié est écoulé.
 
 [!code-cs[TrackingInit](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetTrackingInit)]
 
 L’application d’assistance **ProcessCurrentVideoFrame** est appelée de manière asynchrone par le minuteur, si bien qu’elle appelle d’abord la méthode **Wait** du sémaphore pour voir si une opération de suivi est en cours, et si tel est le cas, la méthode revient sans tenter de détecter les visages. À la fin de cette méthode, la méthode **Release** du sémaphore est appelée, ce qui permet la poursuite de l’appel consécutif à **ProcessCurrentVideoFrame**.
 
-La classe [**FaceTracker**](https://msdn.microsoft.com/library/windows/apps/dn974150) fonctionne sur les objets [**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/dn930917). Vous pouvez obtenir un élément **VideoFrame** en capturant une image d’aperçu à partir d’un objet [MediaCapture](capture-photos-and-video-with-mediacapture.md) en cours d’exécution ou en implémentant la méthode [**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764784) de [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788). Cet exemple utilise une méthode d’assistance non définie qui renvoie une image vidéo, **GetLatestFrame**, sous la forme d’un espace réservé pour cette opération. Pour en savoir plus sur l’obtention d’images vidéo à partir du flux d’aperçu d’un appareil de capture multimédia en cours d’exécution, voir [Obtenir une image d’aperçu](get-a-preview-frame.md).
+La classe [**FaceTracker**](https://docs.microsoft.com/uwp/api/Windows.Media.FaceAnalysis.FaceTracker) fonctionne sur les objets [**VideoFrame**](https://docs.microsoft.com/uwp/api/Windows.Media.VideoFrame). Vous pouvez obtenir un élément **VideoFrame** en capturant une image d’aperçu à partir d’un objet [MediaCapture](capture-photos-and-video-with-mediacapture.md) en cours d’exécution ou en implémentant la méthode [**ProcessFrame**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicaudioeffect.processframe) de [**IBasicVideoEffect**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.IBasicVideoEffect). Cet exemple utilise une méthode d’assistance non définie qui renvoie une image vidéo, **GetLatestFrame**, sous la forme d’un espace réservé pour cette opération. Pour en savoir plus sur l’obtention d’images vidéo à partir du flux d’aperçu d’un appareil de capture multimédia en cours d’exécution, voir [Obtenir une image d’aperçu](get-a-preview-frame.md).
 
 Comme avec **FaceDetector**, **FaceTracker** prend en charge un ensemble limité de formats de pixels. Cet exemple abandonne la détection des visages si l’image fournie n’est pas au format Nv12.
 
-Appelez [**ProcessNextFrameAsync**](https://msdn.microsoft.com/library/windows/apps/dn974157) pour récupérer une liste d’objets [**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123) représentant les visages dans l’image. Une fois que vous disposez de la liste des visages, vous pouvez les afficher de la même manière que celle décrite ci-dessus pour la détection des visages. Notez que dans la mesure où la méthode d’assistance de suivi des visages n’est pas appelée sur le thread d’interface utilisateur, vous devez effectuer les mises à jour de l’interface utilisateur dans une méthode [**CoredDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) d’appel.
+Appelez [**ProcessNextFrameAsync**](https://docs.microsoft.com/uwp/api/windows.media.faceanalysis.facetracker.processnextframeasync) pour récupérer une liste d’objets [**DetectedFace**](https://docs.microsoft.com/uwp/api/Windows.Media.FaceAnalysis.DetectedFace) représentant les visages dans l’image. Une fois que vous disposez de la liste des visages, vous pouvez les afficher de la même manière que celle décrite ci-dessus pour la détection des visages. Notez que dans la mesure où la méthode d’assistance de suivi des visages n’est pas appelée sur le thread d’interface utilisateur, vous devez effectuer les mises à jour de l’interface utilisateur dans une méthode [**CoredDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows) d’appel.
 
 [!code-cs[ProcessCurrentVideoFrame](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetProcessCurrentVideoFrame)]
 

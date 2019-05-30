@@ -10,12 +10,12 @@ pm-contact: miguelrb
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: a984e30bbdc569522b04d328087775aa9e8ce2bc
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3fc54662b29255b73e972bcfb0fa4b6bb2dcf968
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57648534"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363059"
 ---
 # <a name="content-links-in-text-controls"></a>Liens de contenu dans les contrôles de texte
 
@@ -23,7 +23,7 @@ Les liens de contenu offrent un moyen d'incorporer des données enrichies dans v
 
 Lorsque l’utilisateur préfixe une entrée avec un symbole esperluette (@) dans un contrôle RichEditBox, une liste de suggestions de personnes et/ou de lieux correspondant à l’entrée s'affiche. Si, par exemple, l’utilisateur sélectionne un lieu, un lien de type ContentLink vers ce lieu est inséré dans le texte. Si l’utilisateur appelle le lien de contenu dans le contrôle RichEditBox, un menu volant s’affiche avec une carte et des informations supplémentaires sur le lieu en question.
 
-> **API importantes** : [Classe de ContentLink](/uwp/api/windows.ui.xaml.documents.contentlink), [ContentLinkInfo classe](/uwp/api/windows.ui.text.contentlinkinfo), [RichEditTextRange classe](/uwp/api/windows.ui.text.richedittextrange)
+> **API importantes** : [ContentLink class](/uwp/api/windows.ui.xaml.documents.contentlink), [ContentLinkInfo class](/uwp/api/windows.ui.text.contentlinkinfo), [RichEditTextRange class](/uwp/api/windows.ui.text.richedittextrange)
 
 > [!NOTE]
 > Les API pour obtenir des liens de contenu sont réparties sur les espaces de noms suivants : Windows.UI.Xaml.Controls, Windows.UI.Xaml.Documents et Windows.UI.Text.
@@ -303,7 +303,7 @@ private void Button_Click(object sender, RoutedEventArgs e)
 ```
 
 > [!TIP]
-> Quand vous utilisez un ContentLink dans un contrôle de texte avec d’autres éléments de texte en XAML, placez le contenu dans un conteneur [Span](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.aspx) et appliquez l’attribut `xml:space="preserve"` au conteneur Span pour conserver l’espace entre le ContentLink et d'autres éléments.
+> Quand vous utilisez un ContentLink dans un contrôle de texte avec d’autres éléments de texte en XAML, placez le contenu dans un conteneur [Span](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.span) et appliquez l’attribut `xml:space="preserve"` au conteneur Span pour conserver l’espace entre le ContentLink et d'autres éléments.
 
 ## <a name="examples"></a>Exemples
 

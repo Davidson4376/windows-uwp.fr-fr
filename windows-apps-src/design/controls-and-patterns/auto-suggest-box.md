@@ -12,18 +12,18 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 86b0063175b5e040cd7d92357bfa4b8abac4e13c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c3076e9a098ff62ba9000b4337417013e400375e
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592404"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66361094"
 ---
 # <a name="auto-suggest-box"></a>Zone de suggestion automatique
 
 Utilisez un objet AutoSuggestBox pour fournir une liste de suggestions afin que les utilisateurs puissent sélectionner des options au fil de leur saisie.
 
-> **API importantes** : [Classe de AutoSuggestBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx), [événement TextChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.textchanged.aspx), [SuggestionChose événement](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.suggestionchosen.aspx), [QuerySubmitted événement](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.querysubmitted.aspx)
+> **API importantes** : [Classe de AutoSuggestBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox), [événement TextChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.textchanged), [SuggestionChose événement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.suggestionchosen), [QuerySubmitted événement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.querysubmitted)
 
 ![Zone de suggestion automatique](images/controls/auto-suggest-box-open.png)
 
@@ -72,9 +72,9 @@ Pour utiliser un objet AutoSuggestBox, vous devez répondre à 3 actions effect
 
 ### <a name="text-changed"></a>Texte modifié
 
-L’événement [TextChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.textchanged.aspx) se produit chaque fois que le contenu de la zone de texte est mis à jour. Utilisez la propriété [Reason](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestboxtextchangedeventargs.reason.aspx) d’arguments d’événement pour déterminer si la modification est due à une entrée utilisateur. Si la raison de la modification est **UserInput**, filtrez vos données en fonction de l’entrée. Ensuite, définissez les données filtrées comme [ItemsSource](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) de l’objet AutoSuggestBox pour mettre à jour la liste de suggestions.
+L’événement [TextChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.textchanged) se produit chaque fois que le contenu de la zone de texte est mis à jour. Utilisez la propriété [Reason](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestboxtextchangedeventargs.reason) d’arguments d’événement pour déterminer si la modification est due à une entrée utilisateur. Si la raison de la modification est **UserInput**, filtrez vos données en fonction de l’entrée. Ensuite, définissez les données filtrées comme [ItemsSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) de l’objet AutoSuggestBox pour mettre à jour la liste de suggestions.
 
-Pour contrôler la façon dont les éléments sont affichés dans la liste de suggestions, vous pouvez utiliser [DisplayMemberPath](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.displaymemberpath.aspx) ou [ItemTemplate](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx).
+Pour contrôler la façon dont les éléments sont affichés dans la liste de suggestions, vous pouvez utiliser [DisplayMemberPath](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.displaymemberpath) ou [ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate).
 
 - Pour afficher le texte d’une seule propriété de votre élément de données, définissez la propriété DisplayMemberPath pour choisir la propriété de votre objet à afficher dans la liste de suggestions.
 - Pour définir une apparence personnalisée pour chaque élément dans la liste, utilisez la propriété ItemTemplate.
@@ -83,19 +83,19 @@ Pour contrôler la façon dont les éléments sont affichés dans la liste de su
 
 Lorsqu’un utilisateur navigue dans la liste de suggestions à l’aide du clavier, vous devez mettre à jour le texte dans la zone de texte pour assurer la correspondance.
 
-Vous pouvez définir la propriété [TextMemberPath](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.textmemberpath.aspx) pour choisir la propriété de votre objet de données à afficher dans la zone de texte. Si vous spécifiez un TextMemberPath, la zone de texte est automatiquement mise à jour. Vous devez généralement spécifier la même valeur pour DisplayMemberPath et TextMemberPath afin que le texte soit identique dans la liste de suggestions et dans la zone de texte.
+Vous pouvez définir la propriété [TextMemberPath](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.textmemberpath) pour choisir la propriété de votre objet de données à afficher dans la zone de texte. Si vous spécifiez un TextMemberPath, la zone de texte est automatiquement mise à jour. Vous devez généralement spécifier la même valeur pour DisplayMemberPath et TextMemberPath afin que le texte soit identique dans la liste de suggestions et dans la zone de texte.
 
-Si vous avez besoin d’afficher plus qu’une simple propriété, gérez l’événement [SuggestionChosen](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.suggestionchosen.aspx) pour remplir la zone de texte avec du texte personnalisé basé sur l’élément sélectionné.
+Si vous avez besoin d’afficher plus qu’une simple propriété, gérez l’événement [SuggestionChosen](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.suggestionchosen) pour remplir la zone de texte avec du texte personnalisé basé sur l’élément sélectionné.
 
 ### <a name="query-submitted"></a>Requête envoyée
 
-Gérez l’événement [QuerySubmitted](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.querysubmitted.aspx) pour effectuer une action de requête appropriée sur votre application et montrer les résultats à l’utilisateur.
+Gérez l’événement [QuerySubmitted](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.querysubmitted) pour effectuer une action de requête appropriée sur votre application et montrer les résultats à l’utilisateur.
 
 L’événement QuerySubmitted se produit lorsqu’un utilisateur valide une chaîne de requête. L’utilisateur peut valider une requête de l’une de ces manières :
-- Lorsque le focus est sur la zone de texte, appuyez sur Entrée ou cliquez sur l’icône de requête. La propriété [ChosenSuggestion](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestboxquerysubmittedeventargs.chosensuggestion.aspx) des arguments d’événement est **null**.
+- Lorsque le focus est sur la zone de texte, appuyez sur Entrée ou cliquez sur l’icône de requête. La propriété [ChosenSuggestion](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestboxquerysubmittedeventargs.chosensuggestion) des arguments d’événement est **null**.
 - Lorsque le focus est sur la liste de suggestions, appuyez sur Entrée, puis cliquez ou appuyez sur un élément. La propriété ChosenSuggestion des arguments d’événement contient l’élément sélectionné dans la liste.
 
-Dans tous les cas, la propriété [QueryText](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestboxquerysubmittedeventargs.querytext.aspx) des arguments d’événement contient le texte de la zone de texte.
+Dans tous les cas, la propriété [QueryText](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestboxquerysubmittedeventargs.querytext) des arguments d’événement contient le texte de la zone de texte.
 
 Voici un simple élément AutoSuggestBox avec les gestionnaires d’événements requis.
 
@@ -143,7 +143,7 @@ private void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBox
 
 Utilisez un objet AutoSuggestBox pour fournir une liste de suggestions afin que les utilisateurs puissent sélectionner des options au fil de leur saisie.
 
-Par défaut, la zone de texte n’affiche pas de bouton de requête. Vous pouvez définir la propriété [QueryIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.queryicon.aspx) pour ajouter un bouton avec l’icône spécifiée sur le côté droit de la zone de texte. Par exemple, pour rendre AutoSuggestBox similaire à une zone de recherche classique, ajoutez une icône Rechercher comme suit.
+Par défaut, la zone de texte n’affiche pas de bouton de requête. Vous pouvez définir la propriété [QueryIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.queryicon) pour ajouter un bouton avec l’icône spécifiée sur le côté droit de la zone de texte. Par exemple, pour rendre AutoSuggestBox similaire à une zone de recherche classique, ajoutez une icône Rechercher comme suit.
 
 ```xaml
 <AutoSuggestBox QueryIcon="Find"/>
@@ -184,6 +184,6 @@ Voici AutoSuggestBox avec une icône Rechercher.
 - [Contrôles de texte](text-controls.md)
 - [Vérification orthographique](text-controls.md)
 - [Recherche](search.md)
-- [Classe de zone de texte](https://msdn.microsoft.com/library/windows/apps/br209683)
-- [Classe de Windows.UI.Xaml.Controls PasswordBox](https://msdn.microsoft.com/library/windows/apps/br227519)
-- [String.Length, propriété](https://msdn.microsoft.com/library/system.string.length.aspx)
+- [Classe de zone de texte](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
+- [Classe de Windows.UI.Xaml.Controls PasswordBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
+- [String.Length, propriété](https://docs.microsoft.com/dotnet/api/system.string.length?redirectedfrom=MSDN#System_String_Length)

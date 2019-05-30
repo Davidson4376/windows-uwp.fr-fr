@@ -7,12 +7,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a3bf2ce69105787b7ca9e83c7f7fe5db8ae1038
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 14f5fa06cfa0a6a7e393f3e2d513af0898d1f822
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57624854"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360940"
 ---
 # <a name="periodic-notification-overview"></a>Vue d’ensemble des notifications périodiques
  
@@ -34,23 +34,23 @@ Les notifications périodiques permettent à votre application d’obtenir des m
 
 Les notifications périodiques nécessitent que votre application héberge un service cloud. Le service est interrogé périodiquement par tous les utilisateurs qui disposent de l’application. À chaque intervalle d’interrogation, par exemple une fois par heure, Windows envoie une requête HTTP GET à l’URI, télécharge le contenu demandé pour la vignette ou le badge (contenu XML par exemple), qui est fourni en réponse à la requête, puis affiche ce contenu dans la vignette de l’application.
 
-Notez que les mises à jour périodiques ne peuvent pas être utilisées avec les notifications toast. Pour la remise des toasts, il est préférable de recourir aux notifications [planifiées](https://msdn.microsoft.com/library/windows/apps/hh465417) ou aux notifications [Push](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252).
+Notez que les mises à jour périodiques ne peuvent pas être utilisées avec les notifications toast. Pour la remise des toasts, il est préférable de recourir aux notifications [planifiées](https://docs.microsoft.com/previous-versions/windows/apps/hh465417(v=win.10)) ou aux notifications [Push](https://docs.microsoft.com/previous-versions/windows/apps/hh868252(v=win.10)).
 
 ## <a name="uri-location-and-xml-content"></a>Emplacement d’URI et contenu XML
 
 
 Toute adresse Web HTTP ou HTTPS valide peut être utilisée comme URI interrogeable.
 
-La réponse du serveur cloud comprend le contenu téléchargé. Le contenu renvoyé à partir de l’URI doit être conforme à la spécification de schéma XML de la [vignette](adaptive-tiles-schema.md) ou du [badge](https://msdn.microsoft.com/library/windows/apps/br212851). De plus, il doit être au format UTF-8. Vous pouvez utiliser des en-têtes HTTP définis pour spécifier l’[heure d’expiration](#expiration-of-tile-and-badge-notifications) ou la balise de la notification.
+La réponse du serveur cloud comprend le contenu téléchargé. Le contenu renvoyé à partir de l’URI doit être conforme à la spécification de schéma XML de la [vignette](adaptive-tiles-schema.md) ou du [badge](https://docs.microsoft.com/uwp/schemas/tiles/badgeschema/schema-root). De plus, il doit être au format UTF-8. Vous pouvez utiliser des en-têtes HTTP définis pour spécifier l’[heure d’expiration](#expiration-of-tile-and-badge-notifications) ou la balise de la notification.
 
 ## <a name="polling-behavior"></a>Comportement de l’interrogation
 
 
 Appelez l’une de ces méthodes pour lancer l’interrogation :
 
--   [**StartPeriodicUpdate** ](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdate_Windows_Foundation_Uri_Windows_Foundation_DateTime_Windows_UI_Notifications_PeriodicUpdateRecurrence_) (mosaïque)
--   [**StartPeriodicUpdate** ](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.BadgeUpdater#Windows_UI_Notifications_BadgeUpdater_StartPeriodicUpdate_Windows_Foundation_Uri_Windows_Foundation_DateTime_Windows_UI_Notifications_PeriodicUpdateRecurrence_) (Badge)
--   [**StartPeriodicUpdateBatch** ](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdateBatch_Windows_Foundation_Collections_IIterable_1_Windows_UI_Notifications_PeriodicUpdateRecurrence_) (mosaïque)
+-   [**StartPeriodicUpdate**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdate_Windows_Foundation_Uri_Windows_Foundation_DateTime_Windows_UI_Notifications_PeriodicUpdateRecurrence_) (Tile)
+-   [**StartPeriodicUpdate**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.BadgeUpdater#Windows_UI_Notifications_BadgeUpdater_StartPeriodicUpdate_Windows_Foundation_Uri_Windows_Foundation_DateTime_Windows_UI_Notifications_PeriodicUpdateRecurrence_) (Badge)
+-   [**StartPeriodicUpdateBatch**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdateBatch_Windows_Foundation_Collections_IIterable_1_Windows_UI_Notifications_PeriodicUpdateRecurrence_) (Tile)
 
 Quand vous appelez l’une de ces méthodes, l’URI est immédiatement interrogé et la vignette ou le badge est mis à jour à l’aide du contenu reçu. Après cette interrogation initiale, Windows continue de fournir des mises à jour en fonction de l’intervalle demandé. L’interrogation se poursuit jusqu’à ce que vous l’arrêtiez explicitement (avec [**TileUpdater.StopPeriodicUpdate**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater.StopPeriodicUpdate)), jusqu’à ce que votre application soit désinstallée, ou, dans le cas d’une vignette secondaire, jusqu’à ce que la vignette soit supprimée. Dans le cas contraire, Windows continue à rechercher des mises à jour pour votre vignette ou votre badge, même si votre application n’est jamais relancée.
 
@@ -84,13 +84,13 @@ Par exemple, au cours d’une journée active d’échanges sur le marché bours
 ## <a name="periodic-notifications-in-the-notification-queue"></a>Notifications périodiques dans la file d’attente de notifications
 
 
-Vous pouvez utiliser des mises à jour périodiques de vignettes avec le [cycle des notifications](https://msdn.microsoft.com/library/windows/apps/hh781199). Par défaut, une vignette de l’écran d’accueil affiche le contenu d’une seule notification jusqu’à ce qu’elle soit remplacée par une nouvelle notification. Lorsque vous activez le cycle, une file d’attente peut comporter jusqu’à cinq notifications que la vignette affiche à tour de rôle.
+Vous pouvez utiliser des mises à jour périodiques de vignettes avec le [cycle des notifications](https://docs.microsoft.com/previous-versions/windows/apps/hh781199(v=win.10)). Par défaut, une vignette de l’écran d’accueil affiche le contenu d’une seule notification jusqu’à ce qu’elle soit remplacée par une nouvelle notification. Lorsque vous activez le cycle, une file d’attente peut comporter jusqu’à cinq notifications que la vignette affiche à tour de rôle.
 
-Si la file d’attente atteint le nombre maximal de cinq notifications, la nouvelle notification suivante remplace la notification la plus ancienne dans la file d’attente. Toutefois, vous avez la possibilité de modifier cette stratégie de remplacement dans la file d’attente en définissant des balises sur vos notifications. Une balise est une chaîne spécifique de l’application, d’une longueur maximale de 16 caractères alphanumériques, qui ne respecte pas la casse et qui est spécifiée dans l’en-tête HTTP [X-WNS-Tag](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_tag) de la charge utile de réponse. Windows compare la balise d’une notification entrante aux balises de toutes les notifications déjà présentes en file d’attente. Si une correspondance existe, la nouvelle notification remplace la notification en file d’attente ayant la même balise. S’il n’existe aucune correspondance, la règle de remplacement par défaut est appliquée et la nouvelle notification remplace la notification la plus ancienne dans la file d’attente.
+Si la file d’attente atteint le nombre maximal de cinq notifications, la nouvelle notification suivante remplace la notification la plus ancienne dans la file d’attente. Toutefois, vous avez la possibilité de modifier cette stratégie de remplacement dans la file d’attente en définissant des balises sur vos notifications. Une balise est une chaîne spécifique de l’application, d’une longueur maximale de 16 caractères alphanumériques, qui ne respecte pas la casse et qui est spécifiée dans l’en-tête HTTP [X-WNS-Tag](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)) de la charge utile de réponse. Windows compare la balise d’une notification entrante aux balises de toutes les notifications déjà présentes en file d’attente. Si une correspondance existe, la nouvelle notification remplace la notification en file d’attente ayant la même balise. S’il n’existe aucune correspondance, la règle de remplacement par défaut est appliquée et la nouvelle notification remplace la notification la plus ancienne dans la file d’attente.
 
 Vous pouvez utiliser la mise en file d’attente des notifications et les balises pour mettre en œuvre toutes sortes de scénarios de notification. Par exemple, une application de cotations boursières peut envoyer cinq notifications, chacune d’elles s’appliquant à une action spécifique et portant une balise du nom de l’action en question. De cette manière, la file d’attente ne peut pas comporter deux notifications pour la même action, avec la plus ancienne des deux qui serait obsolète.
 
-Pour plus d’informations, voir [Utilisation de la file d’attente de notifications](https://msdn.microsoft.com/library/windows/apps/hh781199).
+Pour plus d’informations, voir [Utilisation de la file d’attente de notifications](https://docs.microsoft.com/previous-versions/windows/apps/hh781199(v=win.10)).
 
 ### <a name="enabling-the-notification-queue"></a>Activation de la file d’attente de notifications
 
@@ -103,7 +103,7 @@ Vous devez fournir un URI unique pour chaque notification que Windows doit tél�
 ## <a name="related-topics"></a>Rubriques connexes
 
 
-* [Instructions pour les notifications périodiques](https://msdn.microsoft.com/library/windows/apps/hh761461)
-* [Comment configurer des notifications périodiques pour badges](https://msdn.microsoft.com/library/windows/apps/hh761476)
-* [Comment configurer des notifications périodiques pour les vignettes](https://msdn.microsoft.com/library/windows/apps/hh761476)
+* [Instructions pour les notifications périodiques](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-periodic-notification-overview)
+* [Comment configurer des notifications périodiques pour badges](https://docs.microsoft.com/previous-versions/windows/apps/hh761476(v=win.10))
+* [Comment configurer des notifications périodiques pour les vignettes](https://docs.microsoft.com/previous-versions/windows/apps/hh761476(v=win.10))
  

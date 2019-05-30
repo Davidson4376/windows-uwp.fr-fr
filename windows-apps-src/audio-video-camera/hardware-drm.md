@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f0a53d0f725c134bbb7adecaa956000a53235b0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 9c48cd52d69d13b61f059894cc0dbea89eecf913
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57600904"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360867"
 ---
 # <a name="hardware-drm"></a>Gestion des droits numériques en fonction du matériel
 
@@ -89,18 +89,18 @@ La meilleure façon de savoir si vous êtes dans le matériel DRM ou logiciel DR
 
 Cette section explique comment détecter le type de gestion des droits numériques en fonction du matériel qui est pris en charge sur le système.
 
-Vous pouvez utiliser la méthode [**PlayReadyStatics.CheckSupportedHardware**](https://msdn.microsoft.com/library/windows/apps/dn986441) pour déterminer si le système prend en charge une fonctionnalité spécifique de gestion des droits numériques (DRM) en fonction du matériel. Exemple :
+Vous pouvez utiliser la méthode [**PlayReadyStatics.CheckSupportedHardware**](https://docs.microsoft.com/uwp/api/windows.media.protection.playready.playreadystatics.checksupportedhardware) pour déterminer si le système prend en charge une fonctionnalité spécifique de gestion des droits numériques (DRM) en fonction du matériel. Exemple :
 
 ```csharp
 bool isFeatureSupported = PlayReadyStatics.CheckSupportedHardware(PlayReadyHardwareDRMFeatures.HEVC);
 ```
 
-L’énumération [**PlayReadyHardwareDRMFeatures**](https://msdn.microsoft.com/library/windows/apps/dn986265) contient la liste valide des valeurs de fonctionnalité de gestion des droits numériques en fonction du matériel pouvant être interrogées. Pour déterminer si la gestion des droits numériques en fonction du matériel est prise en charge, utilisez le membre **HardwareDRM** dans la requête. Pour déterminer si le matériel prend en charge le codec HEVC (High Efficiency Video Coding)/H.265, utilisez le membre **HEVC** dans la requête.
+L’énumération [**PlayReadyHardwareDRMFeatures**](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.PlayReady.PlayReadyHardwareDRMFeatures) contient la liste valide des valeurs de fonctionnalité de gestion des droits numériques en fonction du matériel pouvant être interrogées. Pour déterminer si la gestion des droits numériques en fonction du matériel est prise en charge, utilisez le membre **HardwareDRM** dans la requête. Pour déterminer si le matériel prend en charge le codec HEVC (High Efficiency Video Coding)/H.265, utilisez le membre **HEVC** dans la requête.
 
-Vous pouvez également utiliser la propriété [**PlayReadyStatics.PlayReadyCertificateSecurityLevel**](https://msdn.microsoft.com/library/windows/apps/windows.media.protection.playready.playreadystatics.playreadycertificatesecuritylevel.aspx) pour obtenir le niveau de sécurité du certificat client afin de déterminer si la gestion des droits numériques en fonction du matériel est prise en charge. À moins que le niveau de sécurité renvoyé pour le certificat soit supérieur ou égal à 3 000, le client n’est pas individualisé ou configuré (auquel cas cette propriété renvoie 0) ou la gestion des droits numériques en fonction du matériel n’est pas utilisée (auquel cas cette propriété renvoie une valeur inférieure à 3 000).
+Vous pouvez également utiliser la propriété [**PlayReadyStatics.PlayReadyCertificateSecurityLevel**](https://docs.microsoft.com/uwp/api/windows.media.protection.playready.playreadystatics.playreadycertificatesecuritylevel) pour obtenir le niveau de sécurité du certificat client afin de déterminer si la gestion des droits numériques en fonction du matériel est prise en charge. À moins que le niveau de sécurité renvoyé pour le certificat soit supérieur ou égal à 3 000, le client n’est pas individualisé ou configuré (auquel cas cette propriété renvoie 0) ou la gestion des droits numériques en fonction du matériel n’est pas utilisée (auquel cas cette propriété renvoie une valeur inférieure à 3 000).
 
 ### <a name="detecting-support-for-aes128cbc-hardware-drm"></a>Détection de la prise en charge de la gestion des droits numériques en fonction du matériel AES128CBC
-À partir de Windows 10, version 1709, vous pouvez détecter la prise en charge du chiffrement matériel AES128CBC sur un appareil en appelant **[PlayReadyStatics.CheckSupportedHardware](https://msdn.microsoft.com/library/windows/apps/dn986441)** et en spécifiant la valeur d’énumération [**PlayReadyHardwareDRMFeatures.Aes128Cbc**](https://msdn.microsoft.com/library/windows/apps/dn986265). Dans les versions précédentes de Windows 10, la définition de cette valeur entraîne la levée d’une exception. Pour cette raison, vous devez vérifier la présence de la valeur d’énumération en appelant **[ApiInformation.IsApiContractPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent)** et en spécifiant la version contractuelle principale 5 avant d’appeler **CheckSupportedHardware**.
+À partir de Windows 10, version 1709, vous pouvez détecter la prise en charge du chiffrement matériel AES128CBC sur un appareil en appelant **[PlayReadyStatics.CheckSupportedHardware](https://docs.microsoft.com/uwp/api/windows.media.protection.playready.playreadystatics.checksupportedhardware)** et en spécifiant la valeur d’énumération [**PlayReadyHardwareDRMFeatures.Aes128Cbc**](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.PlayReady.PlayReadyHardwareDRMFeatures). Dans les versions précédentes de Windows 10, la définition de cette valeur entraîne la levée d’une exception. Pour cette raison, vous devez vérifier la présence de la valeur d’énumération en appelant **[ApiInformation.IsApiContractPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent)** et en spécifiant la version contractuelle principale 5 avant d’appeler **CheckSupportedHardware**.
 
 ```csharp
 bool supportsAes128Cbc = ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract", 5);
@@ -111,5 +111,5 @@ if (supportsAes128Cbc)
 }
 ```
 
-## <a name="see-also"></a>Voir également
+## <a name="see-also"></a>Voir aussi
 - [PlayReady DRM](playready-client-sdk.md)

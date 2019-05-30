@@ -8,19 +8,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 363ea5728b94d6b42f29299e8d240bcfc6242b4c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5fc43d5229ecd2bd9502fd74fef7f5197f758c62
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57625114"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363590"
 ---
 # <a name="guidelines-for-panning"></a>Recommandations en matière de mouvement panoramique
 
 
 Le mouvement panoramique ou défilement permet à l’utilisateur de naviguer au sein d’une vue unique pour afficher le contenu de la vue qui ne tient pas entièrement dans la fenêtre d’affichage. Parmi les exemples de vues figurent la structure de dossiers d’un ordinateur, une bibliothèque de documents ou un album photo.
 
-> **API importantes** : [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084), [ **Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
+> **API importantes** : [**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input), [**Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input)
 
 
 ## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
@@ -79,10 +79,9 @@ Le mouvement panoramique ou défilement permet à l’utilisateur de naviguer au
 Le mouvement panoramique tactile, par un mouvement de glissement ou de balayage avec un ou plusieurs doigts, ressemble à un défilement à l’aide de la souris. L’interaction de type panoramique ressemble plus à la rotation de la roulette de la souris ou au glissement de la case de défilement qu’à un clic sur la barre de défilement. Sauf si une distinction est effectuée dans une API ou requis par la partie d’interface utilisateur Windows spécifique à l’appareil, nous appelons simplement les deux interactions en tant que l’affichage panoramique.
 
 > <div id="main">
-> <strong>Windows 10 Fall Creators Update - changement de comportement</strong>
-> </div>
-> Par défaut, au lieu d’effectuer la sélection de texte, un stylet actif fait défiler/parcourt une liste dans les applications UWP (comme l’interaction tactile, le pavé tactile et le stylet passif).  
+> <strong>Windows 10 Fall Creators Update - changement de comportement</strong> par défaut, au lieu de la sélection de texte, un stylet active maintenant défile/PAN dans les applications UWP (par exemple, tactile, un pavé tactile et stylet passif).  
 > Si votre application repose sur le comportement précédent, vous pouvez remplacer le défilement du stylet et rétablir le comportement précédent. Pour plus d’informations, consultez la rubrique de référence des API pour le <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer">ScrollViewer classe</a>.
+> </div>
 
 Selon le périphérique d’entrée utilisé, l’utilisateur effectue un mouvement panoramique au sein d’une région de mouvement panoramique à l’aide de l’un des éléments suivants :
 
@@ -172,9 +171,9 @@ Ces recommandations s’avèrent utiles pour des applications telles que les alb
 ## <a name="related-articles"></a>Articles connexes
 
 
-* [Interactions de l’utilisateur personnalisé](https://msdn.microsoft.com/library/windows/apps/mt185599)
-* [Optimiser le ListView et GridView](https://msdn.microsoft.com/library/windows/apps/mt204776)
-* [Accessibilité du clavier](https://msdn.microsoft.com/library/windows/apps/mt244347)
+* [Interactions de l’utilisateur personnalisé](https://developer.microsoft.com/windows/design/inputs-devices)
+* [Optimiser le ListView et GridView](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview)
+* [Accessibilité du clavier](https://docs.microsoft.com/windows/uwp/accessibility/keyboard-accessibility)
 
 **Exemples**
 * [Exemple d’entrée de base](https://go.microsoft.com/fwlink/p/?LinkID=620302)

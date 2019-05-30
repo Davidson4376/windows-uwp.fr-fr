@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 36cd006b4608d82999281ebd407fd32e168ae38b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f87ecf0c3c90976295d85c1a995f1de091491974
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57650464"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359179"
 ---
 # <a name="adaptive-streaming-with-playready"></a>Streaming adaptatif avec PlayReady
 
@@ -63,9 +63,9 @@ private const uint MSPR_E_CONTENT_ENABLING_ACTION_REQUIRED = 0x8004B895;
 
 ## <a name="setting-up-the-mediaprotectionmanager"></a>Configuration du MediaProtectionManager
 
-Pour ajouter la protection de contenu PlayReady à votre application UWP, vous devez configurer un objet [MediaProtectionManager](https://msdn.microsoft.com/library/windows/apps/br207040). Cette opération s’effectue lors de l’initialisation de votre objet [**AdaptiveMediaSource**](https://msdn.microsoft.com/library/windows/apps/dn946912).
+Pour ajouter la protection de contenu PlayReady à votre application UWP, vous devez configurer un objet [MediaProtectionManager](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.MediaProtectionManager). Cette opération s’effectue lors de l’initialisation de votre objet [**AdaptiveMediaSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource).
 
-Le code suivant définit un objet [MediaProtectionManager](https://msdn.microsoft.com/library/windows/apps/br207040) :
+Le code suivant définit un objet [MediaProtectionManager](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.MediaProtectionManager) :
 
 ```csharp
 private void SetUpProtectionManager(ref MediaElement mediaElement)
@@ -100,7 +100,7 @@ private void SetUpProtectionManager(ref MediaElement mediaElement)
 
 Ce code peut simplement être copié sur votre application, dans la mesure où il est obligatoire pour la configuration de la protection de contenu.
 
-L’événement [ComponentLoadFailed](https://msdn.microsoft.com/library/windows/apps/br207041) est déclenché en cas d’échec de chargement des données binaires. Nous devons ajouter un gestionnaire d’événements pour gérer ceci, afin de signaler que le chargement ne s’est pas terminé :
+L’événement [ComponentLoadFailed](https://docs.microsoft.com/uwp/api/windows.media.protection.mediaprotectionmanager.componentloadfailed) est déclenché en cas d’échec de chargement des données binaires. Nous devons ajouter un gestionnaire d’événements pour gérer ceci, afin de signaler que le chargement ne s’est pas terminé :
 
 ```csharp
 private void ProtectionManager_ComponentLoadFailed(
@@ -111,7 +111,7 @@ private void ProtectionManager_ComponentLoadFailed(
 }
 ```
 
-De même, nous devons ajouter un gestionnaire d’événements pour l’événement [ServiceRequested](https://msdn.microsoft.com/library/windows/apps/br207045), qui est déclenché lorsqu’un service est demandé. Ce code vérifie le type de demande et réagit de façon appropriée :
+De même, nous devons ajouter un gestionnaire d’événements pour l’événement [ServiceRequested](https://docs.microsoft.com/uwp/api/windows.media.protection.mediaprotectionmanager.servicerequested), qui est déclenché lorsqu’un service est demandé. Ce code vérifie le type de demande et réagit de façon appropriée :
 
 ```csharp
 private async void ProtectionManager_ServiceRequested(
@@ -192,7 +192,7 @@ async void ProActiveIndivRequest()
 
 ## <a name="license-acquisition-service-requests"></a>Demandes de service d’acquisition de licence
 
-Si au lieu de cela, il s’agit d’une demande [PlayReadyLicenseAcquisitionServiceRequest](https://msdn.microsoft.com/library/windows/apps/dn986285), nous appelons la fonction suivante pour demander et obtenir la licence PlayReady. Nous demandons à l’objet **MediaProtectionServiceCompletion** transmis d’indiquer si la demande a réussi ou non, et nous terminons la demande :
+Si au lieu de cela, il s’agit d’une demande [PlayReadyLicenseAcquisitionServiceRequest](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.PlayReady.PlayReadyLicenseAcquisitionServiceRequest), nous appelons la fonction suivante pour demander et obtenir la licence PlayReady. Nous demandons à l’objet **MediaProtectionServiceCompletion** transmis d’indiquer si la demande a réussi ou non, et nous terminons la demande :
 
 ```csharp
 async void LicenseAcquisitionRequest(
@@ -274,7 +274,7 @@ async void LicenseAcquisitionRequest(
 
 ## <a name="initializing-the-adaptivemediasource"></a>Lancement d’AdaptiveMediaSource
 
-Enfin, vous aurez besoin d’une fonction pour initialiser [AdaptiveMediaSource](https://msdn.microsoft.com/library/windows/apps/dn946912), créée à partir d’un [URI](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) et d’un [MediaElement](https://msdn.microsoft.com/library/windows/apps/br242926) donnés. L’**URI** doit être le lien vers le fichier multimédia (TLS ou DASH). L’élément **MediaElement** doit être défini dans votre code XAML.
+Enfin, vous aurez besoin d’une fonction pour initialiser [AdaptiveMediaSource](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource), créée à partir d’un [URI](https://docs.microsoft.com/dotnet/api/system.uri?redirectedfrom=MSDN) et d’un [MediaElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement) donnés. L’**URI** doit être le lien vers le fichier multimédia (TLS ou DASH). L’élément **MediaElement** doit être défini dans votre code XAML.
 
 ```csharp
 async private void InitializeAdaptiveMediaSource(System.Uri uri, MediaElement m)
@@ -295,7 +295,7 @@ async private void InitializeAdaptiveMediaSource(System.Uri uri, MediaElement m)
 
 Vous pouvez appeler cette fonction dans n’importe quel événement gérant le début du streaming adaptatif, par exemple dans un événement de clic sur un bouton.
 
-## <a name="see-also"></a>Voir également
+## <a name="see-also"></a>Voir aussi
 - [PlayReady DRM](playready-client-sdk.md)
 
 

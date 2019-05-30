@@ -5,12 +5,12 @@ ms.date: 07/07/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d010816b1ba4c9941aea7bdcdb4bd4c50038aca6
-ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.openlocfilehash: 72bad5bff8092e63a73cc1e32f4424b70867d245
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59067834"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366029"
 ---
 # <a name="choosing-the-right-push-notification-channel-type"></a>Choisir le type de canal de notification Push adapté
 
@@ -38,10 +38,10 @@ Ces canaux sont les plus couramment utilisés sur Windows actuellement et sont a
 
 ### <a name="what-do-primary-channels-enable"></a>Fonctionnalités des canaux principaux ?
 
--   **Envoi de mises à jour de vignette ou de badge à la vignette principale.** Si l’utilisateur a choisi d’épingler votre vignette à l’écran de démarrage, c’est l’occasion de la présenter. Envoi de mises à jour avec des informations utiles ou des rappels d’expériences au sein de votre application. 
--   **Envoi de notifications toast.** Les notifications toast sont l’occasion d’obtenir des informations de la part de l’utilisateur immédiatement. Elles sont affichées par l’interpréteur de commandes au-dessus de la plupart des applications et en direct dans le centre de notifications afin que l’utilisateur puisse y revenir et interagir avec celles-ci ultérieurement. 
+-   **Envoi de mises à jour de vignette ou un badge à la vignette principale.** Si l’utilisateur a choisi d’épingler votre vignette à l’écran de démarrage, c’est l’occasion de la présenter. Envoi de mises à jour avec des informations utiles ou des rappels d’expériences au sein de votre application. 
+-   **Envoi de notifications de toast.** Les notifications toast sont l’occasion d’obtenir des informations de la part de l’utilisateur immédiatement. Elles sont affichées par l’interpréteur de commandes au-dessus de la plupart des applications et en direct dans le centre de notifications afin que l’utilisateur puisse y revenir et interagir avec celles-ci ultérieurement. 
 -   **Envoi de notifications brutes pour déclencher une tâche en arrière-plan.** Parfois, vous souhaitez effectuer un travail pour le compte de l’utilisateur en vous basant sur une notification. Les notifications brutes permettent l’exécution des tâches en arrière-plan de votre application 
--   **Chiffrement des messages en transit proposé par Windows à l’aide de TLS.** Les messages sont chiffrés sur le réseau à la fois arrivant dans WNS et en accédant à l’appareil de l’utilisateur.  
+-   **Chiffrement de messages en transit fourni par Windows à l’aide de TLS.** Les messages sont chiffrés sur le réseau à la fois arrivant dans WNS et en accédant à l’appareil de l’utilisateur.  
 
 ### <a name="limitations-of-primary-channels"></a>Limitations des canaux principaux
 
@@ -108,12 +108,12 @@ Voici une comparaison rapide des différents types de canaux :
 
 <tr class="header">
 <th align="left"><b>Type</b></th>
-<th align="left"><b>Notifications Push toast ?</b></th>
-<th align="left"><b>Notifications Push par vignette/badge ?</b></th>
-<th align="left"><b>Notifications Push brutes ?</b></th>
+<th align="left"><b>Push toast ?</b></th>
+<th align="left"><b>Push de vignette/badge ?</b></th>
+<th align="left"><b>Brutes des notifications Push ?</b></th>
 <th align="left"><b>Authentification</b></th>
 <th align="left"><b>API</b></th>
-<th align="left"><b>Enregistrement dans le Windows Store requis ?</b></th>
+<th align="left"><b>Inscription du Store requise ?</b></th>
 <th align="left"><b>Canaux</b></th>
 <th align="left"><b>Chiffrement</b></th>
 </tr>
@@ -165,13 +165,13 @@ En règle générale, nous vous recommandons d’utiliser le canal principal dan
 
 ## <a name="related-articles"></a>Articles connexes
 
-* [Envoyer une notification par vignette locale](../tiles-and-notifications/sending-a-local-tile-notification.md)
+* [Envoyer une notification de vignette local](../tiles-and-notifications/sending-a-local-tile-notification.md)
 * [Notifications toast adaptatives et interactives](../tiles-and-notifications/adaptive-interactive-toasts.md)
-* [Démarrage rapide : Envoyer une notification push](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)
-* [Comment mettre à jour un badge via des notifications Push](https://msdn.microsoft.com/library/windows/apps/hh465450)
-* [Comment demander, créer et enregistrer un canal de notification](https://msdn.microsoft.com/library/windows/apps/hh465412)
-* [Comment intercepter les notifications pour les applications en cours d’exécution](https://msdn.microsoft.com/library/windows/apps/hh465450)
-* [Comment s’authentifier auprès des services de notifications Push Windows (WNS)](https://msdn.microsoft.com/library/windows/apps/hh465407)
-* [En-têtes des demandes et des réponses du service de notifications Push](https://msdn.microsoft.com/library/windows/apps/hh465435)
-* [Recommandations et liste de vérification sur les notifications Push](https://msdn.microsoft.com/library/windows/apps/hh761462)
+* [Démarrage rapide : Envoyer une notification push](https://docs.microsoft.com/previous-versions/windows/apps/hh868252(v=win.10))
+* [Comment mettre à jour d’un badge via des notifications push](https://docs.microsoft.com/previous-versions/windows/apps/hh465450(v=win.10))
+* [Comment demander, créer et enregistrer un canal de notification](https://docs.microsoft.com/previous-versions/windows/apps/hh465412(v=win.10))
+* [Comment intercepter des notifications pour les applications en cours d’exécution](https://docs.microsoft.com/previous-versions/windows/apps/hh465450(v=win.10))
+* [Comment s’authentifier avec Windows Push Notification Service (WNS)](https://docs.microsoft.com/previous-versions/windows/apps/hh465407(v=win.10))
+* [Envoyer des en-têtes de demande et de réponse de service de notification](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10))
+* [Instructions et liste de vérification pour les notifications push](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
 * [Notifications brutes](raw-notification-overview.md)

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c598868610e42e0f2ad64ef2d4fedfb48c4d91e9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: ad304d22fd1c519f7364ac69882eeaac9fa1a5c7
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57598614"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360712"
 ---
 # <a name="playready-encrypted-media-extension"></a>Extension EME (Encrypted Media Extension) PlayReady
 
@@ -72,7 +72,7 @@ Pour utiliser la gestion des droits numériques en fonction du matériel par Pla
 Il arrive que certains contenus ne soient pas pris en charge par la gestion des droits numériques en fonction du matériel. Le contenu Cocktail n’est jamais pris en charge par la gestion des droits numériques en fonction du matériel. Si vous souhaitez lire du contenu Cocktail, vous devez désactiver la gestion des droits numériques en fonction du matériel. Certains types de gestion des droits numériques en fonction du matériel prennent en charge le contenu HEVC et d’autres non. Si vous voulez lire du contenu HEVC et que la gestion des droits numériques en fonction du matériel ne le prend pas en charge, vous pouvez la désactiver.
 
 > [!NOTE]
-> Pour déterminer si le contenu HEVC est pris en charge, après l’instanciation de `com.microsoft.playready`, utilisez la méthode [**PlayReadyStatics.CheckSupportedHardware**](https://msdn.microsoft.com/library/windows/apps/dn986441).
+> Pour déterminer si le contenu HEVC est pris en charge, après l’instanciation de `com.microsoft.playready`, utilisez la méthode [**PlayReadyStatics.CheckSupportedHardware**](https://docs.microsoft.com/uwp/api/windows.media.protection.playready.playreadystatics.checksupportedhardware).
 
 ## <a name="add-secure-stop-to-your-web-app"></a>Ajouter un arrêt sécurisé à votre application web
 
@@ -298,7 +298,7 @@ function foo() {
 
 Pour plus d’informations, voir les [exemples d’applications](https://code.msdn.microsoft.com/windowsapps/PlayReady-samples-for-124a3738).
 
-## <a name="see-also"></a>Voir également
+## <a name="see-also"></a>Voir aussi
 - [PlayReady DRM](playready-client-sdk.md)
 
 

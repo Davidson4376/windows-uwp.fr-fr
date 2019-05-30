@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 02d8c67c92a070fbeaaab81ef6c5145dec90e411
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 92511c1f5b7ad8991900d80d4ec52659d6e74f88
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57631354"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66361412"
 ---
 # <a name="supported-codecs"></a>Codecs pris en charge
 
@@ -2757,4 +2757,4 @@ Les tableaux suivants indiquent la prise en charge des codecs et formats vidéo 
 <sup>2</sup> Les images DNG avec un aperçu incorporé non RAW sont prises en charge.  
 <sup>3</sup> Seuls certains formats RAW d’appareil photo sont pris en charge.  
 
-Pour plus d’informations sur les codecs d’image, voir [Codecs WIC natifs](https://msdn.microsoft.com/library/windows/desktop/gg430027.aspx).
+Pour plus d’informations sur les codecs d’image, voir [Codecs WIC natifs](https://docs.microsoft.com/windows/desktop/wic/native-wic-codecs).

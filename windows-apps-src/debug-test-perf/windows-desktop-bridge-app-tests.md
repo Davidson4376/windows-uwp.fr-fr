@@ -6,12 +6,12 @@ ms.date: 12/18/2017
 ms.topic: article
 keywords: Windows 10, uwp, certification des applications
 ms.localizationpriority: medium
-ms.openlocfilehash: 42ec5c1e91fbeebcaad68f346f317893fdfb2e1c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3f979edbd49699447040880964dd1378bc7c94c0
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57606884"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362082"
 ---
 # <a name="windows-desktop-bridge-app-tests"></a>Tests d’application Pont du bureau Windows
 
@@ -118,7 +118,7 @@ L’image {image name} ne se trouve pas dans le package.  | Une image requise es
 L’image {image name} n’est pas un fichier image valide.  | Assurez-vous que toutes les images de l’application adhèrent aux restrictions définissant le type de format de fichier approprié. Dans le message réel, {image name} représente le nom de l’image non valide. 
 L’image « BadgeLogo » a une valeur ABGR {value} à la position (x, y) qui n’est pas valide. Le pixel doit être blanc (##FFFFFF) ou transparent (00######).  | Le logo du badge représente une image qui apparaît à côté de la notification de badge afin d’identifier l’application sur l’écran de verrouillage. L’image doit être monochrome (elle ne peut contenir que des pixels blancs ou transparents). Dans le message réel, {value} représente la valeur de couleur qui n’est pas valide dans l’image. 
 L’image « BadgeLogo » a une valeur ABGR « {value} » non valide pour une image blanche à contraste élevé à la position (x, y). Les pixels doivent être (##2A2A2A) ou plus sombres, ou transparents (00######).  | Le logo du badge représente une image qui apparaît à côté de la notification de badge afin d’identifier l’application sur l’écran de verrouillage. Étant donné que le logo du badge apparaît sur un arrière-plan blanc lors de l’utilisation d’un motif blanc à contraste élevé, il doit être une version sombre du logo de badge normal. Lors de l’utilisation d’un motif blanc à contraste élevé, le logo du badge ne peut contenir que des pixels plus sombres que (##2A2A2A) ou transparents. Dans le message réel, {value} représente la valeur de couleur qui n’est pas valide dans l’image. 
-L’image doit définir au moins un type Variant sans qualificateur TargetSize. Elle doit définir un qualificateur Scale ou laisser Scale et TargetSize non spécifiés, ce qui donne la valeur par défaut Scale-100.  | Pour plus d’informations, consultez les guides sur la [conception réactive](https://msdn.microsoft.com/library/windows/apps/xaml/dn958435.aspx) et [les ressources d’application](https://docs.microsoft.com/en-us/windows/uwp/app-settings/store-and-retrieve-app-data). 
+L’image doit définir au moins un type Variant sans qualificateur TargetSize. Elle doit définir un qualificateur Scale ou laisser Scale et TargetSize non spécifiés, ce qui donne la valeur par défaut Scale-100.  | Pour plus d’informations, consultez les guides sur la [conception réactive](https://docs.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design) et [les ressources d’application](https://docs.microsoft.com/en-us/windows/uwp/app-settings/store-and-retrieve-app-data). 
 Un fichier « resources.pri » manque dans le package.  | Si le manifeste de votre application comporte du contenu localisable, veillez à ce que le package de votre application contienne un fichier resources.pri valide. 
 Le fichier « resources.pri » doit contenir un mappage des ressources avec un nom qui correspond au nom du package « {package full name} ».  | Vous pouvez obtenir cette erreur si le manifeste a changé et que le nom du mappage de ressources dans resources.pri ne correspond plus au nom du package dans le manifeste. Dans le message réel, {package full name} représente le nom du package que resources.pri doit contenir. Pour résoudre ce problème, vous devez régénérer resources.pri ; la façon la plus facile de le faire consiste à régénérer le package de l’application. 
 La fusion automatique ne doit pas être activée pour le fichier « resources.pri ».  | MakePRI.exe prend en charge une option appelée AutoMerge. La valeur par défaut de AutoMerge est off. Lorsque l’option AutoMerge est activée, elle fusionne les ressources du module linguistique d’une application en un fichier resources.pri unique au moment de l’exécution. Nous ne recommandons pas cela pour les applications que vous souhaitez distribuer via le Microsoft Store. Le resources.pri d’une application qui est distribuée via le Microsoft Store doit se trouver dans la racine du package de l’application et contiennent toutes les références de langage qui prend en charge de l’application. 
@@ -156,7 +156,7 @@ Votre application peut déclarer les types de fichier auxquels elle peut être a
 * **Règle de dépendance de Framework**  
 Ce test applique la spécification selon laquelle les applications déclarent des dépendances appropriées sur la plateforme Windows universelle (UWP). En cas de dépendance inappropriée, ce test échoue. En cas d’incompatibilité entre la version du système d’exploitation ciblée par l’application et les dépendances d’infrastructure établies, le test échoue. Le test échoue également si l’application fait référence à des versions « d’évaluation » des DLL d’infrastructure.
 * **Vérification de la communication entre processus (IPC)**  
-Ce test applique la spécification selon laquelle les applications Pont du bureau ne communiquent pas en dehors du conteneur d’application avec des composants de bureau. La communication entre processus ne concerne que les applications chargées latéralement. Les applications qui spécifient l’attribut [**ActivatableClassAttribute**](https://msdn.microsoft.com/library/windows/apps/BR211414) avec `DesktopApplicationPath` comme nom échouent à ce test.  
+Ce test applique la spécification selon laquelle les applications Pont du bureau ne communiquent pas en dehors du conteneur d’application avec des composants de bureau. La communication entre processus ne concerne que les applications chargées latéralement. Les applications qui spécifient l’attribut [**ActivatableClassAttribute**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-activatableclassattribute) avec `DesktopApplicationPath` comme nom échouent à ce test.  
 
 **Action corrective**  
 Confrontez le manifeste de l’application aux exigences décrites dans [Exigences relatives aux packages d’applications](https://docs.microsoft.com/en-us/windows/uwp/publish/app-package-requirements).
@@ -217,10 +217,10 @@ Ce test vérifie tous les composants UWP de l’application :
 Ce peut être corrigé en vous assurant que l’application a été compilée comme une version commerciale et non comme une version de débogage. 
 
 > [!NOTE]
-> La version Debug d’une application échoue ce test même si l’application utilise uniquement [API pour les applications UWP](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx). Passez en revue les messages d’erreur pour identifier l’API présent qui n’est pas une API autorisée pour les applications UWP. 
+> La version Debug d’une application échoue ce test même si l’application utilise uniquement [API pour les applications UWP](https://docs.microsoft.com/uwp/). Passez en revue les messages d’erreur pour identifier l’API présent qui n’est pas une API autorisée pour les applications UWP. 
 
 > [!NOTE]
-> Les applications C++ qui sont générées dans une configuration de débogage échoue à ce test même si la configuration utilise uniquement les API du SDK Windows pour les applications UWP. Consultez [Alternatives aux API Windows dans les applications UWP](https://msdn.microsoft.com/library/windows/apps/hh464945.aspx) pour plus d’informations.
+> Les applications C++ qui sont générées dans une configuration de débogage échoue à ce test même si la configuration utilise uniquement les API du SDK Windows pour les applications UWP. Consultez [Alternatives aux API Windows dans les applications UWP](https://docs.microsoft.com/uwp/win32-and-com/win32-and-com-for-uwp-apps) pour plus d’informations.
 
 ### <a name="6-user-account-control-uac-test"></a>6. Test de contrôle de compte utilisateur  
 
@@ -286,4 +286,4 @@ Supprimez du package toute clé de signature de code privé (par exemple, les fi
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Politiques du Microsoft Store](https://msdn.microsoft.com/library/windows/apps/Dn764944)
+* [Politiques du Microsoft Store](https://docs.microsoft.com/legal/windows/agreements/store-policies)

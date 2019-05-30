@@ -3,7 +3,7 @@ description: Vous pouvez créer une arborescence en liant l’ItemsSource à une
 title: Arborescence
 label: Tree view
 template: detail.hbs
-ms.date: 01/03/2019
+ms.date: 04/19/2019
 ms.topic: article
 ms.localizationpriority: medium
 pm-contact: predavid
@@ -13,13 +13,13 @@ doc-status: Published
 dev_langs:
 - csharp
 - vb
-ms.custom: RS5
-ms.openlocfilehash: 7c666d417fb980cab72165681583ac83e9eaca00
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.custom: RS5, 19H1
+ms.openlocfilehash: d9f0396558186008430ccf1454e48f5e2194ee0e
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57628514"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364000"
 ---
 # <a name="treeview"></a>TreeView
 
@@ -85,7 +85,7 @@ Vous pouvez lier une source de données hiérarchiques pour la [ItemsSource](/uw
 > [!IMPORTANT]
 > ItemsSource et ses API associé nécessitent Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) ou version ultérieure, ou le [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
 >
-> ItemsSource est un autre mécanisme pour TreeView.RootNodes pour le placement du contenu dans le contrôle TreeView. Vous ne pouvez pas définir ItemsSource et rootnodes sont en même temps. Lorsque vous utilisez ItemsSource, les nœuds créés pour vous, et vous pouvez y accéder à partir de la propriété de TreeView.RootNodes.
+> ItemsSource est un autre mécanisme pour TreeView.RootNodes pour le placement du contenu dans le contrôle TreeView. Vous ne pouvez pas définir ItemsSource et rootnodes sont en même temps. Lorsque vous utilisez ItemsSource, les nœuds sont créés pour vous, et vous pouvez y accéder à partir de la propriété de TreeView.RootNodes.
 
 Voici un exemple d'arborescence simple déclarée en XAML. Vous ajoutez généralement les nœuds dans le code, mais nous affichons ici la hiérarchie XAML, parce qu'il peut être utile de visualiser la façon dont la hiérarchie de nœuds est créée.
 
@@ -177,7 +177,7 @@ Ces API sont disponibles pour la gestion de la hiérarchie de données de votre 
 
 | **[TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode)** | |
 | - | - |
-| [Enfants](/uwp/api/windows.ui.xaml.controls.treeviewnode.children) | Ajoutez des objets TreeViewNode à la collection Children d’un nœud parent pour créer votre hiérarchie de nœuds. Un nœud est le **Parent** de tous les nœuds de sa collection **Children**. |
+| [Children](/uwp/api/windows.ui.xaml.controls.treeviewnode.children) | Ajoutez des objets TreeViewNode à la collection Children d’un nœud parent pour créer votre hiérarchie de nœuds. Un nœud est le **Parent** de tous les nœuds de sa collection **Children**. |
 | [HasChildren](/uwp/api/windows.ui.xaml.controls.treeviewnode.haschildren) | **true** si le nœud a réalisé des enfants. **false** indique un dossier ou un élément vide. |
 | [HasUnrealizedChildren](/uwp/api/windows.ui.xaml.controls.treeviewnode.hasunrealizedchildren) | Utilisez cette propriété si vous remplissez des nœuds lorsqu'ils sont développés. Voir _Remplir un nœud lorsqu’il est développé_ plus loin dans cet article. |
 | [profondeur](/uwp/api/windows.ui.xaml.controls.treeviewnode.depth) | Indique la distance entre le nœud racine et un nœud enfant. |
@@ -932,5 +932,5 @@ End Sub
 ## <a name="related-articles"></a>Articles connexes
 
 - [Classe TreeView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeview)
-- [Classe de ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)
+- [Classe de ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview)
 - [ListView et GridView](listview-and-gridview.md)

@@ -8,19 +8,19 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 55621cec768e0aac680c3a84fd803e591459a97d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 1b931268dc20f40c1bc1d7c700f346d29d6aa9d6
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57605434"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66370611"
 ---
 # <a name="graphics-pipeline"></a>Pipeline graphique
 
 
 Le pipeline graphique Direct3D est conçu pour la génération de graphismes destinés aux applications de jeu en temps réel. Les données progressent de l’entrée vers la sortie en transitant par chacune des étapes configurables ou programmables de ce pipeline.
 
-Toutes les étapes sont configurables à l’aide de l’API Direct3D. Les étapes qui utilisent des noyaux de nuanceur communs (blocs rectangulaires arrondis) sont programmables au moyen du langage de programmation [HLSL](https://msdn.microsoft.com/library/windows/desktop/bb509561). En conséquence, le pipeline offre un haut degré de flexibilité et d’adaptabilité.
+Toutes les étapes sont configurables à l’aide de l’API Direct3D. Les étapes qui utilisent des noyaux de nuanceur communs (blocs rectangulaires arrondis) sont programmables au moyen du langage de programmation [HLSL](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl). En conséquence, le pipeline offre un haut degré de flexibilité et d’adaptabilité.
 
 Les étapes les plus couramment utilisées sont l’étape du nuanceur de vertex (VS) et l’étape du nuanceur de pixels (PS). Si vous ne fournissez même pas ces étapes de nuanceur, l’application utilise un nuanceur de vertex et un nuanceur de pixels directs sans opération par défaut.
 
@@ -48,7 +48,7 @@ Les étapes les plus couramment utilisées sont l’étape du nuanceur de vertex
 
 ## <a name="geometry-shader-stage"></a>Étape Nuanceur de géométrie
 
-|-|-| |Objectif| L'[étape de nuanceur de géométrie](geometry-shader-stage--gs-.md) traite les primitifs entiers : triangles, lignes et points, ainsi que les vertex adjacents. Cette étape prend en charge l’amplification et le filtrage de géométrie. Elle est utile pour les algorithmes tels que l’expansion de point-sprites, les systèmes de particules dynamiques, la génération de fourrure, la génération de volumes d’ombre, le rendu sous forme de cubemap en une seule passe, l’échange et la configuration de matériaux par primitive, y compris la génération de coordonnées barycentriques sous la forme de données de primitive pour permettre à un nuanceur de pixels d’effectuer une interpolation d’attributs personnalisés. | | Entrée | Contrairement aux nuanceurs de vertex, qui fonctionnent sur un seul vertex, les entrées du nuanceur de géométrie sont des vertex destinés à une donnée primitive complète (trois vertex pour les triangles, deux vertex pour les lignes ou un vertex unique pour le point). | | Sortie | L’étape nuanceur de géométrie est susceptible de générer plusieurs vertex pour former une seule topologie sélectionnée. Les topologies de sortie du nuanceur de géométrie disponibles sont <strong>tristrip</strong>, <strong>linestrip</strong> et <strong>pointlist</strong>. Le nombre de primitives émises peut varier librement au sein d’une invocation du nuanceur de géométrie, bien que le nombre maximal de vertex pouvant être émis doive être déclaré de manière statique. Les longueurs de bande d'un appel de nuanceur de géométrie peuvent être arbitraires et les nouvelles bandes peuvent être créées via la fonction [RestartStrip](https://msdn.microsoft.com/library/windows/desktop/bb509660) HLSL.|
+|-|-| |Objectif| L'[étape de nuanceur de géométrie](geometry-shader-stage--gs-.md) traite les primitifs entiers : triangles, lignes et points, ainsi que les vertex adjacents. Cette étape prend en charge l’amplification et le filtrage de géométrie. Elle est utile pour les algorithmes tels que l’expansion de point-sprites, les systèmes de particules dynamiques, la génération de fourrure, la génération de volumes d’ombre, le rendu sous forme de cubemap en une seule passe, l’échange et la configuration de matériaux par primitive, y compris la génération de coordonnées barycentriques sous la forme de données de primitive pour permettre à un nuanceur de pixels d’effectuer une interpolation d’attributs personnalisés. | | Entrée | Contrairement aux nuanceurs de vertex, qui fonctionnent sur un seul vertex, les entrées du nuanceur de géométrie sont des vertex destinés à une donnée primitive complète (trois vertex pour les triangles, deux vertex pour les lignes ou un vertex unique pour le point). | | Sortie | L’étape nuanceur de géométrie est susceptible de générer plusieurs vertex pour former une seule topologie sélectionnée. Les topologies de sortie du nuanceur de géométrie disponibles sont <strong>tristrip</strong>, <strong>linestrip</strong> et <strong>pointlist</strong>. Le nombre de primitives émises peut varier librement au sein d’une invocation du nuanceur de géométrie, bien que le nombre maximal de vertex pouvant être émis doive être déclaré de manière statique. Les longueurs de bande d'un appel de nuanceur de géométrie peuvent être arbitraires et les nouvelles bandes peuvent être créées via la fonction [RestartStrip](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-so-restartstrip) HLSL.|
 
 ## <a name="stream-output-stage"></a>Étape Sortie du flux
 

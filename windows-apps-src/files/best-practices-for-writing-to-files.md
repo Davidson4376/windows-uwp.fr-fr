@@ -5,12 +5,12 @@ ms.date: 02/06/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e0fcb903bd272bd10d434a27d41e6e4558a624ea
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: a6a1d93b1deaad084ff25db946199b678b35703c
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334897"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369512"
 ---
 # <a name="best-practices-for-writing-to-files"></a>Bonnes pratiques concernant l’écriture de données dans des fichiers
 
@@ -192,7 +192,7 @@ else
 
 ### <a name="synchronize-access-to-the-file"></a>Synchroniser l’accès au fichier
 
-Le [.NET blog programmation parallèle avec](https://blogs.msdn.microsoft.com/pfxteam/) est une ressource précieuse pour obtenir des conseils sur la programmation parallèle. En particulier, le [concernant AsyncReaderWriterLock](https://blogs.msdn.microsoft.com/pfxteam/2012/02/12/building-async-coordination-primitives-part-7-asyncreaderwriterlock/) décrit comment mettre à jour d’un accès exclusif à un fichier pour les écritures tout en autorisant un accès en lecture simultané. N’oubliez pas qu’e/s aura un impact sur la sérialisation performances.
+Le [.NET blog programmation parallèle avec](https://devblogs.microsoft.com/pfxteam/) est une ressource précieuse pour obtenir des conseils sur la programmation parallèle. En particulier, le [concernant AsyncReaderWriterLock](https://devblogs.microsoft.com/pfxteam/building-async-coordination-primitives-part-7-asyncreaderwriterlock/) décrit comment mettre à jour d’un accès exclusif à un fichier pour les écritures tout en autorisant un accès en lecture simultané. N’oubliez pas qu’e/s aura un impact sur la sérialisation performances.
 
 ## <a name="see-also"></a>Voir aussi
 

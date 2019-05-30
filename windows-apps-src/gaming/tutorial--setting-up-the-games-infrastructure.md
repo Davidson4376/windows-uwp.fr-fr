@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: windows 10, uwp, jeux, configuration, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 789b235220e5d22b85f7b3038d5d468729439501
-ms.sourcegitcommit: 7a3d28472901edbe4ecdde7e1a01a505ee5bc028
+ms.openlocfilehash: ca91926ec374015eeb88be6d89d3e1741d8b9c6d
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58658765"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367686"
 ---
 # <a name="set-up-the-game-project"></a>Configurer le projet de jeu
 
@@ -35,7 +35,7 @@ Si vous débutez dans le développement de la plateforme Windows universelle (UW
 
 Un modèle Visual Studio est une collection de paramètres et de fichiers de code qui ciblent un type spécifique d’application selon la technologie et le langage préférés. Dans Microsoft Visual Studio 2017, vous trouverez un nombre de modèles pouvant faciliter considérablement le développement d’applications de jeu et les graphiques. Si vous n’utilisez pas de modèle, vous devez développer vous-même une grande partie de l’infrastructure d’affichage et du rendu graphique de base, ce qui peut représenter une corvée pour un développeur de jeux débutant.
 
-Le modèle utilisé pour ce didacticiel est intitulé **Application DirectX 11 (Windows universel)**. 
+Le modèle utilisé pour ce didacticiel est intitulé **Application DirectX 11 (Windows universel)** . 
 
 Procédure de création d’un projet de jeu DirectX 11 dans Visual Studio :
 1.  Sélectionnez **fichier...** &gt; **Nouvelle** &gt; **projet...**
@@ -53,7 +53,7 @@ La classe **App** hérite de la classe **IFrameworkView**.
 
 ### <a name="inspect-apph"></a>Examiner **App.h**.
 
-Nous allons examiner rapidement les 5 méthodes dans **App.h** &mdash; [ **initialiser**](https://msdn.microsoft.com/library/windows/apps/hh700495), [ **SetWindow** ](https://msdn.microsoft.com/library/windows/apps/hh700509), [ **Charge**](https://msdn.microsoft.com/library/windows/apps/hh700501), [ **exécuter**](https://msdn.microsoft.com/library/windows/apps/hh700505), et [ **annuler l’initialisation de** ](https://msdn.microsoft.com/library/windows/apps/hh700523) lors de l’implémentation la [ **IFrameworkView** ](https://msdn.microsoft.com/library/windows/apps/hh700469) interface qui définit un fournisseur d’affichage. Ces méthodes sont exécutées par le singleton de l’application qui est créé lors du lancement du jeu, chargent toutes les ressources de votre application et connectent les gestionnaires d’événements appropriés.
+Nous allons examiner rapidement les 5 méthodes dans **App.h** &mdash; [ **initialiser**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.initialize), [ **SetWindow** ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.setwindow), [ **Charge**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.load), [ **exécuter**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.run), et [ **annuler l’initialisation de** ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.uninitialize) lors de l’implémentation la [ **IFrameworkView** ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.run) interface qui définit un fournisseur d’affichage. Ces méthodes sont exécutées par le singleton de l’application qui est créé lors du lancement du jeu, chargent toutes les ressources de votre application et connectent les gestionnaires d’événements appropriés.
 
 ```cpp
     // Main entry point for our app. Connects the app with the Windows shell and handle application lifecycle events.
@@ -129,13 +129,13 @@ Lancez le **concepteur de manifeste** en double-cliquant sur le fichier **Packag
 
 ![Capture d’écran de l’éditeur de manifeste package.appx.](images/simple-dx-game-setup-app-manifest.png)
 
-Pour plus d’informations sur le fichier **package.appxmanifest** et sur la création de packages, voir [Concepteur de manifeste](https://msdn.microsoft.com/library/windows/apps/br230259.aspx). Pour le moment, examinez l’onglet **Fonctionnalités** et les options proposées.
+Pour plus d’informations sur le fichier **package.appxmanifest** et sur la création de packages, voir [Concepteur de manifeste](https://docs.microsoft.com/previous-versions/br230259(v=vs.140)). Pour le moment, examinez l’onglet **Fonctionnalités** et les options proposées.
 
 ![Capture d’écran avec les fonctionnalités par défaut d’une application Direct3D.](images/simple-dx-game-setup-capabilities.png)
 
 Si vous ne sélectionnez pas les fonctionnalités utilisées par votre jeu, par exemple l’accès à **Internet** pour le tableau global des meilleurs scores, vous ne serez pas en mesure d’accéder aux fonctionnalités ou aux ressources correspondantes. Lorsque vous créez un jeu, veillez à sélectionner les fonctionnalités nécessaires au fonctionnement du jeu !
 
-Examinons maintenant le reste des fichiers qui accompagnent le modèle d’**application DirectX 11 (Windows universel)**.
+Examinons maintenant le reste des fichiers qui accompagnent le modèle d’**application DirectX 11 (Windows universel)** .
 
 ## <a name="review-the-included-libraries-and-headers"></a>Passer en revue les bibliothèques et en-têtes inclus
 

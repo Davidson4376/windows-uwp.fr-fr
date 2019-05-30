@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: bd71e4715b26f9e06326690d3642b4d19e23d292
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 6c13ac8f1421fe785ebce70789c8ea6d0bf6c068
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57617264"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364017"
 ---
 # <a name="access-keys"></a>Touches d’accès rapide
 
@@ -29,7 +29,7 @@ Consultez la rubrique [Touches de raccourci](keyboard-accelerators.md) pour plus
 
 La plateforme Windows universelle (UWP) fournit des supports intégrés à travers les commandes de plateforme, à la fois pour les touches d’accès rapide d’un clavier et pour les commentaires d’interface utilisateur associés, par le biais de signaux visuels que l’on appelle des touches d’accès.
 
-## <a name="overview"></a>Vue d’ensemble
+## <a name="overview"></a>Vue d'ensemble
 
 Une touche d’accès rapide est une combinaison de la touche Alt et d’une ou plusieurs touches alphanumériques, que l’on appelle parfois *mnémonique*. En général, on appuie successivement plutôt que simultanément sur ces touches.
 
@@ -353,7 +353,7 @@ Cet exemple montre comment modifier ces ressources d’application :
 
 L’infrastructure XAML expose les propriétés d’automatisation qui permettent aux clients UI Automation de découvrir des informations sur des éléments dans l’interface utilisateur.
 
-Si vous spécifiez la propriété AccessKey sur une commande UIElement ou TextElement, vous pouvez utiliser la propriété [AutomationProperties.AccessKey](https://msdn.microsoft.com/library/windows/apps/hh759763) afin d’obtenir cette valeur. Les clients d’accessibilité, tels que Narrateur, lisent la valeur de cette propriété à chaque fois qu’un élément obtient un focus.
+Si vous spécifiez la propriété AccessKey sur une commande UIElement ou TextElement, vous pouvez utiliser la propriété [AutomationProperties.AccessKey](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.accesskey?view=netframework-4.8) afin d’obtenir cette valeur. Les clients d’accessibilité, tels que Narrateur, lisent la valeur de cette propriété à chaque fois qu’un élément obtient un focus.
 
 ## <a name="related-articles"></a>Articles connexes
 

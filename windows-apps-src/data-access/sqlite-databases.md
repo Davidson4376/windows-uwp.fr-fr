@@ -5,12 +5,12 @@ ms.date: 11/30/2018
 ms.topic: article
 keywords: windows 10, uwp, SQLite, base de données
 ms.localizationpriority: medium
-ms.openlocfilehash: 552de1ccb8f8e69a4ad716e54557ae0b5cd3a3f4
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 465376214f1bf1b390ec6db8609783e4e7872196
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57635664"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362786"
 ---
 # <a name="use-a-sqlite-database-in-a-uwp-app"></a>Utiliser une base de données SQLite dans une application UWP
 Vous pouvez utiliser SQLite pour stocker et récupérer des données dans une base de données légère sur l’appareil des utilisateurs. Ce guide vous explique comment procéder.
@@ -31,7 +31,7 @@ Vous trouverez davantage d’informations sur SQLite [ici](https://sqlite.org/ab
 
 Nous vous recommandons d’utiliser Entity Framework Core ou la [bibliothèque SQLite](https://github.com/aspnet/Microsoft.Data.Sqlite/) open source générée par Microsoft.
 
-### <a name="entity-framework-core"></a>Entity Framework Core
+### <a name="entity-framework-core"></a>Entity Framework Core
 
 Entity Framework (EF) est un mappeur objet relationnel qui vous permet de travailler avec les données relationnelles en utilisant des objets propres au domaine. Si vous avez déjà utilisé cette infrastructure pour travailler avec des données dans d’autres applications .NET, vous pouvez migrer ce code vers une application UWP. Il fonctionnera avec les changements appropriés apportés à la chaîne de connexion.
 
@@ -39,7 +39,7 @@ Pour essayer, voir [Prise en main de EF Core sur la plateforme Windows universe
 
 ### <a name="sqlite-library"></a>Bibliothèque SQLite
 
-La bibliothèque [Microsoft.Data.Sqlite](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite?view=msdata-sqlite-2.0.0) implémente les interfaces dans l’espace de noms [System.Data.Common](https://msdn.microsoft.com/library/system.data.common.aspx). Microsoft gère activement ces implémentations, qui fournissent un wrapper intuitif autour de l’API de SQLite natif de bas niveau.
+La bibliothèque [Microsoft.Data.Sqlite](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite?view=msdata-sqlite-2.0.0) implémente les interfaces dans l’espace de noms [System.Data.Common](https://docs.microsoft.com/dotnet/api/system.data.common?redirectedfrom=MSDN). Microsoft gère activement ces implémentations, qui fournissent un wrapper intuitif autour de l’API de SQLite natif de bas niveau.
 
 Le reste de ce guide vous aide à utiliser cette bibliothèque.
 

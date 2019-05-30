@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: fea636f78f4430d5bf8917c1ed720faeac7c4017
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 78f6fe36fb8955b6234cdf3cb42e4db02a602f4a
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57651734"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364345"
 ---
 # <a name="rich-edit-box"></a>Zone d’édition enrichie
 
@@ -24,7 +24,7 @@ ms.locfileid: "57651734"
 
 Vous pouvez utiliser un contrôle RichEditBox pour entrer et modifier des documents au format RTF qui contiennent du texte mis en forme, des liens hypertexte et des images. Vous pouvez faire en sorte que RichEditBox soit en lecture seule en définissant sa propriété IsReadOnly sur **true**.
 
-> **API importantes** : [Classe de RichEditBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx), [propriété Document](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.document.aspx), [propriété IsReadOnly](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isreadonly.aspx), [IsSpellCheckEnabled propriété](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isspellcheckenabled.aspx)
+> **API importantes** : [Classe de RichEditBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichEditBox), [propriété Document](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.document), [propriété IsReadOnly](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.isreadonly), [IsSpellCheckEnabled propriété](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.isspellcheckenabled)
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
@@ -58,9 +58,9 @@ Un document au format RTF est ouvert dans cette zone d’édition enrichie. Les 
 
 ## <a name="create-a-rich-edit-box"></a>Créer une zone d’édition enrichie
 
-Par défaut, le contrôle RichEditBox prend en charge la vérification orthographique. Pour désactiver le vérificateur d’orthographe, définissez la propriété [IsSpellCheckEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isspellcheckenabled.aspx) sur **false**. Pour plus d’informations, voir l’article [Recommandations en matière de vérification orthographique](text-controls.md).
+Par défaut, le contrôle RichEditBox prend en charge la vérification orthographique. Pour désactiver le vérificateur d’orthographe, définissez la propriété [IsSpellCheckEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.isspellcheckenabled) sur **false**. Pour plus d’informations, voir l’article [Recommandations en matière de vérification orthographique](text-controls.md).
 
-Vous utilisez la propriété [Document](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.document.aspx) du contrôle RichEditBox pour obtenir son contenu. Le contenu d’une classe RichEditBox est un objet [Windows.UI.Text.ITextDocument](https://msdn.microsoft.com/library/windows/apps/xaml/bb774052.aspx), contrairement au contrôle RichTextBlock, qui utilise des objets [Windows.UI.Xaml.Documents.Block](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.block.aspx) en tant que contenu. L’interface ITextDocument permet de charger et d’enregistrer le document dans un flux, de récupérer des plages de texte, d’obtenir la sélection active, d’annuler et de répéter des modifications, de définir des attributs de mise en forme par défaut, etc.
+Vous utilisez la propriété [Document](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.document) du contrôle RichEditBox pour obtenir son contenu. Le contenu d’une classe RichEditBox est un objet [Windows.UI.Text.ITextDocument](https://docs.microsoft.com/windows/desktop/api/tom/nn-tom-itextdocument), contrairement au contrôle RichTextBlock, qui utilise des objets [Windows.UI.Xaml.Documents.Block](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Block) en tant que contenu. L’interface ITextDocument permet de charger et d’enregistrer le document dans un flux, de récupérer des plages de texte, d’obtenir la sélection active, d’annuler et de répéter des modifications, de définir des attributs de mise en forme par défaut, etc.
 
 Cet exemple montre comment modifier, charger et enregistrer un fichier au format .RTF (Rich Text Format) dans un contrôle RichEditBox.
 
@@ -205,7 +205,7 @@ private void UnderlineButton_Click(object sender, RoutedEventArgs e)
 
 Pour faciliter la saisie de données par les utilisateurs au moyen du clavier tactile, ou panneau de saisie, définissez l’étendue des entrées du contrôle de texte de sorte qu’elle corresponde au type de données attendu de la part de l’utilisateur. La disposition de clavier par défaut est généralement appropriée pour l’utilisation de documents au format RTF.
 
-Pour en savoir plus sur l’utilisation des étendues des entrées, voir [Utiliser l’étendue des entrées pour modifier le clavier tactile](https://msdn.microsoft.com/library/windows/apps/mt280229).
+Pour en savoir plus sur l’utilisation des étendues des entrées, voir [Utiliser l’étendue des entrées pour modifier le clavier tactile](https://docs.microsoft.com/windows/uwp/design/input/use-input-scope-to-change-the-touch-keyboard).
 
 ## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
 
@@ -226,5 +226,5 @@ Pour en savoir plus sur l’utilisation des étendues des entrées, voir [Utilis
 - [Instructions pour la vérification orthographique](text-controls.md)
 - [Ajout de la recherche](search.md)
 - [Instructions pour l’entrée de texte](text-controls.md)
-- [Classe de zone de texte](https://msdn.microsoft.com/library/windows/apps/br209683)
-- [Classe de Windows.UI.Xaml.Controls PasswordBox](https://msdn.microsoft.com/library/windows/apps/br227519)
+- [Classe de zone de texte](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
+- [Classe de Windows.UI.Xaml.Controls PasswordBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)

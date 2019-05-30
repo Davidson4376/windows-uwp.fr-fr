@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4607280fd031fa556bfc5d1c719f4b4e1aeb928e
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.openlocfilehash: 7c61f6580039b9fe3da915491acd84c939088370
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65984099"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66361384"
 ---
 # <a name="visual-layer"></a>Couche visuelle
 
@@ -38,7 +38,7 @@ Principales fonctions de la couche visuelle :
 
 ### <a name="content"></a>Contenu
 
-Le contenu est hébergé, transformé et peut être utilisé par le système d’effets et d’animations à l’aide d’éléments visuels. La classe [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) figure à la base de la hiérarchie de classes. Il s’agit d’un proxy léger, agile de thread dans le processus d’application pour l’état visuel du compositeur. Incluent les sous-classes de visuel  [**ContainerVisual** ](https://msdn.microsoft.com/library/windows/apps/Dn706810) pour permettre aux enfants créer des arborescences d’éléments visuels et [ **SpriteVisual** ](https://msdn.microsoft.com/library/windows/apps/Mt589433) qui contient le contenu et peut être peint avec deux couleurs unies, dessinés contenus ou élément visuel des effets personnalisés. Ensemble, ces types Visual constituent la structure de l’arborescence des éléments visuels de l’interface utilisateur 2D et soutiennent les éléments FrameworkElements XAML les plus visibles.
+Le contenu est hébergé, transformé et peut être utilisé par le système d’effets et d’animations à l’aide d’éléments visuels. La classe [**Visual**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Visual) figure à la base de la hiérarchie de classes. Il s’agit d’un proxy léger, agile de thread dans le processus d’application pour l’état visuel du compositeur. Incluent les sous-classes de visuel  [**ContainerVisual** ](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.ContainerVisual) pour permettre aux enfants créer des arborescences d’éléments visuels et [ **SpriteVisual** ](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.SpriteVisual) qui contient le contenu et peut être peint avec deux couleurs unies, dessinés contenus ou élément visuel des effets personnalisés. Ensemble, ces types Visual constituent la structure de l’arborescence des éléments visuels de l’interface utilisateur 2D et soutiennent les éléments FrameworkElements XAML les plus visibles.
 
 Pour plus d’informations, consultez la vue d’ensemble [Éléments visuels de composition](composition-visual-tree.md).
 
@@ -58,7 +58,7 @@ Pour plus d’informations, consultez la vue d’ensemble [Animations de composi
 
 ### <a name="working-with-your-xaml-uwp-app"></a>Utilisation de votre application UWP XAML
 
-Vous pouvez accéder à un élément visuel créé par l’infrastructure XAML, et soutenant un élément FrameworkElement visible, à l’aide de la classe [**ElementCompositionPreview**](https://msdn.microsoft.com/library/windows/apps/Mt608976) de [**Windows.UI.Xaml.Hosting**](https://msdn.microsoft.com/library/windows/apps/Hh701908). Notez que les éléments visuels créés pour vous par l’infrastructure présentent certaines limites de personnalisation. Cela tient au fait que l’infrastructure gère les décalages, les transformations et les durées de vie. Vous pouvez toutefois créer vos propres éléments visuels et les associer à un élément XAML existant via ElementCompositionPreview, ou en l’ajoutant à un élément ContainerVisual existant quelque part dans la structure de l’arborescence des éléments visuels.
+Vous pouvez accéder à un élément visuel créé par l’infrastructure XAML, et soutenant un élément FrameworkElement visible, à l’aide de la classe [**ElementCompositionPreview**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Hosting.ElementCompositionPreview) de [**Windows.UI.Xaml.Hosting**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Hosting). Notez que les éléments visuels créés pour vous par l’infrastructure présentent certaines limites de personnalisation. Cela tient au fait que l’infrastructure gère les décalages, les transformations et les durées de vie. Vous pouvez toutefois créer vos propres éléments visuels et les associer à un élément XAML existant via ElementCompositionPreview, ou en l’ajoutant à un élément ContainerVisual existant quelque part dans la structure de l’arborescence des éléments visuels.
 
 Pour plus d’informations, consultez la vue d’ensemble [Utilisation de la couche visuelle avec XAML](using-the-visual-layer-with-xaml.md).
 
@@ -66,11 +66,11 @@ Pour plus d’informations, consultez la vue d’ensemble [Utilisation de la cou
 
 Vous pouvez utiliser la couche visuelle pour améliorer l’apparence et les fonctionnalités de votre WPF, Windows Forms, et C++ des applications de bureau Win32. Vous pouvez migrer des îlots de contenu à utiliser la couche visuelle et de conserver le reste de votre interface utilisateur dans son infrastructure existante. Cela signifie que vous pouvez rendre mises à jour importantes et améliorations à l’interface utilisateur de votre application sans avoir à apporter des modifications importantes à votre code existant base.
 
-Pour plus d’informations, consultez [moderniser votre application de bureau à l’aide de la couche visuelle](/windows/apps/desktop/modernize/visual-layer-in-desktop-apps).
+Pour plus d’informations, consultez [Moderniser votre application de bureau à l’aide de la couche Visuel](/windows/apps/desktop/modernize/visual-layer-in-desktop-apps).
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-* [**Documentation de référence complète pour l’API**](https://msdn.microsoft.com/library/windows/apps/Dn706878)
+* [**Documentation de référence complète pour l’API**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition)
 * Exemples d’interface utilisateur et de composition avancés dans le [GitHub WindowsUIDevLabs](https://github.com/microsoft/windowsuidevlabs).
 * [Galerie d’exemples Windows.UI.Composition](https://aka.ms/winuiapp)
 * [@windowsui Flux Twitter ](https://twitter.com/windowsui)

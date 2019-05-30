@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a31464d208e8d9abe68703560552c99e5d957463
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0e5c5e19c6e23f4c0094220a735a0c2a48c1cc34
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57638234"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362056"
 ---
 # <a name="guidelines-for-app-settings"></a>Recommandations en matière de paramètres de l’application
 
@@ -30,7 +30,7 @@ Voici des exemples d’options d’application qui figurent dans une page de par
 -   Les options qui dépendent des préférences de l’utilisateur, comme la musique, les effets sonores ou les thèmes de couleur.
 -   Les informations d’application rarement consultées, telles que la déclaration de confidentialité, l’aide, la version de l’application ou les informations de copyright.
 
-Les commandes qui font partie du flux de travail classique de l’application (par exemple, la modification de la taille du pinceau dans une application artistique) ne doivent pas figurer dans une page de paramètres. Pour plus d’informations sur la disposition des commandes, voir [Informations de base sur la conception des commandes](https://msdn.microsoft.com/library/windows/apps/dn958433).
+Les commandes qui font partie du flux de travail classique de l’application (par exemple, la modification de la taille du pinceau dans une application artistique) ne doivent pas figurer dans une page de paramètres. Pour plus d’informations sur la disposition des commandes, voir [Informations de base sur la conception des commandes](https://docs.microsoft.com/windows/uwp/layout/commanding-basics).
 
 ## <a name="general-recommendations"></a>Recommandations générales
 
@@ -71,7 +71,7 @@ Dans le cas d’une disposition d’onglets ou de sélecteurs de vue, nous vous 
 
 Plutôt que d’enfouir profondément le point d’entrée des paramètres d’application dans un volet maître/détails, faites-en le dernier élément épinglé du niveau supérieur du volet maître.
 
-## <a name="layout"></a>Disposition
+## <a name="layout"></a>Mise en page
 
 
 Sur les appareils de bureau et les appareils mobiles, la fenêtre des paramètres d’application doit s’ouvrir en mode plein écran et remplir toute la fenêtre. Si votre menu de paramètres d’application ne comporte pas plus de quatre groupes de niveau supérieur, ces groupes doivent s’afficher en cascade en descendant d’une colonne.
@@ -135,17 +135,17 @@ Une fois que vous avez répertorié les éléments à inclure dans votre page de
     -   [Liens hypertexte](../controls-and-patterns/hyperlinks.md): Dirige l’utilisateur vers une autre page dans l’application ou à un site Web externe. Quand un utilisateur clique sur un lien hypertexte, le menu volant des paramètres se ferme.
     -   [Boutons](../controls-and-patterns/buttons.md): Pour permettre aux utilisateurs d’initier une action immédiate sans fermer le menu volant des paramètres en cours.
 -   Ajoutez un message descriptif si l’un des contrôles est désactivé. Placez ce message au-dessus du contrôle désactivé.
--   Une fois l’animation du menu volant Paramètres et de l’en-tête terminée, animez le contenu et les contrôles dans un bloc unique. Animez le contenu à l’aide des animations [**enterPage**](https://msdn.microsoft.com/library/windows/apps/br212672) ou [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br210288) avec un décalage gauche de 100 px.
+-   Une fois l’animation du menu volant Paramètres et de l’en-tête terminée, animez le contenu et les contrôles dans un bloc unique. Animez le contenu à l’aide des animations [**enterPage**](https://docs.microsoft.com/previous-versions/windows/apps/br212672(v=win.10)) ou [**EntranceThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition) avec un décalage gauche de 100 px.
 -   Utilisez des en-têtes de section, des paragraphes et des étiquettes pour vous aider à organiser et clarifier le contenu, si nécessaire.
 -   Si vous avez besoin de répéter des paramètres, utilisez un niveau supplémentaire d’interface utilisateur ou un modèle développer/réduire, mais évitez les hiérarchies de plus de deux niveaux. Par exemple, une application météo qui fournit des paramètres par ville peut répertorier les villes et permettre à l’utilisateur d’appuyer sur la ville pour ouvrir un nouveau menu volant ou développer les options de paramètres.
--   Si le chargement des contrôles ou du contenu Web prend du temps, utilisez le contrôle de progression indéterminée pour indiquer aux utilisateurs que les informations sont en cours de chargement. Pour plus d’informations, consultez [Recommandations en matière de contrôles de progression](https://msdn.microsoft.com/library/windows/apps/hh465469).
+-   Si le chargement des contrôles ou du contenu Web prend du temps, utilisez le contrôle de progression indéterminée pour indiquer aux utilisateurs que les informations sont en cours de chargement. Pour plus d’informations, consultez [Recommandations en matière de contrôles de progression](https://docs.microsoft.com/windows/uwp/controls-and-patterns/progress-controls).
 -   N’utilisez pas de boutons pour la navigation ou pour valider des modifications. Utilisez des liens hypertexte pour accéder à d’autres pages et, au lieu d’utiliser un bouton pour valider les modifications, enregistrez automatiquement les modifications apportées aux paramètres d’application quand un utilisateur ferme le menu volant des paramètres.
 
 
 
 ## <a name="related-articles"></a>Articles connexes
 
-* [Principes fondamentaux de conception de commande](https://msdn.microsoft.com/library/windows/apps/dn958433)
-* [Instructions pour les contrôles de progression](https://msdn.microsoft.com/library/windows/apps/hh465469)
-* [Store et récupérer des données d’application](https://msdn.microsoft.com/library/windows/apps/mt299098)
-* [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br210288)
+* [Principes fondamentaux de conception de commande](https://docs.microsoft.com/windows/uwp/layout/commanding-basics)
+* [Instructions pour les contrôles de progression](https://docs.microsoft.com/windows/uwp/controls-and-patterns/progress-controls)
+* [Store et récupérer des données d’application](https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data)
+* [**EntranceThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition)

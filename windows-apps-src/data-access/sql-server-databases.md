@@ -1,19 +1,19 @@
 ---
 title: Utiliser une base de données SQL Server dans une application UWP
 description: Utilisez une base de données SQL Server dans une application UWP.
-ms.date: 11/13/2017
+ms.date: 3/28/2019
 ms.topic: article
 keywords: windows 10, uwp, SQL Server, base de données
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fe215a593293ff91afb7f71a830512ac365093f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f8986f14872d4e5de2c45bba264de6619ef07141
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57621154"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360149"
 ---
 # <a name="use-a-sql-server-database-in-a-uwp-app"></a>Utiliser une base de données SQL Server dans une application UWP
-Votre application peut se connecter directement à une base de données SQL Server, puis stocker et récupérer des données à l’aide de classes dans l’espace de noms [System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient.aspx).
+Votre application peut se connecter directement à une base de données SQL Server, puis stocker et récupérer des données à l’aide de classes dans l’espace de noms [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient?redirectedfrom=MSDN).
 
 Dans ce guide, nous vous proposerons une méthode pour y parvenir. Si vous installez la base de données exemple [Northwind](https://docs.microsoft.com/dotnet/framework/data/adonet/sql/linq/downloading-sample-databases) sur votre instance de SQL Server, puis que vous utilisez ces extraits de code, vous obtiendrez une interface utilisateur de base qui montre les produits de la base de données exemple.
 
@@ -50,7 +50,7 @@ Dans cette section, nous allons effectuer les opérations suivantes :
 : cinq : Remplir l’interface utilisateur avec les produits.
 
 >[!NOTE]
-> Cette section illustre une façon d’organiser votre code d’accès aux données. Vous y trouverez un exemple illustrant la façon dont vous pouvez utiliser [System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient.aspx) pour stocker et récupérer des données à partir d’une base de données SQL Server. Vous pouvez organiser votre code d’une manière plus appropriée pour la conception de votre application.
+> Cette section illustre une façon d’organiser votre code d’accès aux données. Vous y trouverez un exemple illustrant la façon dont vous pouvez utiliser [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient?redirectedfrom=MSDN) pour stocker et récupérer des données à partir d’une base de données SQL Server. Vous pouvez organiser votre code d’une manière plus appropriée pour la conception de votre application.
 
 ### <a name="add-a-connection-string"></a>Ajouter une chaîne de connexion
 
@@ -77,7 +77,7 @@ sealed partial class App : Application
 
 ### <a name="create-a-class-to-hold-product-data"></a>Créer une classe pour contenir des données sur les produits
 
-Nous allons créer une classe qui implémente l’événement [INotifyPropertyChanged](https://msdn.microsoft.com/library/system.componentmodel.inotifypropertychanged.aspx) pour pouvoir lier des attributs de notre interface utilisateur XAML aux propriétés de cette classe.
+Nous allons créer une classe qui implémente l’événement [INotifyPropertyChanged](https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged?redirectedfrom=MSDN) pour pouvoir lier des attributs de notre interface utilisateur XAML aux propriétés de cette classe.
 
 ```csharp
 public class Product : INotifyPropertyChanged
@@ -106,7 +106,7 @@ public class Product : INotifyPropertyChanged
 
 ### <a name="retrieve-products-from-the-sql-server-database"></a>Récupérer les produits à partir de la base de données SQL Server
 
-Créez une méthode qui obtient des produits à partir de l’exemple de base de données, Northwind, puis les retourne sous la forme d’une collection [ObservableCollection](https://msdn.microsoft.com/library/windows/apps/ms668604.aspx) d’instances ``Product``.
+Créez une méthode qui obtient des produits à partir de l’exemple de base de données, Northwind, puis les retourne sous la forme d’une collection [ObservableCollection](https://docs.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1?redirectedfrom=MSDN) d’instances ``Product``.
 
 ```csharp
 public ObservableCollection<Product> GetProducts(string connectionString)
@@ -208,7 +208,7 @@ public ObservableCollection<Product> GetProducts(string connectionString)
 
 ### <a name="show-products-in-the-listview"></a>Afficher les produits dans le contrôle ListView
 
-Ouvrez le fichier **MainPage.xaml.cs** et ajoutez du code au constructeur de la classe ``MainPage`` qui définit la propriété **ItemSource** de l’élément [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) sur [ObservableCollection](https://msdn.microsoft.com/library/windows/apps/ms668604.aspx) de ``Product`` instances.
+Ouvrez le fichier **MainPage.xaml.cs** et ajoutez du code au constructeur de la classe ``MainPage`` qui définit la propriété **ItemSource** de l’élément [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) sur [ObservableCollection](https://docs.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1?redirectedfrom=MSDN) de ``Product`` instances.
 
 ```csharp
 public MainPage()
@@ -222,7 +222,7 @@ Démarrez le projet pour afficher les produits de la base de données exemple No
 
 ![Produits Northwind](images/products-northwind.png)
 
-Explorez l’espace de noms [System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient.aspx) pour voir les autres actions que vous pouvez effectuer avec les données dans votre base de données SQL Server.
+Explorez l’espace de noms [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient?redirectedfrom=MSDN) pour voir les autres actions que vous pouvez effectuer avec les données dans votre base de données SQL Server.
 
 ## <a name="trouble-connecting-to-your-database"></a>Problèmes de connexion à votre base de données ?
 

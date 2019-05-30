@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c9ff9760b3ae9b852fe1ae1b86d1cc48e49c5dd4
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: e8e9395517511a40c215e31816962c186968c9f3
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57602444"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362100"
 ---
 # <a name="accessibility-checklist"></a>Liste de vérification de l’accessibilité
 
@@ -23,21 +23,21 @@ Nous fournissons ici une liste de vérification qui vous permet de vous assurer 
 
 1. Définissez le nom accessible (obligatoire) et la description accessible (facultative) du contenu et des éléments d’interface utilisateur interactifs de votre application.
 
-    Le nom accessible est une chaîne de texte courte et descriptive qui est utilisée par les lecteurs d’écran pour présenter un élément d’interface utilisateur. Certains éléments d’interface utilisateur tels que [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) et [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) effectuent la promotion de leur contenu texte comme nom accessible par défaut ; voir [Informations d’accessibilité élémentaires](basic-accessibility-information.md#name_from_inner_text).
+    Le nom accessible est une chaîne de texte courte et descriptive qui est utilisée par les lecteurs d’écran pour présenter un élément d’interface utilisateur. Certains éléments d’interface utilisateur tels que [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) et [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) effectuent la promotion de leur contenu texte comme nom accessible par défaut ; voir [Informations d’accessibilité élémentaires](basic-accessibility-information.md#name_from_inner_text).
 
-    Vous devez définir le nom accessible de manière explicite pour les images ou autres contrôles qui n’effectuent pas la promotion du contenu de texte interne comme nom accessible implicite. Vous devez utiliser des étiquettes pour les éléments de formulaires afin que le texte d’étiquette puisse être utilisé comme cible [**LabeledBy**](https://msdn.microsoft.com/library/windows/apps/Hh759769) dans le modèle Microsoft UI Automation pour la corrélation entre les étiquettes et les entrées. Si vous souhaitez fournir davantage d’instructions dans l’interface utilisateur que celles normalement fournies par le nom accessible, des descriptions accessibles et des info-bulles aident les utilisateurs à mieux comprendre l’interface utilisateur.
+    Vous devez définir le nom accessible de manière explicite pour les images ou autres contrôles qui n’effectuent pas la promotion du contenu de texte interne comme nom accessible implicite. Vous devez utiliser des étiquettes pour les éléments de formulaires afin que le texte d’étiquette puisse être utilisé comme cible [**LabeledBy**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms591292(v%3Dvs.95)) dans le modèle Microsoft UI Automation pour la corrélation entre les étiquettes et les entrées. Si vous souhaitez fournir davantage d’instructions dans l’interface utilisateur que celles normalement fournies par le nom accessible, des descriptions accessibles et des info-bulles aident les utilisateurs à mieux comprendre l’interface utilisateur.
 
     Pour plus d’informations, voir les sections [Nom accessible](basic-accessibility-information.md#accessible_name) et [Description accessible](basic-accessibility-information.md).
 
 2. Mettez en œuvre l’accessibilité du clavier :
 
-    * Testez l’ordre d’index de tabulation par défaut pour une interface utilisateur. Ajustez l’ordre d’index de tabulation si nécessaire, ce qui peut exiger l’activation ou la désactivation de certains contrôles ou la modification des valeurs par défaut de [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) sur certains éléments d’interface utilisateur.
+    * Testez l’ordre d’index de tabulation par défaut pour une interface utilisateur. Ajustez l’ordre d’index de tabulation si nécessaire, ce qui peut exiger l’activation ou la désactivation de certains contrôles ou la modification des valeurs par défaut de [**TabIndex**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.tabindex) sur certains éléments d’interface utilisateur.
     * Utilisez des contrôles qui prennent en charge la navigation à l’aide des touches de direction pour les éléments composites. Pour les contrôles par défaut, la navigation à l’aide des touches de direction est en général déjà implémentée.
-    * Utilisez des contrôles qui prennent en charge l’activation du clavier. Pour les contrôles par défaut, en particulier ceux qui prennent en charge le modèle [**Invoke**](https://msdn.microsoft.com/library/windows/apps/BR242582) UI Automation, l’activation du clavier est généralement disponible ; vérifiez la documentation de ce contrôle.
+    * Utilisez des contrôles qui prennent en charge l’activation du clavier. Pour les contrôles par défaut, en particulier ceux qui prennent en charge le modèle [**Invoke**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Provider.IInvokeProvider) UI Automation, l’activation du clavier est généralement disponible ; vérifiez la documentation de ce contrôle.
     * Définissez des touches d’accès rapide ou mettez en œuvre des touches accélérateur pour les parties spécifiques de l’interface utilisateur qui prennent en charge l’interaction.
-    * Pour tout contrôle personnalisé que vous utilisez dans votre interface utilisateur, vérifiez que vous avez mis en œuvre ces contrôles avec la prise en charge [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) correcte pour l’activation et que vous avez défini des substitutions pour la gestion des touches selon les besoins pour prendre en charge l’activation, la traversée et les touches d’accès rapide ou accélérateur.
+    * Pour tout contrôle personnalisé que vous utilisez dans votre interface utilisateur, vérifiez que vous avez mis en œuvre ces contrôles avec la prise en charge [**AutomationPeer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer) correcte pour l’activation et que vous avez défini des substitutions pour la gestion des touches selon les besoins pour prendre en charge l’activation, la traversée et les touches d’accès rapide ou accélérateur.
 
-    Pour plus d’informations, voir [Interactions avec le clavier](https://msdn.microsoft.com/library/windows/apps/Mt185607).
+    Pour plus d’informations, voir [Interactions avec le clavier](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions).
 
 3. Vérifiez le texte est une taille accessible en lecture
 
@@ -58,7 +58,7 @@ Nous fournissons ici une liste de vérification qui vous permet de vous assurer 
 
 5. Exécutez les outils d’accessibilité, traitez les problèmes signalés et vérifiez l’expérience de lecture d’écran.
 
-    Utilisez des outils tels que [**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) pour vérifier l’accès par programme, exécutez des outils de diagnostic tels que [**AccChecker**](https://msdn.microsoft.com/library/windows/desktop/Hh920985) pour identifier les erreurs courantes et vérifiez l’expérience de lecture d’écran avec le Narrateur.
+    Utilisez des outils tels que [**Inspect**](https://docs.microsoft.com/windows/desktop/WinAuto/inspect-objects) pour vérifier l’accès par programme, exécutez des outils de diagnostic tels que [**AccChecker**](https://docs.microsoft.com/windows/desktop/WinAuto/ui-accessibility-checker) pour identifier les erreurs courantes et vérifiez l’expérience de lecture d’écran avec le Narrateur.
 
     Pour plus d’informations, voir [Tests d’accessibilité](accessibility-testing.md).
 
@@ -75,5 +75,5 @@ Nous fournissons ici une liste de vérification qui vous permet de vous assurer 
 * [Exigences de texte accessible](accessible-text-requirements.md)
 * [Mise à l’échelle du texte](../input/text-scaling.md)
 * [Accessibilité](accessibility.md)
-* [Conception pour l’accessibilité](https://msdn.microsoft.com/library/windows/apps/Hh700407)
+* [Conception pour l’accessibilité](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-overview)
 * [Pratiques à éviter](practices-to-avoid.md)

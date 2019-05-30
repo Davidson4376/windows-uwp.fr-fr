@@ -5,18 +5,18 @@ keywords: XAML, UWP, Prise en main
 ms.date: 08/31/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a1eacc42720e7bce4290476676b0864fbd8a3694
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d540b41620110a41676d08f5e6239efd0ef4ca46
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57592954"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66361231"
 ---
 # <a name="tutorial-create-custom-styles"></a>Tutoriel : Créer des styles personnalisés
 
 Ce didacticiel vous montre comment personnaliser l’interface utilisateur de notre application XAML. Avertissement : ce didacticiel peut impliquer ou non une licorne. (Ce n'est pas une blague !)  
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 * [Visual Studio 2017 et le SDK Windows 10 (10.0.15063.468 ou version ultérieure)](https://developer.microsoft.com/windows/downloads)
 
 ## <a name="part-0-get-the-code"></a>Notamment le tome 0 Obtenir le code
@@ -60,7 +60,8 @@ Le curseur d’exposition ajuste l’exposition de l’image : faites-le glisse
 
     L'[espace de noms Windows.XAML.Ui.Shapes](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Shapes) fournit sept formes au choix. Vous pouvez choisir une ellipse, un rectangle, et un objet appelé Path, qui permet de réaliser toutes sortes de formes, et oui, même une licorne ! 
     
-    <!-- TODO reduce size --> ![Une licorne](../basics/images/xaml-basics/unicorn.png)
+    <!-- TODO reduce size -->
+    ![Une licorne](../basics/images/xaml-basics/unicorn.png)
     
     > **En savoir plus :** Le [dessiner des formes](https://docs.microsoft.com/en-us/windows/uwp/graphics/drawing-shapes) article vous indique tout ce que vous devez savoir sur les formes XAML. 
     
@@ -179,7 +180,7 @@ Félicitations, vous avez terminé la partie 1 ! Si vous êtes bloqué ou que 
 
 Un des avantages des styles XAML est qu’ils permettent de réduire considérablement la quantité de code que vous devez écrire et d'actualiser beaucoup plus facilement l’apparence de votre application.
 
-Pour définir un style, vous ajoutez un élément [Style](https://msdn.microsoft.com/library/windows/apps/br208849) à la propriété [Ressources](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.frameworkelement.Resources) d’un élément qui contient le contrôle que vous souhaitez pour le style.  Si vous ajoutez votre style à la propriété **Page.Resources**, vos styles seront accessibles à la page entière. Si vous ajoutez votre style à la propriété **Application.Resources** dans votre fichier App.xaml, le style sera accessible à l’ensemble de l’application.
+Pour définir un style, vous ajoutez un élément [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) à la propriété [Ressources](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.frameworkelement.Resources) d’un élément qui contient le contrôle que vous souhaitez pour le style.  Si vous ajoutez votre style à la propriété **Page.Resources**, vos styles seront accessibles à la page entière. Si vous ajoutez votre style à la propriété **Application.Resources** dans votre fichier App.xaml, le style sera accessible à l’ensemble de l’application.
 
 Vous pouvez créer des styles nommés et des styles généraux. Un style nommé doit être explicitement appliqué à des contrôles spécifiques ; un style général est appliqué à tout contrôle qui correspond au **TargetType** spécifié. 
 
@@ -337,7 +338,8 @@ Examinez les autres blocs de texte, notez que ces mêmes propriétés sont défi
 
 6. Compilez et exécutez l’application. Elle doit être... identique. Mais le fait d'avoir écrit un code efficace et facile à gérer doit vous procurer un sentiment d'intense satisfaction et de réussite.
 
-<!-- TODO add new start/end points --> Félicitations, vous avez terminé la partie 2.
+<!-- TODO add new start/end points -->
+Félicitations, vous avez terminé la partie 2 !
 
 
 ## <a name="part-3-use-a-control-template-to-make-a-fancy-slider"></a>Partie 3 : Utiliser un modèle de contrôle pour rendre un curseur fantaisie
@@ -858,4 +860,5 @@ Nous avons bien travaillé, mais il existe un meilleur moyen d’obtenir le mêm
     
     Comme vous pouvez le constater, nos mises à jour ont amélioré le positionnement du polygone. Désormais, le bas du polygone est aligné sur le bas du curseur de défilement.
     
-<!-- TODO correct folder --> Félicitations, vous avez terminé le didacticiel. Si vous êtes bloqué et que vous souhaitez consulter la solution définitive, vous trouverez l’exemple complet dans le [référentiel d’exemples d'applications UWP](https://github.com/Microsoft/Windows-universal-samples).
+<!-- TODO correct folder -->
+Félicitations, vous avez terminé le didacticiel ! Si vous êtes bloqué et que vous souhaitez consulter la solution définitive, vous trouverez l’exemple complet dans le [référentiel d’exemples d'applications UWP](https://github.com/Microsoft/Windows-universal-samples).

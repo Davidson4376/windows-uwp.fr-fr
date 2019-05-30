@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 keywords: développement d’applications de bureau Win32 pour Windows
 ms.localizationpriority: medium
-ms.openlocfilehash: 8cb104d873e810a9c5bedaa68675fd346cb3f33d
-ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
+ms.openlocfilehash: 31d1c81bbc5af932435860b55ebe5651a789eb6e
+ms.sourcegitcommit: f167775291cbc566b72b0859ae6b426d848c5c89
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66215057"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266428"
 ---
 # <a name="build-apps-for-windows"></a>Créer des applications pour Windows
 
@@ -120,6 +120,25 @@ Vous souhaitez créer une application pour Windows 10 ou enrichir une applicati
       </a>
     </li>
     <li>
+      <a href="/windows/msix/">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage bgdAccent1">
+                            <img src="/media/illustrations/sql-get-started-download.svg?branch=master" alt="MSIX packaging illustration" data-linktype="external" class="x-hidden-focus">
+                        </div>
+                    </div>
+                    <div class="cardText">
+                    <h3>Déploiement et empaquetage MSIX</h3>
+                    <p>Empaquetez et déployez n’importe quelle application Windows dans une expérience d’empaquetage universelle sûre, sécurisée et fiable.</p>
+                  </div>
+                </div>
+            </div>
+        </div>
+      </a>
+    </li>
+    <li>
       <a href="fluent-design-system.md">
         <div class="cardSize">
             <div class="cardPadding">
@@ -132,6 +151,25 @@ Vous souhaitez créer une application pour Windows 10 ou enrichir une applicati
                     <div class="cardText">
                     <h3>Système de conception Fluent</h3>
                     <p>Apprenez à concevoir et coder l’interface utilisateur des applications Windows en utilisant le système Fluent Design.</p>
+                  </div>
+                </div>
+            </div>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="/uwp/toolkits/winui/">
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage bgdAccent1">
+                            <img src="/media/illustrations/virtualization-containers-samples.svg?branch=master" alt="Design illustration" data-linktype="external" class="x-hidden-focus">
+                        </div>
+                    </div>
+                    <div class="cardText">
+                    <h3>Bibliothèque d’IU Windows</h3>
+                    <p>Utilisez les contrôles d’interface utilisateur Windows natifs et d’autres éléments d’interface utilisateur dans les applications pour les versions antérieures de Windows 10.</p>
                   </div>
                 </div>
             </div>

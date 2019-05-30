@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: windows 10, uwp, jeux, rendu
 ms.localizationpriority: medium
-ms.openlocfilehash: 108e9bf21b0552ac7f88721bf4b1ee72ca2a5e2c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 2b44558232247de969f22d5767a16d921cfbf252
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610504"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367569"
 ---
 # <a name="rendering-framework-ii-game-rendering"></a>Framework de rendu II : Rendu de jeux
 
@@ -37,7 +37,7 @@ Cet article explique comment configurer les autres éléments de cette infrastru
 Le convertisseur est responsable de la création et de la gestion de tous les objets D3D11 et D2D utilisés pour générer les effets visuels du jeu. La classe __GameRenderer__ est le convertisseur pour cet exemple de jeu et elle est conçue pour répondre aux besoins du jeu en matière de rendu.
 
 Voici quelques concepts qui peuvent vous être utiles pour la conception du convertisseur pour votre jeu :
-* Dans la mesure où les API Direct3D 11 sont définies comme des API [COM](https://msdn.microsoft.com/library/windows/desktop/ms694363.aspx), vous devez fournir des références [ComPtr](https://docs.microsoft.com/cpp/windows/comptr-class) aux objets définis par ces API. Ces objets sont automatiquement libérés lorsque leur dernière référence sort du contexte une fois l’exécution de l’application terminée. Pour plus d’informations, voir [ComPtr](https://github.com/Microsoft/DirectXTK/wiki/ComPtr). Voici quelques exemples de ces objets : tampons constants, objets nuanceurs - [nuanceur de vertex](tutorial--assembling-the-rendering-pipeline.md#vertex-shaders-and-pixel-shaders), [nuanceur de pixels](tutorial--assembling-the-rendering-pipeline.md#vertex-shaders-and-pixel-shaders) et objets de ressources de nuanceur.
+* Dans la mesure où les API Direct3D 11 sont définies comme des API [COM](https://docs.microsoft.com/windows/desktop/com/the-component-object-model), vous devez fournir des références [ComPtr](https://docs.microsoft.com/cpp/windows/comptr-class) aux objets définis par ces API. Ces objets sont automatiquement libérés lorsque leur dernière référence sort du contexte une fois l’exécution de l’application terminée. Pour plus d’informations, voir [ComPtr](https://github.com/Microsoft/DirectXTK/wiki/ComPtr). Voici quelques exemples de ces objets : tampons constants, objets nuanceurs - [nuanceur de vertex](tutorial--assembling-the-rendering-pipeline.md#vertex-shaders-and-pixel-shaders), [nuanceur de pixels](tutorial--assembling-the-rendering-pipeline.md#vertex-shaders-and-pixel-shaders) et objets de ressources de nuanceur.
 * Les tampons constants sont définis dans cette classe pour contenir diverses données requises pour le rendu.
     * L’utilisation de plusieurs tampons constants avec des fréquences différentes permet de réduire la quantité de données à envoyer à l’unité de traitement graphique (GPU) par trame. Cet exemple répartit les constantes en plusieurs tampons en fonction de la fréquence à laquelle elles doivent être mises à jour. Il s’agit d’une recommandation pour la programmation Direct3D. 
     * Dans cet exemple de jeu, 4 tampons constants sont définis.
@@ -46,7 +46,7 @@ Voici quelques concepts qui peuvent vous être utiles pour la conception du conv
         3. __m\_constantBufferChangesEveryFrame__ contient la matrice de vue. Cette matrice dépend de la position de la caméra et de la direction de la vue (perpendiculaire à la projection) et change une fois par trame dans la méthode __Render__. Cela a été décrit précédemment dans __framework rendu i : Introduction au rendu__, sous le [ __GameRenderer::Render__ méthode](tutorial--assembling-the-rendering-pipeline.md#gamerendererrender-method).
         4. __m\_constantBufferChangesEveryPrim__ contient les propriétés de matrice et les documents de modèle de chaque primitive. La matrice de modèle transforme les vertex des coordonnées locales en coordonnées universelles. Ces constantes sont spécifiques à chaque primitive et sont mises à jour pour chaque appel de dessin. Cela a été décrit précédemment dans __framework rendu i : Introduction au rendu__, sous le [rendu primitifs](tutorial--assembling-the-rendering-pipeline.md#primitive-rendering).
 * Les objets de ressources du nuanceur qui contiennent les textures des primitives sont également définis dans cette classe.
-    * Certaines de ces textures sont prédéfinies ([DDS](https://msdn.microsoft.com/library/windows/desktop/bb943991.aspx) est un format de fichier qui peut être utilisé pour stocker les textures compressées et non compressées. Les textures DDS sont utilisées pour les murs et le sol du monde, ainsi que les sphères de munitions.)
+    * Certaines de ces textures sont prédéfinies ([DDS](https://docs.microsoft.com/windows/desktop/direct3ddds/dx-graphics-dds-pguide) est un format de fichier qui peut être utilisé pour stocker les textures compressées et non compressées. Les textures DDS sont utilisées pour les murs et le sol du monde, ainsi que les sphères de munitions.)
     * Dans cet exemple de jeu, les objets de ressource de nuanceur sont : __m\_sphereTexture__, __m\_cylinderTexture__, __m\_ceilingTexture__, __m\_floorTexture__, __m\_wallsTexture__.
 * Les objets de nuanceur sont définis dans cette classe pour calculer les primitives et les textures. 
     * Dans cet exemple de jeu, les objets de nuanceur sont __m\_vertexShader__, __m\_vertexShaderFlat__, et __m\_pixelShader__, __m\_pixelShaderFlat__.

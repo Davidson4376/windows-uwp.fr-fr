@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f6a1277dbb2d756f0d3a4ffc1fd545f892a2096
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 2ac7f0785894849cffe09cd902f459015f1f7b6b
+ms.sourcegitcommit: ea15237291ae3ade0bf22e38bd292c3a23947a03
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57596504"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66377319"
 ---
 # <a name="block-compression"></a>Compression de blocs
 
@@ -73,7 +73,7 @@ Si votre code d’application utilise un pointeur de mémoire pour parcourir la 
 
 Le côté gauche du schéma illustre les tailles de niveau mipmap qui sont générées pour une texture 60×40 non compressée. La taille de niveau supérieur est obtenue à partir de l’appel d’API qui génère la texture ; chaque niveau suivant correspond à la moitié de la taille du niveau précédent. Pour une texture non compressée, il n’existe aucune différence entre la taille virtuelle (déclarée) et la taille physique (réelle).
 
-Le côté droit du schéma illustre les tailles de niveau mipmap qui sont générées pour la même texture 60×40 avec une compression. Notez que les deuxième et troisième niveaux comportent un remplissage de mémoire pour produire les facteurs de tailles de 4 sur chaque niveau. Cela permet aux algorithmes de fonctionner sur des blocs de 4×4 texels. Cet aspect est tout particulièrement évident si vous envisagez des niveaux de mipmap inférieurs à 4x4 ; la taille de ces très petits niveaux de mipmap sera arrondie au facteur de 4 le plus proche lors de l'allocation de la mémoire de texture.
+Le côté droit du schéma illustre les tailles de niveau mipmap qui sont générées pour la même texture 60×40 avec une compression. Notez que les deuxième et troisième niveaux comportent un remplissage de mémoire pour produire les facteurs de tailles de 4 sur chaque niveau. Cela permet aux algorithmes de fonctionner sur des blocs de 4×4 texels. Cela est particulièrement vrai si vous envisagez de niveaux de mipmap inférieures à 4 × 4 ; la taille de ces niveaux de mipmap très petite sera arrondie le facteur le plus proche de 4 lors de l’allocation de mémoire de texture.
 
 Le matériel d'échantillonnage utilise la taille virtuelle ; lorsque la texture est échantillonnée, le remplissage de la mémoire est ignoré. Pour les niveaux de mipmap inférieurs à 4x4, seuls les quatre premiers texels seront utilisés pour une carte de 2×2, et seul le premier texel sera utilisé par un bloc de 1x1. Il n’existe cependant aucune structure d’API qui expose la taille physique (y compris le remplissage de la mémoire).
 
@@ -94,13 +94,13 @@ Direct3D implémente plusieurs schémas de compression, chacun appliquant un com
 | Couleur et alpha trois composants | Couleur (5:6:5), Alpha (1) ou sans alpha  | [BC1](#bc1)                    |
 | Couleur et alpha trois composants | Couleur (5:6:5), Alpha (4)              | [BC2](#bc2)                    |
 | Couleur et alpha trois composants | Couleur (5:6:5), Alpha (8)              | [BC3](#bc3)                    |
-| Couleur un composant             | Un composant (8)                     | [TEXTURES BC4](#bc4)                    |
+| Couleur un composant             | Un composant (8)                     | [BC4](#bc4)                    |
 | Couleur deux composants             | Deux composants (8:8)                  | [BC5](#bc5)                    |
 
 - [BC1](#bc1)
 - [BC2](#bc2)
 - [BC3](#bc3)
-- [TEXTURES BC4](#bc4)
+- [BC4](#bc4)
 - [BC5](#bc5)
 
 ### <a name="span-idbc1spanspan-idbc1spanbc1"></a><span id="BC1"></span><span id="bc1"></span>BC1
@@ -181,7 +181,7 @@ else
 }
 ```
 
-### <a name="span-idbc4spanspan-idbc4spanbc4"></a><span id="BC4"></span><span id="bc4"></span>TEXTURES BC4
+### <a name="span-idbc4spanspan-idbc4spanbc4"></a><span id="BC4"></span><span id="bc4"></span>BC4
 
 Utilisez le format BC4 pour stocker des données de couleur à un composant en utilisant 8 bits pour chaque couleur. Suite à la précision accrue (par rapport à [BC1](#bc1)), textures BC4 est idéale pour stocker des données à virgule flottante dans la plage de \[0 à 1\] à l’aide de la DXGI\_FORMAT\_textures BC4\_Format UNORM et \[-1 à + 1\] à l’aide de la DXGI\_FORMAT\_textures BC4\_format SNORM. En supposant une texture 4x4 utilisant le format de données le plus volumineux possible, cette technique de compression réduit la mémoire requise de 16 octets (16 couleurs × 4 composants/couleur × 1 octet/composant) à 8 octets.
 
@@ -193,10 +193,10 @@ L’algorithme utilise les index 3 bits pour rechercher des couleurs à partir 
 
 L’algorithme détermine le nombre de valeurs de couleur interpolées en examinant les deux valeurs de référence. Si rouge\_0 est supérieure à red\_1, alors que les textures BC4 interpole 6 valeurs de couleur ; sinon, il effectue une interpolation 4. Lorsque BC4 interpole seulement 4 valeurs de couleur, il définit deux valeurs de couleurs supplémentaires (0.0f pour une couleur entièrement transparente et 1.0f pour une couleur totalement opaque). Le format BC4 compresse les valeurs alpha dans la zone de texel 4x4 en stockant le code de bit correspondant aux valeurs alpha interpolées qui correspondent le mieux à la valeur alpha d’origine pour un texel donné.
 
-- [TEXTURES BC4\_UNORM](#bc4-unorm)
-- [TEXTURES BC4\_SNORM](#bc4-snorm)
+- [BC4\_UNORM](#bc4-unorm)
+- [BC4\_SNORM](#bc4-snorm)
 
-### <a name="span-idbc4unormspanspan-idbc4unormspanspan-idbc4-unormspanbc4unorm"></a><span id="BC4_UNORM"></span><span id="bc4_unorm"></span><span id="bc4-unorm"></span>TEXTURES BC4\_UNORM
+### <a name="span-idbc4unormspanspan-idbc4unormspanspan-idbc4-unormspanbc4unorm"></a><span id="BC4_UNORM"></span><span id="bc4_unorm"></span><span id="bc4-unorm"></span>BC4\_UNORM
 
 L’interpolation des données à simple composant s’effectue comme dans l’exemple de code suivant.
 
@@ -227,7 +227,7 @@ else
 
 Les couleurs de référence sont attribuées à des index de 3 bits (000 – 111 dans la mesure où il y a 8 valeurs) qui seront enregistrés dans les blocs rouge a à rouge p lors de la compression.
 
-### <a name="span-idbc4snormspanspan-idbc4snormspanspan-idbc4-snormspanbc4snorm"></a><span id="BC4_SNORM"></span><span id="bc4_snorm"></span><span id="bc4-snorm"></span>TEXTURES BC4\_SNORM
+### <a name="span-idbc4snormspanspan-idbc4snormspanspan-idbc4-snormspanbc4snorm"></a><span id="BC4_SNORM"></span><span id="bc4_snorm"></span><span id="bc4-snorm"></span>BC4\_SNORM
 
 Le DXGI\_FORMAT\_textures BC4\_SNORM est exactement identique, à ceci près que les données sont encodées dans la plage SNORM et lorsqu’il y a 4 valeurs de couleurs sont interpolées. L’interpolation des données à simple composant s’effectue comme dans l’exemple de code suivant.
 
@@ -346,13 +346,13 @@ FLOAT32 f = 1.0f;
 UINT32 u;
 ```
 
-Pour réinterpréter « f » comme type de « u », utilisez [memcpy](https://msdn.microsoft.com/library/dswaw1wk.aspx) :
+Pour réinterpréter « f » comme type de « u », utilisez [memcpy](https://docs.microsoft.com/cpp/c-runtime-library/reference/memcpy-wmemcpy) :
 
 ```cpp
 memcpy( &u, &f, sizeof( f ) ); // 'u' becomes equal to 0x3F800000.
 ```
 
-Dans la réinterprétation précédente, la valeur sous-jacente des données ne change pas ; [memcpy](https://msdn.microsoft.com/library/dswaw1wk.aspx) réinterprète la virgule flottante en tant qu’entier non signé.
+Dans la réinterprétation précédente, la valeur sous-jacente des données ne change pas ; [memcpy](https://docs.microsoft.com/cpp/c-runtime-library/reference/memcpy-wmemcpy) réinterprète la virgule flottante en tant qu’entier non signé.
 
 Pour effectuer le type de conversion le plus courant, utilisez l’attribution suivante :
 

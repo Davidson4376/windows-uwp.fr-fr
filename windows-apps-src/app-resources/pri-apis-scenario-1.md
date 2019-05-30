@@ -6,15 +6,15 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: windows 10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ccb9447e9594f71907f0da5d0e15f9c6c65bb6b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a63cf64fec32be5439838618e534617d1f4a9afc
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57622754"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359361"
 ---
 # <a name="scenario-1-generate-a-pri-file-from-string-resources-and-asset-files"></a>Scénario 1 : Générer un fichier PRI à partir des ressources de chaîne et les fichiers de ressources
-Dans ce scénario, nous allons utiliser les [API d’indexation de ressource de package (IRP)](https://msdn.microsoft.com/library/windows/desktop/mt845690) pour créer une application pour représenter notre système de génération personnalisé. N’oubliez pas que l’objectif de ce système de génération personnalisé est de créer des fichiers PRI pour une application UWP cible. Par conséquent, dans le cadre de cette procédure pas à pas, nous allons créer des exemples de fichiers de ressources (contenant des chaînes et autres types de ressources) pour représenter les ressources de cette application UWP cible.
+Dans ce scénario, nous allons utiliser les [API d’indexation de ressource de package (IRP)](https://docs.microsoft.com/windows/desktop/menurc/pri-indexing-reference) pour créer une application pour représenter notre système de génération personnalisé. N’oubliez pas que l’objectif de ce système de génération personnalisé est de créer des fichiers PRI pour une application UWP cible. Par conséquent, dans le cadre de cette procédure pas à pas, nous allons créer des exemples de fichiers de ressources (contenant des chaînes et autres types de ressources) pour représenter les ressources de cette application UWP cible.
 
 ## <a name="new-project"></a>Nouveau projet
 Commencez par créer un nouveau projet dans Microsoft Visual Studio. Créez un projet d’**application de console Windows Visual C++** et nommez-le *CBSConsoleApp* (pour « application de console de système de génération personnalisé »).
@@ -227,11 +227,11 @@ Les informations commencent par un mappage des ressources, qui est nommé avec l
 
 La première chaîne de ressource est *EnOnlyString* de `en-US\resources.resw` et elle contient un seul candidat (qui correspond au qualificateur *langue - en-US*). Vient ensuite *LocalizedString1* de `resources.resw` et `en-US\resources.resw`. Par conséquent, elle contient deux candidats : une correspondant à *language-en-US*et un candidat neutre de secours qui correspond à tout contexte. De même, *LocalizedString2* a deux candidats : *language-de-DE* et neutre. Et, enfin, *NeutralOnlyString* existe uniquement dans un format neutre. Je lui ai donné ce nom pour qu’il soit clair que ceci ne doit pas être localisée.
 
-## <a name="summary"></a>Résumé
-Dans ce scénario, nous vous avons montré comment utiliser les [API d’indexation de ressource de package (IRP)](https://msdn.microsoft.com/library/windows/desktop/mt845690) pour créer un indexeur de ressources. Nous avons ajouté des ressources de chaîne et des fichiers de ressources à l’indexeur de ressources. Ensuite, nous avons utilisé l’indexeur de ressources pour généré un fichier PRI binaire. Enfin, nous avons vidé le fichier PRI binaire au format XML afin de confirmer qu’elle contient les informations prévues.
+## <a name="summary"></a>Récapitulatif
+Dans ce scénario, nous vous avons montré comment utiliser les [API d’indexation de ressource de package (IRP)](https://docs.microsoft.com/windows/desktop/menurc/pri-indexing-reference) pour créer un indexeur de ressources. Nous avons ajouté des ressources de chaîne et des fichiers de ressources à l’indexeur de ressources. Ensuite, nous avons utilisé l’indexeur de ressources pour généré un fichier PRI binaire. Enfin, nous avons vidé le fichier PRI binaire au format XML afin de confirmer qu’elle contient les informations prévues.
 
 ## <a name="important-apis"></a>API importantes
-* [Ressource de package que l’indexation de référence de (PRI)](https://msdn.microsoft.com/library/windows/desktop/mt845690)
+* [Ressource de package que l’indexation de référence de (PRI)](https://docs.microsoft.com/windows/desktop/menurc/pri-indexing-reference)
 
 ## <a name="related-topics"></a>Rubriques connexes
 * [API d’indexation de ressources de package (IRP) et systèmes de génération personnalisés](pri-apis-custom-build-systems.md)

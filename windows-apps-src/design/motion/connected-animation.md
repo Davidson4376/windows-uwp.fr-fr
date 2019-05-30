@@ -9,12 +9,12 @@ pm-contact: stmoy
 design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 21e7c026d336507b1a82badba770ac3bb50e19f8
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.openlocfilehash: d1d459ab10614ddf9186275b1a6b66e8fa5703ec
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65984118"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364959"
 ---
 # <a name="connected-animation-for-uwp-apps"></a>Animation connectée pour les applications UWP
 
@@ -63,7 +63,7 @@ Lorsqu'il navigue entre des pages, il est important que l’utilisateur comprenn
 
 ## <a name="when-to-use-connected-animation"></a>Quand utiliser une animation connectée
 
-Les animations connectées sont généralement utilisées lorsque l'utilisateur change de page, bien qu'elles puissent être appliquées à n'importe quelle expérience qui implique une modification du contenu d'une interface utilisateur et qui exige que l'utilisateur préserve le contexte. Envisagez d’utiliser une animation connectée au lieu d’une [transition de navigation d'exploration](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.animation.navigationthemetransition.aspx) chaque fois qu’il existe une image ou un autre élément d’interface utilisateur commun entre des affichages source et de destination.
+Les animations connectées sont généralement utilisées lorsque l'utilisateur change de page, bien qu'elles puissent être appliquées à n'importe quelle expérience qui implique une modification du contenu d'une interface utilisateur et qui exige que l'utilisateur préserve le contexte. Envisagez d’utiliser une animation connectée au lieu d’une [transition de navigation d'exploration](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.NavigationThemeTransition) chaque fois qu’il existe une image ou un autre élément d’interface utilisateur commun entre des affichages source et de destination.
 
 ## <a name="configure-connected-animation"></a>Configurer l’animation connectée
 

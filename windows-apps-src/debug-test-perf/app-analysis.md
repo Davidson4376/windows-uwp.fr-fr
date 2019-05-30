@@ -5,12 +5,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f1d37446cb5f540cd77928cb8167d8d4319977d1
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 138bb762b9b1d424ac8f9c2148b43f230f096458
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57612004"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362427"
 ---
 # <a name="app-analysis-overview"></a>Vue d’ensemble de l’analyse d’application
 
@@ -32,11 +32,11 @@ L’affichage d’images dans une taille non native peut avoir un effet négatif
 
 #### <a name="image-is-not-being-set-asynchronously"></a>L’image n’est pas définie en mode asynchrone
 
-L’application utilise SetSource() au lieu de SetSourceAsync(). Évitez toujours d’utiliser [**SetSource**](https://msdn.microsoft.com/library/windows/apps/BR243255) et utilisez plutôt [**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/JJ191522) quand vous définissez un flux pour décoder des images de manière asynchrone. 
+L’application utilise SetSource() au lieu de SetSourceAsync(). Évitez toujours d’utiliser [**SetSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsource) et utilisez plutôt [**SetSourceAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync) quand vous définissez un flux pour décoder des images de manière asynchrone. 
 
 #### <a name="image-is-being-called-when-the-imagesource-is-not-in-the-live-tree"></a>L’image est appelée quand ImageSource n’est pas dans l’arborescence live
 
-Le BitmapImage est associé à l’arborescence XAML live après la définition du contenu avec SetSourceAsync ou UriSource. Vous devez toujours associer un [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/BR243235) à l’arborescence live avant de définir la source. Dès lors qu’un élément ou pinceau image est spécifié dans le balisage, ce sera automatiquement le cas. Vous trouverez ci-dessous des exemples. 
+Le BitmapImage est associé à l’arborescence XAML live après la définition du contenu avec SetSourceAsync ou UriSource. Vous devez toujours associer un [**BitmapImage**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapImage) à l’arborescence live avant de définir la source. Dès lors qu’un élément ou pinceau image est spécifié dans le balisage, ce sera automatiquement le cas. Vous trouverez ci-dessous des exemples. 
 
 **Exemples d’arborescence Live**
 
@@ -72,7 +72,7 @@ myImage.Source = bitmapImage;
 
 Quand une image est utilisée pour un pinceau non rectangulaire, elle utilise un chemin de rastérisation logicielle qui ne met pas du tout les images à l’échelle. En outre, elle doit stocker une copie de l’image dans la mémoire logicielle et matérielle. Par exemple, si une image est utilisée comme pinceau pour une ellipse, l’image complète, éventuellement de grande taille, sera stockée deux fois en interne. Quand vous utilisez un pinceau non rectangulaire, votre application doit effectuer une mise à l’échelle préalable de ses images à leur taille de rendu approximative.
 
-Vous pouvez aussi définir une taille de décodage explicite pour créer une version de l’image à la taille exacte qui sera affichée à l’écran à l’aide des propriétés [**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) et [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241).
+Vous pouvez aussi définir une taille de décodage explicite pour créer une version de l’image à la taille exacte qui sera affichée à l’écran à l’aide des propriétés [**DecodePixelWidth**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelwidth) et [**DecodePixelHeight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelheight).
 
 ```xml
 <Image>
@@ -83,21 +83,21 @@ Vous pouvez aussi définir une taille de décodage explicite pour créer une ver
 </Image>
 ```
 
-Les unités pour [**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) et [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241) sont en pixels physiques par défaut. La propriété [**DecodePixelType**](https://msdn.microsoft.com/library/windows/apps/Dn298545) peut être utilisée pour modifier ce comportement : en définissant **DecodePixelType** sur **Logical**, la taille de décodage tient compte automatiquement du facteur d’échelle actuel du système, comme c’est le cas pour d’autres contenus XAML. Il est donc généralement approprié de définir **DecodePixelType** sur **Logical** si, par exemple, vous voulez que **DecodePixelWidth** et **DecodePixelHeight** correspondent aux propriétés de hauteur et de largeur du contrôle d’image dans lequel s’affiche l’image. Si vous utilisez le comportement par défaut qui consiste à utiliser des pixels physiques, vous devez tenir compte du facteur d’échelle du système actuel et être attentif aux notifications de modification d’échelle au cas où l’utilisateur modifie ses préférences d’affichage.
+Les unités pour [**DecodePixelWidth**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelwidth) et [**DecodePixelHeight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelheight) sont en pixels physiques par défaut. La propriété [**DecodePixelType**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixeltype) peut être utilisée pour modifier ce comportement : en définissant **DecodePixelType** sur **Logical**, la taille de décodage tient compte automatiquement du facteur d’échelle actuel du système, comme c’est le cas pour d’autres contenus XAML. Il est donc généralement approprié de définir **DecodePixelType** sur **Logical** si, par exemple, vous voulez que **DecodePixelWidth** et **DecodePixelHeight** correspondent aux propriétés de hauteur et de largeur du contrôle d’image dans lequel s’affiche l’image. Si vous utilisez le comportement par défaut qui consiste à utiliser des pixels physiques, vous devez tenir compte du facteur d’échelle du système actuel et être attentif aux notifications de modification d’échelle au cas où l’utilisateur modifie ses préférences d’affichage.
 
 Dans certains cas, quand une taille de décodage appropriée ne peut pas être déterminée à l’avance, vous devez vous en remettre au décodage automatique à la taille adéquate du code XAML qui tente de décoder au mieux l’image à la taille appropriée si aucun paramètre DecodePixelWidth/DecodePixelHeight explicite n’est spécifié.
 
-Vous devez définir une taille de décodage explicite si vous connaissez à l’avance la taille du contenu image. Vous devez également définir [**DecodePixelType**](https://msdn.microsoft.com/library/windows/apps/Dn298545) sur **Logical** si la taille de décodage fournie dépend de la taille d’autres éléments XAML. Par exemple, si vous définissez explicitement la taille du contenu avec Image.Width et Image.Height, vous pouvez définir DecodePixelType sur DecodePixelType.Logical pour utiliser les mêmes dimensions de pixels logiques qu’un contrôle d’image, puis utiliser explicitement BitmapImage.DecodePixelWidth et/ou BitmapImage.DecodePixelHeight pour contrôler la taille de l’image afin de pouvoir éventuellement économiser une grande capacité de mémoire.
+Vous devez définir une taille de décodage explicite si vous connaissez à l’avance la taille du contenu image. Vous devez également définir [**DecodePixelType**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixeltype) sur **Logical** si la taille de décodage fournie dépend de la taille d’autres éléments XAML. Par exemple, si vous définissez explicitement la taille du contenu avec Image.Width et Image.Height, vous pouvez définir DecodePixelType sur DecodePixelType.Logical pour utiliser les mêmes dimensions de pixels logiques qu’un contrôle d’image, puis utiliser explicitement BitmapImage.DecodePixelWidth et/ou BitmapImage.DecodePixelHeight pour contrôler la taille de l’image afin de pouvoir éventuellement économiser une grande capacité de mémoire.
 
 Remarque : Prenez en considération Image.Stretch quand vous déterminez la taille du contenu décodé.
 
 #### <a name="images-used-inside-of-bitmapicons-fall-back-to-decoding-to-natural-size"></a>Les images utilisées à l’intérieur de BitmapIcons utilisent le décodage à la taille naturelle 
 
-Définissez une taille de décodage explicite pour créer une version de l’image à la taille exacte qui sera affichée à l’écran à l’aide des propriétés [**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) et [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241).
+Définissez une taille de décodage explicite pour créer une version de l’image à la taille exacte qui sera affichée à l’écran à l’aide des propriétés [**DecodePixelWidth**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelwidth) et [**DecodePixelHeight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelheight).
 
 #### <a name="images-that-appear-extremely-large-on-screen-fall-back-to-decoding-to-natural-size"></a>Les images qui s’affichent très grandes à l’écran utilisent le décodage à la taille naturelle 
 
-Les images qui s’affichent très grandes à l’écran utilisent le décodage à la taille naturelle. Définissez une taille de décodage explicite pour créer une version de l’image à la taille exacte qui sera affichée à l’écran à l’aide des propriétés [**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) et [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241).
+Les images qui s’affichent très grandes à l’écran utilisent le décodage à la taille naturelle. Définissez une taille de décodage explicite pour créer une version de l’image à la taille exacte qui sera affichée à l’écran à l’aide des propriétés [**DecodePixelWidth**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelwidth) et [**DecodePixelHeight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelheight).
 
 #### <a name="image-is-hidden"></a>L’image est masquée
 
@@ -105,7 +105,7 @@ L’image est masquée en définissant Opacity sur 0 ou Visibility sur Collapse
 
 #### <a name="image-is-using-ninegrid-property"></a>L’image utilise la propriété NineGrid
 
-Quand une image est utilisée pour un [**NineGrid**](https://msdn.microsoft.com/library/windows/apps/BR242756), elle utilise un chemin de rastérisation logicielle qui ne met pas du tout les images à l’échelle. En outre, elle doit stocker une copie de l’image dans la mémoire logicielle et matérielle. Quand vous utilisez **NineGrid**, votre application doit effectuer une mise à l’échelle préalable de ses images à leur taille de rendu approximative.
+Quand une image est utilisée pour un [**NineGrid**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image.ninegrid), elle utilise un chemin de rastérisation logicielle qui ne met pas du tout les images à l’échelle. En outre, elle doit stocker une copie de l’image dans la mémoire logicielle et matérielle. Quand vous utilisez **NineGrid**, votre application doit effectuer une mise à l’échelle préalable de ses images à leur taille de rendu approximative.
 
 Les images qui utilisent la propriété NineGrid utilisent le décodage à la taille naturelle. Ajoutez l’effet ninegrid à l’image d’origine.
 
@@ -115,7 +115,7 @@ Si les paramètres DecodePixelWidth/Height sont explicitement définis sur des v
 
 #### <a name="image-is-decoded-as-part-of-producing-a-drag-and-drop-image"></a>L’image est décodée dans le cadre de la production d’une image de Glisser- déplacer
 
-Définissez une taille de décodage explicite pour créer une version de l’image à la taille exacte qui sera affichée à l’écran à l’aide des propriétés [**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) et [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241).
+Définissez une taille de décodage explicite pour créer une version de l’image à la taille exacte qui sera affichée à l’écran à l’aide des propriétés [**DecodePixelWidth**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelwidth) et [**DecodePixelHeight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelheight).
 
 ## <a name="collapsed-elements-at-load-time"></a>Éléments réduits au moment du chargement
 
@@ -133,7 +133,7 @@ Cette règle a été déclenchée, car un élément a été réduit au moment du
 
 ### <a name="solution"></a>Solution
 
-L’utilisation de [x:Load attribute](../xaml-platform/x-load-attribute.md) ou de [x:DeferLoadStrategy](https://msdn.microsoft.com/library/windows/apps/Mt204785) vous permet de différer le chargement d’un élément d’interface utilisateur et de le charger quand c’est nécessaire. C’est un bon moyen de retarder le traitement de l’interface utilisateur qui n’est pas visible dans le premier frame. Vous pouvez choisir de charger l’élément selon les besoins, ou dans le cadre d’un ensemble de logique différée. Pour déclencher le chargement, appelez findName sur l’élément que vous voulez charger. x:Load étend les fonctionnalités de x:DeferLoadStrategy en permettant de décharger les éléments et de contrôler l’état de chargement par le biais de x:Bind.
+L’utilisation de [x:Load attribute](../xaml-platform/x-load-attribute.md) ou de [x:DeferLoadStrategy](https://docs.microsoft.com/windows/uwp/xaml-platform/x-deferloadstrategy-attribute) vous permet de différer le chargement d’un élément d’interface utilisateur et de le charger quand c’est nécessaire. C’est un bon moyen de retarder le traitement de l’interface utilisateur qui n’est pas visible dans le premier frame. Vous pouvez choisir de charger l’élément selon les besoins, ou dans le cadre d’un ensemble de logique différée. Pour déclencher le chargement, appelez findName sur l’élément que vous voulez charger. x:Load étend les fonctionnalités de x:DeferLoadStrategy en permettant de décharger les éléments et de contrôler l’état de chargement par le biais de x:Bind.
 
 Dans certains cas, l’utilisation de findName pour afficher un élément d’interface utilisateur n’est peut-être pas appropriée. Cela est vrai si vous prévoyez de réaliser une partie significative de l’interface utilisateur à partir d’un clic sur un bouton avec une très faible latence. Dans ce cas, vous envisagerez peut-être un compromis entre une latence d’interface utilisateur plus courte et un coût mémoire supplémentaire ; si tel est le cas, utilisez x:DeferLoadStrategy et définissez Visibility sur Collapsed au niveau de l’élément que vous voulez réaliser. Une fois que la page est chargée et que le thread d’interface utilisateur est libre, vous pouvez appeler findName selon vos besoins pour charger les éléments. Les éléments ne sont pas visibles pour l’utilisateur si la propriété Visibility de l’élément n’est pas définie sur Visible.
 
@@ -141,7 +141,7 @@ Dans certains cas, l’utilisation de findName pour afficher un élément d’in
 
 La virtualisation de l’interface utilisateur est le point le plus important que vous pouvez améliorer pour augmenter les performances des collections. Elle implique la création à la demande des éléments d’interface utilisateur. Pour un contrôle d’éléments lié à une collection de 1 000 éléments, créer l’interface utilisateur simultanément pour tous les éléments constituerait un gaspillage de ressources, car il n’est pas possible d’afficher tous les éléments en même temps. Les contrôles ListView et GridView (et d’autres contrôles standard dérivés de ItemsControl) effectuent la virtualisation de l’interface utilisateur à votre place. Quand des éléments vont bientôt défiler dans l’affichage (quelques pages plus loin), l’infrastructure génère l’interface utilisateur pour ces éléments et les met en cache. Lorsqu’il est peu probable que les éléments soient de nouveau affichés, l’infrastructure récupère la mémoire qui leur était allouée.
 
-La virtualisation de l’interface utilisateur est l’un des nombreux facteurs clés qui permettent d’améliorer les performances des collections. La réduction de la complexité des éléments d’une collection et la virtualisation des données sont deux autres aspects importants qui contribuent à l’amélioration des performances des collections. Pour plus d’informations sur l’amélioration des performances des collections dans les contrôles ListView et GridView, voir les articles sur l’[Optimisation des options d’interface ListView et GridView](https://msdn.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview) et [Virtualisation des données ListView et Gridview](https://msdn.microsoft.com/windows/uwp/debug-test-perf/listview-and-gridview-data-optimization).
+La virtualisation de l’interface utilisateur est l’un des nombreux facteurs clés qui permettent d’améliorer les performances des collections. La réduction de la complexité des éléments d’une collection et la virtualisation des données sont deux autres aspects importants qui contribuent à l’amélioration des performances des collections. Pour plus d’informations sur l’amélioration des performances des collections dans les contrôles ListView et GridView, voir les articles sur l’[Optimisation des options d’interface ListView et GridView](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview) et [Virtualisation des données ListView et Gridview](https://docs.microsoft.com/windows/uwp/debug-test-perf/listview-and-gridview-data-optimization).
 
 ### <a name="impact"></a>Impact
 
@@ -159,7 +159,7 @@ Restaurez la virtualisation en définissant une largeur et une hauteur pour le I
 
 Le thread d’interface utilisateur est bloqué en cas d’appels synchrones à des fonctions qui s’exécutent en dehors du thread.  
 
-Pour obtenir la liste complète des bonnes pratiques qui permettent d’améliorer les performances de démarrage de votre application, voir [Meilleures pratiques en matière de performances de démarrage de votre application](https://msdn.microsoft.com/windows/uwp/debug-test-perf/best-practices-for-your-app-s-startup-performance) et [Assurer la réactivité du thread de l’interface utilisateur](https://msdn.microsoft.com/windows/uwp/debug-test-perf/keep-the-ui-thread-responsive).
+Pour obtenir la liste complète des bonnes pratiques qui permettent d’améliorer les performances de démarrage de votre application, voir [Meilleures pratiques en matière de performances de démarrage de votre application](https://docs.microsoft.com/windows/uwp/debug-test-perf/best-practices-for-your-app-s-startup-performance) et [Assurer la réactivité du thread de l’interface utilisateur](https://docs.microsoft.com/windows/uwp/debug-test-perf/keep-the-ui-thread-responsive).
 
 ### <a name="impact"></a>Impact
 
@@ -213,7 +213,7 @@ Si vous fournissez un modèle de panneau d’éléments personnalisé (voir Item
 
 La virtualisation de l’interface utilisateur est le point le plus important que vous pouvez améliorer pour augmenter les performances des collections. Elle implique la création à la demande des éléments d’interface utilisateur. Pour un contrôle d’éléments lié à une collection de 1 000 éléments, créer l’interface utilisateur simultanément pour tous les éléments constituerait un gaspillage de ressources, car il n’est pas possible d’afficher tous les éléments en même temps. Les contrôles ListView et GridView (et d’autres contrôles standard dérivés de ItemsControl) effectuent la virtualisation de l’interface utilisateur à votre place. Quand des éléments vont bientôt défiler dans l’affichage (quelques pages plus loin), l’infrastructure génère l’interface utilisateur pour ces éléments et les met en cache. Lorsqu’il est peu probable que les éléments soient de nouveau affichés, l’infrastructure récupère la mémoire qui leur était allouée.
 
-La virtualisation de l’interface utilisateur est l’un des nombreux facteurs clés qui permettent d’améliorer les performances des collections. La réduction de la complexité des éléments d’une collection et la virtualisation des données sont deux autres aspects importants qui contribuent à l’amélioration des performances des collections. Pour plus d’informations sur l’amélioration des performances des collections dans les contrôles ListView et GridView, voir les articles sur l’[Optimisation des options d’interface ListView et GridView](https://msdn.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview) et [Virtualisation des données ListView et Gridview](https://msdn.microsoft.com/windows/uwp/debug-test-perf/listview-and-gridview-data-optimization).
+La virtualisation de l’interface utilisateur est l’un des nombreux facteurs clés qui permettent d’améliorer les performances des collections. La réduction de la complexité des éléments d’une collection et la virtualisation des données sont deux autres aspects importants qui contribuent à l’amélioration des performances des collections. Pour plus d’informations sur l’amélioration des performances des collections dans les contrôles ListView et GridView, voir les articles sur l’[Optimisation des options d’interface ListView et GridView](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview) et [Virtualisation des données ListView et Gridview](https://docs.microsoft.com/windows/uwp/debug-test-perf/listview-and-gridview-data-optimization).
 
 ### <a name="impact"></a>Impact
 

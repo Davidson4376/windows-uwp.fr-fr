@@ -6,26 +6,26 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c105425be5b8eb56f32956f126a8f6c2c4f30f2e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: eb0adece0d950a4fe66d45e125d981ae986a3e4b
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57644274"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359840"
 ---
 # <a name="performance"></a>Performances
 
 
 Les utilisateurs attendent de leurs applications qu’elles soient réactives, conviviales et qu’elles ne déchargent pas la batterie. Techniquement, la performance est une exigence non fonctionnelle mais le fait de considérer les performances comme une fonctionnalité vous aidera à répondre aux attentes de vos utilisateurs. La spécification des objectifs et la mesure sont des facteurs essentiels. Déterminez quels sont les scénarios pour lesquels les performances sont essentielles et définissez ce que vous entendez par bonnes performances. Effectuez ensuite des mesures précoces et régulières tout au long du cycle de vie de votre projet pour être sûr d’atteindre vos objectifs. Cette section vous montre comment organiser votre flux de travail de performances, corriger les problèmes d’animation et de fréquence d’images, et régler le temps de démarrage, la durée de navigation par page et l’utilisation de la mémoire.
 
-Si vous n’avez pas encore fait, une étape qui nous l’avons vu entraînent des améliorations significatives des performances consiste simplement à porter votre application pour cible Windows 10. Plusieurs optimisations de XAML (par exemple, [{x : Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783)) sont uniquement disponibles dans les applications Windows 10. Consultez [portage d’applications vers Windows 10](https://msdn.microsoft.com/library/windows/apps/Mt238321) et la session //build/ [déplacement vers la plateforme Windows universelle](https://channel9.msdn.com/Events/Build/2015/3-741).
+Si vous n’avez pas encore fait, une étape qui nous l’avons vu entraînent des améliorations significatives des performances consiste simplement à porter votre application pour cible Windows 10. Plusieurs optimisations de XAML (par exemple, [{x : Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)) sont uniquement disponibles dans les applications Windows 10. Consultez [portage d’applications vers Windows 10](https://docs.microsoft.com/windows/uwp/porting/index) et la session //build/ [déplacement vers la plateforme Windows universelle](https://channel9.msdn.com/Events/Build/2015/3-741).
 
 | Rubrique | Description |
 |-------|-------------|
 | [Planification des performances](planning-and-measuring-performance.md) | Les utilisateurs attendent de leurs applications qu’elles soient réactives, conviviales et qu’elles ne déchargent pas la batterie. Techniquement, la performance est une exigence non fonctionnelle mais le fait de considérer les performances comme une fonctionnalité vous aidera à répondre aux attentes de vos utilisateurs. La spécification des objectifs et la mesure sont des facteurs essentiels. Déterminez quels sont les scénarios pour lesquels les performances sont essentielles et définissez ce que vous entendez par bonnes performances. Effectuez ensuite des mesures précoces et régulières tout au long du cycle de vie de votre projet pour être sûr d’atteindre vos objectifs. |
 | [Optimiser l’activité en arrière-plan](optimize-background-activity.md) | Créez des applications UWP qui fonctionnent avec le système pour utiliser des tâches en arrière-plan de manière économe en énergie. |
-| [Optimisation de ListView et GridView UI](optimize-gridview-and-listview.md) | Améliorez les performances du contrôle [<strong>GridView</strong>](https://msdn.microsoft.com/library/windows/apps/BR242705) et le temps de démarrage à travers la virtualisation de l’interface utilisateur, la réduction des éléments et la mise à jour progressive des éléments. |
-| [Virtualisation des données ListView et GridView](listview-and-gridview-data-optimization.md) | Améliorez les performances du contrôle [<strong>GridView</strong>](https://msdn.microsoft.com/library/windows/apps/BR242705) et le temps de démarrage avec la virtualisation des données. |
+| [Optimisation de ListView et GridView UI](optimize-gridview-and-listview.md) | Améliorez les performances du contrôle [<strong>GridView</strong>](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView) et le temps de démarrage à travers la virtualisation de l’interface utilisateur, la réduction des éléments et la mise à jour progressive des éléments. |
+| [Virtualisation des données ListView et GridView](listview-and-gridview-data-optimization.md) | Améliorez les performances du contrôle [<strong>GridView</strong>](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView) et le temps de démarrage avec la virtualisation des données. |
 | [Améliorer les performances du garbage collection](improve-garbage-collection-performance.md) | Les applications de plateforme Windows universelle (UWP) écrites en C# et Visual Basic bénéficient de la gestion automatique de la mémoire du récupérateur de mémoire .NET. Cette section résume les meilleures pratiques en termes de comportement et de performance du récupérateur de mémoire .NET pour les applications UWP. |
 | [Que le thread d’interface utilisateur reste réactive](keep-the-ui-thread-responsive.md) | Les utilisateurs attendent de leurs applications qu’elles restent réactives pendant les opérations de calcul, et ce sur n’importe quel type d’ordinateur. Les implications sont différentes selon les applications. Pour certaines applications, cela implique de fournir des propriétés physiques plus réalistes, d’accélérer le chargement des données à partir d’un disque ou du Web, de représenter des scènes complexes et naviguer entre les pages plus vite, de trouver un itinéraire en un clin d’œil ou encore de traiter rapidement les données. Quel que soit le type de calcul effectué, les utilisateurs veulent que leur application continue de réagir à leurs interactions et qu’elle ne donne pas l’impression de ne plus répondre pendant l’opération de &quot;calcul&quot;. |
 | [Optimiser votre balisage XAML](optimize-xaml-loading.md) | L’analyse du balisage XAML pour la construction d’objets en mémoire est chronophage pour une interface utilisateur complexe. Voici quelques astuces pour améliorer l’analyse du balisage XAML ainsi que l’efficacité du temps de chargement et de la mémoire de votre application. | 

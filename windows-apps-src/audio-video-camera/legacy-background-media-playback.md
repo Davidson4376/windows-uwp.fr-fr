@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ea8d387becaef171175fd5e91bfc3a1402e79faa
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: da18981a2be03c40e15df666f58d60ac91b6f130
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57616614"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360769"
 ---
 # <a name="legacy-background-media-playback"></a>Lecture multimédia en arrière-plan héritée
 
@@ -23,14 +23,14 @@ Cet article décrit le modèle hérité à deux processus d’ajout de la prise
 
 ## <a name="background-audio-architecture"></a>Architecture de la lecture audio en arrière-plan
 
-Une application exécutant la lecture en arrière-plan comprend deux processus. Le premier processus est l’application principale, qui contient l’interface utilisateur et la logique client de l’application, exécutée au premier plan. Le second processus est la tâche de lecture en arrière-plan, qui implémente [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794), comme toutes les tâches en arrière-plan d’application UWP. La tâche en arrière-plan contient la logique de lecture audio et les services en arrière-plan. La tâche en arrière-plan communique avec le système via les contrôles de transport de média système.
+Une application exécutant la lecture en arrière-plan comprend deux processus. Le premier processus est l’application principale, qui contient l’interface utilisateur et la logique client de l’application, exécutée au premier plan. Le second processus est la tâche de lecture en arrière-plan, qui implémente [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask), comme toutes les tâches en arrière-plan d’application UWP. La tâche en arrière-plan contient la logique de lecture audio et les services en arrière-plan. La tâche en arrière-plan communique avec le système via les contrôles de transport de média système.
 
 Le diagramme suivant est une vue d’ensemble de la conception du système.
 
 ![Architecture de la lecture audio en arrière-plan Windows 10](images/backround-audio-architecture-win10.png)
 ## <a name="mediaplayer"></a>MediaPlayer
 
-L’espace de noms [**Windows.Media.Playback**](https://msdn.microsoft.com/library/windows/apps/dn640562) contient les API utilisées pour la lecture audio en arrière-plan. Il existe une seule instance de [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/dn652535) par application par le biais de laquelle la lecture s’effectue. Votre application de lecture audio en arrière-plan appelle des méthodes et configure des propriétés sur la classe **MediaPlayer** pour définir la piste actuelle, démarrer la lecture, mettre en pause, avancer, reculer, etc. L’instance d’objet de lecteur multimédia est toujours accessible via la propriété [**BackgroundMediaPlayer.Current**](https://msdn.microsoft.com/library/windows/apps/dn652528).
+L’espace de noms [**Windows.Media.Playback**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback) contient les API utilisées pour la lecture audio en arrière-plan. Il existe une seule instance de [**MediaPlayer**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer) par application par le biais de laquelle la lecture s’effectue. Votre application de lecture audio en arrière-plan appelle des méthodes et configure des propriétés sur la classe **MediaPlayer** pour définir la piste actuelle, démarrer la lecture, mettre en pause, avancer, reculer, etc. L’instance d’objet de lecteur multimédia est toujours accessible via la propriété [**BackgroundMediaPlayer.Current**](https://docs.microsoft.com/uwp/api/windows.media.playback.backgroundmediaplayer.current).
 
 ## <a name="mediaplayer-proxy-and-stub"></a>MediaPlayer Proxy et Stub
 
@@ -38,35 +38,35 @@ Lorsque **BackgroundMediaPlayer.Current** est accessible à partir du processus 
 
 Lorsque **BackgroundMediaPlayer.Current** est accessible à partir de l’application au premier plan, l’instance **MediaPlayer** qui est renvoyée est en réalité un proxy qui communique avec un stub dans le processus en arrière-plan. Ce stub communique avec l’instance **MediaPlayer** réelle, qui est également hébergée dans le processus en arrière-plan.
 
-Les processus de premier plan et d’arrière-plan peuvent accéder à la plupart des propriétés de l’instance **MediaPlayer**, à l’exception de [**MediaPlayer.Source**](https://msdn.microsoft.com/library/windows/apps/dn987010) et [**MediaPlayer.SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn926635) qui ne sont accessibles qu’à partir du processus en arrière-plan. L’application de premier plan et le processus en arrière-plan peuvent recevoir les notifications d’événements propres au contenu multimédia comme [**MediaOpened**](https://msdn.microsoft.com/library/windows/apps/dn652609), [**MediaEnded**](https://msdn.microsoft.com/library/windows/apps/dn652603), et [**MediaFailed**](https://msdn.microsoft.com/library/windows/apps/dn652606).
+Les processus de premier plan et d’arrière-plan peuvent accéder à la plupart des propriétés de l’instance **MediaPlayer**, à l’exception de [**MediaPlayer.Source**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.source) et [**MediaPlayer.SystemMediaTransportControls**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.systemmediatransportcontrols) qui ne sont accessibles qu’à partir du processus en arrière-plan. L’application de premier plan et le processus en arrière-plan peuvent recevoir les notifications d’événements propres au contenu multimédia comme [**MediaOpened**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.mediaopened), [**MediaEnded**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.mediaended), et [**MediaFailed**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.mediafailed).
 
 ## <a name="playback-lists"></a>Listes de lecture
 
-Un scénario courant pour les applications audio en arrière-plan est de lire plusieurs éléments à la suite. Cette tâche s’effectue facilement dans votre processus en arrière-plan grâce à un objet [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955), qui peut être défini en tant que source sur le **MediaPlayer** en l’affectant à la propriété [**MediaPlayer.Source**](https://msdn.microsoft.com/library/windows/apps/dn987010).
+Un scénario courant pour les applications audio en arrière-plan est de lire plusieurs éléments à la suite. Cette tâche s’effectue facilement dans votre processus en arrière-plan grâce à un objet [**MediaPlaybackList**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackList), qui peut être défini en tant que source sur le **MediaPlayer** en l’affectant à la propriété [**MediaPlayer.Source**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.source).
 
 Il n’est pas possible d’accéder à une **MediaPlaybackList** à partir du processus de premier plan défini dans le processus en arrière-plan.
 
 ## <a name="system-media-transport-controls"></a>Contrôles de transport de média système
 
-Un utilisateur peut contrôler la lecture audio sans utiliser directement l’interface utilisateur de votre application par divers moyens comme les appareils Bluetooth, SmartGlass et les contrôles de transport de média système. Votre tâche en arrière-plan utilise la classe [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) pour s’abonner à ces événements système initiés par l’utilisateur.
+Un utilisateur peut contrôler la lecture audio sans utiliser directement l’interface utilisateur de votre application par divers moyens comme les appareils Bluetooth, SmartGlass et les contrôles de transport de média système. Votre tâche en arrière-plan utilise la classe [**SystemMediaTransportControls**](https://docs.microsoft.com/uwp/api/Windows.Media.SystemMediaTransportControls) pour s’abonner à ces événements système initiés par l’utilisateur.
 
-Pour obtenir une instance **SystemMediaTransportControls** depuis le processus en arrière-plan, utilisez la propriété [**MediaPlayer.SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn926635). Les applications de premier plan obtiennent une instance de la classe en appelant [**SystemMediaTransportControls.GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/dn278708), mais l’instance renvoyée est une instance de premier plan uniquement qui n’est pas associée à la tâche en arrière-plan.
+Pour obtenir une instance **SystemMediaTransportControls** depuis le processus en arrière-plan, utilisez la propriété [**MediaPlayer.SystemMediaTransportControls**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.systemmediatransportcontrols). Les applications de premier plan obtiennent une instance de la classe en appelant [**SystemMediaTransportControls.GetForCurrentView**](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrols.getforcurrentview), mais l’instance renvoyée est une instance de premier plan uniquement qui n’est pas associée à la tâche en arrière-plan.
 
 ## <a name="sending-messages-between-tasks"></a>Envoi de messages entre les tâches
 
 Vous voudrez parfois que les deux processus d’une application de lecture audio en arrière-plan communiquent entre eux. Vous pouvez, par exemple, vouloir que la tâche en arrière-plan informe la tâche au premier plan que la lecture d’une nouvelle piste commence, puis qu’elle envoie le titre de la nouvelle chanson à la tâche de premier plan afin qu’elle l’affiche à l’écran.
 
-Un mécanisme de communication simple déclenche des événements à la fois dans le processus au premier plan et dans le processus en arrière-plan. Les méthodes [**SendMessageToForeground**](https://msdn.microsoft.com/library/windows/apps/dn652533) et [**SendMessageToBackground**](https://msdn.microsoft.com/library/windows/apps/dn652532) invoquent chacune des événements dans le processus correspondant. Les messages peuvent être reçus en vous abonnant aux événements [**MessageReceivedFromBackground**](https://msdn.microsoft.com/library/windows/apps/dn652530) et [**MessageReceivedFromForeground**](https://msdn.microsoft.com/library/windows/apps/dn652531).
+Un mécanisme de communication simple déclenche des événements à la fois dans le processus au premier plan et dans le processus en arrière-plan. Les méthodes [**SendMessageToForeground**](https://docs.microsoft.com/uwp/api/windows.media.playback.backgroundmediaplayer.sendmessagetoforeground) et [**SendMessageToBackground**](https://docs.microsoft.com/uwp/api/windows.media.playback.backgroundmediaplayer.sendmessagetobackground) invoquent chacune des événements dans le processus correspondant. Les messages peuvent être reçus en vous abonnant aux événements [**MessageReceivedFromBackground**](https://docs.microsoft.com/uwp/api/windows.media.playback.backgroundmediaplayer.messagereceivedfrombackground) et [**MessageReceivedFromForeground**](https://docs.microsoft.com/uwp/api/windows.media.playback.backgroundmediaplayer.messagereceivedfromforeground).
 
-Les données peuvent être transmises en tant qu’argument aux méthodes d’envoi des messages, qui sont ensuite transmises aux gestionnaires d’événements de message reçu. Passer des données à l’aide de la classe [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131). Cette classe est un dictionnaire qui contient une chaîne comme clé et d’autres types de valeur comme valeurs. Vous pouvez passer des types de valeur simples tels que des entiers, des chaînes et des valeurs booléennes.
+Les données peuvent être transmises en tant qu’argument aux méthodes d’envoi des messages, qui sont ensuite transmises aux gestionnaires d’événements de message reçu. Passer des données à l’aide de la classe [**ValueSet**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.ValueSet). Cette classe est un dictionnaire qui contient une chaîne comme clé et d’autres types de valeur comme valeurs. Vous pouvez passer des types de valeur simples tels que des entiers, des chaînes et des valeurs booléennes.
 
 ## <a name="background-task-life-cycle"></a>Durée de vie d’une tâche en arrière-plan
 
 La durée de vie d’une tâche en arrière-plan est étroitement liée à l’état de lecture actuelle de votre application. Par exemple, lorsque l’utilisateur met en pause la lecture audio, le système peut terminer ou annuler votre application en fonction des circonstances. Après une période de temps sans lecture audio, le système peut arrêter automatiquement la tâche en arrière-plan.
 
-La méthode [**IBackgroundTask.Run**](https://msdn.microsoft.com/library/windows/apps/br224811) est appelée lorsque votre application accède pour la première fois à [**BackgroundMediaPlayer.Current**](https://msdn.microsoft.com/library/windows/apps/dn652528) dans le code de l’application au premier plan ou lorsque vous enregistrez un gestionnaire pour l’événement [**MessageReceivedFromBackground**](https://msdn.microsoft.com/library/windows/apps/dn652530), selon la première éventualité. Il est recommandé de vous inscrire au gestionnaire de messages reçus avant d’appeler **BackgroundMediaPlayer.Current** pour la première fois afin que l’application au premier plan ne manque pas les messages envoyés à partir du processus en arrière-plan.
+La méthode [**IBackgroundTask.Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.) est appelée lorsque votre application accède pour la première fois à [**BackgroundMediaPlayer.Current**](https://docs.microsoft.com/uwp/api/windows.media.playback.backgroundmediaplayer.current) dans le code de l’application au premier plan ou lorsque vous enregistrez un gestionnaire pour l’événement [**MessageReceivedFromBackground**](https://docs.microsoft.com/uwp/api/windows.media.playback.backgroundmediaplayer.messagereceivedfrombackground), selon la première éventualité. Il est recommandé de vous inscrire au gestionnaire de messages reçus avant d’appeler **BackgroundMediaPlayer.Current** pour la première fois afin que l’application au premier plan ne manque pas les messages envoyés à partir du processus en arrière-plan.
 
-Pour garder active une tâche en arrière-plan, votre application devra demander une [**BackgroundTaskDeferral**](https://msdn.microsoft.com/library/windows/apps/hh700499) dans la méthode **Run** et appeler [**BackgroundTaskDeferral.Complete**](https://msdn.microsoft.com/library/windows/apps/hh700504) lorsque l’instance de la tâche reçoit les événements [**Canceled**](https://msdn.microsoft.com/library/windows/apps/br224798) ou [**Completed**](https://msdn.microsoft.com/library/windows/apps/br224788). Ne créez pas de boucle ou n’attendez pas dans la méthode **Run**, car cela utilise des ressources et le système risque de mettre fin à la tâche en arrière-plan de votre application.
+Pour garder active une tâche en arrière-plan, votre application devra demander une [**BackgroundTaskDeferral**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskDeferral) dans la méthode **Run** et appeler [**BackgroundTaskDeferral.Complete**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskdeferral.complete) lorsque l’instance de la tâche reçoit les événements [**Canceled**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance.canceled) ou [**Completed**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.completed). Ne créez pas de boucle ou n’attendez pas dans la méthode **Run**, car cela utilise des ressources et le système risque de mettre fin à la tâche en arrière-plan de votre application.
 
 Votre tâche en arrière-plan obtient l’événement **Completed** lorsque la méthode **Run** est terminée et qu’aucun report n’est demandé. Dans certains cas, lorsque votre application obtient l’événement **Canceled**, il peut également être suivi de l’événement **Completed**. Votre tâche peut recevoir un événement **Canceled** pendant que **Run** est en cours d’exécution, veillez donc à gérer cette simultanéité potentielle.
 
@@ -116,9 +116,9 @@ Le tableau suivant répertorie les stratégies sont appliqués selon les types d
 
 | Sous-stratégie             | Bureau  | Mobile   | Autre    |
 |------------------------|----------|----------|----------|
-| **Exclusivité**        | Désactivée | Activé  | Activé  |
-| **Délai d’inactivité** | Désactivée | Activé  | Désactivée |
-| **Durée de vie partagée**    | Activé  | Désactivée | Désactivée |
+| **Exclusivité**        | Désactivée | Enabled  | Enabled  |
+| **Délai d’inactivité** | Désactivée | Enabled  | Désactivée |
+| **Durée de vie partagée**    | Enabled  | Désactivée | Désactivée |
 
 
  

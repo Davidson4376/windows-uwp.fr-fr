@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ebf54e062ef2388562cc970a2f124f0ce1f978c7
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b07ab7fa6b65e16f39d9e2a77a677d33d3c70254
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653824"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360510"
 ---
 # <a name="composition-effects"></a>Effets de composition
 
-L’API WinRT [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878) autorise l’application d’effets en temps réel à des images et à l’interface utilisateur avec des propriétés d’effet animables. Dans cette vue d’ensemble, nous allons parcourir les fonctionnalités disponibles, qui permettent d’appliquer des effets à un élément visuel de composition.
+L’API WinRT [**Windows.UI.Composition**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition) autorise l’application d’effets en temps réel à des images et à l’interface utilisateur avec des propriétés d’effet animables. Dans cette vue d’ensemble, nous allons parcourir les fonctionnalités disponibles, qui permettent d’appliquer des effets à un élément visuel de composition.
 
-Pour prendre en charge la cohérence de [plateforme Windows universelle (UWP)](https://msdn.microsoft.com/library/windows/apps/dn726767.aspx) pour les développeurs décrivant des effets dans leurs applications, les effets de composition tirent parti de l’interface IGraphicsEffect de Win2D pour utiliser les descriptions d’effet via l’espace de noms [Microsoft.Graphics.Canvas.Effects](https://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.htm).
+Pour prendre en charge la cohérence de [plateforme Windows universelle (UWP)](https://docs.microsoft.com/windows/uwp/get-started/whats-a-uwp) pour les développeurs décrivant des effets dans leurs applications, les effets de composition tirent parti de l’interface IGraphicsEffect de Win2D pour utiliser les descriptions d’effet via l’espace de noms [Microsoft.Graphics.Canvas.Effects](https://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.htm).
 
 Les effets de pinceau permettent de peindre les zones d’une application en appliquant des effets à un ensemble d’images existantes. Les API d’effet de composition de Windows 10 sont axées sur SpriteVisual. SpriteVisual permet une flexibilité et une interconnexion de création de couleur, d’image et d’effet. SpriteVisual est un type d’élément visuel de composition qui permet de remplir un rectangle 2D avec un pinceau. L’élément visuel définit les limites du rectangle, et le pinceau définit les pixels utilisés pour peindre le rectangle.
 
@@ -238,7 +238,7 @@ LoadImage(surfaceBrush);
 ## <a name="more-information"></a>Plus d’informations
 
 - [Microsoft – GitHub de Composition](https://github.com/Microsoft/composition)
-- [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878)
+- [**Windows.UI.Composition**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition)
 - [Équipe de Composition de Windows sur Twitter](https://twitter.com/wincomposition)
 - [Vue d’ensemble de la composition](https://blogs.windows.com/buildingapps/2015/12/08/awaken-your-creativity-with-the-new-windows-ui-composition/)
 - [Principes fondamentaux d’arborescence d’éléments visuels](composition-visual-tree.md)

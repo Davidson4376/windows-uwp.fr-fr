@@ -8,12 +8,12 @@ ms.date: 01/24/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d81957c379bd948a50d08b980ff20debc6c223c5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 28a1bd46646deae8f6e6519d72295d42ce2766db
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57611264"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359557"
 ---
 # <a name="landmarks-and-headings"></a>Repères et en-têtes
 
@@ -33,7 +33,7 @@ Une zone d’édition de recherche est encapsulée dans un repère recherche. Le
 
 L’application Paramètres serait accessible sans repères et en-têtes, mais elle devient plus utilisable avec eux. Un utilisateur de lecteur d’écran peut rapidement et facilement obtenir le groupe (repère) dont il a besoin, et accéder rapidement au sous-groupe (en-têtes) également. 
 
-Utilisez [AutomationProperties.LandmarkTypeProperty](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.LandmarkTypeProperty) pour configurer l’élément d’interface utilisateur en tant que [type de repère](https://msdn.microsoft.com/library/windows/desktop/mt759299) vous le souhaitez. L’élément d’interface utilisateur de ce repère encapsulerait tous les autres éléments de l’interface utilisateur , ce qui est adapté à ce repère. 
+Utilisez [AutomationProperties.LandmarkTypeProperty](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.LandmarkTypeProperty) pour configurer l’élément d’interface utilisateur en tant que [type de repère](https://docs.microsoft.com/windows/desktop/WinAuto/landmark-type-identifiers) vous le souhaitez. L’élément d’interface utilisateur de ce repère encapsulerait tous les autres éléments de l’interface utilisateur , ce qui est adapté à ce repère. 
 
 Utilisez [AutomationProperties.LocalizedLandmarkTypeProperty](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.LocalizedLandmarkTypeProperty) pour nommer spécifiquement le repère. Si vous sélectionnez un type de repère prédéfini comme objet principal ou de navigation, ces noms seront utilisés pour le nom du repère. Toutefois, si vous définissez le type de repère sur Personnalisé, vous devez nommer spécifiquement le repère par le biais de cette propriété. Vous pouvez également utiliser cette propriété pour remplacer les noms par défaut des types de repère non personnalisé. 
 

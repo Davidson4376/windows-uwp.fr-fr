@@ -12,12 +12,12 @@ design-contact: ksulliv
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: f01aec2a0dc6010eab53122d69e64c57fe4f5c3d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 841903f9bc998af5ead2a3486c500487cb070855
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57589924"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66364301"
 ---
 # <a name="sliders"></a>Curseurs
 
@@ -25,7 +25,7 @@ ms.locfileid: "57589924"
 
 Un curseur est un contrôle qui permet à l’utilisateur d’effectuer une sélection parmi une plage de valeurs en déplaçant un contrôle curseur de position le long d’une ligne.
 
-> **API importantes** : [Classe Slider](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.slider.aspx), [propriété Value](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx), [événement ValueChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx)
+> **API importantes** : [Classe Slider](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.slider), [propriété Value](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.value), [événement ValueChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged)
 
 ![Contrôle de curseur](images/controls/slider.png)
 
@@ -100,7 +100,7 @@ volumeSlider.ValueChanged += Slider_ValueChanged;
 stackPanel1.Children.Add(volumeSlider);
 ```
 
-Vous obtenez et définissez la valeur du curseur à partir de la propriété [Value](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx). En réponse aux changements de valeur, vous pouvez utiliser la liaison de données pour créer une liaison avec la propriété Value ou gérer l’événement [ValueChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx).
+Vous obtenez et définissez la valeur du curseur à partir de la propriété [Value](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.value). En réponse aux changements de valeur, vous pouvez utiliser la liaison de données pour créer une liaison avec la propriété Value ou gérer l’événement [ValueChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged).
 
 ```csharp
 private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
@@ -192,4 +192,4 @@ Lors de la conception d’un curseur personnalisé, réfléchissez à la meilleu
 
 ## <a name="related-topics"></a>Rubriques connexes
 - [Activer/désactiver commutateurs](toggles.md)
-- [Classe de curseur](https://msdn.microsoft.com/library/windows/apps/br209614)
+- [Classe de curseur](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Slider)

@@ -6,21 +6,21 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: cacd915530bb599936730ec404a6e524fef0105d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: bc42fecf0a29784c8abe6e61a328d6e5024cc532
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57597264"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66362266"
 ---
 # <a name="optimize-file-access"></a>Optimiser l’accès aux fichiers
 
 
 Créez des applications UWP qui accèdent au système de fichiers efficacement, en évitant les problèmes de performances dus à la latence de disque et aux cycles de la mémoire et du processeur.
 
-Lorsque vous souhaitez accéder à une grande collection de fichiers et aux valeurs de propriétés autres que les propriétés courantes Name, FileType et Path, vous pouvez y accéder en créant [**QueryOptions**](https://msdn.microsoft.com/library/windows/apps/BR207995) et en appelant [**SetPropertyPrefetch**](https://msdn.microsoft.com/library/windows/apps/hh973319). La méthode **SetPropertyPrefetch** peut considérablement améliorer les performances des applications qui affichent une collection d’éléments obtenus à partir du système de fichiers, comme une collection d’images. Les exemples qui suivent montrent différentes manières d’accéder à des fichiers multiples.
+Lorsque vous souhaitez accéder à une grande collection de fichiers et aux valeurs de propriétés autres que les propriétés courantes Name, FileType et Path, vous pouvez y accéder en créant [**QueryOptions**](https://docs.microsoft.com/uwp/api/Windows.Storage.Search.QueryOptions) et en appelant [**SetPropertyPrefetch**](https://docs.microsoft.com/uwp/api/windows.storage.search.queryoptions.setpropertyprefetch). La méthode **SetPropertyPrefetch** peut considérablement améliorer les performances des applications qui affichent une collection d’éléments obtenus à partir du système de fichiers, comme une collection d’images. Les exemples qui suivent montrent différentes manières d’accéder à des fichiers multiples.
 
-Le premier exemple utilise [**Windows.Storage.StorageFolder.GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/BR227273) pour récupérer les informations de nom d’un ensemble de fichiers. Cette approche offre de bonnes performances, car l’exemple accède uniquement à la propriété Name.
+Le premier exemple utilise [**Windows.Storage.StorageFolder.GetFilesAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfilesasync) pour récupérer les informations de nom d’un ensemble de fichiers. Cette approche offre de bonnes performances, car l’exemple accède uniquement à la propriété Name.
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -44,7 +44,7 @@ Le premier exemple utilise [**Windows.Storage.StorageFolder.GetFilesAsync**](htt
 > Next i
 > ```
 
-Le deuxième exemple utilise [**Windows.Storage.StorageFolder.GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/BR227273), puis récupère les propriétés de l’image pour chaque fichier. Cette approche offre de mauvaises performances.
+Le deuxième exemple utilise [**Windows.Storage.StorageFolder.GetFilesAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfilesasync), puis récupère les propriétés de l’image pour chaque fichier. Cette approche offre de mauvaises performances.
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -70,7 +70,7 @@ Le deuxième exemple utilise [**Windows.Storage.StorageFolder.GetFilesAsync**](h
 > Next i
 > ```
 
-Le troisième exemple utilise [**QueryOptions**](https://msdn.microsoft.com/library/windows/apps/BR207995) pour obtenir des informations sur un ensemble de fichiers. Cette approche offre de bien meilleures performances que l’exemple précédent.
+Le troisième exemple utilise [**QueryOptions**](https://docs.microsoft.com/uwp/api/Windows.Storage.Search.QueryOptions) pour obtenir des informations sur un ensemble de fichiers. Cette approche offre de bien meilleures performances que l’exemple précédent.
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -133,7 +133,7 @@ Si vous réalisez plusieurs opérations sur des objets Windows.Storage tels que 
 
 ### <a name="buffering-between-uwp-and-net-streams"></a>Mise en mémoire tampon entre des flux UWP et .NET
 
-Il existe de nombreuses situations où vous pourriez vouloir convertir un flux UWP (tel qu’un [**Windows.Storage.Streams.IInputStream**](https://msdn.microsoft.com/library/windows/apps/BR241718) ou [**IOutputStream**](https://msdn.microsoft.com/library/windows/apps/BR241728)) en un flux .NET ([**System.IO.Stream**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.stream.aspx)). Ceci est utile par exemple lorsque vous écrivez une application UWP et que vous souhaitez utiliser du code .NET existant qui opère sur des flux avec le système de fichiers UWP. Pour permettre cela, les API .NET pour les applications UWP fournit des méthodes d’extension qui vous permettent d’effectuer une conversion entre les types de flux .NET et UWP. Pour plus d’informations, voir [**WindowsRuntimeStreamExtensions**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.aspx).
+Il existe de nombreuses situations où vous pourriez vouloir convertir un flux UWP (tel qu’un [**Windows.Storage.Streams.IInputStream**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.IInputStream) ou [**IOutputStream**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.IOutputStream)) en un flux .NET ([**System.IO.Stream**](https://docs.microsoft.com/dotnet/api/system.io.stream?redirectedfrom=MSDN)). Ceci est utile par exemple lorsque vous écrivez une application UWP et que vous souhaitez utiliser du code .NET existant qui opère sur des flux avec le système de fichiers UWP. Pour permettre cela, les API .NET pour les applications UWP fournit des méthodes d’extension qui vous permettent d’effectuer une conversion entre les types de flux .NET et UWP. Pour plus d’informations, voir [**WindowsRuntimeStreamExtensions**](https://docs.microsoft.com/dotnet/api/system.io?redirectedfrom=MSDN).
 
 Quand vous convertissez un flux UWP en flux .NET, vous créez en fait un adaptateur pour le flux UWP sous-jacent. Dans certaines circonstances, un coût d’exécution est associé à l’appel de méthodes sur des flux UWP. Ceci peut affecter la rapidité de votre application, notamment lorsque vous effectuez de nombreuses et fréquentes opérations de lecture ou écriture de faible taille.
 
@@ -194,7 +194,7 @@ Ce comportement de mise en mémoire tampon par défaut est souhaitable dans la p
 
 ### <a name="working-with-large-data-sets"></a>Utilisation de grands jeux de données
 
-Lors de la lecture ou de l’écriture de grands jeux de données, vous pourrez peut-être augmenter le débit en lecture ou en écriture en fournissant une taille de mémoire tampon élevée aux méthodes d’extension [**AsStreamForRead**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstream.aspx), [**AsStreamForWrite**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstreamforwrite.aspx)et [**AsStream**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstream.aspx). Cela procure à l’adaptateur de flux une taille de mémoire tampon interne plus élevée. Par exemple, lors du passage d’un flux qui provient d’un gros fichier à un analyseur XML, celui-ci peut effectuer de nombreuses petites lectures séquentielles à partir du flux. Une mémoire tampon de grande taille peut réduire le nombre d’appels au flux UWP sous-jacent et accroître les performances.
+Lors de la lecture ou de l’écriture de grands jeux de données, vous pourrez peut-être augmenter le débit en lecture ou en écriture en fournissant une taille de mémoire tampon élevée aux méthodes d’extension [**AsStreamForRead**](https://docs.microsoft.com/dotnet/api/system.io?redirectedfrom=MSDN), [**AsStreamForWrite**](https://docs.microsoft.com/dotnet/api/system.io?redirectedfrom=MSDN)et [**AsStream**](https://docs.microsoft.com/dotnet/api/system.io?redirectedfrom=MSDN). Cela procure à l’adaptateur de flux une taille de mémoire tampon interne plus élevée. Par exemple, lors du passage d’un flux qui provient d’un gros fichier à un analyseur XML, celui-ci peut effectuer de nombreuses petites lectures séquentielles à partir du flux. Une mémoire tampon de grande taille peut réduire le nombre d’appels au flux UWP sous-jacent et accroître les performances.
 
 > **Remarque**    vous devez être prudent lors de la définition d’une taille de mémoire tampon qui est supérieure à environ 80 Ko, cela peut entraîner la fragmentation sur le tas du garbage collector (consultez [améliorer les performances du garbage collection](improve-garbage-collection-performance.md) ). L’exemple de code suivant crée un adaptateur de flux managé avec une mémoire tampon de 81 920 octets.
 
@@ -208,7 +208,7 @@ Stream managedStream = nativeStream.AsStreamForRead(bufferSize: 81920);
 Dim managedStream As Stream = nativeStream.AsStreamForRead(bufferSize:=81920)
 ```
 
-Les méthodes [**Stream.CopyTo**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.stream.copyto.aspx) et [**CopyToAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.stream.copytoasync.aspx) allouent également une mémoire tampon locale pour la copie entre les flux. Comme avec la méthode d’extension [**AsStreamForRead**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstreamforread.aspx), vous obtiendrez peut-être de meilleures performances pour les copies de flux de taille conséquente en remplaçant la taille par défaut de la mémoire tampon. L’exemple de code suivant illustre la modification de la taille de mémoire tampon par défaut d’un appel à **CopyToAsync**.
+Les méthodes [**Stream.CopyTo**](https://docs.microsoft.com/dotnet/api/system.io.stream.copyto?redirectedfrom=MSDN#overloads) et [**CopyToAsync**](https://docs.microsoft.com/dotnet/api/system.io.stream.copytoasync?redirectedfrom=MSDN#overloads) allouent également une mémoire tampon locale pour la copie entre les flux. Comme avec la méthode d’extension [**AsStreamForRead**](https://docs.microsoft.com/dotnet/api/system.io?redirectedfrom=MSDN), vous obtiendrez peut-être de meilleures performances pour les copies de flux de taille conséquente en remplaçant la taille par défaut de la mémoire tampon. L’exemple de code suivant illustre la modification de la taille de mémoire tampon par défaut d’un appel à **CopyToAsync**.
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -236,6 +236,6 @@ Lorsque vous travaillez avec un grand nombre de flux simultanément, vous souhai
 
 Vous souhaiterez peut-être aussi éviter la mise en mémoire tampon si vous voulez bénéficier de lectures et d’écriture à faible latence sans avoir à lire de gros blocs du flux UWP sous-jacent. Par exemple, des lectures et écritures à faible latence peuvent être souhaitables si vous utilisez le flux pour des communications réseau.
 
-Dans une application de conversation, vous pourriez utiliser un flux sur une interface réseau pour envoyer et recevoir des messages. Dans ce cas, vous souhaiterez envoyer les messages dès qu’ils sont prêts, sans attendre que la mémoire tampon soit pleine. Si vous affectez la valeur 0 à la taille de mémoire tampon lors de l’appel des méthodes d’extension [**AsStreamForRead**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstreamforread.aspx), [**AsStreamForWrite**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstreamforwrite.aspx) et [**AsStream**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstream.aspx), l’adaptateur résultant n’allouera pas de mémoire tampon, et tous les appels manipuleront directement le flux UWP sous-jacent.
+Dans une application de conversation, vous pourriez utiliser un flux sur une interface réseau pour envoyer et recevoir des messages. Dans ce cas, vous souhaiterez envoyer les messages dès qu’ils sont prêts, sans attendre que la mémoire tampon soit pleine. Si vous affectez la valeur 0 à la taille de mémoire tampon lors de l’appel des méthodes d’extension [**AsStreamForRead**](https://docs.microsoft.com/dotnet/api/system.io?redirectedfrom=MSDN), [**AsStreamForWrite**](https://docs.microsoft.com/dotnet/api/system.io?redirectedfrom=MSDN) et [**AsStream**](https://docs.microsoft.com/dotnet/api/system.io?redirectedfrom=MSDN), l’adaptateur résultant n’allouera pas de mémoire tampon, et tous les appels manipuleront directement le flux UWP sous-jacent.
 
 

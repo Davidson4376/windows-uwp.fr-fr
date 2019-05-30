@@ -6,12 +6,12 @@ ms.date: 04/18/2017
 ms.topic: article
 keywords: windows 10, uwp, métadonnées, indicateurs, fonctions vocales, chapitre
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b3753e92524e300252930f48433f91e175353c9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 92f8826729bb2374b87267d27b961d74eb72e928
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57635854"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66360550"
 ---
 # <a name="system-supported-timed-metadata-cues"></a>Indicateurs de métadonnées synchronisées pris en charge par le système
 Cet article décrit comment tirer parti de plusieurs formats de métadonnées synchronisées qui peuvent être incorporés dans des fichiers ou flux multimédia. Les applications UWP peuvent s’inscrire aux événements qui sont déclenchés par le pipeline multimédia pendant la lecture à chaque fois que ces indicateurs de métadonnées sont rencontrés. En utilisant la classe [**DataCue**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.DataCue), les applications peuvent implémenter leurs propres indicateurs de métadonnées personnalisés, mais cet article se concentre sur plusieurs normes de métadonnées qui sont détectées automatiquement par le pipeline multimédia, notamment :
@@ -24,7 +24,7 @@ Cet article décrit comment tirer parti de plusieurs formats de métadonnées sy
 * Boîtes de message électronique mp4 fragmentées
 
 
-Cet article repose sur les concepts abordés dans l’article [Éléments, playlists et pistes multimédias](media-playback-with-mediasource.md), à savoir les notions de base de l’utilisation des classes [**MediaSource**](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource), [**MediaPlaybackItem**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybackitem) et [**TimedMetadataTrack**](https://msdn.microsoft.com/library/windows/apps/dn956580) et des conseils généraux pour l’utilisation des métadonnées synchronisées dans votre application.
+Cet article repose sur les concepts abordés dans l’article [Éléments, playlists et pistes multimédias](media-playback-with-mediasource.md), à savoir les notions de base de l’utilisation des classes [**MediaSource**](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource), [**MediaPlaybackItem**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybackitem) et [**TimedMetadataTrack**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.TimedMetadataTrack) et des conseils généraux pour l’utilisation des métadonnées synchronisées dans votre application.
 
 Les étapes d’implémentation de base sont identiques pour les différents types de métadonnées synchronisées décrits dans cet article :
 
@@ -172,7 +172,7 @@ Dans la méthode d’assistance **RegisterMetadataHandlerForEmsgCues**, obtenez 
 [!code-cs[RegisterMetadataHandlerForEmsgCues](./code/MediaSource_RS1/cs/MainPage_Cues.xaml.cs#SnippetRegisterMetadataHandlerForEmsgCues)]
 
 
-Dans le gestionnaire de l’événement **CueEntered**, diffusez l’indicateur de données contenu dans la propriété **Cue** de l’élément [**MediaCueEventArgs**](https://docs.microsoft.com/uwp/api/windows.media.core.mediacueeventargs) vers un élément [**DataCue**](https://docs.microsoft.com/uwp/api/windows.media.core.datacue).  Vérifiez que l’objet **DataCue** n’est pas Null. Les propriétés de la boîte de message électronique sont fournies par le pipeline multimédia en tant que propriétés personnalisées dans la collection [**Properties**](https://docs.microsoft.com/uwp/api/windows.media.core.datacue.Properties) de l’objet DataCue. Cet exemple tente d’extraire plusieurs valeurs de propriété différentes à l’aide de la méthode **[TryGetValue](https://docs.microsoft.com/uwp/api/windows.foundation.collections.propertyset.trygetvalue)**. Si cette méthode retourne la valeur Null, cela signifie que la propriété demandée n’est pas présente dans la boîte de message électronique. Une valeur par défaut est donc définie à la place.
+Dans le gestionnaire de l’événement **CueEntered**, diffusez l’indicateur de données contenu dans la propriété **Cue** de l’élément [**MediaCueEventArgs**](https://docs.microsoft.com/uwp/api/windows.media.core.mediacueeventargs) vers un élément [**DataCue**](https://docs.microsoft.com/uwp/api/windows.media.core.datacue).  Vérifiez que l’objet **DataCue** n’est pas Null. Les propriétés de la boîte de message électronique sont fournies par le pipeline multimédia en tant que propriétés personnalisées dans la collection [**Properties**](https://docs.microsoft.com/uwp/api/windows.media.core.datacue.Properties) de l’objet DataCue. Cet exemple tente d’extraire plusieurs valeurs de propriété différentes à l’aide de la méthode **[TryGetValue](https://docs.microsoft.com/uwp/api/windows.foundation.collections.propertyset.trygetvalue)** . Si cette méthode retourne la valeur Null, cela signifie que la propriété demandée n’est pas présente dans la boîte de message électronique. Une valeur par défaut est donc définie à la place.
 
 La partie suivante de l’exemple illustre le scénario dans lequel une lecture d’annonce est déclenchée, ce qui est le cas lorsque la propriété *scheme_id_uri*, obtenue à l’étape précédente, a la valeur « urn : scte:scte35:2013:xml » (voir [http://dashif.org/identifiers/event-schemes/](https://dashif.org/identifiers/event-schemes/)). Notez que la norme recommande l’envoi de ce message électronique plusieurs fois pour la redondance. Cet exemple gère donc la liste des ID de message électronique qui ont déjà été traités, et traite uniquement les nouveaux messages. Créez un objet **DataReader** pour lire les données d’indicateur en appelant [**DataReader.FromBuffer**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader.FromBuffer), définissez l’encodage sur UTF-8 à l’aide de la propriété [**UnicodeEncoding**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader.UnicodeEncoding), puis lisez les données. Dans cet exemple, la charge utile de message est écrite dans la sortie de débogage. Une application réelle utiliserait les données de la charge utile pour planifier la lecture d’une annonce.
 

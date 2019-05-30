@@ -6,12 +6,12 @@ ms.date: 10/25/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b2d402bca61fc271b6d1e2e972cca280693f9ce3
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 36ebabbfd8f7e5f40e31be44d6dc7e4483a199ee
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57658124"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66363711"
 ---
 # <a name="guidelines-for-cross-slide"></a>Recommandations en matière de glisser transversal
 
@@ -20,9 +20,9 @@ ms.locfileid: "57658124"
 
 **API importantes**
 
--   [**CrossSliding**](https://msdn.microsoft.com/library/windows/apps/br241942)
--   [**CrossSlideThresholds**](https://msdn.microsoft.com/library/windows/apps/br241941)
--   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
+-   [**CrossSliding**](https://docs.microsoft.com/uwp/api/windows.ui.input.gesturerecognizer.crosssliding)
+-   [**CrossSlideThresholds**](https://docs.microsoft.com/uwp/api/windows.ui.input.gesturerecognizer.crossslidethresholds)
+-   [**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)
 
 Utilisez le glisser transversal pour prendre en charge la sélection avec le mouvement de balayage et les interactions de glissement (déplacement) avec le mouvement de glissement.
 
@@ -54,7 +54,7 @@ Cette image montre comment un utilisateur appuie sur un élément dans l’inter
 
 Voici quelques recommandations à prendre en compte quand vous ajoutez la fonctionnalité de glisser transversal dans votre application.
 
-Utilisez le glisser transversal pour les listes ou les collections qui défilent dans une seule direction. Pour plus d’informations, voir [Ajout de contrôles ListView](https://msdn.microsoft.com/library/windows/apps/hh465382).
+Utilisez le glisser transversal pour les listes ou les collections qui défilent dans une seule direction. Pour plus d’informations, voir [Ajout de contrôles ListView](https://docs.microsoft.com/previous-versions/windows/apps/hh465382(v=win.10)).
 
 **Remarque**  dans les cas où la zone de contenu peut être panoramique dans deux directions, tels que des navigateurs web ou liseuses, l’interaction chronométrée appuyer et maintenir doit être utilisée pour appeler le menu contextuel pour les objets tels que des images et des liens hypertexte.
 
@@ -123,7 +123,7 @@ C’est la raison pour laquelle l’interaction de sélection par glisser transv
 
 ### <span id="draganddrop"></span><span id="DRAGANDDROP"></span>
 
-**Faites glisser**
+**Drag**
 
 Utilisez l’action de glissement pour déplacer un ou plusieurs objets d’un emplacement à l’autre.
 

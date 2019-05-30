@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, jeux, entrée, exemple
 ms.localizationpriority: medium
-ms.openlocfilehash: d545f696a93bfa8416e1a772ecc015867a3615c2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 8daada2424dfc7a1bbe0a227449911f1fbb3b34d
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57611814"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66369183"
 ---
 # <a name="adding-input-and-interactivity-to-the-marble-maze-sample"></a>Ajout d’entrées et d’interactivité à l’exemple Marble Maze
 
@@ -28,7 +28,7 @@ Voici quelques éléments clés présentés dans ce document que vous devez pren
 
 -   Quand cela est possible, il est important de prendre en charge différents périphériques d’entrée afin que votre jeu puisse fonctionner avec un plus grand nombre de préférences et fonctionnalités choisies par vos utilisateurs. Bien que l’utilisation d’un contrôleur de jeu et d’un capteur soit facultative, nous recommandons cette utilisation pour améliorer l’expérience des joueurs. Nous avons conçu les API du contrôleur de jeu et du capteur pour vous aider à intégrer ces périphériques d’entrée.
 
--   Pour initialiser les entrées tactiles, vous devez enregistrer des événements de fenêtre, par exemple quand le pointeur est activé, libéré et déplacé. Pour initialiser l’accéléromètre, créez un objet [Windows::Devices::Sensors::Accelerometer](https://msdn.microsoft.com/library/windows/apps/br225687) quand vous initialisez l’application. La manette Xbox ne nécessite pas cette initialisation.
+-   Pour initialiser les entrées tactiles, vous devez enregistrer des événements de fenêtre, par exemple quand le pointeur est activé, libéré et déplacé. Pour initialiser l’accéléromètre, créez un objet [Windows::Devices::Sensors::Accelerometer](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Accelerometer) quand vous initialisez l’application. La manette Xbox ne nécessite pas cette initialisation.
 
 -   Pour des jeux à un seul joueur, pensez à combiner les entrées de toutes les manettes Xbox possibles. De cette façon, vous n’avez pas besoin d’effectuer un suivi pour savoir de quel contrôleur provient l’entrée. Il vous suffit de suivre l’entrée provenant du contrôleur ajouté en dernier, comme nous le faisons dans cet exemple.
 
@@ -56,7 +56,7 @@ Marble Maze prend en charge les périphériques de manette Xbox standard, la sou
 ## <a name="initializing-input-devices"></a>Initialisation des périphériques d’entrée
 
 
-La manette Xbox ne nécessite pas cette initialisation. Pour initialiser l’interaction tactile, vous devez enregistrer les événements de fenêtre : l’activation du pointeur (par exemple, le joueur appuie sur le bouton de la souris ou touche l’écran), la libération du pointeur ou le déplacement. Pour initialiser l’accéléromètre, vous devez créer un objet [Windows::Devices::Sensors::Accelerometer](https://msdn.microsoft.com/library/windows/apps/br225687) quand vous initialisez l’application.
+La manette Xbox ne nécessite pas cette initialisation. Pour initialiser l’interaction tactile, vous devez enregistrer les événements de fenêtre : l’activation du pointeur (par exemple, le joueur appuie sur le bouton de la souris ou touche l’écran), la libération du pointeur ou le déplacement. Pour initialiser l’accéléromètre, vous devez créer un objet [Windows::Devices::Sensors::Accelerometer](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Accelerometer) quand vous initialisez l’application.
 
 L’exemple suivant montre la manière dont la méthode **App::SetWindow** permet d’inscrire le [Windows::UI::Core::CoreWindow::PointerPressed](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.PointerPressed), [Windows::UI::Core::CoreWindow::PointerReleased](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.PointerReleased) et les événements de pointeur [Windows::UI::Core::CoreWindow::PointerMoved](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.PointerMoved). Ces événements sont inscrits lors de l’initialisation de l’application et avant la boucle de jeu.
 
@@ -490,7 +490,7 @@ for (TouchMap::const_iterator iter = m_touches.cbegin();
 
 ### <a name="processing-accelerometer-input"></a>Traitement des entrées d’accéléromètre
 
-Pour traiter les entrées d’accéléromètre, la méthode **MarbleMazeMain::Update** appelle la méthode [Windows::Devices::Sensors::Accelerometer::GetCurrentReading](https://msdn.microsoft.com/library/windows/apps/br225699). Cette méthode renvoie un objet [Windows::Devices::Sensors::AccelerometerReading](https://msdn.microsoft.com/library/windows/apps/br225688), qui représente une lecture de l’accéléromètre. Les propriétés **Windows::Devices::Sensors::AccelerometerReading::AccelerationX** et **Windows::Devices::Sensors::AccelerometerReading::AccelerationY** contiennent respectivement l’accélération de la force g le long des axes x et y.
+Pour traiter les entrées d’accéléromètre, la méthode **MarbleMazeMain::Update** appelle la méthode [Windows::Devices::Sensors::Accelerometer::GetCurrentReading](https://docs.microsoft.com/uwp/api/windows.devices.sensors.accelerometer.getcurrentreading). Cette méthode renvoie un objet [Windows::Devices::Sensors::AccelerometerReading](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.AccelerometerReading), qui représente une lecture de l’accéléromètre. Les propriétés **Windows::Devices::Sensors::AccelerometerReading::AccelerationX** et **Windows::Devices::Sensors::AccelerometerReading::AccelerationY** contiennent respectivement l’accélération de la force g le long des axes x et y.
 
 L’exemple suivant montre comment la méthode **MarbleMazeMain::Update** interroge l’accéléromètre et met à jour les valeurs d’entrée combinées. Quand vous inclinez l’appareil, la bille va plus vite en raison de la gravité.
 
@@ -548,7 +548,7 @@ Les périphériques indiquent les valeurs d’entrée de différentes manières.
 
  
 
-Une fois que la méthode **MarbleMazeMain::Update** a traité les entrées, elle crée un vecteur qui représente l’effet de l’inclinaison du labyrinthe sur la bille. L’exemple suivant montre comment Marble Maze utilise la fonction [XMVector3Normalize](https://msdn.microsoft.com/library/windows/desktop/microsoft.directx_sdk.geometric.xmvector3normalize) pour créer un vecteur de gravité normalisé. La variable **maxTilt** définit l’inclinaison du labyrinthe et empêche son retournement.
+Une fois que la méthode **MarbleMazeMain::Update** a traité les entrées, elle crée un vecteur qui représente l’effet de l’inclinaison du labyrinthe sur la bille. L’exemple suivant montre comment Marble Maze utilise la fonction [XMVector3Normalize](https://docs.microsoft.com/windows/desktop/api/directxmath/nf-directxmath-xmvector3normalize) pour créer un vecteur de gravité normalisé. La variable **maxTilt** définit l’inclinaison du labyrinthe et empêche son retournement.
 
 ```cpp
 const float maxTilt = 1.0f / 8.0f;

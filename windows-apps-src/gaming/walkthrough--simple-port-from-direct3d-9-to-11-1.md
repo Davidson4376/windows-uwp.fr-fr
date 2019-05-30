@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, jeux, directx, port, direct3d 9, direct3d 11
 ms.localizationpriority: medium
-ms.openlocfilehash: c7569c6b2f041f5535e0eabe934a91da86b60b9a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5d4aef73b9b28d631a492436ff90761541134220
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57634224"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66367423"
 ---
 # <a name="walkthrough-port-a-simple-direct3d-9-app-to-directx-11-and-universal-windows-platform-uwp"></a>Démonstration : Migrer une application Direct3D 9 simple pour DirectX 11 et Universal Windows Platform (UWP)
 
@@ -41,7 +41,7 @@ Cet exercice de portage indique comment faire passer une infrastructure de rendu
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md">La boucle du jeu de port</a></p></td>
-<td align="left"><p>Montre comment implémenter une fenêtre pour un jeu UWP et comment récupérer la boucle de jeu, notamment comment créer une interface <a href="https://msdn.microsoft.com/library/windows/apps/hh700478"><strong>IFrameworkView</strong></a> pour contrôler une classe <a href="https://msdn.microsoft.com/library/windows/apps/br208225"><strong>CoreWindow</strong></a> en plein écran.</p></td>
+<td align="left"><p>Montre comment implémenter une fenêtre pour un jeu UWP et comment récupérer la boucle de jeu, notamment comment créer une interface <a href="https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.IFrameworkView"><strong>IFrameworkView</strong></a> pour contrôler une classe <a href="https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow"><strong>CoreWindow</strong></a> en plein écran.</p></td>
 </tr>
 </tbody>
 </table>
@@ -61,11 +61,11 @@ Cette rubrique examine progressivement deux chemins de code qui effectuent la m�
 -   Séparation du périphérique, du contexte de périphérique et de l’infrastructure graphique.
 -   Processus de compilation des nuanceurs et chargement du bytecode de nuanceur au moment de l’exécution.
 -   Manière de configurer des données par vertex pour le stade d’assembleur d’entrée (stade IA).
--   Manière d’utiliser un [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) pour créer un affichage CoreWindow.
+-   Manière d’utiliser un [**IFrameworkView**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.IFrameworkView) pour créer un affichage CoreWindow.
 
-Notez que cette procédure pas à pas utilise [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) pour des raisons de simplicité, et ne couvre pas l’interopérabilité XAML.
+Notez que cette procédure pas à pas utilise [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) pour des raisons de simplicité, et ne couvre pas l’interopérabilité XAML.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 
 Vous devez [Préparer votre environnement pour le développement de jeux UWP DirectX](prepare-your-dev-environment-for-windows-store-directx-game-development.md). Vous n’avez pas encore un modèle, mais vous aurez besoin de Microsoft Visual Studio 2015 pour charger les exemples de code pour cette procédure pas à pas.
@@ -76,11 +76,11 @@ Pour vous familiariser avec les concepts de programmation pour DirectX 11 et UW
 
 **Direct3D**
 
-* [Écriture de nuanceurs HLSL dans Direct3D 9](https://msdn.microsoft.com/library/windows/desktop/bb944006)
+* [Écriture de nuanceurs HLSL dans Direct3D 9](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-writing-shaders-9)
 * [Modèles de projet de jeu DirectX](user-interface.md)
 
 **Boutique Microsoft**
 
-* [**Microsoft::wrl :: comptr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx)
-* [**Handle de l’opérateur Object (^)**](https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx)
+* [**Microsoft::WRL::ComPtr**](https://docs.microsoft.com/cpp/windows/comptr-class)
+* [**Handle de l’opérateur Object (^)** ](https://docs.microsoft.com/cpp/windows/handle-to-object-operator-hat-cpp-component-extensions)
 

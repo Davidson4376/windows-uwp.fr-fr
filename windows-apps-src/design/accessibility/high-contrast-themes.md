@@ -7,12 +7,12 @@ ms.date: 09/28/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b58eb4b6e3f3f02bb1f72fcba9da3710f08a72da
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c37ceb63a5d9d9f83d3f1ebca0b0584f1092b7f6
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57649004"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359576"
 ---
 # <a name="high-contrast-themes"></a>Thèmes à contraste élevé  
 
@@ -39,14 +39,14 @@ Les contrôles communs sont pourvus d’une prise en charge gratuite complète d
 
 Lorsque la couleur `#E6E6E6` est incluse dans le premier exemple, la Grille conserve la couleur d’arrière-plan dans l’ensemble des thèmes. Si l’utilisateur bascule sur le thème noir à contraste élevé, il souhaitera disposer d’un arrière-plan noir sur votre application. Dans la mesure où `#E6E6E6` est presque blanc, certains utilisateurs peuvent ne pas pouvoir interagir avec votre application.
 
-Dans le second exemple, l’[**extension de balisage {ThemeResource}**](../../xaml-platform/themeresource-markup-extension.md) est utilisée pour référencer une couleur dans la collection [**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.resourcedictionary.themedictionaries.aspx), une propriété dédiée d’un élément [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/BR208794). **ThemeDictionaries** permet au code XAML de modifier automatiquement les couleurs en fonction du thème courant de l’utilisateur.
+Dans le second exemple, l’[**extension de balisage {ThemeResource}** ](../../xaml-platform/themeresource-markup-extension.md) est utilisée pour référencer une couleur dans la collection [**ThemeDictionaries**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries), une propriété dédiée d’un élément [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary). **ThemeDictionaries** permet au code XAML de modifier automatiquement les couleurs en fonction du thème courant de l’utilisateur.
 
 ## <a name="theme-dictionaries"></a>Dictionnaires de thème
 
 Lorsque vous devez modifier la couleur par défaut du système, créez une collection ThemeDictionaries pour votre application.
 
 1. Commencez par créer le système approprié, le cas échéant. Dans App.xaml, créez une collection **ThemeDictionaries**, en incluant **Default** et **HighContrast** à une valeur minimum.
-2. Dans **Default**, créez le type de [Brush](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.brush.aspx) dont vous avez besoin, généralement **SolidColorBrush**. Attribuez-lui un nom *x: Key* spécifiant son utilisation.
+2. Dans **Default**, créez le type de [Brush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Brush) dont vous avez besoin, généralement **SolidColorBrush**. Attribuez-lui un nom *x: Key* spécifiant son utilisation.
 3. Attribuez la **couleur** souhaitée.
 4. Copiez cette classe **Brush** dans la propriété **HighContrast**.
 
@@ -114,7 +114,7 @@ Il est souvent utile d’examiner les applications, menus Démarrer ou contrôle
 * Testez l’ensemble des 4 thèmes à contraste élevé pendant l’exécution de votre application. Lorsqu’il change de thème, l’utilisateur ne devrait pas avoir à redémarrer votre application.
 * Soyez cohérent.
 
-**Ne pas**
+**Don't**
 
 * Codez en dur une couleur dans le thème **HighContrast** ; utilisez les ressources **SystemColor*Color**.
 * Choisissez une ressource de couleur à des fins esthétiques. N’oubliez pas que la couleur change avec le thème !
@@ -167,7 +167,7 @@ L’ensemble des pages, des volets, des fenêtres contextuelles et des barres do
 
 ## <a name="list-items"></a>Éléments de liste
 
-En mode de contraste élevé, les éléments de [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) présentent un arrière-plan défini sur **SystemColorHighlightColor** lorsqu’ils sont survolés, activés ou sélectionnés. Les éléments de liste complexes présentent régulièrement un bogue, durant lequel la couleur du contenu de l’élément de liste ne peut pas être inversée lorsque ce dernier est survolé, activé ou sélectionné. Cela rend impossible sa lecture.
+En mode de contraste élevé, les éléments de [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) présentent un arrière-plan défini sur **SystemColorHighlightColor** lorsqu’ils sont survolés, activés ou sélectionnés. Les éléments de liste complexes présentent régulièrement un bogue, durant lequel la couleur du contenu de l’élément de liste ne peut pas être inversée lorsque ce dernier est survolé, activé ou sélectionné. Cela rend impossible sa lecture.
 
 ![Liste simple en thème clair et en thème noir à contraste élevé](images/high-contrast-list1.png)
 
@@ -176,7 +176,7 @@ En mode de contraste élevé, les éléments de [ListView](https://msdn.microsof
 
 ### <a name="list-items-with-colored-text"></a>Éléments de liste avec du texte coloré
 
-Un coupable définit TextBlock.Foreground dans l’instance [DataTemplate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx).de ListView. Cette procédure est généralement effectuée dans le cadre de l’établissement de la hiérarchie visuelle. La propriété Foreground est définie sur [ListViewItem](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewitem.aspx), tandis que TextBlocks dans DataTemplate hérite de la couleur appropriée d’arrière-plan lorsque l’élément est survolé, activé ou sélectionné. Toutefois, la définition de Foreground rompt l’héritage.
+Un coupable définit TextBlock.Foreground dans l’instance [DataTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate).de ListView. Cette procédure est généralement effectuée dans le cadre de l’établissement de la hiérarchie visuelle. La propriété Foreground est définie sur [ListViewItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewitem), tandis que TextBlocks dans DataTemplate hérite de la couleur appropriée d’arrière-plan lorsque l’élément est survolé, activé ou sélectionné. Toutefois, la définition de Foreground rompt l’héritage.
 
 ![Liste complexe en thème clair et en thème noir à contraste élevé](images/high-contrast-list2.png)
 
@@ -228,7 +228,7 @@ Vous pouvez contourner ce problème en définissant Foreground de manière condi
 
 ## <a name="detecting-high-contrast"></a>Détection du contraste élevé
 
-Vous pouvez vérifier par programme si le thème actuel est un thème à contraste élevé à l’aide des membres de la classe [**AccessibilitySettings**](https://msdn.microsoft.com/library/windows/apps/BR242237).
+Vous pouvez vérifier par programme si le thème actuel est un thème à contraste élevé à l’aide des membres de la classe [**AccessibilitySettings**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.AccessibilitySettings).
 
 > [!NOTE]
 > Prenez soin d’appeler le constructeur **AccessibilitySettings** à partir d’une étendue dans laquelle l’application est initialisée et affiche déjà du contenu.
@@ -238,4 +238,4 @@ Vous pouvez vérifier par programme si le thème actuel est un thème à contras
 * [Exemple de contraste et les paramètres de l’interface utilisateur](https://go.microsoft.com/fwlink/p/?linkid=231539)
 * [Exemple d’accessibilité XAML](https://go.microsoft.com/fwlink/p/?linkid=238570)
 * [Exemple de contraste élevé de XAML](https://go.microsoft.com/fwlink/p/?linkid=254993)
-* [**AccessibilitySettings**](https://msdn.microsoft.com/library/windows/apps/BR242237)
+* [**AccessibilitySettings**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.AccessibilitySettings)

@@ -11,12 +11,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, WNS, service de notifications de windows, notification, windows, pare-feu, résolution des problèmes, l’adresse IP, le trafic, entreprise, réseau, IPv4, adresse IP virtuelle, nom de domaine complet, adresse IP publique
 ms.localizationpriority: medium
-ms.openlocfilehash: 466463bfc984707af4cb30618f9cbfa47d78703c
-ms.sourcegitcommit: fd7d358aad3a5b7112f5a587bb6ea86805dc8a4d
+ms.openlocfilehash: 9ed4ad6ed828abda9d487ef96beca9b655c92421
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65976249"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66366670"
 ---
 # <a name="allowing-windows-notification-traffic-through-enterprise-firewalls"></a>Autoriser le trafic de Notification de Windows à travers des pare-feu d’entreprise
 
@@ -78,10 +78,10 @@ Si vous utilisez le service de notification hérité, MPNS, les plages d’adres
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Démarrage rapide : Envoyer une notification push](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)
-* [Comment demander, créer et enregistrer un canal de notification](https://msdn.microsoft.com/library/windows/apps/hh465412)
-* [Comment intercepter des notifications pour les applications en cours d’exécution](https://msdn.microsoft.com/library/windows/apps/xaml/jj709907.aspx)
-* [Comment s’authentifier avec Windows Push Notification Service (WNS)](https://msdn.microsoft.com/library/windows/apps/hh465407)
-* [Envoyer des en-têtes de demande et de réponse de service de notification](https://msdn.microsoft.com/library/windows/apps/hh465435)
-* [Instructions et liste de vérification pour les notifications push](https://msdn.microsoft.com/library/windows/apps/hh761462)
+* [Démarrage rapide : Envoyer une notification push](https://docs.microsoft.com/previous-versions/windows/apps/hh868252(v=win.10))
+* [Comment demander, créer et enregistrer un canal de notification](https://docs.microsoft.com/previous-versions/windows/apps/hh465412(v=win.10))
+* [Comment intercepter des notifications pour les applications en cours d’exécution](https://docs.microsoft.com/previous-versions/windows/apps/jj709907(v=win.10))
+* [Comment s’authentifier avec Windows Push Notification Service (WNS)](https://docs.microsoft.com/previous-versions/windows/apps/hh465407(v=win.10))
+* [Envoyer des en-têtes de demande et de réponse de service de notification](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10))
+* [Instructions et liste de vérification pour les notifications push](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
  

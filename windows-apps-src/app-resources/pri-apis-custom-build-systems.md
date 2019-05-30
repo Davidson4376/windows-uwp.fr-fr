@@ -6,15 +6,15 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: windows 10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
-ms.openlocfilehash: 617812415d3dcd00ec24d5f55971ae311265b61d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b300630ff4a9b6735cb7891444da4333532735c1
+ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57598514"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66359376"
 ---
 # <a name="package-resource-indexing-pri-apis-and-custom-build-systems"></a>API d’indexation de ressources de package (IRP) et systèmes de génération personnalisés
-Grâce aux [API d’indexation de ressource de package (IRP)](https://msdn.microsoft.com/library/windows/desktop/mt845690), vous pouvez développer un système de génération personnalisé pour les ressources de votre application UWP. Le système de génération pourra créer, versionner, et vider (en tant que XML) les fichiers d’index de ressource de package (IRP) au niveau de complexité dont votre application UWP a besoin. Si vous avez un système de génération personnalisé qui utilise l’outil de ligne de commande MakePri.exe (consultez [Compiler des ressources manuellement avec MakePri.exe](makepri-exe-command-options.md)), pour améliorer les performances et le contrôle, nous vous recommandons d’appeler les API IRP au lieu d’appeler MakePri.exe.
+Grâce aux [API d’indexation de ressource de package (IRP)](https://docs.microsoft.com/windows/desktop/menurc/pri-indexing-reference), vous pouvez développer un système de génération personnalisé pour les ressources de votre application UWP. Le système de génération pourra créer, versionner, et vider (en tant que XML) les fichiers d’index de ressource de package (IRP) au niveau de complexité dont votre application UWP a besoin. Si vous avez un système de génération personnalisé qui utilise l’outil de ligne de commande MakePri.exe (consultez [Compiler des ressources manuellement avec MakePri.exe](makepri-exe-command-options.md)), pour améliorer les performances et le contrôle, nous vous recommandons d’appeler les API IRP au lieu d’appeler MakePri.exe.
 
 Les API IRP ont été introduites dans le SDK Windows pour Windows 10, version 1803. Les API prennent la forme d’API Win32 Windows, ce qui signifie que vous disposez de plusieurs options pour les appeler. Vous pouvez les appeler directement à partir d’une application Win32, ou via [appel de code non managé](/dotnet/framework/interop/consuming-unmanaged-dll-functions?branch=live) à partir d’une application .NET ou même à partir d’une application UWP.
 
@@ -31,7 +31,7 @@ La limite de taille d’un fichier PRI est 64 kilo-octets.
 |[Scénario 1 : Générer un fichier PRI à partir des ressources de chaîne et les fichiers de ressources](pri-apis-scenario-1.md)|Dans ce scénario, nous allons créer une application pour représenter notre système de génération personnalisé. Nous allons créer un indexeur de ressources et lui ajouter des chaînes et autres types de ressources. Nous allons ensuite générer et un fichier IRP de vidage.|
 
 ## <a name="important-apis"></a>API importantes
-* [Ressource de package que l’indexation de référence de (PRI)](https://msdn.microsoft.com/library/windows/desktop/mt845690)
+* [Ressource de package que l’indexation de référence de (PRI)](https://docs.microsoft.com/windows/desktop/menurc/pri-indexing-reference)
 
 ## <a name="related-topics"></a>Rubriques connexes
 * [Compiler des ressources manuellement avec MakePri.exe](makepri-exe-command-options.md)
