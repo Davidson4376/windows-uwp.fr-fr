@@ -5,12 +5,12 @@ ms.date: 04/24/2019
 ms.topic: article
 keywords: Windows 10, uwp, standard, c ++, cpp, winrt, COM, composant, classe, interface
 ms.localizationpriority: medium
-ms.openlocfilehash: dc4acd288496d83d5d91f1bdf206be19fe2fbb06
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 2c36c7b896b4d08240f08e85570110b45e0a9f3c
+ms.sourcegitcommit: ba24a6237355119ef3e36687417f390c8722bd67
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361145"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66421259"
 ---
 # <a name="consume-com-components-with-cwinrt"></a>Utiliser des composants COM avec C++/WinRT
 
@@ -171,6 +171,8 @@ Vous pouvez également utiliser [ **com_ptr::try_as**](/uwp/cpp-ref-for-winrt/co
 
 Si vous souhaitez générer et exécuter cet exemple de code source, puis tout d’abord, dans Visual Studio, créez un **application Core (C++ / c++ / WinRT)** . `Direct2D` est un nom raisonnable pour le projet, mais vous pouvez le nommer comme vous le souhaitez. Ouvrez `App.cpp`, supprimer tout son contenu et collez dans la liste ci-dessous.
 
+Le code ci-dessous utilise le [winrt::com_ptr::capture fonction](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrcapture-function) lorsque cela est possible.
+
 ```cppwinrt
 #include "pch.h"
 #include <d2d1_1.h>
@@ -263,7 +265,7 @@ namespace
         winrt::check_hresult(dxdevice->GetAdapter(adapter.put()));
 
         winrt::com_ptr<IDXGIFactory2> factory;
-        winrt::check_hresult(adapter->GetParent(__uuidof(factory), factory.put_void()));
+        factory.capture(adapter, &IDXGIAdapter::GetParent);
         return factory;
     }
 
@@ -275,7 +277,7 @@ namespace
         WINRT_ASSERT(target);
 
         winrt::com_ptr<IDXGISurface> surface;
-        winrt::check_hresult(swapchain->GetBuffer(0, __uuidof(surface), surface.put_void()));
+        surface.capture(swapchain, &IDXGISwapChain1::GetBuffer, 0);
 
         D2D1_BITMAP_PROPERTIES1 const props{ D2D1::BitmapProperties1(
             D2D1_BITMAP_OPTIONS_TARGET | D2D1_BITMAP_OPTIONS_CANNOT_DRAW,
@@ -483,7 +485,9 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 
 ## <a name="working-with-com-types-such-as-bstr-and-variant"></a>Utilisation des types COM, tels que BSTR et VARIANT
 
-Comme vous pouvez le voir, C++ / c++ / WinRT fournit la prise en charge pour les implémenter et appeler des interfaces COM. L’utilisation des types COM, tels que BSTR et VARIANT, il existe toujours la possibilité d’utiliser ceux dans leur forme brute (conjointement avec les API appropriées). Vous pouvez également utiliser les wrappers fournis par une infrastructure, tels que le [bibliothèque ATL (Active Template)](/cpp/atl/active-template-library-atl-concepts), ou par le compilateur Visual C++ [prise en charge COM](/cpp/cpp/compiler-com-support), ou même par vos propres wrappers.
+Comme vous pouvez le voir, C++ / c++ / WinRT fournit la prise en charge pour les implémenter et appeler des interfaces COM. L’utilisation des types COM, tels que BSTR et VARIANT, nous vous recommandons d’utiliser les wrappers fournis par le [bibliothèques de mise en œuvre de Windows (Exporte)](https://github.com/Microsoft/wil), tel que **wil::unique_bstr** et **wil::unique_ variante** (lequel gérer les durées de vie des ressources).
+
+[Vous Obtiendrez](https://github.com/Microsoft/wil) remplace les infrastructures telles que la bibliothèque ATL (Active Template) et l’élément visuel C++ du Support COM du compilateur. Il est recommandé sur l’écriture de vos propres wrappers, ou à l’aide de types COM tels que BSTR et VARIANT dans leur forme brute (conjointement avec les API appropriées).
 
 ## <a name="important-apis"></a>API importantes
 * [winrt::check_hresult function](/uwp/cpp-ref-for-winrt/error-handling/check-hresult)
