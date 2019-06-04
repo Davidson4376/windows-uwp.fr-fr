@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 1a0c632089c8c4cf84ecf6df99935671423b51a6
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: d720b256ae528192d694f98877126a6df087a18e
+ms.sourcegitcommit: 26bd7953ee5c5e625d4ed8f93df0391511c76f23
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370815"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66491140"
 ---
 # <a name="launch-the-windows-settings-app"></a>Lancer l’application Paramètres Windows
 
@@ -274,7 +274,7 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 |-------------|-----|
 | À propos de | ms-settings:about |
 | Paramètres d’affichage avancés | ms-settings:display-advanced (disponible uniquement sur les appareils qui prennent en charge les options d’affichage avancées) |
-| Préférences de volume et de périphérique d’applications | ms-settings:apps-volume |
+| Préférences de volume et de périphérique d’applications | MS-paramètres : les applications-volume (**ajouté dans Windows 10, version 1903**)|
 | Économiseur de batterie | ms-settings:batterysaver (disponible uniquement sur les appareils dotés d’une batterie, tels qu’une tablette) |
 | Paramètres d'économiseur de batterie | ms-settings:batterysaver-settings (disponible uniquement sur les appareils dotés d’une batterie, tels qu’une tablette) |
 | Utilisation de la batterie | ms-settings:batterysaver-usagedetails (disponible uniquement sur les appareils dotés d’une batterie, tels qu’une tablette) |
