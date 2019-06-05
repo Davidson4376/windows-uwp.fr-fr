@@ -6,12 +6,12 @@ ms.date: 05/11/2018
 ms.topic: article
 keywords: windows 10, uwp, annonce, publicité, directives, meilleures pratiques
 ms.localizationpriority: medium
-ms.openlocfilehash: 78f044890e49f4631abf710764bc2f9746a1306f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 7bb187092158386c503b91973d8d63ce291b4760
+ms.sourcegitcommit: c62b260eecd373e57b19a623bae77e29180e0f3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57639144"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66565513"
 ---
 # <a name="ui-and-user-experience-guidelines-for-ads"></a>Recommandations pour l'expérience et l'interface utilisateur pour les annonces
 
@@ -76,6 +76,8 @@ Cette section donne des exemples d’implémentation de bannières publicitaires
 * Écrire ou distribuer du code qui appelle des services publicitaires par d’autres moyens que les bibliothèques de publicités Microsoft exécutées dans le contexte de votre application.
 
 * Interagir avec des interfaces non documentées ou des objets enfants créés par les bibliothèques de publicités Microsoft, comme **WebView** ou **MediaElement**.
+
+* Placer des annonces publicitaires dans un viewbox pour réduire la taille des annonces pour permettre des annonces sur une page à la normale.
 
 <span id="interstitialbestpractices10" />
 
@@ -173,7 +175,7 @@ Il existe deux surcharges pour la méthode **RegisterAdContainer** que vous pouv
 
 * Si vous voulez que tout le conteneur de l'ensemble des éléments individuels de publicité native soit interactif, appelez la méthode **RegisterAdContainer(FrameworkElement)** et transmettez-lui le contrôle du conteneur. Par exemple, si vous affichez tous les éléments de publicité native dans des contrôles distincts tous hébergés dans un **StackPanel** et que vous voulez que tout le **StackPanel** soit interactif, transmettez le **StackPanel** à cette méthode.
 
-* Si vous souhaitez que seuls certains éléments de publicité native soit interactifs, appelez la méthode **RegisterAdContainer(FrameworkElement, IVector(FrameworkElement))**. Seuls les contrôles que vous transmettez au deuxième paramètre seront interactifs.
+* Si vous souhaitez que seuls certains éléments de publicité native soit interactifs, appelez la méthode **RegisterAdContainer(FrameworkElement, IVector(FrameworkElement))** . Seuls les contrôles que vous transmettez au deuxième paramètre seront interactifs.
 
 ### <a name="required-native-ad-elements"></a>Éléments de publicité native obligatoires
 
