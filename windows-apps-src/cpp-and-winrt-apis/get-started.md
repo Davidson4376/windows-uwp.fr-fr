@@ -1,40 +1,39 @@
 ---
 description: Pour vous aider à utiliser rapidement C++/WinRT, cette rubrique présente un exemple simple de code.
 title: Prise en main de C++/WinRT
-ms.date: 04/03/2019
+ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, utiliser rapidement, prise en main
 ms.localizationpriority: medium
-ms.openlocfilehash: 4928540d9b6e7e1c3df67f7c247aa3664618a65c
-ms.sourcegitcommit: c315ec3e17489aeee19f5095ec4af613ad2837e1
+ms.openlocfilehash: 64104124a6342da3f6963c61bafc871838fd00f6
+ms.sourcegitcommit: 1f39b67f2711b96c6b4e7ed7107a9a47127d4e8f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58921685"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66721676"
 ---
 # <a name="get-started-with-cwinrt"></a>Prise en main de C++/WinRT
 
 Pour vous aider à rapidement à l’utilisation de [C++ / c++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), cette rubrique présente un exemple de code simple basé sur un nouveau **Application de Console Windows (C++ / c++ / WinRT)** projet. Cette rubrique montre également comment [ajouter C + c++ / WinRT le support pour un projet d’application Windows Desktop](#modify-a-windows-desktop-application-project-to-add-cwinrt-support).
 
-> [!IMPORTANT]
-> Si vous utilisez Visual Studio 2017 (version 15.8.0 ou une version ultérieure) et ciblant le SDK Windows version 10.0.17134.0 (Windows 10, version 1803), puis nouvellement créés C++/WinRT projet risque de ne pas compiler avec l’erreur «*erreur C3861 : 'from_abi' : Identificateur introuvable*» et à d’autres erreurs provenant de *base.h*. La solution consiste à une cible une version ultérieure (conforme plus) version du Kit de développement logiciel Windows ou de la propriété de projet de jeu **C/C++** > **langage** > **mode de conformité : Ne** (en outre, si **/ permissive-** apparaît dans la propriété de projet **C/C++** > **langage** > **ligne de commande**  sous **des Options supplémentaires**, puis le supprimer).
+> [!NOTE]
+> Bien que nous vous recommandons de développer avec les dernières versions de Visual Studio et le Kit de développement Windows, si vous utilisez Visual Studio 2017 (version 15.8.0 ou une version ultérieure) et ciblant le SDK Windows version 10.0.17134.0 (Windows 10, version 1803), puis un C++/WinRT projet risque de ne pas compiler avec l’erreur «*erreur C3861 : 'from_abi' : identificateur introuvable*» et à d’autres erreurs provenant de *base.h*. La solution consiste à une cible une version ultérieure (conforme plus) version du Kit de développement logiciel Windows ou de la propriété de projet de jeu **C/C++**  > **langage** > **mode de conformité : Ne** (en outre, si **/ permissive-** apparaît dans la propriété de projet **C/C++**  > **langage** > **ligne de commande**  sous **des Options supplémentaires**, puis le supprimer).
 
 ## <a name="a-cwinrt-quick-start"></a>Démarrage rapide avec C++/WinRT
 
 > [!NOTE]
 > Pour plus d’informations sur l’installation et à l’aide de la C++Extension WinRT Visual Studio (VSIX) et le package NuGet (qui ensemble fournissent le modèle de projet et créez prise en charge), consultez [prise en charge de Visual Studio pour C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
-Créez un nouveau projet **Windows Console Application (C++/WinRT)**.
+Créez un nouveau projet **Windows Console Application (C++/WinRT)** .
 
 Modifiez `pch.h` et `main.cpp` pour qu’ils ressemblent à ce qui suit.
 
 ```cppwinrt
 // pch.h
-...
-#include <iostream>
+#pragma once
 #include <winrt/Windows.Foundation.Collections.h>
 #include <winrt/Windows.Web.Syndication.h>
-...
+#include <iostream>
 ```
 
 ```cppwinrt
@@ -67,10 +66,12 @@ Nous allons prendre l’exemple de code court ci-dessus élément par élément 
 #include <winrt/Windows.Web.Syndication.h>
 ```
 
-Les en-têtes que nous incluons font partie du SDK, présent dans le dossier `%WindowsSdkDir%Include<WindowsTargetPlatformVersion>\cppwinrt\winrt`. Visual Studio inclut ce chemin d’accès dans sa macro *IncludePath*. Les en-têtes contiennent des API Windows projetées en C++/WinRT. En d’autres termes, pour chaque type Windows, C++/WinRT définit un équivalent compatible en C++ (appelé le *type projeté*). Le type projeté a le même nom complet que le type Windows, mais il est placé dans l'espace de noms C++ **winrt**. Placer ces inclusions dans votre en-tête précompilé permet de réduire les temps de builds incrémentielles.
+Avec les paramètres de projet par défaut, les en-têtes inclus sont fournis à partir du SDK Windows, dans le dossier`%WindowsSdkDir%Include<WindowsTargetPlatformVersion>\cppwinrt\winrt`. Visual Studio inclut ce chemin d’accès dans sa macro *IncludePath*. Mais il n’existe aucune dépendance strict sur le Kit de développement Windows, étant donné que votre projet (via le `cppwinrt.exe` outil) génère ces mêmes en-têtes dans votre projet *$(GeneratedFilesDir)* dossier. Ils seront chargés à partir de ce dossier si elles ne peuvent pas être trouvées ailleurs, ou si vous modifiez les paramètres de votre projet.
+
+Les en-têtes contiennent des API Windows projetées en C++/WinRT. En d’autres termes, pour chaque type Windows, C++/WinRT définit un équivalent compatible en C++ (appelé le *type projeté*). Le type projeté a le même nom complet que le type Windows, mais il est placé dans l'espace de noms C++ **winrt**. Placer ces inclusions dans votre en-tête précompilé permet de réduire les temps de builds incrémentielles.
 
 > [!IMPORTANT]
-> Chaque fois que vous souhaitez utiliser un type à partir d’un espace de noms Windows, incluez le fichier d'en-tête de l'espace de noms Windows C++/WinRT, comme indiqué. L'en-tête *correspondant* est celui qui a le même nom que l’espace de noms du type. Par exemple, pour utiliser la projection C++/WinRT pour la classe runtime [**Windows::Foundation::Collections::PropertySet**](/uwp/api/windows.foundation.collections.propertyset), `#include <winrt/Windows.Foundation.Collections.h>`.
+> Chaque fois que vous souhaitez utiliser un type à partir d’un espaces de noms Windows, incluent le correspondantes C++fichier d’en-tête espace de noms WinRT Windows, comme indiqué ci-dessus. L'en-tête *correspondant* est celui qui a le même nom que l’espace de noms du type. Par exemple, pour utiliser la projection C++/WinRT pour la classe runtime [**Windows::Foundation::Collections::PropertySet**](/uwp/api/windows.foundation.collections.propertyset), `#include <winrt/Windows.Foundation.Collections.h>`. Si vous incluez `winrt/Windows.Foundation.Collections.h`, alors vous n’avez pas *également* devons inclure `winrt/Windows.Foundation.h`. Chaque C++/en-tête de projection WinRT inclut automatiquement son fichier d’en-tête espace de noms parent ; Pour vous éviter *devez* inclure explicitement. Cependant, si vous le faites, cela ne produira pas d'erreur.
 
 ```cppwinrt
 using namespace winrt;
@@ -84,7 +85,7 @@ Les directives `using namespace` sont facultatives, mais pratiques. Le modèle p
 winrt::init_apartment();
 ```
 
-L’appel à **winrt::init_apartment** initialise COM ; par défaut, en mode de cloisonnement multi-thread.
+L’appel à **winrt::init_apartment** initialise le thread dans le Runtime Windows ; par défaut, dans un multithread cloisonné. L’appel initialise également COM.
 
 ```cppwinrt
 Uri rssFeedUri{ L"https://blogs.windows.com/feed" };
@@ -103,7 +104,7 @@ SyndicationFeed syndicationFeed = syndicationClient.RetrieveFeedAsync(rssFeedUri
 for (const SyndicationItem syndicationItem : syndicationFeed.Items()) { ... }
 ```
 
-[**SyndicationFeed.Items** ](/uwp/api/windows.web.syndication.syndicationfeed.items) est une plage définie par les itérateurs retournés à partir de **commencer** et **fin** fonctions (ou leurs variantes constante inverses et constante-inverse). Pour cette raison, vous pouvez énumérer des **Items** avec une instruction `for` basée sur l’étendue ou avec la fonction modèle **std::for_each**.
+[**SyndicationFeed.Items** ](/uwp/api/windows.web.syndication.syndicationfeed.items) est une plage définie par les itérateurs retournés à partir de **commencer** et **fin** fonctions (ou leurs variantes constante inverses et constante-inverse). Pour cette raison, vous pouvez énumérer des **Items** avec une instruction `for` basée sur l’étendue ou avec la fonction modèle **std::for_each**. Chaque fois que vous effectuer une itération sur une collection de Windows Runtime comme suit, vous allez devoir `#include <winrt/Windows.Foundation.Collections.h>`.
 
 ```cppwinrt
 winrt::hstring titleAsHstring = syndicationItem.Title().Text();
@@ -128,11 +129,11 @@ Accédez à la propriété de projet **général** \> **Windows SDK Version**, p
 
 Vérifiez que vous n’êtes pas affecté par [Pourquoi mon nouveau projet n’est pas compilé ?](/windows/uwp/cpp-and-winrt-apis/faq).
 
-Étant donné que C++ / c++ / WinRT utilise des fonctionnalités à partir de la propriété 17 projet standard, affectez la valeur C ++ **C/C++** > **langage** > **norme du langage C++** à *Norme ISO C ++ 17 (/ std : c ++ 17)*.
+Étant donné que C++ / c++ / WinRT utilise des fonctionnalités à partir de la propriété 17 projet standard, affectez la valeur C ++ **C/C++**  > **langage** > **norme du langage C++** à *Norme ISO C ++ 17 (/ std : c ++ 17)* .
 
 ### <a name="the-precompiled-header"></a>L’en-tête précompilé
 
-Le modèle de projet par défaut crée un en-tête précompilé, nommé `framework.h`, ou `stdafx.h`. Pour renommer `pch.h`. Si vous avez un `stdafx.cpp` de fichier, puis à renommer `pch.cpp`. Définir la propriété de projet **C/C++** > **en-têtes précompilés** > **fichier d’en-tête précompilé** à *pch.h*.
+Le modèle de projet par défaut crée un en-tête précompilé, nommé `framework.h`, ou `stdafx.h`. Pour renommer `pch.h`. Si vous avez un `stdafx.cpp` de fichier, puis à renommer `pch.cpp`. Définir la propriété de projet **C /C++**  > **en-têtes précompilés** > **en-tête précompilé** à *créer (/Yc)* , et **fichier d’en-tête précompilé** à *pch.h*.
 
 Rechercher et remplacer toutes les `#include "framework.h"` (ou `#include "stdafx.h"`) avec `#include "pch.h"`.
 
@@ -161,7 +162,7 @@ Vous pouvez maintenant compiler et lier et ajouter C++code /WinRT à votre proje
 ## <a name="important-apis"></a>API importantes
 * [SyndicationClient::RetrieveFeedAsync (méthode)](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)
 * [Propriété de SyndicationFeed.Items](/uwp/api/windows.web.syndication.syndicationfeed.items)
-* [Structure winrt::hstring](/uwp/cpp-ref-for-winrt/hstring)
+* [WinRT::hstring struct](/uwp/cpp-ref-for-winrt/hstring)
 * [Erreur de WinRT::HRESULT struct](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)
 
 ## <a name="related-topics"></a>Rubriques connexes
@@ -169,5 +170,5 @@ Vous pouvez maintenant compiler et lier et ajouter C++code /WinRT à votre proje
 * [Gestion des erreurs avec C++/WinRT](error-handling.md)
 * [Interopérabilité entre C++/WinRT et C++/CX](interop-winrt-cx.md)
 * [Interopérabilité entre C++/WinRT et ABI](interop-winrt-abi.md)
-* [Transférer vers C++/WinRT à partir de C++/CX](move-to-winrt-from-cx.md)
-* [Gestion des chaînes en C++/WinRT](strings.md)
+* [Passer de C++/CX à C++/WinRT](move-to-winrt-from-cx.md)
+* [Chaîne gère en C / c++ / WinRT](strings.md)

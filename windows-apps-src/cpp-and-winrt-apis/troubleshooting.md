@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, résolution des problèmes, HRESULT, erreur
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fe67fd0593c9c1f605a5d1cc7418c348b6ca9c3
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 563545e8a819ab6af5bbc0604c18b4833d76bebb
+ms.sourcegitcommit: 1f39b67f2711b96c6b4e7ed7107a9a47127d4e8f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360100"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66721665"
 ---
 # <a name="troubleshooting-cwinrt-issues"></a>Résolution des problèmes C++/WinRT
 
@@ -51,7 +51,6 @@ Si votre application s’arrête et que tout ce que vous savez c’est qu’une 
 | Le compilateur C++ génère «*erreur C2039 : « IUnknown » : n’est pas un membre de '\`espace de noms global''* ». | Consultez [comment recibler votre C + c++ / projet WinRT vers une version ultérieure du SDK Windows](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk). |
 | L’éditeur de liens C++ génère «*erreur LNK2019 : symbole externe non résolu _WINRT_CanUnloadNow@0 référencé dans la fonction _VSDesignerCanUnloadNow@0* » | Consultez [comment recibler votre C + c++ / projet WinRT vers une version ultérieure du SDK Windows](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk). |
 | Le processus de génération génère le message d’erreur *le c++ / WinRT VSIX ne fournit plus de prise en charge de génération de projet.  Ajoutez une référence de projet au package Nuget de Microsoft.Windows.CppWinRT*. | Installer le **Microsoft.Windows.CppWinRT** package NuGet dans votre projet. Pour plus d’informations, consultez [les versions antérieures de l’extension VSIX](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension). |
-| Le C++ compilateur génère un message d’erreur qui mentionne *'std::experimental'* , et/ou une erreur de l’écran *erreur C3861 : 'resume_background' : identificateur introuvable*. | En tant que de [ C++WinRT 2.0](news.md#news-and-changes-in-cwinrt-20), pour une prise en charge de la coroutine (y compris les programmes d’assistance coroutine **winrt::resume_background**, **winrt::resume_foreground**et **winrt::resume_on_signal**), vous devrez `#include <winrt/coroutine.h>`. |
 | Le C++ éditeur de liens produit *erreur LNK2019 : symbole externe non résolu*, avec une mention de *winrt::impl::consume_Windows_Foundation_Collections_IVector*. | En tant que de [ C++WinRT 2.0](news.md#news-and-changes-in-cwinrt-20), si vous utilisez basées sur une plage `for` sur une collection de Windows Runtime, puis vous maintenant devrez `#include <winrt/Windows.Foundation.Collections.h>`. |
 
 > [!NOTE]

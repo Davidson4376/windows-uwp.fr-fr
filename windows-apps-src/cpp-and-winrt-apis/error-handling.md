@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, erreur, gestion, exception
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ec6feb34307e0b7c17387d0127cb7d29098e6a6
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 1b72bb3cb2527585c114d386981e02d4730614a2
+ms.sourcegitcommit: 1f39b67f2711b96c6b4e7ed7107a9a47127d4e8f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361068"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66721639"
 ---
 # <a name="error-handling-with-cwinrt"></a>Gestion des erreurs avec C++/WinRT
 
@@ -38,7 +38,6 @@ Par exemple, si l’utilisateur supprime une image de la bibliothèque d’image
 #include <winrt/Windows.Foundation.Collections.h>
 #include <winrt/Windows.Storage.h>
 #include <winrt/Windows.UI.Xaml.Media.Imaging.h>
-#include <winrt/coroutine.h>
 
 using namespace winrt;
 using namespace Windows::Foundation;
