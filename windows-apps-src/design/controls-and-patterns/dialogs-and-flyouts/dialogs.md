@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: bee954cba446ac7dc7eb41622d9275b3b73af6ee
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 1277d9089e900451ac4c537805079ff479f808fa
+ms.sourcegitcommit: f47620e72ff8127fae9b024c70ddced3a5c45d91
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57621834"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66748445"
 ---
 # <a name="dialog-controls"></a>Contrôles de boîte de dialogue
 
@@ -250,9 +250,37 @@ Une boîte de dialogue de confirmation classique comprend deux boutons : un bou
 
 > Certaines plateformes placent le bouton d’affirmation à droite, et non à gauche. Pourquoi est-il conseillé de le placer sur la gauche ?  Si vous partons du principe que la plupart des utilisateurs sont droitiers et qu’ils tiennent leur téléphone de la main droite, ils trouveront certainement plus confortable d’appuyer sur le bouton lorsqu’il se trouve à gauche, autrement dit dans le prolongement du pouce. Les boutons placés à droite de l’écran obligent l’utilisateur à rentrer leur pouce, ce qui représente une position moins confortable.
 
+## <a name="contentdialog-in-appwindow-or-xaml-islands"></a>ContentDialog dans AppWindow ou Xaml (îles)
 
+> REMARQUE : Cette section s’applique uniquement aux applications qui ciblent Windows 10, version 1903 ou version ultérieure. AppWindow et îles de XAML ne sont pas disponibles dans les versions antérieures. Pour plus d’informations sur le contrôle de version, consultez [Version des applications flexibles](../../../debug-test-perf/version-adaptive-apps.md).
 
+Par défaut, le contenu de boîtes de dialogue affichent modal relatif à la racine [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview). Lorsque vous utilisez ContentDialog à l’intérieur de l’un [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) ou un [îlot de XAML](/apps/desktop/modernize/xaml-islands), vous devez définir manuellement le [XamlRoot](/uwp/api/windows.ui.xaml.uielement.xamlroot) sur la boîte de dialogue à la racine de l’hôte XAML.
 
+Pour ce faire, définissez XamlRoot propriété du ContentDialog sur le même XamlRoot en tant qu’élément déjà dans le AppWindow ou XAML (île), comme illustré ici.
+
+```csharp
+private async void DisplayNoWifiDialog()
+{
+    ContentDialog noWifiDialog = new ContentDialog
+    {
+        Title = "No wifi connection",
+        Content = "Check your connection and try again.",
+        CloseButtonText = "Ok"
+    };
+
+    // Use this code to associate the dialog to the appropriate AppWindow by setting
+    // the dialog's XamlRoot to the same XamlRoot as an element that is already present in the AppWindow.
+    if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract", 8))
+    {
+        noWifiDialog.XamlRoot = elementAlreadyInMyAppWindow.XamlRoot;
+    }
+
+    ContentDialogResult result = await noWifiDialog.ShowAsync();
+}
+```
+
+> [!WARNING]
+> Il peut être seulement un ContentDialog ouvrir par thread à la fois. Essayez d’ouvrir deux ContentDialogs lève une exception, même s’ils essaient d’ouvrir dans AppWindows distinct.
 
 ## <a name="get-the-sample-code"></a>Obtenir l’exemple de code
 
