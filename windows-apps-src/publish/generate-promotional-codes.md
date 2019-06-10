@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, code promotionnel, codes promotionnels, jeton, jetons
 ms.localizationpriority: medium
-ms.openlocfilehash: db4cde6f8c195101ec31de26c00ffa7325e08d71
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 931b3abfe13a3834d991ee1a0a38c752b9e3f719
+ms.sourcegitcommit: 7da28cf4f4e8390bc9a21a9488b03af39271cbbe
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57605394"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64745031"
 ---
 # <a name="generate-promotional-codes"></a>Générer des codes promotionnels
 
@@ -31,8 +31,13 @@ Vous pouvez générer des codes d’usage unique (et distribuer un pour chaque c
 Tenez compte des stratégies suivantes relatives aux codes promotionnels :
 
 -   Vous pouvez générer des codes promotionnels pour toute application ou tout module complémentaire (à l’exception des modules complémentaires d’abonnement) que vous avez publiés dans le Microsoft Store. Les clients peuvent utiliser les codes sur n’importe quelle version de Windows prise en charge par votre application ou module complémentaire.
--   Les codes promotionnels expirent 6 mois après la date de commande (sauf si vous choisissez une date d’expiration antérieure).
--   Pour chaque application ou module complémentaire, vous pouvez générer des codes pour permettre jusqu’à 1600 échanges tous les 6 mois. La période de 6 mois commence lorsque la première commande de code promotionnel est envoyée, même si vous choisissez une date d’expiration antérieure. Le total de 1600 échanges par produit s’applique aux codes à usage unique et aux codes qui peuvent être utilisés plusieurs fois.
+-   Pour les jeux :
+    - Vous pouvez générer des codes promotionnels jusqu'à 5 000 par le jeu.
+    - Généré pour les jeux de codes promotionnels n’expirent jamais.
+- Pour tous les autres types d’applications ou des modules complémentaires :
+    - Pour une période de six mois, vous pouvez générer des codes promotionnels usage unique jusqu'à 1 600, ou un nombre quelconque de l’utilisation de plusieurs codes telles que le total autorisé échanges ne dépasse pas 1600.
+    - La période de 6 mois commence lorsque vous générez le premier code de promotion est créé et est valable pendant 6 mois, quel que soit ou non, vous définissez une date d’expiration antérieure sur les codes.
+    - Les codes créés pendant une période de six mois existante sera sont considérés comme le nombre de codes générés au sein de cette période, même si elles expirent après la fin de la période (par exemple, si vous générez un code sur le dernier jour de la fenêtre de six mois, il sera va être toujours  être valide pour un total de 6 mois à partir de sa création.)
 -   Vous devez suivre les exigences définies dans le [contrat du développeur de l’application](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement), y compris la section **3 k. Code promotionnel**.
 
 > [!NOTE]
