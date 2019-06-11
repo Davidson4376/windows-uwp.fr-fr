@@ -6,12 +6,12 @@ ms.date: 05/08/2018
 ms.topic: article
 keywords: windows 10, uwp, évaluation de l’âge, classification des jeux, iarc, évaluation, questionnaire, organisme de classification, contrôle d'accès au contenu
 ms.localizationpriority: medium
-ms.openlocfilehash: fc079cd0c3fb75444a8ac8c6f8376c3ed5a992b4
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 55592f2d16807e2ad359a21977bd483db0b2e089
+ms.sourcegitcommit: 978df7dfd3813de51609b6a44aedcd402083a5fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63787304"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66826175"
 ---
 # <a name="age-ratings"></a>Classification par âge
 
@@ -59,4 +59,4 @@ Auparavant, les développeurs spécifiaient la classification par âge pour leur
 | 7+ (Convient à tous les publics à partir de 7 ans)   | Les applications appartenant à cette classification présentent les mêmes critères que les applications 3+, sauf que ces applications peuvent inclure du contenu susceptible d’effrayer un public jeune et contenir de la nudité partielle, pour autant que celle-ci ne suggère aucune activité sexuelle. Cette classification ne doit être utilisée pour les applications dont le contenu est adapté aux enfants.                                                                                   |
 | 12+ (Convient à tous les publics à partir de 12 ans) | Les applications appartenant à cette classification peuvent présenter plus de nudité, pour autant que cette nudité ne soit pas de nature sexuelle. Elles peuvent inclure de la violence explicite à l’égard de personnages non réalistes et de la violence non explicite à l’égard d’humains ou d’animaux. Ces applications peuvent également inclure du contenu blasphématoire, sans toutefois que ce contenu soit de nature sexuelle. Les applications appartenant à cette classification ou à une classification supérieure peuvent autoriser : (i) un accès non contrôlé aux réseaux sociaux en ligne ou (ii) un partage non contrôlé d’informations personnelles avec des tiers, notamment avec d’autres joueurs ou des connaissances en ligne. (Pour que ce type d’activité soit considéré comme contrôlé, votre application doit inclure des fonctionnalités de contrôle parental qui permettent d’exiger une autorisation parentale pour utiliser ces fonctions de partage. En outre, la présence de telles fonctionnalités doit être signalée et leur rôle expliqué dans les [Remarques pour la certification](notes-for-certification.md).) |
 | 16+ (Convient à tous les publics à partir de 16 ans) | Les applications appartenant à cette classification en fonction de l’âge peuvent contenir de la violence réaliste impliquant un minimum de sang et décrire une activité sexuelle. Elles peuvent également évoquer un usage de drogues et de tabac ainsi que des activités criminelles, et un contenu blasphématoire plus important que cela est autorisé pour les applications 12+, dans les limites présentées dans les Politiques du Windows Store.                                                                                                                           |
-| 18+ (Convient aux adultes)            | Les jeux appartenant à cette classification peuvent contenir des scènes de violence extrême, gratuite, réaliste ou spécifique destinées uniquement à un public adulte. Tout contenu doit être conforme aux critères établis dans les [Politiques de contenu](https://docs.microsoft.com/legal/windows/agreements/store-policies).                                                                                                                                                            |
+| 18+ (Convient aux adultes)            | Les jeux appartenant à cette classification peuvent contenir des scènes de violence extrême, gratuite, réaliste ou spécifique destinées uniquement à un public adulte. Tout contenu doit être conforme aux critères établis dans les [Politiques de contenu](store-policies.md).                                                                                                                                                            |

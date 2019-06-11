@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, publication, prétraitement, certification, mise en production en attente, envoyer, publier, état, heure
 ms.localizationpriority: medium
-ms.openlocfilehash: fe9df9ce95c6b17bcd3d702bf09ac57b9f205e0c
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: d88d8deeb467f186f120fb8c1e579d5c9222aaf1
+ms.sourcegitcommit: 978df7dfd3813de51609b6a44aedcd402083a5fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63790586"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66826226"
 ---
 # <a name="the-app-certification-process"></a>Processus de certification des applications
 
@@ -29,7 +29,7 @@ Plusieurs tests sont exécutés pendant cette phase :
 -   **Tests de compatibilité technique :** Conformité technique est testée par le Kit de Certification des applications Windows. (Vous devez toujours prendre soin de [tester votre application à l’aide du Kit de certification des applications Windows](../debug-test-perf/windows-app-certification-kit.md) avant de la soumettre au Windows Store.)
 -   **Conformité du contenu :** La quantité de que cette opération varie selon la complexité de votre application est la quantité de contenu visual il possède et combien d’applications ont été soumis récemment. Veillez à fournir toutes les informations que les testeurs doivent connaître dans la page [Remarques pour la certification](notes-for-certification.md).
 
-Une fois le processus de certification terminé, vous recevez un rapport de certification indiquant si votre application a été ou non certifiée. Si votre application n’a pas été certifiée, le rapport indique le test auquel elle a échoué ou la [stratégie](https://docs.microsoft.com/legal/windows/agreements/store-policies) qui n’a pas été respectée. Après avoir corrigé le problème, vous pouvez créer une autre soumission pour votre application afin de recommencer le processus de certification.
+Une fois le processus de certification terminé, vous recevez un rapport de certification indiquant si votre application a été ou non certifiée. Si votre application n’a pas été certifiée, le rapport indique le test auquel elle a échoué ou la [stratégie](store-policies.md) qui n’a pas été respectée. Après avoir corrigé le problème, vous pouvez créer une autre soumission pour votre application afin de recommencer le processus de certification.
 
 ## <a name="release"></a>Release
 
@@ -54,7 +54,7 @@ Pendant que votre application se trouve dans la phase de publication, le **affic
 Après avoir correctement effectué les étapes ci-dessus, l’état de la soumission passe de **Publication** à **Dans le Windows Store**. Les clients peuvent ainsi télécharger votre soumission à partir du Microsoft Store (sauf si vous avez choisi une autre option pour [Détectabilité](choose-visibility-options.md#discoverability)). 
 
 > [!NOTE]
-> Nous effectuons également des vérifications ponctuelles sur les applications publiées pour identifier les problèmes potentiels et vérifier que votre application est conforme à toutes les [politiques du Microsoft Store](https://docs.microsoft.com/legal/windows/agreements/store-policies). Si nous détectons un problème, nous vous en informons et vous indiquons comment le résoudre, ou nous vous prévenons que votre application a été retirée du Windows Store.
+> Nous effectuons également des vérifications ponctuelles sur les applications publiées pour identifier les problèmes potentiels et vérifier que votre application est conforme à toutes les [politiques du Microsoft Store](store-policies.md). Si nous détectons un problème, nous vous en informons et vous indiquons comment le résoudre, ou nous vous prévenons que votre application a été retirée du Windows Store.
 
  
 

@@ -6,12 +6,12 @@ ms.date: 03/07/2019
 ms.topic: article
 keywords: windows 10, uwp, distribution de version d’évaluation
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c0d299ba5b3a37b2f80a5e3c9b4456d63c3e0d4
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: abd4b26d0943bf032f93f62719959ef6650e0d65
+ms.sourcegitcommit: 978df7dfd3813de51609b6a44aedcd402083a5fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63788472"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66826136"
 ---
 # <a name="package-flights"></a>Versions d’évaluation de package
 
@@ -60,7 +60,7 @@ N’oubliez pas que votre Store répertoriant des informations et disponibilité
 
 ## <a name="gradual-package-rollout"></a>Lancement de package progressif
 
-Par défaut, les packages de votre soumission seront disponibles simultanément pour tous les membres de votre groupe de versions d’évaluation. Pour modifier ce comportement, vous pouvez cocher la case **Déployer progressivement la mise à jour après la publication de cette soumission (pour les clients Windows 10 uniquement)**. Vous pouvez choisir un pourcentage de personnes dans votre groupe de versions d’évaluation pour obtenir les packages à partir de la nouvelle soumission, afin d’être en mesure d’analyser les commentaires et les données analytiques et de vérifier le contenu de la mise à jour avant de la déployer au reste du groupe de versions d’évaluation. Vous pouvez augmenter le pourcentage (ou arrêter la mise à jour) à tout moment sans avoir à créer une nouvelle soumission pour votre version d’évaluation de package. 
+Par défaut, les packages de votre soumission seront disponibles simultanément pour tous les membres de votre groupe de versions d’évaluation. Pour modifier ce comportement, vous pouvez cocher la case **Déployer progressivement la mise à jour après la publication de cette soumission (pour les clients Windows 10 uniquement)** . Vous pouvez choisir un pourcentage de personnes dans votre groupe de versions d’évaluation pour obtenir les packages à partir de la nouvelle soumission, afin d’être en mesure d’analyser les commentaires et les données analytiques et de vérifier le contenu de la mise à jour avant de la déployer au reste du groupe de versions d’évaluation. Vous pouvez augmenter le pourcentage (ou arrêter la mise à jour) à tout moment sans avoir à créer une nouvelle soumission pour votre version d’évaluation de package. 
 
 > [!IMPORTANT]
 > Lors du déploiement progressivement les packages dans un vol de package, les personnes qui ne sont pas inclus dans le pourcentage qui obtient vos nouveaux packages obtiendra les packages à partir de la soumission de vol de package précédente (à moins qu’un vol de niveau supérieur à leur disposition).
@@ -75,7 +75,7 @@ Par défaut, votre version d’évaluation du package est publiée et mise à di
 
 ## <a name="submit-your-package-flight-to-the-store"></a>Soumettre votre version d’évaluation de package au Windows Store
 
-Une fois les packages définis et les options nécessaires configurées, cliquez sur **Envoyer au Store**. Votre version d’évaluation de package sera alors soumise au [processus de certification des applications](the-app-certification-process.md). Notez que les packages inclus dans le vol de votre package doivent respecter le [Microsoft Store stratégies](https://docs.microsoft.com/legal/windows/agreements/store-policies), comme avec toutes les soumissions.
+Une fois les packages définis et les options nécessaires configurées, cliquez sur **Envoyer au Store**. Votre version d’évaluation de package sera alors soumise au [processus de certification des applications](the-app-certification-process.md). Notez que les packages inclus dans le vol de votre package doivent respecter le [Microsoft Store stratégies](store-policies.md), comme avec toutes les soumissions.
 
 Les utilisateurs de vos groupes de versions d’évaluation associés à cette version d’évaluation de package qui possèdent déjà votre application obtiendront une mise à jour lorsqu’ils utiliseront les packages inclus dans votre version d’évaluation. Si ces utilisateurs ne disposent pas encore de votre application, ils obtiendront les packages de votre version d’évaluation de package au moment de l’installation. 
 

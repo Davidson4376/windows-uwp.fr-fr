@@ -8,12 +8,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 97eae5f3-c16b-4aa5-b4a1-dd892cf32ead
 ms.localizationpriority: medium
-ms.openlocfilehash: 0eb5a03a2a6de8624e8b414fa31c6eec51c04bbc
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 9b34f88d198ec80c67e5aac7b57001e42fe5c516
+ms.sourcegitcommit: aa5a055e3ff9ee9defc73ed9567196d59f59542a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66364890"
+ms.lasthandoff: 06/10/2019
+ms.locfileid: "66825019"
 ---
 # <a name="inking-controls"></a>Contrôles pour l’entrée manuscrite
 
@@ -84,7 +84,7 @@ L’ajout d’un InkCanvas à votre application nécessite une seule ligne de ba
 ```
 
 > [!NOTE]
-> Pour la personnalisation InkCanvas détaillée à l’aide d’InkPresenter, consultez l’article [« Interactions avec le stylo et le stylet dans les applications UWP »](https://windowsstyleguide/input/pen-and-stylus-interactions/).
+> Pour la personnalisation InkCanvas détaillée à l’aide de InkPresenter, consultez le [« Pen interactions et l’encre de Windows dans les applications UWP »](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions) article.
 
 Le contrôle InkToolbar doit être utilisé en association avec un contrôle InkCanvas. L’intégration d’un contrôle InkToolbar (et de tous les outils intégrés) dans votre application nécessite une ligne supplémentaire de balisage :
 
@@ -170,6 +170,6 @@ La gomme dispose également d’un menu volant proposant la commande **Supprimer
 
 ## <a name="related-articles"></a>Articles connexes
 
-- [Interactions de stylet et de stylet dans les applications UWP](https://windowsstyleguide/input/pen-and-stylus-interactions/)
-- [Reconnaître les traits d’encre](https://windowsstyleguide/input/convert-ink-to-text/)
-- [Store et récupérer des traits d’encre](https://windowsstyleguide/input/save-and-load-ink/)
+- [Interactions du stylet et entrée manuscrite de Windows dans les applications UWP](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions)
+- [Reconnaître les traits d’encre de Windows en tant que texte et formes](https://docs.microsoft.com/windows/uwp/design/input/convert-ink-to-text)
+- [Store et récupérer des données du trait d’encre de Windows](https://docs.microsoft.com/windows/uwp/design/input/save-and-load-ink)

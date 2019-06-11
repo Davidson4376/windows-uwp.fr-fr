@@ -6,12 +6,12 @@ keywords: liste de vérification, windows, uwp, soumission, soumettre, jeu, appl
 ms.date: 10/31/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b98ea7f1d28c4fcd63cd2d4706905578b240e126
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 24d3c99636009ebf65f3e24d39d657297b105150
+ms.sourcegitcommit: 978df7dfd3813de51609b6a44aedcd402083a5fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57643284"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66826117"
 ---
 # <a name="app-submissions"></a>Soumissions d’application
 
@@ -38,9 +38,9 @@ Voici la liste des informations que vous pouvez fournir quand vous soumettez vot
 Les éléments que vous devez obligatoirement fournir ou spécifier sont signalés ci-dessous. Certains sont facultatifs ou ont des valeurs par défaut que vous pouvez modifier selon vos besoins. Vous n’êtes pas obligé de travailler sur ces sections dans l’ordre indiqué ici.
 
 ### <a name="pricing-and-availability-page"></a>Page Tarification et disponibilité
-| Nom du champ                    | Remarques                                       | Informations supplémentaires                                                             |
+| Nom du champ                    | Notes                                       | Informations supplémentaires                                                             |
 |-------------------------------|---------------------------------------------|---------------------------------------------------------------------------|
-| **Marchés**                   | Default : Tous les marchés possible  | [Définir la sélection de tarification et de marché](define-pricing-and-market-selection.md)         |
+| **Markets**                   | Default : Tous les marchés possible  | [Définir la sélection de tarification et de marché](define-pricing-and-market-selection.md)         |
 | **Audience**                | Default : Public non privé | [Audience](choose-visibility-options.md#audience) |
 | **Détectabilité**                | Default : Rendre cette application disponible et détectable dans le Store | [Détectabilité](choose-visibility-options.md#discoverability) |
 | **Planification**                  | Default : Version dès que possible        | [Configurer la planification de la version précise](configure-precise-release-scheduling.md) |
@@ -53,10 +53,10 @@ Les éléments que vous devez obligatoirement fournir ou spécifier sont signal�
 
 ### <a name="properties-page"></a>Page Propriétés
 
-| Nom du champ                    | Remarques                                       | Informations supplémentaires                                                             |
+| Nom du champ                    | Notes                                       | Informations supplémentaires                                                             |
 |-------------------------------|---------------------------------------------|---------------------------------------------------------------------------|
 | **Catégorie et sous-catégorie**  | Obligatoire                                    | [Table de catégorie et sous-catégorie](category-and-subcategory-table.md)       |
-| **URL de stratégie de confidentialité**            | Obligatoire pour plusieurs applications. Voir le [contrat du développeur d'applications](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) et les [stratégies du Microsoft Store](https://docs.microsoft.com/en-us/legal/windows/agreements/store-policies#105-personal-information) | [URL de stratégie de confidentialité](enter-app-properties.md#privacy-policy-url)        |
+| **URL de stratégie de confidentialité**            | Obligatoire pour plusieurs applications. Voir le [contrat du développeur d'applications](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) et les [stratégies du Microsoft Store](store-policies.md#105-personal-information) | [URL de stratégie de confidentialité](enter-app-properties.md#privacy-policy-url)        |
 | **Site Web**                   | Facultatif                                    | [Site Web](enter-app-properties.md#website)                   |
 | **Prise en charge les informations de contact**      | Obligatoire si votre produit est disponible sur Xbox ; dans le cas contraire facultatif (mais recommandé)                                   | [Prise en charge les informations de contact](enter-app-properties.md#support-contact-info)              |
 | **Paramètres de jeu**             | Facultatif (applicable uniquement aux jeux)         | [Paramètres de jeu](enter-app-properties.md#game-settings) |
@@ -68,7 +68,7 @@ Les éléments que vous devez obligatoirement fournir ou spécifier sont signal�
 
 ### <a name="age-ratings-page"></a>Page Classification par âge
 
-| Nom du champ                    | Remarques                                       | Informations supplémentaires                          |
+| Nom du champ                    | Notes                                       | Informations supplémentaires                          |
 |-------------------------------|---------------------------------------------|----------------------------------------|
 | **Classes d’âge**               | Obligatoire                                    | [Classes d’âge](age-ratings.md)          |
 
@@ -76,7 +76,7 @@ Les éléments que vous devez obligatoirement fournir ou spécifier sont signal�
 
 ### <a name="packages-page"></a>Page Packages
 
-| Nom du champ                    | Remarques                                  | Informations supplémentaires                          |
+| Nom du champ                    | Notes                                  | Informations supplémentaires                          |
 |-------------------------------|----------------------------------------|----------------------------------------|
 | **Contrôle de téléchargement de package**    | Obligatoire (au moins un package)        | [Télécharger des packages d’application](upload-app-packages.md) |
 | **Disponibilité de famille de périphériques** | Par défaut : basée sur les packages       | [Disponibilité de famille de périphériques](device-family-availability.md) |
@@ -88,7 +88,7 @@ Les éléments que vous devez obligatoirement fournir ou spécifier sont signal�
 
 Vous devez indiquer toutes les informations requises pour au moins l’une des langues prises en charge par votre application. Nous vous recommandons de fournir des [descriptions dans le Windows Store](create-app-store-listings.md) dans toutes les langues prises en charge de votre application, et vous pouvez également [fournir des descriptions dans le Windows Store dans d’autres langues](create-app-store-listings.md#store-listing-languages). Pour faciliter la gestion de plusieurs descriptions pour le même produit, vous pouvez [importer et exporter des descriptions du Store](import-and-export-store-listings.md).
 
-| Nom du champ                    | Remarques                                       | Informations supplémentaires                                                     |
+| Nom du champ                    | Notes                                       | Informations supplémentaires                                                     |
 |-------------------------------|---------------------------------------------|-------------------------------------------------------------------|
 | **Description**               | Obligatoire                                    | [Rédigez une description de l’application réussie](write-a-great-app-description.md) |
 | **Quelles sont les nouveautés dans cette version**   | Facultatif                                 | [Notes de publication](create-app-store-listings.md#whats-new-in-this-version)       |
@@ -97,9 +97,9 @@ Vous devez indiquer toutes les informations requises pour au moins l’une des l
 | **Logos de Store**               | Recommandé ; obligatoire pour certaines versions du système d’exploitation | [Logos de Store](app-screenshots-and-images.md#store-logos)             |
 | **Codes de fin**                  | Facultatif                                    | [Codes de fin](app-screenshots-and-images.md#trailers)                | 
 | **Image de Windows 10 et Xbox (art de Super héros de 16:9)**     | Recommandé        | [Windows 10 et Xbox image (art de Super héros de 16:9)
-] (app-screenshots-and-images.md#windows-10-and-xbox-image-169-super-hero-art) |
+](app-screenshots-and-images.md#windows-10-and-xbox-image-169-super-hero-art) |
 | **Images de Xbox**     | Requis pour l’affichage correct si vous publiez sur Xbox        | [Images Xbox
-] (app-captures d’écran-et-images.MD #xbox-images) |
+](app-screenshots-and-images.md#xbox-images) |
 | **Champs supplémentaires**  | Facultatif                                    | [Champs supplémentaires](create-app-store-listings.md#supplemental-fields) 
 | **Termes de recherche**              | Facultatif                                    | [Termes de recherche](create-app-store-listings.md#search-terms)         |
 | **Informations de copyright et de marque** | Facultatif                                 | [Informations de copyright et de marque](create-app-store-listings.md#copyright-and-trademark-info) |
@@ -111,7 +111,7 @@ Vous devez indiquer toutes les informations requises pour au moins l’une des l
 
 ### <a name="submission-options-page"></a>Page des options de soumission
 
-| Nom du champ                    | Remarques                                       | Informations supplémentaires                                                     |
+| Nom du champ                    | Notes                                       | Informations supplémentaires                                                     |
 |-------------------------------|---------------------------------------------|-------------------------------------------------------------------|
 | **Options de blocage de publication**     | Default : Publier cette soumission dès qu’il passe de certification (ou par dates que vous avez sélectionné dans la section Planification)      | [Options de blocage de publication](manage-submission-options.md#publishing-hold-options)    
 | **Notes relatives à la certification**     | Recommandé          | [Notes relatives à la certification](notes-for-certification.md)             |

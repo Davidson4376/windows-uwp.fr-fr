@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, compte de développeur, individuel, société, entreprise
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b35f95556a13d880992a12d7434af76feed4334
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 7556ca526ecfa28b1d97346501ec1875f938ca35
+ms.sourcegitcommit: 978df7dfd3813de51609b6a44aedcd402083a5fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63770889"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66826216"
 ---
 # <a name="account-types-locations-and-fees"></a>Types de compte, emplacements et frais
 
@@ -31,9 +31,9 @@ Voici les principales différences entre les deux types de compte.
 
 | Compte individuel | Compte d’entreprise |
 |--------------------|-----------------|
-| <ul><li>Coûte environ 19 USD (frais d’inscription ponctuels ; le montant exact varie en fonction de votre pays ou région)</li><li>Processus de vérification de compte plus court</li></ul> | <ul><li>Coûte environ 99 USD (frais d’inscription ponctuels ; le montant exact varie en fonction de votre pays ou région)</li><li>Nécessite une vérification renforcée du compte</li><li>Votre entreprise doit être reconnue en tant que telle dans le pays ou la région où elle est située</li><li>En mesure de soumettre des applications avec des fonctionnalités restreintes (comme décrit dans les [Stratégies du Microsoft Store](https://docs.microsoft.com/legal/windows/agreements/store-policies#1014-account-type))</li></ul> |
+| <ul><li>Coûte environ 19 USD (frais d’inscription ponctuels ; le montant exact varie en fonction de votre pays ou région)</li><li>Processus de vérification de compte plus court</li></ul> | <ul><li>Coûte environ 99 USD (frais d’inscription ponctuels ; le montant exact varie en fonction de votre pays ou région)</li><li>Nécessite une vérification renforcée du compte</li><li>Votre entreprise doit être reconnue en tant que telle dans le pays ou la région où elle est située</li><li>En mesure de soumettre des applications avec des fonctionnalités restreintes (comme décrit dans les [Stratégies du Microsoft Store](store-policies.md#1014-account-type))</li></ul> |
 
-Les comptes d’entreprise sont un peu plus onéreux, car des étapes supplémentaires sont nécessaires pour vérifier que vous êtes autorisé à configurer le compte au nom de votre entreprise. Par la [Store stratégies](https://docs.microsoft.com/legal/windows/agreements/store-policies#1014-account-type), des applications avec certaines fonctionnalités, telles que celles qui accèdent aux financiers des informations de compte ou nécessitant une authentification pour accéder aux fonctionnalités principales (sans utiliser un tiers sécurisé dédié fournisseur d’authentification), peuvent uniquement être publiés par les comptes de société.
+Les comptes d’entreprise sont un peu plus onéreux, car des étapes supplémentaires sont nécessaires pour vérifier que vous êtes autorisé à configurer le compte au nom de votre entreprise. Par la [Store stratégies](store-policies.md#1014-account-type), des applications avec certaines fonctionnalités, telles que celles qui accèdent aux financiers des informations de compte ou nécessitant une authentification pour accéder aux fonctionnalités principales (sans utiliser un tiers sécurisé dédié fournisseur d’authentification), peuvent uniquement être publiés par les comptes de société.
 
 ## <a name="account-verification"></a>Vérification de compte
 
@@ -252,4 +252,4 @@ La colonne **PayPal** indique si PayPal est un mode de paiement pris en charge q
 | Zambie                            | 19 USD              | 99 USD           | ZMK payé à la banque | Non     |  
 | Zimbabwe                          | 19 USD              | 99 USD           | USD payé à la banque | Non     |
 
-\*  PayPal peut être utilisé comme mode de paiement pour les comptes de paiement dans ce marché, mais ne peut pas être utilisée pour payer fo sont les frais d’inscription de compte développeur.
+\*  PayPal peut être utilisé comme mode de paiement pour les comptes de paiement dans ce marché, mais ne peut pas être utilisée pour payer les frais d’inscription de compte développeur.

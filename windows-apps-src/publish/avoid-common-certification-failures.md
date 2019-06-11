@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 62c99c159ff68201919fa15baded999e3b6a2477
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0032a5bbaafabab3c847b2b7c48536873f4532dd
+ms.sourcegitcommit: 978df7dfd3813de51609b6a44aedcd402083a5fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57625794"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66826170"
 ---
 # <a name="avoid-common-certification-failures"></a>Éviter les échecs de certification courants
 
@@ -19,7 +19,7 @@ ms.locfileid: "57625794"
 Consultez cette liste pour éviter les problèmes qui empêchent souvent les applications d’être certifiées, ou qui peuvent être identifiés au cours d’une vérification ponctuelle après la publication de l’application.
 
 > [!NOTE]
-> Veillez à consulter le [Microsoft Store stratégies](https://docs.microsoft.com/legal/windows/agreements/store-policies) pour vous assurer de votre application répond à toutes les exigences qui y figurent.
+> Veillez à consulter le [Microsoft Store stratégies](store-policies.md) pour vous assurer de votre application répond à toutes les exigences qui y figurent.
 
 -   Ne soumettez votre application que lorsqu’elle est terminée. Nous vous invitons à utiliser la description de votre application pour signaler les fonctionnalités à venir. Toutefois, assurez-vous que votre application ne contient pas de sections incomplètes, de liens vers des pages web en construction, ni toute autre chose qui donnerait au client l'impression que votre application est incomplète.
 
@@ -31,7 +31,7 @@ Consultez cette liste pour éviter les problèmes qui empêchent souvent les app
 
 -   [Fournissez toutes les informations requises](notes-for-certification.md) pour utiliser votre application, telles que le nom d’utilisateur et le mot de passe d’un compte de test si votre application nécessite que les utilisateurs se connectent à un service, ou toutes les étapes requises pour accéder aux fonctionnalités masquées ou verrouillées.
 
--   Inclure un [URL de stratégie de confidentialité](enter-app-properties.md#privacy-policy-url) si votre application requiert un ; par exemple, si votre application accède à tout type d’informations personnelles en aucune façon ou n’est requis par la loi. Pour aider à déterminer si votre application requiert une politique de confidentialité, consultez la [contrat du développeur de l’application](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) et [Microsoft Store stratégies](https://docs.microsoft.com/legal/windows/agreements/store-policies).
+-   Inclure un [URL de stratégie de confidentialité](enter-app-properties.md#privacy-policy-url) si votre application requiert un ; par exemple, si votre application accède à tout type d’informations personnelles en aucune façon ou n’est requis par la loi. Pour aider à déterminer si votre application requiert une politique de confidentialité, consultez la [contrat du développeur de l’application](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) et [Microsoft Store stratégies](store-policies.md).
 
 -   Vérifiez que la description de votre application indique clairement ce que fait votre application. Si vous avez besoin d'aide, consultez nos recommandations en matière de [rédaction d'une description d'application attractive](write-a-great-app-description.md).
 

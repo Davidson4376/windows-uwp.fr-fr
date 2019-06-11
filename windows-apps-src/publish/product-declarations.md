@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2bab1d6bd629aa85351e28a907d4b5ad705fb377
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 47011a22353f26361a392690d857bde1fc180c03
+ms.sourcegitcommit: 978df7dfd3813de51609b6a44aedcd402083a5fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63788371"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66826104"
 ---
 # <a name="product-declarations"></a>Déclarations de produit
 
@@ -21,7 +21,7 @@ Les sections suivantes décrivent certaines des déclarations et ce que vous dev
 
 ## <a name="this-app-allows-users-to-make-purchases-but-does-not-use-the-microsoft-store-commerce-system"></a>Cette application permet aux utilisateurs d’effectuer des achats, mais n’utilise pas le système de commerce Microsoft Store.
 
-Pour presque chaque envoi, vous devez laisser cette case décochée, depuis les applications qui offrent des opportunités pour acheter des éléments qui sont ou peuvent être consommées ou utilisées dans votre application doivent utiliser l’achat de dans l’application API Microsoft Store pour créer et soumettre les modules complémentaires. Par la [contrat du développeur de l’application](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement), les applications qui ont été créées et envoyées avant le 29 juin 2015, peut continuer à offrir des fonctionnalités d’achat dans l’application sans utiliser de moteur de Microsoft commerce, aussi longtemps que la fonctionnalité d’achat est conforme à la [Microsoft Store stratégies](https://docs.microsoft.com/legal/windows/agreements/store-policies#108-financial-transactions). Si cela s’applique à votre application, vous devez activer cette case. Sinon, laissez-la désactivée.
+Pour presque chaque envoi, vous devez laisser cette case décochée, depuis les applications qui offrent des opportunités pour acheter des éléments qui sont ou peuvent être consommées ou utilisées dans votre application doivent utiliser l’achat de dans l’application API Microsoft Store pour créer et soumettre les modules complémentaires. Par la [contrat du développeur de l’application](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement), les applications qui ont été créées et envoyées avant le 29 juin 2015, peut continuer à offrir des fonctionnalités d’achat dans l’application sans utiliser de moteur de Microsoft commerce, aussi longtemps que la fonctionnalité d’achat est conforme à la [Microsoft Store stratégies](store-policies.md#108-financial-transactions). Si cela s’applique à votre application, vous devez activer cette case. Sinon, laissez-la désactivée.
 
 ## <a name="this-app-has-been-tested-to-meet-accessibility-guidelines"></a>Cette application a fait l'objet de tests pour voir si elle est conforme aux recommandations d'accessibilité.
 

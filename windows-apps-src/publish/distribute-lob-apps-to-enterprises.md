@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, cœur de métier, métier, applications d’entreprise, store pour entreprises, store pour éducation, entreprise
 ms.localizationpriority: medium
-ms.openlocfilehash: b379762ba3d3ea11b974a84119280247b85bc19e
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: d44d2b248ddc2bff6ffa91860621fe315fb22c47
+ms.sourcegitcommit: 978df7dfd3813de51609b6a44aedcd402083a5fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63787075"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66826152"
 ---
 # <a name="distribute-lob-apps-to-enterprises"></a>Distribuer des applications métier aux entreprises
 
@@ -39,7 +39,7 @@ Pour confirmer l'association, cliquez sur **Accepter**. Votre compte pourra dés
 
 ## <a name="submit-lob-apps"></a>Soumettre des applications métiers
 
-Lorsque vous êtes prêt à publier une application destinée à une utilisation exclusive par une entreprise, vous suivez un processus similaire au processus de soumission d'application. L’application est soumise au même [processus de certification](the-app-certification-process.md) et doit être conforme à l’ensemble des [stratégies du Microsoft Store](https://docs.microsoft.com/legal/windows/agreements/store-policies). Seuls quelques aspects du processus sont différents.
+Lorsque vous êtes prêt à publier une application destinée à une utilisation exclusive par une entreprise, vous suivez un processus similaire au processus de soumission d'application. L’application est soumise au même [processus de certification](the-app-certification-process.md) et doit être conforme à l’ensemble des [stratégies du Microsoft Store](store-policies.md). Seuls quelques aspects du processus sont différents.
 
 
 ### <a name="visibility"></a>Visibilité

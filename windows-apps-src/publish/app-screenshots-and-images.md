@@ -6,12 +6,12 @@ ms.date: 03/07/2019
 ms.topic: article
 keywords: windows 10, uwp, bande-annonce, vidéo, capture d’écran, image, icône, description dans le Store, images de description dans le Store
 ms.localizationpriority: medium
-ms.openlocfilehash: a27763d76d2be65c7e0d2c6ccaeb0cd13123bdae
-ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.openlocfilehash: 3f1931a15b5517264cd11dca8d8086dda7094b93
+ms.sourcegitcommit: 978df7dfd3813de51609b6a44aedcd402083a5fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59244305"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66826158"
 ---
 # <a name="app-screenshots-images-and-trailers"></a>Captures d’écran, images et bandes-annonces de l’application
 
@@ -128,7 +128,7 @@ Pour concevoir des bandes-annonces efficaces, appliquez les recommandations suiv
 
 Vous devez également respecter la configuration requise répertoriée ci-dessous.
 
-**Pour ajouter les bandes-annonces à votre liste :**
+**Pour ajouter des codes de fin à votre annonce :**
 1. Chargez le **fichier vidéo** de votre bande-annonce dans la case indiquée. Une zone de liste déroulante s’affiche également au cas où vous souhaiteriez réutiliser une bande-annonce que vous avez déjà chargée (par exemple, pour une description dans le Store dans une autre langue).
 2. Après avoir chargé la bande-annonce, vous devez charger une **image miniature** pour l’accompagner. Il doit s'agir d'un fichier .png de 1920 x 1080 pixels, et généralement d'une image fixe extraite de la bande-annonce.
 3. Cliquez sur l’icône de crayon pour ajouter un **titre** à votre bande-annonce (255 caractères au maximum).
@@ -152,7 +152,7 @@ Lorsque vous fournissez vos bandes-annonces, veillez à respecter ces exigences�
 - Le titre ne doit pas dépasser 255 caractères. 
 - N’incluez pas les classifications d'âge minimum dans vos bandes-annonces.
 
-Comme les autres champs sur la page de description du Store, les bandes-annonces doivent obtenir une certification pour pouvoir être publiées sur le Microsoft Store. Assurez-vous que vos bandes-annonces respectent les [Politiques du Microsoft Store](https://docs.microsoft.com/legal/windows/agreements/store-policies).
+Comme les autres champs sur la page de description du Store, les bandes-annonces doivent obtenir une certification pour pouvoir être publiées sur le Microsoft Store. Assurez-vous que vos bandes-annonces respectent les [Politiques du Microsoft Store](store-policies.md).
 
 Il existe des exigences supplémentaires en fonction du type de fichier.
 
@@ -223,7 +223,7 @@ L’image **2:1 (2400 x 1200)** est uniquement utilisée si votre application 
 
 Si votre application précédemment soumis prend en charge les versions antérieures du système d’exploitation (Windows 8.x et/ou de Windows Phone 8.x), ces images doivent être fournis dans l’ordre pour nous permettre de prendre en compte présentant votre application dans des présentations promotionnelles (même si elles ne garantissent pas que votre application est proposée). Si votre application ne prend pas en charge ces versions de système d’exploitation, ignorez cette section. (Cette section était précédemment appelée **Images promotionnelles facultatives**.)
 
-**Pour Windows Phone 8.1 et versions antérieures**, deux tailles d’image peuvent être utilisées dans les dispositions de promotions : **1 000 x 800 pixels (5:4)** et **358 x 358 pixels (1:1)**. Si votre application s’exécute sur Windows Phone 8.1 ou version antérieure, nous vous recommandons de fournir des images dans les deux de ces tailles.  
+**Pour Windows Phone 8.1 et versions antérieures**, deux tailles d’image peuvent être utilisées dans les dispositions de promotions : **1 000 x 800 pixels (5:4)** et **358 x 358 pixels (1:1)** . Si votre application s’exécute sur Windows Phone 8.1 ou version antérieure, nous vous recommandons de fournir des images dans les deux de ces tailles.  
 
 > [!TIP]
 > Veillez à fournir une image en 300 x 300 pour l’icône de vignette d'application dans la section [Logos Store](#store-logos) pour toute soumission qui prend en charge Windows Phone 8.1 ou versions antérieures. Cela permet de garantir que votre application n’apparaît pas dans le Store avec une icône vide.  

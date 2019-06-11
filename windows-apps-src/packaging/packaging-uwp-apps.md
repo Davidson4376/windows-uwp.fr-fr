@@ -2,19 +2,19 @@
 ms.assetid: 96361CAF-C347-4671-9721-8208CE118CA4
 title: Création de packages d’application UWP
 description: Pour distribuer ou vendre votre application de plateforme Windows universelle (UWP), vous devez créer un package d’application pour elle.
-ms.date: 03/18/2019
+ms.date: 06/10/2019
 ms.topic: article
 keywords: windows 10, uwp
 f1_keywords:
 - vs.packagewizard
 - vs.storeassociationwizard
 ms.localizationpriority: medium
-ms.openlocfilehash: ba1e09a3819b2c22de52760519f352adc36d6362
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 265e034b264cf82bacfa5a32141eb5d999d57108
+ms.sourcegitcommit: aa5a055e3ff9ee9defc73ed9567196d59f59542a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372369"
+ms.lasthandoff: 06/10/2019
+ms.locfileid: "66825037"
 ---
 # <a name="package-a-uwp-app-with-visual-studio"></a>Package d’une application UWP avec Visual Studio
 
@@ -54,7 +54,7 @@ Le fichier manifeste de l’application (Package.appxmanifest.xml) est un fichie
 
 Le Concepteur de manifeste de Visual Studio vous permet de mettre à jour le fichier manifeste sans modifier le code XML brut du fichier.
 
-**Configurer un package avec le Concepteur de manifeste**
+### <a name="configure-a-package-with-the-manifest-designer"></a>Configurer un package avec le concepteur du manifeste
 
 1.  Dans l’**Explorateur de solutions**, développez le nœud de projet de votre application UWP.
 2.  Double-cliquez sur le fichier **Package.appxmanifest**. Si le fichier manifeste est déjà ouvert dans le mode code XML, Visual Studio vous invite à fermer le fichier.
@@ -81,7 +81,7 @@ Pour distribuer une application via Microsoft Store, vous devez créer un packag
 >[!NOTE]
 > Si vous souhaitez créer un package d’application (.appx ou .msix) ou d’une offre groupée d’applications (.appxbundle ou .msixbundle) manuellement, consultez [créer un package d’application avec l’outil MakeAppx.exe](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool).
 
-### <a name="to-create-your-app-package-upload-file-using-visual-studio"></a>Pour créer votre fichier de chargement de package app à l’aide de Visual Studio
+### <a name="create-your-app-package-upload-file-using-visual-studio"></a>Créer votre fichier de chargement de package app à l’aide de Visual Studio
 
 1.  Dans l’**Explorateur de solutions**, ouvrez la solution pour votre projet d’application UWP.
 2.  Cliquez avec le bouton droit sur le projet et choisissez **Store**->**Create App Packages**. Si cette option est désactivée ou n’apparaît pas, vérifiez que le projet est bien un projet Windows universel.  
@@ -100,11 +100,10 @@ Pour distribuer une application via Microsoft Store, vous devez créer un packag
     ![Créer la fenêtre de Packages d’application avec la configuration de package indiquée](images/packaging-screen5.jpg)
 7.  Inclure les fichiers de symboles PDB complets à [analyser les performances de l’application](https://docs.microsoft.com/windows/uwp/publish/analytics) à partir du centre de partenaires une fois que votre application a été publiée. Configurez tous les détails supplémentaires, notamment la numérotation de version ou l'emplacement de sortie de l'application.
 8.  Cliquez sur **Créer** pour générer le package d'application. Si vous avez sélectionné une de la **je souhaite créer des packages à télécharger dans le Microsoft Store** options dans l’étape 3 et créent un package pour la soumission des partenaires, l’Assistant va créer un fichier de chargement de package (.appxupload ou .msixupload). Si vous avez sélectionné **je souhaite créer des packages pour le chargement indépendant** à l’étape 3, l’Assistant va créer un package d’application unique ou un lot d’applications en fonction de vos sélections à l’étape 6.
-9. Lorsque votre application est empaquetée, cette boîte de dialogue s’affiche et vous pouvez récupérer votre téléchargement de fichier de package d’application à partir de l’emplacement de sortie spécifié. À ce stade, vous pouvez [valider votre package d’application sur l’ordinateur local ou un ordinateur distant](#validate-your-app-package) et [automatiser envoyer au Windows store](#automate-store-submission).
+9. Lorsque votre application est empaquetée, cette boîte de dialogue s’affiche et vous pouvez récupérer votre téléchargement de fichier de package d’application à partir de l’emplacement de sortie spécifié. À ce stade, vous pouvez [valider votre package d’application sur l’ordinateur local ou un ordinateur distant](#validate-your-app-package) et [automatiser les soumissions aux magasins](#automate-store-submissions).
     ![Création de package terminée fenêtre avec les options de validation affichées](images/packaging-screen6.jpg)
 
-
-### <a name="to-create-your-app-package-upload-file-manually"></a>Pour créer votre téléchargement de fichier de package d’application manuellement
+### <a name="create-your-app-package-upload-file-manually"></a>Créer votre téléchargement de fichier de package d’application manuellement
 
 1. Placez les fichiers suivants dans un dossier :
     - Un ou plusieurs packages d’application (.msix ou .appx) ou un lot d’applications (.msixbundle ou .appxbundle).
@@ -112,46 +111,74 @@ Pour distribuer une application via Microsoft Store, vous devez créer un packag
 2. Compressez le dossier.
 3. Modifiez le nom d’extension dossier compressé de .zip en .msixupload ou .appxupload.
 
-### <a name="validate-your-app-package"></a>Valider votre package d’application
+## <a name="validate-your-app-package"></a>Valider votre package d’application
 
 Validez votre application avant de le soumettre à des partenaires pour la certification sur un ordinateur local ou distant. Vous pouvez uniquement valider les versions Release pour votre package d’application et non les versions Debug. Pour plus d’informations sur la soumission de votre application pour les partenaires, consultez [envois d’application](https://docs.microsoft.com/windows/uwp/publish/app-submissions).
 
-**Pour valider votre package d’application localement**
+### <a name="validate-your-app-package-locally"></a>Valider votre package d’application localement
 
 1. Dans la dernière **création de Package terminée** page de la **créer des Packages d’application** Assistant, laissez le **ordinateur Local** option est sélectionnée et cliquez sur **lancer Kit de Certification des applications Windows**. Pour plus d’informations sur le test de votre application avec le Kit de certification des applications Windows, voir [Kit de certification des applications Windows](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit).
 
-    Le Kit de certification des applications Windows effectue divers tests et renvoie les résultats. Voir [Tests du kit de certification des applications Windows](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit-tests) pour plus d'informations spécifiques.
+    Le Kit de Certification des applications de Windows (Kit) effectue différents tests et retourne les résultats. Voir [Tests du kit de certification des applications Windows](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit-tests) pour plus d'informations spécifiques.
 
     Si vous avez un appareil Windows 10 distant que vous souhaitez utiliser pour le test, vous devrez installer le Kit de Certification des applications Windows manuellement sur cet appareil. La section suivante vous guidera lors de ces étapes. Une fois cette opération terminée, vous pouvez sélectionner **Remote machine**, puis cliquer sur **Launch Windows App Certification Kit** pour vous connecter à l’appareil distant et exécuter les tests de validation.
 
 2. Une fois que le kit a terminé et que votre application a passé la certification, vous êtes prêt à soumettre votre application au centre de partenaires. Assurez-vous de charger le fichier approprié. Vous trouverez l’emplacement par défaut du fichier dans le dossier racine de votre solution `\[AppName]\AppPackages` et se termine avec l’extension de fichier .appxupload ou .msixupload. Le nom doit être au format `[AppName]_[AppVersion]_x86_x64_arm_bundle.appxupload` ou `[AppName]_[AppVersion]_x86_x64_arm_bundle.msixupload` si vous avez opté pour un lot d’applications avec l’ensemble de l’architecture de package sélectionné.
 
-**Pour valider votre package d’application sur un appareil Windows 10 distant**
+### <a name="validate-your-app-package-on-a-remote-windows10-device"></a>Valider votre package d’application sur un appareil Windows 10 distant
 
-1.  Activer votre appareil Windows 10 pour le développement en suivant le [activer votre appareil pour le développement](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development) obtenir des instructions.
+1. Activer votre appareil Windows 10 pour le développement en suivant le [activer votre appareil pour le développement](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development) obtenir des instructions.
     >[!IMPORTANT]
     > Impossible de valider votre package d’application sur un appareil ARM distant pour Windows 10.
-2.  Téléchargez et installez les outils de contrôle à distance de Visual Studio. Ils sont utilisés pour exécuter le kit de certification des applications Windows à distance. Vous pouvez obtenir plus d’informations sur ces outils, y compris sur l’endroit où les télécharger, en consultant [Exécuter les applications UWP sur un ordinateur distant](https://docs.microsoft.com/visualstudio/debugger/run-windows-store-apps-on-a-remote-machine?view=vs-2015).
-3.  Télécharger requis [Kit de Certification des applications Windows](https://go.microsoft.com/fwlink/p/?LinkID=309666) , puis installez-le sur votre appareil Windows 10 distant.
-4.  Sur la page **Package Creation Completed** de l’Assistant, choisissez la case d’option **Remote Machine**, puis choisissez le bouton de sélection en regard du bouton **Test Connection**.
+2. Téléchargez et installez les outils de contrôle à distance de Visual Studio. Ils sont utilisés pour exécuter le kit de certification des applications Windows à distance. Vous pouvez obtenir plus d’informations sur ces outils, y compris sur l’endroit où les télécharger, en consultant [Exécuter les applications UWP sur un ordinateur distant](https://docs.microsoft.com/visualstudio/debugger/run-windows-store-apps-on-a-remote-machine?view=vs-2015).
+3. Télécharger requis [Kit de Certification des applications Windows](https://go.microsoft.com/fwlink/p/?LinkID=309666) , puis installez-le sur votre appareil Windows 10 distant.
+4. Sur la page **Package Creation Completed** de l’Assistant, choisissez la case d’option **Remote Machine**, puis choisissez le bouton de sélection en regard du bouton **Test Connection**.
     >[!NOTE]
     > Le **Machine distante** case d’option est disponible uniquement si vous avez sélectionné au moins une configuration de solution qui prend en charge la validation. Pour plus d’informations sur le test de votre application avec le Kit de certification des applications Windows, voir [Kit de certification des applications Windows](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit).
-5.  Spécifiez une forme d’appareil dans votre sous-réseau, ou fournissez le nom de serveur de nom de domaine (DNS, Domain Name System) ou l’adresse IP d’un appareil en dehors de votre sous-réseau.
-6.  Dans la liste **Authentication Mode**, choisissez **None** si votre appareil ne requiert pas d’authentification avec vos informations d’identification Windows.
-7.  Choisissez le bouton **Select**, puis le bouton **Launch Windows App Certification Kit**. Si les outils à distance sont en cours d’exécution sur cet appareil, Visual Studio s’y connecte, puis effectue les tests de validation. Voir [Tests du kit de certification des applications Windows](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit-tests).
+5. Spécifiez une forme d’appareil dans votre sous-réseau, ou fournissez le nom de serveur de nom de domaine (DNS, Domain Name System) ou l’adresse IP d’un appareil en dehors de votre sous-réseau.
+6. Dans la liste **Authentication Mode**, choisissez **None** si votre appareil ne requiert pas d’authentification avec vos informations d’identification Windows.
+7. Choisissez le bouton **Select**, puis le bouton **Launch Windows App Certification Kit**. Si les outils à distance sont en cours d’exécution sur cet appareil, Visual Studio s’y connecte, puis effectue les tests de validation. Voir [Tests du kit de certification des applications Windows](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit-tests).
 
-### <a name="automate-store-submission"></a>Automatiser les envoyer au Windows store
+## <a name="automate-store-submissions"></a>Automatiser les soumissions de Store
 
-À partir de Visual Studio 2019, vous pouvez envoyer le fichier .appxupload généré pour le Microsoft Store directement à partir de l’IDE d’en sélectionnant le **envoyer automatiquement pour le Microsoft Store, après la validation du Kit de Certification des applications Windows** option. Vous devez spécifier les informations d’identification utilisées pour l’envoi. Ces informations d’identification sont constituées de trois parties : le **ID de locataire Azure**, le **ID Client** et **clé secrète Client**. Suivez ces étapes pour les obtenir :
+À partir de Visual Studio 2019, vous pouvez envoyer le fichier .appxupload généré pour le Microsoft Store directement à partir de l’IDE d’en sélectionnant le **envoyer automatiquement pour le Microsoft Store, après la validation du Kit de Certification des applications Windows** option à la fin de la [Assistant de créer des Packages d’application](#create-your-app-package-upload-file-using-visual-studio). Cette fonctionnalité s’appuie sur Azure Active Directory pour accéder aux informations de compte de partenaires nécessaires pour publier votre application. Pour utiliser cette fonctionnalité, vous devez associer Azure Active Directory à votre compte espace partenaires et les récupérer plusieurs informations d’identification requises pour les envois.
 
-1. Dans le centre de partenaires, accédez à votre **les paramètres du développeur**, cliquez sur **utilisateurs**et associer le compte du centre de développement de votre organisation avec un annuaire Azure AD de votre organisation. Pour obtenir des instructions détaillées, voir [Gérer les utilisateurs de comptes](https://docs.microsoft.com/windows/uwp/publish/manage-account-users).
-2. Dans le **utilisateurs** , cliquez sur **ajouter des applications Azure AD**, ajouter l’application Azure AD qui représente l’application ou service que vous utiliserez pour accéder aux soumissions pour votre compte Centre de développement et lui attribuer le Rôle de gestionnaire. Si cette application existe déjà dans votre annuaire Azure AD, vous pouvez le sélectionner dans la page d’applications ajouter Azure AD pour l’ajouter à votre compte Centre de développement. Sinon, vous pouvez créer une application Azure AD dans la page **Ajouter des applications Azure AD**. Pour plus d’informations, consultez [ajouter des utilisateurs, groupes et applications Azure AD pour votre compte espace partenaires](/windows/uwp/publish/add-users-groups-and-azure-ad-applications).
-3. Retour à la **gérer les utilisateurs** , cliquez sur le nom de votre application Azure AD pour accéder aux paramètres d’application et copie le **ID de locataire** et **ID Client** valeurs.
-4. Cliquez sur **Ajouter une clé**. Sur l’écran suivant, copiez la valeur de clé, qui correspond à la clé secrète Client. Vous ne serez pas en mesure d’accéder à ces informations à nouveau une fois que vous quittez cette page, veillez à ne pas le perdre. Pour plus d’informations, consultez les informations sur la gestion des clés dans [ajouter des utilisateurs, groupes et applications Azure AD pour votre compte espace partenaires](/windows/uwp/publish/add-users-groups-and-azure-ad-applications).
-    ![Vérifier et la progression de la publication](images/packaging-screen8.jpg)
-    > [!Important] 
+### <a name="associate-azure-active-directory-with-your-partner-center-account"></a>Associer Azure Active Directory à votre compte espace partenaires
+
+Avant de pouvoir récupérer les informations d’identification sont requises pour les soumissions Store automatique, vous devez suivre ces étapes dans le [tableau de bord de partenaires](https://partner.microsoft.com/dashboard) si vous n'avez pas déjà fait.
+
+1. [Associer votre compte espace partenaires à Azure Active Directory votre organisation](https://docs.microsoft.com/windows/uwp/publish/associate-azure-ad-with-partner-center). Si votre organisation utilise déjà Office 365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’Azure AD. Sinon, vous pouvez créer un nouveau client à partir d’Azure AD au sein des partenaires sans frais supplémentaires.
+
+2. [Ajouter une application Azure AD à votre compte Centre de partenaire](https://docs.microsoft.com/windows/uwp/publish/add-users-groups-and-azure-ad-applications#add-azure-ad-applications-to-your-partner-center-account). Cette application Azure AD représente l’application ou le service que vous utiliserez pour accéder aux soumissions pour votre compte Centre de développement. Vous devez affecter cette application à la **Manager** rôle. Si cette application existe déjà dans votre annuaire Azure AD, vous pouvez la sélectionner dans la page **Ajouter des applications Azure AD** pour l’ajouter à votre compte du Centre de développement. Sinon, vous pouvez créer une application Azure AD dans la page **Ajouter des applications Azure AD**.
+
+### <a name="retrieve-the-credentials-required-for-submissions"></a>Récupérer les informations d’identification requises pour les envois
+
+Ensuite, vous pouvez récupérer les informations d’identification de partenaires requises pour les envois : le **ID de locataire Azure**, le **ID Client** et **clé Client**.
+
+1. Accédez à la [tableau de bord de partenaires](https://partner.microsoft.com/dashboard) et connectez-vous avec vos informations d’identification Azure AD.
+
+2. Sur le tableau de bord de partenaires, sélectionnez l’icône d’engrenage (dans le coin supérieur droit du tableau de bord), puis **les paramètres du développeur**.
+
+3. Dans le **paramètres** menu dans le volet gauche, cliquez sur **utilisateurs**.
+
+4. Cliquez sur le nom de votre application Azure AD pour accéder aux paramètres de l’application. Dans cette page, copiez le **ID de locataire** et **ID Client** valeurs.
+
+5. Dans le **clés** , cliquez sur **ajouter une nouvelle clé**. Sur l’écran suivant, copiez le **clé** valeur, qui correspond à la clé secrète client. Vous ne serez pas en mesure d’accéder à ces informations à nouveau une fois que vous quittez cette page, veillez à ne pas le perdre. Pour plus d’informations, voir [Gérer les clés pour une application Azure AD](https://docs.microsoft.com/windows/uwp/publish/add-users-groups-and-azure-ad-applications#manage-keys-for-an-azure-ad-application).
+
+### <a name="configure-automatic-store-submissions-in-visual-studio"></a>Configurer automatiques soumissions de Store dans Visual Studio
+
+Après avoir terminé les étapes précédentes, vous pouvez configurer automatiques soumissions de Store dans Visual Studio 2019.
+
+1. À la fin de la [Assistant de créer des Packages d’application](#create-your-app-package-upload-file-using-visual-studio), sélectionnez **envoyer automatiquement pour le Microsoft Store, après la validation du Kit de Certification des applications Windows** et cliquez sur **reconfigurer**.
+
+2. Dans le **les paramètres d’envoi de Microsoft Store configurer** boîte de dialogue, entrez la clé de locataire Azure ID, ID de Client et Client.
+
+    ![Configurer les paramètres d’envoi de Microsoft Store](images/packaging-screen8.jpg)
+
+    > [!Important]
     > Vos informations d’identification peuvent être enregistrées dans votre profil à utiliser dans les soumissions futures
-5. Cliquez sur **OK**.
+
+3. Cliquez sur **OK**.
 
 L’envoi démarre une fois le test kit ont terminé. Vous pouvez suivre la progression de la soumission dans le **vérifier et publier** fenêtre.
 
