@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: d720b256ae528192d694f98877126a6df087a18e
-ms.sourcegitcommit: 26bd7953ee5c5e625d4ed8f93df0391511c76f23
+ms.openlocfilehash: 9ce2024131035e77e7d8140c047e37979c6ac490
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66491140"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67040141"
 ---
 # <a name="launch-the-windows-settings-app"></a>Lancer l’application Paramètres Windows
 
@@ -251,7 +251,7 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 | Notifications | ms-settings:privacy-notifications |
 | Autres appareils | ms-settings:privacy-customdevices |
 | Images | ms-settings:privacy-pictures |
-| Appels téléphoniques | MS-paramètres : confidentialité-phonecall (**déconseillées dans Windows 10, version 1809 et versions ultérieure**) |
+| Appels téléphoniques | MS-paramètres : confidentialité-appels (**déconseillées dans Windows 10, version 1809 et versions ultérieure**) |
 | Radios | ms-settings:privacy-radios |
 | Voix, entrée manuscrite et saisie |ms-settings:privacy-speechtyping |
 | Tâches | ms-settings:privacy-tasks |
