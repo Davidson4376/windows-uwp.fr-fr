@@ -8,10 +8,10 @@ keywords: contrat définissant les politiques du microsoft store
 ms.localizationpriority: high
 ms.assetid: B15D4F19-4E6A-4C27-AD64-F03014D11BA9
 ms.openlocfilehash: 550ffeac8912769fc7e319d819f4de67f6d36cf1
-ms.sourcegitcommit: 978df7dfd3813de51609b6a44aedcd402083a5fd
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/11/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66826416"
 ---
 # <a name="app-quality"></a>Qualité des applications
@@ -66,7 +66,7 @@ Les **captures d’écran** et les **bandes-annonces** sont l’occasion de four
 
 Si vous voulez que le nombre de téléchargements ne cesse d'augmenter, proposez un contenu particulièrement étonnant, divertissant ou utile.
 
-- Offrez une valeur durable. Exemple :
+- Offrez une valeur durable. Par exemple :
     - Votre application de cuisine inclut-elle suffisamment de recettes pour que le client veuille l'utiliser à maintes reprises ?
     - L'application de votre équipe sportive est-elle régulièrement actualisée et offre-t-elle des statistiques à jour, ou juste un ensemble figé de résultats sportifs ?
     - Votre jeu propose-t-il des modes de jeu intéressants et plusieurs fins de parties possibles ?
@@ -86,7 +86,7 @@ Les clients apprécient l'attention apportée à leurs commentaires comme à leu
 - Pour plus d’informations, consultez [Impliquer vos clients](https://developer.microsoft.com/store/engage).
 
 
-### <a name="see-also"></a>Voir aussi
+### <a name="see-also"></a>Voir également
 
 - [Politiques et code de conduite du Microsoft Store](store-policies-and-code-of-conduct.md)
 - [Contrat du développeur d’application](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)

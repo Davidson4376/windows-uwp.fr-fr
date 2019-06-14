@@ -8,10 +8,10 @@ keywords: contrat définissant les politiques du microsoft store
 ms.localizationpriority: high
 ms.assetid: 9DA14ADF-B4FB-4EC8-8D63-4B9152476BE0
 ms.openlocfilehash: 624b40fd5980fe66bbdf538845d81082e91c5aec
-ms.sourcegitcommit: 978df7dfd3813de51609b6a44aedcd402083a5fd
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/11/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66826436"
 ---
 # <a name="store-policies-and-code-of-conduct"></a>Politiques et code de conduite du Microsoft Store
