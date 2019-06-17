@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 22aefb58dc06a35ed3a10338eb585aa6c49e55fc
-ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
+ms.openlocfilehash: 4846a29e914ffed15e4c3dea938cc51cefd566e0
+ms.sourcegitcommit: b9e2cd5232ad98f4ef367881b92000a3ae610844
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66215103"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67131947"
 ---
 # <a name="call-uwp-apis-in-desktop-apps"></a>Appeler des API UWP dans les applications de bureau
 
@@ -213,10 +213,6 @@ Le compilateur génère ce code uniquement si cette constante est définie dans 
 Vous pouvez compiler un ensemble de fichiers binaires pour l’ensemble de vos utilisateurs Windows, quelle que soit la version de Windows exécutée. Votre application appelle Windows APIs Runtime uniquement si l’utilisateur s’exécute votre application sous la forme d’une application empaquetée sur Windows 10.
 
 Pour ajouter des vérifications à l’exécution à votre code, le plus simple consiste à installer ce package Nuget : [Programmes d’assistance de pont du bureau](https://www.nuget.org/packages/DesktopBridge.Helpers/) , puis utilisez le ``IsRunningAsUWP()`` méthode porte désactiver tout le code qui appelle Windows APIs Runtime. consultez le blog pour plus d’informations : [Pont du bureau - identifier le contexte de l’application](https://blogs.msdn.microsoft.com/appconsult/2016/11/03/desktop-bridge-identify-the-applications-context/).
-
-## <a name="related-video"></a>Vidéo associée
-
-<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Demo-Use-UWP-APIs-in-Your-Code-3d78c6WhD_9506218965" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
 
 ## <a name="related-samples"></a>Exemples connexes
 
