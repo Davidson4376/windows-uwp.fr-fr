@@ -9,12 +9,12 @@ ms.date: 08/04/2017
 keywords: windows uwp, plateforme Windows universelle, Windows Runtime, API, api windows, informations de référence de l’api windows, api winrt, informations de référence de l’api windows, api uwp, informations de référence de l’api uwp, développer une application uwp, concevoir une application uwp, publier une application uwp
 ms.localizationpriority: medium
 ms.technology: uwp-conceptual-docs
-ms.openlocfilehash: 04adb7de9fa52988329bd8b5739b6bc315ddf786
-ms.sourcegitcommit: a4fe508e62827a10471e2359e81e82132dc2ac5a
+ms.openlocfilehash: 7b89ef27fb83ff12fc2d65e622975ca5dd4f1510
+ms.sourcegitcommit: b9e2cd5232ad98f4ef367881b92000a3ae610844
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/03/2019
-ms.locfileid: "66468336"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67131913"
 ---
 # <a name="universal-windows-platform-documentation"></a>Documentation sur la plateforme Windows universelle
 
@@ -217,7 +217,7 @@ La plateforme Windows universelle (UWP) vous permet de créer des applications p
                 <div class="card">
                     <div class="cardText">
                         <h3>Vous débutez dans le développement ?</h3>
-                        <p><a href="//mva.microsoft.com/training-topics/c-app-development">Académie virtuelle Microsoft</a></p>
+                        <p><a href="//docs.microsoft.com/learn">Microsoft Learn</a></p>
                         <p><a href="//www.linkedin.com/learning/learning-universal-windows-app-development/welcome">LinkedIn Learning</a></p>
                         </div>
                     </div>

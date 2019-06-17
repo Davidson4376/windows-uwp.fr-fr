@@ -6,12 +6,12 @@ ms.date: 03/23/2018
 ms.topic: article
 keywords: bien démarrer, windows 10, uwp, xaml, c#
 ms.localizationpriority: medium
-ms.openlocfilehash: 0401c049b6e1789e4f5a43ad8d88c23b5e28000a
-ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.openlocfilehash: c3f34d6ff8b23d23589d6899984f53fd6be34aca
+ms.sourcegitcommit: b9e2cd5232ad98f4ef367881b92000a3ae610844
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58162935"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67131930"
 ---
 # <a name="get-started-with-windows-10-apps"></a>Bien démarrer avec les applications Windows 10 
  
@@ -222,7 +222,7 @@ ms.locfileid: "58162935"
                 <div class="card">
                     <div class="cardText">
                         <h3>Vous débutez dans le développement ?</h3>
-                        <p><a href="//mva.microsoft.com/training-topics/c-app-development">Académie virtuelle Microsoft</a></p>
+                        <p><a href="//docs.microsoft.com/learn">Microsoft Learn</a></p>
                         <p><a href="//www.linkedin.com/learning/learning-universal-windows-app-development/welcome">LinkedIn Learning</a></p>
                         </div>
                     </div>
