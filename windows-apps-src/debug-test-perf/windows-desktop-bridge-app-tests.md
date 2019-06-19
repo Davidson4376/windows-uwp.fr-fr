@@ -6,12 +6,12 @@ ms.date: 12/18/2017
 ms.topic: article
 keywords: Windows 10, uwp, certification des applications
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f979edbd49699447040880964dd1378bc7c94c0
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 38c9a40dbe1a46aa125c76cd1fcc88a84685c8cc
+ms.sourcegitcommit: 280193dfe5a106fc6b4c85df3ac40535547b855c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66362082"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67235168"
 ---
 # <a name="windows-desktop-bridge-app-tests"></a>Tests d’application Pont du bureau Windows
 
@@ -30,7 +30,7 @@ Ce test vérifie que tous les fichiers exécutables portables (PE) contiennent u
 Le test analyse tous les fichiers exécutables portables contenus dans le package et recherche une signature dans leur en-tête. Il est recommandé de signer numériquement tous les fichiers PE. Un avertissement est généré si l’un des fichiers PE n’est pas signé.
  
 **Actions correctives**  
-Il est toujours recommandé de signer numériquement les fichiers. Pour plus d’informations, voir [Introduction à la signature de code](https://msdn.microsoft.com/en-us/library/ms537361(v=vs.85).aspx).
+Il est toujours recommandé de signer numériquement les fichiers. Pour plus d’informations, voir [Introduction à la signature de code](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms537361(v=vs.85)).
 
 ### <a name="2-file-association-verbs"></a>2. Verbes d’association de fichier 
 **Arrière-plan**  
