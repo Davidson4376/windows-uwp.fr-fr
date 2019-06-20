@@ -8,12 +8,12 @@ keywords: voix, vocal, reconnaissance vocale, langage naturel, dictée, saisie, 
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: fb292ad5cba892275709fbc89d5d53fa136144f3
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: ef8cdad247a57ce5fab461e70c2725fda4231efd
+ms.sourcegitcommit: ed32219e04f814a12ea018348e9cf678fcfd5e3a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365297"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67253062"
 ---
 # <a name="speech-interactions"></a>Interactions vocales
 
@@ -58,7 +58,7 @@ Arrêtez la reconnaissance si une entrée en provenance d’un appareil autre qu
 
 Spécifiez la durée maximale sans entrée vocale indiquant que la reconnaissance est terminée. Ne redémarrez pas automatiquement la reconnaissance après cette période de temps, car cela indique généralement que l’utilisateur a cessé d’interagir avec votre application.
 
-Désactivez la reconnaissance vocale continue de l’interface utilisateur et mettez fin à la session de reconnaissance si aucune connexion réseau n’est disponible. La reconnaissance continue nécessite une connexion réseau.
+Désactivez la reconnaissance vocale continue de l’interface utilisateur et mettez fin à la session de reconnaissance si aucune connexion réseau n’est disponible. Reconnaissance continue nécessite une connexion réseau.
 
 ## <a name="commanding"></a>Commandes
 
@@ -200,7 +200,7 @@ Vous devez écouter toutes les chaînes de texte TTS pour vous assurer qu’elle
 -   En reliant une séquence de mots inhabituels ou en prononçant des numéros de référence ou des signes de ponctuation, l’expression risque de devenir incompréhensible.
 -   La parole peut manquer de naturel lorsque la prosodie ou l’intonation est différente de la façon dont un locuteur natif prononcerait une expression.
 
-Vous pouvez traiter les deux problèmes en fournissant au synthétiseur vocal une entrée basée sur le langage SSML plutôt que sur du texte brut. Pour plus d’informations sur le langage SSML, voir [Utiliser le langage SSML pour contrôler la voix synthétisée](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh378454(v=office.14)) et [Informations de référence sur le langage SSML (Speech Synthesis Markup Language)](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh378377(v=office.14)).
+Ces deux problèmes peuvent être adressés à l’aide de SSML au lieu de texte brut en tant qu’entrée du synthétiseur vocal. Pour plus d’informations sur le langage SSML, voir [Utiliser le langage SSML pour contrôler la voix synthétisée](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh378454(v=office.14)) et [Informations de référence sur le langage SSML (Speech Synthesis Markup Language)](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh378377(v=office.14)).
 
 ## <a name="other-articles-in-this-section"></a>Autres articles de cette section 
 

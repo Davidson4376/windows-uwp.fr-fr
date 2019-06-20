@@ -8,12 +8,12 @@ ms.date: 11/14/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2848b22c69960075297546d401689d4c51c637aa
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: dc13b53450c97ffcd3d44b58d564c813344abf0a
+ms.sourcegitcommit: ed32219e04f814a12ea018348e9cf678fcfd5e3a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361930"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67253055"
 ---
 # <a name="store-and-retrieve-settings-and-other-app-data"></a>Stocker et récupérer des paramètres et autres données d’application
 
@@ -430,7 +430,7 @@ localSettings.DeleteContainer("exampleContainer");
 ## <a name="versioning-your-app-data"></a>Contrôle de version de vos données d’application
 
 
-Vous pouvez éventuellement créer différentes versions des données d’application pour votre application. Vous pouvez par exemple créer une nouvelle version de votre application qui aura pour effet de changer le format de ses données d’application sans pour autant causer de problèmes de compatibilité avec la version précédente de l’application. L’application examine la version des données d’application dans le magasin de données et si la version est antérieure à la version attendue par l’application, celle-ci doit mettre à jour les données d’application vers le nouveau format et mettre à jour la version. Pour en savoir plus, consultez la propriété [**Application.Version**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.version) et la méthode [**ApplicationData.SetVersionAsync**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.).
+Vous pouvez éventuellement créer différentes versions des données d’application pour votre application. Vous pouvez par exemple créer une nouvelle version de votre application qui aura pour effet de changer le format de ses données d’application sans pour autant causer de problèmes de compatibilité avec la version précédente de l’application. L’application examine la version des données d’application dans le magasin de données et si la version est antérieure à la version attendue par l’application, celle-ci doit mettre à jour les données d’application vers le nouveau format et mettre à jour la version. Pour en savoir plus, consultez la propriété [**Application.Version**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.version) et la méthode [**ApplicationData.SetVersionAsync**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.setversionasync).
 
 ## <a name="related-articles"></a>Articles connexes
 
