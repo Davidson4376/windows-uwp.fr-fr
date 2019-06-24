@@ -1,36 +1,36 @@
 ---
-description: Cette rubrique montre comment créer des API C++/WinRT à l’aide de la structure de base **winrt::implements**, directement ou indirectement.
+description: Cette rubrique montre comment créer des API C++/WinRT à l’aide du struct de base **winrt::implements**, directement ou indirectement.
 title: Créer des API avec C++/WinRT
 ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projeté, projection, implémentation, implémenter, classe runtime, activation
 ms.localizationpriority: medium
 ms.openlocfilehash: 526c6fba76539a5d43231c29479621478b2dde59
-ms.sourcegitcommit: 6c7e1aa3bd396a1ad714e8b77c0800759dc2d8e1
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/17/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65821086"
 ---
 # <a name="author-apis-with-cwinrt"></a>Créer des API avec C++/WinRT
 
-Cette rubrique montre comment créer [C++ / c++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) API à l’aide de la [ **winrt::implements** ](/uwp/cpp-ref-for-winrt/implements) base struct, directement ou indirectement. Les synonymes de *créer* dans ce contexte sont *produire* ou *implémenter*. Cette rubrique couvre les scénarios suivants pour l’implémentation d’API sur un type C++/WinRT, dans cet ordre.
+Cette rubrique montre comment créer des API [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) à l’aide du struct de base [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements), directement ou indirectement. Dans ce contexte, *créer* est synonyme de *produire* ou *implémenter*. Cette rubrique couvre les scénarios suivants pour l’implémentation d’API sur un type C++/WinRT, dans cet ordre.
 
-- Vous ne créez *pas* une classe Windows Runtime (classe runtime) ; vous souhaitez simplement implémenter une ou plusieurs interfaces Windows Runtime pour une utilisation locale au sein de votre application. Vous dérivez directement de **winrt::implements** dans ce cas, et implémentez des fonctions.
-- Si vous *créez* une classe runtime. Vous pouvez créer un composant qui sera utilisé à partir d’une application. Ou vous pouvez créer un type qui sera utilisé à partir de l’interface utilisateur XAML et, dans ce cas, vous implémentez et utilisez une classe runtime au sein de la même unité de compilation. Dans ces cas, laissez les outils générer pour vous des classes qui dérivent de **winrt::implements**.
+- Vous ne créez *pas* une classe Windows Runtime (classe runtime) ; vous souhaitez simplement implémenter une ou plusieurs interfaces Windows Runtime pour une utilisation locale au sein de votre application. Dans ce cas, vous dérivez directement à partir de **winrt::implements**, et implémentez des fonctions.
+- Vous créez *effectivement* une classe runtime. Vous pourriez créer un composant qui sera utilisé à partir d’une application. Ou vous pourriez créer un type qui sera utilisé à partir de l’interface utilisateur XAML et, dans ce cas, vous implémentez et utilisez une classe runtime au sein de la même unité de compilation. Dans ces cas, laissez les outils générer pour vous des classes qui dérivent à partir de **winrt::implements**.
 
-Dans les deux cas, le type qui implémente vos API C++/WinRT APIs est appelé le *type d’implémentation*.
+Dans les deux cas, le type qui implémente vos API C++/WinRT APIs est appelé *type d’implémentation*.
 
 > [!IMPORTANT]
-> Il est important de distinguer le concept d’un type d’implémentation de celui d’un type projeté. Le type projeté est décrit dans [Utiliser des API avec C++/WinRT](consume-apis.md).
+> Il est important de distinguer le concept de type d’implémentation de celui de type projeté. Le type projeté est décrit dans [Utiliser des API avec C++/WinRT](consume-apis.md).
 
-## <a name="if-youre-not-authoring-a-runtime-class"></a>Si vous ne créez *pas* une classe runtime
+## <a name="if-youre-not-authoring-a-runtime-class"></a>Si vous ne créez *pas* de classe runtime
 Le scénario le plus simple est celui où vous implémentez une interface Windows Runtime pour une utilisation locale. Vous n’avez pas besoin d’une classe runtime, simplement d’une classe C++ ordinaire. Par exemple, vous pouvez écrire une application basée autour de [**CoreApplication**](/uwp/api/windows.applicationmodel.core.coreapplication).
 
 > [!NOTE]
-> Pour plus d’informations sur l’installation et à l’aide de la C++Extension WinRT Visual Studio (VSIX) et le package NuGet (qui ensemble fournissent le modèle de projet et créez prise en charge), consultez [prise en charge de Visual Studio pour C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+> Pour plus d’informations sur l’installation et l’utilisation de l’extension Visual Studio (VSIX) C++/WinRT et le package NuGet (qui fournissent ensemble le modèle de projet et la prise en charge de la build), voir [Prise en charge de Visual Studio pour C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
-Dans Visual Studio, le **Visual C++** > **Windows universel** > **application Core (C++ / c++ / WinRT)** modèle de projet illustre les **CoreApplication** modèle. Le modèle commence par transmettre une implémentation de [**Windows::ApplicationModel::Core::IFrameworkViewSource**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource) à [**CoreApplication::Run**](/uwp/api/windows.applicationmodel.core.coreapplication.run).
+Dans Visual Studio, le modèle de projet**Visual C++**  > **Windows Universal** > **Core App (C++/WinRT)** illustre le modèle **CoreApplication**. Le modèle commence par transmettre une implémentation de [**Windows::ApplicationModel::Core::IFrameworkViewSource**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource) à [**CoreApplication::Run**](/uwp/api/windows.applicationmodel.core.coreapplication.run).
 
 ```cppwinrt
 using namespace Windows::ApplicationModel::Core;
@@ -60,7 +60,7 @@ void Run(IFrameworkViewSource viewSource) const
 }
 ```
 
-De ce fait, en tant que développeur, implémentez l’interface **IFrameworkViewSource**. C++/WinRT possède le modèle de structure de base [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) pour faciliter l’implémentation d’une (ou plusieurs) interface(s), sans avoir recours à la programmation de style COM. Vous dérivez simplement votre type de **impléments**, puis implémentez les fonctions de l’interface. Voici comment procéder.
+De ce fait, en tant que développeur, implémentez l’interface **IFrameworkViewSource**. C++/WinRT possède le modèle de structure de base [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) pour faciliter l’implémentation d’une (ou plusieurs) interface(s), sans avoir recours à la programmation de style COM. Vous dérivez simplement votre type de **implements**, puis implémentez les fonctions de l’interface. Voici comment procéder.
 
 ```cppwinrt
 // App.cpp
@@ -110,7 +110,7 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 ...
 ```
 
-Dans la mesure où votre **application** type *est un* **IFrameworkViewSource**, vous pouvez simplement transmettre un à **exécuter**.
+Dans la mesure où votre type **App***est un* **IFrameworkViewSource**, vous pouvez simplement en transmettre un à **Run**.
 
 ```cppwinrt
 using namespace Windows::ApplicationModel::Core;
@@ -163,21 +163,21 @@ namespace winrt::MyProject::implementation
 // winrt::MyProject::factory_implementation::MyRuntimeClass is here, too.
 ```
 
-Notez le modèle de polymorphisme F-Bound utilisé (**MyRuntimeClass** s’utilise lui-même comme un argument de modèle pour sa base **MyRuntimeClassT**). On parle aussi de motif de modèle curieusement récursif (Curiously Recurring Template Pattern ou CRTP). Si vous remontez la chaîne d’héritage, vous trouverez **MyRuntimeClass_base**.
+Notez le modèle de polymorphisme F-Bound utilisé (**MyRuntimeClass** s’utilise lui-même comme un argument de modèle pour sa base **MyRuntimeClassT**). On parle aussi de motif de modèle curieusement récursif (Curiously Recurring Template Pattern ou CRTP). Si vous remontez la chaîne héritée, vous trouverez **MyRuntimeClass_base**.
 
 ```cppwinrt
 template <typename D, typename... I>
 struct MyRuntimeClass_base : implements<D, MyProject::IMyRuntimeClass, I...>
 ```
 
-Par conséquent, dans ce scénario, à la racine de la hiérarchie d’héritage se trouve de nouveau le modèle de structure de base [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements).
+Par conséquent, dans ce scénario, à la racine de la hiérarchie héritée se trouve de nouveau le modèle de structure de base [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements).
 
 Pour obtenir plus d’informations, du code ainsi que la procédure à suivre pour créer des API dans un composant Windows Runtime, voir [Créer des événements en C++/WinRT](author-events.md#create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component).
 
 ## <a name="if-youre-authoring-a-runtime-class-to-be-referenced-in-your-xaml-ui"></a>Si vous créez une classe runtime qui sera référencée dans votre interface utilisateur XAML
 Si votre type est référencé par votre interface utilisateur XAML, alors il doit s’agir d’une classe runtime, même si elle se trouve dans le même projet que le code XAML. Bien qu’elle soit généralement activée au-delà des limites exécutables, une classe runtime peut être utilisée au sein de l’unité de compilation qui l’implémente.
 
-Dans ce scénario, vous créez *et* utilisez les API. La procédure d’implémentation de votre classe runtime est essentiellement identique à celle d’un composant Windows Runtime. De ce fait, reportez-vous à la section précédente &mdash;[ Si vous créez une classe runtime dans un composant Windows Runtime](#if-youre-authoring-a-runtime-class-in-a-windows-runtime-component). La seule différence est que, à partir du fichier IDL, la chaîne d’outils C++/WinRT génère non seulement un type d’implémentation, mais également un type projeté. Il est important d'être conscient que « **MyRuntimeClass** » dans ce scénario peut être ambigu ; il existe plusieurs entités portant ce nom, de types différents.
+Dans ce scénario, vous créez *et* utilisez les API. La procédure d’implémentation de votre classe runtime est essentiellement identique à celle d’un composant Windows Runtime. De ce fait, reportez-vous à la section précédente&mdash;[Si vous créez une classe runtime dans un composant Windows Runtime](#if-youre-authoring-a-runtime-class-in-a-windows-runtime-component). La seule différence est que, à partir du fichier IDL, la chaîne d’outils C++/WinRT génère non seulement un type d’implémentation, mais également un type projeté. Il est important d’être conscient que « **MyRuntimeClass** » dans ce scénario peut être ambigu ; il existe plusieurs entités de types différents portant ce nom.
 
 - **MyRuntimeClass** est le nom d’une classe runtime. Mais il s’agit en réalité d’une abstraction : déclarée dans IDL et implémentée dans un langage de programmation.
 - **MyRuntimeClass** est le nom de la structure C++ **winrt::MyProject::implementation::MyRuntimeClass**, qui est l’implémentation C++/WinRT de la classe runtime. Comme nous l’avons vu, s’il existe des projets d’implémentation et d’utilisation distincts, alors cette structure existe uniquement dans le projet d’implémentation. Il s’agit du *type d’implémentation* ou de l’*implémentation*. Ce type est généré (par l’outil `cppwinrt.exe`) dans les fichiers `\MyProject\MyProject\Generated Files\sources\MyRuntimeClass.h` et `MyRuntimeClass.cpp`.
@@ -236,7 +236,7 @@ struct MyType : implements<MyType, IStringable, IClosable>
 };
 ```
 
-Ou vous pouvez le générer à partir du fichier IDL (c’est une classe runtime).
+Vous pouvez également le générer à partir du fichier IDL (c’est une classe runtime).
 
 ```idl
 // MyType.idl
@@ -249,16 +249,16 @@ namespace MyProject
 }
 ```
 
-Pour passer de **MyType** à un objet **IStringable** ou **IClosable** que vous pouvez utiliser ou retourner dans le cadre de votre projection, vous pouvez appeler le modèle de fonction [**winrt::make**](/uwp/cpp-ref-for-winrt/make). **rendre** retourne l’implémentation interface du type par défaut.
+Pour passer de **MyType** à un objet **IStringable** ou **IClosable** que vous pouvez utiliser ou retourner dans le cadre de votre projection, vous pouvez appeler le modèle de fonction [**winrt::make**](/uwp/cpp-ref-for-winrt/make). **make** renvoie l’interface par défaut du type d’implémentation.
 
 ```cppwinrt
 IStringable istringable = winrt::make<MyType>();
 ```
 
 > [!NOTE]
-> Toutefois, si vous référencez votre type à partir de votre interface utilisateur XAML, un type d’implémentation et un type projeté se retrouveront dans le même projet. Dans ce cas, **rendre** retourne une instance du type projeté. Pour obtenir un exemple de code de ce scénario, voir [Contrôles XAML ; liaison à une propriété C++/WinRT](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage).
+> Toutefois, si vous référencez votre type à partir de votre interface utilisateur XAML, un type d’implémentation et un type projeté se retrouveront dans le même projet. Dans ce cas, **make** renvoie une instance du type projeté. Pour obtenir un exemple de code de ce scénario, voir [Contrôles XAML ; liaison à une propriété C++/WinRT](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage).
 
-Nous ne pouvons utiliser que `istringable` (dans l’exemple de code ci-dessus) pour appeler les membres de l’interface **IStringable**. Mais une interface C++/WinRT (qui est une interface projetée) dérive de [**winrt::Windows::Foundation::IUnknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown). Par conséquent, vous pouvez appeler [ **IUnknown::as** ](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) (ou [ **IUnknown::try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntry_as-function)) dessus pour rechercher d’autres types projetés ou les interfaces que vous pouvez également utilisez ou retourner.
+Nous ne pouvons utiliser que `istringable` (dans l’exemple de code ci-dessus) pour appeler les membres de l’interface **IStringable**. Mais une interface C++/WinRT (qui est une interface projetée) dérive de [**winrt::Windows::Foundation::IUnknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown). Par conséquent, vous pouvez appeler dessus [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) (ou [**IUnknown::try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntry_as-function)) pour rechercher d’autres types ou interfaces projets que vous pouvez également utiliser ou retourner.
 
 ```cppwinrt
 istringable.ToString();
@@ -266,7 +266,7 @@ IClosable iclosable = istringable.as<IClosable>();
 iclosable.Close();
 ```
 
-Si vous avez besoin d’accéder à tous les membres de l’implémentation, puis renvoyer ultérieurement une interface à un appelant, utilisez le modèle de fonction [**winrt::make_self**](/uwp/cpp-ref-for-winrt/make-self). **make_self** retourne un [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr) qui encapsule le type d’implémentation. Vous pouvez accéder aux membres de toutes ses interfaces (à l’aide de l’opérateur flèche), vous pouvez le renvoyer à un appelant en l’état, ou vous pouvez appeler **as** sur lui et renvoyer l'objet d’interface résultant à un appelant.
+Si vous avez besoin d’accéder à tous les membres de l’implémentation, puis renvoyer ultérieurement une interface à un appelant, utilisez le modèle de fonction [**winrt::make_self**](/uwp/cpp-ref-for-winrt/make-self). **make_self** retourne un [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr) qui encapsule le type d’implémentation. Vous pouvez accéder aux membres de toutes ses interfaces (à l’aide de l’opérateur flèche), vous pouvez le renvoyer à un appelant en l’état, ou vous pouvez appeler **as** sur lui et renvoyer l’objet d’interface résultant à un appelant.
 
 ```cppwinrt
 winrt::com_ptr<MyType> myimpl = winrt::make_self<MyType>();
@@ -278,12 +278,12 @@ iclosable.Close();
 
 La classe **MyType** ne fait pas partie de la projection ; il s’agit de l’implémentation. Mais de cette façon vous pouvez appeler ses méthodes d’implémentation directement, sans la surcharge d’un appel de fonction virtuelle. Dans l’exemple ci-dessus, même si **MyType::ToString** utilise la même signature que la méthode projetée sur **IStringable**, nous appelons la méthode non virtuelle directement, sans traverser la limite de l’interface binaire d’application (ABI). **com_ptr** pointant simplement un curseur sur la structure **MyType**, vous pouvez également accéder à tous les autres détails internes de **MyType** via la variable `myimpl` et l’opérateur flèche.
 
-Dans le cas où vous avez un objet d’interface, et que vous savez qu’il est une interface sur votre implémentation, vous pouvez revenir à la mise en œuvre à l’aide de la [ **winrt::get_self** ](/uwp/cpp-ref-for-winrt/get-self) (fonction) modèle. Là encore, il s’agit d’une technique qui évite les appels de fonctions virtuelles et vous permet d’accéder directement à l’implémentation.
+Dans le cas où vous disposez d’un objet d’interface et que vous savez qu’il s’agit d’une interface sur votre implémentation, vous pouvez revenir à l’implémentation à l’aide du modèle de fonction [**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self). Là encore, il s’agit d’une technique qui évite les appels de fonctions virtuelles et vous permet d’accéder directement à l’implémentation.
 
 > [!NOTE]
-> Si vous n’avez pas installé le SDK Windows version 10.0.17763.0 (Windows 10, version 1809) ou version ultérieure, vous devez appeler [ **winrt::from_abi** ](/uwp/cpp-ref-for-winrt/from-abi) au lieu de [ **winrt::get_ Self**](/uwp/cpp-ref-for-winrt/get-self).
+> Si vous n’avez pas installé le Kit de développement logiciel (SDK) Windows version 10.0.17763.0 (Windows 10, version 1809) ou version ultérieure, vous devez appeler [**winrt::from_abi**](/uwp/cpp-ref-for-winrt/from-abi) au lieu de [**winrt::get_ Self**](/uwp/cpp-ref-for-winrt/get-self).
 
-Voici un exemple : Il existe un autre exemple dans [implémentent la **BgLabelControl** classe de contrôle personnalisé](xaml-cust-ctrl.md#implement-the-bglabelcontrol-custom-control-class).
+Voici un exemple : Il existe un autre exemple dans [Implémenter la classe de contrôle personnalisé **BgLabelControl**](xaml-cust-ctrl.md#implement-the-bglabelcontrol-custom-control-class).
 
 ```cppwinrt
 void ImplFromIClosable(IClosable const& from)
@@ -311,7 +311,7 @@ myimpl.Close();
 IClosable ic1 = myimpl.as<IClosable>(); // error
 ```
 
-Si vous disposez d’une instance de votre type d’implémentation et que vous devez la transmettre à une fonction qui attend le type projeté correspondant, vous pouvez procéder ainsi. Un opérateur de conversion existe sur votre type d’implémentation (condition que le type d’implémentation a été généré par le `cppwinrt.exe` outil) qui rend cela possible. Vous pouvez passer une valeur de type d’implémentation directement à une méthode qui attend une valeur de type projeté correspondant. À partir d’une fonction de membre de type de mise en œuvre, vous pouvez transmettre `*this` à une méthode qui attend une valeur de type projeté correspondant.
+Si vous disposez d’une instance de votre type d’implémentation et que vous devez la transmettre à une fonction qui attend le type projeté correspondant, vous pouvez procéder ainsi. Un opérateur de conversion existant sur votre type d’implémentation (à condition que le type d’implémentation ait été généré par l’outil `cppwinrt.exe`) rend cela possible. Vous pouvez passer une valeur de type d’implémentation directement à une méthode qui attend une valeur du type projeté correspondant. À partir d’une fonction de membre de type d’implémentation, vous pouvez transmettre `*this` à une méthode qui attend une valeur du type projeté correspondant.
 
 ```cppwinrt
 // MyProject::MyType is the projected type; the implementation type would be MyProject::implementation::MyType.
@@ -334,8 +334,8 @@ void MyType::MemberFunction(MyProject::MyOtherType const& ot)
 }
 ```
 
-## <a name="deriving-from-a-type-that-has-a-non-default-constructor"></a>Dérivation à partir d’un type qui a un constructeur non défini par défaut
-[**ToggleButtonAutomationPeer::ToggleButtonAutomationPeer(ToggleButton)** ](/uwp/api/windows.ui.xaml.automation.peers.togglebuttonautomationpeer.-ctor#Windows_UI_Xaml_Automation_Peers_ToggleButtonAutomationPeer__ctor_Windows_UI_Xaml_Controls_Primitives_ToggleButton_) est un exemple d’un constructeur non défini par défaut. Il n’existe aucun constructeur par défaut, de ce fait, pour construire un **ToggleButtonAutomationPeer**, vous devez transmettre un *owner*. Par conséquent, si vous dérivez de **ToggleButtonAutomationPeer**, vous devez fournir un constructeur qui prend un *owner* et le transmet à la base. Voyons à quoi cela ressemble dans la pratique.
+## <a name="deriving-from-a-type-that-has-a-non-default-constructor"></a>Dérivation à partir d’un type qui possède un constructeur autre que par défaut
+[**ToggleButtonAutomationPeer::ToggleButtonAutomationPeer(ToggleButton)** ](/uwp/api/windows.ui.xaml.automation.peers.togglebuttonautomationpeer.-ctor#Windows_UI_Xaml_Automation_Peers_ToggleButtonAutomationPeer__ctor_Windows_UI_Xaml_Controls_Primitives_ToggleButton_) est un exemple de constructeur autre que par défaut. Comme il n’existe aucun constructeur par défaut, pour construire un **ToggleButtonAutomationPeer**, vous devez transmettre un *owner*. Par conséquent, si vous dérivez de **ToggleButtonAutomationPeer**, vous devez fournir un constructeur qui prend un *owner* et le transmet à la base. Voyons à quoi cela ressemble dans la pratique.
 
 ```idl
 // MySpecializedToggleButton.idl
@@ -390,17 +390,17 @@ MySpecializedToggleButtonAutomationPeer::MySpecializedToggleButtonAutomationPeer
 
 Le constructeur de classe de base attend un **ToggleButton**. Et **MySpecializedToggleButton** *est un* **ToggleButton**.
 
-Tant que vous n'aurez pas apporté les modifications décrites ci-dessus (pour transmettre ce paramètre de constructeur à la classe de base), le compilateur marquera votre constructeur et signalera qu’aucun constructeur par défaut approprié n’est disponible sur un type nommé (dans ce cas) **MySpecializedToggleButtonAutomationPeer_base&lt;MySpecializedToggleButtonAutomationPeer&gt;**. C’est en fait la classe de base de la classe de base de votre type d’implémentation.
+Tant que vous n’aurez pas apporté les modifications décrites ci-dessus (pour transmettre ce paramètre de constructeur à la classe de base), le compilateur marquera votre constructeur et signalera qu’aucun constructeur par défaut approprié n’est disponible sur un type nommé (dans ce cas) **MySpecializedToggleButtonAutomationPeer_base&lt;MySpecializedToggleButtonAutomationPeer&gt;** . C’est en fait la classe de base de la classe de base de votre type d’implémentation.
 
 ## <a name="important-apis"></a>API importantes
-* [winrt::com_ptr struct template](/uwp/cpp-ref-for-winrt/com-ptr)
-* [winrt::com_ptr::copy_from function](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrcopy_from-function)
-* [winrt::from_abi function template](/uwp/cpp-ref-for-winrt/from-abi)
-* [winrt::get_self function template](/uwp/cpp-ref-for-winrt/get-self)
-* [modèle de struct WinRT::Implements](/uwp/cpp-ref-for-winrt/implements)
-* [modèle de fonction WinRT::Make](/uwp/cpp-ref-for-winrt/make)
-* [modèle de fonction WinRT::make_self](/uwp/cpp-ref-for-winrt/make-self)
-* [winrt::Windows::Foundation::IUnknown::as function](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
+* [Modèle de structure winrt::com_ptr](/uwp/cpp-ref-for-winrt/com-ptr)
+* [Fonction winrt::com_ptr::copy_from](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrcopy_from-function)
+* [Modèle de fonction winrt::from_abi](/uwp/cpp-ref-for-winrt/from-abi)
+* [Modèle de fonction WinRT::get_self](/uwp/cpp-ref-for-winrt/get-self)
+* [Modèle de structure winrt::implements](/uwp/cpp-ref-for-winrt/implements)
+* [Modèle de fonction winrt::make](/uwp/cpp-ref-for-winrt/make)
+* [Modèle de fonction winrt::make_self](/uwp/cpp-ref-for-winrt/make-self)
+* [Fonction winrt::Windows::Foundation::IUnknown::as](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
 
 ## <a name="related-topics"></a>Rubriques connexes
 * [Utiliser des API avec C++/WinRT](consume-apis.md)
