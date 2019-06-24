@@ -1,20 +1,20 @@
 ---
-title: Nouveautés dans Windows Docs septembre 2018 - développer des applications UWP
-description: Nouvelles fonctionnalités, des vidéos, des exemples et des instructions destinées aux développeurs ont été ajoutés à la documentation pour développeurs Windows 10 pour septembre 2018.
-keywords: Quelles sont les nouveautés, mise à jour, des fonctionnalités, des instructions destinées aux développeurs, Windows 10, septembre
+title: Nouveautés apportées dans la documentation Windows en septembre 2018 – Développer des applications UWP
+description: De nouvelles fonctionnalités, des vidéos, des exemples et des conseils aux développeurs ont été ajoutés à la documentation du développeur Windows 10 en septembre 2018.
+keywords: nouveautés, mise à jour, fonctionnalités, conseils aux développeurs, Windows 10, septembre
 ms.date: 09/10/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 0876b2d9b65143cde2387a42e221460cc617cf0b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57618254"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63800482"
 ---
-# <a name="whats-new-in-the-windows-developer-docs-in-september-2018"></a>Quelles sont les nouveautés dans la documentation du développeur Windows en septembre 2018
+# <a name="whats-new-in-the-windows-developer-docs-in-september-2018"></a>Nouveautés apportées dans la documentation du développeur Windows en septembre 2018
 
-La documentation du développeur Windows est constamment mise à jour afin d'intégrer les informations sur les nouvelles fonctionnalités disponibles pour les développeurs sur la plateforme Windows. Les présentations des fonctionnalités, Guide du développeur et vidéos suivants ont été apportées disponibles dans le mois de septembre.
+La documentation du développeur Windows est constamment mise à jour avec des informations sur les nouvelles fonctionnalités mises à la disposition des développeurs sur la plateforme Windows. Les présentations de fonctionnalités, conseils aux développeurs et vidéos ci-dessous ont été mis à disposition au mois de septembre.
 
 [Installez les outils et le kit de développement logiciel (SDK)](https://go.microsoft.com/fwlink/?LinkId=821431) sur Windows 10 et vous pourrez ainsi [créer une application universelle Windows](../get-started/create-uwp-apps.md) ou explorer la procédure permettant d’utiliser votre [code d’application existant sur Windows](../porting/index.md).
 
@@ -22,41 +22,41 @@ La documentation du développeur Windows est constamment mise à jour afin d'int
 
 ### <a name="windows-machine-learning"></a>Windows Machine Learning
 
-[La documentation Windows Machine Learning](https://docs.microsoft.com/windows/ai/) maintenant résident sur leur propre site et sont mises à jour pour la dernière version du SDK de Insider de Windows. Il existe de bureau et les didacticiels UWP en C++ et C# pour aider à vous commencer à ajouter WinML à votre application.
+[La documentation sur Windows Machine Learning](https://docs.microsoft.com/windows/ai/) se trouve désormais sur un site dédié, et est mise à jour pour la dernière version du Kit de développement logiciel (SDK) Windows Insider. Des didacticiels pour les applications de bureau et UWP en C++ et C# sont disponibles pour vous aider à commencer à ajouter WinML à votre application.
 
-[La référence d’API de Windows.AI.MachineLearning](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning) a été mis à jour pour la dernière version du SDK de Insider de Windows.
+[La référence API Windows.AI.MachineLearning](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning) a été mise à jour pour la dernière version du Kit de développement logiciel (SDK) Windows Insider.
 
-[Le référentiel GitHub de Windows-Machine-Learning](https://github.com/Microsoft/Windows-Machine-Learning) a été mis à jour avec nouveaux exemples qui fonctionnent avec la dernière version du SDK.
+[Le dépôt GitHub Windows-Machine-Learning](https://github.com/Microsoft/Windows-Machine-Learning) a été mis à jour avec nouveaux exemples qui fonctionnent avec la dernière version du Kit de développement logiciel (SDK).
 
-![Graphique de l’apprentissage de Windows](images/winml-graphic.png)
+![Graphisme de Windows Machine Learning](images/winml-graphic.png)
 
 ### <a name="windows-ui-library"></a>Bibliothèque d’IU Windows
 
-[La bibliothèque d’interface utilisateur Windows](https://aka.ms/winui-docs) est un ensemble de packages NuGet qui fournissent des contrôles et autres utilisateurs des éléments d’interface pour les applications UWP. Ces packages sont également compatibles avec les versions antérieures de Windows 10, afin que votre application fonctionne même si vos utilisateurs n’ont pas la dernière version du système d’exploitation.
+La [bibliothèque d’IU Windows](https://aka.ms/winui-docs) est un ensemble de packages NuGet qui fournissent des contrôles et autres éléments d’interface utilisateur pour les applications UWP. Ces packages sont également compatibles avec les versions antérieures de Windows 10, pour que votre application fonctionne même si vos utilisateurs ne disposent pas de la dernière version du système d’exploitation.
 
-Pour plus d’informations sur la bibliothèque d’interface utilisateur de Windows, consultez [cette liste d’espaces de noms API inclus dans le package NuGet.](https://docs.microsoft.com/uwp/api/overview/winui/)
+Pour plus d’informations sur le contenu de la bibliothèque d’IU Windows, voir la [liste des espaces de noms d’API inclus dans le package NuGet.](https://docs.microsoft.com/uwp/api/overview/winui/)
 
 ## <a name="developer-guidance"></a>Conseils aux développeurs
 
-### <a name="how-blur-effects-work"></a>Comment le travail d’effets Flou
+### <a name="how-blur-effects-work"></a>Fonctionnement des effets de flou
 
-Un de nos rédacteurs, le tout Mike Jacobs, a commencé une série d’articles dans la moyenne sur flou, à partir de la vision à la photographie à la conception d’applications et de jeux. Si vous souhaitez en savoir plus sur cet omniprésent effet visuel, consultez [le premier article sur la vision et de photographie](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-8b0590996e09) et [la seconde sur l’anticrénelage dans le graphique.](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-part-2-c5589a738515)
+L’un de nos rédacteurs, le très estimé Mike Jacobs, a commencé une série d’articles dans Medium sur flou, de la vision qu’en a la photographie à la conception d’applications et de jeux. Pour en savoir plus sur cet effet visuel omniprésent, voir [le premier article sur la vision et la photographie](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-8b0590996e09) et [le second sur l’anticrénelage dans les graphismes.](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-part-2-c5589a738515)
 
 ![Flou en action](images/blur-example.jpg)
 
-### <a name="contributing-guidance"></a>Guide de contribution
+### <a name="contributing-guidance"></a>Guide relatif aux contributions
 
-Nous avons mis à jour [nos conseils contribue à](https://github.com/MicrosoftDocs/windows-uwp/blob/docs/CONTRIBUTING.md) pour notre documentation UWP. Ce nouveau guide clarifie le flux de travail et les attentes externes contributions à notre documentation.
+Nous avons mis à jour le [guide relatif aux contributions](https://github.com/MicrosoftDocs/windows-uwp/blob/docs/CONTRIBUTING.md) apportées à notre documentation UWP. Ce nouveau guide clarifie le workflow et les attentes concernant les contributions externes apportées à notre documentation.
 
 ## <a name="videos"></a>Vidéos
 
-### <a name="one-dev-question"></a>Une Question de développement
+### <a name="one-dev-question"></a>One Dev Question
 
-Dans la série de vidéos d’une Question de développement, les développeurs Microsoft contribue depuis longtemps couvrent une série de questions sur le développement Windows, la culture de l’équipe et l’historique. Voici les dernières questions que nous avons une réponse !
+Dans le cadre de la série de vidéos One Dev Question, des développeurs Microsoft expérimentés répondent à toutes sortes de questions sur le développement, la culture d’équipe et l’histoire de Windows. Voici les dernières questions auxquelles nous avons répondu !
 
 Aaron Gustafson :
 
-* [6 vidéos sur les applications Web progressif](https://www.youtube.com/playlist?list=PLWs4_NfqMtoyPHoI-CIB71mEq-om6m35I)
+* [6 vidéos sur les Applications web progressives](https://www.youtube.com/playlist?list=PLWs4_NfqMtoyPHoI-CIB71mEq-om6m35I)
 
 Chris Heilmann
 
@@ -64,4 +64,4 @@ Chris Heilmann
 
 Larry Osterman :
 
-* [Quelles parties de COM sont dans le Runtime de Windows ?](https://youtu.be/_nsMjHqRn1w)
+* [Quelles parties de COM figurent dan le Windows Runtime ?](https://youtu.be/_nsMjHqRn1w)

@@ -1,20 +1,20 @@
 ---
-title: Nouveautés apportées dans la documentation Windows en septembre 2017 - Développer des applications UWP
-description: De nouvelles fonctionnalités, des vidéos et des conseils aux développeurs ont été ajoutés à la documentation du développeur Windows 10 en septembre 2017.
-keywords: nouveautés, mise à jour, fonctionnalités, conseils aux développeurs, Windows 10, 1709
+title: Nouveautés apportées dans la documentation Windows en septembre 2017 – Développer des applications UWP
+description: De nouvelles fonctionnalités, des vidéos et des conseils aux développeurs ont été ajoutés à la documentation du développeur Windows 10 en septembre 2017
+keywords: nouveautés, mise à jour, fonctionnalités, conseils aux développeurs, Windows 10, 1709
 ms.date: 09/06/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ae5001e907d7d38cbf05fd6863b192337fe365f
-ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58162885"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63801087"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-september-2017"></a>Nouveautés apportées dans la documentation du développeur Windows en septembre 2017
 
-La documentation du développeur Windows est constamment mise à jour afin d'intégrer les informations sur les nouvelles fonctionnalités disponibles pour les développeurs sur la plateforme Windows. Les présentations de fonctionnalités, les conseils aux développeurs et les exemples qui suivent ont été récemment mis à disposition. Ils contiennent des informations nouvelles et mises à jour destinées aux développeurs Windows.
+La documentation du développeur Windows est constamment mise à jour avec des informations sur les nouvelles fonctionnalités mises à la disposition des développeurs sur la plateforme Windows. Les présentations de fonctionnalités, les conseils aux développeurs et les exemples qui suivent ont été récemment mis à disposition. Ils contiennent des informations nouvelles et des mises à jour destinées aux développeurs Windows.
 
 Bien entendu, la mise à jour Fall Creators Update est imminente. Par conséquent, restez à l’écoute car une nouvelle documentation volumineuse arrivera le mois prochain !
 
@@ -24,39 +24,39 @@ Bien entendu, la mise à jour Fall Creators Update est imminente. Par conséquen
 
 ### <a name="xbox-live-creators-program"></a>Programme Créateurs Xbox Live
 
-Le programme Créateurs Xbox Live est désormais lancé. Il vous permet de créer et de publier facilement des jeux UWP pouvant s’exécuter à la fois sur les consoles Xbox One et les PC sous Windows 10. Pour plus d’informations, voir [Prise en main du programme Créateurs Xbox Live](https://docs.microsoft.com/gaming/xbox-live//get-started-with-creators/get-started-with-xbox-live-creators.md).
+Le programme Créateurs Xbox Live est désormais lancé. Il vous permet de créer et de publier facilement des jeux UWP pouvant s’exécuter tant sur des consoles Xbox One que sur des PC sous Windows 10. Pour plus d’informations, voir [Prise en main du programme Créateurs Xbox Live](https://docs.microsoft.com/gaming/xbox-live//get-started-with-creators/get-started-with-xbox-live-creators.md).
 
 ## <a name="developer-guidance"></a>Conseils aux développeurs
 
-### <a name="xaml-basics-tutorials"></a>Didacticiels sur les principes de la programmation XAML
+### <a name="xaml-basics-tutorials"></a>Didacticiels sur les concepts de base de XAML
 
-Nous avons écrit quatre [didacticiels sur les notions de base du XAML](https://docs.microsoft.com/en-us/windows/uwp/get-started/xaml-basics-intro) pour accompagner le nouvel [exemple PhotoLab](https://github.com/Microsoft/Windows-appsample-photo-lab). Ils couvrent quatre aspects fondamentaux de la programmation XAML : interfaces utilisateur, liaison de données, styles personnalisés et dispositions adaptatives. Chaque partie du didacticiel commence par une version partielle ou complète de l'exemple PhotoLab et explique la procédure pour générer un composant manquant de l’application finale. 
+Nous avons écrit quatre [didacticiels sur les concepts de base de XAML](https://docs.microsoft.com/en-us/windows/uwp/get-started/xaml-basics-intro) pour accompagner le nouvel [exemple PhotoLab](https://github.com/Microsoft/Windows-appsample-photo-lab). Ils couvrent quatre aspects fondamentaux de la programmation XAML : interfaces utilisateur, liaison de données, styles personnalisés et dispositions adaptatives. Chaque partie du didacticiel commence par une version partielle ou complète de l’exemple PhotoLab et explique la procédure pour générer un composant manquant de l’application finale. 
 
-![Capture d’écran de l'exemple PhotoLab montrant la page Galerie de photos](images/PhotoLab-gallery-page.png)  
+![Capture d’écran de l’exemple PhotoLab montrant la page Galerie de photos](images/PhotoLab-gallery-page.png)  
 
 Voici une rapide vue d’ensemble des nouveaux articles :
 
-+ [**Créer des interfaces utilisateur** ](https://docs.microsoft.com/en-us/windows/uwp/get-started/xaml-basics-ui) montre comment créer l’interface de la galerie photo de base.
-+ [**Créer des liaisons de données** ](https://docs.microsoft.com/en-us/windows/uwp/get-started/xaml-basics-data-binding) montre comment ajouter des liaisons de données à la galerie de photos, remplir avec les données d’image réel.
-+ [**Créer des styles personnalisés** ](https://docs.microsoft.com/en-us/windows/uwp/get-started/xaml-basics-style) montre comment ajouter des styles personnalisés fantaisistes pour le menu d’édition de photos.
-+ [**Créer des dispositions adaptatives** ](https://docs.microsoft.com/en-us/windows/uwp/get-started/xaml-basics-adaptive-layout) montre comment rendre la disposition de galerie ADAPTATIF, donc cela semble correct sur chaque appareil et écran de la taille.
++ [**Créer des interfaces utilisateur**](https://docs.microsoft.com/en-us/windows/uwp/get-started/xaml-basics-ui) montre comment créer une interface simple de galerie de photos.
++ [**Créer des liaisons de données**](https://docs.microsoft.com/en-us/windows/uwp/get-started/xaml-basics-data-binding) montre comment ajouter des liaisons de données à la galerie de photos, en la remplissant avec des données d’images réelles.
++ [**Créer des styles personnalisés**](https://docs.microsoft.com/en-us/windows/uwp/get-started/xaml-basics-style) montre comment ajouter des styles personnalisés fantaisistes au menu d’édition de photo.
++ [**Créer des dispositions adaptatives**](https://docs.microsoft.com/en-us/windows/uwp/get-started/xaml-basics-adaptive-layout) montre comment rendre la disposition de la galerie adaptive, pour qu’elle s’affiche correctement sur tous les appareils et sur toutes les tailles d’écran.
 
 ### <a name="get-started-tutorials"></a>Didacticiels de prise en main
 
-La section de prise en main de la documentation UWP a été mise à jour avec une [nouvelle page d’accueil de la section didacticiels](https://docs.microsoft.com/windows/uwp/get-started/create-uwp-apps). Cette section offre une structure de prise en main renouvelée et améliorée. Celle-ci aide les utilisateurs à trouver et à utiliser facilement des didacticiels qui leur conviennent, notamment ceux sur les notions de base du XAML mentionnés ci-dessus.
+La section Prise en main de la documentation UWP a été mise à jour avec une [nouvelle page d’accueil de la section des didacticiels](https://docs.microsoft.com/windows/uwp/get-started/create-uwp-apps). Cette section offre une structure de prise en main renouvelée et améliorée. Celle-ci aide les utilisateurs à trouver et à utiliser facilement des didacticiels qui leur conviennent, notamment ceux sur les concepts de base de XAML mentionnés ci-dessus.
 
 ### <a name="voice-and-tone"></a>Voix et ton
 
-Nous avons ajouté de nouvelles [instructions sur la voix et le ton dans les applications UWP](https://docs.microsoft.com/windows/uwp/in-app-help/voice-and-tone) afin de vous donner des conseils sur l’écriture du texte dans votre application. Quelle que soit l'application que vous créez, il est important que votre langage soit direct, informatif et convivial.
+Nous avons ajouté des [instructions sur la voix et le ton dans les applications UWP](https://docs.microsoft.com/windows/uwp/in-app-help/voice-and-tone) afin de vous donner des conseils sur l’écriture du texte dans votre application. Quelle que soit l’application que vous créez, il est important que votre langage soit direct, informatif et convivial.
 
 ## <a name="samples"></a>Exemples
 
 ### <a name="photolab-sample"></a>Exemple PhotoLab
 
-L'[exemple PhotoLab](https://github.com/Microsoft/windows-appsample-photo-lab) est un exemple de retouche photo et de galerie de photos.
+L’[exemple PhotoLab](https://github.com/Microsoft/windows-appsample-photo-lab) est un exemple de retouche photo et de galerie de photos de base.
 
-![Capture d’écran de l'exemple PhotoLab montrant une page de retouche photo](images/PhotoLab-editing-page.png)  
+![Capture d’écran de l’exemple PhotoLab montrant une page de retouche photo](images/PhotoLab-editing-page.png)  
 
-### <a name="customer-orders"></a>Commandes des clients
+### <a name="customer-orders"></a>Commandes client
 
-L'exemple de [base de données de commandes client](https://github.com/Microsoft/Windows-appsample-customers-orders-database) a été mis à jour de façon à utiliser le nouveau .NET Core 2.0 et Entity Framework.
+L’exemple de [base de données de commandes client](https://github.com/Microsoft/Windows-appsample-customers-orders-database) a été mis à jour de façon à utiliser le nouveau .NET Core 2.0 et Entity Framework.

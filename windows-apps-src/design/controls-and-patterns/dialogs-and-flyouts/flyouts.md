@@ -12,25 +12,25 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 52de0933bf51adaae6b0923868e12eb92ced4a1a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57625014"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63793792"
 ---
 # <a name="flyouts"></a>Menus volants
 
-Un menu volant est un conteneur d’abandon interactif capable d’afficher l’interface utilisateur arbitraire comme étant son contenu. Les menus volants peuvent contenir d’autres menus volants ou des menus contextuels pour créer une expérience imbriquée.
+Un menu volant est un conteneur d’abandon interactif capable d’afficher une interface utilisateur arbitraire en tant que contenu. Des menus volants peuvent contenir d’autres menus volants ou des menus contextuels pour créer une expérience imbriquée.
 
 ![Menu contextuel imbriqué dans un menu volant](../images/flyout-nested.png)
 
-> **API importantes** : [Classe de menu volant](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Flyout)
+> **API importantes** : [Classe Flyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Flyout)
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
 * N’utilisez pas de menu volant à la place d’une [info-bulle](../tooltips.md) ou d’un [menu contextuel](../menus.md). Utilisez une info-bulle pour afficher une brève description qui disparaît après une durée spécifiée. Utilisez un menu contextuel pour les actions contextuelles liées à un élément de l’interface utilisateur, comme copier et coller.
 
-Pour obtenir des recommandations sur quand utiliser un menu volant et quand utiliser une boîte de dialogue (contrôle similaire), consultez [boîtes de dialogue et menus volants](index.md). 
+Pour savoir quand utiliser une boîte de dialogue ou un menu volant (contrôle similaire), voir [Boîtes de dialogue et menus volants](index.md). 
 
 ## <a name="examples"></a>Exemples
 
@@ -51,7 +51,7 @@ Pour obtenir des recommandations sur quand utiliser un menu volant et quand util
 ##  <a name="how-to-create-a-flyout"></a>Procédure pour créer un menu volant
 
 
-Les menus volants sont attachés à des contrôles spécifiques. Vous pouvez utiliser la [Placement](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutBase.Placement) propriété pour spécifier l’emplacement d’un menu volant : Haut, gauche, bas, à droite ou intégral. Si vous sélectionnez le [mode de placement Plein](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode), l’application étire le menu volant et le centre dans la fenêtre d’application. Certains contrôles, tels que [Button](/uwp/api/Windows.UI.Xaml.Controls.Button), fournissent une propriété [Flyout](/uwp/api/Windows.UI.Xaml.Controls.Button.Flyout) que vous pouvez utiliser pour associer un menu volant ou un [menu contextuel](../menus.md).
+Les menus volants sont attachés à des contrôles spécifiques. Vous pouvez utiliser la propriété [Placement](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutBase.Placement) pour spécifier l’emplacement où s’affiche le menu volant : Haut, Gauche, Bas, Droite ou Plein. Si vous sélectionnez le [mode de positionnement Plein](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode), l’application étire le menu volant et le centre dans la fenêtre d’application. Certains contrôles, tels que [Button](/uwp/api/Windows.UI.Xaml.Controls.Button), fournissent une propriété [Flyout](/uwp/api/Windows.UI.Xaml.Controls.Button.Flyout) que vous pouvez utiliser pour associer un menu volant ou un [menu contextuel](../menus.md).
 
 Cet exemple crée un menu volant simple qui affiche du texte quand l’utilisateur appuie sur le bouton.
 ````xaml
@@ -145,9 +145,9 @@ Pour appliquer un style à un menu volant, modifiez sa propriété [FlyoutPresen
 </Flyout>
 ````
 
-## <a name="styling-flyouts-for-10-foot-experiences"></a>Lanceurs de style pour les expériences de pied de 10
+## <a name="styling-flyouts-for-10-foot-experiences"></a>Application de styles aux menus volants pour des expériences à 3 mètres
 
-Les contrôles d’abandon interactif comme les menus volants interrompent le focus des claviers et des boîtiers de commande à l’intérieur de leur interface utilisateur temporaire, jusqu’à leur fermeture. Pour fournir une indication visuelle de ce comportement, les contrôles de la Xbox permettant de faire disparaître la luminosité dessinent une superposition qui assombrit l’interface utilisateur hors de portée. Ce comportement peut être modifié à l’aide de la propriété [`LightDismissOverlayMode`](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutBase.LightDismissOverlayMode). Par défaut, les menus volants dessinent la superposition permettant de faire disparaître la luminosité sur la Xbox, mais pas sur d’autres familles d’appareils. Toutefois, les applications peuvent choisir de forcer la superposition afin d’être toujours **activées** ou **désactivées**.
+Les contrôles d’abandon interactif comme les menus volants captent les éléments sélectionnés à l’aide du clavier et de la manette de jeu dans leur interface utilisateur temporaire, jusqu’à la disparition de celle-ci. Pour fournir une indication visuelle de ce comportement, les contrôles d’abandon interactif sur la Xbox dessinent une superposition qui atténue le contraste et la visibilité de l’interface utilisateur. Ce comportement peut être modifié à l’aide de la propriété [`LightDismissOverlayMode`](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutBase.LightDismissOverlayMode). Par défaut, les menus volants dessinent la superposition permettant de faire disparaître la luminosité sur la Xbox, mais pas sur d’autres familles d’appareils. Toutefois, les applications peuvent choisir de forcer la superposition afin que celle-ci soit toujours **activée** ou **désactivée**.
 
 ![Menu volant avec superposition estompant l’affichage](../images/flyout-smoke.png)
 
@@ -156,19 +156,19 @@ Les contrôles d’abandon interactif comme les menus volants interrompent le fo
 ```
 
 ## <a name="light-dismiss-behavior"></a>Comportement d’abandon interactif
-Il est possible de fermer les menus volants à l’aide d’une action d’abandon interactif, notamment
+Il est possible de fermer les menus volants à l’aide d’une action d’abandon interactif, notamment comme suit
 -   Appui en dehors du menu volant
 -   Appui sur la touche Échap du clavier
 -   Appui sur le bouton Précédent du système matériel ou logiciel
--   Appui sur le bouton B du boîtier de commande
+-   Appui sur le bouton B de la manette de jeu
 
-Lorsque l’une fermeture à l’aide d’un appui, ce mouvement est généralement absorbé et non transmis à l’interface utilisateur en dessous. Par exemple, si un bouton est visible derrière un menu volant ouvert, le premier appui de l’utilisateur ferme le menu volant mais n’active pas ce bouton. L’appui sur le bouton nécessite un second appui.
+En cas d’abandon à l’aide d’un appui, ce mouvement est généralement absorbé et non transmis à l’interface utilisateur en dessous. Par exemple, si un bouton est visible derrière un menu volant ouvert, le premier appui de l’utilisateur ferme le menu volant mais n’active pas ce bouton. L’appui sur le bouton nécessite un second appui.
 
-Vous pouvez modifier ce comportement en désignant le bouton comme un élément d’entrée directe pour le menu volant. Les actions d’abandon interactif décrites ci-dessus fermeront le menu volant et transmettront également l’événement d’appui pour à son `OverlayInputPassThroughElement` désigné. Envisagez l’adoption de ce comportement pour accélérer les interactions utilisateur sur des éléments similaires du point de vue fonctionnel. Si votre application possède une collection de favoris et que chaque élément de la collection inclut un menu volant joint, il est raisonnable de s’attendre à ce que les utilisateurs souhaitent interagir avec plusieurs menus volants en une succession rapide.
+Vous pouvez modifier ce comportement en désignant le bouton comme un élément d’entrée directe pour le menu volant. Les actions d’abandon interactif décrites ci-dessus ferment le menu volant et transmettent l’événement d’appui à son `OverlayInputPassThroughElement` désigné. Envisagez l’adoption de ce comportement pour accélérer les interactions de l’utilisateur sur des éléments similaires du point de vue fonctionnel. Si votre application possède une collection de favoris et que chaque élément de la collection inclut un menu volant, il est raisonnable de s’attendre à ce que les utilisateurs souhaitent interagir avec plusieurs menus volants en une succession rapide.
 
-[!NOTE] Veillez à ne pas désigner un élément de superposition avec entrée directe qui se traduit par une action destructrice. Les utilisateurs se sont habitués aux actions d’abandon interactif discrètes, qui n’activent pas l’interface utilisateur principale. Les boutons destructeurs de type Fermer, Supprimer ou similaires ne doivent pas être activés par un abandon interactif, de manière à éviter les comportements inattendus et perturbateurs.
+[!NOTE] Veillez à ne pas désigner un élément de superposition avec entrée directe qui se traduit par une action destructrice. Les utilisateurs se sont habitués aux actions d’abandon interactif discrètes qui n’activent pas l’interface utilisateur principale. Les boutons destructeurs de type Fermer, Supprimer ou similaires ne doivent pas être activés par un abandon interactif, de manière à éviter les comportements inattendus et perturbateurs.
 
-Dans l’exemple suivant, les trois boutons de la FavoritesBar seront activés par le premier appui.
+Dans l’exemple suivant, les trois boutons de la FavoritesBar sont activés par le premier appui.
 
 ````xaml
 <Page>
@@ -210,10 +210,10 @@ private void Folder2_Click(object sender, RoutedEventArgs e)
 
 ## <a name="get-the-sample-code"></a>Obtenir l’exemple de code
 
-- [Exemples de la Galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) - Affichez tous les contrôles XAML dans un format interactif.
+- [Exemple de Galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) : tous les contrôles XAML dans un format interactif.
 
 ## <a name="related-articles"></a>Articles connexes
 - [Info-bulles](../tooltips.md)
-- [Menus et le menu contextuel](../menus.md)
-- [Classe de menu volant](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
-- [Classe de ContentDialog](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)
+- [Menus et menu contextuel](../menus.md)
+- [Classe Flyout](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
+- [Classe ContentDialog](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)
