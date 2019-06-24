@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c13ac8f1421fe785ebce70789c8ea6d0bf6c068
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: b27c5a0446bc9b329b09855f06d58a13723ece1c
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66364017"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317384"
 ---
 # <a name="access-keys"></a>Touches d’accès rapide
 
@@ -241,7 +241,7 @@ Les touches d’accès localisées sont spécifiées dans votre fichier de proje
 
 _Spécifiez la propriété AccessKey spécifiée dans le fichier resources.resw_
 
-Pour plus d’informations, consultez [Traduire des ressources d’interface utilisateur ](https://msdn.microsoft.com/library/windows/apps/xaml/Hh965329(v=win.10).aspx)
+Pour plus d’informations, consultez [Traduire des ressources d’interface utilisateur ](https://docs.microsoft.com/previous-versions/windows/apps/hh965329(v=win.10))
 
 ## <a name="key-tip-positioning"></a>Positionnement des touches d’accès
 
@@ -355,7 +355,7 @@ L’infrastructure XAML expose les propriétés d’automatisation qui permetten
 
 Si vous spécifiez la propriété AccessKey sur une commande UIElement ou TextElement, vous pouvez utiliser la propriété [AutomationProperties.AccessKey](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.accesskey?view=netframework-4.8) afin d’obtenir cette valeur. Les clients d’accessibilité, tels que Narrateur, lisent la valeur de cette propriété à chaque fois qu’un élément obtient un focus.
 
-## <a name="related-articles"></a>Articles connexes
+## <a name="related-articles"></a>Articles associés
 
 * [Interactions de clavier](keyboard-interactions.md)
 * [Accélérateurs de clavier](keyboard-accelerators.md)

@@ -8,12 +8,12 @@ ms.date: 05/18/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8af03b32453bcdacb3da95678cf23a988c375f1b
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 60be53bfcb351866a0cf124fe4ef6f21ff889f88
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359643"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318967"
 ---
 # <a name="accessibility-testing"></a>Test de l’accessibilité  
 
@@ -95,7 +95,7 @@ Utilisez votre application lorsqu’un thème à contraste élevé est actif pou
 
 ## <a name="verify-your-app-with-display-settings"></a>Vérifier votre application avec des paramètres d’affichage  
 
-Utilisez les options d’affichage système qui ajustent la valeur en haute résolution de l’affichage et assurez-vous que l’interface utilisateur de votre application est correctement mise à l’échelle lorsque cette valeur est modifiée. (Certains utilisateurs modifient les valeurs de résolution comme une option d’accessibilité, il est disponible à partir de **d’ergonomie** ainsi qu’afficher les propriétés.) Si vous rencontrez des problèmes, suivez la [instructions pour la mise à l’échelle d’une disposition](https://developer.microsoft.com/windows/design) et fournir des ressources supplémentaires pour différents facteurs de mise à l’échelle.
+Utilisez les options d’affichage système qui ajustent la valeur en haute résolution de l’affichage et assurez-vous que l’interface utilisateur de votre application est correctement mise à l’échelle lorsque cette valeur est modifiée. (Certains utilisateurs modifient les valeurs de résolution comme une option d’accessibilité, il est disponible à partir de **d’ergonomie** ainsi qu’afficher les propriétés.) Si vous rencontrez des problèmes, suivez la [instructions pour la mise à l’échelle d’une disposition](https://developer.microsoft.com/windows/apps/design) et fournir des ressources supplémentaires pour différents facteurs de mise à l’échelle.
 
 <span id="verify_main_app_scenarios_by_using_narrator"/>
 <span id="VERIFY_MAIN_APP_SCENARIOS_BY_USING_NARRATOR"/>
@@ -107,7 +107,7 @@ Utilisez le Narrateur pour tester l’expérience de lecture d’écran pour vot
 
 **Suivez ces étapes pour tester votre application avec le Narrateur avec une souris et du clavier :**
 1.  Démarrez le Narrateur en appuyant sur la _touche de logo Windows + Ctrl + Entrée_. Dans les versions antérieures à Windows 10 version 1607, utilisez la _touche de logo Windows + Entrée_ pour démarrer le Narrateur.
-2.  Naviguez dans votre application à l’aide du clavier en utilisant la touche _Tab_, les touches de direction et la _touche Verr. maj + les touches de direction_.
+2.  Naviguez dans votre application à l’aide du clavier en utilisant la touche _Tab_, les touches de direction et la _touche Verr. maj + les touches de direction_.
 3.  À mesure que vous naviguez dans votre application, écoutez le Narrateur lire les éléments de votre interface utilisateur et vérifiez les points suivants :
     * Pour chaque contrôle, vérifiez que le Narrateur lit tout le contenu visible. Vérifiez également qu’il lit le nom de chaque contrôle, tout état applicable (coché, sélectionné, etc.) et le type du contrôle (bouton, case à cocher, élément de liste, etc.).
     * Si l’élément est interactif, vérifiez que vous pouvez utiliser le Narrateur pour appeler son action en appuyant sur _Verr. maj + Entrée_.
@@ -164,4 +164,4 @@ La présence d’éléments apparaissant à tort dans l’affichage des élémen
 * [Pratiques à éviter](practices-to-avoid.md)
 * [UI Automation](https://docs.microsoft.com/windows/desktop/WinAuto/entry-uiauto-win32)
 * [Accessibilité dans Windows](https://go.microsoft.com/fwlink/p/?LinkId=320802)
-* [Prise en main du Narrateur](https://support.microsoft.com/help/22798/windows-10-narrator-get-started)
+* [Prise en main du Narrateur](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator)

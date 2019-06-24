@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 205ccd6a8a2424d96f2c18068f5bf4c15596fdcb
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: fb8bdb2d2052bb50ee9bc2c9c719f102ac1d9aa0
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63785006"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319977"
 ---
 # <a name="opening-a-developer-account"></a>Ouverture d’un compte de développeur
 
@@ -27,14 +27,14 @@ Voici une vue d’ensemble de l’inscription d’un compte de développeur Wind
 
 1.  Accédez à la [page d’inscription](https://go.microsoft.com/fwlink/p/?LinkId=615100), puis cliquez sur **S’inscrire**.
 2.  Si vous n’êtes pas déjà connecté avec un compte Microsoft, connectez-vous maintenant ou créez un compte Microsoft. Le compte Microsoft que vous utilisez ici sera celui qui vous permettra de vous connecter à votre compte de développeur.
-3.  Choisissez le [pays/région](account-types-locations-and-fees.md#developer-account-and-app-submission-markets) dans lequel vous vivez ou dans lequel se situe votre entreprise. Vous ne pourrez pas faire de changements par la suite.
-4.  Sélectionnez votre [type de compte de développeur](account-types-locations-and-fees.md) (individuel ou d’entreprise). Vous ne pourrez pas le changer par la suite. Soyez donc sûr de votre choix.
-5.  Entrez le **nom complet de l’éditeur** que vous souhaitez utiliser (50 caractères au maximum). Choisissez-le soigneusement, car les clients pourront le voir quand ils navigueront et en viendront à connaître vos applications par ce nom. Pour les comptes d’entreprise, veillez à utiliser le nom d’entreprise enregistré ou l’appellation commerciale de votre organisation. Si vous entrez un nom déjà sélectionné, ou s’il apparaît que quelqu’un d’autre dispose des droits d’utilisation de ce nom, vous n’êtes pas autorisé à utiliser ce nom. 
+3.  Choisissez votre [pays/région](account-types-locations-and-fees.md#developer-account-and-app-submission-markets) de résidence ou dans lequel se situe votre entreprise. Vous ne pourrez pas faire de changements par la suite.
+4.  Sélectionnez votre [type de compte de développeur](account-types-locations-and-fees.md) (individuel ou d’entreprise). Choisissez bien le type de compte souhaité, car vous ne pourrez pas le modifier par la suite.
+5.  Entrez le **nom complet de l’éditeur** que vous souhaitez utiliser (50 caractères au maximum). Choisissez ce nom soigneusement, car les clients pourront le voir dans le cadre de leur navigation et en viendront à connaître vos applications par ce nom. Pour les comptes d’entreprise, veillez à utiliser le nom d’entreprise enregistré ou l’appellation commerciale de votre organisation. Si vous entrez un nom déjà sélectionné, ou s’il apparaît que quelqu’un d’autre dispose des droits d’utilisation de ce nom, vous n’êtes pas autorisé à utiliser ce nom. 
 
    > [!NOTE]
-   > Vérifiez que vous disposez des droits d’utilisation du nom entré ici. Si quelqu’un d’autre a déposé la marque ou protégé par copyright le nom que vous avez choisi, votre compte risque d’être fermé. Pour plus d’informations, consultez le [Contrat du développeur d’application](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). Si une autre personne utilise un nom d’éditeur pour lequel vous détenez un quelconque droit, [contactez Microsoft](https://go.microsoft.com/fwlink/p/?LinkId=233777).    
+   > Vérifiez que vous disposez des droits d’utilisation du nom entré ici. Si quelqu’un d’autre a déposé la marque ou protégé par copyright le nom que vous avez choisi, votre compte risque d’être fermé. Pour plus d’informations, consultez le [Contrat du développeur d’application](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). Si une autre personne utilise un nom d’éditeur sur lequel vous détenez un quelconque droit, [contactez Microsoft](https://go.microsoft.com/fwlink/p/?LinkId=233777).    
 
-6.  Entrez les coordonnées à utiliser pour votre compte de développeur.
+6.  Entrez les infos de contact à utiliser pour votre compte de développeur.
 
    > [!NOTE]
    > Nous n’utilisons ces informations que pour des questions concernant votre compte. Par exemple, vous recevrez un message électronique de confirmation une fois votre inscription terminée. Après cela, nous vous enverrons des messages au moment du règlement ou en cas de problème avec votre compte. Comme décrit ci-dessus, nous pouvons également envoyer des messages d’information, sauf si vous ne souhaitez plus recevoir de messages électroniques non transactionnels.
@@ -55,7 +55,7 @@ Une fois que vous vous êtes inscrit, votre compte est soumis au processus de v�
 ## <a name="additional-guidelines-for-company-accounts"></a>Recommandations supplémentaires pour les comptes d’entreprise
 
 > [!IMPORTANT]
-> Pour autoriser plusieurs utilisateurs à accéder à votre compte de développeur, nous vous recommandons d’utiliser Azure Active Directory pour attribuer des rôles aux utilisateurs individuels (plutôt que de partage d’accès au compte Microsoft). Chaque utilisateur peut accéder ensuite au compte de développeur en vous connectant à des partenaires avec leurs informations d’identification Azure AD. Pour plus d’informations, voir [Gérer les utilisateurs de compte](manage-account-users.md).
+> Pour autoriser plusieurs utilisateurs à accéder à votre compte de développeur, nous vous recommandons d’utiliser Azure Active Directory pour attribuer des rôles aux utilisateurs individuels (plutôt que de partage d’accès au compte Microsoft). Chaque utilisateur peut accéder ensuite au compte de développeur en vous connectant à des partenaires avec leurs informations d’identification Azure AD. Pour plus d’informations, voir [Gérer les utilisateurs du compte](manage-account-users.md).
 
 Si vous devez avoir accès à des utilisateurs multiples, le compte d’entreprise en vous connectant avec le compte Microsoft qui l’a ouverte (et non en tant qu’utilisateurs individuels ajoutés au compte), les instructions suivantes peut-être être utile :
 
@@ -72,7 +72,7 @@ Si vous devez avoir accès à des utilisateurs multiples, le compte d’entrepri
 
 Nous utilisons les informations de sécurité que vous fournissez pour renforcer le niveau de sécurité de votre compte Microsoft en l’associant à plusieurs formes d’authentification. Cela rend les accès non autorisés à votre compte Microsoft (et à votre compte de développeur) beaucoup plus difficiles. En outre, si vous oubliez votre mot de passe ou que quelqu’un d’autre tente d’accéder à votre compte, nous serons en mesure de vous contacter pour confirmer la propriété et/ou rétablir le contrôle approprié de votre compte.
 
-Vous devez disposer d’au moins deux adresses e-mail et/ou numéros de téléphone pour votre compte Microsoft. Nous recommandons d’en ajouter autant que possible. Gardez à l’esprit que certaines informations de sécurité doivent être confirmées avant d’être valides. En outre, vérifiez fréquemment vos informations de sécurité pour vous assurer qu’elles sont à jour. Vous pouvez gérer vos informations de sécurité en accédant à https://account.microsoft.com/security et vous connecter avec votre compte Microsoft. Consultez [des informations de sécurité et les codes de sécurité](https://support.microsoft.com/help/12428/microsoft-account-security-info-and-security-codes) pour plus d’informations.
+Vous devez disposer d’au moins deux adresses e-mail et/ou numéros de téléphone pour votre compte Microsoft. Nous recommandons d’en ajouter autant que possible. Gardez à l’esprit que certaines informations de sécurité doivent être confirmées avant d’être valides. En outre, vérifiez fréquemment vos informations de sécurité pour vous assurer qu’elles sont à jour. Vous pouvez gérer vos informations de sécurité en accédant à https://account.microsoft.com/security et vous connecter avec votre compte Microsoft. Consultez [des informations de sécurité et les codes de sécurité](https://support.microsoft.com/help/12428/microsoft-account-security-info-verification-codes) pour plus d’informations.
 
 Lorsque vous êtes connecté au centre de partenaires à l’aide de votre compte Microsoft, le système peut demander de vérifier votre identité en envoyant un code de sécurité que vous devez fournir pour terminer le processus de connexion. Nous vous recommandons de désigner des PC que vous utilisez fréquemment en tant que *appareils de confiance*. Lorsque vous êtes connecté à partir d’un appareil de confiance, vous généralement n’invité pour un code, bien que vous pouvez parfois être invité dans des situations spécifiques, ou si vous n’avez pas connecté sur cet appareil dans un certain temps. Consultez [ajouter un périphérique approuvé à votre compte Microsoft](https://support.microsoft.com/help/12369/microsoft-account-add-a-trusted-device) pour plus d’informations.
 

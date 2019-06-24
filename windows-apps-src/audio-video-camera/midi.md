@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2737713030d68dbc19aaad3df767cea103b53f35
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 73806735401f53a73b1051f37c72119b45b574be
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361595"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318292"
 ---
 # <a name="midi"></a>MIDI
 
@@ -73,7 +73,7 @@ L’élément **DeviceWatcher** présente les événements suivants :
 -   [**Mise à jour** ](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.updated) -déclenché lorsque les informations associées à un périphérique existant sont mis à jour.
 -   [**EnumerationCompleted** ](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.enumerationcompleted) -déclenché lorsque l’Observateur a terminé son énumération du type de périphérique demandé.
 
-Dans le gestionnaire d’événements, pour chacun de ces événements, une méthode d’assistance **UpdateDevices** est appelée pour mettre à jour l’élément **ListBox** en tenant compte de la liste actuelle des périphériques. Dans la mesure où **UpdateDevices** met à jour les éléments d’interface utilisateur et que ces gestionnaires d’événements ne sont pas appelés sur le thread d’interface utilisateur, chaque appel doit être encapsulé dans un appel à [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows), ce qui entraîne l’exécution du code sur le thread d’interface utilisateur.
+Dans le gestionnaire d’événements, pour chacun de ces événements, une méthode d’assistance **UpdateDevices** est appelée pour mettre à jour l’élément **ListBox** en tenant compte de la liste actuelle des périphériques. Dans la mesure où **UpdateDevices** met à jour les éléments d’interface utilisateur et que ces gestionnaires d’événements ne sont pas appelés sur le thread d’interface utilisateur, chaque appel doit être encapsulé dans un appel à [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync), ce qui entraîne l’exécution du code sur le thread d’interface utilisateur.
 
 [!code-cs[WatcherEventHandlers](./code/MIDIWin10/cs/MyMidiDeviceWatcher.cs#SnippetWatcherEventHandlers)]
 

@@ -6,12 +6,12 @@ ms.date: 08/30/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a44a1adb8685ad182620b4c68024176628b9204d
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 087192160fd098d63042f3d1ad16fe7a811de337
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66369665"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321509"
 ---
 # <a name="enterprise"></a>Entreprise
 
@@ -156,8 +156,8 @@ Vous disposez d’options pour la distribution des applications aux utilisateurs
 | Rubrique | Description |
 |-------|-------------|
 | [Distribuer des applications métier aux entreprises](https://docs.microsoft.com/windows/uwp/publish/distribute-lob-apps-to-enterprises) | Vous pouvez publier des applications métier directement à l’attention des entreprises pour une acquisition en volume via le Microsoft Store pour Entreprises, sans mettre vos applications à la disposition du grand public. |
-| [Chargement de la version test des applications](https://technet.microsoft.com/library/mt269549) | Lorsque vous chargez de manière indépendante une application, vous déployez un package d’application signée sur un appareil. Vous conservez la signature, l’hébergement et le déploiement de ces applications. Le processus de chargement indépendant d’applications est simplifié pour Windows 10.             |
-| [Publier des applications sur le Microsoft Store](https://dev.windows.com/publish) | Le Microsoft Store unifié vous permet de publier et de gérer toutes vos applications pour l’ensemble des appareils Windows. Personnalisez la disponibilité de votre application à l’aide d’une tarification par marché, de contrôles de distribution et de visibilité et d’autres options. |
+| [Chargement de la version test des applications](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10) | Lorsque vous chargez de manière indépendante une application, vous déployez un package d’application signée sur un appareil. Vous conservez la signature, l’hébergement et le déploiement de ces applications. Le processus de chargement indépendant d’applications est simplifié pour Windows 10.             |
+| [Publier des applications sur le Microsoft Store](https://developer.microsoft.com/store/publish-apps) | Le Microsoft Store unifié vous permet de publier et de gérer toutes vos applications pour l’ensemble des appareils Windows. Personnalisez la disponibilité de votre application à l’aide d’une tarification par marché, de contrôles de distribution et de visibilité et d’autres options. |
 
 ## <a name="enterprise-uwp-samples"></a>Exemples UWP pour entreprises
 

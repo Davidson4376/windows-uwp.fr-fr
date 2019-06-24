@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, jeux, échantillonnage multiple, direct3d
 ms.localizationpriority: medium
-ms.openlocfilehash: b547e47b7d896ab818349dcc70ee9dc3c7078847
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 976cdfb5f1dc92f693f7296d6e33d7ccc4c4d6e7
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368382"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318945"
 ---
 # <a name="span-iddevgamingmultisamplingmulti-sampleantialiasinginwindowsstoreappsspan-multisampling-in-universal-windows-platform-uwp-apps"></a><span id="dev_gaming.multisampling__multi-sample_anti_aliasing__in_windows_store_apps"></span> L’échantillonnage multiple dans Universal Windows Platform (UWP) des applications
 
@@ -30,7 +30,7 @@ Les niveaux de fonctionnalités Direct3D garantissent la prise en charge des pos
 
 1.  Appelez [**ID3D11Device::CheckFeatureSupport**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkfeaturesupport) pour connaître les formats DXGI utilisables avec l’échantillonnage multiple. Fournissez les formats de cibles de rendu utilisables par votre jeu. La cible de rendu et la cible de résolution doit utiliser le même format, reportez-vous à la fois à [ **D3D11\_FORMAT\_prise en charge\_multi-échantillons\_RENDERTARGET** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ne-d3d11-d3d11_format_support) et **D3D11\_FORMAT\_prise en charge\_multi-échantillons\_résoudre**.
 
-    **Niveau de fonctionnalité 9 :  ** Bien que la fonctionnalité de niveau 9 appareils [garantit la prise en charge des formats de cible de rendu de textures](https://docs.microsoft.com/previous-versions//ff471324(v=vs.85)), prise en charge n’est pas garanti pour les cibles de résolution d’échantillonnage multiple. Cette vérification est nécessaire avant toute tentative d’utilisation de la technique d’échantillonnage multiple décrite dans cette rubrique.
+    **Niveau de fonctionnalité 9 :  ** Bien que la fonctionnalité de niveau 9 appareils [garantit la prise en charge des formats de cible de rendu de textures](https://docs.microsoft.com/previous-versions/ff471324(v=vs.85)), prise en charge n’est pas garanti pour les cibles de résolution d’échantillonnage multiple. Cette vérification est nécessaire avant toute tentative d’utilisation de la technique d’échantillonnage multiple décrite dans cette rubrique.
 
     Le code suivant vérifie l’échantillonnage multiple prise en charge pour tous le DXGI\_les valeurs FORMAT :
 

@@ -5,12 +5,12 @@ ms.date: 07/16/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 733ce75942a05482ade88c1510e788f1cbd515d4
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c23de238a0004066b44cfe962e2de72216eb7a6d
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57602204"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318469"
 ---
 # <a name="using-lights-in-windows-ui"></a>À l’aide des lumières dans l’interface utilisateur de Windows
 
@@ -27,13 +27,13 @@ Les APIs Windows.UI.Composition permettent de créer des effets et des animation
 
 Éclairage de composition prend en charge trois concepts clés : **Lumière**, **cibles**, et **SceneLightingEffect**.
 
-## <a name="light"></a>Maigre
+## <a name="light"></a>Light
 
 [CompositionLight](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionlight) vous permet de créer différentes lumières et placez-les dans l’espace de coordonnées. Ces lumières ciblent des éléments visuels que vous souhaitez identifier comme éclairés par la lumière.
 
 ### <a name="light-types"></a>Types de lumière
 
-| Type | Description |
+| type | Description |
 | --- | --- |
 | [AmbientLight](/uwp/api/windows.ui.composition.ambientlight) | Une source de lumière qui émet de la lumière non directionnelles qui s’affiche est reflétée par tous les éléments de la scène. |
 | [DistantLight](/uwp/api/windows.ui.composition.distantlight) | Une à l’infini grande source de lumière distante qui émet de la lumière dans une seule direction. Comme le soleil. |
@@ -63,7 +63,7 @@ L’ajout d’une animation au décalage de la lumière du point, un effet scint
 _pointLight.Offset = new Vector3(-(float)TextBlock.ActualWidth, (float)TextBlock.ActualHeight / 2, (float)TextBlock.FontSize);
 ```
 
-Consultez la [texte miroiter](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2014393/TextShimmer) exemple indiqué à la cuisine d’exemple WindowUIDevLabs pour en savoir plus.
+Consultez la [texte miroiter](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK 14393/TextShimmer) exemple indiqué à la cuisine d’exemple WindowUIDevLabs pour en savoir plus.
 
 ## <a name="restrictions"></a>Restrictions
 
@@ -73,7 +73,7 @@ Concept | Détails
 --- | ---
 **Lumière ambiante** | Ajout d’une lumière non ambiante à votre scène désactiver tous les lumière existante.  Les éléments n’est ciblés par une lumière non ambiante seront affiche en noirs.  Pour éclairer environnantes visuels n’est ciblés par la lumière de façon naturelle, utilisez une lumière ambiante conjointement avec d’autres lumières.
 **Nombre de lumières** | Vous pouvez utiliser des deux voyants composition non ambiante dans n’importe quelle combinaison de cibler votre interface utilisateur. Éclairage ambiant n’est pas limitées ; repérer, point et que les lumières distantes sont.
-**durée de vie** | CompositionLight peut rencontrer des conditions de durée de vie (exemple : le garbage collector peut recycler l’objet lumière avant d’être utilisée).  Nous vous recommandons de conserver une référence à vos lumières en ajoutant des lumières en tant que membre pour aider à l’application de gérer la durée de vie.
+**Lifetime** | CompositionLight peut rencontrer des conditions de durée de vie (exemple : le garbage collector peut recycler l’objet lumière avant d’être utilisée).  Nous vous recommandons de conserver une référence à vos lumières en ajoutant des lumières en tant que membre pour aider à l’application de gérer la durée de vie.
 **Transformations** | Lumières doivent être placés dans un nœud situé au-dessus de l’interface utilisateur qui utilise des effets tels que [perspective transformations](/windows/uwp/design/layout/3-d-perspective-effects) dans votre structure visuelle à dessiner correctement.
 **Cibles et l’espace de coordonnées** | CoordinateSpace est alors utilisée est l’espace visual dans laquelle toutes les propriétés de lumières doivent être définies. CompositionLight.Targets doit figurer dans l’arborescence CoordinateSpace est alors utilisée.
 
@@ -83,11 +83,11 @@ Selon le type de la lumière utilisée, une lumière peut avoir des propriétés
 
 Propriété | Description
 --- | ---
-**Couleur** | Le [couleur](/uwp/api/windows.ui.color) de la lumière. Valeurs de couleur d’éclairage sont définies par [D3D](https://docs.microsoft.com/windows/uwp/graphics-concepts/light-properties) diffusion ambiant et spéculaire qui définit la couleur qui est émise. Éclairage utilise différentes valeurs RVBA pour lumières ; le composant de couleur alpha n’est pas utilisé.
+**Color** | Le [couleur](/uwp/api/windows.ui.color) de la lumière. Valeurs de couleur d’éclairage sont définies par [D3D](https://docs.microsoft.com/windows/uwp/graphics-concepts/light-properties) diffusion ambiant et spéculaire qui définit la couleur qui est émise. Éclairage utilise différentes valeurs RVBA pour lumières ; le composant de couleur alpha n’est pas utilisé.
 **Direction** | La direction de la lumière. La direction dans laquelle la lumière pointe est spécifiée relatif à son [CoordinateSpace est alors utilisée](/uwp/api/windows.ui.composition.distantlight.coordinatespace) Visual.
 **Espace de coordonnées** | Chaque visuel a un espace de coordonnées 3D implicit. Axe X est de gauche à droite. Direction Y est de haut en bas. Direction Z est un point hors du plan. Le point d’origine de cette coordonnée est l’angle supérieur gauche de l’élément visuel, et l’unité est le Pixel indépendant de périphérique (DIP). Décalage d’une lumière défini dans ces coordonnées.
 **Cônes internes et externes** | Les projecteurs émettent un cône de lumière en 2 portions : un cône interne lumineux et un cône externe. COMPOSITION permet le que contrôle sur les couleurs et les angles du cône interne et externe.
-**Décalage** | Décalage de la source de lumière par rapport à son espace de coordonnées Visual.
+**Offset** | Décalage de la source de lumière par rapport à son espace de coordonnées Visual.
 
 > [!NOTE]
 > Lorsque plusieurs lumières atteint le même élément visuel, ou chaque fois que la valeur de couleur d’une lumière obtient suffisamment importante pour dépasser 1.0, la couleur de la lumière peut changer en raison d’un canal de couleur lumières de serrage.
@@ -97,7 +97,7 @@ Propriété | Description
 Propriété | Description
 --- | ---
 **Intensité** | Contrôle la luminosité de la lumière.
-**Atténuation** | Les contrôles d’atténuation définissent la manière dont l’intensité de la lumière décroît jusqu’à la distance maximale spécifiée par la propriété d’étendue.  Constante, les propriétés d’atténuation Quadradic et linéaires peuvent être utilisées.
+**Attenuation** | Les contrôles d’atténuation définissent la manière dont l’intensité de la lumière décroît jusqu’à la distance maximale spécifiée par la propriété d’étendue.  Constante, les propriétés d’atténuation Quadradic et linéaires peuvent être utilisées.
 
 ## <a name="getting-started-with-lighting"></a>Prise en main d’éclairage
 
@@ -160,11 +160,11 @@ CompositionBrush CreateNormalMapBrush(ICompositionSurface normalMapImage)
 }
 ```
 
-## <a name="related-articles"></a>Articles connexes
+## <a name="related-articles"></a>Articles associés
 
 - [Création de documents et des lumières dans la couche visuelle](https://blogs.windows.com/buildingapps/2017/08/04/creating-materials-lights-visual-layer/)
 - [Vue d’ensemble de l’éclairage](https://docs.microsoft.com/windows/uwp/graphics-concepts/lighting-overview)
 - [CompositionCapabilities API](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositioncapabilities)
 - [Mathématiques d’éclairage](https://docs.microsoft.com/windows/uwp/graphics-concepts/mathematics-of-lighting)
 - [SceneLightingEffect](https://docs.microsoft.com/uwp/api/windows.ui.composition.effects.scenelightingeffect)
-- [Référentiel GitHub de WindowsUIDevLabs](https://github.com/Microsoft/WindowsUIDevLabs)
+- [Référentiel GitHub de WindowsUIDevLabs](https://github.com/microsoft/WindowsCompositionSamples)

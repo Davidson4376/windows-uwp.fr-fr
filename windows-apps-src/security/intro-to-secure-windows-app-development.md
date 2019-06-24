@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, sécurité
 ms.localizationpriority: medium
-ms.openlocfilehash: ee386199fbee7d2f9b839d6b1805c6181e4d70a9
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: c9b4060fbd2e59a545451c9c8ebe103c9bb527a0
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371394"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320603"
 ---
 # <a name="intro-to-secure-windows-app-development"></a>Présentation du développement d’applications Windows sécurisées
 
@@ -161,7 +161,7 @@ En outre, Azure AD peut jouer le rôle de fournisseur OAuth, en offrant à l’u
 ## <a name="24-windows-hello"></a>2.4 Windows Hello
 
 
-Le système d’exploitation Windows 10 intègre un mécanisme d’authentification multifacteur d’une grande simplicité. Windows Hello est le nouveau système de connexion biométrique intégré à Microsoft 10. Étant donné qu’il est directement intégré au système d’exploitation, Windows Hello peut identifier le visage ou les empreintes digitales pour déverrouiller les appareils des utilisateurs. Le magasin d’informations d’identification sécurisées Windows protège les données biométriques figurant sur l’appareil.
+Le système d’exploitation Windows 10 intègre un mécanisme d’authentification multifacteur d’une grande simplicité. Windows Hello est le nouveau système de connexion biométrique intégré à Windows 10. Étant donné qu’il est directement intégré au système d’exploitation, Windows Hello peut identifier le visage ou les empreintes digitales pour déverrouiller les appareils des utilisateurs. Le magasin d’informations d’identification sécurisées Windows protège les données biométriques sur l’appareil.
 
 Avec Windows Hello, un appareil dispose d’une méthode fiable de reconnaissance de l’utilisateur, ce qui permet de traiter la première partie du chemin d’accès entre un utilisateur et un service ou un élément de données demandé. Une fois que l’appareil a reconnu l’utilisateur, il doit toujours authentifier ce dernier avant de déterminer s’il lui accorde l’accès à une ressource demandée. Windows Hello propose une authentification à 2 facteurs (2FA) forte, entièrement intégrée à Windows, qui remplace les mots de passe réutilisables par la combinaison d’un appareil spécifique et d’un mouvement biométrique ou d’un code confidentiel. Le code PIN est spécifié par l’utilisateur dans le cadre de son inscription au compte Microsoft.
 
@@ -173,9 +173,9 @@ Le flux de travail d’inscription d’une application peut ressembler à ce qui
 
 ![Inscription à Windows hello](images/secure-passport.png)
 
-Les informations d’inscription que vous collectez peuvent inclure beaucoup d’autres informations d’identification que dans le cas de ce scénario simple. Par exemple, si votre application accède à un service sécurisé tel qu’un service bancaire, votre processus d’inscription doit demander une preuve d’identité et d’autres informations. Une fois toutes les conditions remplies, la clé publique de cet utilisateur est stockée dans le système principal et utilisée pour la validation lors de l’utilisation suivante du service par l’utilisateur.
+Les informations d’inscription que vous collectez peuvent inclure beaucoup plus informations d’identification que dans le cas de ce scénario simple. Par exemple, si votre application accède à un service sécurisé tel qu’un service bancaire, votre processus d’inscription doit demander une preuve d’identité et d’autres informations. Une fois toutes les conditions remplies, la clé publique de cet utilisateur est stockée dans le système principal et utilisée pour la validation lors de l’utilisation suivante du service par l’utilisateur.
 
-Pour en savoir plus sur Windows Hello, voir le [guide Windows Hello](https://technet.microsoft.com/itpro/windows/keep-secure/microsoft-passport-guide) et le [guide du développeur de Windows Hello](microsoft-passport.md).
+Pour en savoir plus sur Windows Hello, voir le [guide Windows Hello](https://docs.microsoft.com/windows/keep-secure/microsoft-passport-guide) et le [guide du développeur de Windows Hello](microsoft-passport.md).
 
 ## <a name="3-data-in-flight-security-methods"></a>3 Méthodes de sécurité des données en transit
 
@@ -478,14 +478,14 @@ Lorsque les données arrivent sur l’appareil, le modèle d’application Windo
 
 ### <a name="62-code-samples"></a>6.2 Exemples de code
 
--   [Stockage sécurisé des informations d’identification](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/PasswordVault)
--   [Sélecteur d’informations d’identification](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/CredentialPicker)
--   [Verrouillage de l’appareil avec une connexion Azure](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/DeviceLockdownAzureLogin)
--   [Protection des données d’entreprise](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/EnterpriseDataProtection)
--   [KeyCredentialManager](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/KeyCredentialManager)
--   [Cartes à puce](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/SmartCard)
--   [Gestion des comptes](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/WebAccountManagement)
--   [WebAuthenticationBroker](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/WebAuthenticationBroker)
+-   [Stockage sécurisé des informations d’identification](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/PasswordVault)
+-   [Sélecteur d’informations d’identification](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CredentialPicker)
+-   [Verrouillage de l’appareil avec une connexion Azure](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/DeviceLockdownAzureLogin)
+-   [Protection des données d’entreprise](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/EnterpriseDataProtection)
+-   [KeyCredentialManager](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/KeyCredentialManager)
+-   [Cartes à puce](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SmartCard)
+-   [Gestion des comptes](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAccountManagement)
+-   [WebAuthenticationBroker](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAuthenticationBroker)
 
 ### <a name="63-api-reference"></a>6.3 Informations de référence sur les API
 

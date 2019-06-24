@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: appareils Windows 10, uwp, connectés, les systèmes distants, rome, project rome
 ms.localizationpriority: medium
-ms.openlocfilehash: 665a40cf69b7518643390abddc3895be07c63c5c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 83230e17548f022767dcdde6b17fa9a93d6d9304
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66366193"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320966"
 ---
 # <a name="discover-remote-devices"></a>Détecter des appareils distants
 Votre application peut utiliser une connexion réseau sans fil, Bluetooth et cloud pour détecter les appareils Windows signés avec le même compte Microsoft que l’appareil détecteur. Aucun logiciel particulier n’est nécessaire sur les appareils distants pour qu’ils soient détectables.
@@ -36,7 +36,7 @@ Il existe également une propriété dans le [ **RemoteSystem** ](https://docs.m
 > [!NOTE]
 > Si vous souhaitez découvrir les appareils sur un réseau local (déterminé par votre sélection de filtre du type de découverte), votre réseau doit utiliser un profil « privé » ou « domaine ». Votre appareil ne découvrira pas les autres appareils qui se trouvent sur un réseau « public ».
 
-Une fois créée, la liste des objets [**IRemoteSystemFilter**](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems.IRemoteSystemFilter) peut être transmise au constructeur d’un **RemoteSystemWatcher**.
+Lorsqu’une liste d’objets [**IRemoteSystemFilter**](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems.IRemoteSystemFilter) est créée, il est possible de la transmettre au constructeur d’un **RemoteSystemWatcher**.
 
 [!code-cs[Main](./code/DiscoverDevices/MainPage.xaml.cs#SnippetCreateWatcher)]
 
@@ -48,7 +48,7 @@ Lorsque la méthode [**Start**](https://docs.microsoft.com/uwp/api/windows.syste
 Ensuite, la procédure de traitement des événements, de récupération des objets [**RemoteSystem**](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems.RemoteSystem) et de connexion aux appareils distants est exactement le même que dans [Lancer une application sur un appareil distant](launch-a-remote-app.md). En résumé, les objets **RemoteSystem** sont stockés comme des propriétés d’objets [**RemoteSystemAddedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems.RemoteSystemAddedEventArgs), qui sont transmis avec chaque événement **RemoteSystemAdded**.
 
 ## <a name="discover-devices-by-address-input"></a>Détecter des appareils par entrée d’adresse
-Certains appareils ne peuvent pas être associés à un utilisateur ou détectés par un balayage, mais ils restent accessibles si l’application détectrice utilise une adresse directe. La classe [**HostName**](https://docs.microsoft.com/uwp/api/windows.networking.hostname) permet de représenter l’adresse d’un appareil distant. Cette adresse est souvent stockée sous la forme d’une adresse IP, mais d’autres formats sont autorisés (pour plus d’informations, consultez la section [**Constructeur HostName**](https://docs.microsoft.com/uwp/api/windows.networking.hostname.)).
+Certains appareils ne peuvent pas être associés à un utilisateur ou détectés par un balayage, mais ils restent accessibles si l’application détectrice utilise une adresse directe. La classe [**HostName**](https://docs.microsoft.com/uwp/api/windows.networking.hostname) permet de représenter l’adresse d’un appareil distant. Cette adresse est souvent stockée sous la forme d’une adresse IP, mais d’autres formats sont autorisés (pour plus d’informations, consultez la section [**Constructeur HostName**](https://docs.microsoft.com/uwp/api/windows.networking.hostname.-ctor)).
 
 Un objet **RemoteSystem** est récupéré si un objet **HostName** valide est fourni. Si l’adresse n’est pas valide, une référence d’objet `null` est renvoyée.
 

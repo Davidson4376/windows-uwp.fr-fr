@@ -6,18 +6,18 @@ ms.date: 08/08/2018
 ms.topic: article
 keywords: windows 10, uwp, éducation
 ms.localizationpriority: medium
-ms.openlocfilehash: bee8a04e3b4d57caf7da3e21f2be3c789d83be90
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 31672ff989da7d72f751a33ec3df3d8d528e22ec
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57627594"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317820"
 ---
-# <a name="take-a-test-javascript-api"></a>API JavaScript Examen
+# <a name="take-a-test-javascript-api"></a>API JavaScript d’Examen
 
-[Effectuer un Test](https://technet.microsoft.com/edu/windows/take-tests-in-windows-10) est une application UWP basée sur navigateur qui restitue verrouillé des évaluations en ligne pour le test de l’important, ce qui permet aux enseignants pour vous concentrer sur l’évaluation contenu plutôt que de la façon de fournir une sécurité test environnement. Pour y parvenir, elle utilise une API JavaScript que n’importe quelle application web peut utiliser. L’API d’Examen prend en charge la [norme d’API de navigateur SBAC](https://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf) pour des examens courants dont les enjeux sont importants.
+[Effectuer un Test](https://docs.microsoft.com/education/windows/take-tests-in-windows-10) est une application UWP basée sur navigateur qui restitue verrouillé des évaluations en ligne pour le test de l’important, ce qui permet aux enseignants pour vous concentrer sur l’évaluation contenu plutôt que de la façon de fournir une sécurité test environnement. Pour y parvenir, elle utilise une API JavaScript que n’importe quelle application web peut utiliser. L’API d’Examen prend en charge la [norme d’API de navigateur SBAC](https://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf) pour des examens courants dont les enjeux sont importants.
 
-Consultez [Informations techniques de référence sur l’application Examen](https://technet.microsoft.com/edu/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396) pour plus d’informations sur l’application. Pour obtenir de l’aide pour la résolution des problèmes, voir [Résoudre les problèmes de Microsoft Examen avec l’observateur d’événements](troubleshooting.md).
+Consultez [Informations techniques de référence sur l’application Examen](https://docs.microsoft.com/education/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396) pour plus d’informations sur l’application. Pour obtenir de l’aide pour la résolution des problèmes, consultez [Résoudre les problèmes de Microsoft Examen avec l’observateur d’événements](troubleshooting.md).
 
 ## <a name="reference-documentation"></a>Documentation de référence
 Les API Examen existent dans les espaces de noms suivants. Notez que toutes les API dépendent d’un objet `SecureBrowser` global.
@@ -32,11 +32,11 @@ L’espace de noms de sécurité vous permet de verrouiller l’appareil, vérif
 
 | Méthode | Description   |
 |--------|---------------|
-|[Verrouillage](#lockDown) | Verrouille l’appareil pour le test. |
+|[lockDown](#lockDown) | Verrouille l’appareil pour le test. |
 |[isEnvironmentSecure](#isEnvironmentSecure) | Détermine si le contexte de verrouillage est toujours appliqué à l’appareil. |
 |[getDeviceInfo](#getDeviceInfo) | Obtient des informations sur la plateforme sur laquelle l’application de test est en cours d’exécution. |
 |[examineProcessList](#examineProcessList)|Obtient la liste des processus utilisateur et système en cours d’exécution.|
-|[Fermer](#close) | Ferme le navigateur et déverrouille l’appareil. |
+|[close](#close) | Ferme le navigateur et déverrouille l’appareil. |
 |[getPermissiveMode](#getPermissiveMode)|Vérifie si le mode permissif est activé ou désactivé.|
 |[setPermissiveMode](#setPermissiveMode)|Active/désactive le mode permissif.|
 |[emptyClipBoard](#emptyClipBoard)|Efface le contenu du presse-papiers du système.|
@@ -58,12 +58,12 @@ Verrouille l’appareil. Également utilisé pour déverrouiller l’appareil. L
 `void SecureBrowser.security.lockDown(Boolean enable, Function onSuccess, Function onError);`
 
 **Paramètres**  
-* `enable` - **true** pour exécuter l’application Take a Test au-dessus de l’écran de verrouillage et appliquer les stratégies présentées dans cet [document](https://technet.microsoft.com/edu/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396). **false** arrête l’exécution de l’application Examen au-dessus de l’écran de verrouillage et la ferme, sauf si l’application n’est pas verrouillée, auquel cas il est sans effet.  
+* `enable` - **true** pour exécuter l’application Take a Test au-dessus de l’écran de verrouillage et appliquer les stratégies présentées dans cet [document](https://docs.microsoft.com/education/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396). **false** arrête l’exécution de l’application Examen au-dessus de l’écran de verrouillage et la ferme, sauf si l’application n’est pas verrouillée, auquel cas il est sans effet.  
 * `onSuccess` -[facultatif] la fonction à appeler une fois que le verrouillage a été activé ou désactivé. Elle doit être au format `Function(Boolean currentlockdownstate)`.  
 * `onError` -[facultatif] la fonction à appeler en cas d’échec de l’opération de verrouillage. Elle doit être au format `Function(Boolean currentlockdownstate)`.  
 
 **Configuration requise**  
-Windows 10 version 1709
+Windows 10, version 1709
 
 ---
 
@@ -86,7 +86,7 @@ Détermine si le contexte de verrouillage est toujours appliqué à l’appareil
 ```
 
 **Configuration requise**  
-Windows 10 version 1709
+Windows 10, version 1709
 
 ---
 
@@ -100,14 +100,14 @@ Obtient des informations sur la plateforme sur laquelle l’application de test 
 
 **Paramètres**  
 * `callback` -La fonction à appeler lorsque cette fonction est terminée. Elle doit être au format `Function(String infoObj)` où `infoObj` est une chaîne JSON contenant plusieurs champs. Les champs suivants doivent être pris en charge :
-    * `os` représente le type de système d’exploitation (par exemple : Windows, macOS, Linux, iOS, Android, etc..)
+    * `os` représente le type de système d’exploitation (par exemple : Windows, macOS, Linux, iOS, Android, etc.)
     * `name` représente le nom de la version du système d’exploitation, le cas échéant (par exemple : Sierra Ubuntu).
     * `version` représente la version du système d’exploitation (par exemple : 10.1, 10 pro, etc..)
     * `brand` représente la personnalisation du navigateur sécurisé (par exemple : OAKS, autorité de certification, SmarterApp, etc.)
     * `model` représente le modèle d’appareil pour les appareils mobiles uniquement ; /non utilisé pour les navigateurs de bureau.
 
 **Configuration requise**  
-Windows 10 version 1709
+Windows 10, version 1709
 
 ---
 
@@ -123,10 +123,10 @@ Obtient la liste de tous les processus en cours d’exécution sur l’ordinateu
 * `blacklistedProcessList` -Liste des processus que l’application de test a sur liste rouge.  
 `callback` -La fonction à appeler une fois que les processus actifs ont été trouvés. Elle doit être au format : `Function(String foundBlacklistedProcesses)` où `foundBlacklistedProcesses` est au format :`"['process1.exe','process2.exe','processEtc.exe']"`. Elle sera vide si aucun processus placé sur liste rouge n’a été trouvé. Si elle est nulle, cela indique qu’une erreur s’est produite dans l’appel de fonction d’origine.
 
-**Remarques** La liste n’inclut pas les processus système.
+**Remarque** La liste n’inclut pas les processus système.
 
 **Configuration requise**  
-Windows 10 version 1709
+Windows 10, version 1709
 
 ---
 
@@ -144,7 +144,7 @@ Ferme le navigateur et déverrouille l’appareil. L’application de test doit 
 **Remarque** Dans Windows 10, version 1607, l’appareil doit être verrouillé initialement. Dans les versions ultérieures, cette méthode ferme le navigateur, que l’appareil soit verrouillé ou non.
 
 **Configuration requise**  
-Windows 10 version 1709
+Windows 10, version 1709
 
 ---
 
@@ -160,7 +160,7 @@ L’application web de test doit appeler cette fonction pour déterminer si le m
 * `callback` -La fonction à appeler lorsque cet appel est terminé. Elle doit être au format : `Function(Boolean permissiveMode)` où `permissiveMode` indique si le navigateur est actuellement en mode permissif. Si elle est nulle ou non définie, une erreur s’est produite dans l’opération get.
 
 **Configuration requise**  
-Windows 10 version 1709
+Windows 10, version 1709
 
 ---
 
@@ -177,7 +177,7 @@ L’application web de test doit appeler cette fonction pour activer et désacti
 * `callback` -La fonction à appeler lorsque cet appel est terminé. Elle doit être au format : `Function(Boolean permissiveMode)` où `permissiveMode` indique si le navigateur est actuellement en mode permissif. Si elle est nulle ou non définie, une erreur s’est produite dans l’opération set.
 
 **Configuration requise**  
-Windows 10 version 1709
+Windows 10, version 1709
 
 ---
 
@@ -190,7 +190,7 @@ Efface le contenu du presse-papiers du système. L’application de test doit ap
 `void SecureBrowser.security.emptyClipBoard();`
 
 **Configuration requise**  
-Windows 10 version 1709
+Windows 10, version 1709
 
 ---
 
@@ -209,7 +209,7 @@ Obtient la liste des adresses MAC pour l’appareil. L’application de test doi
 Il est difficile de s’appuient sur les adresses IP sources pour faire la distinction entre les ordinateurs utilisateur final dans les serveurs de tests, car les pare-feu/NAT/proxys sont couramment utilisés dans les établissements scolaires. Les adresses MAC permettent à l’application de faire la distinction entre les ordinateurs clients finaux derrière un pare-feu commun à des fins de diagnostic.
 
 **Configuration requise**  
-Windows 10 version 1709
+Windows 10, version 1709
 
 ---
 
@@ -225,7 +225,7 @@ Obtient l’heure à laquelle l’application de test a été démarrée.
 Objet DateTime indiquant l’heure de démarrage de l’application de test.
 
 **Configuration requise**  
-Windows 10 version 1709
+Windows 10, version 1709
 
 ---
 
@@ -280,7 +280,7 @@ Vérifie si la session active est journalisée à distance.
 **true** si la session active est distante, sinon **false**.
 
 **Configuration requise**  
-Windows 10 version 1709
+Windows 10, version 1709
 
 ---
 
@@ -299,6 +299,6 @@ Vérifie si la session active est en cours d’exécution au sein d’un ordinat
 Cette vérification API ne détecte que les sessions de machine virtuelle en cours d’exécution dans certains hyperviseurs qui implémentent les API appropriées
 
 **Configuration requise**  
-Windows 10 version 1709
+Windows 10, version 1709
 
 ---

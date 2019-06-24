@@ -11,12 +11,12 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: b8cbbd6f82555576b89328d28d94e43aae7574a2
-ms.sourcegitcommit: 81021b7930905beb67383a08b09520cf95c68fd9
+ms.openlocfilehash: bc879e43d7e117a4e61e8b6de4bb5437d126e84b
+ms.sourcegitcommit: 7effecb544952b493250337fc622848232fa5995
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65940320"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67325853"
 ---
 # <a name="bringing-it-together"></a>Synthèse
 
@@ -27,17 +27,14 @@ Voici 3 manières d’appliquer les principes de base du mouvement Fluent dans 
 :::row:::
     :::column:::
         **Implicit animation**
-
         Automatic tween and timing between values in a parameter change to achieve very simple Fluent motion using the standardized values.
     :::column-end:::
     :::column:::
         **Built-in animation**
-
         System components, such as common controls and shared motion, are "Fluent by default". Fundamentals have been applied in a manner consistent with their implied usage.
     :::column-end:::
     :::column:::
         **Custom animation following guidance recommendations**
-
         There may be times when the system does not yet provide an exact motion solution for your scenario. In those cases, use the baseline fundamental recommendations as a starting point for your experiences.
     :::column-end:::
 :::row-end:::
@@ -50,14 +47,12 @@ Voici 3 manières d’appliquer les principes de base du mouvement Fluent dans 
     :::column:::
         <b>Direction Forward Out:</b><br>
         Fade out: 150m; Easing: Default Accelerate
-
         <b>Direction Forward In:</b><br>
         Slide up 150px: 300ms; Easing: Default Decelerate
     :::column-end:::
     :::column:::
          <b>Direction Backward Out:</b><br>
         Slide down 150px: 150ms; Easing: Default Accelerate
-
         <b>Direction Backward In:</b><br>
         Fade in: 300ms; Easing: Default Decelerate
     :::column-end:::
@@ -86,7 +81,7 @@ Voici 3 manières d’appliquer les principes de base du mouvement Fluent dans 
 <td>
     <p>Si vous avez le <strong style="font-weight: semi-bold">galerie de contrôles XAML</strong> application installée, cliquez ici pour <a href="xamlcontrolsgallery:/item/ImplicitTransition">ouvrez l’application et voir les Transitions implicites en action</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
     </ul>
 </td>

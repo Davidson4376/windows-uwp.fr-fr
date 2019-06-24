@@ -11,16 +11,16 @@ pm-contact: chigy
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
-ms.openlocfilehash: e3fcf6b792990fad9cb0071aece878cac31f5420
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 20cb1e3162f0c852a60c620be92afd37ad9f8232
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57662914"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317272"
 ---
 # <a name="keyboard-interactions"></a>Interactions avec le clavier
 
-![image Hero du clavier](images/keyboard/keyboard-hero.jpg)
+![image héros du clavier](images/keyboard/keyboard-hero.jpg)
 
 Apprenez à concevoir et optimiser vos applications UWP afin qu’elles offrent la meilleure expérience possible pour les experts en utilisation du clavier comme pour les utilisateurs atteints de handicaps ou présentant d’autres exigences d’accessibilité.
 
@@ -59,7 +59,7 @@ Voici les périphériques et outils décrits dans cette rubrique :
 |-----------------------------------|-----------------|
 |Clavier (matériel et logiciel)   |Outre le clavier matériel standard, les applications UWP prennent en charge les deux claviers logiciels : le [clavier tactile (ou logiciel)](#software-keyboard) et [clavier visuel](#on-screen-keyboard).|
 |Boîtier de commande et télécommande         |Le boîtier de commande Xbox et la télécommande sont des périphériques d’entrée fondamentaux pour l’[expérience « 10-foot »](../devices/designing-for-tv.md). Pour plus d’informations sur la prise en charge UWP pour le boîtier de commande et la télécommande, voir [Interactions entre le boîtier de commande et la télécommande](gamepad-and-remote-interactions.md).|
-|Lecteurs d’écran (Narrateur)          |Narrateur est un lecteur d’écran intégré pour Windows ; il fournit des fonctionnalités et expériences d’interaction uniques, mais s’appuie toujours sur la saisie et la navigation de base au clavier. Pour plus d’informations sur le Narrateur, voir [Prise en main du Narrateur](https://support.microsoft.com/help/22798/windows-10-narrator-get-started).|
+|Lecteurs d’écran (Narrateur)          |Narrateur est un lecteur d’écran intégré pour Windows ; il fournit des fonctionnalités et expériences d’interaction uniques, mais s’appuie toujours sur la saisie et la navigation de base au clavier. Pour plus d’informations sur le Narrateur, voir [Prise en main du Narrateur](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator).|
 
 ## <a name="custom-experiences-and-efficient-keyboarding"></a>Expériences personnalisées et efficacité de la saisie
 Comme indiqué, la prise en charge du clavier permet de garantir que vos applications fonctionnent parfaitement pour les utilisateurs aux compétences, capacités et attentes différentes. Nous recommandons de donner la priorité aux actions suivantes.
@@ -123,7 +123,7 @@ Pour les applications UWP, le focus initial est défini à l’élément le plus
 
 #### <a name="set-initial-focus-on-the-most-logical-element"></a>Définissez le focus initial sur l’élément le plus logique
 
-Définissez le focus initial sur l’élément d’interface utilisateur correspondant à la première action, ou à l’action principale, que les utilisateurs sont susceptibles d’entreprendre lors du lancement de votre application ou pour accéder à une page. Certains exemples comprennent notamment :
+Définissez le focus initial sur l’élément d’interface utilisateur correspondant à la première action, ou à l’action principale, que les utilisateurs sont susceptibles d’entreprendre lors du lancement de votre application ou pour accéder à une page. Voici quelques exemples :
 -   Une application photographique dans laquelle le focus est défini sur le premier élément d’une galerie
 -   Une application de musique dans laquelle le focus est défini sur le bouton lecture
 
@@ -142,7 +142,7 @@ La navigation au clavier est généralement prise en charge via les touches de t
 Par défaut, les contrôles UWP suivent ces comportements de base du clavier :
 -   **Les touches de tabulation** donnent accès aux contrôles exploitables/actifs dans l’ordre de tabulation.
 -   **Maj + Tab** permet d’accéder aux contrôles dans l’ordre inverse de la tabulation. Si l’utilisateur accède au contrôle à l’aide d’une touche de direction, le focus est défini sur la dernière valeur connue à l’intérieur du contrôle.
--   **Les touches de direction** exploitent la « navigation interne » spécifique au contrôle lorsque l’utilisateur accède à ce mode, les touches de direction ne permettent pas d’accéder à l’extérieur d’un contrôle. Certains exemples comprennent notamment :
+-   **Les touches de direction** exploitent la « navigation interne » spécifique au contrôle lorsque l’utilisateur accède à ce mode, les touches de direction ne permettent pas d’accéder à l’extérieur d’un contrôle. Voici quelques exemples :
     -   Flèche haut/bas touche déplace le focus à l’intérieur de `ListView` et `MenuFlyout`
     -   Modifier les valeurs sélectionnées pour `Slider` et `RatingsControl`
     -   Déplacer le signe insertion à l’intérieur `TextBox`
@@ -239,7 +239,7 @@ Raccourcis clavier peuvent rendre votre application plus facile à utiliser en f
 
 La prise en charge la navigation au clavier et activation dans votre application, il est également conseillé de fournir des raccourcis pour les fonctionnalités de votre application. Navigation par onglets fournit un niveau de bonne, base de prise en charge du clavier, mais avec l’interface utilisateur plus complexe, vous souhaiterez peut-être ajouter la prise en charge des touches de raccourci également. 
 
-Un raccourci est une combinaison de touches qui améliore la productivité en fournissant à l’utilisateur un moyen efficace d’accéder aux fonctionnalités de l’application. Il existe deux types de raccourcis :
+Un raccourci est une combinaison de touches qui améliore la productivité en fournissant à l’utilisateur un moyen efficace d’accéder aux fonctionnalités de l’application. Il existe deux types de raccourcis :
 -   [Accélérateurs](#accelerators) sont des raccourcis qui appellent une commande de l’application. Votre application peut ou ne peut pas fournir de l’interface utilisateur spécifique qui correspond à la commande. Accélérateurs se composent généralement de la touche Ctrl enfoncée et une clé de la lettre.
 -   [Clés d’accès](#access-keys) les raccourcis que définir le focus sur l’interface utilisateur spécifique dans votre application. Typicaly de clés d’accès se composent de la touche Alt et une clé de la lettre.
 
@@ -266,7 +266,7 @@ Consultez la page [touches d’accès rapide](access-keys.md) où vous trouverez
 
 Les touches d’accès rapide permettent aux utilisateurs présentant un handicap moteur fonctionnel d’appuyer sur une touche à la fois pour agir sur un élément spécifique de l’interface utilisateur. En outre, les touches d’accès rapide peuvent faire office de touches de raccourci supplémentaires pour aider les utilisateurs avancés à effectuer des actions rapidement.
 
-Les touches d’accès rapide présentent les caractéristiques suivantes :
+Les touches d’accès rapide présentent les caractéristiques suivantes :
 -   Elles utilisent la touche Alt associée à une touche alphanumérique.
 -   Elles visent principalement l’accessibilité.
 -   Ils sont documentés directement dans l’interface utilisateur, adjacent au contrôle, via [touches accélératrices](access-keys.md).
@@ -282,13 +282,13 @@ Le tableau suivant est un petit échantillon des raccourcis clavier fréquemment
 |--------------------------------------|--------------------------------------------------|
 | Tout sélectionner                           | Ctrl+A                                           |
 | Sélection continue                  | Maj+touche de direction                                  |
-| Enregistrer                                 | Ctrl+S                                           |
+| Save                                 | Ctrl+S                                           |
 | Rechercher                                 | Ctrl+F                                           |
-| Print                                | Ctrl+P                                           |
+| Imprimer                                | Ctrl+P                                           |
 | Copier                                 | Ctrl+C                                           |
-| Cut                                  | Ctrl+X                                           |
+| Couper                                  | Ctrl+X                                           |
 | Coller                                | Ctrl+V                                           |
-| Undo                                 | Ctrl+Z                                           |
+| Annuler                                 | Ctrl+Z                                           |
 | Onglet suivant                             | Ctrl+Tab                                         |
 | Fermer l’onglet                            | Ctrl+F4 ou Ctrl+W                                |
 | Zoom sémantique                        | Ctrl++ ou Ctrl+-                                 |
@@ -320,7 +320,7 @@ Vous pouvez envisager la prise en charge pour la navigation de clé flèche lors
       <p><img src="images/keyboard/dialog.png" alt="Dialog buttons"/></p>
       <p><sup>Boutons de la boîte de dialogue</sup></p>
       <p><img src="images/keyboard/radiobutton.png" alt="Radio buttons"/></p>
-      <p><sup>Cases d’option</sup></p>     
+      <p><sup>RadioButtons</sup></p>     
     </td>
     <td>
       <p><img src="images/keyboard/appbar.png" alt="AppBar buttons"/></p>
@@ -345,7 +345,7 @@ Un exemple de comportement par défaut d’UWP dans ce cas est le `ContentDialog
 
 Dans les cas où votre agencement suit un modèle bien connu d’interface utilisateur pour les groupes de contrôle, l’affectation au groupe d’un taquet de tabulation unique peut améliorer l’efficacité de la navigation pour les utilisateurs.
 
-Par exemple :
+Par exemple :
 -   `RadioButtons`
 -   Plusieurs `ListViews` qui ressemblent et se comportent comme un seul `ListView`
 -   Toute interface utilisateur conçue pour ressembler et se comporter comme une grille de vignettes (par exemple, les vignettes du menu Démarrer)
@@ -364,7 +364,7 @@ L’image suivante montre un comportement de navigation intuitive au clavier pou
 
 ### <a name="keyboard-and-narrator"></a>Clavier et Narrateur
 
-Le Narrateur est un outil d’accessibilité de l’interface utilisateur orienté vers les utilisateurs de claviers (les autres types d’entrées sont également pris en charge). Toutefois, la fonctionnalité du Narrateur va au-delà des interactions avec le clavier prises en charge par les applications UWP et une attention supplémentaire est requise lors de la conception de votre application UWP pour le Narrateur. (La [page des notions de base du Narrateur](https://support.microsoft.com/help/22808/windows-10-narrator-learning-basics) vous guide tout au long de l’expérience utilisateur du Narrateur.)
+Le Narrateur est un outil d’accessibilité de l’interface utilisateur orienté vers les utilisateurs de claviers (les autres types d’entrées sont également pris en charge). Toutefois, la fonctionnalité du Narrateur va au-delà des interactions avec le clavier prises en charge par les applications UWP et une attention supplémentaire est requise lors de la conception de votre application UWP pour le Narrateur. (La [page des notions de base du Narrateur](https://support.microsoft.com/help/22808/windows-10-narrator-basics) vous guide tout au long de l’expérience utilisateur du Narrateur.)
 
 Voici quelques-unes des différences entre les comportements de clavier avec UWP et ceux pris en charge par le Narrateur :
 -   Des combinaisons de touches supplémentaires sont prévues pour accéder aux éléments d’interface utilisateur qui ne sont pas exposés par la navigation standard au clavier, tels que la lecture des étiquettes de contrôle avec Ver Maj + touches de direction.
@@ -400,13 +400,13 @@ Consultez [Gamepad et contrôle à distance des interactions](gamepad-and-remote
 
 Voici quelques correspondances de touches entre le clavier, le boîtier de commande et la télécommande.
 
-| **Clavier**  | **Gamepad**                         | **Contrôle à distance**  |
+| **Clavier**  | **Boîtier de commande**                         | **Contrôle à distance**  |
 |---------------|-------------------------------------|---------------------|
 | Espace         | Bouton A                            | Bouton Sélection       |
 | Entrée         | Bouton A                            | Bouton Sélection       |
-| Échappement        | Bouton B                            | Bouton Précédent         |
-| Début/Fin      | Non applicable                                 | Non applicable                 |
-| Page haut/bas  | Bouton de déclenchement du défilement vertical, bouton pare-chocs du défilement horizontal   | Non applicable                 |
+| Échap        | Bouton B                            | Bouton Précédent         |
+| Début/Fin      | N/A                                 | N/A                 |
+| Page haut/bas  | Bouton de déclenchement du défilement vertical, bouton pare-chocs du défilement horizontal   | N/A                 |
 
 Voici certaines différences clés, dont vous devez être conscient lors de la conception de votre application UWP pour une utilisation avec le boîtier de commande et la télécommande :
 -   La saisie de texte exige de l’utilisateur qu’il appuie sur A pour activer un contrôle de texte.
@@ -500,7 +500,7 @@ Vous devez tenter d’émuler ces mêmes comportements dans vos contrôles perso
 
 Testez votre application avec tous les périphériques d’entrée pris en charge pour garantir l’utilisation cohérente et intuitive des éléments d’interface utilisateur et vous assurer qu’aucun élément inattendu n’interfère avec l’ordre de tabulation souhaité.
 
-## <a name="related-articles"></a>Articles connexes
+## <a name="related-articles"></a>Articles associés
 * [Événements de clavier](keyboard-events.md)
 * [Identification des périphériques d’entrée](identify-input-devices.md)
 * [Répondre à la présence du clavier tactile](respond-to-the-presence-of-the-touch-keyboard.md)
@@ -522,7 +522,7 @@ Le clavier logiciel est un clavier qui s’affiche sur l’écran et que l’uti
 
 Selon l’appareil, le clavier logiciel s’affiche quand un champ de texte ou un autre contrôle de texte modifiable reçoit le focus, ou lorsque l’utilisateur l’active manuellement via le **Centre de notifications** :
 
-![icône du clavier tactile dans le Centre de notification](images/keyboard/touch-keyboard-notificationcenter.png)
+![icône du clavier tactile dans le Centre de notifications](images/keyboard/touch-keyboard-notificationcenter.png)
 
 Si votre application définit le focus par programme sur un contrôle d’entrée de texte, le clavier tactile n’est pas appelé. Cela permet d’éliminer les comportements inattendus non provoqués directement par l’utilisateur. Toutefois, le clavier est automatiquement masqué lorsque le focus est déplacé par programme vers un contrôle autre que d’entrée de texte.
 
@@ -530,26 +530,26 @@ En général, le clavier tactile ne disparaît pas automatiquement tant que l’
 
 Voici la liste des contrôles autres que d’édition qui peuvent recevoir le focus pendant une session d’entrée de texte à l’aide du clavier tactile sans que cela ait pour effet de masquer celui-ci. Au lieu de perturber inutilement l’interface utilisateur au risque de désorienter l’utilisateur, le clavier tactile reste bien en vue, car l’utilisateur va vraisemblablement passer des contrôles à l’entrée de texte à l’aide du clavier tactile.
 
--   Check box
--   Combo box
--   Radio button
--   Scroll bar
--   Arborescence
+-   Case à cocher
+-   Zone de liste modifiable
+-   Case d’option
+-   Barre de défilement
+-   Tree
 -   Tree item
 -   Menu
 -   Menu bar
 -   Menu item
--   Barre d’outils
+-   ToolBar
 -   List
 -   List item
 
 Voici quelques exemples des différents modes disponibles pour le clavier tactile. La première image représente la disposition classique, la seconde représente la disposition ergonomique (qui n’est pas forcément disponible dans toutes les langues).
 
-![clavier tactile en mode de disposition classique](images/keyboard/default.png)
+![clavier tactile en mode disposition classique](images/keyboard/default.png)
 
 ***La touche du clavier par défaut en mode de disposition***
 
-![clavier tactile en mode de disposition étendue](images/keyboard/extendedview.png)
+![clavier tactile en mode disposition étendue](images/keyboard/extendedview.png)
 
 ***Le clavier tactile en mode de disposition développée***
 
@@ -570,6 +570,6 @@ Il peut être activé depuis la page Clavier dans Paramètres &gt; Options d’e
 
 Consultez la [page du clavier visuel](https://support.microsoft.com/help/10762/windows-use-on-screen-keyboard) pour plus d’informations sur le clavier visuel.
 
-## <a name="related-articles"></a>Articles connexes
+## <a name="related-articles"></a>Articles associés
 
 - [Accessibilité du clavier](../accessibility/keyboard-accessibility.md)

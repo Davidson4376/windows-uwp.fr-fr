@@ -5,12 +5,12 @@ ms.date: 04/02/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b2de040b31f026818f27a0e345992b9c00945c7a
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 9b1d663c0d4c4ff86650f015e5e428d6505af156
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365107"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317139"
 ---
 # <a name="layout-panels"></a>Panneaux de disposition
 
@@ -133,7 +133,7 @@ Le panneau [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Control
 
 Pour positionner les objets dans des cellules spécifiques du panneau Grid, utilisez les propriétés jointes [**Grid.Column**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.column?view=netframework-4.8) et [**Grid.Row**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.row?view=netframework-4.8).
 
-Pour forcer le contenu à s’étendre sur plusieurs lignes et colonnes, utilisez les propriétés jointes [**Grid.RowSpan**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms605035(v%3Dvs.95)) et [**Grid.ColumnSpan**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.columnspan?view=netframework-4.8).
+Pour forcer le contenu à s’étendre sur plusieurs lignes et colonnes, utilisez les propriétés jointes [**Grid.RowSpan**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms605035(v=vs.95)) et [**Grid.ColumnSpan**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.columnspan?view=netframework-4.8).
 
 Cet exemple XAML montre comment créer un élément Grid à deux lignes et deux colonnes.
 
@@ -162,9 +162,9 @@ Le résultat se présente ainsi :
 Dans cet exemple, le dimensionnement fonctionne comme suit. 
 - La deuxième ligne a une hauteur explicite de 44 pixels effectifs. Par défaut, la hauteur de la première ligne remplit l’espace restant disponible.
 - La largeur de la première colonne est définie sur **Auto**, de manière à être suffisamment large pour ses enfants. Dans ce cas, elle est de 44 pixels efficaces pour s’adapter à la largeur du rectangle rouge.
-- Il n’existe aucune autre contrainte de taille sur les rectangles, de manière à ce que chacun d’entre eux s’étire pour remplir la cellule de grille qui le contient.
+- Il n’existe aucune autre contrainte de taille sur les rectangles, de sorte que chacun d’entre eux s’étire pour remplir la cellule de grille qui le contient.
 
-Vous pouvez répartir l’espace au sein d’une colonne ou d’une ligne en utilisant le redimensionnement **Auto** ou proportionnel. Le dimensionnement automatique permet de redimensionner les éléments d’interface pour qu’ils s’adaptent à leur contenu ou à leur conteneur parent. Vous pouvez également utiliser le dimensionnement automatique avec les lignes et les colonnes d’une grille. Pour utiliser le dimensionnement automatique, définissez la propriété Height et/ou Width des éléments d’interface utilisateur sur **Auto**.
+Vous pouvez répartir l’espace au sein d’une colonne ou d’une ligne en utilisant le redimensionnement **Auto** ou proportionnel. Le dimensionnement automatique permet de redimensionner les éléments d’interface utilisateur pour qu’ils s’adaptent à leur contenu ou à leur conteneur parent. Vous pouvez également utiliser le dimensionnement automatique avec les lignes et les colonnes d’une grille. Pour utiliser le dimensionnement automatique, définissez la propriété Height et/ou Width des éléments d’interface utilisateur sur **Auto**.
 
 Le *dimensionnement proportionnel* sert à répartir l’espace disponible entre les lignes et les colonnes d’une grille par proportions pondérées. Dans XAML, les valeurs étoiles sont exprimées en tant que \* (ou *n* \* pour le dimensionnement en étoile pondérée). Par exemple, pour spécifier qu’une colonne est 5 fois plus large que la deuxième colonne dans une disposition à 2 colonnes, utilisez « 5\*« et »\*» pour le [ **largeur** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.columndefinition.width) propriétés dans le [ **ColumnDefinition** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ColumnDefinition) éléments.
 
@@ -227,11 +227,11 @@ Le résultat se présente ainsi :
 
 Dans cet exemple, le nombre maximal de lignes dans chaque colonne est 3. La première colonne contient seulement 2 éléments (les rectangles rouge et bleu), car le rectangle bleu s'étend sur 2 lignes. Le rectangle vert s’étend ensuite jusqu’en haut de la colonne suivante.
 
-## <a name="canvas"></a>Canevas
+## <a name="canvas"></a>Zone de dessin
 
 Le panneau [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) positionne ses éléments enfants à l’aide de points de coordonnées fixes et ne prend pas en charge les dispositions fluides. Vous spécifiez les points des éléments enfants individuels en définissant les propriétés jointes [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left?view=netframework-4.8) et [**Canvas.Top**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.top?view=netframework-4.8) de chaque élément. L’élément Canvas parent lit les valeurs des propriétés jointes de ses enfants pendant la transmission de disposition [Arrange](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.arrange).
 
-Dans un élément Canvas, les objets peuvent se chevaucher, auquel cas un objet est dessiné sur un autre objet. Par défaut, l’élément Canvas restitue les objets enfants dans l’ordre dans lequel ils sont déclarés, de sorte que le dernier enfant est restitué en haut (chaque élément a une valeur ZIndex par défaut de 0). Il en va de même pour les autres panneaux intégrés. Toutefois, l’élément Canvas prend également en charge la propriété jointe [**Canvas.ZIndex**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc190397(v%3Dvs.95)) que vous pouvez définir sur chacun des éléments enfants. Vous pouvez définir cette propriété dans le code pour changer l’ordre de dessin des éléments pendant l’exécution. L’élément avec la valeur Canvas.ZIndex la plus élevée est dessiné en dernier. Ainsi, il est dessiné au-dessus des autres éléments qui partagent le même espace ou qui se chevauchent. Notez que la valeur alpha (transparence) est respectée. Ainsi, même si des éléments se chevauchent, le contenu affiché dans les zones de chevauchement peut être fusionné si le contenu supérieur a une valeur alpha non maximale.
+Dans un élément Canvas, les objets peuvent se chevaucher, auquel cas un objet est dessiné sur un autre objet. Par défaut, l’élément Canvas restitue les objets enfants dans l’ordre dans lequel ils sont déclarés, de sorte que le dernier enfant est restitué en haut (chaque élément a une valeur ZIndex par défaut de 0). Il en va de même pour les autres panneaux intégrés. Toutefois, l’élément Canvas prend également en charge la propriété jointe [**Canvas.ZIndex**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc190397(v=vs.95)) que vous pouvez définir sur chacun des éléments enfants. Vous pouvez définir cette propriété dans le code pour changer l’ordre de dessin des éléments pendant l’exécution. L’élément avec la valeur Canvas.ZIndex la plus élevée est dessiné en dernier. Ainsi, il est dessiné au-dessus des autres éléments qui partagent le même espace ou qui se chevauchent. Notez que la valeur alpha (transparence) est respectée. Ainsi, même si des éléments se chevauchent, le contenu affiché dans les zones de chevauchement peut être fusionné si le contenu supérieur a une valeur alpha non maximale.
 
 L’élément Canvas ne procède à aucun redimensionnement de ses enfants. Chaque élément doit spécifier sa taille.
 
@@ -248,7 +248,7 @@ Voici un exemple d’élément Canvas en XAML.
 
 Le résultat se présente ainsi :
 
-![Canevas](images/layout-panel-canvas.png)
+![Zone de dessin](images/layout-panel-canvas.png)
 
 Utilisez le panneau Canvas en fonction de vos besoins. Bien qu’il soit pratique de pouvoir contrôler précisément les positions des éléments de l’interface utilisateur dans certains scénarios, un panneau de disposition positionné de manière fixe rend cette zone de l’interface utilisateur moins adaptable à l’ensemble des modifications de taille de fenêtre de l’application. Le redimensionnement des fenêtres d’application peut être dû au changement d’orientation de l’appareil, au fractionnement des fenêtres d’application, au changement de moniteur, ainsi qu’à plusieurs autres scénarios utilisateur.
 

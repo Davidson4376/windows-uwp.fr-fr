@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp, envoyer des notifications toast, notifications, envoyer des notifications, notifications toast, procédure, démarrage rapide, prise en main, exemple de code, procédure pas à pas
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c8def5d1a220fe0458dd5c244d875b991b2b76c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 654c063b7c377023fef4b2dab3ddf5d7a755cb2d
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365931"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320805"
 ---
 # <a name="send-a-local-toast-notification"></a>Envoyer une notification toast locale
 
@@ -501,7 +501,7 @@ var toast = new ToastNotification(toastXml);
 
 ## <a name="resources"></a>Ressources
 
-* [Exemple de code complet sur GitHub](https://github.com/WindowsNotifications/quickstart-sending-local-toast)
+* [Exemple de code complet sur GitHub](https://github.com/WindowsNotifications/quickstart-sending-local-toast-win10)
 * [Documentation de contenu de toast](adaptive-interactive-toasts.md)
 * [Classe de ToastNotification](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification)
 * [Classe de ToastNotificationActivatedEventArgs](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)

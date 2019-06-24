@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ec16f9810a0802fc319b3ebac679cc4cb2f8334
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: a4302568b398c76198e241aeb37980165e1bb864
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361723"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318365"
 ---
 # <a name="import-media-from-a-device"></a>Importer des fichiers multimédias à partir d’un appareil
 
@@ -50,7 +50,7 @@ Implémentez un gestionnaire pour le bouton d’annulation. L’exemple figurant
 
 Dans un scénario d’importation standard d’éléments multimédias, vous présentez à l’utilisateur une liste des éléments multimédias disponibles à l’importation. Le nombre de fichiers pouvant s’avérer conséquent, vous pouvez avoir intérêt à présenter une miniature de chaque élément multimédia. Pour cette raison, cet exemple utilise trois classes d’assistance permettant de charger de manière incrémentielle des entrées dans le contrôle ListView, à mesure que l’utilisateur fait défiler la liste.
 
-* Classe **IncrementalLoadingBase** : implémente les objets [**IList**](https://docs.microsoft.com/dotnet/api/system.collections.ilist?redirectedfrom=MSDN), [**ISupportIncrementalLoading**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.isupportincrementalloading) et [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/system.collections.specialized.inotifycollectionchanged(v=vs.105).aspx) afin de communiquer le comportement de base de chargement incrémentiel.
+* Classe **IncrementalLoadingBase** : implémente les objets [**IList**](https://docs.microsoft.com/dotnet/api/system.collections.ilist?redirectedfrom=MSDN), [**ISupportIncrementalLoading**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.isupportincrementalloading) et [**INotifyCollectionChanged**](https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged?redirectedfrom=MSDN) afin de communiquer le comportement de base de chargement incrémentiel.
 * Classe **GeneratorIncrementalLoadingClass** : fournit une implémentation de la classe de base de chargement incrémentiel.
 * Classe **ImportableItemWrapper** : un wrapper fin autour de la classe [**PhotoImportItem**](https://docs.microsoft.com/uwp/api/Windows.Media.Import.PhotoImportItem) afin d’ajouter une propriété [**BitmapImage**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapImage) pouvant être liée pour chacune des images miniatures associées aux éléments importés.
 

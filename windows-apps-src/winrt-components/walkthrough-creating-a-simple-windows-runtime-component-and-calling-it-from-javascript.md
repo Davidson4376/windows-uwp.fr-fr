@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 855c629e961df36970886b4076e5091726d07c93
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 8d6f77c92efdd5ebe93a32514513747174ab9e9c
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372935"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67322195"
 ---
 # <a name="walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript"></a>Démonstration : Création d’un composant Windows Runtime simple et appel de ce composant à partir de JavaScript
 
@@ -557,7 +557,7 @@ events1Button.addEventListener("click", events1, false);
 ## <a name="exposing-asynchronous-operations"></a>Exposition d’opérations asynchrones
 
 
-.NET Framework offre un ensemble complet d’outils pour le traitement asynchrone et le traitement en parallèle en fonction de la classe Task et de la classe [Task&lt;TResult&gt;](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1?redirectedfrom=MSDN) générique. Pour exposer un traitement asynchrone basé sur les tâches dans un composant Windows Runtime, utilisez les interfaces Windows Runtime [IAsyncAction](https://docs.microsoft.com/windows/desktop/api/windows.foundation/nn-windows-foundation-iasyncaction), [IAsyncActionWithProgress&lt;TProgress&gt;](https://docs.microsoft.com/previous-versions//br205784(v=vs.85)), [IAsyncOperation&lt;TResult&gt;](https://docs.microsoft.com/previous-versions//br205802(v=vs.85)) et [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](https://docs.microsoft.com/previous-versions//br205807(v=vs.85)). (Dans Windows Runtime, les opérations retournent des résultats, mais pas les actions.)
+.NET Framework offre un ensemble complet d’outils pour le traitement asynchrone et le traitement en parallèle en fonction de la classe Task et de la classe [Task&lt;TResult&gt;](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1?redirectedfrom=MSDN) générique. Pour exposer un traitement asynchrone basé sur les tâches dans un composant Windows Runtime, utilisez les interfaces Windows Runtime [IAsyncAction](https://docs.microsoft.com/windows/desktop/api/windows.foundation/nn-windows-foundation-iasyncaction), [IAsyncActionWithProgress&lt;TProgress&gt;](https://docs.microsoft.com/previous-versions/br205784(v=vs.85)), [IAsyncOperation&lt;TResult&gt;](https://docs.microsoft.com/previous-versions/br205802(v=vs.85)) et [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](https://docs.microsoft.com/previous-versions/br205807(v=vs.85)). (Dans Windows Runtime, les opérations retournent des résultats, mais pas les actions.)
 
 Cette section illustre une opération asynchrone annulable qui indique la progression et retourne des résultats. La méthode GetPrimesInRangeAsync utilise la classe [AsyncInfo](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime?redirectedfrom=MSDN) pour générer une tâche et pour connecter ses fonctionnalités d’annulation et de rapport de progression à un objet WinJS.Promise. Commencez par ajouter la méthode GetPrimesInRangeAsync à la classe Example :
 

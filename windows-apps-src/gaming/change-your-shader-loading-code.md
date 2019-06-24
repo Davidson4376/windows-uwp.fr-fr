@@ -1,17 +1,17 @@
 ---
 title: Comparer le pipeline nuanceur d’OpenGL ES 2.0 à celui de Direct3D
-description: D’un point de vue conceptuel, le pipeline nuanceur de Direct3D 11 est très similaire à celui d’OpenGL ES 2.0.
+description: D’un point de vue conceptuel, le pipeline nuanceur de Direct3D 11 est très similaire à celui d’OpenGL ES 2.0.
 ms.assetid: 3678a264-e3f9-72d2-be91-f79cd6f7c4ca
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, jeux, opengl, direct3d, pipeline nuanceur
 ms.localizationpriority: medium
-ms.openlocfilehash: 8793ef8b44df1ca1d93133383666434f525f2d07
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: fc5e1eb9c261a4397d83c833591f2497521aa1c6
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368973"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321384"
 ---
 # <a name="compare-the-opengl-es-20-shader-pipeline-to-direct3d"></a>Comparer le pipeline nuanceur d’OpenGL ES 2.0 à celui de Direct3D
 
@@ -21,10 +21,10 @@ ms.locfileid: "66368973"
 **API importantes**
 
 -   [Étape de l’assembleur d’entrée](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-input-assembler-stage)
--   [Étape du nuanceur de sommets](https://docs.microsoft.com/previous-versions//bb205146(v=vs.85))
--   [Étape de nuanceur de pixels](https://docs.microsoft.com/previous-versions//bb205146(v=vs.85))
+-   [Étape du nuanceur de sommets](https://docs.microsoft.com/previous-versions/bb205146(v=vs.85))
+-   [Étape de nuanceur de pixels](https://docs.microsoft.com/previous-versions/bb205146(v=vs.85))
 
-D’un point de vue conceptuel, le pipeline nuanceur de Direct3D 11 est très similaire à celui d’OpenGL ES 2.0. En termes de conception d’API, les composants majeurs de création et de gestion des étapes de nuanceur appartiennent aux deux interfaces principales, [**ID3D11Device1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1) et [**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1). Cette rubrique tente d’établir une correspondance dans ces interfaces entre les modèles courants d’API du pipeline nuanceur d’OpenGL ES 2.0 et ceux de Direct3D 11.
+D’un point de vue conceptuel, le pipeline nuanceur de Direct3D 11 est très similaire à celui d’OpenGL ES 2.0. En termes de conception d’API, les composants majeurs de création et de gestion des étapes de nuanceur appartiennent aux deux interfaces principales, [**ID3D11Device1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1) et [**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1). Cette rubrique tente d’établir une correspondance dans ces interfaces entre les modèles courants d’API du pipeline nuanceur d’OpenGL ES 2.0 et ceux de Direct3D 11.
 
 ## <a name="reviewing-the-direct3d-11-shader-pipeline"></a>Exploration du pipeline nuanceur de Direct3D 11
 
@@ -34,10 +34,10 @@ Les objets nuanceurs sont créés par des méthodes dans l’interface [**ID3D11
 Le pipeline graphique de Direct3D 11 est géré par des instances de l’interface [**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) et comprend les étapes suivantes :
 
 -   [Étape de l’assembleur d’entrée](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-input-assembler-stage). Cette étape fournit des données (triangles, lignes et points) au pipeline. [**ID3D11DeviceContext1** ](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) les méthodes qui prennent en charge de cette étape sont précédés de « IA ».
--   [Étape du nuanceur de vertex](https://docs.microsoft.com/previous-versions//bb205146(v=vs.85)). Cette étape traite les vertex, généralement par le biais d’opérations de type transformation, application d’apparence et éclairage. Un nuanceur de vertex prend toujours un seul vertex d’entrée et produit un seul vertex de sortie. [**ID3D11DeviceContext1** ](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) les méthodes qui prennent en charge de cette étape sont précédés de « Visual Studio ».
+-   [Étape du nuanceur de vertex](https://docs.microsoft.com/previous-versions/bb205146(v=vs.85)). Cette étape traite les vertex, généralement par le biais d’opérations de type transformation, application d’apparence et éclairage. Un nuanceur de vertex prend toujours un seul vertex d’entrée et produit un seul vertex de sortie. [**ID3D11DeviceContext1** ](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) les méthodes qui prennent en charge de cette étape sont précédés de « Visual Studio ».
 -   [Étape de sortie de flux](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-stream-stage). Cette étape diffuse des données primitives du pipeline dans la mémoire vers le rastériseur. Les données peuvent être diffusées vers la sortie et/ou dans le rastériseur. Les données diffusées dans la mémoire peuvent être renvoyées dans le pipeline en tant que données d’entrée ou lues par le processeur. [**ID3D11DeviceContext1** ](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) les méthodes qui prennent en charge de cette étape sont précédés de « Ainsi ».
 -   [Étape du rastériseur](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-rasterizer-stage). Le rastériseur extrait les primitives, les prépare pour le nuanceur de pixels et détermine le mode d’invocation des nuanceurs de pixels. Vous pouvez désactiver la rastérisation en indiquant le pipeline n’est aucun nuanceur de pixels (la valeur NULL avec l’étape du nuanceur de pixels [ **ID3D11DeviceContext::PSSetShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-pssetshader)) et la désactivation de la profondeur et gabarit test () la valeur DepthEnable et StencilEnable FALSE dans [ **D3D11\_profondeur\_gabarit\_DESC**](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_depth_stencil_desc)). Quand la rastérisation est désactivée, les compteurs du pipeline relatif à la rastérisation ne sont pas mis à jour.
--   [Étape du nuanceur de pixels](https://docs.microsoft.com/previous-versions//bb205146(v=vs.85)). Cette étape reçoit les données interpolées pour une primitive et génère des données par pixel telles que la couleur. [**ID3D11DeviceContext1** ](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) les méthodes qui prennent en charge de cette étape sont précédés de « PS ».
+-   [Étape du nuanceur de pixels](https://docs.microsoft.com/previous-versions/bb205146(v=vs.85)). Cette étape reçoit les données interpolées pour une primitive et génère des données par pixel telles que la couleur. [**ID3D11DeviceContext1** ](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) les méthodes qui prennent en charge de cette étape sont précédés de « PS ».
 -   [Étape de fusion de sortie](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage). Cette étape combine plusieurs types de données de sortie (valeurs du nuanceur de pixels, informations de profondeur et gabarit) avec le contenu de la cible de rendu et des tampons de profondeur/gabarit pour générer le résultat final du pipeline. [**ID3D11DeviceContext1** ](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) les méthodes qui prennent en charge de cette étape sont précédés de « OM ».
 
 (Il existe également des phases de nuanciers géométrie, les nuanceurs de coque, les tesselators et les nuanceurs de domaine, mais dans la mesure où ils n’ont aucun analogues dans OpenGL ES 2.0, nous ne les aborder ici.) Pour obtenir une liste complète des méthodes pour ces étapes, reportez-vous à la [ **ID3D11DeviceContext** ](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext) et [ **ID3D11DeviceContext1** ](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) référence pages. **ID3D11DeviceContext1** développe **ID3D11DeviceContext** pour Direct3D 11.
@@ -60,8 +60,8 @@ Les nuanceurs Direct3D doivent être précompilés en fichiers d’objet nuanceu
 
 | OpenGL ES 2.0                          | Direct3D 11                                                                                                                                                                   |
 |----------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| glCompileShader                        | Non applicable Compilez les nuanceurs en fichiers .cso dans Visual Studio et incluez-les dans votre package.                                                                                     |
-| Utilisation de glGetShaderiv pour vérifier le statut de la compilation | Non applicable Affichez le fichier de compilation dans le compilateur FX (FXC) de Visual Studio pour vérifier les éventuelles erreurs de compilation. Si la compilation est réussie, un fichier CSO est créé. |
+| glCompileShader                        | Non applicable. Compilez les nuanceurs en fichiers .cso dans Visual Studio et incluez-les dans votre package.                                                                                     |
+| Utilisation de glGetShaderiv pour vérifier le statut de la compilation | Non applicable. Affichez le fichier de compilation dans le compilateur FX (FXC) de Visual Studio pour vérifier les éventuelles erreurs de compilation. Si la compilation est réussie, un fichier CSO est créé. |
 
  
 
@@ -83,9 +83,9 @@ OpenGL ES 2.0 inclut l’objet « programme de nuanceur », qui contient plusieu
 
 | OpenGL ES 2.0   | Direct3D 11                                                                                   |
 |-----------------|-----------------------------------------------------------------------------------------------|
-| glCreateProgram | Non applicable Direct3D 11 n’utilise pas l’abstraction de l’objet programme de nuanceur.                          |
-| glLinkProgram   | Non applicable Direct3D 11 n’utilise pas l’abstraction de l’objet programme de nuanceur.                          |
-| glUseProgram    | Non applicable Direct3D 11 n’utilise pas l’abstraction de l’objet programme de nuanceur.                          |
+| glCreateProgram | Non applicable. Direct3D 11 n’utilise pas l’abstraction de l’objet programme de nuanceur.                          |
+| glLinkProgram   | Non applicable. Direct3D 11 n’utilise pas l’abstraction de l’objet programme de nuanceur.                          |
+| glUseProgram    | Non applicable. Direct3D 11 n’utilise pas l’abstraction de l’objet programme de nuanceur.                          |
 | glGetProgramiv  | Utilisez la référence à [**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) que vous avez créée. |
 
  

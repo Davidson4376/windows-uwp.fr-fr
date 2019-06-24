@@ -5,12 +5,12 @@ ms.date: 10/25/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d4150e7296badd3d31a9aacc7becd3d849f6affd
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 4cfd970b3ca070218adcea86612016e567df3879
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360422"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318020"
 ---
 # <a name="my-people-notifications"></a>Notifications de mes contacts
 
@@ -23,7 +23,7 @@ Les notifications de mes contacts offrent une nouvelle façon pour les utilisate
 + Windows 10 et Microsoft Visual Studio 2017. Pour en savoir plus sur l’installation, voir [Prendre en main Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
 + Connaissances de base de C# ou d’un langage de programmation orienté objet similaire. Pour vous familiariser avec C#, voir [Créer une application « Hello, world »](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
 
-## <a name="how-it-works"></a>Fonctionnement
+## <a name="how-it-works"></a>Principe de fonctionnement
 
 Comme alternative aux notifications toast génériques, vous pouvez désormais envoyer des notifications par le biais de la fonctionnalité Mes Contacts pour proposer une expérience plus personnelle aux utilisateurs. Il s’agit d’un nouveau type de toast, envoyé à partir d’un contact épinglé sur la barre des tâches de l’utilisateur avec la fonctionnalité Mes Contacts. À réception de la notification, la photo du contact de l’expéditeur s’anime dans la barre des tâches et un son est émis pour signaler que la notification démarre. L’animation ou l’image définie dans la charge utile s’affiche pendant 5 secondes (ou, si la charge utile est une animation d’une durée inférieure à 5 secondes, elle s’exécute en boucle pendant 5 secondes).
 
@@ -76,7 +76,7 @@ En outre, le nœud toast de niveau supérieur doit inclure le paramètre **hint-
 
 > [!NOTE]
 > Si votre application utilise les [API ContactStore](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.contactstore) et la propriété [StoredContact.RemoteId](https://docs.microsoft.com/en-us/uwp/api/Windows.Phone.PersonalInformation.StoredContact.RemoteId) pour lier des contacts stockés sur le PC avec des contacts stockés à distance, il est essentiel que la valeur de la propriété RemoteID soit stable et unique. Cela signifie que l’ID distant doit identifier de manière cohérente un compte d’utilisateur unique et doit contenir une balise unique afin de garantir qu’il n’est pas en conflit avec les ID distants des autres contacts sur le PC, y compris les contacts qui appartiennent à d’autres applications.
-> S’il n’est pas garanti que les ID distants utilisés par votre application soient stables et uniques, vous pouvez utiliser la [classe RemoteIdHelper](https://msdn.microsoft.com/en-us/library/windows/apps/jj207024(v=vs.105).aspx#BKMK_UsingtheRemoteIdHelperclass) afin d’ajouter une balise unique à l’ensemble de vos ID distants avant de les ajouter au système. Vous pouvez également choisir de ne pas utiliser du tout la propriété RemoteID et de créer à la place une propriété personnalisée étendue dans laquelle stocker les ID distants de vos contacts.
+> S’il n’est pas garanti que les ID distants utilisés par votre application soient stables et uniques, vous pouvez utiliser la [classe RemoteIdHelper](https://docs.microsoft.com/previous-versions/windows/apps/jj207024(v=vs.105)#BKMK_UsingtheRemoteIdHelperclass) afin d’ajouter une balise unique à l’ensemble de vos ID distants avant de les ajouter au système. Vous pouvez également choisir de ne pas utiliser du tout la propriété RemoteID et de créer à la place une propriété personnalisée étendue dans laquelle stocker les ID distants de vos contacts.
 
 Outre la deuxième liaison et sa charge utile, vous devez inclure une autre charge utile dans la première liaison pour la notification toast de secours. La notification utilisera celle-ci si elle est forcée de revenir à un toast régulier (expliqué plus en détail à la [fin de cet article](/windows/uwp/contacts-and-calendar/my-people-notifications#falling-back-to-toast)).
 

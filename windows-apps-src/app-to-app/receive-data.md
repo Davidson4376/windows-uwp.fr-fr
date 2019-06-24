@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bfd84d5e0e41f07b53be0c0afce4b881a8a75d59
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 4a171df5312d6c4613dfca1215f5ddd948153a8f
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359218"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317863"
 ---
 # <a name="receive-data"></a>Recevoir des données
 
@@ -23,7 +23,7 @@ Cet article explique comment recevoir dans votre application UWP du contenu part
 
 Le système affiche une liste des applications cibles possibles quand un utilisateur appelle l’option Partager. Pour figurer dans la liste, votre application doit déclarer qu’elle prend en charge le contrat de partage. Cela indique au système que votre application est apte à recevoir du contenu.
 
-1.  Ouvrez le fichier manifeste. Il doit normalement porter un nom similaire à **package.appxmanifest**.
+1.  Ouvrez le fichier manifeste. Il doit normalement avoir un nom similaire à **package.appxmanifest**.
 2.  Ouvrez l’onglet **Déclarations**.
 3.  Choisissez **Cible du partage** dans la liste **Déclarations disponibles**, puis sélectionnez **Ajouter**.
 
@@ -35,7 +35,7 @@ Enregistrez uniquement les formats gérés par votre application. Seules les app
 
 Pour définir les types de fichier :
 
-1.  Ouvrez le fichier manifeste. Il doit normalement porter un nom similaire à **package.appxmanifest**.
+1.  Ouvrez le fichier manifeste. Il doit normalement avoir un nom similaire à **package.appxmanifest**.
 2.  Dans la section **Types de fichiers pris en charge** de la page **Déclarations**, sélectionnez **Ajouter nouveau**.
 3.  Tapez l’extension de nom de fichier que vous voulez prendre en charge, par exemple, « .docx ». Vous devez inclure le point. Pour prendre en charge tous les types de fichiers, cochez la case **SupportsAnyFileType**.
 
@@ -47,7 +47,7 @@ Pour définir les formats de données :
 
 ## <a name="handle-share-activation"></a>Gestion de l’activation du partage
 
-Quand un utilisateur sélectionne votre application (généralement en la choisissant dans une liste d’applications cibles disponibles dans l’interface utilisateur de partage), un événement [**OnShareTargetActivated**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Application.OnShareTargetActivated(Windows.ApplicationModel.Activation.ShareTargetActivatedEventArgs)) est déclenché. Votre application doit gérer cet événement afin de traiter les données que l’utilisateur veut partager.
+Quand un utilisateur sélectionne votre application (généralement en la choisissant dans une liste d’applications cibles disponibles dans l’interface utilisateur de partage), un événement [**OnShareTargetActivated**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Application#Windows_UI_Xaml_Application_OnShareTargetActivated_Windows_ApplicationModel_Activation_ShareTargetActivatedEventArgs_) est déclenché. Votre application doit gérer cet événement afin de traiter les données que l’utilisateur veut partager.
 
 <!-- For some reason, the snippets in this file are all inline in the WDCML topic. Suggest moving to VS project with rest of snippets. -->
 ```cs
@@ -87,7 +87,7 @@ Avec un partage étendu, l’utilisateur peut être amené à masquer l’applic
 shareOperation.ReportSubmittedBackgroundTask(); 
 ```
 
-En cas de problème, appelez [**ReportError**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportError(System.String)) pour envoyer un message d’erreur au système. L’utilisateur voit le message quand il vérifie l’état du partage. À ce stade, votre application est arrêtée et le partage est terminé. L’utilisateur devra recommencer pour partager le contenu vers votre application. Selon la situation, vous pouvez décider qu’un certain type d’erreur ne suffit pas pour mettre fin à l’opération de partage. Dans ce cas, vous pouvez omettre d’appeler **ReportError** et continuer le partage.
+En cas de problème, appelez [**ReportError**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation#Windows_ApplicationModel_DataTransfer_ShareTarget_ShareOperation_ReportError_System_String_) pour envoyer un message d’erreur au système. L’utilisateur voit le message quand il vérifie l’état du partage. À ce stade, votre application est arrêtée et le partage est terminé. L’utilisateur devra recommencer pour partager le contenu vers votre application. Selon la situation, vous pouvez décider qu’un certain type d’erreur ne suffit pas pour mettre fin à l’opération de partage. Dans ce cas, vous pouvez omettre d’appeler **ReportError** et continuer le partage.
 
 ```cs
 shareOperation.ReportError("Could not reach the server! Try again later."); 

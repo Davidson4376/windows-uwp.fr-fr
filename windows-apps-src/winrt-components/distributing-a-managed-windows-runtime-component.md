@@ -1,23 +1,23 @@
 ---
 title: Distribution d’un composant Windows Runtime managé
-description: Vous pouvez distribuer votre composant Windows Runtime par copie des fichiers.
+description: Vous pouvez distribuer votre composant Windows Runtime par copie de fichiers.
 ms.assetid: 80262992-89FC-42FC-8298-5AABF58F8212
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b4e05a1f24e6192d25c80c043cdb4a51e7ac61ec
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: b9fcdff5b8648822bb5cc22771daded23f6d52a5
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372364"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67322228"
 ---
 # <a name="distributing-a-managed-windows-runtime-component"></a>Distribution d’un composant Windows Runtime managé
 
 
 
-Vous pouvez distribuer votre composant Windows Runtime par copie des fichiers. Toutefois, si votre composant comporte de nombreux fichiers, l’installation peut être fastidieuse pour vos utilisateurs. En outre, des erreurs de placement des fichiers ou l’impossibilité de définir les références peuvent leur occasionner des problèmes. Vous pouvez empaqueter un composant complexe sous la forme d’un kit de développement logiciel (SDK) d’extension Visual Studio pour en faciliter l’installation et l’utilisation. Les utilisateurs doivent uniquement définir une référence pour le package entier. Ils peuvent facilement localiser et installer votre composant à l’aide de la boîte de dialogue **Extensions et mises à jour**, comme indiqué dans l’article [Recherche et utilisation des extensions Visual Studio](https://docs.microsoft.com/visualstudio/ide/finding-and-using-visual-studio-extensions?view=vs-2015) de MSDN Library.
+Vous pouvez distribuer votre composant Windows Runtime par copie de fichiers. Toutefois, si votre composant comporte de nombreux fichiers, l’installation peut être fastidieuse pour vos utilisateurs. En outre, des erreurs de placement des fichiers ou l’impossibilité de définir les références peuvent leur occasionner des problèmes. Vous pouvez empaqueter un composant complexe sous la forme d’un kit de développement logiciel (SDK) d’extension Visual Studio pour en faciliter l’installation et l’utilisation. Les utilisateurs doivent uniquement définir une référence pour le package entier. Ils peuvent facilement localiser et installer votre composant à l’aide de la boîte de dialogue **Extensions et mises à jour**, comme indiqué dans l’article [Recherche et utilisation des extensions Visual Studio](https://docs.microsoft.com/visualstudio/ide/finding-and-using-visual-studio-extensions?view=vs-2015) de MSDN Library.
 
 ## <a name="planning-a-distributable-windows-runtime-component"></a>Planification d’un composant Windows Runtime distribuable
 
@@ -53,7 +53,7 @@ Un composant complexe inclut généralement des ressources Windows, mais reporte
 
 **Pour créer un kit SDK d’extension**
 
-1.  Vérifiez que le SDK Visual Studio est installé. Vous pouvez télécharger le SDK Visual Studio depuis la page [Téléchargements Visual Studio](https://www.visualstudio.com/downloads/download-visual-studio-vs).
+1.  Vérifiez que le SDK Visual Studio est installé. Vous pouvez télécharger le SDK Visual Studio depuis la page [Téléchargements Visual Studio](https://visualstudio.microsoft.com/downloads/download-visual-studio-vs).
 2.  Créez un projet à l’aide du modèle Projet VSIX, qui se trouve sous Visual C# ou Visual Basic dans la catégorie Extensibilité. Ce modèle est installé en même temps que le SDK Visual Studio. ([Procédure pas à pas : Création d’un à l’aide du Kit de développement logiciel C# ou Visual Basic](https://docs.microsoft.com/visualstudio/extensibility/walkthrough-creating-an-sdk-using-csharp-or-visual-basic?view=vs-2015) ou [procédure pas à pas : Création d’un kit de développement à l’aide de C++](https://docs.microsoft.com/visualstudio/extensibility/walkthrough-creating-an-sdk-using-cpp?view=vs-2015), illustre l’utilisation de ce modèle dans un scénario très simple. )
 3.  Déterminez la structure de dossiers de votre SDK. La structure de dossiers commence au niveau racine de votre projet VSIX, avec les dossiers **Références**, **Package redistribuable** et **DesignTime**.
 

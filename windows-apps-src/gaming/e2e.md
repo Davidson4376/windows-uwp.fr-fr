@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: windows 10, uwp, jeux, développement de jeux
 ms.localizationpriority: medium
-ms.openlocfilehash: 6729711a424bfdcf9af2da92d60f12a066500256
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 950f9415e63a31a5204a15f4f72b968535489cfa
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368785"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321244"
 ---
 # <a name="windows-10-game-development-guide"></a>Guide de développement de jeux Windows 10
 
@@ -50,15 +50,15 @@ Tout au long de ce guide, vous trouverez des liens ciblés vers la documentation
     </colgroup>
     <tr>
         <td>Portail principal du Centre de développement Windows</td>
-        <td><a href="https://dev.windows.com">Centre de développement Windows</a></td>
+        <td><a href="https://developer.microsoft.com/windows">Centre de développement Windows</a></td>
     </tr>
     <tr>
         <td>Développement des applications Windows</td>
-        <td><a href="https://dev.windows.com/develop">Développer des applications Windows</a></td>
+        <td><a href="https://developer.microsoft.com/windows/apps/develop">Développer des applications Windows</a></td>
     </tr>
     <tr>
         <td>Développement d’une application de plateforme universelle Windows</td>
-        <td><a href="https://developer.microsoft.com/windows/apps/">Guides de procédures pour les applications Windows 10</a></td>
+        <td><a href="https://developer.microsoft.com/windows/apps">Guides de procédures pour les applications Windows 10</a></td>
     </tr>
     <tr>
         <td>Guides de procédure pour les jeux UWP</td>
@@ -169,7 +169,7 @@ Les outils Xbox et le programme intergiciel cèdent sous licence des kits de dé
 
 ### <a name="game-samples"></a>Exemples de jeux
 
-De nombreux exemples de jeu et d’application Windows 10 sont disponibles pour vous aider à comprendre les fonctionnalités de jeux de Windows 10 et à démarrer rapidement le développement de jeux. D’autres exemples sont développés et publiés régulièrement. En conséquence, n’oubliez pas de consulter de temps en temps les portails des exemples pour en voir les nouveautés. Vous pouvez également [consulter](https://help.github.com/articles/watching-repositories/) les référentiels GitHub pour être averti des modifications et des ajouts.
+De nombreux exemples de jeu et d’application Windows 10 sont disponibles pour vous aider à comprendre les fonctionnalités de jeux de Windows 10 et à démarrer rapidement le développement de jeux. D’autres exemples sont développés et publiés régulièrement. En conséquence, n’oubliez pas de consulter de temps en temps les portails des exemples pour en voir les nouveautés. Vous pouvez également [consulter](https://help.github.com/en/articles/watching-and-unwatching-repositories) les référentiels GitHub pour être averti des modifications et des ajouts.
 
 <table>
     <colgroup>
@@ -306,7 +306,7 @@ Les blogs de développement sont également une excellente ressource pour obteni
     </tr>
     <tr>
         <td>Blogs des outils de développement de Visual Studio</td>
-        <td><a href="https://devblogs.microsoft.com/">Blogs outils de développement</a></td>
+        <td><a href="https://devblogs.microsoft.com/visualstudio/">Blogs outils de développement</a></td>
     </tr>
     <tr>
         <td>Blog des outils de développement de Somasegar</td>
@@ -406,7 +406,7 @@ Voici quelques concepts et questions d’ordre général à prendre en compte lo
 
 ### <a name="choosing-your-graphics-technology-and-programming-language"></a>Choix de la technologie graphique et du langage de programmation
 
-Plusieurs langages de programmation et technologies graphiques peuvent être utilisés dans les jeux Windows 10. Votre choix dépend du type de jeu développé, de l’expérience et des préférences de votre studio de développement, et des conditions requises spécifiques pour les fonctionnalités de votre jeu. Allez-vous utiliser C#, C++ ou JavaScript ? DirectX, XAML ou HTML5 ?
+Plusieurs langages de programmation et technologies graphiques peuvent être utilisés dans les jeux Windows 10. Votre choix dépend du type de jeu développé, de l’expérience et des préférences de votre studio de développement, et des conditions requises spécifiques pour les fonctionnalités de votre jeu. Allez-vous utiliser C#, C++ ou JavaScript ? DirectX, XAML ou HTML5 ?
 
 #### <a name="directx"></a>DirectX
 
@@ -466,7 +466,7 @@ XAML est un langage d’interface utilisateur déclaratif convivial doté de fon
 </table>
  
 
-#### <a name="html-5"></a>HTML 5
+#### <a name="html-5"></a>HTML 5
 
 Le langage HTML (HyperText Markup Language) est un langage de balisage d’interface utilisateur couramment utilisé pour les pages web, les applications et les clients enrichis. Les jeux Windows peuvent utiliser le langage HTML5 comme couche présentation complète avec les fonctionnalités habituelles du HTML, l’accès à la plateforme Universal Windows Platform (UWP) et la prise en charge de fonctionnalités web modernes comme AppCache, les traitements web, le canevas, le glisser-déplacer, la programmation asynchrone et le format SVG. En arrière-plan, le rendu HTML tire parti de la puissance de l’accélération matérielle de DirectX. Vous bénéficiez donc toujours de l’avantage des performances de DirectX sans écrire de code supplémentaire. HTML5 convient bien si vous maîtrisez le développement web, le portage d’un jeu web ou si vous souhaitez utiliser des couches de langage et de graphiques dont l’approche est plus simple que les autres choix. Le langage HTML5 est utilisé avec JavaScript, mais il peut être également appelé dans les composants créés en C# ou C++/CX.
 
@@ -488,7 +488,7 @@ Le langage HTML (HyperText Markup Language) est un langage de balisage d’inte
 
 #### <a name="combining-presentation-technologies"></a>Combinaison des technologies de présentation
 
-L’infrastructure DXGI (DirectX Graphics Infrastructure) de Microsoft fournit interopérabilité et compatibilité entre plusieurs technologies graphiques. Pour des graphismes haute performance, vous pouvez allier XAML et DirectX, en utilisant XAML pour les menus et les autres éléments simples de l’interface utilisateur, et DirectX pour le rendu des scènes 2D et 3D complexes DXGI assure également la compatibilité entre Direct2D, Direct3D, DirectWrite, DirectCompute et Microsoft Media Foundation.
+L’infrastructure DXGI (DirectX Graphics Infrastructure) de Microsoft fournit interopérabilité et compatibilité entre plusieurs technologies graphiques. Pour des graphismes haute performance, vous pouvez allier XAML et DirectX, en utilisant XAML pour les menus et les autres éléments simples de l’interface utilisateur, et DirectX pour le rendu des scènes 2D et 3D complexes DXGI assure également la compatibilité entre Direct2D, Direct3D, DirectWrite, DirectCompute et Microsoft Media Foundation.
 
 <table>
     <colgroup>
@@ -508,7 +508,7 @@ L’infrastructure DXGI (DirectX Graphics Infrastructure) de Microsoft fournit 
 
 #### <a name="c"></a>C++
 
-C++/CX est un langage haute performance à faible traitement, qui fournit une puissante combinaison de vitesse, compatibilité et accès aux plateformes. C++/CX facilite l’utilisation de l’ensemble des fonctionnalités de jeux remarquables de Windows 10, notamment DirectX et Xbox Live. Vous pouvez également réutiliser le code et les bibliothèques C++ existants. C++/CX crée un code rapide et natif qui n’implique pas la surcharge de nettoyage de la mémoire. Votre jeu peut donc bénéficier de performances exceptionnelles et d’une faible consommation d’énergie, ce qui conduit à une autonomie de la batterie plus longue. Utilisez C++/CX avec DirectX ou XAML, ou bien créez un jeu utilisant une combinaison des deux.
+C++/CX est un langage haute performance à faible traitement, qui fournit une puissante combinaison de vitesse, compatibilité et accès aux plateformes. C++/CX facilite l’utilisation de l’ensemble des fonctionnalités de jeux remarquables de Windows 10, notamment DirectX et Xbox Live. Vous pouvez également réutiliser le code et les bibliothèques C++ existants. C++/CX crée un code rapide et natif qui n’implique pas la surcharge de nettoyage de la mémoire. Votre jeu peut donc bénéficier de performances exceptionnelles et d’une faible consommation d’énergie, ce qui conduit à une autonomie de la batterie plus longue. Utilisez C++/CX avec DirectX ou XAML, ou bien créez un jeu utilisant une combinaison des deux.
 
 <table>
     <colgroup>
@@ -520,7 +520,7 @@ C++/CX est un langage haute performance à faible traitement, qui fournit une pu
         <td><a href="https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx">Référence du langage Visual C++ (C++ / c++ / CX)</a></td>
     </tr>
     <tr>
-        <td>Visual C++ : Guide de programmation et informations de référence</td>
+        <td>Visual C++ : Guide de programmation et informations de référence</td>
         <td><a href="https://docs.microsoft.com/cpp/visual-cpp-in-visual-studio">Visual C++ dans Visual Studio 2017</a></td>
     </tr>
 </table>
@@ -528,7 +528,7 @@ C++/CX est un langage haute performance à faible traitement, qui fournit une pu
 
 #### <a name="c"></a>C#
 
-C# (prononcez « C sharp ») est un langage moderne et innovant, qui est simple, puissant, de type sécurisé et orienté objet. C# permet un développement rapide tout en conservant la familiarité et l’expressivité des langages du style C. Même s’il est facile à utiliser, C# possède de nombreuses fonctionnalités de langage avancées comme le polymorphisme, les délégués, les expressions lambda, les fermetures, la méthode Iterator, la covariance et les expressions LINQ (Language-Integrated Query). C# convient parfaitement si vous ciblez XAML, souhaitez commencer à développer rapidement votre jeu ou bénéficiez déjà d’une expérience en C#. C# est utilisé essentiellement avec XAML. Si vous voulez utiliser DirectX, choisissez plutôt C++ ou écrivez une partie de votre jeu en tant que composant C++ qui interagit avec DirectX. Pensez également à [Win2D](https://github.com/Microsoft/Win2D), une bibliothèque de graphismes Direct2D en mode immédiat pour C# et C++.
+C# (prononcez « C sharp ») est un langage moderne et innovant, qui est simple, puissant, de type sécurisé et orienté objet. C# permet un développement rapide tout en conservant la familiarité et l’expressivité des langages du style C. Même s’il est facile à utiliser, C# possède de nombreuses fonctionnalités de langage avancées comme le polymorphisme, les délégués, les expressions lambda, les fermetures, la méthode Iterator, la covariance et les expressions LINQ (Language-Integrated Query). C# convient parfaitement si vous ciblez XAML, souhaitez commencer à développer rapidement votre jeu ou bénéficiez déjà d’une expérience en C#. C# est utilisé essentiellement avec XAML. Si vous voulez utiliser DirectX, choisissez plutôt C++ ou écrivez une partie de votre jeu en tant que composant C++ qui interagit avec DirectX. Pensez également à [Win2D](https://github.com/Microsoft/Win2D), une bibliothèque de graphismes Direct2D en mode immédiat pour C# et C++.
 
 <table>
     <colgroup>
@@ -619,11 +619,11 @@ Les ponts de plateforme Windows universelle sont des technologies qui amènent v
     </colgroup>
     <tr>
         <td>Ponts UWP</td>
-        <td><a href="https://dev.windows.com/bridges/">Apportez votre code pour Windows</a></td>
+        <td><a href="https://developer.microsoft.com/windows/bridges">Apportez votre code pour Windows</a></td>
     </tr>
     <tr>
         <td>Pont Windows pour iOS</td>
-        <td><a href="https://dev.windows.com/bridges/ios">Mettre vos applications iOS pour Windows</a></td>
+        <td><a href="https://developer.microsoft.com/windows/bridges/ios">Mettre vos applications iOS pour Windows</a></td>
     </tr>
     <tr>
         <td>Pont Windows pour les applications de bureau (.NET et Win32)</td>
@@ -633,7 +633,7 @@ Les ponts de plateforme Windows universelle sont des technologies qui amènent v
 
 #### <a name="playfab"></a>PlayFab
 
-PlayFab, qui fait désormais partie de la famille Microsoft, est une plateforme principale complète pour les jeux en direct et offre aux studios indépendants un moyen puissant pour se lancer. Stimulez les revenus, l’engagement et la durée de rétention, tout en réduisant les coûts, grâce aux services de jeu, l'analyse en temps réel et LiveOps.
+PlayFab, qui fait désormais partie de la famille Microsoft, est une plateforme principale complète pour les jeux en direct et offre aux studios indépendants un moyen puissant pour se lancer. Stimulez les revenus, l’engagement et la durée de rétention, tout en réduisant les coûts, grâce aux services de jeu, l’analyse en temps réel et LiveOps.
 
 <table>
     <colgroup>
@@ -688,11 +688,11 @@ Unity prend en charge le développement de Direct3D 12 à partir d’Unity 5.4.
     </colgroup>
     <tr>
         <td>Moteur de jeu Unity</td>
-        <td><a href="https://unity3d.com/">Unity - moteur de jeu</a></td>
+        <td><a href="https://unity.com/">Unity - moteur de jeu</a></td>
     </tr>
     <tr>
         <td>Obtenir Unity</td>
-        <td><a href="https://unity3d.com/get-unity">Obtenir Unity</a></td>
+        <td><a href="https://store.unity.com/">Obtenir Unity</a></td>
     </tr>
     <tr>
         <td>Documentation Unity pour Windows</td>
@@ -723,7 +723,7 @@ Unity prend en charge le développement de Direct3D 12 à partir d’Unity 5.4.
         <td><a href="https://docs.microsoft.com/windows/uwp/gaming/missing-dot-net-apis-in-unity-and-uwp">Manque des API de .NET dans Unity et UWP</a></td>
     </tr>
     <tr>
-        <td>Publier votre jeu Unity en tant qu’application Windows universelle (vidéo)</td>
+        <td>Publier votre jeu Unity en tant qu’application de plateforme universelle Windows (vidéo)</td>
         <td><a href="https://channel9.msdn.com/Blogs/One-Dev-Minute/How-to-publish-your-Unity-game-as-a-UWP-app">Comment publier votre jeu Unity comme une application UWP</a></td>
     </tr>
     <tr>
@@ -739,7 +739,7 @@ Unity prend en charge le développement de Direct3D 12 à partir d’Unity 5.4.
 
 #### <a name="havok"></a>Havok
 
-Avec la suite modulaire d’outils et de technologies de Havok, les créateurs de jeux peuvent atteindre de nouveaux niveaux d’interactivité et d’immersion. Havok permet de fournir des données physiques réalistes, et de réaliser des simulations interactives ainsi que des animations remarquables. La version 2015.1 et les versions ultérieures prennent officiellement en charge UWP dans Visual Studio 2015 sur x86, 64 bits et ARM.
+Avec la suite modulaire d’outils et de technologies de Havok, les créateurs de jeux peuvent atteindre de nouveaux niveaux d’interactivité et d’immersion. Havok permet de fournir des données physiques réalistes et d’effectuer des simulations interactives, ainsi que de remarquables animations. La version 2015.1 et les versions ultérieures prennent officiellement en charge UWP dans Visual Studio 2015 sur x86, 64 bits et ARM.
 
 <table>
     <colgroup>
@@ -756,7 +756,7 @@ Avec la suite modulaire d’outils et de technologies de Havok, les créateurs d
     </tr>
     <tr>
         <td>Forums de support Havok</td>
-        <td><a href="https://support.havok.com">Havok</a></td>
+        <td><a href="https://www.havok.com/">Havok</a></td>
     </tr>
 </table>
  
@@ -819,7 +819,7 @@ Cocos2d-x est une suite d’outils et de moteurs de jeu open source multiplatefo
 
 #### <a name="unreal-engine"></a>Unreal Engine
 
-Unreal Engine 4 est une suite complète d’outils de développement de jeux destinée à tous les types de jeu et de développement. Destiné aux jeux pour consoles et PC très exigeants, Unreal Engine est utilisé par les développeurs de jeux du monde entier.
+Unreal Engine 4 est une suite complète d’outils de développement de jeux destinée à tous les types de jeu et de développement. Destiné aux jeux pour consoles et PC très exigeants, Unreal Engine est utilisé par les développeurs de jeux du monde entier.
 
 <table>
     <colgroup>
@@ -957,7 +957,7 @@ La préparation au développement d’une application Windows universelle est ra
     </colgroup>
     <tr>
         <td>Prise en main du développement UWP</td>
-        <td><a href="https://dev.windows.com/getstarted">Prise en main des applications Windows</a></td>
+        <td><a href="https://developer.microsoft.com/windows/apps/getstarted">Prise en main des applications Windows</a></td>
     </tr>
     <tr>
         <td>Préparation au développement UWP</td>
@@ -991,7 +991,7 @@ Si vous ne connaissez pas du tout la programmation UWP et que vous envisagez d�
     </colgroup>
     <tr>
         <td>Vue d’ensemble du développement d’une application de plateforme universelle Windows</td>
-        <td><a href="https://dev.windows.com/develop">Développer des applications Windows</a></td>
+        <td><a href="https://developer.microsoft.com/windows/apps/develop">Développer des applications Windows</a></td>
     </tr>
     <tr>
         <td>Vue d’ensemble de la programmation réseau dans UWP</td>
@@ -1347,7 +1347,7 @@ Une vignette est la représentation de votre jeu dans le menu Démarrer. Les vig
     </tr>
     <tr>
         <td>Extension UWP Tile Generator pour Visual Studio</td>
-        <td><a href="https://marketplace.visualstudio.com/vsgallery/09611e90-f3e8-44b7-9c83-18dba8275bb2">Outil de création de toutes les vignettes à l’aide d’une image unique</a></td>
+        <td><a href="https://marketplace.visualstudio.com/items?itemName=shenchauhan.UWPTileGenerator">Outil de création de toutes les vignettes à l’aide d’une image unique</a></td>
     </tr>
     <tr>
         <td>Extension UWP Tile Generator pour Visual Studio (billet de blog)</td>
@@ -1397,7 +1397,7 @@ Le Kit Windows Performance Toolkit est composé d’outils d’analyse des pe
     </colgroup>
     <tr>
         <td>Test de performances de votre code.</td>
-        <td><a href="https://www.visualstudio.com/team-services/cloud-load-testing/">Tests de charge basés sur le cloud</a></td>
+        <td><a href="https://azure.microsoft.com/services/devops/test-plans/">Tests de charge basés sur le cloud</a></td>
     </tr>
     <tr>
         <td>Obtenir le type de console Xbox à l’aide des informations sur l’appareil de jeu</td>
@@ -1496,7 +1496,7 @@ Générer le contenu du jeu qui utilise toutes les fonctionnalités de couleurs 
 </table>
 
 
-### <a name="globalization-and-localization"></a>Globalisation et localisation
+### <a name="globalization-and-localization"></a>Internationalisation et localisation
 
 Développez des jeux prêts à l’emploi pour la plateforme Windows et découvrez les fonctionnalités internationales intégrées aux meilleurs produits Microsoft.
 
@@ -1530,7 +1530,7 @@ Vous allez utiliser [partenaires](https://partner.microsoft.com/dashboard) pour 
     </colgroup>
     <tr>
         <td>Publication d’applications partenaires</td>
-        <td><a href="https://dev.windows.com/publish">Publier des applications Windows</a></td>
+        <td><a href="https://developer.microsoft.com/store/publish-apps">Publier des applications Windows</a></td>
     </tr>
     <tr>
         <td>Partenaires avancés de publication (GDN)</td>
@@ -1658,7 +1658,7 @@ Vous n’avez pas terminé une fois que vous avez développé et fourni votre je
     </tr>
     <tr>
         <td>Méthodes pour promouvoir votre jeu</td>
-        <td><a href="https://dev.windows.com/store-promotion">Promouvoir vos applications</a></td>
+        <td><a href="https://developer.microsoft.com/store/promote-your-apps">Promouvoir vos applications</a></td>
     </tr>
 </table>
  
@@ -1692,7 +1692,7 @@ Visual Studio Application Insights fournit des analyses de performance, de tél�
     </colgroup>
     <tr>
         <td>Comprendre le comportement du lecteur à l’aide de GameAnalytics</td>
-        <td><a href="https://www.gameanalytics.com/">GameAnalytics</a></td>
+        <td><a href="https://gameanalytics.com/">GameAnalytics</a></td>
     </tr>
     <tr>
         <td>Connecter votre jeu UWP à Google Analytics</td>
@@ -1712,7 +1712,7 @@ Visual Studio Application Insights fournit des analyses de performance, de tél�
     </tr>
     <tr>
         <td>Utiliser Vungle pour ajouter des publicités vidéo dans vos jeux</td>
-        <td><a href="https://v.vungle.com/sdk">Obtenir le Windows SDK pour Vungle</a></td>
+        <td><a href="https://publisher.vungle.com/sdk/">Obtenir le Windows SDK pour Vungle</a></td>
     </tr>
 </table>
  

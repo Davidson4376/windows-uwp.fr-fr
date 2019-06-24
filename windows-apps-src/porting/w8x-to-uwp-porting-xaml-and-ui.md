@@ -1,19 +1,19 @@
 ---
 description: La pratique de définition de l’interface utilisateur sous la forme de balisage XAML déclaratif convertit extrêmement bien des applications 8.1 universelles en applications UWP.
-title: Portage du balisage XAML et de la couche interface utilisateur de Windows Runtime 8.x vers UWP
+title: Portage du balisage XAML et de la couche interface utilisateur de Windows Runtime 8.x vers UWP
 ms.assetid: 78b86762-7359-474f-b1e3-c2d7cf9aa907
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 829755f6ccba7a076096e4a03555458b98a4b670
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 5fcc4312cd238279e01e275d2525c9ac8df98190
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372245"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67322366"
 ---
-# <a name="porting-windows-runtime-8x-xaml-and-ui-to-uwp"></a>Portage du balisage XAML et de la couche interface utilisateur de Windows Runtime 8.x vers UWP
+# <a name="porting-windows-runtime-8x-xaml-and-ui-to-uwp"></a>Portage du balisage XAML et de la couche interface utilisateur de Windows Runtime 8.x vers UWP
 
 
 Rubrique précédente : [Résolution des problèmes](w8x-to-uwp-troubleshooting.md).
@@ -30,7 +30,7 @@ Si vous souhaitez simplement accéder à l’étape de construction de votre pro
 
 ## <a name="back-button-handling"></a>Gestion du bouton Précédent
 
-8.1 universelle pour les applications, les applications Windows Runtime 8.x et Windows Phone Store ont des approches différentes pour l’interface utilisateur que vous affichez et les événements que vous gérez pour le bouton précédent. Mais, pour les applications Windows 10, vous pouvez utiliser une approche unique dans votre application. Sur les appareils mobiles, le bouton est fourni à votre intention sous la forme d’un bouton capacitif sur l’appareil ou d’un bouton dans l’interpréteur de commandes. Sur un appareil de bureau, vous ajoutez un bouton au chrome de votre application chaque fois que cette dernière permet la navigation vers l’arrière. Ceci est indiqué dans la barre de titre des applications avec fenêtres ou dans la barre des tâches en mode tablette. L’événement de bouton Précédent est un concept universel sur toutes les familles d’appareils, et les boutons implémentés dans le matériel ou dans le logiciel déclenchent le même événement [**BackRequested**](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.backrequested).
+8\.1 universelle pour les applications, les applications Windows Runtime 8.x et Windows Phone Store ont des approches différentes pour l’interface utilisateur que vous affichez et les événements que vous gérez pour le bouton précédent. Mais, pour les applications Windows 10, vous pouvez utiliser une approche unique dans votre application. Sur les appareils mobiles, le bouton est fourni à votre intention sous la forme d’un bouton capacitif sur l’appareil ou d’un bouton dans l’interpréteur de commandes. Sur un appareil de bureau, vous ajoutez un bouton au chrome de votre application chaque fois que cette dernière permet la navigation vers l’arrière. Ceci est indiqué dans la barre de titre des applications avec fenêtres ou dans la barre des tâches en mode tablette. L’événement de bouton Précédent est un concept universel sur toutes les familles d’appareils, et les boutons implémentés dans le matériel ou dans le logiciel déclenchent le même événement [**BackRequested**](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.backrequested).
 
 L’exemple ci-après fonctionne pour toutes les familles d’appareils et est adapté aux cas dans lesquels le même traitement s’applique à toutes les pages et où vous n’avez pas besoin de confirmer la navigation (par exemple, pour signaler les modifications non enregistrées).
 
@@ -93,7 +93,7 @@ Si vous voulez être certain que vos styles/modèles personnalisés sont à l’
 
 Voici quelques exemples plus spécifiques de modifications apportées aux contrôles.
 
-| Nom du contrôle | Changement |
+| Nom du contrôle | Modification |
 |--------------|--------|
 | **AppBar**   | Si vous utilisez le **AppBar** contrôle ([**CommandBar** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBar) est recommandé à la place), il n’est pas masquée par défaut dans une application Windows 10. Vous pouvez contrôler ce comportement avec la propriété [**AppBar.ClosedDisplayMode**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbar.closeddisplaymode). |
 | **AppBar**, [**CommandBar**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBar) | Dans une application Windows 10, **AppBar** et [ **CommandBar** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBar) ont un **plus** bouton (les points de suspension). |
@@ -110,15 +110,15 @@ Voici quelques exemples plus spécifiques de modifications apportées aux contr�
 | **ListPickerFlyout**, **PickerFlyout**  | **ListPickerFlyout** et **PickerFlyout** sont déconseillées pour une application Windows 10. Dans le cas d’un menu volant à sélection unique, utilisez [**MenuFlyout**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyout) ; pour des expériences plus complexes, préférez [**Flyout**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Flyout). |
 | [**PasswordBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox) | Le [ **PasswordBox.IsPasswordRevealButtonEnabled** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.ispasswordrevealbuttonenabled) propriété est déconseillée dans une application Windows 10 et définir n’a aucun effet. Utilisez [ **PasswordBox.PasswordRevealMode** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordrevealmode) au lieu de cela, qui utilise par défaut **aperçu** (dans laquelle un glyphe yeux s’affiche, comme dans une application de 8.x Windows Runtime). Voir également l’article [Recommandations en matière de zones de mot de passe](https://docs.microsoft.com/windows/uwp/controls-and-patterns/password-box). |
 | [**Pivot**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) | Le contrôle [**Pivot**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) est désormais universel et n’est plus limité aux appareils mobiles. |
-| [**SearchBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SearchBox) | Bien que la méthode [**SearchBox**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.searchbox.) soit implémentée dans la famille d’appareils universelle, elle n’est pas entièrement fonctionnelle sur des appareils mobiles. Voir [Remplacement de SearchBox par AutoSuggestBox](#searchbox-deprecated-in-favor-of-autosuggestbox). |
+| [**SearchBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SearchBox) | Bien que la méthode [**SearchBox**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.searchbox) soit implémentée dans la famille d’appareils universelle, elle n’est pas entièrement fonctionnelle sur des appareils mobiles. Voir [Remplacement de SearchBox par AutoSuggestBox](#searchbox-deprecated-in-favor-of-autosuggestbox). |
 | **SemanticZoom** | Pour **SemanticZoom**, voir [Modifications SemanticZoom](#semanticzoom-changes). |
 | [**ScrollViewer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer)  | Certaines propriétés par défaut de [**ScrollViewer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) ont changé. [**HorizontalScrollMode** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.horizontalscrollmode) est **automatique**, [ **VerticalScrollMode** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.verticalscrollmode) est **automatique**et [ **ZoomMode** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.zoommode) est **désactivé**. Si les nouvelles valeurs par défaut ne sont pas adaptées à votre application, vous pouvez les modifier dans un style ou sous forme de valeurs locales sur le contrôle proprement dit.  |
 | [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) | Dans une application de 8.x Windows Runtime, vérification orthographique est désactivé par défaut pour un [ **zone de texte**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox). Dans une application Windows Phone Store et dans une application Windows 10, il est activé par défaut. |
 | [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) | La taille de police par défaut d’un élément [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) est passée de 11 à 15. |
 | [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) | La valeur par défaut de [**TextBox.TextReadingOrder**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.textreadingorder) est passée de **Default** à **DetectFromContent**. Si cette valeur ne convient pas, utilisez **UseFlowDirection**. La valeur **Default** est déconseillée. |
-| divers. | Couleur d’accentuation s’applique à une application Windows Phone Store et pour les applications Windows 10, mais pas pour les applications Windows Runtime 8.x.  |
+| Divers | Couleur d’accentuation s’applique à une application Windows Phone Store et pour les applications Windows 10, mais pas pour les applications Windows Runtime 8.x.  |
 
-Pour plus d’informations sur les contrôles des applications UWP, voir [Contrôles par fonction](https://docs.microsoft.com/windows/uwp/controls-and-patterns/controls-by-function), [Liste des contrôles](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/) et [Recommandations relatives aux contrôles](https://developer.microsoft.com/windows/design/controls-patterns).
+Pour plus d’informations sur les contrôles des applications UWP, voir [Contrôles par fonction](https://docs.microsoft.com/windows/uwp/controls-and-patterns/controls-by-function), [Liste des contrôles](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/) et [Recommandations relatives aux contrôles](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/index).
 
 ##  <a name="design-language-in-windows10"></a>Langage de conception dans Windows 10
 
@@ -128,9 +128,9 @@ Il existe certaines différences légère mais importantes dans le langage de co
 
 Auparavant, les pixels d’affichage permettaient d’extraire la taille et la disposition des éléments d’interface utilisateur de la taille physique et de la résolution réelles des appareils. Ces pixels ont évolué de manière à devenir des « pixels effectifs ». Voici ce que cette expression désigne, sa signification et la valeur ajoutée proposée.
 
-Le terme « résolution » fait référence à la mesure de la densité des pixels et non, comme on le pense souvent, au nombre de pixels. La « résolution effective » est la façon dont les pixels physiques qui composent une image ou un glyphe apparaissent à l’œil, étant donné les différences liées à la distance de visualisation et à la taille des pixels physiques sur l’appareil (la densité de pixels étant l’inverse de la taille des pixels physiques). La résolution effective est une bonne unité de mesure pour créer une expérience, car elle est centrée sur l’utilisateur. La compréhension de tous ces facteurs et le contrôle de la taille des éléments d’interface utilisateur vous permettent de tirer parti de l’expérience utilisateur.
+Le terme « résolution » fait référence à la mesure de la densité des pixels et non, comme on le pense souvent, au nombre de pixels. La « résolution effective » est la façon dont les pixels physiques qui composent une image ou un glyphe apparaissent à l’œil, étant donné les différences liées à la distance de visualisation et à la taille des pixels physiques sur l’appareil (la densité de pixels étant l’inverse de la taille des pixels physiques). La résolution effective est une bonne unité de mesure pour créer une expérience, car elle est centrée sur l’utilisateur. La compréhension de tous ces facteurs et le contrôle de la taille des éléments d’interface utilisateur vous permettent d’optimiser l’expérience utilisateur.
 
-Les différents appareils utilisés présentent une largeur variable (en pixels effectifs). Celle-ci est de 320 epx sur les plus petits d’entre eux, de 1 024 epx sur les écrans de taille modeste et nettement plus grande sur d’autres. Il vous suffit de continuer à utiliser les éléments à dimensionnement automatique et les panneaux à disposition dynamique que vous utilisez depuis toujours. Dans certains cas, il se peut que vous définissiez une taille fixe pour les propriétés de vos éléments d’interface utilisateur dans le balisage XAML. Un facteur d’échelle est automatiquement affecté à votre application, en fonction de l’appareil sur lequel elle s’exécute et des paramètres d’affichage définis par l’utilisateur. Ce facteur permet aux éléments à taille fixe de l’interface utilisateur de conserver la même taille (approximativement) sur les écrans de différentes tailles de l’utilisateur, pour les opérations tactiles ou pour la lecture. Et avec la disposition dynamique, votre interface utilisateur ne sera pas seulement mise à l’échelle sur différents appareils. Elle s’efforcera également d’adapter la quantité de contenu appropriée à l’espace disponible.
+Les différents appareils utilisés présentent une largeur variable (en pixels effectifs). Celle-ci est de 320 epx sur les plus petits d’entre eux, de 1 024 epx sur les écrans de taille modeste et nettement plus élevée sur d’autres. Il vous suffit de continuer à utiliser les éléments à dimensionnement automatique et les panneaux à disposition dynamique que vous utilisez depuis toujours. Dans certains cas, il se peut que vous définissiez une taille fixe pour les propriétés de vos éléments d’interface utilisateur dans le balisage XAML. Un facteur d’échelle est automatiquement affecté à votre application, en fonction de l’appareil sur lequel elle s’exécute et des paramètres d’affichage définis par l’utilisateur. Ce facteur permet aux éléments à taille fixe de l’interface utilisateur de conserver la même taille (approximativement) sur les écrans de différentes tailles de l’utilisateur, pour les opérations tactiles ou pour la lecture. Et avec la disposition dynamique, votre interface utilisateur ne sera pas seulement mise à l’échelle sur différents appareils. Elle s’efforcera également d’adapter la quantité de contenu appropriée à l’espace disponible.
 
 Pour que votre application offre une expérience optimale sur tous les écrans, nous vous recommandons de créer chaque ressource bitmap dans différentes tailles, chacune étant adaptée à un facteur d’échelle spécifique. Fournir des ressources aux échelles 100 %, 200 % et 400 % (dans cet ordre de priorité) produit d’excellents résultats dans la plupart des cas à tous les facteurs d’échelle intermédiaires.
 
@@ -194,12 +194,12 @@ Le tableau suivant décrit les modifications apportées aux états visuels et au
 |                     | PointerOver             |                   | PointerOver         |
 |                     | Pressed                 |                   | Pressed             |
 |                     | PointerOverPressed      |                   | [non disponible]       |
-|                     | Désactivée                |                   | [non disponible]       |
+|                     | Désactivé                |                   | [non disponible]       |
 |                     | [non disponible]           |                   | PointerOverSelected |
-|                     | [non disponible]           |                   | Selected            |
+|                     | [non disponible]           |                   | Sélectionné            |
 |                     | [non disponible]           |                   | PressedSelected     |
 | [non disponible]       |                         | DisabledStates    |                     |
-|                     | [non disponible]           |                   | Désactivée            |
+|                     | [non disponible]           |                   | Désactivé            |
 |                     | [non disponible]           |                   | Enabled             |
 | SelectionHintStates |                         | [non disponible]     |                     |
 |                     | VerticalSelectionHint   |                   | [non disponible]       |
@@ -214,7 +214,7 @@ Le tableau suivant décrit les modifications apportées aux états visuels et au
 |                     | UnselectedPointerOver   |                   | [non disponible]       |
 |                     | UnselectedSwiping       |                   | [non disponible]       |
 |                     | Sélection               |                   | [non disponible]       |
-|                     | Selected                |                   | [non disponible]       |
+|                     | Sélectionné                |                   | [non disponible]       |
 |                     | SelectedSwiping         |                   | [non disponible]       |
 |                     | SelectedUnfocused       |                   | [non disponible]       |
 
@@ -245,7 +245,7 @@ Les API dans le [ **Windows.Media.PlayTo** ](https://docs.microsoft.com/uwp/api/
 
 Le langage de conception a évolué pour Windows 10 et, par conséquent, certains styles système ont changé. Dans certains cas, il vous sera utile de revoir les conceptions visuelles de vos affichages afin de les harmoniser avec les propriétés de style modifiées.
 
-Dans d’autres cas, les clés de ressources ne sont plus prises en charge. L’éditeur de balisage XAML dans Visual Studio met en surbrillance les références aux clés de ressources qui ne peuvent pas être résolues. Par exemple, il souligne une référence à la clé de style `ListViewItemTextBlockStyle` d’une ligne ondulée rouge. Si ce n’est pas corrigé, l’application s’arrête immédiatement lorsque vous essayez de la déployer vers l’émulateur ou l’appareil. Il est donc important de veiller à l’exactitude du balisage XAML. Et vous allez découvrir que Visual Studio est un formidable outil pour intercepter ces problèmes.
+Dans d’autres cas, les clés de ressources ne sont plus prises en charge. L’éditeur de balisage XAML de Visual Studio met en surbrillance les références aux clés de ressources qui ne peuvent pas être résolues. Par exemple, il souligne une référence à la clé de style `ListViewItemTextBlockStyle` d’une ligne ondulée rouge. Si ce n’est pas corrigé, l’application s’arrête immédiatement lorsque vous essayez de la déployer vers l’émulateur ou l’appareil. Il est donc important de veiller à l’exactitude du balisage XAML. Et vous allez découvrir que Visual Studio est un formidable outil pour intercepter ces problèmes.
 
 Pour les clés qui sont toujours prises en charge, les modifications apportées au langage de conception signifient que les propriétés définies par certains styles ont changé. Par exemple, `TitleTextBlockStyle` définit **FontSize** à 14.667px dans une application de 8.x Windows Runtime et 18.14px dans une application Windows Phone Store. Mais les mêmes jeux de style **FontSize** à une quantité 24 supérieure px dans une application Windows 10. Passez en revue vos conceptions et dispositions et utilisez les styles appropriés aux endroits adéquats. Pour plus d’informations, voir [Recommandations en matière de polices](https://docs.microsoft.com/windows/uwp/controls-and-patterns/fonts) et [Concevoir des applications UWP](https://developer.microsoft.com/en-us/windows/apps/design).
 
@@ -410,7 +410,7 @@ Voici la liste complète des clés qui ne sont plus prises en charge.
 
 ## <a name="searchbox-deprecated-in-favor-of-autosuggestbox"></a>Remplacement de SearchBox par AutoSuggestBox
 
-Bien que la méthode [**SearchBox**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.searchbox.) soit implémentée dans la famille d’appareils universelle, elle n’est pas entièrement fonctionnelle sur des appareils mobiles. Utilisez [**AutoSuggestBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox) pour votre expérience de recherche universelle. Voici une méthode classique pour implémenter une expérience de recherche avec **AutoSuggestBox**.
+Bien que la méthode [**SearchBox**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.searchbox) soit implémentée dans la famille d’appareils universelle, elle n’est pas entièrement fonctionnelle sur des appareils mobiles. Utilisez [**AutoSuggestBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox) pour votre expérience de recherche universelle. Voici une méthode classique pour implémenter une expérience de recherche avec **AutoSuggestBox**.
 
 Quand l’utilisateur commence à taper, l’événement **TextChanged** est déclenché avec la raison **UserInput**. Vous complétez ensuite la liste des suggestions et définissez l’élément **ItemsSource** d’[**AutoSuggestBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox). Lorsque l’utilisateur parcourt la liste, l’événement **SuggestionChosen** est déclenché (et si vous avez défini **TextMemberDisplayPath**, la zone de texte est complétée automatiquement avec la propriété spécifiée). Quand l’utilisateur soumet un choix avec la touche Entrée, l’événement **QuerySubmitted** est déclenché. À ce stade, vous pouvez agir sur cette suggestion (dans ce cas, très probablement naviguer vers une autre page avec plus de détails sur le contenu spécifié). Notez que les propriétés **LinguisticDetails** et **Language** de **SearchBoxQuerySubmittedEventArgs** ne sont plus prises en charge (il existe des API équivalentes pour prendre en charge ces fonctionnalités). **KeyModifiers** n’est plus pris en charge
 

@@ -1,19 +1,19 @@
 ---
-title: Développement de Marble Maze, jeu pour UW en C++ et DirectX
+title: Développement de Marble Maze, jeu pour UWP en C++ et DirectX
 description: Cette section de la documentation décrit comment utiliser DirectX et Visual C++ afin de créer un jeu pour la plateforme Windows universelle (UWP) en 3D.
 ms.assetid: 43f1977a-7e1d-614c-696e-7669dd8a9cc7
 ms.date: 08/10/2017
 ms.topic: article
 keywords: windows 10, uwp, jeux, exemple, directx, 3d
 ms.localizationpriority: medium
-ms.openlocfilehash: f287110584c02a5d7822f6b1d84cd332d4d6199d
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 754d1eb535fa2ac2930513981bb7d85a428778e5
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368913"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321338"
 ---
-# <a name="developing-marble-maze-a-uwp-game-in-c-and-directx"></a>Développement de Marble Maze, jeu pour UW en C++ et DirectX
+# <a name="developing-marble-maze-a-uwp-game-in-c-and-directx"></a>Développement de Marble Maze, jeu pour UWP en C++ et DirectX
 
 
 
@@ -43,7 +43,7 @@ Marble Maze offre à l’utilisateur plusieurs moyens d’interagir avec le tabl
 
 
 -   Windows 10 Creators Update
--   [Microsoft Visual Studio 2017](https://www.visualstudio.com/downloads/)
+-   [Microsoft Visual Studio 2017](https://visualstudio.microsoft.com/downloads/)
 -   Connaissance de la programmation en C++
 -   Connaissance de la terminologie DirectX et DirectX
 -   Connaissances de base de COM

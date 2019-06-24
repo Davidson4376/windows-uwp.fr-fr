@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 21743f588fa26fcab424a67d6befdd720a891688
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 47134c951fe0351966a34b4a58fe657a6aeeb602
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359110"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317563"
 ---
 # <a name="basic-photo-video-and-audio-capture-with-mediacapture"></a>Capture photo, vidéo et audio de base à l’aide de MediaCapture
 
@@ -35,13 +35,13 @@ Afin que votre application puisse accéder à l’appareil photo d’un appareil
 
 
 ## <a name="initialize-the-mediacapture-object"></a>Initialiser l’objet MediaCapture
-Toutes les méthodes de capture décrites dans cet article nécessitent la première étape d’initialisation de l’objet [**MediaCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture), exécutée via l’appel du constructeur, puis de [**InitializeAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.initializeasync). Dans la mesure où l’objet **MediaCapture** est accessible depuis plusieurs emplacements de votre application, déclarez une variable de classe pour stocker l’objet.  Implémentez un gestionnaire pour l’objet [**Failed**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.failed) de la classe **MediaCapture** afin d’être informé d’un éventuel échec de l’opération de capture.
+Toutes les méthodes de capture décrites dans cet article nécessitent la première étape d’initialisation de l’objet [**MediaCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture), exécutée via l’appel du constructeur, puis de [**InitializeAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.initializeasync). Dans la mesure où l’objet **MediaCapture** est accessible depuis plusieurs emplacements de votre application, déclarez une variable de classe pour stocker l’objet.  Implémentez un gestionnaire pour l’événement [**Failed**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.failed) de l’objet **MediaCapture** afin d’être informé d’un éventuel échec de l’opération de capture.
 
 [!code-cs[DeclareMediaCapture](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetDeclareMediaCapture)]
 
 [!code-cs[InitMediaCapture](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetInitMediaCapture)]
 
-## <a name="set-up-the-camera-preview"></a>Définissez l’aperçu de l’appareil photo
+## <a name="set-up-the-camera-preview"></a>Définir l’aperçu de l’appareil photo
 Il est possible de capturer des photos, vidéos et audio à l’aide de **MediaCapture** sans afficher l’aperçu de l’appareil photo, mais en règle générale, vous souhaitez afficher le flux d’aperçu de manière à ce que l’utilisateur n’ait aucune visibilité sur le contenu capturé. Par ailleurs, quelques fonctions **MediaCapture** nécessitent l’exécution du flux d’aperçu pour être activées. Il s’agit notamment la mise au point, l’exposition et la balance des blancs automatiques. Pour savoir comment configurer l’aperçu de l’appareil photo, consultez la page [**Afficher l’aperçu de l’appareil photo**](simple-camera-preview-access.md).
 
 ## <a name="capture-a-photo-to-a-softwarebitmap"></a>Capturer une photo sur une classe SoftwareBitmap
@@ -83,7 +83,7 @@ Ajoutez rapidement une capture vidéo à votre application à l’aide de la cla
 
 Ensuite, créez un objet **StorageFile** sur lequel enregistrer la vidéo. Notez que pour procéder à un enregistrement sur la vidéothèque de l’utilisateur, vous devez ajouter la fonctionnalité **Vidéothèque** à votre manifeste d’application. Appelez [**PrepareLowLagRecordToStorageFileAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.preparelowlagrecordtostoragefileasync) afin d’initialiser l’enregistrement du contenu multimédia, en passant un fichier de stockage et un objet [**MediaEncodingProfile**](https://docs.microsoft.com/uwp/api/Windows.Media.MediaProperties.MediaEncodingProfile) spécifiant l’encodage pour la vidéo. La classe fournit des méthodes statiques, comme [**CreateMp4**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createmp4), permettant de créer des profils d’encodage vidéo courants.
 
-Enfin, appelez [**StartAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagmediarecording.startasync) afin de commencer à capturer la vidéo.
+Enfin, appelez [**StartAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagmediarecording.startasync) afin de commencer la capture vidéo.
 
 [!code-cs[StartVideoCapture](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStartVideoCapture)]
 
@@ -113,7 +113,7 @@ Pour suspendre un enregistrement vidéo et le reprendre sans créer de fichier d
 
 [!code-cs[ResumeRecordingSimple](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetResumeRecordingSimple)]
 
-À partir de Windows 10, version 1607, vous pouvez suspendre un enregistrement vidéo et recevoir la dernière image capturée avant l’interruption. Vous pouvez alors superposer cette image sur l’aperçu de l’appareil photo afin de permettre à l’utilisateur d’aligner l’appareil photo avec l’image interrompue avant de reprendre l’enregistrement. L’appel à [**PauseWithResultAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagmediarecording.pausewithresultasync) renvoie un objet [**MediaCapturePauseResult**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapturePauseResult). la propriété [**LastFrame**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapturepauseresult.lastframe) est un objet [**VideoFrame**](https://docs.microsoft.com/uwp/api/Windows.Media.VideoFrame) représentant la dernière image. Pour afficher l’image au format XAML, récupérez la représentation **SoftwareBitmap** de l’image vidéo. Actuellement, seules les images au format BGRA8 avec un canal alpha prémultiplié ou vide sont prises en charge, aussi appelez [**Convert**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.windows) pour récupérer le format approprié, si nécessaire.  Créez un nouvel objet [**SoftwareBitmapSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SoftwareBitmapSource), puis appelez [**SetBitmapAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.softwarebitmapsource.setbitmapasync) pour l’initialiser. Enfin, définissez la propriété **Source** d’un contrôle XAML [**Image**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) afin d’afficher l’image. Pour que cette astuce fonctionne, votre image doit être alignée sur le contrôle **CaptureElement** et présenter une valeur d’opacité inférieure à 1. N’oubliez pas que vous pouvez modifier l’interface utilisateur uniquement sur le thread dédié. Dès lors, effectuez cet appel à l’intérieur de [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows).
+À partir de Windows 10, version 1607, vous pouvez suspendre un enregistrement vidéo et recevoir la dernière image capturée avant l’interruption. Vous pouvez alors superposer cette image sur l’aperçu de l’appareil photo afin de permettre à l’utilisateur d’aligner l’appareil photo avec l’image interrompue avant de reprendre l’enregistrement. L’appel à [**PauseWithResultAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagmediarecording.pausewithresultasync) renvoie un objet [**MediaCapturePauseResult**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapturePauseResult). la propriété [**LastFrame**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapturepauseresult.lastframe) est un objet [**VideoFrame**](https://docs.microsoft.com/uwp/api/Windows.Media.VideoFrame) représentant la dernière image. Pour afficher l’image au format XAML, récupérez la représentation **SoftwareBitmap** de l’image vidéo. Actuellement, seules les images au format BGRA8 avec un canal alpha prémultiplié ou vide sont prises en charge, aussi appelez [**Convert**](/uwp/api/windows.graphics.imaging.softwarebitmap.convert) pour récupérer le format approprié, si nécessaire.  Créez un nouvel objet [**SoftwareBitmapSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SoftwareBitmapSource), puis appelez [**SetBitmapAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.softwarebitmapsource.setbitmapasync) pour l’initialiser. Enfin, définissez la propriété **Source** d’un contrôle XAML [**Image**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) afin d’afficher l’image. Pour que cette astuce fonctionne, votre image doit être alignée sur le contrôle **CaptureElement** et présenter une valeur d’opacité inférieure à 1. N’oubliez pas que vous pouvez modifier l’interface utilisateur uniquement sur le thread dédié. Dès lors, effectuez cet appel à l’intérieur de [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync).
 
 **PauseWithResultAsync** renvoie également la durée de la vidéo enregistrée dans le segment précédent, si vous souhaitez effectuer un suivi de la durée totale enregistrée.
 

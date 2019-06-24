@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 001f7cb641b7bb210897ef9406c2324bbc20a2bd
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: e5ff5d8e1a63522a70b37c3226b01a2fc680c368
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66362067"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318974"
 ---
 # <a name="accessibility-overview"></a>Vue d’ensemble de l’accessibilité  
 
@@ -103,7 +103,7 @@ Trois principaux aspects du texte sont pertinents en ce qui concerne l’accessi
 
 * Des outils doivent déterminer si le texte doit être lu dans le cadre d’une traversée de séquence de tabulation ou uniquement dans le cadre d’une représentation de document globale. Vous pouvez aider à contrôler cette détermination en choisissant l’élément approprié pour l’affichage du texte ou en ajustant les propriétés de ces éléments de texte. Chaque élément de texte disponible remplit une fonction donnée, souvent associée à un rôle UI Automation particulier. L’utilisation de l’élément incorrect peut entraîner le signalement du rôle incorrect à UI Automation et la création d’une expérience confuse pour un utilisateur de technologie d’assistance.
 * De nombreux utilisateurs souffrent de limitations visuelles qui font que le texte est difficile à lire en cas d’insuffisance du contraste par rapport à l’arrière-plan. L’impact sur l’utilisateur est délicat à évaluer pour un concepteur d’application qui ne souffre pas de la même limitation visuelle. Par exemple, un choix des couleurs inapproprié lors de la conception peut empêcher certains utilisateurs daltoniens de pouvoir lire le texte. Les recommandations en matière d’accessibilité effectuées initialement pour le contenu Web définissent des normes de contraste qui peuvent éviter ces problèmes également dans les applications. Pour plus d’informations, consultez la rubrique [Exigences de texte accessible](accessible-text-requirements.md).
-* De nombreux utilisateurs éprouvent des difficultés à lire du texte trop petit. Vous pouvez éviter que ce problème ne se produise en faisant en sorte que le texte de l’interface utilisateur de votre application soit suffisamment grand en premier lieu. Toutefois, ceci est difficile avec les applications qui affichent une grande quantité de texte ou du texte combiné à d’autres éléments visuels. Dans les cas de ce type, assurez-vous que l’application interagit correctement avec les fonctionnalités système qui peuvent agrandir l’affichage ainsi que le texte qu’elle contient. (Certains utilisateurs modifient les valeurs ppp comme option d’accessibilité.) (Cette option est disponible dans la zone **Agrandir les éléments affichés à l’écran** de la fenêtre **Options d’ergonomie**, qui redirige l’utilisateur vers une interface utilisateur du **Panneau de configuration** pour les options **Apparence et personnalisation** / **Affichage**.)
+* De nombreux utilisateurs éprouvent des difficultés à lire du texte trop petit. Vous pouvez éviter que ce problème ne se produise en faisant en sorte que la police du texte de l’interface utilisateur de votre application soit suffisamment grande. Toutefois, ceci est difficile avec les applications qui affichent une grande quantité de texte ou du texte combiné à d’autres éléments visuels. Dans les cas de ce type, assurez-vous que l’application interagit correctement avec les fonctionnalités système qui peuvent agrandir l’affichage ainsi que le texte qu’elle contient. (Certains utilisateurs modifient les valeurs ppp comme option d’accessibilité.) (Cette option est disponible dans la zone **Agrandir les éléments affichés à l’écran** de la fenêtre **Options d’ergonomie**, qui redirige l’utilisateur vers une interface utilisateur du **Panneau de configuration** pour les options **Apparence et personnalisation** / **Affichage**.)
 
 <span id="Supporting_high-contrast_themes"/>
 <span id="supporting_high-contrast_themes"/>
@@ -138,7 +138,7 @@ XAML
 </StackPanel>
 ```
 
-Visual Basic
+Visual Basic
 ```vb
 Private Sub ShowAccessibleUICheckBox_Click(ByVal sender As Object,
     ByVal e As RoutedEventArgs)
@@ -195,4 +195,4 @@ Par défaut, le contenu Microsoft DirectX hébergé dans une interface utilisate
 * [Conception pour l’accessibilité](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-overview)
 * [Exemple d’accessibilité XAML](https://go.microsoft.com/fwlink/p/?linkid=238570)
 * [Accessibilité](accessibility.md)
-* [Prise en main du Narrateur](https://support.microsoft.com/help/22798/windows-10-narrator-get-started)
+* [Prise en main du Narrateur](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator)

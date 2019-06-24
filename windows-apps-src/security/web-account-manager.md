@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, sécurité
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
-ms.openlocfilehash: f20179b03461f2b7746cc6d0f4330bbf45c10427
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 5c1a7de0e9e6817fc4b0bf1ada113f49e798641e
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371954"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320545"
 ---
 # <a name="web-account-manager"></a>Gestionnaire de comptes web
 
@@ -20,7 +20,7 @@ Cet article explique comment utiliser la classe **[AccountsSettingsPane](https:/
 > [!NOTE]
 > Pour obtenir un exemple du code complet, voir l’[exemple WebAccountManagement sur GitHub](https://go.microsoft.com/fwlink/p/?LinkId=620621).
 
-## <a name="get-set-up"></a>Préparation
+## <a name="get-set-up"></a>Se préparer
 
 Pour commencer, créez une nouvelle application vierge dans Visual Studio. 
 
@@ -116,7 +116,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s,
 }
 ```
 
-Ensuite, obtenez un fournisseur à l’aide de la méthode WebAuthenticationCoreManager.FindAccountProviderAsync. L’URL du fournisseur varie en fonction du fournisseur et figure dans la documentation correspondante. Pour les comptes Microsoft et Azure Active Directory, il s'agit de « https://login.microsoft.com ». 
+Ensuite, obtenez un fournisseur à l’aide de la méthode WebAuthenticationCoreManager.FindAccountProviderAsync. L’URL du fournisseur varie en fonction du fournisseur et figure dans la documentation correspondante. Pour les comptes Microsoft et Azure Active Directory, il s'agit de « https://login.microsoft.com  ». 
 
 ```csharp
 private async void BuildPaneAsync(AccountsSettingsPane s,
@@ -192,7 +192,7 @@ private async void GetAadTokenAsync(WebAccountProviderCommand command)
 }
 ```
 
-Le reste de cet article décrit la suite du scénario MSA, mais le code pour AAD est très similaire. Pour plus d’informations sur AAD/Microsoft Graph, notamment un exemple complet sur GitHub, voir la [documentation Microsoft Graph](https://graph.microsoft.io/docs/platform/get-started).
+Le reste de cet article décrit la suite du scénario MSA, mais le code pour AAD est très similaire. Pour plus d’informations sur AAD/Microsoft Graph, notamment un exemple complet sur GitHub, voir la [documentation Microsoft Graph](https://developer.microsoft.com/graph).
 
 ## <a name="use-the-token"></a>Utiliser le jeton
 

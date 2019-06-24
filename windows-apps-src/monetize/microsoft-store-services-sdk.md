@@ -6,12 +6,12 @@ ms.date: 08/21/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store Services SDK
 ms.localizationpriority: medium
-ms.openlocfilehash: 48a19b2fc32733e13cb9a7b730bad7741307c328
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 9f88480bde2ba5a5e0856028921e5d9d933edcb0
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372799"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320079"
 ---
 # <a name="engage-customers-with-the-microsoft-store-services-sdk"></a>Impliquer les clients avec le Microsoft Store Services SDK
 
@@ -40,7 +40,7 @@ Le Microsoft Store Services SDK prend en charge les scénarios suivants pour le
 Le Microsoft Store Services SDK nécessite les éléments suivants :
 
 * Visual Studio 2015 ou une version ultérieure.
-* Visual Studio Tools pour applications Windows universelles installé avec votre version de Visual Studio.
+* Visual Studio Tools pour applications Windows universelles, installé avec votre version de Visual Studio.
 
 <span id="install" />
 
@@ -99,7 +99,7 @@ Pour installer les bibliothèques du Microsoft Store Services SDK via NuGet :
 
 5. Dans la zone de recherche, entrez **Microsoft.Services.Store.Engagement**, puis installez le package Microsoft.Services.Store.Engagement. Lorsque l’installation du package est terminée, enregistrez votre solution.
     > [!NOTE]
-    > Si la fenêtre **Sortie** signale une erreur *Install-Package* qui fait état d’une longueur trop importante du chemin spécifié, il vous faudra éventuellement configurer NuGet pour l’extraction des packages vers un autre emplacement présentant un chemin plus court que l’emplacement par défaut. Pour ce faire, ajoutez la valeur `repositoryPath` à un fichier nuget.config sur votre ordinateur, puis affectez-la à un chemin court de dossier, dans lequel extraire les packages. Pour plus d’informations, consultez [cet article](https://docs.nuget.org/ndocs/consume-packages/configuring-nuget-behavior) de la documentation NuGet. Sinon, vous pouvez essayer de déplacer votre projet Visual Studio vers un dossier différent présentant un chemin plus court. Le problème peut également être dû à votre chemin d’accès de packages globaux est trop long. Dans ce cas, ajoutez la `globalPackagesFolder` valeur dans votre fichier nuget.config.
+    > Si la fenêtre **Sortie** signale une erreur *Install-Package* qui fait état d’une longueur trop importante du chemin spécifié, il vous faudra éventuellement configurer NuGet pour l’extraction des packages vers un autre emplacement présentant un chemin plus court que l’emplacement par défaut. Pour ce faire, ajoutez la valeur `repositoryPath` à un fichier nuget.config sur votre ordinateur, puis affectez-la à un chemin court de dossier, dans lequel extraire les packages. Pour plus d’informations, consultez [cet article](https://docs.microsoft.com/nuget/consume-packages/configuring-nuget-behavior) de la documentation NuGet. Sinon, vous pouvez essayer de déplacer votre projet Visual Studio vers un dossier différent présentant un chemin plus court. Le problème peut également être dû à votre chemin d’accès de packages globaux est trop long. Dans ce cas, ajoutez la `globalPackagesFolder` valeur dans votre fichier nuget.config.
 
 6. Fermez la solution Visual Studio qui contient votre projet, puis rouvrez la solution.
 

@@ -5,12 +5,12 @@ ms.date: 07/16/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bcc9a6d89a143d8fd03d73dbd83b832ed9513ee2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 9692a8ef21e9f62114b38c6bb5d15199b8c0e04a
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57644414"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318152"
 ---
 # <a name="tailoring-effects--experiences-using-windows-ui"></a>Personnalisation des effets et des expériences à l’aide de l’interface utilisateur de Windows
 
@@ -112,17 +112,17 @@ L’API peut être ajouté au code existant en quelques étapes simples.
     }
     ```
 
-Exemple de code complet, consultez la [référentiel Github d’interface utilisateur Windows](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2015063/CompCapabilities).
+Exemple de code complet, consultez la [référentiel Github d’interface utilisateur Windows](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK 15063/CompCapabilities).
 
 ## <a name="fast-vs-slow-effects"></a>Rapide et effets lentes
 
 En fonction des commentaires fournis [AreEffectsSupported](/uwp/api/windows.ui.composition.compositioncapabilities.areeffectssupported) et [AreEffectsFast](/uwp/api/windows.ui.composition.compositioncapabilities.areeffectsfast) méthodes dans l’API CompositionCapabilities, l’application peut décider à échanger les effets de coûteux ou non pris en charge pour autres effets de leur choix qui sont optimisés pour l’appareil. Certains effets sont connus pour être constamment plus de ressources que d’autres et doivent être utilisés avec parcimonie, et autres effets peuvent être utilisés plus librement. Pour tous les effets, toutefois, soins doit utiliser quand le chaînage et l’animation en tant que certains scénarios ou des combinaisons peuvent changer les caractéristiques de performances du graphe d’effet. Voici certaines caractéristiques de performances de règle générale pour les effets individuels :
 
-- Les effets sont connus pour affecter les performances élevées sont comme suit : Flou gaussien, masque de clichés instantanés, BackDropBrush, HostBackDropBrush et couche Visual. Elles ne sont pas recommandées pour les appareils de bas de gamme [(fonctionnalité niveau 9.1-9.3)](https://msdn.microsoft.com/library/windows/desktop/ff476876(v=vs.85).aspx)et doit être utilisé judicieusement sur les appareils de haut de gamme.
+- Les effets sont connus pour affecter les performances élevées sont comme suit : Flou gaussien, masque de clichés instantanés, BackDropBrush, HostBackDropBrush et couche Visual. Elles ne sont pas recommandées pour les appareils de bas de gamme [(fonctionnalité niveau 9.1-9.3)](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro)et doit être utilisé judicieusement sur les appareils de haut de gamme.
 - Effets avec un impact sur les performances moyennes incluent la matrice des couleurs, certains BlendModes d’effet Blend (luminosité, la couleur, Saturation et Hue), actualités, SceneLightingEffect et (en fonction du scénario) BorderEffect. Ces effets peuvent fonctionner avec certains scénarios sur les appareils de bas de gamme, mais les soins doit être utilisée lorsque le chaînage et l’animation. Recommandons inférieure ou égale à deux pour limiter l’utilisation et l’animation sur les transitions uniquement.
 - Tous les autres effets ont impact sur les performances faible et fonctionnent dans tous les scénarios raisonnables lors de l’animation et le chaînage.
 
-## <a name="related-articles"></a>Articles connexes
+## <a name="related-articles"></a>Articles associés
 
 - [Techniques de conception réactives UWP](https://docs.microsoft.com/windows/uwp/design/layout/responsive-design)
 - [Personnalisation de périphérique UWP](https://docs.microsoft.com/windows/uwp/design/layout/screen-sizes-and-breakpoints-for-responsive-design)

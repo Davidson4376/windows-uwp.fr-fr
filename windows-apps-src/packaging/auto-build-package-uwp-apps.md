@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
-ms.openlocfilehash: cb21573dac0c4cc4fc2d6aa2e2345c56631fde87
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 61525e2a4a088e37184bb93526722e0bf23fbd56
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372762"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319808"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>Configuration de builds automatisées pour votre application UWP
 
@@ -23,7 +23,7 @@ Commencez par [inscription à Azure Pipelines](https://docs.microsoft.com/azure/
 
 Ensuite, créez un pipeline que vous pouvez utiliser pour générer votre code source. Pour obtenir un didacticiel sur la création d’un pipeline pour créer un référentiel GitHub, consultez [créer votre premier pipeline](https://docs.microsoft.com/azure/devops/pipelines/get-started-yaml). Les Pipelines Azure prend en charge les types de référentiel répertoriés [dans cet article](https://docs.microsoft.com/azure/devops/pipelines/repos).
 
-## <a name="set-up-an-automated-build"></a>Configuration d’une build automatisée
+## <a name="set-up-an-automated-build"></a>Configurer une build automatisée
 
 Nous allons commencer par la valeur par défaut UWP définition qui est disponible dans Azure Dev Ops de build et de vous montrer comment configurer le pipeline.
 
@@ -79,7 +79,7 @@ Cette tâche utilise des arguments MSBuild. Vous devez spécifier la valeur de c
 |--------------------|---------|---------------|
 | AppxPackageDir | $(Build.ArtifactStagingDirectory)\AppxPackages | Définit le dossier de stockage des artefacts générés. |
 | AppxBundlePlatforms | $(Build.BuildPlatform) | Vous permet de définir les plateformes à inclure dans le regroupement. |
-| AppxBundle | Always | Crée un.msixbundle/.appxbundle avec les fichiers.msix/.appx pour la plateforme spécifiée. |
+| AppxBundle | Toujours | Crée un.msixbundle/.appxbundle avec les fichiers.msix/.appx pour la plateforme spécifiée. |
 | UapAppxPackageBuildMode | StoreUpload | Génère le fichier.msixupload/.appxupload et **_Test** dossier pour le chargement indépendant. |
 | UapAppxPackageBuildMode | CI | Génère le fichier.msixupload/.appxupload uniquement. |
 | UapAppxPackageBuildMode | SideloadOnly | Génère le **_Test** dossier pour le chargement de version test uniquement |
@@ -133,14 +133,14 @@ Cette erreur s’affiche car l’application qui doit apparaître dans l’offre
 
 |**Project**|**Propriétés**|
 |-------|----------|
-|App|`<AppxBundle>Always</AppxBundle>`|
+|Application|`<AppxBundle>Always</AppxBundle>`|
 |UnitTests|`<AppxBundle>Never</AppxBundle>`|
 
 Ensuite, supprimez le `AppxBundle` argument MSBuild à partir de l’étape de génération.
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-- [Générer votre application .NET pour Windows](https://www.visualstudio.com/docs/build/get-started/dot-net)
+- [Générer votre application .NET pour Windows](https://docs.microsoft.com/vsts/build-release/get-started/dot-net)
 - [Empaquetage d’applications UWP](https://docs.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)
-- [Chargement de version test des applications métier dans Windows 10](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10)
+- [Chargement de version test des applications métier dans Windows 10](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10)
 - [Créer un certificat pour la signature du package](https://docs.microsoft.com/windows/uwp/packaging/create-certificate-package-signing)

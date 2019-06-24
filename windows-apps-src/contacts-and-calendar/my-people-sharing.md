@@ -5,12 +5,12 @@ ms.date: 06/28/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 91d88dc78fd02ae3f16e1d980aa207d1dd458417
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 9d0f6cdf4818743e3b5a3cc7c5a6b13f69f40afa
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57597824"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318461"
 ---
 # <a name="my-people-sharing"></a>Partage de mes contacts
 
@@ -23,13 +23,13 @@ La fonctionnalité Mes Contact permet aux utilisateurs d’épingler des contact
 + Windows 10 et Microsoft Visual Studio 2017. Pour en savoir plus sur l’installation, voir [Prendre en main Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
 + Connaissances de base de C# ou d’un langage de programmation orienté objet similaire. Pour vous familiariser avec C#, voir [Créer une application « Hello, world »](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
 
-## <a name="overview"></a>Vue d’ensemble
+## <a name="overview"></a>Vue d'ensemble
 
 Pour activer votre application en tant que cible de partage Mes Contacts, procédez comme suit :
 
 1. [Déclarer la prise en charge pour le contrat d’activation shareTarget dans votre manifeste d’application.](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
 2. [Annoter les contacts que les utilisateurs peuvent partager à l’aide de votre application.](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
-3. Prendre en charge plusieurs instances de l’application en cours d’exécution en même temps.  Les utilisateurs doivent pouvoir interagir avec une version complète de votre application tout en l’utilisant également pour effectuer des partages avec d’autres personnes. Ils peuvent l’utiliser dans plusieurs fenêtres de partage à la fois. Pour ce faire, votre application doit être en mesure d’exécuter plusieurs vues simultanément. Pour savoir comment procéder, consultez l’article [« afficher plusieurs vues d’une application »](https://docs.microsoft.com/en-us/windows/uwp/layout/show-multiple-views).
+3. Prendre en charge plusieurs instances de l’application en cours d’exécution en même temps.  Les utilisateurs doivent pouvoir interagir avec une version complète de votre application tout en l’utilisant également pour effectuer des partages avec d’autres personnes. Ils peuvent l’utiliser dans plusieurs fenêtres de partage à la fois. Pour ce faire, votre application doit être en mesure d’exécuter plusieurs vues simultanément. Pour savoir comment procéder, consultez l’article [« afficher plusieurs vues d’une application »](https://docs.microsoft.com/windows/uwp/design/layout/show-multiple-views).
 
 Une fois cette opération effectuée, votre application s’affiche en tant que cible de partage dans la fenêtre de partage de mes contacts, qui peut être lancée de deux manières :
 1. Un contact est choisi via l’icône de partage.
@@ -131,7 +131,7 @@ protected override void OnShareTargetActivated(ShareTargetActivatedEventArgs arg
 }
 ```
 
-## <a name="see-also"></a>Voir également
+## <a name="see-also"></a>Voir aussi
 + [Ajout de personnes mes prennent en charge](my-people-support.md)
 + [Classe de ShareTarget](https://docs.microsoft.com/en-us/uwp/schemas/appxpackage/appxmanifestschema/element-sharetarget)
 + [Exemple d’intégration de carte contact](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)

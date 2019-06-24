@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c61f6580039b9fe3da915491acd84c939088370
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: bf9cc4f97cdfcb02eb725b81163f215b22b259e4
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361384"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318056"
 ---
 # <a name="visual-layer"></a>Couche visuelle
 
@@ -71,7 +71,7 @@ Pour plus d’informations, consultez [Moderniser votre application de bureau à
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
 * [**Documentation de référence complète pour l’API**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition)
-* Exemples d’interface utilisateur et de composition avancés dans le [GitHub WindowsUIDevLabs](https://github.com/microsoft/windowsuidevlabs).
+* Exemples d’interface utilisateur et de composition avancés dans le [GitHub WindowsUIDevLabs](https://github.com/microsoft/WindowsCompositionSamples).
 * [Galerie d’exemples Windows.UI.Composition](https://aka.ms/winuiapp)
 * [@windowsui Flux Twitter ](https://twitter.com/windowsui)
 * Lisez l’Article MSDN de Kenny Kerr sur cette API : [Graphisme et Animation - API de Composition Windows 10](https://msdn.microsoft.com/magazine/mt590968)

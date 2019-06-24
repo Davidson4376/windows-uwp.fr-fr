@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d3530861175c8d9b70683926393b5adfdd59407
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 992648c8c90a8ad62b772d417b2b1beeb6087c53
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361559"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318537"
 ---
 # <a name="process-media-files-in-the-background"></a>Traiter des fichiers multimédias en arrière-plan
 
@@ -55,7 +55,7 @@ Ajoutez les variables membres suivantes à votre classe :
 
 [!code-cs[BackgroundMembers](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetBackgroundMembers)]
 
-Le système appelle la méthode [**Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.) d’une tâche en arrière-plan lorsque la tâche est lancée. Définissez l’objet [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) transmis dans la méthode sur la variable membre correspondante. Enregistrez un gestionnaire de l’événement [**Canceled**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance.canceled), qui sera déclenché si le système a besoin d’arrêter la tâche en arrière-plan. Ensuite, affectez à la propriété [**Progress**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance.progress) la valeur zéro.
+Le système appelle la méthode [**Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.run) d’une tâche en arrière-plan lorsque la tâche est lancée. Définissez l’objet [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) transmis dans la méthode sur la variable membre correspondante. Enregistrez un gestionnaire de l’événement [**Canceled**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance.canceled), qui sera déclenché si le système a besoin d’arrêter la tâche en arrière-plan. Ensuite, affectez à la propriété [**Progress**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance.progress) la valeur zéro.
 
 Appelez ensuite la méthode [**GetDeferral**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance.getdeferral) de l’objet de tâche en arrière-plan pour obtenir un report. Cela indique au système de ne pas arrêter votre tâche car vous exécutez des opérations asynchrones.
 

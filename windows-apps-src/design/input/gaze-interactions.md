@@ -11,12 +11,12 @@ dev-contact: Austin Hodges
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 77e39b9c7440fab491b3d7ef85baa757d299fff8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3fb07dd9aec475566940dbf98ae6bd1c5f9c1337
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57604394"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317335"
 ---
 # <a name="gaze-interactions-and-eye-tracking-in-uwp-apps"></a>Interactions avec le pointage du regard et le suivi oculaire dans les applications UWP
 
@@ -29,7 +29,7 @@ Fournissez la prise en charge du suivi du pointage du regard, de l'attention et 
 
 **API importantes** : [Windows.Devices.Input.Preview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview), [GazeDevicePreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicepreview), [GazePointPreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazepointpreview), [GazeInputSourcePreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeinputsourcepreview)
 
-## <a name="overview"></a>Vue d’ensemble
+## <a name="overview"></a>Vue d'ensemble
 
 Entrée avec le pointage du regard est un moyen puissant d'interagir et d'utiliser des applications UWP et Windows, particulièrement utile comme technologie d’assistance pour les utilisateurs souffrant de maladies neuro-musculaires (comme la SLA) ou d’autres handicaps impliquant des troubles des fonctions musculaires ou neurologiques.
 
@@ -44,7 +44,7 @@ En raison des données personnelles potentiellement sensibles collectées par le
 
 En outre, si votre application collecte, stocke ou transfère des données de suivi oculaire, vous devez le décrire dans la déclaration de confidentialité de votre application et suivre toutes les autres conditions requises concernant les **informations personnelles** dans le [Contrat du développeur d'application](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) et les [Politiques du Microsoft Store](https://docs.microsoft.com/legal/windows/agreements/store-policies).
 
-## <a name="setup"></a>Configurer
+## <a name="setup"></a>Installation
 
 Pour utiliser les API d'entrée avec le pointage du regard dans votre application UWP, vous devez : 
 
@@ -66,7 +66,7 @@ Pour utiliser les API d'entrée avec le pointage du regard dans votre applicatio
 
 Dans cet exemple, nous montrons comment effectuer le suivi du regard de l’utilisateur au sein d’une application UWP et utiliser une fonction de minuteur avec un test de positionnement de base pour indiquer la manière dont il peut maintenir le focus du regard sur un élément spécifique.
 
-Une petite ellipse est utilisée pour déterminer l'endroit où pointe le regard dans la fenêtre d’affichage de l’application, tandis qu’une [RadialProgressBar](https://docs.microsoft.com/en-us/windows/uwpcommunitytoolkit/controls/radialprogressbar) du [Windows Community Toolkit](https://docs.microsoft.com/en-us/windows/uwpcommunitytoolkit/) est placée sur le canevas de manière aléatoire. Lorsque le focus du regard est détecté sur la barre de progression, un minuteur se lance et la barre de progression est déplacée au hasard sur le canevas lorsque la barre de progression atteint 100 %.
+Une petite ellipse est utilisée pour déterminer l'endroit où pointe le regard dans la fenêtre d’affichage de l’application, tandis qu’une [RadialProgressBar](https://docs.microsoft.com/windows/communitytoolkit/controls/radialprogressbar) du [Windows Community Toolkit](https://docs.microsoft.com/windows/communitytoolkit/) est placée sur le canevas de manière aléatoire. Lorsque le focus du regard est détecté sur la barre de progression, un minuteur se lance et la barre de progression est déplacée au hasard sur le canevas lorsque la barre de progression atteint 100 %.
 
 ![Exemple de suivi du regard avec un minuteur](images/gaze/gaze-input-timed2.gif)
 
@@ -405,7 +405,7 @@ Une petite ellipse est utilisée pour déterminer l'endroit où pointe le regard
 
     Nous affichons et masquons l'ellipse de suivi du regard dans `GazeEntered` et `GazeExited`, respectivement.
 
-    Dans `GazeMoved`, nous déplaçons notre ellipse de suivi du regard en fonction de la [EyeGazePosition](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazepointpreview.eyegazeposition) fournie par le [CurrentPoint](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeenteredprevieweventargs.currentpoint) de [GazeEnteredPreviewEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeenteredprevieweventargs). Nous gérons également le minuteur de focus du regard sur la [RadialProgressBar](https://docs.microsoft.com/en-us/windows/uwpcommunitytoolkit/controls/radialprogressbar), ce qui déclenche le repositionnement de la barre de progression. Voir l’étape suivante pour plus d’informations.
+    Dans `GazeMoved`, nous déplaçons notre ellipse de suivi du regard en fonction de la [EyeGazePosition](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazepointpreview.eyegazeposition) fournie par le [CurrentPoint](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeenteredprevieweventargs.currentpoint) de [GazeEnteredPreviewEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeenteredprevieweventargs). Nous gérons également le minuteur de focus du regard sur la [RadialProgressBar](https://docs.microsoft.com/windows/communitytoolkit/controls/radialprogressbar), ce qui déclenche le repositionnement de la barre de progression. Voir l’étape suivante pour plus d’informations.
 
     ```csharp
     /// <summary>
@@ -596,11 +596,11 @@ Une petite ellipse est utilisée pour déterminer l'endroit où pointe le regard
     }
     ```
 
-## <a name="see-also"></a>Voir également
+## <a name="see-also"></a>Voir aussi
 
 ### <a name="resources"></a>Ressources
 
-- [Bibliothèque de l’utilisation du Kit de ressources Windows Communauté](https://docs.microsoft.com/en-us/windows/uwpcommunitytoolkit/gaze/gazeinteractionlibrary)
+- [Bibliothèque de l’utilisation du Kit de ressources Windows Communauté](https://docs.microsoft.com/windows/communitytoolkit/gaze/gazeinteractionlibrary)
 
 ### <a name="topic-samples"></a>Exemples de la rubrique
 

@@ -7,18 +7,18 @@ ms.topic: article
 keywords: windows 10, uwp, services du Microsoft Store, API d'analyse du Microsoft Store
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 14a1b73a2c82beea746d40c25bfa18ddf6171203
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 5514ea3a0e416ad2a0b7b75084bc66ad057c1a73
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371998"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320970"
 ---
 # <a name="access-analytics-data-using-store-services"></a>Accéder aux données d’analyse à l’aide des services du Windows Store
 
 Utilisez le *analytique Microsoft Store API* pour récupérer par programme des données d’analytique pour les applications qui sont inscrits au compte de partenaires Windows de votre organisation. Cette API permet de récupérer des données sur les acquisitions, les erreurs, les évaluations et les avis sur les applications et les extensions (également connues sous le nom PIA, produit in-app). Cette API utilise Azure Active Directory (Azure AD) pour authentifier les appels en provenance de votre application ou service.
 
-Les étapes suivantes décrivent le processus de bout en bout :
+Les étapes suivantes décrivent le processus de bout en bout :
 
 1.  Vérifiez que vous avez rempli toutes les [conditions préalables](#prerequisites).
 2.  Avant d’appeler une méthode dans l’API d’analyse du Microsoft Store, [procurez-vous un jeton d’accès Azure AD](#obtain-an-azure-ad-access-token). Une fois le jeton obtenu, vous avez 60 minutes pour l’utiliser dans les appels à l’API d’analyse du Microsoft Store avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en générer un nouveau.
@@ -48,7 +48,7 @@ Pour associer une application Azure AD à votre compte espace partenaires et ré
 
 <span id="obtain-an-azure-ad-access-token" />
 
-## <a name="step-2-obtain-an-azure-ad-access-token"></a>Étape 2 : Obtenir un jeton d’accès Azure AD
+## <a name="step-2-obtain-an-azure-ad-access-token"></a>Étape 2 : Obtenir un jeton d’accès Azure AD
 
 Avant d’appeler l’une des méthodes dans l’API d’analyse du Microsoft Store, vous devez d’abord obtenir un jeton d’accès Azure AD pour le passer à l’en-tête **Autorisation** de chaque méthode de l’API. Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez l’actualiser pour pouvoir continuer à l’utiliser dans d’autres appels à l’API.
 
@@ -106,7 +106,7 @@ Les méthodes d'analyse suivantes peuvent être utilisées par des comptes de d�
 
 ### <a name="methods-for-xbox-live-services"></a>Méthodes pour les services Xbox Live
 
-Les méthodes supplémentaires suivantes sont disponibles pour les comptes de développeur, avec les jeux utilisant les [services Xbox Live ](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md).
+Les méthodes supplémentaires suivantes sont disponibles pour les comptes de développeur, avec les jeux utilisant les [services Xbox Live ](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md).
 
 | Scénario       | Méthodes      |
 |---------------|--------------------|

@@ -9,12 +9,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 40a6bd32-a756-400f-ba34-2c5f507262c0
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d1aa710485d38f20433e842b3d6418f911252e2
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 819f0b4a5ba17a866eb50539f5138460eefd0eec
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361809"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318401"
 ---
 # <a name="custom-video-effects"></a>Effets vidéo personnalisés
 
@@ -34,7 +34,7 @@ Un effet vidéo personnalisé est défini dans une classe qui implémente l’in
 2.  Sélectionnez le type de projet **Composant Windows Runtime (Windows universel)** .
 3.  Pour cet exemple, nommez le projet *VideoEffectComponent*. Ce nom sera référencé dans le code ultérieurement.
 4.  Cliquez sur **OK**.
-5.  Le modèle de projet crée une classe appelée Class1.cs. Dans **l’Explorateur de solutions**, cliquez avec le bouton droit sur l’icône de Class1.cs et sélectionnez **Renommer**.
+5.  Le modèle de projet crée une classe appelée Class1.cs. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur l’icône de Class1.cs et sélectionnez **Renommer**.
 6.  Renommez le fichier *ExampleVideoEffect.cs*. Visual Studio affiche une invite vous demandant si vous voulez mettre à jour toutes les références sous le nouveau nom. Cliquez sur **Oui**.
 7.  Ouvrez **ExampleVideoEffect.cs** et mettez à jour la définition de classe pour implémenter l’interface [**IBasicVideoEffect**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.IBasicVideoEffect).
 
@@ -46,7 +46,7 @@ Vous devez inclure les espaces de noms suivants dans votre fichier de classe eff
 [!code-cs[EffectUsing](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetEffectUsing)]
 
 
-## <a name="implement-the-ibasicvideoeffect-interface-using-software-processing"></a>Implémentez l’interface IBasicVideoEffect à l’aide du traitement logiciel
+## <a name="implement-the-ibasicvideoeffect-interface-using-software-processing"></a>Implémenter l’interface IBasicVideoEffect à l’aide du traitement logiciel
 
 
 Votre effet vidéo doit implémenter toutes les méthodes et propriétés de l’interface [**IBasicVideoEffect**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.IBasicVideoEffect). Cette section vous explique la procédure d’implémentation simple de cette interface à l’aide d’un traitement logiciel.
@@ -79,7 +79,7 @@ La propriété [**IsReadOnly**](https://docs.microsoft.com/uwp/api/windows.media
 
 ### <a name="setencodingproperties-method"></a>Méthode SetEncodingProperties
 
-Le système appelle [**SetEncodingProperties**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.setencodingproperties.windows) sur votre effet pour vous indiquer les propriétés de codage du flux vidéo sur lequel l’effet est appliqué. Cette méthode fournit également une référence à l’appareil Direct3D utilisé pour le rendu matériel. L’utilisation de cet appareil est expliquée dans l’exemple de traitement matériel plus loin dans cet article.
+Le système appelle [**SetEncodingProperties**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.setencodingproperties) sur votre effet pour vous indiquer les propriétés de codage du flux vidéo sur lequel l’effet est appliqué. Cette méthode fournit également une référence à l’appareil Direct3D utilisé pour le rendu matériel. L’utilisation de cet appareil est expliquée dans l’exemple de traitement matériel plus loin dans cet article.
 
 [!code-cs[SetEncodingProperties](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetSetEncodingProperties)]
 
@@ -134,7 +134,7 @@ C’est dans la méthode [**ProcessFrame**](https://docs.microsoft.com/uwp/api/w
 
 Cet exemple montre une implémentation simple de la méthode **ProcessFrame** à l’aide du traitement logiciel. Pour plus d’informations sur l’utilisation des objets [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap), voir [Acquisition d’images](imaging.md). Un exemple d’implémentation de **ProcessFrame** à l’aide du traitement logiciel est illustré plus loin dans cet article.
 
-L’accès à la mémoire tampon de données d’un **SoftwareBitmap** nécessite l’interopérabilité COM. Vous devez donc inclure l’espace de noms **System.Runtime.InteropServices** dans votre fichier de classe effet.
+L’accès à la mémoire tampon de données d’un objet **SoftwareBitmap** nécessite l’interopérabilité COM. Vous devez donc inclure l’espace de noms **System.Runtime.InteropServices** dans votre fichier de classe effet.
 
 [!code-cs[COMUsing](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetCOMUsing)]
 
@@ -154,7 +154,7 @@ Ajoutez le code suivant à l’intérieur de l’espace de noms de l’effet pou
 
 Vous pouvez maintenant ajouter l’implémentation de la méthode **ProcessFrame**. Tout d’abord, cette méthode obtient un objet [**BitmapBuffer**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.BitmapBuffer) à partir des bitmaps logiciels en entrée et en sortie. Notez que la trame en sortie est ouverte pour l’écriture, et que la trame en entrée l’est pour la lecture. Ensuite, un [**IMemoryBufferReference**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IMemoryBufferReference) est obtenu pour chaque tampon en appelant [**CreateReference**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapbuffer.createreference). Ensuite, le tampon de données réel est obtenu en transtypant les objets **IMemoryBufferReference** en tant qu’interface d’interopérabilité COM définie ci-dessus, **IMemoryByteAccess**, puis en appelant **GetBuffer**.
 
-Maintenant que les tampons de données ont été obtenus, vous pouvez lire à partir du tampon en entrée et écrire sur le tampon en sortie. La disposition du tampon est obtenue en appelant [**GetPlaneDescription**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapbuffer.getplanedescription), qui fournit des informations sur la largeur, la longueur et le décalage initial du tampon. Les bits par pixel sont déterminés par les propriétés de codage définies au préalable avec la méthode [**SetEncodingProperties**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.setencodingproperties.windows). Les informations sur le format du tampon sont utilisées pour trouver l’index dans le tampon pour chaque pixel. La valeur du pixel du tampon source est copiée dans le tampon cible. Les valeurs de couleur sont multipliées par la propriété FadeValue définie pour cet effet afin de les diminuer du montant spécifié.
+Maintenant que les tampons de données ont été obtenus, vous pouvez lire à partir du tampon en entrée et écrire sur le tampon en sortie. La disposition du tampon est obtenue en appelant [**GetPlaneDescription**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapbuffer.getplanedescription), qui fournit des informations sur la largeur, la longueur et le décalage initial du tampon. Les bits par pixel sont déterminés par les propriétés de codage définies au préalable avec la méthode [**SetEncodingProperties**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.setencodingproperties). Les informations sur le format du tampon sont utilisées pour trouver l’index dans le tampon pour chaque pixel. La valeur du pixel du tampon source est copiée dans le tampon cible. Les valeurs de couleur sont multipliées par la propriété FadeValue définie pour cet effet afin de les diminuer du montant spécifié.
 
 [!code-cs[ProcessFrameSoftwareBitmap](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetProcessFrameSoftwareBitmap)]
 
@@ -169,11 +169,11 @@ Utilisez les étapes suivantes pour ajouter le package NuGet Win2D au projet que
 **Pour ajouter le package NuGet de Win2D à votre projet d’effet**
 
 1.  Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le projet **VideoEffectComponent** et sélectionnez **Gérer les packages NuGet**.
-2.  En haut de la fenêtre, sélectionnez l’onglet **Explorer**.
+2.  Dans la partie supérieure de la fenêtre, sélectionnez l’onglet **Parcourir**.
 3.  Dans la zone de recherche, entrez **Win2D**.
 4.  Sélectionnez **Win2D.uwp**, puis **Installer** dans le volet droit.
 5.  La boîte de dialogue **Examiner les modifications** vous indique le package à installer. Cliquez sur **OK**.
-6.  Acceptez la licence de package.
+6.  Acceptez la licence du package.
 
 Outre les espaces de noms inclus dans l’installation de base du projet, vous devez inclure les espaces de noms suivants fournis par Win2D.
 
@@ -190,7 +190,7 @@ Définissez les propriétés de codage que votre effet prend en charge avec la p
 [!code-cs[SupportedEncodingPropertiesWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetSupportedEncodingPropertiesWin2D)]
 
 
-Utilisez la méthode [**SetEncodingProperties**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.setencodingproperties.windows) pour créer un nouvel objet **CanvasDevice** Win2D à partir du [**IDirect3DDevice**](https://docs.microsoft.com/uwp/api/Windows.Graphics.DirectX.Direct3D11.IDirect3DDevice) transmis dans la méthode.
+Utilisez la méthode [**SetEncodingProperties**](/uwp/api/windows.graphics.imaging.softwarebitmap.convert) pour créer un nouvel objet **CanvasDevice** Win2D à partir du [**IDirect3DDevice**](https://docs.microsoft.com/uwp/api/Windows.Graphics.DirectX.Direct3D11.IDirect3DDevice) transmis dans la méthode.
 
 [!code-cs[SetEncodingPropertiesWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetSetEncodingPropertiesWin2D)]
 

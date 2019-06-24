@@ -9,12 +9,12 @@ ms.topic: article
 keywords: Windows 10, uwp, Protection des informations Windows, données d’entreprise, protection des données d’entreprise, PDE, applications compatibles
 ms.assetid: 08f0cfad-f15d-46f7-ae7c-824a8b1c44ea
 ms.localizationpriority: medium
-ms.openlocfilehash: f6938118b3a9041eea27367c3916e94ce34d468e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 42f08127567704b1c8623ac64857cc5afe0ef882
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57595474"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321391"
 ---
 # <a name="windows-information-protection-wip"></a>Protection des informations Windows (WIP)
 
@@ -42,8 +42,8 @@ Si les utilisateurs désinscrivent leur appareil à partir du système de gestio
 ![Cycle de vie de la Protection des informations Windows](images/wip-lifecycle.png)
 
 > **En savoir plus sur les travaux en cours** <br>
-* [Présentation de Windows Information Protection](https://blogs.technet.microsoft.com/windowsitpro/2016/06/29/introducing-windows-information-protection/)
-* [Protéger vos données d’entreprise à l’aide de la Protection des informations Windows (WIP)](https://technet.microsoft.com/library/dn985838(v=vs.85).aspx)
+* [Présentation de Windows Information Protection](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/bg-p/Windows10Blog)
+* [Protéger vos données d’entreprise à l’aide de la Protection des informations Windows (WIP)](https://docs.microsoft.com/windows/whats-new/edp-whats-new-overview)
 
 Si votre application se trouve sur la liste autorisée, toutes les données générées par votre application sont soumises aux restrictions de stratégie. Cela signifie que si les administrateurs révoquent l’accès de l’utilisateur aux données d’entreprise, ces utilisateurs perdent l’accès à toutes les données produites par votre application.
 

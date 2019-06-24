@@ -1,19 +1,19 @@
 ---
 ms.assetid: 0309c7a1-8e4c-4326-813a-cbd9f8b8300d
 description: Cet article vous explique comment créer, planifier et gérer des coupures de médias dans votre application de lecture de contenu multimédia.
-title: Créer, planifier et gérer des coupures de médias
+title: Créer, programmer et gérer des coupures de médias
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 68260cadd4322d51c528bf6c6af7f5c8472f2199
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 23cb51ec6b2c6c2560c0a1f6d583ba916768254c
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361861"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318563"
 ---
-# <a name="create-schedule-and-manage-media-breaks"></a>Créer, planifier et gérer des coupures de médias
+# <a name="create-schedule-and-manage-media-breaks"></a>Créer, programmer et gérer des coupures de médias
 
 Cet article vous explique comment créer, planifier et gérer des coupures de médias dans votre application de lecture de contenu multimédia. Les coupures de médias sont généralement utilisées pour insérer des publicités audio ou vidéo dans du contenu multimédia. À partir de Windows 10, version 1607, vous pouvez utiliser la classe [**MediaBreakManager**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaBreakManager) pour ajouter rapidement et facilement des coupures de médias dans un objet [**MediaPlaybackItem**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackItem) lu dans [**MediaPlayer**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer).
 
@@ -37,7 +37,7 @@ Enfin, planifiez la coupure de média à l’aide de la propriété  [**BreakSch
 
 [!code-cs[PreRollBreak](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetPreRollBreak)]
 
-Maintenant que vous pouvez lire l’élément multimédia principal, et la coupure de média créée sera lue avant le contenu principal. Créez un nouvel objet [**MediaPlayer**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer) et définissez éventuellement la propriété [**AutoPlay**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.autoplay) sur true afin de démarrer automatiquement la lecture. Définissez la propriété [**Source**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.source) de **MediaPlayer** sur l’élément de lecture de votre contenu principal. Cela n’est pas obligatoire, mais vous pouvez affecter l’objet **MediaPlayer** à un [**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement) afin d’afficher le contenu multimédia sur une page XAML. Pour plus d’informations sur l’utilisation de **MediaPlayer**, consultez la section [Lire du contenu audio et vidéo avec MediaPlayer](play-audio-and-video-with-mediaplayer.md).
+Vous pouvez désormais lire l’élément multimédia principal et la coupure de média créée sera lue avant le contenu principal. Créez un nouvel objet [**MediaPlayer**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer) et définissez éventuellement la propriété [**AutoPlay**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.autoplay) sur true afin de démarrer automatiquement la lecture. Définissez la propriété [**Source**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.source) de **MediaPlayer** sur l’élément de lecture de votre contenu principal. Cela n’est pas obligatoire, mais vous pouvez affecter l’objet **MediaPlayer** à un [**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement) afin d’afficher le contenu multimédia sur une page XAML. Pour plus d’informations sur l’utilisation de **MediaPlayer**, consultez la section [Lire du contenu audio et vidéo avec MediaPlayer](play-audio-and-video-with-mediaplayer.md).
 
 [!code-cs[Play](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetPlay)]
 
@@ -45,7 +45,7 @@ Ajoutez une coupure de postroll à lire après la fin de la lecture de l’objet
 
 [!code-cs[PostRollBreak](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetPostRollBreak)]
 
-Vous pouvez également planifier une ou plusieurs coupures de midroll à lire à des intervalles spécifiques durant la lecture du contenu principal. Dans l’exemple suivant, l’objet [**MediaBreak**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaBreak) est créé avec la surcharge du constructeur qui accepte un objet **TimeSpan**, qui spécifie l’intervalle d’activation de la coupure durant la lecture de l’élément multimédia principal. Là encore, [**MediaBreakInsertionMethod.Interrupt**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaBreakInsertionMethod) est définie pour indiquer que la lecture du contenu principal est interrompue pendant l’activation de la coupure. La coupure de midroll est ajoutée à la planification, via l’appel à [**InsertMidrollBreak**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediabreakschedule.insertmidrollbreak). Vous pouvez récupérer une liste en lecture seule des coupures de midroll actives dans la planification, en accédant à la propriété [**MidrollBreaks**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediabreakschedule.midrollbreaks).
+Vous pouvez également planifier une ou plusieurs coupures de midroll à lire à des intervalles spécifiques durant la lecture du contenu principal. Dans l’exemple suivant, l’objet [**MediaBreak**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaBreak) est créé avec la surcharge du constructeur qui accepte un objet **TimeSpan**, qui spécifie l’intervalle d’activation de la coupure durant la lecture de l’élément multimédia principal. Là encore, [**MediaBreakInsertionMethod.Interrupt**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaBreakInsertionMethod) est définie pour indiquer que la lecture du contenu principal est interrompue pendant l’activation de la coupure. La coupure de midroll est ajoutée à la planification, via l’appel à [**InsertMidrollBreak**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediabreakschedule.insertmidrollbreak). Vous pouvez récupérer une liste en lecture seule des coupures de midroll actives dans la planification en accédant à la propriété [**MidrollBreaks**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediabreakschedule.midrollbreaks).
 
 [!code-cs[MidrollBreak](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetMidrollBreak)]
 
@@ -66,7 +66,7 @@ Plusieurs des événements associés aux coupures de médias peuvent être enreg
 
 [!code-cs[RegisterMediaBreakEvents](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetRegisterMediaBreakEvents)]
 
-L’événement [**BreakStarted**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediabreakmanager.breakstarted) est déclenché lors du démarrage d’une coupure de média. Vous voudrez peut-être mettre à jour votre interface utilisateur afin d’indiquer à l’utilisateur que la coupure de média est en cours de lecture. Cet exemple utilise l’objet [**MediaBreakStartedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaBreakStartedEventArgs) transmis au gestionnaire pour récupérer une référence à la coupure de média démarrée. Ensuite, la propriété [**CurrentItemIndex**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacklist.currentitemindex) est utilisée pour identifier l’élément multimédia en cours de lecture de la playlist de la coupure de média. Ensuite, l’interface utilisateur est mise à jour afin d’indiquer à l’utilisateur l’index des publicités et le nombre de publicités restant dans la coupure. N’oubliez pas que les mises à jour de l’interface utilisateur doivent être effectuées sur le thread d’interface utilisateur. Dès lors, l’appel doit être effectué dans un appel à [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows). 
+L’événement [**BreakStarted**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediabreakmanager.breakstarted) est déclenché lors du démarrage d’une coupure de média. Vous voudrez peut-être mettre à jour votre interface utilisateur afin d’indiquer à l’utilisateur que la coupure de média est en cours de lecture. Cet exemple utilise l’objet [**MediaBreakStartedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaBreakStartedEventArgs) transmis au gestionnaire pour récupérer une référence à la coupure de média démarrée. Ensuite, la propriété [**CurrentItemIndex**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacklist.currentitemindex) est utilisée pour identifier l’élément multimédia en cours de lecture de la playlist de la coupure de média. Ensuite, l’interface utilisateur est mise à jour afin d’indiquer à l’utilisateur l’index des publicités et le nombre de publicités restant dans la coupure. N’oubliez pas que les mises à jour de l’interface utilisateur doivent être effectuées sur le thread d’interface utilisateur. Dès lors, l’appel doit être effectué dans un appel à [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync). 
 
 [!code-cs[BreakStarted](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetBreakStarted)]
 

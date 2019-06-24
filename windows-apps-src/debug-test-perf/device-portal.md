@@ -1,19 +1,19 @@
 ---
 ms.assetid: 60fc48dd-91a9-4dd6-a116-9292a7c1f3be
-title: Vue d’ensemble de Windows Device Portal
+title: Vue d’ensemble du portail d’appareil Windows
 description: Découvrez comment Windows Device Portal vous permet de configurer et de gérer à distance votre appareil par le biais d’une connexion réseau ou USB.
 ms.date: 4/9/2019
 ms.topic: article
 keywords: Windows 10, uwp, le portail de l’appareil
 ms.localizationpriority: medium
-ms.openlocfilehash: 39715dc3f4b88a2e9a91a7cb659208f8370f16f2
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 59e7e46ea68f6bb5fe7fd63e6ac35b9256103c38
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66362414"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317902"
 ---
-# <a name="windows-device-portal-overview"></a>Vue d’ensemble de Windows Device Portal
+# <a name="windows-device-portal-overview"></a>Vue d’ensemble du portail d’appareil Windows
 
 Windows Device Portal vous permet de configurer et de gérer à distance votre appareil par le biais d’une connexion réseau ou USB. Il fournit également des outils de diagnostic avancés pour vous aider à résoudre les problèmes et afficher les performances en temps réel de votre appareil Windows.
 
@@ -37,7 +37,7 @@ Famille d’appareils | Activé par défaut ? | HTTP | HTTPS | USB
 --------------|----------------|------|-------|----
 HoloLens | Oui, en mode de développement | 80 (par défaut) | 443 (par défaut) | http://127.0.0.1:10080
 IoT | Oui, en mode de développement | 8080 | Activer via la clé de registre | N/A
-Xbox | Activer dans le mode de développement | Désactivée | 11443 | N/A
+Xbox | Activer dans le mode de développement | Désactivé | 11443 | N/A
 Bureau| Activer dans le mode de développement | 50080\* | 50043\* | N/A
 Phone | Activer dans le mode de développement | 80| 443 | http://127.0.0.1:10080
 
@@ -212,7 +212,7 @@ La connexion au port HTTPS est suggérée, car les appareils ne sont pas tous d
 
 ### <a name="csrf-protection-and-scripting"></a>Protection CSRF et écriture de scripts
 
-Afin d’offrir une protection contre les [attaques CSRF](https://wikipedia.org/wiki/Cross-site_request_forgery), un jeton unique est requis pour toutes les demandes non GET. Ce jeton, qui est l’en-tête de demande X-CSRF-Token, dérive d’un cookie de session, CSRF-Token. Dans l’interface utilisateur Device Portal, le cookie CSRF-Token est copié dans l’en-tête X-CSRF-Token à chaque demande.
+Afin d’offrir une protection contre les [attaques CSRF](https://en.wikipedia.org/wiki/Cross-site_request_forgery), un jeton unique est requis pour toutes les demandes non GET. Ce jeton, qui est l’en-tête de demande X-CSRF-Token, dérive d’un cookie de session, CSRF-Token. Dans l’interface utilisateur Device Portal, le cookie CSRF-Token est copié dans l’en-tête X-CSRF-Token à chaque demande.
 
 > [!IMPORTANT]
 > Cette protection empêche les utilisations de l’API REST à partir d’un client autonome (par exemple, les utilitaires de ligne de commande). Cette situation peut être résolue de 3 manières différentes :

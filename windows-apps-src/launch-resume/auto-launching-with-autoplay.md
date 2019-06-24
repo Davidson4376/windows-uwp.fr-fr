@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d1f139ca4cf134ff8515a4da1134da16c338a4a8
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 1cc13470c1f07d1ee420253c8a147ff7a5c3fc40
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371333"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318771"
 ---
 # <a name="span-iddevlaunchresumeauto-launchingwithautoplayspanauto-launching-with-autoplay"></a><span id="dev_launch_resume.auto-launching_with_autoplay"></span>Lancement automatique à l’exécution automatique
 
@@ -49,7 +49,7 @@ Lorsque des fichiers sont partagés à l’aide de la fonction de proximité, la
 
 | Paramètre             | Value                 |
 |---------------------|-----------------------|
-| Verb                | show                  |
+| Verbe                | show                  |
 | Nom complet de l’action | Show Pictures         |
 | Événement de contenu       | ShowPicturesOnArrival |
 
@@ -59,7 +59,7 @@ Le paramètre **Nom complet de l’action** identifie la chaîne que la lecture 
 
 | Paramètre             | Value                      |
 |--------------------:|----------------------------|
-| Verb                | copy                       |
+| Verbe                | copy                       |
 | Nom complet de l’action | Copy Pictures Into Library |
 | Événement de contenu       | ShowPicturesOnArrival      |
 
@@ -225,7 +225,7 @@ async internal void CopyImage(Windows.Storage.IStorageItem file,
 
 Vous pouvez inscrire des applications en tant qu’options pour les événements de périphérique de **lecture automatique**. Les événements de périphérique de **lecture automatique** sont déclenchés lorsqu’un périphérique est connecté à un PC.
 
-Voici comment identifier votre application en tant qu’option de **lecture automatique** lorsqu’un appareil photo est connecté à un PC. L’application s’inscrit en tant que gestionnaire pour le **WPD\\ImageSourceAutoPlay** événement. Il s’agit d’un événement courant que le système WPD (Windows Portable Device) déclenche lorsque des appareils photo et d’autres périphériques d’acquisition d’images l’avertissent qu’ils sont une source d’image (ImageSource) utilisant MTP. Pour plus d’informations, voir [Appareils mobiles Windows](https://docs.microsoft.com/previous-versions//ff597729(v=vs.85)).
+Voici comment identifier votre application en tant qu’option de **lecture automatique** lorsqu’un appareil photo est connecté à un PC. L’application s’inscrit en tant que gestionnaire pour le **WPD\\ImageSourceAutoPlay** événement. Il s’agit d’un événement courant que le système WPD (Windows Portable Device) déclenche lorsque des appareils photo et d’autres périphériques d’acquisition d’images l’avertissent qu’ils sont une source d’image (ImageSource) utilisant MTP. Pour plus d’informations, voir [Appareils mobiles Windows](https://docs.microsoft.com/previous-versions/ff597729(v=vs.85)).
 
 **Important**  le [ **Windows.Devices.Portable.StorageDevice** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Portable.StorageDevice) API font partie de la [famille de périphériques de bureau](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide). Les applications peuvent utiliser ces API uniquement sur les appareils Windows 10 dans la famille de périphériques de bureau, tels que des PC.
 
@@ -242,7 +242,7 @@ Voici comment identifier votre application en tant qu’option de **lecture auto
 
 | Paramètre             | Value            |
 |---------------------|------------------|
-| Verb                | show             |
+| Verbe                | show             |
 | Nom complet de l’action | Show Pictures    |
 | Événement de contenu       | WPD\\ImageSource |
 
@@ -439,7 +439,7 @@ CustomEvent=AutoPlayCustomEventQuickstart
 
 | Paramètre             | Value                         |
 |---------------------|-------------------------------|
-| Verb                | show                          |
+| Verbe                | show                          |
 | Nom complet de l’action | Afficher les fichiers                    |
 | Événement de contenu       | AutoPlayCustomEventQuickstart |
 
@@ -532,7 +532,7 @@ Le système de **lecture automatique** permet aux applications de s’inscrire p
 | Gérer de la musique depuis un média optique                                    | **PlayCDAudioOnArrival**<br />**PlayDVDAudioOnArrival** | Lorsqu’un disque est inséré dans le lecteur optique, la lecture automatique examine les fichiers pour déterminer le type de contenu. Si des fichiers de musique sont trouvés, l’événement correspondant au type de disque optique est déclenché. |
 | Lire des disques optimisés                                                | **PlayEnhancedCDOnArrival**<br />**PlayEnhancedDVDOnArrival** | Lorsqu’un disque est inséré dans le lecteur optique, la lecture automatique examine les fichiers pour déterminer le type de contenu. Si un disque amélioré est trouvé, l’événement correspondant au type de disque optique est déclenché. |
 | Gérer des disques optiques inscriptibles                                     | **HandleCDBurningOnArrival** <br />**HandleDVDBurningOnArrival** <br />**HandleBDBurningOnArrival** | Lorsqu’un disque est inséré dans le lecteur optique, la lecture automatique examine les fichiers pour déterminer le type de contenu. Si un disque inscriptible est trouvé, l’événement correspondant au type de disque optique est déclenché. |
-| Gérer un autre périphérique ou une connexion de volume                       | **UnknownContentOnArrival**        | Événement déclenché pour tous les événements si du contenu ne correspondant à aucun événement de contenu de lecture automatique est trouvé. L’utilisation de cet événement n’est pas recommandée. Vous devez seulement inscrire votre application aux événements de lecture automatique spécifiques qu’elle est capable de gérer. |
+| Gérer un autre appareil ou une connexion de volume                       | **UnknownContentOnArrival**        | Événement déclenché pour tous les événements si du contenu ne correspondant à aucun événement de contenu de lecture automatique est trouvé. L’utilisation de cet événement n’est pas recommandée. Vous devez seulement inscrire votre application aux événements de lecture automatique spécifiques qu’elle est capable de gérer. |
 
 Vous pouvez spécifier que la lecture automatique déclenche un événement de contenu de lecture automatique personnalisé à l’aide de l’entrée **CustomEvent** dans le fichier autorun.inf d’un volume. Pour plus d’informations, voir [Entrées du fichier Autorun.inf](https://docs.microsoft.com/windows/desktop/shell/autorun-cmds).
 

@@ -9,12 +9,12 @@ pm-contact: stmoy
 design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: d1d459ab10614ddf9186275b1a6b66e8fa5703ec
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: f448f481b2b55a42cbaa158cc4b07261e2d7717b
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66364959"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317137"
 ---
 # <a name="connected-animation-for-uwp-apps"></a>Animation connectée pour les applications UWP
 
@@ -34,7 +34,7 @@ Une animation connectée, un élément apparaît « continuer » entre deux vu
 <td>
     <p>Si vous avez le <strong style="font-weight: semi-bold">galerie de contrôles XAML</strong> application installée, cliquez ici pour <a href="xamlcontrolsgallery:/item/ConnectedAnimation">ouvrez l’application et voir Animation connectés en action</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
     </ul>
 </td>
@@ -102,7 +102,7 @@ Pour obtenir divers effets, certaines configurations ignorent ces propriétés s
 | - | - | - |
 | Gravité | Oui | Oui* <br/> **La traduction de base de A à B utilise cette fonction d’accélération, mais « dip de gravité » a sa propre fonction d’accélération.*  |
 | Direct | Non <br/> *Anime 150ms plus.*| Non <br/> *Utilise la fonction d’accélération de Decelerate.* |
-| de base | Oui | Oui |
+| De base | Oui | Oui |
 
 ## <a name="how-to-implement-connected-animation"></a>Comment implémenter une animation connectée
 
@@ -334,7 +334,7 @@ void OnNavigatedTo(NavigationEventArgs e)
 - N’attendez pas sur les demandes du réseau ou autres opérations asynchrones longue entre la préparation et le démarrage d’une animation connectée. Vous devrez peut-être charger au préalable les informations nécessaires pour exécuter la transition à l'avance, ou utiliser une image d'espace réservé basse résolution pendant le chargement d’une image haute résolution dans l’affichage de destination.
 - Utilisez [SuppressNavigationTransitionInfo](/uwp/api/windows.ui.xaml.media.animation.suppressnavigationtransitioninfo) pour empêcher une animation de transition dans un **Frame** si vous utilisez **ConnectedAnimationService**, depuis les animations connectées ne sont pas destinées à être utilisée simultanément avec les transitions de navigation par défaut. Consultez [NavigationThemeTransition](/uwp/api/Windows.UI.Xaml.Media.Animation.NavigationThemeTransition) pour en savoir plus sur l’utilisation des transitions de navigation.
 
-## <a name="related-articles"></a>Articles connexes
+## <a name="related-articles"></a>Articles associés
 
 [ConnectedAnimation](/uwp/api/windows.ui.xaml.media.animation.connectedanimation)
 

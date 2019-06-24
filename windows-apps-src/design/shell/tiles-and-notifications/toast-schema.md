@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 30aba6c796d86662795d1c1f86ef7d76cc62925c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 57ddb366964c259fccddc3f905c6a03a382d0f17
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66363369"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320743"
 ---
 # <a name="toast-content-schema"></a>Schéma du contenu de notification toast
 
@@ -38,7 +38,7 @@ Si vous préférez utiliser du code XML brut plutôt que la [bibliothèque Notif
 ## <a name="toastcontent"></a>ToastContent
 ToastContent est l’objet de premier niveau qui décrit le contenu d’une notification, notamment les éléments visuels, les éléments audio et les actions.
 
-| Propriété | type | Obligatoire | Description |
+| Propriété | type | Requis | Description |
 |---|---|---|---|
 | **lancement**| chaîne | false | Chaîne transmise à l’application lorsqu’elle est activée par la notification toast. L’application définit le format et le contenu de cette chaîne pour son propre usage. Lorsque l’utilisateur appuie ou clique sur la notification toast pour lancer l’application associée, la chaîne de lancement précise le contexte à l’application pour permettre à cette dernière de présenter à l’utilisateur une vue adaptée au contenu de la notification toast plutôt qu’une vue par défaut. |
 | **Élément visuel** | [ToastVisual](#toastvisual) | true | Décrit la partie visuelle de la notification toast. |
@@ -65,10 +65,10 @@ Spécifie le scénario d’utilisation de la notification toast.
 ## <a name="toastvisual"></a>ToastVisual
 La partie visuelle des toasts contient les liaisons, qui contiennent le texte, les images, le contenu adaptatif et bien plus encore.
 
-| Propriété | type | Obligatoire | Description |
+| Propriété | type | Requis | Description |
 |---|---|---|---|
 | **BindingGeneric** | [ToastBindingGeneric](#toastbindinggeneric) | true | La liaison de toast générique qui peut être affichée sur tous les périphériques. Cette liaison est obligatoire et ne peut pas avoir la valeur null. |
-| **BaseUri** | URI | false | Une URL de base par défaut qui est combinée aux URL relatives contenues dans l’attribut source des images. |
+| **BaseUri** | Uri | false | Une URL de base par défaut qui est combinée aux URL relatives contenues dans l’attribut source des images. |
 | **AddImageQuery** | bool? | false | Définissez sur « true » pour permettre à Windows d’ajouter une chaîne de requête à l’URL d’image fournie dans la notification toast. Utilisez cet attribut si votre serveur héberge des images et peut gérer les chaînes de requête, en récupérant une variante d’image avec les chaînes de requête, ou en ignorant la chaîne de requête et en retournant l’image comme spécifié sans la chaîne de requête. Cette chaîne de requête spécifie l’échelle, le paramètre de contraste et la langue ; par exemple, la valeur « www.siteweb.com/images/hello.png » fournie dans la notification devient « www.siteweb.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=fr-fr ». |
 | **Langue**| chaîne | false | Les paramètres régionaux cibles de la charge utile visuelle lors de l’utilisation de ressources localisées, spécifiés en balises de langue BCP-47 comme « en-US » ou « fr-FR ». Ces paramètres régionaux sont remplacés par les paramètres régionaux spécifiés dans le texte ou la liaison. Si les paramètres régionaux ne sont pas spécifiés, les paramètres régionaux système sont utilisés à la place. |
 
@@ -76,13 +76,13 @@ La partie visuelle des toasts contient les liaisons, qui contiennent le texte, l
 ## <a name="toastbindinggeneric"></a>ToastBindingGeneric
 La liaison générique est la liaison par défaut pour les notifications toast, et vous permet de spécifier le texte, les images, le contenu adaptatif et bien plus encore.
 
-| Propriété | type | Obligatoire | Description |
+| Propriété | type | Requis | Description |
 |---|---|---|---|
 | **Children** | IList<[IToastBindingGenericChild](#itoastbindinggenericchild)> | false | Le contenu du corps de la notification toast, qui peut inclure du texte, des images et des groupes (ajouté dans la Mise à jour anniversaire). Les éléments de texte doivent être placés avant tout autre élément, et seuls 3 éléments de texte sont pris en charge. Si un élément de texte est placé après un autre élément, il est remonté tout en haut ou supprimé. Enfin, certaines propriétés de texte comme HintStyle ne sont pas prises en charge sur les éléments de texte racine enfants, et fonctionnent uniquement à l’intérieur de AdaptiveSubgroup. Si vous utilisez AdaptiveGroup sur des appareils qui ne disposent pas de la Mise à jour anniversaire, le contenu du groupe sera simplement ignoré. |
 | **AppLogoOverride** | [ToastGenericAppLogo](#toastgenericapplogo) | false | Un logo facultatif pour remplacer le logo de l’application. |
 | **HeroImage** | [ToastGenericHeroImage](#toastgenericheroimage) | false | Une image « Hero » recommandée facultative qui s’affiche sur la notification toast et dans le centre de notifications. |
 | **Attribution** | [ToastGenericAttributionText](#toastgenericattributiontext) | false | Texte d’attribution facultatif qui s’affiche en bas de la notification toast. |
-| **BaseUri** | URI | false | Une URL de base par défaut qui est combinée aux URL relatives contenues dans l’attribut source des images. |
+| **BaseUri** | Uri | false | Une URL de base par défaut qui est combinée aux URL relatives contenues dans l’attribut source des images. |
 | **AddImageQuery** | bool? | false | Définissez sur « true » pour permettre à Windows d’ajouter une chaîne de requête à l’URL d’image fournie dans la notification toast. Utilisez cet attribut si votre serveur héberge des images et peut gérer les chaînes de requête, en récupérant une variante d’image avec les chaînes de requête, ou en ignorant la chaîne de requête et en retournant l’image comme spécifié sans la chaîne de requête. Cette chaîne de requête spécifie l’échelle, le paramètre de contraste et la langue ; par exemple, la valeur « www.siteweb.com/images/hello.png » fournie dans la notification devient « www.siteweb.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=fr-fr ». |
 | **Langue**| chaîne | false | Les paramètres régionaux cibles de la charge utile visuelle lors de l’utilisation de ressources localisées, spécifiés en balises de langue BCP-47 comme « en-US » ou « fr-FR ». Ces paramètres régionaux sont remplacés par les paramètres régionaux spécifiés dans le texte ou la liaison. Si les paramètres régionaux ne sont pas spécifiés, les paramètres régionaux système sont utilisés à la place. |
 
@@ -101,9 +101,9 @@ Interface de marqueurs pour les éléments enfants de toast qui incluent du text
 ## <a name="adaptivetext"></a>AdaptiveText
 Un élément de texte adaptatif. S’il est placé dans le ToastBindingGeneric.Children de premier niveau, seul HintMaxLines s’applique. Mais s’il est l’enfant d’un groupe/sous-groupe, les styles de texte sont intégralement pris en charge.
 
-| Propriété | type | Obligatoire |Description |
+| Propriété | type | Requis |Description |
 |---|---|---|---|
-| **Text** | chaîne ou [BindableString](#bindablestring) | false | texte à afficher. Prise en charge de la liaison de données ajoutée dans Creators Update, mais fonctionne uniquement pour les éléments de texte de premier niveau. |
+| **Text** | chaîne ou [BindableString](#bindablestring) | false | Le texte à afficher. Prise en charge de la liaison de données ajoutée dans Creators Update, mais fonctionne uniquement pour les éléments de texte de premier niveau. |
 | **HintStyle** | [AdaptiveTextStyle](#adaptivetextstyle) | false | Le style contrôle la taille, l’épaisseur et l’opacité de la police de texte. Fonctionne uniquement pour les éléments de texte placés à l’intérieur d’un groupe/sous-groupe. |
 | **HintWrap** | bool? | false | Définissez sur « true » pour activer la fonctionnalité de renvoi de texte à la ligne. Les éléments de texte de premier niveau ignorent cette propriété et renvoient toujours le texte à la ligne (vous pouvez utiliser HintMaxLines = 1 pour désactiver le renvoi à la ligne pour les éléments de texte de premier niveau). Par défaut, les éléments de texte placés à l’intérieur de groupes/sous-groupes ne renvoient pas le texte à la ligne. |
 | **HintMaxLines** | int? | false | Le nombre maximum de lignes que l’élément de texte est autorisé à afficher. |
@@ -115,7 +115,7 @@ Un élément de texte adaptatif. S’il est placé dans le ToastBindingGeneric.C
 ### <a name="bindablestring"></a>BindableString
 Valeur de liaison des chaînes.
 
-| Propriété | type | Obligatoire | Description |
+| Propriété | type | Requis | Description |
 |---|---|---|---|
 | **BindingName** | chaîne | true | Obtient ou définit le nom associé à votre valeur de données de liaison. |
 
@@ -160,7 +160,7 @@ Contrôle l’alignement horizontal du texte.
 ## <a name="adaptiveimage"></a>AdaptiveImage
 Une image incorporée.
 
-| Propriété | type | Obligatoire |Description |
+| Propriété | type | Requis |Description |
 |---|---|---|---|
 | **Source** | chaîne | true | URL de l’image. ms-appx, ms-appdata et http sont pris en charge. À partir de Fall Creators Update, les images Web peuvent atteindre 3 Mo sur les connexions normales et 1 Mo sur les connexions limitées. Sur les appareils qui n’exécutent pas encore Fall Creators Update, les images web ne doivent pas dépasser 200 Ko. |
 | **HintCrop** | [AdaptiveImageCrop](#adaptiveimagecrop) | false | Nouveautés de la mise à jour anniversaire : Contrôle le rognage désiré de l’image. |
@@ -195,7 +195,7 @@ Spécifie l’alignement horizontal d’une image.
 ## <a name="adaptivegroup"></a>AdaptiveGroup
 Nouveautés de la mise à jour anniversaire : Les groupes indiquent au niveau sémantique si le contenu du groupe doit s’afficher dans son intégralité, ou ne pas s’afficher s’il ne tient pas. Les groupes permettent également de créer plusieurs colonnes.
 
-| Propriété | type | Obligatoire |Description |
+| Propriété | type | Requis |Description |
 |---|---|---|---|
 | **Children** | IList<[AdaptiveSubgroup](#adaptivesubgroup)> | false | Les sous-groupes s’affichent en colonnes verticales. Vous devez utiliser des sous-groupes pour ajouter du contenu dans un AdaptiveGroup. |
 
@@ -203,7 +203,7 @@ Nouveautés de la mise à jour anniversaire : Les groupes indiquent au niveau s
 ## <a name="adaptivesubgroup"></a>AdaptiveSubgroup
 Nouveautés de la mise à jour anniversaire : Les sous-groupes sont des colonnes verticales qui peuvent contenir du texte et des images.
 
-| Propriété | type | Obligatoire |Description |
+| Propriété | type | Requis |Description |
 |---|---|---|---|
 | **Children** | IList<[IAdaptiveSubgroupChild](#iadaptivesubgroupchild)> | false | [AdaptiveText](#adaptivetext) et [AdaptiveImage](#adaptiveimage) sont des enfants valides de sous-groupes. |
 | **HintWeight** | int? | false | Contrôler la largeur de cette colonne de sous-groupe en spécifiant la pondération de l’espace relative aux autres sous-groupes. |
@@ -233,7 +233,7 @@ TextStacking spécifie l’alignement vertical du contenu.
 ## <a name="adaptiveprogressbar"></a>AdaptiveProgressBar
 Nouveautés de la mise à jour Creators Update : Une barre de progression. Prise en charge uniquement sur les toasts dans Windows Desktop, build 15063 ou une version plus récente.
 
-| Propriété | type | Obligatoire | Description |
+| Propriété | type | Requis | Description |
 |---|---|---|---|
 | **Titre** | chaîne ou [BindableString](#bindablestring) | false | Obtient ou définit une chaîne de titre facultative. Prend en charge la liaison des données. |
 | **Valeur** | double ou [AdaptiveProgressBarValue](#adaptiveprogressbarvalue) ou [BindableProgressBarValue](#bindableprogressbarvalue) | false | Obtient ou définit la valeur de la barre de progression. Prend en charge la liaison des données. La valeur par défaut est 0. |
@@ -244,7 +244,7 @@ Nouveautés de la mise à jour Creators Update : Une barre de progression. Pris
 ### <a name="adaptiveprogressbarvalue"></a>AdaptiveProgressBarValue
 Classe qui représente la valeur de la barre de progression.
 
-| Propriété | type | Obligatoire | Description |
+| Propriété | type | Requis | Description |
 |---|---|---|---|
 | **Valeur** | double | false | Obtient ou définit la valeur (0.0 - 1.0) qui représente le pourcentage effectué. |
 | **IsIndeterminate** | bool | false | Obtient ou définit une valeur qui indique si la barre de progression est indéterminée. Si la valeur est true, **Value** sera ignoré. |
@@ -253,7 +253,7 @@ Classe qui représente la valeur de la barre de progression.
 ### <a name="bindableprogressbarvalue"></a>BindableProgressBarValue
 Valeur de la barre de progression pouvant être liée.
 
-| Propriété | type | Obligatoire | Description |
+| Propriété | type | Requis | Description |
 |---|---|---|---|
 | **BindingName** | chaîne | true | Obtient ou définit le nom associé à votre valeur de données de liaison. |
 
@@ -261,7 +261,7 @@ Valeur de la barre de progression pouvant être liée.
 ## <a name="toastgenericapplogo"></a>ToastGenericAppLogo
 Logo à afficher à la place du logo de l’application.
 
-| Propriété | type | Obligatoire |Description |
+| Propriété | type | Requis |Description |
 |---|---|---|---|
 | **Source** | chaîne | true | URL de l’image. ms-appx, ms-appdata et http sont pris en charge. La taille maximale des images Http est 200 Ko. |
 | **HintCrop** | [ToastGenericAppLogoCrop](#toastgenericapplogocrop) | false | Spécifiez le type de rognage que vous souhaitez appliquer à l’image. |
@@ -282,7 +282,7 @@ Contrôle le rognage de l’image du logo d’application.
 ## <a name="toastgenericheroimage"></a>ToastGenericHeroImage
 Une image « Hero » recommandée qui s’affiche sur la notification toast et dans le centre de notifications.
 
-| Propriété | type | Obligatoire |Description |
+| Propriété | type | Requis |Description |
 |---|---|---|---|
 | **Source** | chaîne | true | URL de l’image. ms-appx, ms-appdata et http sont pris en charge. La taille maximale des images Http est 200 Ko. |
 | **AlternateText** | chaîne | false | Texte de remplacement décrivant l’image, utilisé à des fins d’accessibilité. |
@@ -292,9 +292,9 @@ Une image « Hero » recommandée qui s’affiche sur la notification toast et
 ## <a name="toastgenericattributiontext"></a>ToastGenericAttributionText
 Texte d’attribution qui s’affiche en bas de la notification toast.
 
-| Propriété | type | Obligatoire | Description |
+| Propriété | type | Requis | Description |
 |---|---|---|---|
-| **Text** | chaîne | true | texte à afficher. |
+| **Text** | chaîne | true | Le texte à afficher. |
 | **Langue** | chaîne | false | Les paramètres régionaux cibles de la charge utile visuelle lors de l’utilisation de ressources localisées, spécifiés en balises de langue BCP-47 comme « en-US » ou « fr-FR ». Si les paramètres régionaux ne sont pas spécifiés, les paramètres régionaux système sont utilisés à la place. |
 
 
@@ -312,7 +312,7 @@ Interface de marqueurs pour les actions/entrées de notifications toast.
 
 Créez vos propres actions et entrées personnalisées, à l’aide de contrôles comme des boutons, des zones de texte et des entrées de sélection.
 
-| Propriété | type | Obligatoire | Description |
+| Propriété | type | Requis | Description |
 |---|---|---|---|
 | **Entrées** | IList<[IToastInput](#itoastinput)> | false | Entrées comme des zones de texte et des entrées de sélection. Vous pouvez ajouter jusqu’à 5 entrées. |
 | **Boutons** | IList<[IToastButton](#itoastbutton)> | false | Les boutons s’affichent après toutes les entrées (ou à côté d’une entrée si le bouton est utilisé comme bouton de réponse rapide). Vous pouvez ajouter jusqu’à 5 boutons (moins s’il y a aussi des éléments de menu contextuel). |
@@ -333,7 +333,7 @@ Interface de marqueurs pour les entrées de notification toast.
 
 Un contrôle de zone de texte dans lequel l’utilisateur peut taper du texte.
 
-| Propriété | type | Obligatoire | Description |
+| Propriété | type | Requis | Description |
 |---|---|---|---|
 | **Id** | chaîne | true | L’Id est obligatoire, et est utilisé pour mapper le texte saisi par l’utilisateur dans une paire clé-valeur d’id/valeur que votre application utilisera plus tard. |
 | **Titre** | chaîne | false | Texte de titre qui s’affiche au-dessus de la zone de texte. |
@@ -346,7 +346,7 @@ Un contrôle de zone de texte dans lequel l’utilisateur peut taper du texte.
 
 Un contrôle de zone de sélection, qui permet aux utilisateurs de choisir dans une liste déroulante d’options.
 
-| Propriété | type | Obligatoire | Description |
+| Propriété | type | Requis | Description |
 |---|---|---|---|
 | **Id** | chaîne | true | L’Id est obligatoire. Si l’utilisateur sélectionne cet élément, cet Id est transmis au code de votre application, en indiquant leur choix. |
 | **Contenu** | chaîne | true | Content est obligatoire, et est la chaîne qui s’affiche sur l’élément de sélection. |
@@ -355,7 +355,7 @@ Un contrôle de zone de sélection, qui permet aux utilisateurs de choisir dans 
 ### <a name="toastselectionboxitem"></a>ToastSelectionBoxItem
 Un élément de zone de sélection (un élément que l’utilisateur peut sélectionner dans la liste déroulante).
 
-| Propriété | type | Obligatoire | Description |
+| Propriété | type | Requis | Description |
 |---|---|---|---|
 | **Id** | chaîne | true | L’Id est obligatoire, et est utilisé pour mapper le texte saisi par l’utilisateur dans une paire clé-valeur d’id/valeur que votre application utilisera plus tard. |
 | **Titre** | chaîne | false | Texte de titre qui s’affiche au-dessus de la zone de sélection. |
@@ -378,7 +378,7 @@ Interface de marqueurs pour les boutons de notification toast.
 
 Un bouton sur lequel l’utilisateur peut cliquer.
 
-| Propriété | type | Obligatoire | Description |
+| Propriété | type | Requis | Description |
 |---|---|---|---|
 | **Contenu** | chaîne | true | Obligatoire. Texte à afficher sur le bouton. |
 | **Arguments** | chaîne | true | Obligatoire. Chaîne d’arguments définie par l’application, que l’application récupère quand l’utilisateur clique sur ce bouton. |
@@ -399,7 +399,7 @@ Détermine le type d’activation utilisé quand l’utilisateur interagit avec 
 ### <a name="toastactivationoptions"></a>ToastActivationOptions
 Nouveautés de la mise à jour Creators Update : Options supplémentaires relatives à l’activation.
 
-| Propriété | type | Obligatoire | Description |
+| Propriété | type | Requis | Description |
 |---|---|---|---|
 | **AfterActivationBehavior** | [ToastAfterActivationBehavior](#toastafteractivationbehavior) | false | Nouveautés de Fall Creators Update : Obtient ou définit le comportement que le toast doit utiliser lorsque l’utilisateur appelle cette action. Il ne fonctionne que sur Windows Desktop, pour [ToastButton](#toastbutton) et [ToastContextMenuItem](#toastcontextmenuitem). |
 | **ProtocolActivationTargetApplicationPfn** | chaîne | false | Si vous utilisez *ToastActivationType.Protocol*, vous pouvez spécifier le PFN cible, afin que votre application se lance toujours quel que soit le nombre d’applications inscrites pour gérer le même uri de protocole. |
@@ -419,7 +419,7 @@ Spécifie le comportement que le toast doit utiliser lorsque l’utilisateur eff
 
 Un bouton Répéter géré par le système qui gère automatiquement la répétition de la notification.
 
-| Propriété | type | Obligatoire | Description |
+| Propriété | type | Requis | Description |
 |---|---|---|---|
 | **CustomContent** | chaîne | false | Texte personnalisé facultatif affiché sur le bouton qui remplace le texte « Répéter » localisé par défaut. |
 
@@ -429,7 +429,7 @@ Un bouton Répéter géré par le système qui gère automatiquement la répéti
 
 Un bouton Ignorer géré par le système qui permet d’ignorer la notification lorsque l’utilisateur clique dessus.
 
-| Propriété | type | Obligatoire | Description |
+| Propriété | type | Requis | Description |
 |---|---|---|---|
 | **CustomContent** | chaîne | false | Texte personnalisé facultatif affiché sur le bouton qui remplace le texte « Ignorer » localisé par défaut. |
 
@@ -439,7 +439,7 @@ Un bouton Ignorer géré par le système qui permet d’ignorer la notification 
 
 Crée automatiquement une zone de sélection pour les intervalles de répétition, et des boutons Répéter/Ignorer, tous automatiquement localisés. La logique de répétition est gérée automatiquement par le système.
 
-| Propriété | type | Obligatoire | Description |
+| Propriété | type | Requis | Description |
 |---|---|---|---|
 | **ContextMenuItems** | IList<[ToastContextMenuItem](#toastcontextmenuitem)> | false | Nouveautés de la mise à jour anniversaire : Éléments de menu contextuel personnalisé, en fournissant des actions supplémentaires si l’utilisateur avec le bouton droit clique sur la notification. Vous pouvez ajouter jusqu’à 5 éléments. |
 
@@ -447,9 +447,9 @@ Crée automatiquement une zone de sélection pour les intervalles de répétitio
 ## <a name="toastcontextmenuitem"></a>ToastContextMenuItem
 Une entrée d’élément de menu contextuel.
 
-| Propriété | type | Obligatoire | Description |
+| Propriété | type | Requis | Description |
 |---|---|---|---|
-| **Contenu** | chaîne | true | Obligatoire. texte à afficher. |
+| **Contenu** | chaîne | true | Obligatoire. Le texte à afficher. |
 | **Arguments** | chaîne | true | Obligatoire. Chaîne d’arguments définie par l’application, que l’application peut récupérer une fois qu’elle est activée quand l’utilisateur clique sur l’élément de menu. |
 | **ActivationType** | [ToastActivationType](#toastactivationtype) | false | Contrôle le type d’activation qu’utilise cet élément de menu lorsque l’utilisateur clique dessus. La valeur par défaut est Foreground. |
 | **ActivationOptions** | [ToastActivationOptions](#toastactivationoptions) | false | Nouveautés de la mise à jour Creators Update : Options supplémentaires relatives à l’activation de l’élément de menu contextuel toast. |
@@ -458,7 +458,7 @@ Une entrée d’élément de menu contextuel.
 ## <a name="toastaudio"></a>ToastAudio
 Spécifiez le son à lire à la réception de la notification toast.
 
-| Propriété | type | Obligatoire | Description |
+| Propriété | type | Requis | Description |
 |---|---|---|---|
 | **Src** | uri | false | Le fichier multimédia à lire à la place du son par défaut. Seuls ms-appx et ms-appdata sont pris en charge. |
 | **Boucle** | booléenne | false | Définissez sur « true » si le son doit être répété tant que la notification toast est affichée ; sur « false » pour lire une seule fois (par défaut). |
@@ -468,7 +468,7 @@ Spécifiez le son à lire à la réception de la notification toast.
 ## <a name="toastheader"></a>ToastHeader
 Nouveautés de la mise à jour Creators Update : Un en-tête personnalisé qui regroupe plusieurs notifications dans le centre de notifications.
 
-| Propriété | type | Obligatoire | Description |
+| Propriété | type | Requis | Description |
 |---|---|---|---|
 | **Id** | chaîne | true | Un identificateur créé par un développeur qui identifie spécifiquement cet en-tête. Si deux notifications possèdent le même id d’en-tête, elles s’affichent sous le même en-tête dans le centre de notifications. |
 | **Titre** | chaîne | true | Un titre pour l’en-tête. |
@@ -480,4 +480,4 @@ Nouveautés de la mise à jour Creators Update : Un en-tête personnalisé qui 
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Démarrage rapide : Envoyer une activation toast et handle locale](https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/07/08/quickstart-sending-a-local-toast-notification-and-handling-activations-from-it-windows-10/)
-* [Bibliothèque de notifications sur GitHub](https://github.com/Microsoft/UWPCommunityToolkit/tree/dev/Notifications)
+* [Bibliothèque de notifications sur GitHub](https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/dev/Notifications)

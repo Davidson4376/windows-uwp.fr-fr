@@ -6,12 +6,12 @@ ms.date: 01/23/2018
 ms.topic: article
 keywords: windows 10, uwp, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
-ms.openlocfilehash: c6dc07ff35cdd90deaddff06f89aa585aa63156a
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 49f03a1ae5ed0ea1a602103e2181c252c8c29c2f
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58335027"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319330"
 ---
 # <a name="use-the-multilingual-app-toolkit-40"></a>Utiliser le Kit de ressources Multilingual App Toolkit 4.0
 
@@ -26,7 +26,7 @@ Le kit de ressources Multilingual App Toolkit (MAT) 4.0 est intégré à Mic
 
 ## <a name="how-to-use-the-toolkit"></a>Utilisation du kit de ressources
 
-### <a name="step-1-design-your-app-for-globalization-and-localization"></a>Étape 1. Concevoir votre application pour la globalisation et la localisation
+### <a name="step-1-design-your-app-for-globalization-and-localization"></a>Étape 1. Concevoir votre application pour la globalisation et la localisation
 
 Pour pouvoir utiliser MAT efficacement, votre application doit être localisable. Plus précisément, votre projet doit contenir au moins un fichier Ressource (.resw) contenant les chaînes de votre application dans la langue par défaut. Pour plus de détails, consultez [Localiser les chaînes dans l’interface utilisateur et le manifeste du package d’application](../../app-resources/localize-strings-ui-manifest.md). Cela étant, le kit de ressources accélère et facilite l'ajout de langues supplémentaires.
 
@@ -34,7 +34,7 @@ Pour la proposition de valeur de globalisation et de localisation&mdash;, ainsi 
 
 Consultez également [Directives en matière de globalisation](guidelines-and-checklist-for-globalizing-your-app.md) et [Rendre votre application localisable](prepare-your-app-for-localization.md).
 
-### <a name="step-2-download-and-install-the-multilingual-app-toolkit-40"></a>Étape 2. Télécharger et installer le kit de ressources Multilingual App Toolkit 4.0
+### <a name="step-2-download-and-install-the-multilingual-app-toolkit-40"></a>Étape 2. Télécharger et installer le kit de ressources Multilingual App Toolkit 4.0
 
 Le kit de ressources Multilingual App Toolkit 4.0 (MAT 4.0) est divisé en deux parties, chacune équipée de son propre installateur.
 
@@ -43,7 +43,7 @@ Le kit de ressources Multilingual App Toolkit 4.0 (MAT 4.0) est divisé en d
 
 Si vous utilisez Visual Studio 2017, téléchargez et exécutez les deux installateurs l'un après l'autre. Si vous utilisez Visual Studio 2015 ou Visual Studio 2013, téléchargez et exécutez l'installateur .msi.
 
-### <a name="step-3-enable-the-multilingual-app-toolkit-for-your-project"></a>Étape 3. Activer le kit de ressources Multilingual App Toolkit pour votre projet
+### <a name="step-3-enable-the-multilingual-app-toolkit-for-your-project"></a>Étape 3. Activer le kit de ressources Multilingual App Toolkit pour votre projet
 
 Avant que vous ne puissiez commencer à localiser l'application, le MAT doit être activé pour votre projet. Voici comment activer le kit de ressources.
 
@@ -53,12 +53,12 @@ Avant que vous ne puissiez commencer à localiser l'application, le MAT doit êt
 
 Dans la fenêtre Sortie (affichant la sortie du kit de ressources Multilingual App Toolkit), recherchez le message `Project '<project-name>' was enabled. The project's source culture is '<language-tag>' <language-name>`. Si ce message apparaît, le MAT est prêt à être utilisé.
 
-### <a name="step-4-add-languages-to-your-project"></a>Étape 4. Ajouter des langues à votre projet
+### <a name="step-4-add-languages-to-your-project"></a>Étape 4. Ajouter des langues à votre projet
 
 Suivez ces étapes pour ajouter des langues à votre projet.
 
 1. Dans l’Explorateur de solutions, cliquez avec le bouton droit sur le projet.
-2. Cliquez sur **Multilingual App Toolkit** > **Ajouter des langues de traduction...**.
+2. Cliquez sur **Multilingual App Toolkit** > **Ajouter des langues de traduction...** .
 3. Dans la boîte de dialogue Langues de traduction, sélectionnez les langues que vous souhaitez prendre en charge, puis cliquez sur OK.
 
 Voici les actions par lesquelles le kit de ressources répond.
@@ -75,7 +75,7 @@ Dans la boîte de dialogue Langues de traduction, les cases de toutes les langue
 
 Une fois la langue ajoutée au projet, elle ne peut pas être supprimée en cochant la case dans la boîte de dialogue Langues de traduction. Pour supprimer une langue, cliquez avec le bouton droit sur le fichier .xlf spécifique à la langue et sélectionnez **Supprimer**. La confirmation a également pour effet de supprimer les fichiers Ressources (.resw) correspondants.
 
-### <a name="step-5-test-your-app-using-pseudo-language"></a>Étape 5. Tester votre application à l’aide d'une pseudo-langue
+### <a name="step-5-test-your-app-using-pseudo-language"></a>Étape 5. Tester votre application à l’aide d'une pseudo-langue
 
 La pseudo-langue est une modification artificielle du produit de logiciel. Elle vise à simuler une véritable localisation de langue, mais elle reste lisible pour les locuteurs natifs. La pseudo-traduction remplace les caractères et rallonge la chaîne de ressource pour détecter tout problème ou bogue d'adaptabilité potentiel aux prémices du cycle du projet et avant le démarrage de la mise à l'épreuve de la localisation.
 
@@ -115,11 +115,11 @@ Vous pouvez également lancer Multilingual Editor de la manière suivante. Reve
 
 #### <a name="option-2-send-the-xlf-files-to-a-third-party-for-translation"></a>Option 2. Envoyer les fichiers .xlf à un tiers pour la traduction
 
-Pour sous-traiter la traduction et la tâche de modification aux traducteurs, sélectionnez les fichiers .xlf souhaités dans l’Explorateur de solutions, cliquez dessus avec le bouton droit, puis cliquez sur **Multilingual App Toolkit** > **Exporter les traductions...**.
+Pour sous-traiter la traduction et la tâche de modification aux traducteurs, sélectionnez les fichiers .xlf souhaités dans l’Explorateur de solutions, cliquez dessus avec le bouton droit, puis cliquez sur **Multilingual App Toolkit** > **Exporter les traductions...** .
 
 Sélectionnez **sortie : Destinataire du message** dans la boîte de dialogue Exportation chaîne ressources, puis cliquez sur OK et vos fichiers seront compressés et attaché à un nouveau message électronique. Sélectionnez **sortie : Emplacement du dossier de fichiers**navigateur pour un dossier et cliquez sur OK, si vous le souhaitez choisir pour les fichiers à être compressés, et cliquez sur OK à nouveau vos fichiers seront (compressé et) enregistré à l’emplacement que vous avez choisi, à l’intérieur d’un nouveau dossier nommé pour votre projet.
 
-Lorsque vos traducteurs ont terminé la traduction et vous ont envoyé les fichiers .xlf traduits, vous pouvez les importer dans votre projet. Sélectionnez les fichiers .xlf souhaité dans l’Explorateur de solutions, effectuez un clic droit, puis cliquez sur **Multilingual App Toolkit** >  **/recyclage de l’importation des traductions...**. Cliquez sur **ajouter**, accédez aux fichiers .xlf ou .zip, puis cliquez sur **importation**.
+Lorsque vos traducteurs ont terminé la traduction et vous ont envoyé les fichiers .xlf traduits, vous pouvez les importer dans votre projet. Sélectionnez les fichiers .xlf souhaité dans l’Explorateur de solutions, effectuez un clic droit, puis cliquez sur **Multilingual App Toolkit** >  **/recyclage de l’importation des traductions...** . Cliquez sur **ajouter**, accédez aux fichiers .xlf ou .zip, puis cliquez sur **importation**.
 
 **Remarque** le processus d'importation réalise une validation de base préalable à l'importation. Ainsi, les informations culturelles de la cible dans les fichiers en cours d'importation correspondent aux fichiers .xlf existants.
 
@@ -127,11 +127,11 @@ Générez à nouveau votre projet pour engendrer la copie des chaînes traduites
 
 Ces fournisseurs tiers proposent des services de localisation et peuvent vous aider à adapter vos produits.
 
-- [Elanex](https://www.elanex.com/)
+- [Elanex](https://www.strakertranslations.com/)
 - [Keywords Studios](https://www.keywordsstudios.com/)
 - [Lionbridge](https://www.lionbridge.com)
-- [Moravia](https://www.moravia.com/)
-- [SDL](https://www.sdl.com/languagecloud/managed-translation/ilp/instantquote)
+- [Moravia](https://www.rws.com/what-we-do/rws-moravia/)
+- [SDL](https://www.sdl.com/translate/get-started/instant-quote.html)
 - [Welocalize](https://www.welocalize.com/)
 
 > [!NOTE]

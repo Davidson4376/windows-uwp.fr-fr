@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d5d4e7b71ea0fcc6f18106ee1d11c3dead1438c7
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: d25cd3f8a963d85f704e32482475827462ddba58
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360669"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318262"
 ---
 # <a name="play-audio-and-video-with-mediaplayer"></a>Lire du contenu audio et vidéo avec MediaPlayer
 
@@ -33,8 +33,8 @@ Lorsque vous avez terminé d’utiliser une instance **MediaPlayer** sur l’app
 
 [!code-cs[CloseMediaPlayer](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetCloseMediaPlayer)]
 
-## <a name="use-mediaplayerelement-to-render-video-in-xaml"></a>Utiliser MediaPlayerElement afin d’afficher du contenu vidéo dans XAML
-Vous pouvez lire du contenu multimédia dans une instance **MediaPlayer** sans l’afficher au format XAML, mais de nombreuses applications de lecture de contenus multimédias sont définies pour ce type d’affichage. Pour ce faire, utilisez le contrôle léger [**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement). Tout comme **MediaElement**, **MediaPlayerElement** vous permet de spécifier si les contrôles intégrés de transport doivent être affichés.
+## <a name="use-mediaplayerelement-to-render-video-in-xaml"></a>Utiliser MediaPlayerElement afin d’afficher du contenu vidéo en XAML
+Vous pouvez lire du contenu multimédia dans une instance **MediaPlayer** sans l’afficher au format XAML, mais de nombreuses applications de lecture de contenus multimédias sont définies pour ce type d’affichage. Pour ce faire, utilisez le contrôle léger [**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement). Tout comme **MediaElement**, **MediaPlayerElement** vous permet de spécifier si les contrôles de transport intégrés doivent être affichés.
 
 [!code-xml[MediaPlayerElementXAML](./code/MediaPlayer_RS1/cs/MainPage.xaml#SnippetMediaPlayerElementXAML)]
 
@@ -112,7 +112,7 @@ Enfin, l’élément [**NormalizedSourceRect**](https://docs.microsoft.com/uwp/a
 
 [!code-cs[ManipulationDelta](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetManipulationDelta)]
 
-Dans le gestionnaire d’événement [**DoubleTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.doubletapped), le rectangle source est redéfini sur (0,0,1,1) pour rétablir l’affichage de l’intégralité de la vidéo.
+Dans le gestionnaire d’événements [**DoubleTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.doubletapped), le rectangle source est redéfini sur (0,0,1,1) pour rétablir l’affichage de l’intégralité de la vidéo.
 
 [!code-cs[DoubleTapped](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetDoubleTapped)]
 
@@ -161,7 +161,7 @@ L’exemple suivant illustre l’utilisation d’un contrôle **Slider** afin d�
 
 [!code-cs[CreateSourceWithOpenCompleted](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetCreateSourceWithOpenCompleted)]
 
-Le gestionnaire **OpenOperationCompleted** est utilisé en tant qu’opportunité de découverte de la durée du contenu de la source multimédia. Une fois que la durée est déterminée, la valeur maximale du contrôle **Slider** est définie sur le nombre total de secondes de l’élément multimédia. La valeur est définie au sein d’un appel à [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows), afin de garantir l’exécution sur le thread d’interface utilisateur.
+Le gestionnaire **OpenOperationCompleted** est utilisé en tant qu’opportunité de découverte de la durée du contenu de la source multimédia. Une fois que la durée est déterminée, la valeur maximale du contrôle **Slider** est définie sur le nombre total de secondes de l’élément multimédia. La valeur est définie au sein d’un appel à [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync), afin de garantir l’exécution sur le thread d’interface utilisateur.
 
 [!code-cs[DeclareDuration](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetDeclareDuration)]
 
@@ -231,11 +231,11 @@ Pour plus d’informations sur Win2D, consultez le [référentiel GitHub Win2D](
 **Pour ajouter le package NuGet de Win2D à votre projet d’effet**
 
 1.  Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur votre projet, puis sélectionnez **Gérer les packages NuGet**.
-2.  En haut de la fenêtre, sélectionnez l’onglet **Explorer**.
+2.  Dans la partie supérieure de la fenêtre, sélectionnez l’onglet **Parcourir**.
 3.  Dans la zone de recherche, entrez **Win2D**.
 4.  Sélectionnez **Win2D.uwp**, puis **Installer** dans le volet droit.
 5.  La boîte de dialogue **Examiner les modifications** vous indique le package à installer. Cliquez sur **OK**.
-6.  Acceptez la licence de package.
+6.  Acceptez la licence du package.
 
 ## <a name="detect-and-respond-to-audio-level-changes-by-the-system"></a>Détecter les changements de niveau audio initiés par le système et y répondre
 À partir de Windows 10, version 1803, votre application peut détecter quand le système baisse ou désactive le niveau audio d’un objet **MediaPlayer** en cours de lecture. Par exemple, le système peut baisser, ou « atténuer », le niveau de lecture audio lorsqu’une alarme sonne. Le système désactive votre application lorsqu’elle passe à l’arrière-plan si la fonctionnalité *backgroundMediaPlayback* n’a pas été déclarée dans le manifeste de l’application. La classe [**AudioStateMonitor**](https://docs.microsoft.comuwp/api/windows.media.audio.audiostatemonitor) vous permet de vous inscrire pour recevoir un événement lorsque le système modifie le volume d’un flux audio. Accédez à la propriété **AudioStateMonitor** d’un objet **MediaPlayer** et enregistrez un gestionnaire pour l’événement [**SoundLevelChanged**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor.soundlevelchanged) afin d’être averti lorsque le niveau audio de cet objet **MediaPlayer** est modifié par le système.

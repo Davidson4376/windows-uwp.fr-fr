@@ -4,12 +4,12 @@ description: Les développeurs peuvent utiliser l’activation de protocole et d
 ms.topic: article
 ms.localizationpriority: medium
 ms.date: 02/08/2017
-ms.openlocfilehash: f61fcfcef549295b8f3c9004572a74043a2917a2
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: abc0b40178dc9b7c386342af6a6d85c6fb61945a
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365829"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320271"
 ---
 # <a name="automate-launching-windows-10-uwp-apps"></a>Automatisation du lancement des applications UWP Windows 10
 
@@ -136,7 +136,7 @@ Cette option ne prend pas en charge les arguments de ligne de commande.
 
 ### <a name="launcher-application"></a>Application de lancement
 
-Pour le lancement, vous pouvez créer une application distincte qui prend en charge l’utilisation de COM. L’exemple suivant montre le code C++ pour le lancement avec l’activation de lancement dans un programme de lancement. Grâce à ce code, vous pouvez créer un objet **ApplicationActivationManager** et appeler **ActivateApplication** en passant l’ID de modèle utilisateur de l’application trouvé précédemment et les arguments. Pour plus d’informations sur les autres paramètres, voir [Méthode IApplicationActivationManager::ActivateApplication (MSDN)](https://msdn.microsoft.com/library/windows/desktop/hh706903(v=vs.85).aspx).
+Pour le lancement, vous pouvez créer une application distincte qui prend en charge l’utilisation de COM. L’exemple suivant montre le code C++ pour le lancement avec l’activation de lancement dans un programme de lancement. Grâce à ce code, vous pouvez créer un objet **ApplicationActivationManager** et appeler **ActivateApplication** en passant l’ID de modèle utilisateur de l’application trouvé précédemment et les arguments. Pour plus d’informations sur les autres paramètres, voir [Méthode IApplicationActivationManager::ActivateApplication (MSDN)](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iapplicationactivationmanager-activateapplication).
 
 ```
 #include <ShObjIdl.h>

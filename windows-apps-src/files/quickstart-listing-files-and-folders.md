@@ -12,11 +12,11 @@ dev_langs:
 - cpp
 - vb
 ms.openlocfilehash: b561e08227664f723802ffc0ee3f0e16bc34a5cc
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57613924"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63810730"
 ---
 # <a name="enumerate-and-query-files-and-folders"></a>Énumérer et interroger des fichiers et dossiers
 
@@ -25,24 +25,24 @@ Accédez aux fichiers et dossiers dans un dossier, une bibliothèque, un apparei
 Pour obtenir des conseils sur le stockage des données de votre application de plateforme Windows universelle, consultez la classe [ApplicationData](/uwp/api/windows.storage.applicationdata).
 
 > [!NOTE]
-> Pour obtenir un exemple complet, consultez la [exemple d’énumération de dossier](https://go.microsoft.com/fwlink/p/?linkid=619993).
+> Pour un exemple complet, consultez l'[Exemple d'énumération de dossier](https://go.microsoft.com/fwlink/p/?linkid=619993).
 
 ## <a name="prerequisites"></a>Conditions préalables
 
--   **Comprendre la programmation asynchrone pour les applications de plateforme universelle Windows (UWP)**
+-   **Comprendre la programmation asynchrone pour les applications pour la plateforme Windows universelle (UWP)**
 
-    Pour apprendre à écrire des applications asynchrones en C# ou Visual Basic, voir [Appeler des API asynchrones en C# ou Visual Basic](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). Pour savoir comment écrire des applications asynchrones en C++ / c++ / WinRT, consultez [concurrence et des opérations asynchrones avec C / c++ / WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency). Pour apprendre à écrire des applications asynchrones en C / c++ / CX, consultez [programmation asynchrone en C++ / c++ / CX](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
+    Pour apprendre à écrire des applications asynchrones en C# ou Visual Basic, voir [Appeler des API asynchrones en C# ou Visual Basic](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). Pour apprendre à écrire des applications asynchrones en C++/WinRT, consultez [Opérations concurrentes et asynchrones avec C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency). Pour apprendre à écrire des applications asynchrones en C++/CX, consultez [Programmation asynchrone en C++/CX](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
 
--   **Autorisations d’accès à l’emplacement**
+-   **Autorisations d'accès à l'emplacement**
 
     Par exemple, le code de ces exemples nécessite la fonctionnalité **picturesLibrary**, mais votre emplacement peut avoir besoin d’une autre fonctionnalité, voire d’aucune. Pour en savoir plus, voir [Autorisations d’accès aux fichiers](file-access-permissions.md).
 
 ## <a name="enumerate-files-and-folders-in-a-location"></a>Énumérer les fichiers et dossiers dans un emplacement
 
 > [!NOTE]
-> N’oubliez pas de déclarer la **picturesLibrary** fonctionnalité.
+> N'oubliez pas de déclarer la fonctionnalité **picturesLibrary**.
 
-Dans cet exemple nous utilisons tout d’abord le [ **StorageFolder.GetFilesAsync** ](/uwp/api/windows.storage.storagefolder.getfilesasync) méthode pour obtenir tous les fichiers dans le dossier racine de la [ **KnownFolders.PicturesLibrary** ](/uwp/api/windows.storage.knownfolders.pictureslibrary) (pas dans les sous-dossiers) et indiquez le nom de chaque fichier. Ensuite, nous utilisons le [ **StorageFolder.GetFoldersAsync** ](/uwp/api/windows.storage.storagefolder.getfoldersasync) méthode pour obtenir tous les sous-dossiers le **PicturesLibrary** et indiquez le nom de chaque sous-dossier.
+Dans cet exemple, nous utilisons d'abord la méthode [**StorageFolder.GetFilesAsync**](/uwp/api/windows.storage.storagefolder.getfilesasync) pour obtenir tous les fichiers figurant dans le dossier racine de [**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary) (mais pas dans les sous-dossiers) et obtenir le nom de chaque fichier. Puis nous utilisons la méthode [**StorageFolder.GetFoldersAsync**](/uwp/api/windows.storage.storagefolder.getfoldersasync) pour obtenir tous les sous-dossiers figurant dans **PicturesLibrary** et obtenir le nom de chaque sous-dossier.
 
 ```csharp
 StorageFolder picturesFolder = KnownFolders.PicturesLibrary;
@@ -175,9 +175,9 @@ Next folder
 ```
 
 > [!NOTE]
-> En C# ou Visual Basic, n’oubliez pas de placer le mot-clé **async** dans la déclaration de toutes les méthodes dans lesquelles vous utilisez l’opérateur **await**.
+> En C# ou Visual Basic, n'oubliez pas de placer le mot-clé **async** dans la déclaration de toutes les méthodes dans lesquelles vous utilisez l'opérateur **await**.
 
-Vous pouvez également utiliser le [ **StorageFolder.GetItemsAsync** ](/uwp/api/windows.storage.storagefolder.getitemsasync) méthode pour obtenir tous les éléments (fichiers et sous-dossiers) dans un emplacement particulier. L’exemple suivant utilise le **GetItemsAsync** méthode pour obtenir tous les fichiers et sous-dossiers du dossier racine de la [ **KnownFolders.PicturesLibrary** ](/uwp/api/windows.storage.knownfolders.pictureslibrary) (pas dans les sous-dossiers). L’exemple affiche ensuite le nom de chaque fichier et sous-dossier. Si l’élément est un sous-dossier, l’exemple ajoute `"folder"` au nom.
+Vous pouvez aussi utiliser la méthode [**StorageFolder.GetItemsAsync**](/uwp/api/windows.storage.storagefolder.getitemsasync) pour obtenir tous les éléments (fichiers et sous-dossiers) figurant dans un emplacement particulier. L'exemple suivant utilise la méthode **GetItemsAsync** pour obtenir tous les fichiers et sous-dossiers figurant dans le dossier racine de [**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary) (mais pas dans les sous-dossiers). L’exemple affiche ensuite le nom de chaque fichier et sous-dossier. Si l’élément est un sous-dossier, l’exemple ajoute `"folder"` au nom.
 
 ```csharp
 StorageFolder picturesFolder = KnownFolders.PicturesLibrary;
@@ -280,7 +280,7 @@ Next item
 
 ## <a name="query-files-in-a-location-and-enumerate-matching-files"></a>Interroger les fichiers figurant dans un emplacement et énumérer les fichiers correspondants
 
-Dans cet exemple, nous interrogeons pour tous les fichiers dans le [ **KnownFolders.PicturesLibrary** ](/uwp/api/windows.storage.knownfolders.pictureslibrary) regroupées par mois, et cette fois le récursivement exemple dans des sous-dossiers. Tout d’abord, nous appelons la méthode [**StorageFolder.CreateFolderQuery**](/uwp/api/windows.storage.storagefolder.createfolderquery) et transmettons la valeur [**CommonFolderQuery.GroupByMonth**](/uwp/api/windows.storage.search.commonfolderquery) à la méthode. Nous obtenons ainsi un objet [**StorageFolderQueryResult**](/uwp/api/windows.storage.search.storagefolderqueryresult).
+Dans cet exemple, nous interrogeons tous les fichiers figurant dans [**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary), regroupés par mois, et cette fois, l'exemple effectue une recherche dans les sous-dossiers. Tout d’abord, nous appelons la méthode [**StorageFolder.CreateFolderQuery**](/uwp/api/windows.storage.storagefolder.createfolderquery) et transmettons la valeur [**CommonFolderQuery.GroupByMonth**](/uwp/api/windows.storage.search.commonfolderquery) à la méthode. Nous obtenons ainsi un objet [**StorageFolderQueryResult**](/uwp/api/windows.storage.search.storagefolderqueryresult).
 
 Ensuite, nous appelons la méthode [**StorageFolderQueryResult.GetFoldersAsync**](/uwp/api/windows.storage.search.storagefolderqueryresult.getfoldersasync) qui retourne des objets [**StorageFolder**](/uwp/api/windows.storage.storagefolder) représentant des dossiers virtuels. Dans ce cas, nous regroupons par mois, de sorte que chaque dossier virtuel représente un groupe de fichiers du même mois.
 

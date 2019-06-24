@@ -5,18 +5,18 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, animation
 ms.localizationpriority: medium
-ms.openlocfilehash: 118b3f6e306e60d1d8d569f0d58f2d77ea30d9a8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 25b0732b7c29653d18f0e018698ab4b6398d402a
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57635064"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318074"
 ---
 # <a name="enhance-existing-scrollviewer-experiences"></a>Améliorer les expériences ScrollViewer existantes
 
 Cet article explique comment utiliser un ScrollViewer XAML et des ExpressionAnimations pour créer des expériences dynamiques de mouvement piloté par une entrée.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 À ce stade, nous partons du principe que vous êtes familiarisé avec les concepts abordés dans les articles suivants :
 
@@ -61,7 +61,7 @@ Procédure générale de prise en main :
 
 ## <a name="example"></a>Exemple
 
-Examinons comment l’exemple de parallaxe ci-dessus est élaboré. Pour référence, tout le code source de l’application se trouve dans le [référentiel Windows UI Dev Labs sur GitHub](https://github.com/Microsoft/WindowsUIDevLabs).
+Examinons comment l’exemple de parallaxe ci-dessus est élaboré. Pour référence, tout le code source de l’application se trouve dans le [référentiel Windows UI Dev Labs sur GitHub](https://github.com/microsoft/WindowsCompositionSamples).
 
 La première étape consiste à obtenir une référence au ScrollManipulationPropertySet.
 

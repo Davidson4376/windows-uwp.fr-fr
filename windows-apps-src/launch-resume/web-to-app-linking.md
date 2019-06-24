@@ -6,12 +6,12 @@ ms.date: 08/25/2017
 ms.topic: article
 ms.assetid: 260cf387-88be-4a3d-93bc-7e4560f90abc
 ms.localizationpriority: medium
-ms.openlocfilehash: c638eb843528cc17a3f02233ef5f238264eb58a0
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 0d8550d346833559ccea1e8aea4ae73a8c6d4e7c
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370525"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318661"
 ---
 # <a name="enable-apps-for-websites-using-app-uri-handlers"></a>Activer les applications pour les sites web à l’aide de gestionnaires d’URI d’application
 
@@ -191,7 +191,7 @@ Si vous souhaitez suivre la logique d’activation du protocole, définissez un 
 - Votre fichier JSON doit être téléchargé sur un serveur https.
 - Si vous devez modifier les chemins d’accès que vous souhaitez prendre en charge, vous pouvez republier votre fichier JSON sans avoir à republier votre application. Les utilisateurs verront ces modifications dans un délai de 1 à 8 jours.
 - Toutes les applications chargées de manière indépendante avec AppUriHandlers auront des liens validés pour l’hôte au moment de l’installation. Il est inutile de charger un fichier JSON pour tester la fonctionnalité.
-- Cette fonctionnalité est toujours disponible si votre application est une application UWP lancée avec [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) ou une application de bureau Windows lancée avec [ShellExecuteEx](https://msdn.microsoft.com/library/windows/desktop/bb762154(v=vs.85).aspx). Si l’URL correspond à un gestionnaire d’URI d’application enregistré, l’application sera lancée en lieu et place du navigateur.
+- Cette fonctionnalité est toujours disponible si votre application est une application UWP lancée avec [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) ou une application de bureau Windows lancée avec [ShellExecuteEx](https://docs.microsoft.com/windows/desktop/api/shellapi/nf-shellapi-shellexecuteexa). Si l’URL correspond à un gestionnaire d’URI d’application enregistré, l’application sera lancée en lieu et place du navigateur.
 
 ## <a name="see-also"></a>Voir aussi
 

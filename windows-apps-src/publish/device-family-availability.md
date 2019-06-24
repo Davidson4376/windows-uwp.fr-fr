@@ -5,12 +5,12 @@ ms.date: 03/21/2019
 ms.topic: article
 keywords: windows 10, uwp, packages, télécharger, disponibilité famille d’appareils
 ms.localizationpriority: medium
-ms.openlocfilehash: af2152eb8d174f6d2e40e20c8cdaccd0e87605bb
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 088fb859ae38e608182b22b94300b9c27063054e
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63787094"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320019"
 ---
 # <a name="device-family-availability"></a>Disponibilité de la famille d’appareils
 
@@ -30,7 +30,7 @@ Les packages ciblant la famille d’appareils Windows.Universal peuvent s’exé
 
 Vous pouvez décocher la case en regard d’une famille d’appareils Windows 10 si vous ne souhaitez pas proposer la soumission aux clients sur ce type d’appareils. Si la case associée à une famille d’appareils est décochée, les nouveaux clients sur ce type d’appareils ne pourront pas acquérir l’application (bien que les clients qui possèdent déjà l’application puissent toujours l’utiliser, et bénéficient des mises à jour soumises).
 
-Si votre application les prend en charge, nous vous recommandons de conserver toutes les cases cochées, sauf si vous avez une raison spécifique de limiter les types d’appareils Windows 10 pouvant acquérir votre application. Par exemple, si vous savez que votre application n’offre pas une bonne expérience sur [Surface Hub](https://developer.microsoft.com/windows/surfacehub) et/ou [Microsoft HoloLens](https://developer.microsoft.com/windows/mixed-reality), vous pouvez décocher la case **Windows 10 Collaboration** et/ou **Windows 10 Holographique**. Cela empêche tout nouveau client d’acquérir l’application sur ces appareils. Si vous estimez ultérieurement être prêt à proposer l’application à ces clients, vous pouvez créer une soumission en activant ces cases à cocher.
+Si votre application les prend en charge, nous vous recommandons de conserver toutes les cases cochées, sauf si vous avez une raison spécifique de limiter les types d’appareils Windows 10 pouvant acquérir votre application. Par exemple, si vous savez que votre application n’offre pas une bonne expérience sur [Surface Hub](https://developer.microsoft.com/windows/surfacehub) et/ou [Microsoft HoloLens](https://developer.microsoft.com/mixed-reality), vous pouvez décocher la case **Windows 10 Collaboration** et/ou **Windows 10 Holographique**. Cela empêche tout nouveau client d’acquérir l’application sur ces appareils. Si vous estimez ultérieurement être prêt à proposer l’application à ces clients, vous pouvez créer une soumission en activant ces cases à cocher.
 
 <span id="xbox" />
 
@@ -53,14 +53,14 @@ Si votre soumission d’une application précédemment publiée inclut des packa
 > [!IMPORTANT]
 > Pour empêcher complètement une famille de périphériques Windows 10 spécifique à partir de l’obtention de votre soumission, mettre à jour le [ **TargetDeviceFamily** ](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) élément dans votre manifeste pour cibler uniquement la famille de périphériques que vous souhaitez prise en charge (par exemple, Windows.Mobile ou Windows.Desktop), plutôt que de laisser en tant que la valeur Windows.Universal (pour la famille de périphériques universelle) que Microsoft Visual Studio inclut dans le manifeste par défaut.
 
-Il est important de savoir que les sélections que vous effectuez dans la section **Disponibilité de la famille d’appareils** s’appliquent uniquement aux nouvelles acquisitions. Quiconque disposant déjà de votre application peut continuer à l’utiliser et obtenir les mises à jour que vous soumettez, même si vous supprimez sa famille d’appareils ici. Cela s’applique même aux clients ayant acquis votre application avant la mise à niveau vers Windows 10. Par exemple, si vous avez une application publiée avec les packages de Windows Phone 8.1, et que vous ajoutez un package de Windows 10 (UWP) ciblant la famille de périphériques Windows.Universal, les clients mobiles Windows 10 qui disposaient de votre package de Windows Phone 8.1 sont proposés une mise à jour pour cette Windows Package de 10 (UWP), même si vous avez désactivé la case à **Windows 10 Mobile**.
+Il est important de savoir que les sélections que vous effectuez dans la section **Disponibilité de la famille d’appareils** s’appliquent uniquement aux nouvelles acquisitions. Quiconque disposant déjà de votre application peut continuer à l’utiliser et obtenir les mises à jour que vous soumettez, même si vous supprimez sa famille d’appareils ici. Cela s’applique même aux clients ayant acquis votre application avant la mise à niveau vers Windows 10. Par exemple, si vous avez une application publiée avec les packages de Windows Phone 8.1, et que vous ajoutez un package de Windows 10 (UWP) ciblant la famille de périphériques Windows.Universal, les clients mobiles Windows 10 qui disposaient de votre package de Windows Phone 8.1 sont proposés une mise à jour pour cette Windows Package de 10 (UWP), même si vous avez désactivé la case à **Windows 10 Mobile**.
 
 Pour plus d’informations sur les familles d’appareils, voir [**Vue d’ensemble des familles d’appareils**](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview).
 
 
 ## <a name="understanding-ranking"></a>Compréhension du classement
 
-À part ce qui vous permet d’indiquer les familles d’appareils Windows 10 peuvent télécharger vos envois, le **disponibilité famille du périphérique** section affiche les packages qui seront apportées à des familles d’appareils différents. Si vous possédez plusieurs packages pouvant s’exécuter sur une famille d’appareils spécifique, le tableau indique l’ordre de proposition des packages, en fonction de leur numéro de version. Pour plus d’informations sur le classement des packages en fonction de leur numéro de version, consultez la section [Numérotation des versions de packages](package-version-numbering.md). 
+À part ce qui vous permet d’indiquer les familles d’appareils Windows 10 peuvent télécharger vos envois, le **disponibilité famille du périphérique** section affiche les packages qui seront apportées à des familles d’appareils différents. Si vous possédez plusieurs packages pouvant s’exécuter sur une famille d’appareils spécifique, le tableau indique l’ordre de proposition des packages, en fonction de leur numéro de version. Pour plus d’informations sur la façon dont le Store classe les packages en fonction de leur numéro de version, consultez la section [Numérotation des versions de packages](package-version-numbering.md). 
 
 Par exemple, que vous disposez de deux packages : Package_A.appxupload et Package_B.appxupload. Pour une famille d’appareils donnée, si Package_A.appxupload est classé au premier rang et que Package_B.appxupload est classé au second rang, lorsqu’un client sur ce type d’appareil acquiert votre application, le Windows Store tentera dans un premier temps d’offrir Package_A.appxupload. Si l’appareil du client n’est pas en mesure d’exécuter Package_A.appxupload, le Windows Store propose Package_B.appxupload. Si l’appareil de client ne peut pas exécuter n’importe laquelle des packages pour cette famille de périphériques (par exemple, si le **MinVersion** votre application prend en charge est supérieure à la version sur l’appareil de client), puis le client ne sera en mesure de télécharger l’application sur Cet appareil.
 

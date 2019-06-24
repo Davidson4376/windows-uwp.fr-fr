@@ -6,12 +6,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
-ms.openlocfilehash: 57f8d7d57c016c015d01e80b07fc0e2c0260ef7f
-ms.sourcegitcommit: 46890e7f3c1287648631c5e318795f377764dbd9
+ms.openlocfilehash: f069899da69e4689e21fa578ff7124fbaf453ea3
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58320612"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317725"
 ---
 # <a name="load-images-and-assets-tailored-for-scale-theme-high-contrast-and-others"></a>Charger des images et des ressources adaptées pour la mise à l’échelle, le thème, le contraste élevé et autres
 Votre application peut charger des fichiers de ressources d’image (ou d’autres fichiers de ressources) adaptés pour le [facteur d’échelle de l’affichage](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md), le thème, le contraste élevé et d’autres contextes d’exécution. Ces images peuvent être référencées à partir du code impératif ou à partir du balisage XAML, par exemple en tant que propriété **Source** d’une **Image**. Elles peuvent également apparaître dans le fichier source de votre manifeste de votre package d’application (fichier `Package.appxmanifest`) &mdash; par exemple, en tant que la valeur de l’icône Application sur l’onglet Actifs visuels du Concepteur de manifeste de Visual Studio &mdash; ou sur vos vignettes et toasts. En utilisant des qualificateurs pour les noms de fichiers de vos images et, si nécessaire, en les chargeant de manière dynamique à l’aide d’un [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live), il est possible de charger le fichier image le plus approprié, correspondant le mieux aux paramètres d’exécution de l’utilisateur pour l’échelle de l’affichage, le thème, le contraste élevé, la langue et d’autres contextes.
@@ -86,7 +86,7 @@ Le schéma `ms-appx-web` accède aux mêmes fichiers que `ms-appx`, mais dans le
 this.myXAMLWebViewElement.Source = new Uri("ms-appx-web:///Pages/default.html");
 ```
 
-Pour tous les scénarios illustrés dans ces exemples, utilisez la surcharge de [constructeur Uri](https://docs.microsoft.com/en-us/dotnet/api/system.uri.-ctor?view=netcore-2.0#System_Uri__ctor_System_String_) qui déduit le [UriKind](https://docs.microsoft.com/en-us/dotnet/api/system.urikind). Spécifiez un URI absolu valide, y compris le schéma et l’autorité, ou laissez l’autorité accéder par défaut au package de l’application comme dans l’exemple ci-dessus.
+Pour tous les scénarios illustrés dans ces exemples, utilisez la surcharge de [constructeur Uri](https://docs.microsoft.com/en-us/dotnet/api/system.uri.-ctor?view=netcore-2.0#System_Uri__ctor_System_String_) qui déduit le [UriKind](https://docs.microsoft.com/dotnet/api/system.urikind?view=netframework-4.8). Spécifiez un URI absolu valide, y compris le schéma et l’autorité, ou laissez l’autorité accéder par défaut au package de l’application comme dans l’exemple ci-dessus.
 
 Notez comment dans ces exemples d’URI, le schéma (« `ms-appx` » ou « `ms-appx-web` ») est suivi de « `://` », lui-même suivi d’un chemin d’accès absolu. Dans un chemin d’accès absolu, le caractère « `/` » de début indique que le chemin d’accès doit être interprété à partir de la racine du package.
 
@@ -211,7 +211,7 @@ private void RefreshUIImages()
 ## <a name="related-topics"></a>Rubriques connexes
 * [Adapter vos ressources de langue, mise à l’échelle et autres qualificateurs](tailor-resources-lang-scale-contrast.md)
 * [Localiser les chaînes dans l’interface utilisateur et le manifeste du package d’application](localize-strings-ui-manifest.md)
-* [Store et de récupérer les paramètres et autres données d’application](../design/app-settings/store-and-retrieve-app-data.md)
+* [Stocker et récupérer des paramètres et autres données d’application](../design/app-settings/store-and-retrieve-app-data.md)
 * [La prise en charge de vignette et toast de langage, de mise à l’échelle et de contraste élevé](tile-toast-language-scale-contrast.md)
 * [Éléments de manifeste localisables](/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10?branch=live)
 * [Mise en miroir des images](../design/globalizing/adjust-layout-and-fonts--and-support-rtl.md#mirroring-images)

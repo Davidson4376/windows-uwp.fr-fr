@@ -5,12 +5,12 @@ ms.date: 06/28/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 08acb2972469a84e6a37d7293ed00cae8df94dfb
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 58bf8df4551c8bcfc663d2c832bef3a879ff6350
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57611534"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317976"
 ---
 # <a name="adding-my-people-support-to-an-application"></a>Ajout de la prise en charge de Mes Contacts à une application
 
@@ -23,13 +23,13 @@ La fonctionnalité Mes contacts permet aux utilisateurs d’épingler les contac
 + Windows 10 et Microsoft Visual Studio 2017. Pour en savoir plus sur l’installation, voir [Prendre en main Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
 + Connaissances de base de C# ou d’un langage de programmation orienté objet similaire. Pour vous familiariser avec C#, voir [Créer une application « Hello, world »](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
 
-## <a name="overview"></a>Vue d’ensemble
+## <a name="overview"></a>Vue d'ensemble
 
 Il y a trois choses à faire pour activer votre application afin d’utiliser la fonctionnalité Mes contacts :
 
 1. [Déclarer la prise en charge pour le contrat d’activation shareTarget dans votre manifeste d’application.](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
 2. [Annoter les contacts que les utilisateurs peuvent partager à l’aide de votre application.](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
-3.  Prendre en charge plusieurs instances de votre application en cours d’exécution en même temps. Les utilisateurs doivent pouvoir interagir avec une version complète de votre application lors de son utilisation dans un volet de contact.  Ils peuvent même l’utiliser dans plusieurs volets de contact à la fois.  Pour ce faire, votre application doit être en mesure d’exécuter plusieurs vues simultanément. Pour savoir comment procéder, consultez l’article [« afficher plusieurs vues d’une application »](https://docs.microsoft.com/en-us/windows/uwp/layout/show-multiple-views).
+3.  Prendre en charge plusieurs instances de votre application en cours d’exécution en même temps. Les utilisateurs doivent pouvoir interagir avec une version complète de votre application lors de son utilisation dans un volet de contact.  Ils peuvent même l’utiliser dans plusieurs volets de contact à la fois.  Pour ce faire, votre application doit être en mesure d’exécuter plusieurs vues simultanément. Pour savoir comment procéder, consultez l’article [« afficher plusieurs vues d’une application »](https://docs.microsoft.com/windows/uwp/design/layout/show-multiple-views).
 
 Lorsque vous avez terminé, votre application s’affiche dans le volet de contact pour les contacts annotés.
 
@@ -179,7 +179,7 @@ L’objet ContactPanel vous permet également de définir la couleur d’arrièr
 
 ## <a name="supporting-notification-badging"></a>Prise en charge des badges de notification
 
-Si vous souhaitez que les contacts épinglés à la barre des tâches reçoivent un badge lors de l’arrivée de nouvelles notifications liées à cette personne depuis votre application, vous devez inclure le paramètre **hint-personnes** dans vos [notifications toast](https://docs.microsoft.com/en-us/windows/uwp/shell/tiles-and-notifications/adaptive-interactive-toasts) et vos [Notifications de mes contacts](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-notifications) expressives.
+Si vous souhaitez que les contacts épinglés à la barre des tâches reçoivent un badge lors de l’arrivée de nouvelles notifications liées à cette personne depuis votre application, vous devez inclure le paramètre **hint-personnes** dans vos [notifications toast](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts) et vos [Notifications de mes contacts](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-notifications) expressives.
 
 ![Badge de notification de contacts](images/my-people-badging.png)
 
@@ -248,7 +248,7 @@ async Task PinMultipleContacts(Contact[] contacts)
 
 **Remarque :** 
 
-## <a name="see-also"></a>Voir également
+## <a name="see-also"></a>Voir aussi
 + [Partage de Mes Contacts](my-people-sharing.md)
 + [Mes notifications de personnes](my-people-notifications.md)
 + [Vidéo Channel 9 sur l’ajout de personnes de mon prennent en charge à une application](https://channel9.msdn.com/Events/Build/2017/P4056)

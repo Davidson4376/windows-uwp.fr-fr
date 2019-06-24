@@ -5,12 +5,12 @@ ms.date: 10/03/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 16b75226d6b79b19978ddf7e37231b15ac7a4e3e
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.openlocfilehash: 344ee7060edcee3376e271fc21e104490d8724d7
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65984166"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319709"
 ---
 # <a name="move-from-a-desktop-application-to-uwp"></a>Déplacer à partir d’une application de bureau vers UWP
 
@@ -18,15 +18,15 @@ Si vous avez une application de bureau existante qui a été créée à l’aide
 
 ## <a name="package-your-desktop-application-in-an-msix-package"></a>Empaqueter votre application de bureau dans un package MSIX
 
-Vous pouvez empaqueter votre application de bureau dans un package MSIX pour accéder à beaucoup d’autres fonctionnalités Windows 10. MSIX est un format de package d’une application de Windows modern qui fournit une expérience d’empaquetage universelle pour toutes les applications Windows, y compris les applications UWP, WPF, Windows Forms et Win32. Empaquetage de vos applications de bureau Windows dans les packages MSIX obtient vous accéder à une installation robuste et de mise à jour d’expérience, une sécurité gérée de modèle avec un système de capacité flexible, la prise en charge pour le Microsoft Store, gestion d’entreprise et nombreuses personnalisée modèles de distribution. Vous pouvez empaqueter votre application si vous avez le code source ou si vous disposez uniquement d’un fichier programme d’installation (par exemple, un programme d’installation MSI ou App-V). Une fois que vous empaquetez votre application, vous pouvez intégrer des fonctionnalités UWP telles que les extensions de package et d’autres composants UWP.
+Vous pouvez empaqueter votre application de bureau dans un package MSIX pour accéder à beaucoup d’autres fonctionnalités Windows 10. MSIX est un format de package d’application Windows moderne qui permet de créer des packages universels pour toutes les applications Windows, notamment les applications UWP, WPF, Windows Forms et Win32. En empaquetant vos applications de bureau Windows dans des packages MSIX, vous avez accès à une expérience d’installation et de mise à jour fiable, à un modèle de sécurité managé avec un système de capacité flexible, à un support pour le Microsoft Store, à la gestion d’entreprise et à de nombreux modèles de distribution personnalisés. Vous pouvez empaqueter votre application si vous avez le code source ou si vous disposez uniquement d’un fichier programme d’installation (par exemple, un programme d’installation MSI ou App-V). Une fois que vous empaquetez votre application, vous pouvez intégrer des fonctionnalités UWP telles que les extensions de package et d’autres composants UWP.
 
 Pour plus d’informations, consultez [empaqueter des applications de bureau (Desktop Bridge)](/windows/msix/desktop/desktop-to-uwp-root) et [fonctionnalités qui nécessitent l’identité du package](/windows/apps/desktop/modernize/modernize-packaged-apps).
 
 ## <a name="use-uwp-apis"></a>Utiliser les API UWP
 
-Vous pouvez appeler de nombreuses API UWP directement dans votre WPF, Windows Forms, ou C++ application de bureau Win32 à intégrer des expériences modernes autrement clair pour les utilisateurs de Windows 10. Par exemple, vous pouvez appeler des API UWP pour ajouter des notifications toast à votre application de bureau.
+Vous pouvez appeler de nombreuses API UWP directement dans votre application de bureau WPF, Windows Forms ou Win32 C++ afin d’apporter aux utilisateurs de Windows 10 des expériences modernes. Par exemple, vous pouvez appeler des API UWP pour ajouter des notifications toast à votre application de bureau.
 
-Pour plus d’informations, consultez [utilisez des API UWP dans les applications de bureau](/windows/apps/desktop/modernize/desktop-to-uwp-enhance).
+Pour plus d’informations, consultez [Utiliser des API UWP dans les applications de bureau](/windows/apps/desktop/modernize/desktop-to-uwp-enhance).
 
 ## <a name="migrate-a-net-framework-app-to-a-uwp-app"></a>Migrer un .NET Application Framework à une application UWP
 
@@ -234,12 +234,12 @@ Tout comme les applications UWP, le coût d’ajout d’une application Android 
 
 Tout d’abord, ajoutez un **Android**, **iOS** ou **interplateforme** à votre solution.
 
-Vous trouverez ces modèles dans la boîte de dialogue **Ajouter un nouveau projet** sous le groupe **Visual C#**.
+Vous trouverez ces modèles dans la boîte de dialogue **Ajouter un nouveau projet** sous le groupe **Visual C#** .
 
 ![Applications Xamarin](images/desktop-to-uwp/xamarin-projects.png)
 
 >[!NOTE]
->Les projets interplateformes sont parfaits pour les applications avec peu de fonctionnalités spécifiques à la plateforme. Vous pouvez les utiliser pour créer une interface utilisateur XAML native qui s’exécute sur iOS, Android et Windows. Pour en savoir plus, cliquez [ici](https://www.xamarin.com/forms).
+>Les projets interplateformes sont parfaits pour les applications avec peu de fonctionnalités spécifiques à la plateforme. Vous pouvez les utiliser pour créer une interface utilisateur XAML native qui s’exécute sur iOS, Android et Windows. Pour en savoir plus, cliquez [ici](https://docs.microsoft.com/xamarin/xamarin-forms/).
 
 Ensuite, à partir de votre projet Android, iOS ou interplateforme, ajoutez une référence au projet de bibliothèque de classes.
 
@@ -278,7 +278,7 @@ public class MainActivity : ListActivity
 }
 ```
 
-Pour vous familiariser avec les projets Android, iOS et interplateforme, voir le [portail des développeurs Xamarin](https://developer.xamarin.com/).
+Pour vous familiariser avec les projets Android, iOS et interplateforme, voir le [portail des développeurs Xamarin](https://docs.microsoft.com/xamarin).
 
 ## <a name="next-steps"></a>Étapes suivantes
 

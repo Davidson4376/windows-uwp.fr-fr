@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 3dprinting, impression 3d
 ms.localizationpriority: medium
-ms.openlocfilehash: 712efde0293edff6134309ac2d6d9105413a2877
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: e2ed99720afdccef297d46853d4a2445b497195e
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370426"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321697"
 ---
 # <a name="3d-printing-from-your-app"></a>Impression 3D à partir de votre application
 
@@ -54,7 +54,7 @@ Ajoutez un **TextBlock** pour le commentaire de l’interface utilisateur.
 ## <a name="get-the-3d-data"></a>Obtenir les données 3D
 
 
-La méthode par laquelle votre application acquiert les données de géométrie 3D à imprimer varie. Votre application peut récupérer les données à partir d’une analyse 3D, télécharger les données du modèle à partir d’une ressource Web ou générer un maillage 3D par programmation à l’aide de formules mathématiques ou de l’entrée utilisateur. Par souci de simplicité, ce guide montre comment charger un fichier de données 3D (d’un type de fichier courant) dans la mémoire du programme à partir d’un stockage de fichiers. La [bibliothèque de modèles 3D Builder](https://developer.microsoft.com/windows/hardware/3d-builder-model-library) fournit plusieurs modèles que vous pouvez facilement télécharger sur votre appareil.
+La méthode par laquelle votre application acquiert les données de géométrie 3D à imprimer varie. Votre application peut récupérer les données à partir d’une analyse 3D, télécharger les données du modèle à partir d’une ressource Web ou générer un maillage 3D par programmation à l’aide de formules mathématiques ou de l’entrée utilisateur. Par souci de simplicité, ce guide montre comment charger un fichier de données 3D (d’un type de fichier courant) dans la mémoire du programme à partir d’un stockage de fichiers. La [bibliothèque de modèles 3D Builder](https://developer.microsoft.com/windows/hardware/3d-print/windows-3d-printing) fournit plusieurs modèles que vous pouvez facilement télécharger sur votre appareil.
 
 Dans votre méthode `OnLoadClick`, utilisez la classe [**FileOpenPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker) pour charger un seul fichier dans la mémoire de votre application.
 
@@ -105,7 +105,7 @@ Ensuite, appelez **CreateTask**, à l’aide du délégué `sourceHandler` que v
 
 [!code-cs[CreateTask](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetCreateTask)]
 
-L’objet **Print3DTask** renvoyé est attribué à la variable de classe déclarée au début. Vous pouvez maintenant (éventuellement) utiliser cette référence pour gérer certains événements levés par la tâche.
+L’objet **Print3DTask** renvoyé est attribué à la variable de classe déclarée au début. Vous pouvez, si vous le souhaitez, utiliser cette référence pour gérer certains événements levés par la tâche.
 
 [!code-cs[Optional](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetOptional)]
 

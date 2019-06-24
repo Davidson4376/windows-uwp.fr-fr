@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, jeux, modèles, outils, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: a272c579fb3ead676fe76f16c33b70f557de4ed8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 090cb13faa00f55f5c611abc20f4ee9e90977113
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653764"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321179"
 ---
 # <a name="project-templates-and-tools-for-games"></a>Modèles de projet et outils pour les jeux
 
@@ -25,7 +25,7 @@ Pour commencer, vous devez disposer de Visual Studio.
 ## <a name="get-visual-studio"></a>Obtenir Visual Studio
 
 
-[Téléchargez et installez Microsoft Visual Studio 2015](https://www.visualstudio.com/vs-2015-product-editions).
+[Téléchargez et installez Microsoft Visual Studio 2015](https://visualstudio.microsoft.com/vs/).
 
 <table>
 <colgroup>

@@ -10,12 +10,12 @@ pm-contact: stmoy
 design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ec8778f590ba9b50c67209eaf4b80e2cbed2f16
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 7703f2dfac2eed6df1f59b8e1cdfa6371e240eb4
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66364811"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317100"
 ---
 # <a name="content-transition-animations"></a>Animations de transition de contenu
 
@@ -23,7 +23,7 @@ ms.locfileid: "66364811"
 
 Les animations de transition de contenu vous permettent de modifier le contenu d’une zone de l’écran tout en maintenant le conteneur ou l’arrière-plan constant. Le nouveau contenu apparaît. Si du contenu déjà à l’écran doit être remplacé, il disparaît.
 
-> **API importantes** : [**ContentThemeTransition class (XAML)** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.contentthemetransition.)
+> **API importantes** : [**ContentThemeTransition class (XAML)** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.contentthemetransition)
 
 ## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
 
@@ -38,13 +38,13 @@ Les animations de transition de contenu vous permettent de modifier le contenu d
 
 
 
-## <a name="related-articles"></a>Articles connexes
+## <a name="related-articles"></a>Articles associés
 
 **Pour les développeurs (XAML)**
 * [Vue d’ensemble des animations](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)
 * [Animer des transitions de contenu](https://docs.microsoft.com/previous-versions/windows/apps/jj649426(v=win.10))
 * [Démarrage rapide : Animation de votre interface utilisateur à l’aide de la bibliothèque d’animations](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
-* [**ContentThemeTransition class**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.contentthemetransition.)
+* [**ContentThemeTransition class**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.contentthemetransition)
 
  
 

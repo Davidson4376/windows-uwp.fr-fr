@@ -7,18 +7,18 @@ ms.topic: article
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 2c7332a3e1097a8e62576ae5920eb82c2bd5d2a6
-ms.sourcegitcommit: 423ff8f1fd791445e21cca534bcefe407251acf1
+ms.openlocfilehash: 20980562f73bca2087d4c0a6ee049c848404d6a6
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66251611"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319412"
 ---
 ![Notions de base de la conception](../images/downloads-2x.png)
 
 # <a name="design-toolkits-and-samples-for-uwp-apps"></a>Kits de ressources et exemples de conception pour les applications UWP
  
-Téléchargements relatifs à la conception et à l’interface utilisateur des applications Fluent Design/UWP. Pour obtenir des outils supplémentaires, tels que Visual Studio, consultez <a href="https://developer.microsoft.com/downloads">la page principale des téléchargements</a>. 
+Téléchargements relatifs à la conception et à l’interface utilisateur des applications Fluent Design/UWP. Pour obtenir des outils supplémentaires, tels que Visual Studio, consultez <a href="https://developer.microsoft.com/windows/downloads">la page principale des téléchargements</a>. 
 
 
 ## <a name="design-toolkits"></a>Outils de conception
@@ -131,4 +131,4 @@ Cet exemple offre une démonstration interactive de tous les contrôles XAML. I
 
 ## <a name="want-more-code"></a>Vous voulez plus de code ?
 
-Consultez la page d’exemples Windows pour obtenir la liste complète de tous nos exemples d’applications UWP. <a href="https://developer.microsoft.com/samples">Accédez au portail d’exemples</a>
+Consultez la page d’exemples Windows pour obtenir la liste complète de tous nos exemples d’applications UWP. <a href="https://developer.microsoft.com/windows/samples">Accédez au portail d’exemples</a>

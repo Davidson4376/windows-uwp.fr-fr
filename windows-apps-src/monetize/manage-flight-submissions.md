@@ -1,19 +1,19 @@
 ---
 ms.assetid: 2A454057-FF14-40D2-8ED2-CEB5F27E0226
 description: Utilisez ces méthodes dans l’API de soumission de Microsoft Store pour gérer les envois de vol de package pour les applications qui sont inscrits dans votre compte espace partenaires.
-title: Gérer les soumissions de versions d’évaluation de package
+title: Gérer les soumissions de versions d’évaluation du package
 ms.date: 04/16/2018
 ms.topic: article
 keywords: windows 10, uwp, API de soumission au Microsoft Store, soumissions de version d'évaluation
 ms.localizationpriority: medium
-ms.openlocfilehash: f89251a8bb19b01e2fbb8e4df104b3c08700d1a3
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 11fb2427ece0f0e37fb2a5f2759094d6e04930c8
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371474"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320149"
 ---
-# <a name="manage-package-flight-submissions"></a>Gérer les soumissions de versions d’évaluation de package
+# <a name="manage-package-flight-submissions"></a>Gérer les soumissions de versions d’évaluation du package
 
 L’API de soumission au Microsoft Store fournit des méthodes qui permettent de gérer les soumissions de versions d’évaluation de package, notamment les lancements de packages progressifs. Pour obtenir une présentation de l’API de soumission au Microsoft Store, notamment les conditions préalables à l’utilisation de l’API, voir [Créer et gérer des soumissions à l’aide des services au Microsoft Store](create-and-manage-submissions-using-windows-store-services.md).
 
@@ -77,7 +77,7 @@ Pour obtenir, créer, mettre à jour, valider ou supprimer une soumission de ver
 
 ## <a name="create-a-package-flight-submission"></a>Créer une soumission de version d’évaluation du package
 
-Pour créer une soumission pour une version d’évaluation de package, procédez comme suit.
+Pour créer une soumission pour une version d’évaluation du package, procédez comme suit.
 
 1. Si vous ne le n'avez pas encore fait, effectuez les conditions préalables décrites dans [créer et gérer les envois à l’aide des services de Microsoft Store](create-and-manage-submissions-using-windows-store-services.md), y compris l’association d’une application Azure AD avec votre compte espace partenaires et d’obtenir votre ID de client et la clé. Vous n’aurez à le faire qu’une seule fois. Une fois à votre disposition, l’ID client et la clé sont réutilisables chaque fois que vous avez besoin de créer un jeton d’accès Azure AD.  
 
@@ -92,7 +92,7 @@ Pour créer une soumission pour une version d’évaluation de package, procéde
     Le corps de la réponse contient une ressource de [soumission de version d'évaluation](#flight-submission-object) qui inclut l’ID de la nouvelle soumission, l’URI de signature d’accès partagé (SAS) pour le chargement de tous les packages de la soumission vers le Stockage Blob Azure, ainsi que les données de la nouvelle soumission (notamment toutes les descriptions et informations tarifaires).
 
     > [!NOTE]
-    > Un URI SAS permet d’accéder à une ressource sécurisée dans le stockage Azure sans besoin de clés de compte. Pour plus d’informations générales sur l’URI SAP et leur utilisation avec le stockage Blob Azure, consultez [Signatures d’accès partagé, partie 1 : Présentation du modèle SAP](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1) et [Signatures d’accès partagé, partie 2 : Créer et utiliser une signature d’accès partagé avec Blob storage](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/).
+    > Un URI SAS permet d’accéder à une ressource sécurisée dans le stockage Azure sans besoin de clés de compte. Pour plus d’informations générales sur l’URI SAP et leur utilisation avec le stockage Blob Azure, consultez [Signatures d’accès partagé, partie 1 : Présentation du modèle SAP](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/) et [Signatures d’accès partagé, partie 2 : Créer et utiliser une signature d’accès partagé avec Blob storage](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/).
 
 4. Si vous ajoutez de nouveaux packages pour la soumission, [préparez-les](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements) et ajoutez-les à une archive ZIP.
 
@@ -153,7 +153,7 @@ Pour plus d’informations, consultez notre [page StoreBroker sur GitHub](https:
 
 <span id="manage-gradual-package-rollout">
 
-## <a name="manage-a-gradual-package-rollout-for-a-package-flight-submission"></a>Gérer un lancement de package progressif pour une soumission de version d’évaluation de package
+## <a name="manage-a-gradual-package-rollout-for-a-package-flight-submission"></a>Gérer un lancement de packages progressif pour une soumission de version d’évaluation du package
 
 Vous pouvez publier progressivement les packages mis à jour d’une soumission de version d’évaluation de package pour un pourcentage des clients de votre application sur Windows 10. Cela vous permet de surveiller les commentaires et les données d’analyse des packages spécifiques et de vérifier l’adéquation de votre mise à jour avant de la déployer plus largement. Vous pouvez modifier le pourcentage de lancement (ou arrêter la mise à jour) d’une soumission publiée sans avoir à créer une nouvelle soumission. Pour plus d’informations, y compris les instructions pour savoir comment activer et gérer un déploiement de package progressive de partenaires, consultez [cet article](../publish/gradual-package-rollout.md).
 
@@ -161,7 +161,7 @@ Pour activer par programmation un lancement de packages progressif pour une soum
 
   1. [Créez une soumission de version d’évaluation du package](create-a-flight-submission.md) ou [récupérez une soumission de version d’évaluation du package](get-a-flight-submission.md).
   2. Dans les données de réponse, localisez la ressource [packageRollout](#package-rollout-object), définissez le champ *isPackageRollout* sur true, puis définissez le champ *packageRolloutPercentage* sur le pourcentage des clients de votre application qui doivent obtenir les packages mis à jour.
-  3. Communiquez les données de soumission de la version d’évaluation du package à la méthode [Mettre à jour une soumission de version d’évaluation de package](update-a-flight-submission.md).
+  3. Communiquez les données de soumission de la version d’évaluation du package à la méthode [Mettre à jour une soumission de version d’évaluation du package](update-a-flight-submission.md).
 
 Après avoir activé un lancement de packages progressif pour une soumission de version d’évaluation du package, vous pouvez utiliser les méthodes suivantes pour obtenir, mettre à jour, arrêter ou finaliser le lancement progressif par programmation.
 
@@ -259,12 +259,12 @@ Cette ressource a les valeurs suivantes.
 |------------|--------|------------------------------|
 | id            | chaîne  | ID de la soumission.  |
 | flightId           | chaîne  |  ID de la version d’évaluation du package auquel la soumission est associée.  |  
-| status           | chaîne  | État de la soumission. Les valeurs possibles sont les suivantes : <ul><li>Aucune</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publication</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>   |
+| status           | chaîne  | État de la soumission. Les valeurs possibles sont les suivantes : <ul><li>Aucun(e)</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publication</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>   |
 | statusDetails           | objet  |  [Ressource des détails d’état](#status-details-object) qui contient des détails supplémentaires sur l’état de la soumission, notamment des informations sur les éventuelles erreurs.  |
-| flightPackages           | tableau  | Contient des [ressources de package de version d’évaluation](#flight-package-object) qui fournissent des détails sur chaque package de la soumission.   |
+| flightPackages           | array  | Contient des [ressources de package de version d’évaluation](#flight-package-object) qui fournissent des détails sur chaque package de la soumission.   |
 | packageDeliveryOptions    | objet  | [Ressource des options de remise du package](#package-delivery-options-object) qui contient les paramètres de lancement de packages progressif et de mise à jour obligatoire de la soumission.   |
 | fileUploadUrl           | chaîne  | URI de la signature d’accès partagé (SAS) pour le chargement des packages de la soumission. Si vous ajoutez de nouveaux packages à la soumission, chargez l’archive ZIP contenant les packages vers cet URI. Pour plus d’informations, voir [Créer une soumission de version d’évaluation de package](#create-a-package-flight-submission).  |
-| targetPublishMode           | chaîne  | Mode de publication pour la soumission. Les valeurs possibles sont les suivantes : <ul><li>Immediate</li><li>Manuelle</li><li>SpecificDate</li></ul> |
+| targetPublishMode           | chaîne  | Mode de publication pour la soumission. Les valeurs possibles sont les suivantes : <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
 | targetPublishDate           | chaîne  | Date de publication de la soumission au format ISO 8601, si le paramètre *targetPublishMode* a la valeur SpecificDate.  |
 | notesForCertification           | chaîne  |  Fournit des informations supplémentaires aux testeurs de certification, telles que les informations d’identification du compte de test et les étapes permettant d’accéder aux fonctionnalités et de les vérifier. Pour plus d’informations, voir [Notes de certification](https://docs.microsoft.com/windows/uwp/publish/notes-for-certification). |
 
@@ -276,7 +276,7 @@ Cette ressource contient des détails supplémentaires sur l’état d’une sou
 
 | Value           | type    | Description                   |
 |-----------------|---------|------|
-|  erreurs               |    objet     |   Tableau des [ressources des détails d’état](#status-detail-object) qui contiennent les détails d’erreur de la soumission.   |     
+|  errors               |    objet     |   Tableau des [ressources des détails d’état](#status-detail-object) qui contiennent les détails d’erreur de la soumission.   |     
 |  warnings               |   objet      | Tableau des [ressources des détails d’état](#status-detail-object) qui contiennent les détails d’avertissement de la soumission.     |
 |  certificationReports               |     objet    |   Tableau des [ressources de rapport de certification](#certification-report-object) qui donnent accès aux données du rapport de certification de la soumission. Vous pouvez examiner ces rapports pour obtenir plus d’informations en cas d’échec de la certification.    |  
 
@@ -336,21 +336,21 @@ Cette ressource a les valeurs suivantes.
 | Value           | type    | Description              |
 |-----------------|---------|------|
 | fileName   |   chaîne      |  Nom du package.    |  
-| fileStatus    | chaîne    |  État du package. Les valeurs possibles sont les suivantes : <ul><li>Aucune</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>    |  
+| fileStatus    | chaîne    |  État du package. Les valeurs possibles sont les suivantes : <ul><li>Aucun(e)</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>    |  
 | id    |  chaîne   |  ID qui identifie de manière unique le package. Cette valeur est utilisée par les partenaires.   |     
 | version    |  chaîne   |  Version du package d’application. Pour plus d’informations, voir [Numérotation des versions de packages](https://docs.microsoft.com/windows/uwp/publish/package-version-numbering).   |   
 | architecture    |  chaîne   |  Architecture du package d’application (par exemple, ARM).   |     
-| languages    | tableau    |  Tableau des codes des langues prises en charge par l’application. Pour plus d’informations, voir [Langues prises en charge](https://docs.microsoft.com/windows/uwp/publish/supported-languages).    |     
-| capabilities    |  tableau   |  Tableau des fonctionnalités exigées par le package. Pour plus d’informations sur les fonctionnalités, voir [Déclarations des fonctionnalités d’application](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations).   |     
-| minimumDirectXVersion    |  chaîne   |  Version DirectX minimale prise en charge par le package d’application. Cette valeur peut être définie uniquement pour les applications qui ciblent Windows 8.x. Elle est ignorée pour les applications qui ciblent d’autres versions. Les valeurs possibles sont les suivantes : <ul><li>Aucune</li><li>DirectX93</li><li>DirectX100</li></ul>   |     
-| minimumSystemRam    | chaîne    |  Mémoire RAM minimale exigée par le package d’application. Cette valeur peut être définie uniquement pour les applications qui ciblent Windows 8.x. Elle est ignorée pour les applications qui ciblent d’autres versions. Les valeurs possibles sont les suivantes : <ul><li>Aucune</li><li>Memory2GB</li></ul>   |    
+| languages    | array    |  Tableau des codes des langues prises en charge par l’application. Pour plus d’informations, voir [Langues prises en charge](https://docs.microsoft.com/windows/uwp/publish/supported-languages).    |     
+| capabilities    |  array   |  Tableau des fonctionnalités exigées par le package. Pour plus d’informations sur les fonctionnalités, voir [Déclarations des fonctionnalités d’application](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations).   |     
+| minimumDirectXVersion    |  chaîne   |  Version DirectX minimale prise en charge par le package d’app. Cette valeur peut être définie uniquement pour les applications qui ciblent Windows 8.x. Elle est ignorée pour les applications qui ciblent d’autres versions. Les valeurs possibles sont les suivantes : <ul><li>Aucun(e)</li><li>DirectX93</li><li>DirectX100</li></ul>   |     
+| minimumSystemRam    | chaîne    |  Mémoire RAM minimale exigée par le package d’app. Cette valeur peut être définie uniquement pour les applications qui ciblent Windows 8.x. Elle est ignorée pour les applications qui ciblent d’autres versions. Les valeurs possibles sont les suivantes : <ul><li>Aucun(e)</li><li>Memory2GB</li></ul>   |    
 
 
 <span id="package-delivery-options-object" />
 
 ### <a name="package-delivery-options-resource"></a>Ressource des options de remise du package
 
-Cette ressource contient les paramètres de déploiement de package progressif et de mise à jour obligatoire de la soumission.
+Cette ressource contient les paramètres de lancement de packages progressif et de mise à jour obligatoire de la soumission.
 
 ```json
 {
@@ -373,20 +373,20 @@ Cette ressource a les valeurs suivantes.
 |-----------------|---------|------|
 | packageRollout   |   objet      |   [Ressource de lancement de packages](#package-rollout-object) qui contient les paramètres de lancement de packages progressif de la soumission.    |  
 | isMandatoryUpdate    | booléenne    |  Indique si vous souhaitez traiter les packages de cette soumission comme obligatoires pour l’installation automatique des mises à jour de l’application. Pour plus d’informations sur les packages obligatoires pour l’installation automatique des mises à jour de l’application, consultez [Télécharger et installer les mises à jour de package pour votre application](../packaging/self-install-package-updates.md).    |  
-| mandatoryUpdateEffectiveDate    |  date   |  Date et heure auxquelles les packages de cette soumission deviennent obligatoires, au format ISO 8601 dans le fuseau horaire UTC.   |        
+| mandatoryUpdateEffectiveDate    |  date   |  Date et heure auxquelles les packages de cette soumission deviennent obligatoires, au format ISO 8601 dans le fuseau horaire UTC.   |        
 
 <span id="package-rollout-object" />
 
 ### <a name="package-rollout-resource"></a>Ressource de lancement de packages
 
-Contient les [paramètres de déploiement de package](#manage-gradual-package-rollout) de la soumission. Cette ressource a les valeurs suivantes.
+Cette ressource contient les [paramètres de lancement de packages](#manage-gradual-package-rollout) progressif de la soumission. Cette ressource a les valeurs suivantes.
 
 | Value           | type    | Description        |
 |-----------------|---------|------|
 | isPackageRollout   |   booléenne      |  Indique si le déploiement de package progressif est activé pour la soumission.    |  
 | packageRolloutPercentage    | flottant    |  Pourcentage d’utilisateurs qui recevront les packages de déploiement progressif.    |  
 | packageRolloutStatus    |  chaîne   |  Une des chaînes suivantes qui indique l’état de déploiement de package progressif : <ul><li>PackageRolloutNotStarted</li><li>PackageRolloutInProgress</li><li>PackageRolloutComplete</li><li>PackageRolloutStopped</li></ul>  |  
-| fallbackSubmissionId    |  chaîne   |  ID de la soumission qui sera reçue par les clients n’obtenant pas les packages de déploiement progressif.   |          
+| fallbackSubmissionId    |  chaîne   |  ID de la soumission qui sera reçue par les clients qui ne récupèrent pas les packages de lancement progressif.   |          
 
 > [!NOTE]
 > Le *packageRolloutStatus* et *fallbackSubmissionId* valeurs sont attribuées par les partenaires et ne sont pas destinées à être définie par le développeur. Si vous incluez ces valeurs dans un corps de requête, celles-ci seront ignorées.
@@ -399,13 +399,13 @@ Ces méthodes utilisent les énumérations suivantes.
 
 <span id="submission-status-code" />
 
-### <a name="submission-status-code"></a>Code d’état de soumission
+### <a name="submission-status-code"></a>Code d’état de la soumission
 
 Les codes suivants représentent l’état d’une soumission.
 
 | Code           |  Description      |
 |-----------------|---------------|
-|  Aucune            |     Aucun code n’a été spécifié.         |     
+|  Aucun(e)            |     Aucun code n’a été spécifié.         |     
 |      InvalidArchive        |     L’archive ZIP contenant le package n’est pas valide ou a un format d’archive non reconnu.  |
 | MissingFiles | L’archive ZIP ne dispose pas de tous les fichiers qui ont été répertoriés dans les données de votre soumission, ou ils se trouvent dans un emplacement incorrect dans l’archive. |
 | PackageValidationFailed | La validation d’un ou de plusieurs packages de votre soumission a échoué. |
@@ -417,7 +417,7 @@ Les codes suivants représentent l’état d’une soumission.
 | ListingOptOutWarning | Le développeur supprimé un listing d’une soumission précédente ou il n’a pas inclus d’informations de listing prises en charge par le package. |
 | ListingOptInWarning  | Le développeur a ajouté un listing. |
 | UpdateOnlyWarning | Le développeur essaie d’insérer quelque chose qui prend uniquement en charge la mise à jour. |
-| Autre  | La soumission est dans un état non reconnu ou non affecté à une catégorie. |
+| Autres  | La soumission est dans un état non reconnu ou non affecté à une catégorie. |
 | PackageValidationWarning | Le processus de validation du package a généré un avertissement. |
 
 <span/>

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, éducation
 ms.assetid: 2431f253-efe3-4895-b131-34653b61f13c
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c2333d960ba91b1d1c3d3030481108407909594
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 3d68fd78a7da3f1b98f61225f3aad8ca1590140e
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359207"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317608"
 ---
 # <a name="develop-universal-windows-apps-for-education"></a>Développement d’applications Universal Windows pour l’éducation
 ![capture d’écran d’application Examen](images/take-a-test-screen-small.png)
@@ -23,7 +23,7 @@ Les applications éducatives doivent être accessibles. Pour plus d’informatio
 
 
 ### <a name="secure-assessments"></a>Évaluations sécurisées
-Une évaluation ou un test d’application suppose généralement de créer un environnement *verrouillé* afin d’empêcher les étudiants d’utiliser d’autres ordinateurs ou ressources Internet au cours d’un test. Cette fonctionnalité est disponible via [l’API Examen](take-a-test-api.md). Pour obtenir un exemple d’environnement de test dans lequel l’accès en ligne est verrouillé pour les tests stratégiques, consultez l’application web [Examen](https://technet.microsoft.com/edu/windows/take-tests-in-windows-10) dans le Centre informatique de Windows.
+Une évaluation ou un test d’application suppose généralement de créer un environnement *verrouillé* afin d’empêcher les étudiants d’utiliser d’autres ordinateurs ou ressources Internet au cours d’un test. Cette fonctionnalité est disponible via [l’API Examen](take-a-test-api.md). Pour obtenir un exemple d’environnement de test dans lequel l’accès en ligne est verrouillé pour les tests stratégiques, consultez l’application web [Examen](https://docs.microsoft.com/education/windows/take-tests-in-windows-10) dans le Centre informatique de Windows.
 
 ### <a name="user-input"></a>Entrée de l’utilisateur
 Les entrées de l’utilisateur constituent une partie essentielle des applications éducatives ; les commandes de l’interface utilisateur doivent être réactives et intuitives afin de ne pas distraire les utilisateurs. Pour obtenir une vue d’ensemble des options d’entrée disponibles dans une application Windows universelle, consultez la page [Notions fondamentales sur les interactions](https://docs.microsoft.com/windows/uwp/design/input/input-primer) ainsi que les rubriques de la section Conception et interface utilisateur. Les exemples d’application suivants présentent également les méthodes de gestion de base de l’interface utilisateur dans la plateforme Windows universelle.
@@ -41,4 +41,4 @@ La plateforme Windows Ink permet d’optimiser les applications éducatives en 
 En règle générale, les applications éducatives sont distribuées à une organisation spécifique dans certaines circonstances. Pour plus d’informations, consultez la page [Distribuer des applications métier aux entreprises](https://docs.microsoft.com/windows/uwp/publish/distribute-lob-apps-to-enterprises).
 
 ## <a name="related-topics"></a>Rubriques connexes
-- [Windows 10 pour l’éducation](https://technet.microsoft.com/edu/windows/index) sur le Centre informatique de Windows
+- [Windows 10 pour l’éducation](https://docs.microsoft.com/education/windows/index) sur le Centre informatique de Windows

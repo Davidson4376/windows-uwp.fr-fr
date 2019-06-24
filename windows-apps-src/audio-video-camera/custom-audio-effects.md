@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 360faf3f-7e73-4db4-8324-3391f801d827
 ms.localizationpriority: medium
-ms.openlocfilehash: f34b2cdbb538d121c1c6182b2c02042d6c0047ed
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 6bebf9533ab045822902d44f87f68eec55c11074
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360926"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318574"
 ---
 # <a name="custom-audio-effects"></a>Effets audio personnalisés
 
@@ -28,7 +28,7 @@ Un effet audio personnalisé est défini dans une classe qui implémente l’int
 2.  Sélectionnez le type de projet **Composant Windows Runtime (Windows universel)** .
 3.  Pour cet exemple, nommez le projet *AudioEffectComponent*. Ce nom sera référencé dans le code ultérieurement.
 4.  Cliquez sur **OK**.
-5.  Le modèle de projet crée une classe appelée Class1.cs. Dans **l’Explorateur de solutions**, cliquez avec le bouton droit sur l’icône de Class1.cs et sélectionnez **Renommer**.
+5.  Le modèle de projet crée une classe appelée Class1.cs. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur l’icône de Class1.cs et sélectionnez **Renommer**.
 6.  Renommez le fichier *ExampleAudioEffect.cs*. Visual Studio affiche une invite vous demandant si vous voulez mettre à jour toutes les références sous le nouveau nom. Cliquez sur **Oui**.
 7.  Ouvrez **ExampleAudioEffect.cs** et mettez à jour la définition de classe pour implémenter l’interface [**IBasicAudioEffect**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.IBasicAudioEffect).
 
@@ -51,7 +51,7 @@ Le système vérifie la propriété [**SupportedEncodingProperties**](https://do
 
 ### <a name="setencodingproperties-method"></a>Méthode SetEncodingProperties
 
-Le système appelle [**SetEncodingProperties**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.setencodingproperties.windows) sur votre effet pour vous indiquer les propriétés de codage du flux audio sur lequel l’effet est appliqué. Afin d’implémenter un effet d’écho, cet exemple utilise une mémoire tampon pour stocker une seconde de données audio. Cette méthode permet d’initialiser la taille de la mémoire tampon sur le nombre d’échantillons produits pendant une seconde de données audio, en fonction du taux d’échantillonnage dans lequel l’élément audio est encodé. L’effet de retard utilise également un compteur entier pour garder une trace de la position actuelle dans le tampon de retard. Dans la mesure où la méthode **SetEncodingProperties** est appelée chaque fois que l’effet est ajouté au pipeline audio, il s’agit du moment idéal pour remettre la valeur à 0. Vous pouvez également capturer l’objet **AudioEncodingProperties** transmis à cette méthode pour l’utiliser à un autre point de votre effet.
+Le système appelle [**SetEncodingProperties**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.setencodingproperties) sur votre effet pour vous indiquer les propriétés de codage du flux audio sur lequel l’effet est appliqué. Afin d’implémenter un effet d’écho, cet exemple utilise une mémoire tampon pour stocker une seconde de données audio. Cette méthode permet d’initialiser la taille de la mémoire tampon sur le nombre d’échantillons produits pendant une seconde de données audio, en fonction du taux d’échantillonnage dans lequel l’élément audio est encodé. L’effet de retard utilise également un compteur entier pour garder une trace de la position actuelle dans le tampon de retard. Dans la mesure où la méthode **SetEncodingProperties** est appelée chaque fois que l’effet est ajouté au pipeline audio, il s’agit du moment idéal pour remettre la valeur à 0. Vous pouvez également capturer l’objet **AudioEncodingProperties** transmis à cette méthode pour l’utiliser à un autre point de votre effet.
 
 [!code-cs[DeclareEchoBuffer](./code/AudioGraph/AudioEffectComponent/ExampleAudioEffect.cs#SnippetDeclareEchoBuffer)]
 [!code-cs[SetEncodingProperties](./code/AudioGraph/AudioEffectComponent/ExampleAudioEffect.cs#SnippetSetEncodingProperties)]
@@ -123,7 +123,7 @@ Pour utiliser votre effet audio dans votre application, vous devez ajouter une r
 
 1.  Dans l’Explorateur de solutions, sous votre projet d’application, cliquez avec le bouton droit sur **Références**, puis sélectionnez **Ajouter une référence**.
 2.  Développez l’onglet **Projets**, sélectionnez **Solution**, puis cochez la case du nom de votre projet d’effet. Dans cet exemple, le nom est *AudioEffectComponent*.
-3.  Cliquez sur **OK**.
+3.  Cliquez sur **OK**
 
 Si votre classe d’effet audio est déclarée dans un autre espace de noms, veillez à inclure cet espace de noms dans votre fichier de code.
 

@@ -1,19 +1,19 @@
 ---
 ms.assetid: 3aeddb83-5314-447b-b294-9fc28273cd39
 description: Découvrez comment installer le kit SDK Microsoft Advertising.
-title: Installer le SDK Microsoft Advertising
+title: Installer le SDK Microsoft Advertising
 ms.date: 08/23/2017
 ms.topic: article
 keywords: windows 10, uwp, pub, publicités, installer, SDK, bibliothèque de publicités
 ms.localizationpriority: medium
-ms.openlocfilehash: baf70cc6df7b0683f3dc362436c63eb1e688e678
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: d348b1b7a7b057388b437fab9952bb8eaffe9957
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334697"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320228"
 ---
-# <a name="install-the-microsoft-advertising-sdk"></a>Installer le SDK Microsoft Advertising
+# <a name="install-the-microsoft-advertising-sdk"></a>Installer le SDK Microsoft Advertising
 
 Pour afficher des publicités dans vos applications UWP pour Windows 10, installez le [SDK Microsoft Advertising](https://aka.ms/ads-sdk-uwp). Ce kit de développement logiciel (SDK) est une extension de Visual Studio 2015 et des versions ultérieures.
 
@@ -66,7 +66,7 @@ Pour installer le SDK Microsoft Advertising dans un projet UWP spécifique via 
 
 5. Dans la zone de recherche, tapez **Microsoft.Advertising.XAML** (pour un projet XAML) ou **Microsoft.Advertising.JS** (pour un projet JavaScript/HTML) et installez le package correspondant. Lorsque l’installation du package est terminée, enregistrez votre solution.
     > [!NOTE]
-    > Si la fenêtre **Sortie** signale une erreur *Install-Package* qui fait état d’une longueur trop importante du chemin spécifié, il vous faudra éventuellement configurer NuGet pour l’extraction des packages vers un autre emplacement présentant un chemin plus court que l’emplacement par défaut. Pour ce faire, ajoutez la valeur `repositoryPath` à un fichier nuget.config sur votre ordinateur, puis affectez-la à un chemin court de dossier, dans lequel extraire les packages. Pour plus d’informations, consultez [cet article](https://docs.nuget.org/ndocs/consume-packages/configuring-nuget-behavior) de la documentation NuGet. Sinon, vous pouvez essayer de déplacer votre projet Visual Studio vers un dossier différent présentant un chemin plus court.
+    > Si la fenêtre **Sortie** signale une erreur *Install-Package* qui fait état d’une longueur trop importante du chemin spécifié, il vous faudra éventuellement configurer NuGet pour l’extraction des packages vers un autre emplacement présentant un chemin plus court que l’emplacement par défaut. Pour ce faire, ajoutez la valeur `repositoryPath` à un fichier nuget.config sur votre ordinateur, puis affectez-la à un chemin court de dossier, dans lequel extraire les packages. Pour plus d’informations, consultez [cet article](https://docs.microsoft.com/nuget/consume-packages/configuring-nuget-behavior) de la documentation NuGet. Sinon, vous pouvez essayer de déplacer votre projet Visual Studio vers un dossier différent présentant un chemin plus court.
 
 6. Fermez votre solution, puis rouvrez-la.
 
@@ -82,7 +82,7 @@ Après avoir installé le SDK Microsoft Advertising, suivez ces instructions pou
 
 1. Ouvrez votre projet dans Visual Studio.
     > [!NOTE]
-    > Si votre projet cible **Toute UC**, mettez-le à jour pour utiliser une sortie de génération propre à l’architecture (par exemple, **x86**). Si votre projet cible **Toute UC**, vous ne pourrez pas ajouter une référence au SDK Microsoft Advertising dans les étapes suivantes. Pour plus d’informations, consultez [Erreurs de référence provoquées par le ciblage de Toute UC dans votre projet](known-issues-for-the-advertising-libraries.md#reference_errors).
+    > Si votre projet cible **Toute UC**, mettez-le à jour pour utiliser une sortie de génération propre à l’architecture (par exemple, **x86**). Si votre projet cible **Toute UC**, vous ne pourrez pas ajouter une référence au SDK Microsoft Advertising dans les étapes suivantes. Pour plus d’informations, voir [Erreurs de référence provoquées par le ciblage de Toute UC dans votre projet](known-issues-for-the-advertising-libraries.md#reference_errors).
 
 2. Dans **l’Explorateur de solutions**, cliquez avec le bouton droit sur **Références**, puis cliquez sur **Ajouter une référence**.
 

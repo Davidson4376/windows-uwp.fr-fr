@@ -6,12 +6,12 @@ ms.date: 4/8/2019
 ms.topic: article
 keywords: windows 10, uwp, déboguer, test, performances
 ms.localizationpriority: medium
-ms.openlocfilehash: 3263f7a0f1c353cfd15bf83e6fe1b0004b3bcc94
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 96e6f712f1a9882a10cf0706452628329c0c085d
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66362675"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317950"
 ---
 # <a name="deploying-and-debugging-uwp-apps"></a>Déploiement et débogage des applications UWP
 
@@ -41,7 +41,7 @@ En outre, vous pouvez attacher et déboguer n’importe quel package d’applica
 
 Si vous sélectionnez **Ne pas lancer, mais déboguer mon code au démarrage**, le débogueur Visual Studio sera attaché à votre application UWP au moment où vous la lancerez. Il s’agit d’un moyen efficace pour déboguer les chemins d’accès de contrôle à partir de [différentes méthodes de lancement](../xbox-apps/automate-launching-uwp-apps.md), notamment en cas d’activation du protocole avec des paramètres personnalisés.  
 
-Les applications UWP peuvent être développées et compilées sur Windows 8.1 ou une version ultérieure, mais leur exécution nécessite Windows 10. Si vous développez une application UWP sur un PC Windows 8.1, vous pouvez déboguer à distance une application UWP s’exécutant sur un autre appareil Windows 10, sous réserve que les ordinateurs hôte et cible soient sur le même LAN. Pour ce faire, téléchargez et installez les [Outils de contrôle à distance de Visual Studio](https://www.visualstudio.com/downloads/) sur les deux machines. La version installée doit correspondre à la version existante de Visual Studio que vous avez installée, et l’architecture que vous sélectionnez (x86, x64) doit également correspondre à celle de votre application cible.
+Les applications UWP peuvent être développées et compilées sur Windows 8.1 ou une version ultérieure, mais leur exécution nécessite Windows 10. Si vous développez une application UWP sur un PC Windows 8.1, vous pouvez déboguer à distance une application UWP s’exécutant sur un autre appareil Windows 10, sous réserve que les ordinateurs hôte et cible soient sur le même LAN. Pour ce faire, téléchargez et installez les [Outils de contrôle à distance de Visual Studio](https://visualstudio.microsoft.com/downloads/) sur les deux machines. La version installée doit correspondre à la version existante de Visual Studio que vous avez installée, et l’architecture que vous sélectionnez (x86, x64) doit également correspondre à celle de votre application cible.
 
 ## <a name="package-layout"></a>Disposition de package
 
@@ -94,7 +94,7 @@ Pour ce faire, recherchez **Débogueur distant** dans le menu **Démarrer**, ouv
 
 Modifier en **aucune authentification**, dans le **débogueur distant**, accédez à **outils**  - &gt; **Options**, et définir sur **aucune authentification**. Une fois que le débogueur distant est configuré, vous devez également vérifier que vous avez défini l’appareil hôte sur [Mode développeur](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development). Ensuite, vous pouvez effectuer le déploiement à partir de votre ordinateur de développement.
 
-Pour plus d’informations, voir la page [Centre de téléchargement Visual Studio](https://www.visualstudio.com/downloads/).
+Pour plus d’informations, voir la page [Centre de téléchargement Visual Studio](https://visualstudio.microsoft.com/downloads/).
 
 ## <a name="passing-command-line-debug-arguments"></a>Transmission d’arguments de ligne de commande pour le débogage
 
@@ -139,7 +139,7 @@ Pour utiliser les options avancées de déploiement distant, vous devez avoir la
 
 - Avoir Visual Studio 2015 Update 3 ou certains Visual Studio version ultérieure installée avec les outils de Windows 10 1.4.1 ou version ultérieure (qui inclut le SDK de mise à jour anniversaire Windows 10) nous vous recommandons d’utiliser la dernière version de Visual Studio avec les mises à jour pour vous assurer d’obtenir tous les le nouvelles fonctionnalités de développement et de sécurité.
 - Ciblez un appareil distant Xbox avec la Mise à jour anniversaire Windows 10 ou un PC avec Windows 10 Creators Update
-- Utiliser le mode d’authentification Universel
+- Utilisez le mode d’authentification Universel
 
 ### <a name="properties-pages"></a>Pages de propriétés
 

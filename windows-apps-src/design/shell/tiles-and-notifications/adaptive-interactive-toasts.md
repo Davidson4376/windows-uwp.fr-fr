@@ -8,12 +8,12 @@ ms.date: 11/20/2017
 ms.topic: article
 keywords: windows 10, uwp, notifications toast, toasts interactifs, toasts adaptatifs, contenu des toasts, charge utile des toasts
 ms.localizationpriority: medium
-ms.openlocfilehash: 75e5ea7e83a1a274b90b14588f7d809a4aa91269
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 7bef6874b7855a321c4e5a9153faa96d432d2dea
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66366875"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320929"
 ---
 # <a name="toast-content"></a>Contenu des toasts
 
@@ -88,7 +88,7 @@ Voici une représentation visuelle du contenu du toast :
 ![structure de notification toast](images/adaptivetoasts-structure.jpg)
 
 
-## <a name="visual"></a>Éléments visuels
+## <a name="visual"></a>Élément visuel
 
 Chaque toast doit spécifier un élément visuel, où vous devez fournir une liaison de toast générique, qui peut contenir du texte, des images, etc. Ces éléments sont rendus sur différents appareils Windows, notamment des ordinateurs, des téléphones, des tablettes et la Xbox.
 
@@ -880,5 +880,5 @@ Pour découvrir comment gérer les activations de toast (l’utilisateur cliquan
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Envoyer une activation toast et handle locale](send-local-toast.md)
-* [Bibliothèque de notifications sur GitHub (partie du Kit de ressources UWP Community)](https://github.com/Microsoft/UWPCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
+* [Bibliothèque de notifications sur GitHub (partie du Kit de ressources UWP Community)](https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
 * [Prise en charge de la notification vignette et de toast de langage, de mise à l’échelle et de contraste élevé](tile-toast-language-scale-contrast.md)

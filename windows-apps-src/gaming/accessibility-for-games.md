@@ -6,12 +6,12 @@ ms.date: 11/09/2017
 ms.topic: article
 keywords: Windows 10, uwp, accessibilité, jeux
 ms.localizationpriority: medium
-ms.openlocfilehash: a3ef82db2d0ddb7883179279fd7e48c1acf38dd3
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 74ff2c25d38f20b94f50cc05a548778ee212bad0
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66369173"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321362"
 ---
 #  <a name="making-games-accessible"></a>Proposer des jeux accessibles
 
@@ -19,13 +19,13 @@ L’accessibilité contribue à accroître les capacités de l’ensemble des in
 
 ## <a name="gaming-for-everyone"></a>Jeux tous publics
 
-Chez Microsoft, nous pensons que les jeux doivent permettre à tout le monde de s’amuser. « Nous nous efforçons de rendre les jeux agréables et accessibles à tous. Nous pensons vraiment que ce que nous créons pour nos fans et la manière dont nous le faisons (à l’intérieur et à l’extérieur de Microsoft) reflète ce que nous sommes. Nous avons conçu ce programme afin de refléter nos valeurs fondamentales et nous pensons que le programme pourrait aboutir à un changement positif (non seulement dans notre espace de travail, mais aussi dans les produits que nous développons pour nos joueurs) ». ([Billet de Blog](https://blogs.microsoft.com/blog/2016/06/13/gaming-for-everyone) de Phil Spencer)
+Chez Microsoft, nous pensons que les jeux doivent permettre à tout le monde de s’amuser. « Nous nous efforçons de rendre les jeux agréables et accessibles à tous. Nous pensons vraiment que ce que nous créons pour nos fans et la manière dont nous le faisons (à l’intérieur et à l’extérieur de Microsoft) reflète ce que nous sommes. Nous avons conçu ce programme afin de refléter nos valeurs fondamentales et nous pensons que le programme pourrait aboutir à un changement positif (non seulement dans notre espace de travail, mais aussi dans les produits que nous développons pour nos joueurs) ». ([Billet de Blog](https://blogs.microsoft.com/blog/2016/06/13/gaming-for-everyone/) de Phil Spencer)
 
-Nous voulons créer un environnement accueillant, amusant et varié accessible à tous. « Un virage culturel est indispensable pour qu’il y ait un impact durable et cela ne se fait pas du jour au lendemain. Toutefois, notre équipe s’engage à faire mieux chaque jour, à se concerter et à s’interrompre au cours du processus de prise de décision afin de réfléchir à l’incroyable diversité des besoins, aux capacités et aux centres d’intérêt des joueurs partout dans le monde. » ([Billet de Blog](https://blogs.microsoft.com/blog/2016/06/13/gaming-for-everyone) de Phil Spencer)
+Nous voulons créer un environnement accueillant, amusant et varié accessible à tous. « Un virage culturel est indispensable pour qu’il y ait un impact durable et cela ne se fait pas du jour au lendemain. Toutefois, notre équipe s’engage à faire mieux chaque jour, à se concerter et à s’interrompre au cours du processus de prise de décision afin de réfléchir à l’incroyable diversité des besoins, aux capacités et aux centres d’intérêt des joueurs partout dans le monde. » ([Billet de Blog](https://blogs.microsoft.com/blog/2016/06/13/gaming-for-everyone/) de Phil Spencer)
 
-Venez participer à cette aventure afin de faire du concept de [Jeux tous publics](https://news.microsoft.com/gamingforeveryone) une réalité. 
+Venez participer à cette aventure afin de faire du concept de [Jeux tous publics](https://news.microsoft.com/gamingforeveryone/) une réalité. 
 
-##  <a name="why-make-games-accessible"></a>Pourquoi proposer des jeux accessibles ?
+##  <a name="why-make-games-accessible"></a>Pourquoi rendre les jeux accessibles ?
 
 ### <a name="increased-gamer-base"></a>Élargissement de la communauté des joueurs
 
@@ -69,7 +69,7 @@ Si vous répondez non à la plupart de ces questions ou que vous n’en connaiss
 
 ## <a name="defining-disability"></a>Définition de la notion de handicap/invalidité
 
-Le terme « handicap/invalidité » désigne une incompatibilité entre les besoins de l’individu et le service, le produit ou l’environnement proposés. ([Vidéo inclusif](https://www.microsoft.com/design/inclusive), Microsoft.com.) Cela signifie que toute personne peut rencontrer un handicap, et qu’il peut être une condition à court terme ou connaissance. Envisagez toutes les difficultés que les joueurs atteints de tels handicaps risquent de rencontrer en utilisant votre jeu, et réfléchissez à la façon dont vous pouvez améliorer la conception de votre jeu à leur intention. Voici quelques-uns des handicaps ou invalidités que vous devez prendre en compte :
+Le terme « handicap/invalidité » désigne une incompatibilité entre les besoins de l’individu et le service, le produit ou l’environnement proposés. ([Vidéo inclusif](https://www.microsoft.com/design/inclusive/), Microsoft.com.) Cela signifie que toute personne peut rencontrer un handicap, et qu’il peut être une condition à court terme ou connaissance. Envisagez toutes les difficultés que les joueurs atteints de tels handicaps risquent de rencontrer en utilisant votre jeu, et réfléchissez à la façon dont vous pouvez améliorer la conception de votre jeu à leur intention. Voici quelques-uns des handicaps ou invalidités que vous devez prendre en compte :
 
 ### <a name="vision"></a>Vision
 
@@ -91,7 +91,7 @@ Le terme « handicap/invalidité » désigne une incompatibilité entre les be
 * Affections médicales à long terme telles que la dyslexie, l’épilepsie, le trouble déficitaire de l’attention avec hyperactivité (TDAH), la démence et l’amnésie
 * Situations circonstancielles à court terme comme la consommation d’alcool, le manque de sommeil ou les distractions temporaires telles que la sirène d’une ambulance passant à proximité
 
-### <a name="speech"></a>Fonctions vocales
+### <a name="speech"></a>Voix
 
 * Affections médicales à long terme telles qu’une lésion des cordes vocales, une dysarthrie ou une apraxie
 * Situations circonstancielles à court terme comme des soins dentaires ou le fait de manger et de boire
@@ -137,7 +137,7 @@ Partagez vos connaissances sur l’accessibilité avec les membres de votre équ
 
 Au cours du développement, vous pouvez introduire un processus de vérification destiné à vous assurer que chaque étape de la conception est axée sur l’accessibilité. Établissez une liste de contrôle semblable à celle ci-dessous pour aider votre équipe à déterminer continuellement si le jeu que vous créez est ou non accessible.
 
-| Liste de vérification                                         | Fonctionnalités d’accessibilité                                                                                                         |
+| Liste de contrôle                                         | Fonctionnalités d’accessibilité                                                                                                         |
 |---------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|
 | Séquences animées au sein du jeu                                | Présentation de sous-titres et de légendes, test de photosensibilité des animations                                                                           |
 | Conception graphique globale (graphismes 2D et 3D)              | Couleurs et options compatibles avec le daltonisme, possibilités d’identification non entièrement basées sur les couleurs et tirant également parti des formes et des motifs|
@@ -148,7 +148,7 @@ Au cours du développement, vous pouvez introduire un processus de vérification
 
 ### <a name="playtest-and-iterate-get-gamers-feedback"></a>Playtest et effectuer une itération : Obtenir des commentaires de joueurs
 
-Lorsque vous organisez des sessions de test du jeu, invitez des personnes souffrant de handicaps ou d’invalidités à y participer afin de vérifier l’accessibilité de votre jeu. N’oubliez pas d’inclure des questions d’accessibilité dans les questionnaires de bêta-test. Les groupes de personnes handicapées sont une excellente source de participants. Observez la façon dont ces personnes utilisent votre jeu et recueillez leurs commentaires. Déterminez les changements à apporter afin d’améliorer votre jeu.
+Lorsque vous organisez des sessions de test du jeu, invitez des personnes souffrant de handicaps ou d’invalidités à y participer afin de vérifier l’accessibilité. N’oubliez pas d’inclure des questions d’accessibilité dans les questionnaires de bêta-test. Les groupes de personnes handicapées sont une excellente source de participants. Observez leur façon de jouer avec votre jeu et recueillez leurs commentaires. Déterminez les changements à apporter afin d’améliorer votre jeu.
 
 Utilisez les médias sociaux et le forum de votre jeu pour recueillir des commentaires et savoir quelles sont les fonctionnalités d’accessibilité les plus importantes et comment elles doivent être implémentées. 
 
@@ -196,7 +196,7 @@ Si le jeu permet aux joueurs de communiquer verbalement et de s’envoyer des SM
 
 Les personnes qui n’ont pas de microphones connectés à leur périphérique de jeu peuvent toujours avoir une conversation avec une personne qui parle. Elles peuvent saisir du texte dans la fenêtre de conversation et le convertir en messages vocaux. Cela permet aussi aux personnes qui n’entendent pas très bien de lire les messages texte retranscrits de la personne avec qu’ils ont une conversation vocale.
 
-Pour les partenaires et les développeurs gérés dans le programme ID@Xbox, les fonctionnalités de reconnaissance vocale et de synthèse vocale sont disponibles en tant que [fonctionnalités d’accessibilité Game Chat 2](https://docs.microsoft.com/gaming/xbox-live//multiplayer/chat/using-game-chat-2.md#accessibility) dans le service Xbox Live. Pour plus d’informations, voir [Game Chat 2 Overview](https://docs.microsoft.com/gaming/xbox-live//multiplayer/chat/game-chat-2-overview.md).
+Pour les partenaires et les développeurs gérés dans le programme ID@Xbox, les fonctionnalités de reconnaissance vocale et de synthèse vocale sont disponibles en tant que [fonctionnalités d’accessibilité Game Chat 2](https://docs.microsoft.com/gaming/xbox-live/multiplayer/chat/using-game-chat-2.md#accessibility) dans le service Xbox Live. Pour plus d’informations, voir [Game Chat 2 Overview](https://docs.microsoft.com/gaming/xbox-live/multiplayer/chat/game-chat-2-overview.md).
 
 ### <a name="sound-feedback"></a>Retour audio
 
@@ -225,7 +225,7 @@ La mise au point du niveau de difficulté de votre jeu constitue un processus d�
 
 ### <a name="photosensitivity-epilepsy-testing"></a>Test contre les risques d’épilepsie photosensible
 
-L’épilepsie photosensible désigne le déclenchement de crises d’épilepsie par des stimuli visuels, notamment l’exposition à des lumières clignotantes ou à certains types de formes et de motifs visuels en mouvement. Ce type de trouble touche près de trois pour cent de la population et survient plus fréquemment chez les enfants et les adolescents. En termes de chiffres, cela touche environ [1 personne sur 4000 âgées de 5 à 24 ans](https://www.epilepsy.com/information/professionals/about-epilepsy-seizures/reflex-seizures-and-related-epileptic-syndromes-3).
+L’épilepsie photosensible désigne le déclenchement de crises d’épilepsie par des stimuli visuels, notamment l’exposition à des lumières clignotantes ou à certains types de formes et de motifs visuels en mouvement. Ce type de trouble touche près de trois pour cent de la population et survient plus fréquemment chez les enfants et les adolescents. En termes de chiffres, cela touche environ [1 personne sur 4000 âgées de 5 à 24 ans](https://www.epilepsy.com/learn/professionals/about-epilepsy-seizures/reflex-seizures-and-related-epileptic-syndromes-0).
 
 De nombreux facteurs peuvent entraîner une réaction photosensible lors de l’utilisation d’un jeu vidéo, comme la durée de la partie, la fréquence des clignotements, l’intensité lumineuse, le contraste de l’arrière-plan et des motifs lumineux, la distance entre l’écran et le joueur, ainsi que la longueur d’onde de la lumière.
 
@@ -253,7 +253,7 @@ Vous trouverez ci-après quelques sites externes fournissant des informations su
 
 ### <a name="game-accessibility-guidelines"></a>Recommandations en matière de conception de jeux accessibles
 * [Lignes directrices d’accessibilité de jeu](https://gameaccessibilityguidelines.com/)
-* [Instructions AbleGamers Foundation](https://www.includification.com/)
+* [Instructions AbleGamers Foundation](https://accessible.games/accessible-player-experiences/)
 * [Concevoir des jeux d’universellement accessibles (UA)](https://www.ics.forth.gr/hci/ua-games/index_main.php?l=e&c=555)
 
 ### <a name="custom-input-controllers"></a>Manettes de jeu personnalisées
@@ -262,14 +262,14 @@ Vous trouverez ci-après quelques sites externes fournissant des informations su
 
 ## <a name="references-used"></a>Références utilisées
 * [Lignes directrices d’accessibilité de jeu](https://gameaccessibilityguidelines.com/)
-* [Instructions AbleGamers Foundation](https://www.includification.com/)
+* [Instructions AbleGamers Foundation](https://accessible.games/accessible-player-experiences/)
 * [Connaissance invisible de couleur, une société d’intérêt de communauté](https://www.colourblindawareness.org/colour-blindness/types-of-colour-blindness/)
 * [Procédure à suivre sous-titres bien-un article de blog sur Gamasutra par Ian Hamilton](https://www.gamasutra.com/blogs/IanHamilton/20150715/248571/How_to_do_subtitles_well__basics_and_good_practices.php)
 * [Innovation pour toutes les Programme](https://www.inclusivedesign.no/practical-tools/definitions-article56-127.html)
 * [Foundation d’épilepsie](https://www.epilepsy.com/)
 
 ## <a name="related-links"></a>Liens connexes
-* [Conception inclusive](https://www.microsoft.com/design/inclusive)
+* [Conception inclusive](https://www.microsoft.com/design/inclusive/)
 * [Hub de développeur d’accessibilité de Microsoft](https://developer.microsoft.com/windows/accessible-apps)
 * [Développement d’applications UWP accessibles](https://docs.microsoft.com/windows/uwp/accessibility/accessibility)
 * [Livre électronique de logiciels pour l’accessibilité de l’ingénierie](https://www.microsoft.com/download/details.aspx?id=19262)

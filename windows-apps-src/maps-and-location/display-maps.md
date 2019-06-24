@@ -6,12 +6,12 @@ ms.date: 03/19/2018
 ms.topic: article
 keywords: Windows 10, uwp, carte, emplacement, contrôle de carte, vues cartographiques
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c026fa0762e25421414ac66fc614625c0df6cd7
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 366a6212f8974ef3d3fedffa8f2d657e08a1b549
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371907"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318671"
 ---
 # <a name="display-maps-with-2d-3d-and-streetside-views"></a>Afficher des cartes avec des vues 2D, 3D et Streetside
 
@@ -87,10 +87,10 @@ private void SpaceNeedle_Click(object sender, RoutedEventArgs e)
 
 Utilisez un contrôle de carte pour afficher les données de carte enrichies et personnalisables dans votre app. Un contrôle de carte peut afficher des cartes routières, des vues aériennes, des affichages 3D, des itinéraires, des résultats de recherche et des informations sur la circulation. Sur une carte, vous pouvez afficher l’emplacement, les itinéraires et les centres d’intérêt de l’utilisateur. Une carte peut également afficher des vues 3D aériennes, des vues Streetside, le trafic, les transports publics et les entreprises locales.
 
-Utilisez un contrôle de carte si vous souhaitez insérer une carte dans votre application, qui permette aux utilisateurs d’afficher des informations géographiques propres à l’application ou générales. Si votre application contient un contrôle de carte, les utilisateurs ne devront pas sortir de votre application pour accéder à ces informations.
+Utilisez un contrôle de carte si vous souhaitez insérer dans votre application une carte permettant aux utilisateurs de visualiser des informations géographiques propres à l’application ou générales. Si votre application contient un contrôle de carte, les utilisateurs n’auront pas à sortir de votre application pour accéder à ces informations.
 
 > [!NOTE]
->Si vous ne voyez pas d’inconvénient à ce que les utilisateurs sortent de votre application, envisagez d’utiliser l’application Cartes Windows pour fournir ces informations. Votre application peut lancer l’application Cartes Windows pour afficher des cartes, des itinéraires et des résultats de recherche spécifiques. Pour plus d’informations, voir [Lancer l’application Cartes Windows](https://docs.microsoft.com/windows/uwp/launch-resume/launch-maps-app).
+>Si vous ne voyez pas d’inconvénient à ce que les utilisateurs sortent de votre application, envisagez d’utiliser l’application Cartes Windows pour fournir ces informations. Votre application peut lancer l’application Cartes Windows pour afficher des cartes, des itinéraires et des résultats de recherche spécifiques. Pour plus d’informations, voir [Lancer l’app Cartes Windows](https://docs.microsoft.com/windows/uwp/launch-resume/launch-maps-app).
 
 ### <a name="add-a-map-control-to-your-app"></a>Ajoutez un contrôle de carte à votre app
 
@@ -144,7 +144,7 @@ Pointer la carte vers l'emplacement de votre choix ou utilisez l'emplacement act
 
 ### <a name="set-a-starting-location-for-the-map"></a>Définir un emplacement de départ pour la carte
 
-Définissez l’emplacement à afficher sur la carte en spécifiant la propriété [**Center**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.center) du [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) dans votre code, ou en liant la propriété dans votre balisage XAML. L’exemple suivant représente une carte centrée sur la ville de Seattle, aux États-Unis.
+Définissez l’emplacement à afficher sur la carte en spécifiant la propriété [**Center**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.center) du [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) dans votre code, ou en liant la propriété dans votre balisage XAML. L’exemple ci-après représente une carte centrée sur la ville de Seattle, aux États-Unis.
 
 > [!NOTE]
 > Dans la mesure où une chaîne ne peut pas être convertie en valeur [**Geopoint**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geopoint), vous ne pouvez pas spécifier de valeur pour la propriété [**Center**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.center) dans le balisage XAML, sauf si vous utilisez la fonction de liaison de données. (Cette limitation s’applique également à la propriété [**MapControl.Location**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.setlocation) jointe.)
@@ -319,7 +319,7 @@ Pour afficher une vue Streetside
 1.  Déterminez si les vues Streetside sont prises en charge sur l’appareil en vérifiant [**IsStreetsideSupported**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.isstreetsidesupported).
 2.  Si la vue Streetside est prise en charge, créez un [**StreetsidePanorama**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.StreetsidePanorama) près de l’emplacement spécifié en appelant [**FindNearbyAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.streetsidepanorama.findnearbyasync).
 3.  Déterminez si un panorama à proximité a été trouvé en vérifiant que la valeur [**StreetsidePanorama**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.StreetsidePanorama) n’est pas null.
-4.  Si un panorama à proximité a été trouvé, créez une [**StreetsideExperience**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.streetsideexperience.) pour la propriété [**CustomExperience**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.customexperience) du contrôle de carte.
+4.  Si un panorama à proximité a été trouvé, créez une [**StreetsideExperience**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.streetsideexperience) pour la propriété [**CustomExperience**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.customexperience) du contrôle de carte.
 
 Cet exemple montre comment afficher une vue Streetside similaire à l’image précédente.
 

@@ -10,12 +10,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cppcx
-ms.openlocfilehash: 48ba9bb410588b2c4b31f1bb0bb190aeeeb05edf
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: dfe17fc64fd3e97f7562a7feca760b3a5d918f2e
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360164"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318012"
 ---
 # <a name="data-binding-overview"></a>Vue d’ensemble de la liaison de données
 
@@ -23,11 +23,11 @@ Cette rubrique vous montre comment lier un contrôle (ou un autre élément d’
 
 ## <a name="prerequisites"></a>Prérequis
 
-Dans cette rubrique, nous partons du principe que vous savez créer une application UWP de base. Pour obtenir des instructions sur la création de votre première application UWP, voir [Prise en main des applications Windows](https://developer.microsoft.com/windows/getstarted).
+Dans cette rubrique, nous partons du principe que vous savez créer une application UWP de base. Pour obtenir des instructions sur la création de votre première application UWP, voir [Prise en main des applications Windows](https://docs.microsoft.com/windows/uwp/get-started/).
 
 ## <a name="create-the-project"></a>Créer le projet
 
-Commencez par créer un projet **Application vide (universelle Windows)** . Nommez-le « Quickstart ».
+Commencez par créer un projet **Application vide (Windows universel)** . Nommez-le « Quickstart ».
 
 ## <a name="binding-to-a-single-item"></a>Liaison à un élément unique
 
@@ -726,7 +726,7 @@ Résultat :
 ![Affichage d’une date avec une mise en forme personnalisée](images/xaml-databinding5.png)
 
 > [!NOTE]
-> À compter de Windows 10, version 1607, l’infrastructure XAML fournit un convertisseur de valeur booléenne à visibilité intégré. Les mappages de convertisseur **true** à la **Visibility.Visible** valeur d’énumération et **false** à **Visibility.Collapsed** afin que vous pouvez lier un Propriété de visibilité booléenne sans création d’un convertisseur. Pour utiliser le convertisseur intégré, la version du SDK cible de votre application doit être 14393 ou une version ultérieure. Vous ne pouvez pas l’utiliser si votre application cible des versions antérieures de Windows 10. Pour plus d’informations sur les versions de la cible, consultez [code adaptatif de Version](https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
+> À compter de Windows 10, version 1607, l’infrastructure XAML fournit un convertisseur de valeur booléenne à visibilité intégré. Les mappages de convertisseur **true** à la **Visibility.Visible** valeur d’énumération et **false** à **Visibility.Collapsed** afin que vous pouvez lier un Propriété de visibilité booléenne sans création d’un convertisseur. Pour utiliser le convertisseur intégré, la version du SDK cible de votre application doit être 14393 ou une version ultérieure. Vous ne pouvez pas l’utiliser si votre application cible des versions antérieures de Windows 10. Pour plus d’informations sur les versions de la cible, consultez [code adaptatif de Version](https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
 
 ## <a name="see-also"></a>Voir aussi
 * [Liaison de données](index.md)

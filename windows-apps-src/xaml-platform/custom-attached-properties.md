@@ -11,12 +11,12 @@ dev_langs:
 - vb
 - cppwinrt
 - cpp
-ms.openlocfilehash: e128a4c9d1269b8ed5fe1c09d38af7edbed8fe02
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 7ff5d49521591300214b8ce451e38b4b83d64ef8
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66366542"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67322205"
 ---
 # <a name="custom-attached-properties"></a>Propriétés jointes personnalisées
 
@@ -28,7 +28,7 @@ Nous supposons que vous comprenez les propriétés de dépendance du point de vu
 
 ## <a name="scenarios-for-attached-properties"></a>Scénarios de propriétés jointes
 
-Vous pourriez créer une propriété jointe quand il y a une raison de disposer d’un mécanisme de définition de propriété pour les classes autres que la classe de définition. Les scénarios les plus courants concernent la prise en charge des services et de la disposition. [  **Canvas.ZIndex**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc190397(v%3Dvs.95)) et [**Canvas.Top**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.top?view=netframework-4.8) sont des exemples de propriétés de disposition existantes. Dans un scénario de disposition, les éléments qui existent en tant qu’éléments enfants d’éléments de contrôle de disposition peuvent exprimer des exigences de disposition à leurs éléments parents individuellement, chacun définissant une valeur de propriété que le parent définit comme une propriété jointe. Un exemple de scénario de prise en charge de services dans l’API Windows Runtime est l’ensemble de propriétés jointes de [**ScrollViewer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer), tel que [**ScrollViewer.IsZoomChainingEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.iszoomchainingenabled).
+Vous pourriez créer une propriété jointe quand il y a une raison de disposer d’un mécanisme de définition de propriété pour les classes autres que la classe de définition. Les scénarios les plus courants concernent la prise en charge des services et de la disposition. [  **Canvas.ZIndex**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc190397(v=vs.95)) et [**Canvas.Top**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.top?view=netframework-4.8) sont des exemples de propriétés de disposition existantes. Dans un scénario de disposition, les éléments qui existent en tant qu’éléments enfants d’éléments de contrôle de disposition peuvent exprimer des exigences de disposition à leurs éléments parents individuellement, chacun définissant une valeur de propriété que le parent définit comme une propriété jointe. Un exemple de scénario de prise en charge de services dans l’API Windows Runtime est l’ensemble de propriétés jointes de [**ScrollViewer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer), tel que [**ScrollViewer.IsZoomChainingEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.iszoomchainingenabled).
 
 > [!WARNING]
 > Une limite de l’implémentation de Windows Runtime XAML est que vous ne pouvez pas animer votre propriété jointe personnalisée.
@@ -73,7 +73,7 @@ L’objet *target* peut être d’un type plus spécifique dans votre implément
 
 Cet exemple illustre l’inscription de propriété de dépendance (à l’aide de la méthode [**RegisterAttached**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.registerattached)), ainsi que les accesseurs **Get** et **Set**, pour une propriété jointe personnalisée. Dans l’exemple, la propriété jointe se nomme `IsMovable`. Par conséquent, les accesseurs doivent se nommer `GetIsMovable` et `SetIsMovable`. Le propriétaire de la propriété jointe est une classe de service nommée `GameService` qui ne possède pas sa propre interface utilisateur. Son seul objectif est de fournir les services de propriété jointe lorsque la propriété jointe **GameService.IsMovable** est utilisée.
 
-Définit la propriété jointe en C / c++ / CX est un peu plus complexe. Vous devez décider de la factorisation entre fichier de code et en-tête. De plus, vous devez exposer l’identificateur en tant que propriété uniquement avec un accesseur **get**, pour les raisons discutées dans [Propriétés de dépendance personnalisées](custom-dependency-properties.md). En C / c++ / CX, vous devez définir cette relation de champ de propriété explicitement plutôt que d’utiliser .NET **readonly** mots-clés et stockage implicite de propriétés simples. Vous devez également inscrire la propriété jointe au sein d’une fonction d’assistance. Celle-ci n’est exécutée qu’une seule fois au démarrage de l’application, avant le chargement de toute page XAML nécessitant la propriété jointe. En général, l’appel des fonctions d’assistance d’inscription de propriété pour une partie ou la totalité des propriétés jointes ou de dépendance s’effectue au sein du constructeur **App** / [**Application**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.) dans le code de votre fichier app.xaml.
+Définit la propriété jointe en C / c++ / CX est un peu plus complexe. Vous devez décider de la factorisation entre fichier de code et en-tête. De plus, vous devez exposer l’identificateur en tant que propriété uniquement avec un accesseur **get**, pour les raisons discutées dans [Propriétés de dépendance personnalisées](custom-dependency-properties.md). En C / c++ / CX, vous devez définir cette relation de champ de propriété explicitement plutôt que d’utiliser .NET **readonly** mots-clés et stockage implicite de propriétés simples. Vous devez également inscrire la propriété jointe au sein d’une fonction d’assistance. Celle-ci n’est exécutée qu’une seule fois au démarrage de l’application, avant le chargement de toute page XAML nécessitant la propriété jointe. En général, l’appel des fonctions d’assistance d’inscription de propriété pour une partie ou la totalité des propriétés jointes ou de dépendance s’effectue au sein du constructeur **App** / [**Application**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.-ctor) dans le code de votre fichier app.xaml.
 
 ```csharp
 public class GameService : DependencyObject

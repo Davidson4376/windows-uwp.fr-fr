@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 81b3930c-6af9-406d-9d1e-8ee6a13ec38a
 ms.localizationpriority: medium
-ms.openlocfilehash: a9b6c6fc7a7e3ddfab70fe289a41bb4d436e9722
-ms.sourcegitcommit: ea15237291ae3ade0bf22e38bd292c3a23947a03
+ms.openlocfilehash: 24878d3c63de7df9c55f48571984b7d60d1ea240
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66377313"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320372"
 ---
 # <a name="brokered-windows-runtime-components-for-a-side-loaded-uwp-app"></a>Composants Windows Runtime du service Broker pour les applications installées hors UWP
 
@@ -19,7 +19,7 @@ Cet article décrit une fonctionnalité enterprise-ciblées pris en charge par W
 
 ## <a name="introduction"></a>Introduction
 
->**Remarque**  l’exemple de code qui accompagne cet article peut être téléchargée pour [Visual Studio 2015 et 2017](https://aka.ms/brokeredsample). Le modèle Microsoft Visual Studio pour générer répartie de composants Windows Runtime peut être téléchargé ici : [Modèle de Visual Studio 2015 ciblant les applications Windows universelles pour Windows 10](https://marketplace.visualstudio.com/vsgallery/10be07b3-67ef-4e02-9243-01b78cd27935)
+>**Remarque**  l’exemple de code qui accompagne cet article peut être téléchargée pour [Visual Studio 2015 et 2017](https://aka.ms/brokeredsample). Le modèle Microsoft Visual Studio pour générer répartie de composants Windows Runtime peut être téléchargé ici : [Modèle de Visual Studio 2015 ciblant les applications Windows universelles pour Windows 10](https://marketplace.visualstudio.com/items?itemName=vs-publisher-713547.VS2015TemplateBrokeredComponents)
 
 Windows inclut une nouvelle fonctionnalité appelée *répartie de composants Windows Runtime pour les applications chargées*. Nous utilisons le terme IPC (Inter-Process Communication) pour décrire la capacité à exécuter des composants logiciels de bureau existants dans un processus (composant de bureau) lors de l’interaction avec ce code dans une application UWP. Il s’agit d’un modèle bien connu des développeurs d’entreprise car les applications de base de données et les applications qui utilisent les services NT dans Windows partagent une architecture à plusieurs processus similaire.
 
@@ -108,7 +108,7 @@ Pour ce faire, dans Visual Studio, cliquez avec le bouton droit de la souris sur
 
 Dans le fichier ouvert, recherchez le \<OutputType\> balise et modifiez sa valeur en « winmdobj ».
 
-**Étape 3 :** Créer une règle de génération qui crée une « référence » Windows le fichier de métadonnées (fichier .winmd). c'est-à-dire sans implémentation.
+**Étape 3 :** Créer une règle de génération qui crée une « référence » Windows le fichier de métadonnées (fichier .winmd). c’est-à-dire sans implémentation.
 
 **Étape 4 :** Créer une règle de génération qui crée un fichier de métadonnées Windows « implémentation », par exemple, a les mêmes informations de métadonnées, mais inclut également l’implémentation.
 
@@ -590,7 +590,7 @@ La liste des modules pour un serveur du service broker doit répertorier *clrho
 
 ## <a name="resources"></a>Ressources
 
--   [Modèles de projet répartie composant WinRT pour Windows 10 et VS 2015](https://marketplace.visualstudio.com/vsgallery/10be07b3-67ef-4e02-9243-01b78cd27935)
+-   [Modèles de projet répartie composant WinRT pour Windows 10 et VS 2015](https://marketplace.visualstudio.com/items?itemName=vs-publisher-713547.VS2015TemplateBrokeredComponents)
 
 -   [Exemple de composant de WinRT répartie NorthwindRT](https://go.microsoft.com/fwlink/p/?LinkID=397349)
 

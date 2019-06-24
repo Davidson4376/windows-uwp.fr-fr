@@ -6,12 +6,12 @@ ms.date: 03/22/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c61a35f0ad35cf85afcba564eb676aa171b0243
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: c25fc09d606c0f143f357dd7f89026fa94b80922
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360840"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318358"
 ---
 # <a name="create-edit-and-save-bitmap-images"></a>Créer, modifier et enregistrer des images bitmap
 
@@ -55,7 +55,7 @@ Appelez [**FlushAsync**](https://docs.microsoft.com/uwp/api/windows.graphics.ima
 
 [!code-cs[SaveSoftwareBitmapToFile](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetSaveSoftwareBitmapToFile)]
 
-Vous pouvez spécifier des options d’encodage supplémentaires lorsque vous créez l’élément **BitmapEncoder** en créant un objet [**BitmapPropertySet**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.BitmapPropertySet) et en le remplissant avec un ou plusieurs objets [**BitmapTypedValue**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.BitmapTypedValue) représentant les paramètres d’encodeur. Pour obtenir la liste des options d’encodeur prises en charge, voir [Références des options BitmapEncoder](bitmapencoder-options-reference.md).
+Vous pouvez spécifier des options d’encodage supplémentaires lorsque vous créez l’élément **BitmapEncoder** en créant un objet [**BitmapPropertySet**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.BitmapPropertySet) et en le remplissant avec un ou plusieurs objets [**BitmapTypedValue**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.BitmapTypedValue) représentant les paramètres d’encodeur. Pour obtenir la liste des options d’encodeur prises en charge, voir [Référence des options BitmapEncoder](bitmapencoder-options-reference.md).
 
 [!code-cs[UseEncodingOptions](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetUseEncodingOptions)]
 
@@ -65,7 +65,7 @@ Pour afficher une image dans une page XAML à l’aide du contrôle [**Image**](
 
 [!code-xml[ImageControl](./code/ImagingWin10/cs/MainPage.xaml#SnippetImageControl)]
 
-Actuellement, le contrôle **Image** prend en charge uniquement les images qui utilisent le codage BGRA8 et le canal prémultiplié ou non alpha. Avant d’essayer d’afficher une image, testez-la pour vérifier qu’elle a le format correct, sinon, utilisez la méthode statique [**Convert**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.windows) de **SoftwareBitmap** pour convertir l’image au format pris en charge.
+Actuellement, le contrôle **Image** prend en charge uniquement les images qui utilisent le codage BGRA8 et le canal prémultiplié ou non alpha. Avant d’essayer d’afficher une image, testez-la pour vérifier qu’elle a le format correct, sinon, utilisez la méthode statique [**Convert**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.convert) de **SoftwareBitmap** pour convertir l’image au format pris en charge.
 
 Créez un objet [**SoftwareBitmapSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SoftwareBitmapSource). Définissez le contenu de l’objet source en appelant [**SetBitmapAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.softwarebitmapsource.setbitmapasync), en transmettant un élément **SoftwareBitmap**. Vous pouvez ensuite définir la propriété [**Source**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image.source) du contrôle **Image** sur l’élément **SoftwareBitmapSource** créé.
 
@@ -89,7 +89,7 @@ Pour utiliser COM Interop, vous devez inclure une référence à l’espace de n
 
 [!code-cs[InteropNamespace](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetInteropNamespace)]
 
-Initialisez l’interface COM [**IMemoryBufferByteAccess**](https://docs.microsoft.com/previous-versions//mt297505(v=vs.85)) en ajoutant le code suivant dans votre espace de noms.
+Initialisez l’interface COM [**IMemoryBufferByteAccess**](https://docs.microsoft.com/previous-versions/mt297505(v=vs.85)) en ajoutant le code suivant dans votre espace de noms.
 
 [!code-cs[COMImport](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetCOMImport)]
 
@@ -97,7 +97,7 @@ Créez un élément **SoftwareBitmap** avec le format de pixel et la taille souh
 
 [!code-cs[CreateNewSoftwareBitmap](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetCreateNewSoftwareBitmap)]
 
-Étant donné que cette méthode accède à la mémoire tampon brute sous-jacente des types Windows Runtime, elle doit être déclarée à l’aide du mot clé **unsafe**. Vous devez également configurer votre projet dans Microsoft Visual Studio pour permettre la compilation du code non sécurisé en ouvrant la page **Propriétés** du projet, en cliquant sur la page de propriétés **Générer**, puis en sélectionnant la case à cocher **Autoriser les blocs de code unsafe**.
+Étant donné que cette méthode accède à la mémoire tampon brute sous-jacente des types Windows Runtime, elle doit être déclarée à l’aide du mot clé **unsafe**. Vous devez également configurer votre projet dans Microsoft Visual Studio pour permettre la compilation du code non sécurisé en ouvrant la page **Propriétés** du projet, en cliquant sur la page de propriétés **Créer**, puis en sélectionnant la case à cocher **Autoriser du code unsafe**.
 
 ## <a name="create-a-softwarebitmap-from-a-direct3d-surface"></a>Créer un élément SoftwareBitmap à partir d’une surface Direct3D
 
@@ -111,7 +111,7 @@ Appelez [**CreateCopyFromSurfaceAsync**](https://docs.microsoft.com/uwp/api/wind
 
 ## <a name="convert-a-softwarebitmap-to-a-different-pixel-format"></a>Convertir un élément SoftwareBitmap dans un format de pixel différent
 
-La classe **SoftwareBitmap** fournit la méthode statique [**Convert**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.windows) permettant de créer facilement un nouvel élément **SoftwareBitmap**, qui utilise le format pixel et le mode alpha spécifiés à partir d’un élément **SoftwareBitmap** existant. Veuillez noter que l’image bitmap créée contient une copie distincte des données d’image. Les modifications apportées à la nouvelle image bitmap n’affectent pas l’image bitmap source.
+La classe **SoftwareBitmap** fournit la méthode statique [**Convert**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.convert) permettant de créer facilement un nouvel élément **SoftwareBitmap**, qui utilise le format pixel et le mode alpha spécifiés à partir d’un élément **SoftwareBitmap** existant. Veuillez noter que l’image bitmap créée contient une copie distincte des données d’image. Les modifications apportées à la nouvelle image bitmap n’affectent pas l’image bitmap source.
 
 [!code-cs[Convert](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetConvert)]
 

@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 88d2377f95efbe79853b1416213a25e22ed7d5f0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: e9cc88792e6cfdc581a4c7dc27ecc060cc0000c3
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57639694"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317345"
 ---
 # <a name="designing-inclusive-software-for-windows-10"></a>Conception de logiciels inclusifs pour Windows 10  
 
@@ -23,7 +23,7 @@ Chez Microsoft, nous faisons évoluer nos principes et pratiques de conception. 
 
 Cette nouvelle philosophie de conception est appelée conception inclusive. L’idée consiste à concevoir un logiciel qui s’adresse à tous dès le départ. Cela diffère du processus qui consiste à intégrer l’élément d’accessibilité à la toute fin du processus de développement, ce qui convient uniquement à un groupe d’utilisateurs restreint.
 
-« Nous définissons le handicap/invalidité comme l’incompatibilité entre les besoins de l’individu et le service, le produit ou l’environnement proposés. Tout le monde peut rencontrer un handicap/invalidité. L’exclusion est très courante dans notre société humaine. »  \- à partir de la [inclusif](https://www.microsoft.com/design/inclusive) vidéo  
+« Nous définissons le handicap/invalidité comme l’incompatibilité entre les besoins de l’individu et le service, le produit ou l’environnement proposés. Tout le monde peut rencontrer un handicap/invalidité. L’exclusion est très courante dans notre société humaine. »  \- à partir de la [inclusif](https://www.microsoft.com/design/inclusive/) vidéo  
 
 La conception inclusive crée de meilleurs produits pour tout le monde. Il s’agit de créations pouvant s’appliquer à l’ensemble de la diversité humaine. Prenons l’exemple des abaissements de trottoir présents sur la plupart des trottoirs. À l’origine, ils étaient destinés aux personnes en fauteuil roulant. Mais presque tout le monde s’en sert à présent, y compris les personnes avec des poussettes, les cyclistes et les utilisateurs de skate-board. Même les piétons profitent souvent de ces aménagements qui facilitent la vie. La télécommande d’une TV peut être considérée comme une technologie d’assistance pour une personne atteinte d’un handicap moteur. Et pourtant, presque chaque télévision est accompagnée d’une télécommande. Avant que les enfants n’apprennent à lacer leurs chaussures, ils peuvent porter des chaussures simples à enfiler ou à fermeture facile. Les chaussures simples à enfiler et à enlever sont souvent préférées dans les cultures où l’on se déchausse avant d’entrer dans une maison. Elles sont également mieux adaptées aux personnes ayant des problèmes de dextérité et souffrant par exemple d’arthrite ou d’une fracture du poignet.
 
@@ -34,7 +34,7 @@ Les 4 principes suivants guident la transition de Microsoft vers la conception 
 
 **Vérifiez personnelle**: Ensuite, nous défis pour créer des connexions émotionnels. Les interactions humaines peuvent inspirer une meilleure interaction entre la technologie et les hommes. La situation unique d’une personne peut améliorer la conception pour tout le monde. Le résultat obtenu constitue une expérience donnant l’impression d’avoir été créée sur mesure pour tous.
 
-**Simplicité**: La simplicité constitue le fondement de notre stratégie. Avec un affichage plus clair, nos utilisateurs se sentent plus à l’aise. Les espaces épurés, clairs et ouverts renforcent leur confiance. Nous offrons une expérience honnête, intemporelle.
+**Simplicité**: La simplicité constitue le fondement de notre stratégie. Avec un affichage plus clair, nos utilisateurs se sentent plus à l’aise. Les espaces épurés, clairs et ouverts renforcent leur confiance. Le résultat obtenu constitue une expérience authentique et intemporelle.
 
 **Créer qui raviront**: Expériences plaisante évoquer étonnant et découverte. Parfois, cela relève de la magie. Parfois, il s’agit d’un détail parfait. Nous concevons ces moments pour proposer à nos utilisateurs un changement bienvenu. Le résultat obtenu constitue une expérience fluide et continue.
 
@@ -50,7 +50,7 @@ Une étude commandée par Microsoft et menée entre 2003 et 2004 par l’institu
 
 En plus des handicaps permanents, la gravité et les types de difficulté que rencontrent les individus peuvent varier tout au long de leur vie. L’« individu normal » n’existe pas. Nos capacités sont en constante évolution. Margaret Meade a déclaré : « Nous sommes tous uniques. En étant tous uniques, nous sommes tous pareils. »  
 
-Microsoft s’est engagé à mener des recherches en matière d’informatique et de génie logiciel afin d’améliorer l’expérience informatique et d’inventer des technologies informatiques innovantes. Consultez les [projets actuels de recherche et développement Microsoft](https://www.microsoft.com/enable/microsoft/research.aspx), visant à rendre l’ordinateur plus accessible, plus visible et audible, ainsi que de faciliter l’interaction avec celui-ci.  
+Microsoft s’est engagé à mener des recherches en matière d’informatique et de génie logiciel afin d’améliorer l’expérience informatique et d’inventer des technologies informatiques innovantes. Consultez les [projets actuels de recherche et développement Microsoft](https://www.microsoft.com/accessibility/), visant à rendre l’ordinateur plus accessible, plus visible et audible, ainsi que de faciliter l’interaction avec celui-ci.  
 
 ## <a name="practical-design-steps"></a>Étapes pratiques de la conception  
 Si vous êtes en pleine phase de conception, cette section est faite pour vous. Elle décrit les étapes pratiques de conception à prendre en compte lors de l’implémentation de la conception inclusive dans votre application.  
@@ -104,7 +104,7 @@ En résumé, suivez ces sept étapes pour vous assurer que votre logiciel est in
 7.  Livrez votre produit fini et documentez votre implémentation pour ceux qui travailleront sur le projet ultérieurement.  
 
 ## <a name="related-topics"></a>Rubriques connexes  
-* [Conception inclusive](https://design.microsoft.com/inclusive)
+* [Conception inclusive](https://www.microsoft.com/design/inclusive/)
 * [Logiciel d’ingénierie pour l’accessibilité](https://www.microsoft.com/download/details.aspx?id=19262)
 * [Hub de développeur d’accessibilité de Microsoft](https://developer.microsoft.com/windows/accessible-apps)
 * [Développement d’applications Windows inclusives](developing-inclusive-windows-apps.md) 

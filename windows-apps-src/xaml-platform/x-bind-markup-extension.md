@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c32fee5d9cbe5d40b9fe324eb8d6bad6d87eb9b3
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 4a6f182ab5f34f7bbb99e54626001126b3741522
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371081"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320274"
 ---
 # <a name="xbind-markup-extension"></a>Extension de balisage {x:Bind}
 
@@ -29,7 +29,7 @@ Les objets de liaison créés par **{x:Bind}** et **{Binding}** sont en grande p
 **Exemples d’applications qui illustrent {x : Bind}**
 
 -   [{x:Bind} sample](https://go.microsoft.com/fwlink/p/?linkid=619989)
--   [QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame)
+-   [QuizGame](https://github.com/microsoft/Windows-appsample-networkhelper)
 -   [Exemple de principes de base de l’interface utilisateur XAML](https://go.microsoft.com/fwlink/p/?linkid=619992)
 
 ## <a name="xaml-attribute-usage"></a>Utilisation des attributs XAML
@@ -51,7 +51,7 @@ Les objets de liaison créés par **{x:Bind}** et **{Binding}** sont en grande p
 | _propertyPath_ | Chaîne qui spécifie le chemin de propriété pour la liaison. Pour plus d’informations, voir la section [Chemin de propriété](#property-path) ci-dessous. |
 | _bindingProperties_ |
 | _propName_=_value_\[, _propName_=_value_\]* | Une ou plusieurs propriétés de liaison spécifiées à l’aide d’une syntaxe constituée d’une ou plusieurs paires nom/valeur. |
-| _propName_ | Nom de chaîne de la propriété à définir sur l’objet de liaison. Par exemple, « Convertisseur ». |
+| _propName_ | Nom de chaîne de la propriété à définir sur l’objet de liaison. Par exemple, « Converter ». |
 | _value_ | Valeur à attribuer à la propriété. La syntaxe de l’argument dépend de la propriété définie. Voici un exemple d’utilisation de _propName_=_value_ dans lequel la valeur est elle-même une extension de balisage : `Converter={StaticResource myConverterClass}`. Pour plus d’informations, voir la section [Propriétés que vous pouvez définir avec {x:Bind}](#properties-that-you-can-set-with-xbind) ci-dessous. |
 
 ## <a name="examples"></a>Exemples
@@ -165,11 +165,11 @@ Le code généré des pages et des contrôles utilisateur incluant des liaisons 
 - **StopTracking()** - Déconnecte tous les écouteurs créés pour les liaisons uni- et bidirectionnelles. Elles peuvent être réinitialisées à l’aide de la méthode Update().
 
 > [!NOTE]
-> Depuis Windows 10, version 1607, l’infrastructure XAML fournit un convertisseur intégré permettant de convertir un booléen en Visibility. Le convertisseur mappe **true** à la valeur d’énumération **Visible**et **false** à la valeur d’énumération **Collapsed**. Vous pouvez ainsi lier une propriété Visibility à un booléen sans avoir à créer un convertisseur. Notez qu'il ne s'agit pas d'une fonctionnalité de liaison des fonctions, mais uniquement de liaison des propriétés. Pour utiliser le convertisseur intégré, la version du SDK cible de votre application doit être 14393 ou une version ultérieure. Vous ne pouvez pas l’utiliser si votre application cible des versions antérieures de Windows 10. Pour plus d’informations sur les versions cibles, voir [Code adaptatif de version](https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
+> Depuis Windows 10, version 1607, l’infrastructure XAML fournit un convertisseur intégré permettant de convertir un booléen en Visibility. Le convertisseur mappe **true** à la valeur d’énumération **Visible**et **false** à la valeur d’énumération **Collapsed**. Vous pouvez ainsi lier une propriété Visibility à un booléen sans avoir à créer un convertisseur. Notez qu'il ne s'agit pas d'une fonctionnalité de liaison des fonctions, mais uniquement de liaison des propriétés. Pour utiliser le convertisseur intégré, la version du SDK cible de votre application doit être 14393 ou une version ultérieure. Vous ne pouvez pas l’utiliser si votre application cible des versions antérieures de Windows 10. Pour plus d’informations sur les versions cibles, voir [Code adaptatif de version](https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
 
 **Conseil**    si vous devez spécifier une seule accolade pour une valeur, comme dans [ **chemin d’accès** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.path) ou [ **ConverterParameter** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.converterparameter), faites-le précéder d’une barre oblique inverse : `\{`. Vous pouvez également placer l’ensemble de la chaîne qui contient les accolades à échapper dans une paire de guillemets secondaire. Par exemple : `ConverterParameter='{Mix}'`.
 
-[**Convertisseur**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.converter), [ **ConverterLanguage** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.converterlanguage) et **ConverterLanguage** sont toutes associées au scénario de conversion d’une valeur ou type à partir du source de liaison dans un type ou une valeur qui est compatible avec la propriété de cible de liaison. Pour obtenir plus d’informations et des exemples, voir la section « Conversions de données » de [Présentation détaillée de la liaison de données](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth).
+[**Convertisseur**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.converter), [ **ConverterLanguage** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.converterlanguage) et **ConverterLanguage** sont toutes associées au scénario de conversion d’une valeur ou type à partir du source de liaison dans un type ou une valeur qui est compatible avec la propriété de cible de liaison. Pour obtenir plus d’informations et des exemples, voir la section « Conversions de données » de la rubrique [Présentation détaillée de la liaison de données](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth).
 
 **{x:Bind}** est uniquement une extension de balisage. Il n’existe aucun moyen de créer ou manipuler de telles liaisons par programmation. Pour plus d’informations sur les extensions de balisage, voir [Vue d’ensemble du langage XAML](xaml-overview.md).
 

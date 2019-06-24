@@ -6,12 +6,12 @@ ms.date: 08/10/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e177f4715d549ce3ef64534e0fc28d2fc3a9fe0
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: aacf51cc320a0835f906e91806b686a88907640e
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359950"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317617"
 ---
 # <a name="optimize-your-xaml-markup"></a>Optimiser votre balisage XAML
 
@@ -145,7 +145,7 @@ Les panneaux de disposition intègrent également des propriétés de bordure, i
 
 ### <a name="use-images-in-place-of-vector-based-elements"></a>Utiliser des images à la place des éléments vectoriels
 
-Si vous réutilisez suffisamment souvent le même élément vectoriel, il est alors plus efficace d’utiliser à la place un élément [Image](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image). Les éléments vectoriel peuvent être plus onéreux car l’unité centrale doit créer chaque élément séparément. Le fichier image ne doit être décodé qu’une seule fois.
+Si vous réutilisez suffisamment souvent le même élément vectoriel, il est alors plus efficace d’utiliser à la place un élément [Image](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image). Les éléments vectoriels peuvent être plus onéreux car l’unité centrale doit créer chaque élément séparément. Le fichier image ne doit être décodé qu’une seule fois.
 
 ## <a name="optimize-resources-and-resource-dictionaries"></a>Optimiser les ressources et les dictionnaires de ressources
 
@@ -163,7 +163,7 @@ Un ResourceDictionary défini dans un [UserControl](https://docs.microsoft.com/u
 
 ### <a name="resource-and-resourcedictionary-scope"></a>Étendue Ressource et ResourceDictionary
 
-Si une page fait référence à une commande utilisateur ou à une ressource définie dans un autre fichier, l’infrastructure analyse alors également ce fichier.
+Si une page référence un contrôle utilisateur ou une ressource définis dans un autre fichier, alors l’infrastructure analyse également ce fichier.
 
 Dans cet exemple, étant donné que le fichier _InitialPage.xaml_ utilise une ressource provenant du fichier _ExampleResourceDictionary.xaml_, la totalité du fichier _ExampleResourceDictionary.xaml_ doit être analysée au démarrage.
 
@@ -319,7 +319,7 @@ Utilisez un élément composite au lieu de disposer en couches les différents �
 
 ### <a name="layout-panels"></a>Panneaux de disposition
 
-Un panneau de disposition peut servir à deux choses : colorier une zone et disposer les éléments enfants. Si un élément plus éloigné dans l’ordre Z colore déjà une zone, alors un panneau de disposition situé au premier plan n’a pas besoin de la colorer également. À la place, il peut simplement se concentrer sur la disposition de ses enfants. Voici un exemple :
+Un panneau de disposition peut servir à deux choses : colorier une zone et disposer les éléments enfants. Si un élément plus éloigné dans l’ordre Z colore déjà une zone, alors un panneau de disposition situé au premier plan n’a pas besoin de la colorer également. À la place, il peut simplement se concentrer sur la disposition de ses enfants. En voici un exemple.
 
 **Inefficient.**
 
@@ -350,7 +350,7 @@ Si la [Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) d
 
 ### <a name="borders"></a>Bordures
 
-Utilisez un élément [Border](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border.) pour dessiner une bordure autour d’un objet. Dans cet exemple, une [Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) est utilisée comme bordure autour d’une [TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox). Mais tous les pixels de la cellule centrale sont surdessinés.
+Utilisez un élément [Border](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border) pour dessiner une bordure autour d’un objet. Dans cet exemple, une [Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) est utilisée comme bordure autour d’une [TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox). Mais tous les pixels de la cellule centrale sont surdessinés.
 
 **Inefficient.**
 
@@ -423,7 +423,7 @@ Les contrôles et dictionnaires intégrés dans XAML, qui sont fournis par l’i
 
 Pour vérifier si vous possédez XBF2, ouvrez votre application dans un éditeur binaire ; les 12e et 13e octets correspondent à 00 02 si vous possédez XBF2.
 
-## <a name="related-articles"></a>Articles connexes
+## <a name="related-articles"></a>Articles associés
 
 - [Meilleures pratiques pour les performances de démarrage de votre application](best-practices-for-your-app-s-startup-performance.md)
 - [Optimiser votre disposition XAML](optimize-your-xaml-layout.md)

@@ -6,19 +6,19 @@ ms.date: 10/26/2017
 ms.topic: article
 keywords: Windows 10, uwp, 3dprinting, impression 3d
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f63ce967c2053da9addc77fba0eb738fff41b44
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 6c23dff66ecef87cecb2be5a90fd896be2c59424
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370379"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321686"
 ---
 # <a name="3d-printing"></a>Impression 3D
 
 
 Cette section décrit comment utiliser le [espace de noms Windows.Graphics.Printing3D](https://docs.microsoft.com/uwp/api/windows.graphics.printing3d) pour ajouter des fonctionnalités d’impression 3D à votre application Windows universelle.  
 
-Pour plus d’informations sur l’impression 3D avec Windows 10, y compris des ressources pour partenaires fabricants de matériel, des forums de discussion de Communauté et des informations générales sur les fonctionnalités d’impression 3D, consultez le [impression 3D avec Windows 10](https://developer.microsoft.com/windows/hardware/3d-print-support-windows-10) site sur le matériel Centre de développement.
+Pour plus d’informations sur l’impression 3D avec Windows 10, y compris des ressources pour partenaires fabricants de matériel, des forums de discussion de Communauté et des informations générales sur les fonctionnalités d’impression 3D, consultez le [impression 3D avec Windows 10](https://developer.microsoft.com/windows/hardware/3d-print/windows-3d-printing) site sur le matériel Centre de développement.
 
 | Rubrique | Description |
 |-------|-------------|
@@ -27,7 +27,7 @@ Pour plus d’informations sur l’impression 3D avec Windows 10, y compris des 
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Impression 3D avec Windows 10 (centre de développement de matériel)](https://developer.microsoft.com/windows/hardware/3d-print-support-windows-10)
+* [Impression 3D avec Windows 10 (centre de développement de matériel)](https://developer.microsoft.com/windows/hardware/3d-print/windows-3d-printing)
 * [Espace de noms Windows.Graphics.Printing3D](https://docs.microsoft.com/uwp/api/windows.graphics.printing3d)
 * [Exemple d’impression 3D](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting)
 * [Impression 3D à partir de l’exemple Unity](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrintingFromUnity)

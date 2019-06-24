@@ -1,19 +1,19 @@
 ---
 Description: Vous pouvez créer des campagnes de publicité dans partenaires pour aider à promouvoir votre application et la croissance d’utilisateur de votre application base.
-title: Création d’une campagne de publicité pour votre application
+title: Création d’une campagne de publicité pour votre app
 ms.assetid: 10D94929-92C4-4379-AA5F-6FEF879F2463
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, Active Directory, de campagne, promouvoir
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d38d47c1b5e228e984faa4657cd12735e98bcf9
-ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
+ms.openlocfilehash: 1dc06a2977832e659220b133ba42a99bad982291
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66215234"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320094"
 ---
-# <a name="create-an-ad-campaign-for-your-app"></a>Création d’une campagne de publicité pour votre application
+# <a name="create-an-ad-campaign-for-your-app"></a>Création d’une campagne de publicité pour votre app
 
 Vous pouvez créer des campagnes de publicité dans [partenaires](https://partner.microsoft.com/dashboard) pour aider à promouvoir votre application et développer la base de son utilisateur. Par défaut, nous choisissons le public cible de vos annonces en fonction des paramètres pour votre application dans le centre de partenaires, mais vous pouvez éventuellement définir votre propre public. Vous pouvez également utiliser un ensemble de modèles de publicité par défaut ou charger vers le serveur vos propres conceptions d’annonces. Pour plus d’informations sur les campagnes de publicité, voir [Questions courantes sur les campagnes de publicité](common-questions.md).
 
@@ -30,16 +30,16 @@ Voici comment créer une campagne de publicité pour promouvoir une application�
 2.  Sélectionnez **Créer une campagne** (ou si vous avez déjà créé des campagnes auparavant, sélectionnez **Nouvelle campagne**).
 3.  Sur la page suivante, dans la section **Type d’objectif**, choisissez l’une des options suivantes :
     * **Augmenter les installations de votre application**. Sélectionnez cette option si votre campagne de publicité est conçue pour convaincre les clients d’installer votre application.
-    * **Augmenter l’intérêt pour votre application**. Sélectionnez cette option si votre campagne de publicité vise à inciter les clients à utiliser votre application plus souvent. Lorsque vous sélectionnez cette option, vous pouvez cibler votre campagne de publicité sur les [segments de clientèle](create-customer-segments.md) spécifiques que vous définissez.
+    * **Augmenter l’intérêt pour votre application**. Sélectionnez cette option si votre campagne de publicité vise à inciter les clients à utiliser votre application plus souvent. Lorsque vous sélectionnez cette option, vous pouvez cibler votre campagne de publicité sur des [segments de clientèle](create-customer-segments.md) spécifiques que vous définissez.
 
 4.  Sélectionnez l’application que vous souhaitez promouvoir avec cette campagne. Notez que l’application doit être déjà disponible dans le Windows Store.
 5.  Dans le champ **Nom de la campagne**, examinez le nom fourni pour votre campagne et modifiez-le si vous le souhaitez.
-6.  Sous **Type de campagne**, choisissez l’une des options suivantes :
+6.  Sous **Type de campagne**, choisissez l’une des options suivantes :
     * **Ad payant**: Ces annonces seront exécutera dans n’importe quelle application qui correspond à l’appareil et la catégorie de votre application. Pour les nouvelles campagnes créées après le 9 janvier 2017, ces publicités apparaîtront également dans MSN.com, Outlook.com, Skype et les autres propriétés premium de Microsoft. Les campagnes de promotion d’applications qui ciblent les applications et les propriétés Premium de Microsoft sont appelés campagnes *universelles*.
-    * **Annonce de la Communauté (gratuit)** : Ces annonces seront exécute dans les applications publiées par d’autres développeurs qui créent également des campagnes de publicité de communauté. Avant de sélectionner cette option, vous devez avoir accepté l’affichage des publicités de la communauté dans la page **Monétiser** -> **Publicités dans l’application**. Pour en savoir plus, voir [À propos des annonces de la communauté](about-community-ads.md).
-    * **Publicité maison (gratuite)** : Ces annonces ne seront exécute dans vos applications qui correspond au type d’appareil de l’application publiée. Les publicités maison sont gratuites. Pour plus d’informations, consultez [À propos des publicités maison](about-house-ads.md).
+    * **Annonce de la Communauté (gratuit)** : Ces annonces seront exécute dans les applications publiées par d’autres développeurs qui créent également des campagnes de publicité de communauté. Avant de sélectionner cette option, vous devez avoir accepté l’affichage des publicités de la communauté dans la page **Monétiser** -> **Publicités dans l’application**. Pour plus d’informations, consultez l’article [À propos des annonces de la communauté](about-community-ads.md).
+    * **Publicité maison (gratuite)** : Ces annonces ne seront exécute dans vos applications qui correspond au type d’appareil de l’application publiée. Les publicités maison sont gratuites. Pour plus d’informations, consultez l’article [À propos des publicités maison](about-house-ads.md).
 
-7.  Pour les campagnes de publicité payées, vérifiez l’option sélectionnée dans **Durée de la campagne** (période pendant laquelle le budget de votre campagne sera dépensé). L’option par défaut est **Mensuelle**, ce qui signifie que votre budget de campagne sera utilisé tous les mois de manière récurrente jusqu’à l’arrêt de la campagne. Si vous disposez d’un compte Premium, vous pouvez éventuellement choisir l’option **Personnalisée** pour spécifier une date personnalisée et un intervalle de temps pendant lequel votre budget de campagne sera dépensé. Pour plus d’informations sur les comptes premium, consultez [Questions courantes sur les campagnes de publicité](common-questions.md#how-can-i-increase-the-maximum-monthly-budget-amount-allowed-for-my-ad-campaign).
+7.  Pour les campagnes de publicité payées, vérifiez l’option sélectionnée dans **Durée de la campagne** (période pendant laquelle le budget de votre campagne sera dépensé). L’option par défaut est **Mensuelle**, ce qui signifie que votre budget de campagne sera utilisé tous les mois de manière récurrente jusqu’à l’arrêt de la campagne. Si vous disposez d’un compte Premium, vous pouvez éventuellement choisir l’option **Personnalisée** pour spécifier une date personnalisée et un intervalle de temps pendant lequel votre budget de campagne sera dépensé. Pour plus d’informations sur les comptes Premium, consultez l’article [Questions courantes sur les campagnes de publicité](common-questions.md#how-can-i-increase-the-maximum-monthly-budget-amount-allowed-for-my-ad-campaign).
 
 8.  Vérifiez vos informations de budget et de paiement. (Si vous créez une campagne maison ou une campagne de publicité de la communauté, ces options n’apparaîtront pas, car ces campagnes sont gratuites.)
     * Sous **Budget**, utilisez le curseur pour définir la somme que vous souhaitez dépenser chaque mois pour exécuter la publicité (ou le budget total, si vous avez sélectionné une durée de campagne personnalisée).
@@ -67,14 +67,14 @@ Voici comment créer une campagne de publicité pour promouvoir une application�
 
     Cette section affiche également un graphique **Portée estimée**. Ce graphique présente l’audience que vous pouvez envisager d’atteindre avec les choix de ciblage en cours. Il s’agit d’un pourcentage de l’ensemble des utilisateurs d’applications Windows affichant des publicités sur les marchés sélectionnés.
 
-10.  Si vous avez choisi **Augmenter l’intérêt pour votre application** comme objectif de campagne, vous pouvez sélectionner l’un des segments de clients à cibler. Les publicités créées à l’aide de cette campagne sont vues seulement par les clients qui sont inclus dans le segment. Vous ne pouvez sélectionner qu’un segment par campagne de publicité. Pour plus d’informations sur les segments, consultez [Créer des segments de clients](create-customer-segments.md). Lorsque vous avez terminé, cliquez sur **Enregistrer et Suivant** afin de poursuivre à l’étape **Conception d’annonces**. Cette étape n’est pas disponible pour les campagnes de publicité maison, car elles s’exécutent uniquement dans vos propres applications.
+10.  Si vous avez choisi **Augmenter l’intérêt pour votre application** comme objectif de campagne, vous pouvez sélectionner l’un des segments de clients à cibler. Les publicités créées à l’aide de cette campagne sont vues seulement par les clients qui sont inclus dans le segment. Vous ne pouvez sélectionner qu’un segment par campagne de publicité. Pour plus d’informations sur les segments, consultez l’article [Créer des segments de clients](create-customer-segments.md). Lorsque vous avez terminé, cliquez sur **Enregistrer et Suivant** afin de poursuivre à l’étape **Conception d’annonces**. Cette étape n’est pas disponible pour les campagnes de publicité maison, car elles s’exécutent uniquement dans vos propres applications.
 
 11.  Dans la page **Conception d’annonces**, choisissez l’une des options suivantes :
     * **Auto-généré**. Cette option est la valeur par défaut, et il vous permet de créer une annonce à partir de nos modèles par défaut. Vous pouvez effectuer des sélections pour personnaliser le contenu de votre application, et nous afficherons alors un aperçu de l’aspect de votre publicité en fonction de vos choix (automatiquement mis à jour dès que vous effectuez des sélections).
         * Dans la liste déroulante **Langue**, sélectionnez la langue de votre publicité. Le texte du badge Microsoft Store s’affichera dans la langue que vous avez sélectionnée.
         * Pour ajouter une ligne de texte supplémentaire à votre publicité, entrez ce texte dans le champ **Slogan personnalisé**.
             > [!NOTE]
-            > Le texte que vous entrez ici doit être localisé dans la langue sélectionnée. Le slogan personnalisé sera rejeté si le texte n’est pas conforme aux [politiques Bing Ads](https://go.microsoft.com/fwlink?LinkId=398341). Lisez cette page pour obtenir des conseils sur le style et les contenus non autorisés.
+            > Le texte que vous entrez ici doit être localisé dans la langue sélectionnée. Si le texte n’est pas conforme aux [politiques Bing Ads](https://go.microsoft.com/fwlink?LinkId=398341), le slogan personnalisé sera rejeté. Lisez cette page pour obtenir des conseils sur le style et les contenus non autorisés.
         * Pour personnaliser l’annonce davantage, développez **Personnaliser la conception d’annonce/Voir toutes les tailles d’annonces** et choisissez l’une des options suivantes :
             * **Couleur d’arrière-plan**. Choisissez parmi les options disponibles.
             * **Images**. Choisissez l’une des images disponibles (issues de la description de votre application dans le Windows Store).
@@ -82,19 +82,19 @@ Voici comment créer une campagne de publicité pour promouvoir une application�
             * **Indiquer que mon application est gratuite**. Si votre application est gratuite sur l’ensemble des marchés sélectionnés, vous avez la possibilité de cocher cette case.
             * **Appel à l’action**. Si vous avez choisi **Augmenter l’intérêt pour votre application** comme objectif de campagne, vous pouvez définir le bouton d’appel à l’action de votre annonce sur **Ouvrir**, **Lecture**, **Lire**, **Écouter** ou **Acheter**.  
 
-    * **Personnalisé**. Choisissez cette option pour utiliser vos propres conceptions d’annonces. Notez que si vous avez sélectionné précédemment un segment de clientèle, vous devez utiliser créatifs personnalisés. Vous pouvez charger différents fichiers pour chacune des tailles d’annonce disponibles. Les fichiers doivent répondre aux exigences et directives suivantes :
+    * **Personnalisée**. Choisissez cette option pour utiliser vos propres conceptions de publicités. Notez que si vous avez sélectionné précédemment un segment de clientèle, vous devez utiliser créatifs personnalisés. Vous pouvez charger des fichiers distincts pour chacune des tailles de publicité disponibles. Les fichiers doivent répondre aux exigences et directives suivantes :
         * Chaque fichier doit être un .png ou .jpg inférieur ou égal à 40 Ko.
         * Vos conceptions d’annonces doivent respecter les critères spécifiés dans la [Microsoft Creative Acceptance Policy](https://go.microsoft.com/fwlink?LinkId=532595).
         * Le contenu de vos conceptions d’annonces doit être approprié à l’application dont vous faites la promotion. Les conceptions d’annonces qui ne sont pas liées à l’application ne seront pas distribuées aux publicités au sein des autres applications.
-        * Tout le contenu de vos conceptions d’annonces doit être clairement lisible. Par exemple, le contenu ne doit pas être flou, pixelisé ou déformé.
+        * Tout le contenu de vos conceptions d’annonces doit être clairement lisible. Par exemple, le contenu ne doit pas être flou, pixellisé ni déformé.
 
-12.  Si vous avez un [compte premium](common-questions.md#how-can-i-increase-the-maximum-monthly-budget-amount-allowed-for-my-ad-campaign), vous pouvez utiliser la zone **URL de destination** pour contrôler ce qui se passe quand un client clique sur votre annonce.
+12.  Si vous disposez d’un [compte Premium](common-questions.md#how-can-i-increase-the-maximum-monthly-budget-amount-allowed-for-my-ad-campaign), vous pouvez utiliser la zone **URL de destination** pour contrôler ce qui se passe lorsqu’un client clique sur votre publicité.
     * Si vous laissez la zone vide, quand un client clique sur votre annonce, la liste de vos applications dans le Windows Store s’affiche.
-    * Si vous utilisez Adjust, Kochava, régler ou Vungle pour mesurer l’analytique de l’installation de votre application, entrez votre URL de suivi d’installation. Lorsque vous enregistrez la campagne, l’URL de suivi est validée pour garantir sa résolution dans la page de description de votre application dans le Microsoft Store. Pour plus d’informations sur le suivi d’installation avec ces services, consultez le [Adjust](https://docs.adjust.com/en/), [Kochava](https://support.kochava.com/), [paramétrer](https://help.tune.com/), et [Vungle](https://support.vungle.com/) documentation .
+    * Si vous utilisez Adjust, Kochava, régler ou Vungle pour mesurer l’analytique de l’installation de votre application, entrez votre URL de suivi d’installation. Lorsque vous enregistrez la campagne, l’URL de suivi est validée pour garantir sa résolution dans la page de description de votre application dans le Microsoft Store. Pour plus d’informations sur le suivi d’installation avec ces services, consultez le [Adjust](https://docs.adjust.com/en/), [Kochava](https://support.kochava.com/), [paramétrer](https://help.tune.com/hasoffers/), et [Vungle](https://support.vungle.com/hc/en-us) documentation .
     * Si vous avez choisi **Augmenter l’intérêt pour votre application** comme objectif de campagne, vous pouvez spécifier un [URI de lien ciblé](../launch-resume/handle-uri-activation.md) pour rediriger les clients du segment sélectionné vers une page spécifique de votre application.
     * Si vous spécifiez une destination qui n’est pas la page de description de votre application ni une page interne à votre application, votre campagne est automatiquement suspendue.
 
-13.  Enfin, cliquez sur **Révision** pour vérifier les paramètres de votre campagne de publicité et pour vérifier son budget et les informations de paiement s’il s’agit d’une campagne de publicité payante. Cliquez sur **Confirmer**. Dans les heures qui suivent, vos annonces s’afficheront progressivement sur les appareils.
+13.  Enfin, cliquez sur **Révision** pour vérifier les paramètres de votre campagne de publicité et pour vérifier ses informations de budget et de paiement s’il s’agit d’une campagne de publicité payante. Cliquez sur **Confirmer**. Dans les heures qui suivent, vos annonces s’afficheront progressivement sur les appareils.
 
 ## <a name="review-ad-campaign-performance"></a>Vérifier les performances des campagnes de publicité
 

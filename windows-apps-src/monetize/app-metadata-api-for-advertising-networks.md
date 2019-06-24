@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, uwp, réseau publicitaire, métadonnées d’application
 ms.assetid: f0904086-d61f-4adb-82b6-25968cbec7f3
 ms.localizationpriority: medium
-ms.openlocfilehash: 0122c2fbe1e0e9905a8509694c4a589e04e33247
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d47b1fb567c647ade6ae81373b391c42354f7d88
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57621134"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318624"
 ---
 # <a name="app-metadata-api-for-advertising-networks"></a>API de métadonnées d’application pour les réseaux publicitaires
 
@@ -67,7 +67,7 @@ Cette méthode présente la syntaxe de requête suivante.
 
 ### <a name="request-header"></a>En-tête de requête
 
-| En-tête        | Type   | Description                                                                 |
+| Header        | type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Ocp-Apim-Subscription-Key | chaîne | Obligatoire. La clé de l’abonnement que vous avez [récupérée à partir du portail API de métadonnées d’application](#get-key).  |
 
@@ -75,7 +75,7 @@ Cette méthode présente la syntaxe de requête suivante.
 
 ### <a name="request-parameters"></a>Paramètres de la requête
 
-| Nom        | Type   | Description                                                                 |
+| Nom        | type   | Description                                                                 |
 |---------------|--------|-----------------------|
 | app_id | chaîne | Obligatoire. L’ID de l’application pour laquelle vous souhaitez récupérer des métadonnées. Les valeurs possibles sont les suivantes :<br/><br/><ul><li>L’ID Windows Store pour l’application. Exemple d’ID Windows Store : 9NBLGGH29DM8.</li><li>L’ID de produit (parfois appelé *ID de l’application*) pour une application créée à l’origine pour Windows 8.x ou Windows Phone 8.x. L’ID de produit est un GUID.</li></ul> |
 
@@ -90,7 +90,7 @@ GET https://admetadata.azure-api.net/v1/app/9NBLGGH29DM8 HTTP/1.1
 Ocp-Apim-Subscription-Key: <subscription key>
 ```
 
-### <a name="response-body"></a>Corps de la réponse
+### <a name="response-body"></a>Corps de réponse
 
 L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à cette méthode.
 
@@ -126,7 +126,7 @@ L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à c
 
 Pour plus d’informations sur les valeurs figurant dans le corps de réponse, voir la table suivante.
 
-| Valeur      | Type   | Description    |
+| Value      | type   | Description    |
 |------------|--------|--------------------|
 | storeId           | chaîne  | ID Windows Store de l’application. Exemple d’ID Windows Store : 9NBLGGH29DM8.     |  
 | name           | chaîne  | Nom de l’application.   |
@@ -134,16 +134,16 @@ Pour plus d’informations sur les valeurs figurant dans le corps de réponse, v
 | phoneStoreGuid           | chaîne  | L’ID de produit (Windows Phone 8.x) pour l’application. Il s’agit d’un GUID.  |
 | windowsStoreGuid           | chaîne  | L’ID de produit (Windows 8.x) pour l’application. Il s’agit d’un GUID. |
 | storeCategory           | chaîne  | La catégorie pour l’application dans le Windows Store. Pour les valeurs prises en charge, voir [Tableau des catégories et sous-catégories](../publish/category-and-subcategory-table.md) pour les applications du Windows Store.  |
-| iabCategory           | chaîne  | La catégorie de contenu pour l’application, telle que définie par l’Interactive Advertising Bureau (IAB). Par exemple, **Actualités** ou **Sports**. Pour obtenir la liste des catégories de contenu, voir la page [IAB Tech Lab Content Taxonomy](https://www.iab.com/guidelines/iab-quality-assurance-guidelines-qag-taxonomy) (Taxonomie du contenu du laboratoire technique IAB) sur le site web IAB.   |
+| iabCategory           | chaîne  | La catégorie de contenu pour l’application, telle que définie par l’Interactive Advertising Bureau (IAB). Par exemple, **Actualités** ou **Sports**. Pour obtenir la liste des catégories de contenu, voir la page [IAB Tech Lab Content Taxonomy](https://www.iab.com/guidelines/iab-quality-assurance-guidelines-qag-taxonomy/) (Taxonomie du contenu du laboratoire technique IAB) sur le site web IAB.   |
 | iabCategoryId           | chaîne  | L’ID de la catégorie de contenu pour l’application. Par exemple, **IAB12** est l’ID de la catégorie Actualités, et **IAB17** est l’ID de la catégorie Sports. Pour obtenir une liste des ID de catégorie de contenu, voir la section 5.1 du document [OpenRTB API Specification](https://www.iab.com/wp-content/uploads/2015/05/OpenRTB_API_Specification_Version_2_3_1.pdf) (Spécification API OpenRTB). |
-| coppa           | Booléen  | True si l’application s’adresse à des enfants âgés de moins de 13 ans et a donc des obligations en vertu du Children’s Online Privacy Protection Act (COPPA), sinon, false.  |
+| coppa           | Valeur booléenne  | True si l’application s’adresse à des enfants âgés de moins de 13 ans et a donc des obligations en vertu du Children’s Online Privacy Protection Act (COPPA), sinon, false.  |
 | downloadUrl           | chaîne  | Le lien vers la description de l’application dans le Windows Store. Ce lien est au format ```https://www.microsoft.com/store/apps/<Store ID>```.  |
-| isLive           | Booléen  | Vrai, si l’application est actuellement disponible sur le Windows Store ; sinon, faux.  |
-| iconUrls           | tableau  |  Un tableau d’une ou de plusieurs chaînes qui contiennent les chemins d’accès relatifs aux URL d’icônes associées à l’application. Pour récupérer les icônes, faites précéder les URL de *http* ou *https*.  |
+| isLive           | Valeur booléenne  | Vrai, si l’application est actuellement disponible sur le Windows Store ; sinon, faux.  |
+| iconUrls           | array  |  Un tableau d’une ou de plusieurs chaînes qui contiennent les chemins d’accès relatifs aux URL d’icônes associées à l’application. Pour récupérer les icônes, faites précéder les URL de *http* ou *https*.  |
 | type           | chaîne  | Une des chaînes suivantes : **Application** ou **jeu**.  |
-| appareils           |  tableau  | Un tableau d’un ou plusieurs des chaînes suivantes qui spécifient les types de périphérique qui prend en charge de l’application : **PC**, **téléphone**, **Xbox**, **IoT**, **Server**, et **HOLOGRAPHIQUE**.  |
-| platformVersions           | tableau  |  Un tableau d’un ou plusieurs des chaînes suivantes qui spécifient les plateformes qui prend en charge de l’application : **Windows.Universal**, **Windows.Windows8x**, et **Windows.WindowsPhone8x**.  |
-| screenshotUrls           | tableau  | Un tableau d’une ou plusieurs chaînes qui contiennent les chemins d’accès relatifs à l’URL de la capture d’écran pour cette application. Pour récupérer les captures d’écran, faites précéder les URL de *http* ou *https*.  |
+| appareils           |  array  | Un tableau d’un ou plusieurs des chaînes suivantes qui spécifient les types de périphérique qui prend en charge de l’application : **PC**, **téléphone**, **Xbox**, **IoT**, **Server**, et **HOLOGRAPHIQUE**.  |
+| platformVersions           | array  |  Un tableau d’un ou plusieurs des chaînes suivantes qui spécifient les plateformes qui prend en charge de l’application : **Windows.Universal**, **Windows.Windows8x**, and **Windows.WindowsPhone8x**.  |
+| screenshotUrls           | array  | Un tableau d’une ou plusieurs chaînes qui contiennent les chemins d’accès relatifs à l’URL de la capture d’écran pour cette application. Pour récupérer les captures d’écran, faites précéder les URL de *http* ou *https*.  |
 
 <span/>
 

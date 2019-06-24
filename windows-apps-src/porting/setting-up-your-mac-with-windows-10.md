@@ -1,19 +1,19 @@
 ---
 description: Utilisez votre ordinateur Mac actuel pour développer des applications pour Windows.
-title: Configuration de votre Mac avec Windows 10
+title: Configuration de votre Mac avec Windows 10
 ms.assetid: 6D520610-5DE0-476E-A792-AA57E002D309
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e4f7b0469ae8c50e6da40fb248678a69a2827931
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5bdd090b380160952dfbb8b5f04b95b6c84b75b7
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57663824"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67322344"
 ---
-# <a name="setting-up-your-mac-with-windows-10"></a>Configuration de votre Mac avec Windows 10
+# <a name="setting-up-your-mac-with-windows-10"></a>Configuration de votre Mac avec Windows 10
 
 
 Utilisez votre ordinateur Mac actuel pour développer des applications pour Windows.
@@ -22,7 +22,7 @@ Utilisez votre ordinateur Mac actuel pour développer des applications pour Wind
 
 Vous êtes prêt à développer des applications Windows universelles, mais vous n'avez pas de PC à portée de main ? Ce n’est pas un problème, vous pouvez utiliser votre Mac ! Avec les solutions tierces populaires tels que Apple Boot Camp, Oracle VirtualBox, VMware Fusion et Parallels Desktop, vous pouvez installer Windows 10 et Microsoft Visual Studio sur votre ordinateur Apple.
 
-**Remarque**  vous devez une image de démarrage Windows 10 sur le disque ou lecteur flash USB. Si vous êtes un abonné MSDN, vous pouvez télécharger l’image d’installation à partir du centre Téléchargements des abonnés MSDN. Si vous n’êtes pas abonné, le programme d’installation peut être acheté à partir de la [Microsoft Store](https://apps.microsoft.com/windows/app). Vous pouvez également le télécharger à partir de [cet emplacement](https://go.microsoft.com/fwlink/?LinkId=623906) ; très utile si vous exécutez déjà Windows et que vous souhaitez effectuer une mise à jour.
+**Remarque**  vous devez une image de démarrage Windows 10 sur le disque ou lecteur flash USB. Si vous êtes un abonné MSDN, vous pouvez télécharger l’image d’installation à partir du centre Téléchargements des abonnés MSDN. Si vous n’êtes pas abonné, le programme d’installation peut être acheté à partir de la [Microsoft Store](https://www.microsoft.com/store/apps). Vous pouvez également le télécharger à partir de [cet emplacement](https://go.microsoft.com/fwlink/?LinkId=623906) ; très utile si vous exécutez déjà Windows et que vous souhaitez effectuer une mise à jour.
 
 Une fois que vous avez en cours d’exécution Windows, vous pouvez ensuite installer la dernière version de Visual Studio à partir de [téléchargements pour les développeurs pour Windows 10](https://developer.microsoft.com/en-us/windows/downloads) et commencer à écrire des applications !
 

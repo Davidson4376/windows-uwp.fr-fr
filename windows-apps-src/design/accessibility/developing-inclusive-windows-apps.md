@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f7dd2a9118e9780b7d2c5044a36b04b27f481ab
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 08f9d3f20974c1e1ce7ef62c01c26a44d3ff4889
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361973"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319227"
 ---
 # <a name="developing-inclusive-windows-apps"></a>Développement d’applications Windows inclusives  
 
@@ -76,13 +76,13 @@ Voici une version abrégée de la liste de vérification de l’accessibilité 
 3. Vérifiez visuellement votre interface utilisateur pour vous assurer que le contraste du texte est suffisant, que le rendu des éléments est correct dans les thèmes à contraste élevé et que les couleurs sont utilisées correctement.
 4. Exécutez les outils d’accessibilité, traitez les problèmes signalés et vérifiez l’expérience de lecture d’écran. (Voir la rubrique concernant le test de l’accessibilité)
 5. Assurez-vous que vos paramètres de manifeste d’application respectent les recommandations en matière d’accessibilité.
-6. Déclarez votre application comme accessible dans le Microsoft Store. (Voir la rubrique [Accessibilité dans le Windows Store](accessibility-in-the-store.md))
+6. Déclarez votre application comme accessible dans le Microsoft Store. (Voir la rubrique [Accessibilité dans le Store](accessibility-in-the-store.md).)
 
 Pour en savoir plus, consultez la rubrique [Liste de vérification de l’accessibilité](accessibility-checklist.md).
 
 ## <a name="related-topics"></a>Rubriques connexes  
 * [Conception de logiciels inclusifs](designing-inclusive-software.md)  
-* [Conception inclusive](https://design.microsoft.com/inclusive)
+* [Conception inclusive](https://www.microsoft.com/design/inclusive/)
 * [Pratiques d’accessibilité à éviter](practices-to-avoid.md)
 * [Logiciel d’ingénierie pour l’accessibilité](https://www.microsoft.com/download/details.aspx?id=19262)
 * [Hub de développeur d’accessibilité de Microsoft](https://developer.microsoft.com/windows/accessible-apps)

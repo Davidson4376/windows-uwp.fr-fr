@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b41069f1ca964f978ba0cff73f5c34a9db133a10
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 7e0c3802f0b6163ad5f0e179d90148bae543aeab
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57649084"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320844"
 ---
 # <a name="badge-notifications-for-uwp-apps"></a>Notifications de badge pour les applications UWP
 
@@ -34,12 +34,12 @@ Les badges de notification apparaissent sur l’icône de la barre des tâches d
 
 <table>
     <tr>
-        <th>Valeur</th>
+        <th>Value</th>
         <th>Badge</th>
         <th>XML</th>
     </tr>
     <tr>
-        <td>Nombre compris entre 1 et 99 Une valeur de 0 est équivalente à la valeur de glyphe « aucuneˆ» et efface le badge.</td>
+        <td>Nombre compris entre 1 et 99 Une valeur de 0 est équivalente à la valeur de glyphe « aucune » et efface le badge.</td>
         <td><img src="images/badges/badge-numeric.png" alt="A numeric badge less than 100." /></td>
         <td>`<badge value="1"/>`</td>
     </tr>
@@ -55,7 +55,7 @@ Au lieu d’un nombre, un badge peut afficher l’un des ensembles de glyphes d�
 
 <table>
 <tr>
-    <th>État</th>
+    <th>le statut</th>
     <th>Glyphe</th>
     <th>XML</th>
 </tr>
@@ -196,9 +196,9 @@ private void clearBadge()
 
 ## <a name="get-the-sample-code"></a>Obtenir l’exemple de code
 
-* [Exemple de notifications](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/Notifications)<br/> Montre comment créer des vignettes dynamiques, envoyer des mises à jour de badge et afficher des notifications toast. 
+* [Exemple de notifications](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)<br/> Montre comment créer des vignettes dynamiques, envoyer des mises à jour de badge et afficher des notifications toast. 
 
-## <a name="related-articles"></a>Articles connexes
+## <a name="related-articles"></a>Articles associés
 
 * [Notifications toast adaptatives et interactives](adaptive-interactive-toasts.md)
 * [Créer des vignettes](creating-tiles.md)

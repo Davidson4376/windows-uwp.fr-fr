@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 35eed8310b406a960334c90d6c359c0313b2660c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: f23d80b4d2796b4d9c86648c09d6bece5e82d482
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66358896"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317829"
 ---
 # <a name="capture-photos-and-video-with-windows-built-in-camera-ui"></a>Capturer des photos et des vidéos à l’aide de l’interface utilisateur de l’appareil photo intégré à Windows
 
@@ -36,7 +36,7 @@ Pour capturer une photo, créez un objet [**CameraCaptureUI**](https://docs.micr
 > [!NOTE]
 > Le rognage d’images dans **CameraCaptureUI** n’est pas pris en charge pour les appareils de la famille d’appareils mobiles. La valeur de la propriété [**AllowCropping**](https://docs.microsoft.com/uwp/api/windows.media.capture.cameracaptureuiphotocapturesettings.allowcropping) est ignorée quand votre application est exécutée sur ces appareils.
 
-Appelez [**CaptureFileAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.cameracaptureui.) et spécifiez [**CameraCaptureUIMode.Photo**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.CameraCaptureUIMode) pour indiquer qu’une photo doit être capturée. La méthode renvoie une instance [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) contenant l’image si la capture est réussie. Si l’utilisateur annule la capture, l’objet renvoyé est null.
+Appelez [**CaptureFileAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.cameracaptureui.capturefileasync) et spécifiez [**CameraCaptureUIMode.Photo**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.CameraCaptureUIMode) pour indiquer qu’une photo doit être capturée. La méthode renvoie une instance [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) contenant l’image si la capture est réussie. Si l’utilisateur annule la capture, l’objet renvoyé est null.
 
 [!code-cs[CapturePhoto](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetCapturePhoto)]
 
@@ -58,11 +58,11 @@ Pour afficher l’image dans votre interface utilisateur, déclarez un contrôle
 
 [!code-xml[ImageControl](./code/CameraCaptureUIWin10/cs/MainPage.xaml#SnippetImageControl)]
 
-Pour utiliser l’image bitmap logicielle dans votre page XAML, incluez l’espace de noms using [**Windows.UI.Xaml.Media.Imaging**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging) dans votre projet.
+Pour utiliser l’image bitmap logicielle dans votre page XAML, incluez l’espace de noms [**Windows.UI.Xaml.Media.Imaging**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging) dans votre projet.
 
 [!code-cs[UsingSoftwareBitmapSource](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetUsingSoftwareBitmapSource)]
 
-Le contrôle **Image** nécessite que la source d’image soit au format BGRA8 avec alpha prémultiplié ou sans alpha. Appelez la méthode statique [**SoftwareBitmap.Convert**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.windows) pour créer une image bitmap logicielle au format souhaité. Ensuite, créez un objet [**SoftwareBitmapSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SoftwareBitmapSource) et appelez [**SetBitmapAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.softwarebitmapsource.setbitmapasync) pour affecter l’image bitmap logicielle à la source. Enfin, définissez le contrôle **Image** et sa propriété [**Source**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image.source) pour afficher la photo capturée dans l’interface utilisateur.
+Le contrôle **Image** nécessite que la source d’image soit au format BGRA8 avec alpha prémultiplié ou sans alpha. Appelez la méthode statique [**SoftwareBitmap.Convert**](/uwp/api/windows.graphics.imaging.softwarebitmap.convert) pour créer une image bitmap logicielle au format souhaité. Ensuite, créez un objet [**SoftwareBitmapSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SoftwareBitmapSource) et appelez [**SetBitmapAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.softwarebitmapsource.setbitmapasync) pour affecter l’image bitmap logicielle à la source. Enfin, définissez la propriété [**Source**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image.source) du contrôle **Image** pour afficher la photo capturée dans l’interface utilisateur.
 
 [!code-cs[SetImageSource](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetSetImageSource)]
 
@@ -70,7 +70,7 @@ Le contrôle **Image** nécessite que la source d’image soit au format BGRA8 a
 
 Pour capturer une vidéo, créez un objet [**CameraCaptureUI**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.CameraCaptureUI). À l’aide de la propriété [**VideoSettings**](https://docs.microsoft.com/uwp/api/windows.media.capture.cameracaptureui.videosettings) de l’objet, vous pouvez spécifier les propriétés de la vidéo renvoyée, comme le format.
 
-Appelez [**CaptureFileAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.cameracaptureui.) et spécifiez [**Video**](https://docs.microsoft.com/uwp/api/windows.media.capture.cameracaptureui.videosettings) pour indiquer qu’une vidéo doit être capturée. La méthode renvoie une instance [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) contenant la vidéo si la capture est réussie. Si l’utilisateur annule la capture, l’objet renvoyé est null.
+Appelez [**CaptureFileAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.cameracaptureui.capturefileasync) et spécifiez [**Video**](https://docs.microsoft.com/uwp/api/windows.media.capture.cameracaptureui.videosettings) pour indiquer qu’une vidéo doit être capturée. La méthode renvoie une instance [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) contenant la vidéo si la capture est réussie. Si l’utilisateur annule la capture, l’objet renvoyé est null.
 
 [!code-cs[CaptureVideo](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetCaptureVideo)]
 

@@ -5,20 +5,20 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: windows 10, uwp, services de Microsoft Store, API d'analyse du Microsoft Store, analyse Xbox Live, utilisation simultanée
 ms.localizationpriority: medium
-ms.openlocfilehash: e4ac2208ca5eca02e3007a88209aa26735e29612
-ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.openlocfilehash: a1ceef92a533a230c2dca54a835578b56ceb809f
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58162865"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321762"
 ---
 # <a name="get-xbox-live-concurrent-usage-data"></a>Obtenir les données d’utilisation simultanée Xbox Live
 
 
-Utilisez cette méthode dans l'API d'analyse du Microsoft Store pour obtenir des données d’utilisation en temps quasi-réel (avec une latence de 5 à 15 minutes) sur le nombre moyen de clients jouant à votre [jeu Xbox Live](https://docs.microsoft.com/gaming/xbox-live//index.md) toutes les minutes, heures ou chaque jour pendant une période spécifiée. Ces informations sont également disponibles dans le [rapport d’analytique de Xbox](../publish/xbox-analytics-report.md) dans Partner Center.
+Utilisez cette méthode dans l'API d'analyse du Microsoft Store pour obtenir des données d’utilisation en temps quasi-réel (avec une latence de 5 à 15 minutes) sur le nombre moyen de clients jouant à votre [jeu Xbox Live](https://docs.microsoft.com/gaming/xbox-live/index.md) toutes les minutes, heures ou chaque jour pendant une période spécifiée. Ces informations sont également disponibles dans le [rapport d’analytique de Xbox](../publish/xbox-analytics-report.md) dans Partner Center.
 
 > [!IMPORTANT]
-> Cette méthode prend uniquement en charge les jeux pour Xbox et les jeux qui utilisent les services Xbox Live. Ces jeux doivent passer par le [processus d’approbation de concept](../gaming/concept-approval.md), qui inclut les jeux publiés par des [partenaires Microsoft](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#microsoft-partners) et les jeux soumis via le [programme ID@Xbox](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#id). Cette méthode ne prend actuellement pas en charge les jeux publiés via le [Programme Créateurs Xbox Live](https://docs.microsoft.com/gaming/xbox-live//get-started-with-creators/get-started-with-xbox-live-creators.md).
+> Cette méthode prend uniquement en charge les jeux pour Xbox et les jeux qui utilisent les services Xbox Live. Ces jeux doivent passer par le [processus d’approbation de concept](../gaming/concept-approval.md), qui inclut les jeux publiés par des [partenaires Microsoft](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#microsoft-partners) et les jeux soumis via le [programme ID@Xbox](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#id). Cette méthode ne prend actuellement pas en charge les jeux publiés via le [Programme Créateurs Xbox Live](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md).
 
 ## <a name="prerequisites"></a>Prérequis
 
@@ -39,7 +39,7 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 
 ### <a name="request-header"></a>En-tête de requête
 
-| Header        | Type   | Description                                                                 |
+| Header        | type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | chaîne | Obligatoire. Le jeton d’accès Azure AD sous la forme **PORTEUR** &lt; *jeton*&gt;. |
 
@@ -47,7 +47,7 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 ### <a name="request-parameters"></a>Paramètres de la requête
 
 
-| Paramètre        | Type   |  Description      |  Obligatoire  
+| Paramètre        | type   |  Description      |  Requis  
 |---------------|--------|---------------|------|
 | applicationId | chaîne | [ID Store](in-app-purchases-and-trials.md#store-ids) du jeu pour lequel vous voulez récupérer des données d'utilisation simultanée Xbox Live.  |  Oui  |
 | metricType | chaîne | Une chaîne qui spécifie le type de données d’analytique Xbox Live à récupérer. Pour cette méthode, spécifiez la valeur **concurrency** .  |  Oui  |
@@ -69,9 +69,9 @@ Authorization: Bearer <your access token>
 
 Le corps de la réponse comporte un tableau d’objets contenant chacun un ensemble de données d’utilisation simultanée pour une minute, une heure ou un jour spécifié(e). Chaque objet contient les valeurs suivantes.
 
-| Value      | Type   | Description                  |
+| Value      | type   | Description                  |
 |------------|--------|-------------------------------------------------------|
-| Nombre      | nombre  | Le nombre moyen de clients jouant à votre jeu Xbox Live pour la minute, l'heure ou la journée spécifié(e). <p/><p/>**Remarque**&nbsp;&nbsp;Une valeur 0 indique qu'aucun utilisateur simultané n'était présent pendant l'intervalle spécifiée, ou bien que le système n'est pas parvenu à recueillir les données d'utilisation simultanée pour le jeu durant l'intervalle spécifiée. |
+| Count      | nombre  | Le nombre moyen de clients jouant à votre jeu Xbox Live pour la minute, l'heure ou la journée spécifié(e). <p/><p/>**Remarque**&nbsp;&nbsp;Une valeur 0 indique qu'aucun utilisateur simultané n'était présent pendant l'intervalle spécifiée, ou bien que le système n'est pas parvenu à recueillir les données d'utilisation simultanée pour le jeu durant l'intervalle spécifiée. |
 | Date  | chaîne | La date et l’heure qui spécifient l’heure, le minute ou le jour associé(e) aux données d'utilisation simultanée.  |
 | SeriesName | chaîne    | Cet élément comporte toujours la valeur **UserConcurrency** . |
 

@@ -1,19 +1,19 @@
 ---
 ms.assetid: bf0a8b01-79f1-4944-9d78-9741e235dbe9
-title: Device Portal pour HoloLens
+title: Portail d’appareil pour HoloLens
 description: Découvrez comment Windows Device Portal pour HoloLens vous permet de configurer et de gérer à distance votre appareil HoloLens.
 ms.date: 01/3/2019
 ms.topic: article
 keywords: Windows 10, uwp, le portail de l’appareil
 ms.localizationpriority: medium
-ms.openlocfilehash: 2561f18e2ac054c8b378b0c7c0a9689bebcc4140
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3b25283dbe8feff74ba994efba31c542f59171d9
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57611254"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317882"
 ---
-# <a name="device-portal-for-hololens"></a>Device Portal pour HoloLens
+# <a name="device-portal-for-hololens"></a>Portail d’appareil pour HoloLens
 
 
 ## <a name="set-up-device-portal-on-hololens"></a>Configurer Device Portal sur HoloLens
@@ -21,12 +21,12 @@ ms.locfileid: "57611254"
 ### <a name="enable-device-portal"></a>Activer Device Portal
 
 1. Mettez HoloLens sous tension et allumez l’appareil.
-2. Effectuer le geste qui consiste à [maintenir sa paume de main vers le haut en serrant ses doigts et à les ouvrir](https://dev.windows.com/holographic/Gestures.html#Bloom) pour lancer le menu principal.
-3. Regardez la vignette **Paramètres** et effectuez le geste consistant à [appuyer](https://dev.windows.com/holographic/Gestures.html#Press_and_release). Appuyez de nouveau pour placer l’application dans votre environnement. L’application Paramètres démarre une fois placée.
+2. Effectuer le geste qui consiste à [maintenir sa paume de main vers le haut en serrant ses doigts et à les ouvrir](https://developer.microsoft.com/mixed-reality#Bloom) pour lancer le menu principal.
+3. Regardez la vignette **Paramètres** et effectuez le geste consistant à [appuyer](https://developer.microsoft.com/mixed-reality#Press_and_release). Appuyez de nouveau pour placer l’application dans votre environnement. L’application Paramètres démarre une fois placée.
 4. Sélectionnez l’élément de menu **Mettre à jour**.
 5. Sélectionnez l’élément de menu **Pour les développeurs**.
 6. Activez **Mode développeur**.
-7. [Faites défiler](https://dev.windows.com/holographic/Gestures.html#Navigation) la liste et activez Device Portal.
+7. [Faites défiler](https://developer.microsoft.com/mixed-reality#Navigation) la liste et activez Device Portal.
 
 
 ### <a name="pair-your-device"></a>Jumeler votre appareil
@@ -51,7 +51,7 @@ ms.locfileid: "57611254"
 #### <a name="connect-to-an-emulator"></a>Se connecter à un émulateur 
 
 Vous pouvez également utiliser Device Portal avec votre émulateur. Pour vous connecter à Device Portal, utilisez la barre d’outils. Cliquez sur cette icône :
-- Ouvrez le portail de l’appareil : Ouvrez le Windows Device Portal pour le système d’exploitation de HoloLens dans l’émulateur.
+- Ouvrez le portail de l’appareil : ouvre le Portail d’appareil Windows pour le système d’exploitation HoloLens dans l’émulateur.
 
 #### <a name="create-a-username-and-password"></a>Créer un nom d’utilisateur et un mot de passe 
 
@@ -84,7 +84,7 @@ Chaque HoloLens génère un certificat auto-signé unique pour sa connexion SSL.
 
 ## <a name="device-portal-pages"></a>Pages de Device Portal 
 
-### <a name="home"></a>Accueil 
+### <a name="home"></a>Dossier de base 
 
 Votre session Device Portal démarre sur la page d’accueil. Accédez à d’autres pages à partir de la barre de navigation située sur le côté gauche de la page d’accueil.
 
@@ -174,7 +174,7 @@ Envoie la saisie au clavier de l’ordinateur distant au casque HoloLens.
 
 Cliquez ou appuyez sur la zone située sous le clavier virtuel pour permettre l’envoi de séquences de touches au casque HoloLens. Saisissez du texte dans la zone de saisie de texte, puis cliquez ou appuyez sur Envoyer pour envoyer les séquences de touches à l’application active.
 
-## <a name="see-also"></a>Voir également
+## <a name="see-also"></a>Voir aussi
 
 * [Vue d’ensemble de Windows Device Portal](device-portal.md)
 * [Référence sur les API principales du portail d’appareil](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core) (API communes à tous les appareils Windows 10)

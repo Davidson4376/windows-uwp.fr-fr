@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c00bf23a8539f7ee37974e16586a4477cc6b78bb
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 4d118633d9d0d9b7007c94ec4d5053db34b09e29
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360403"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318045"
 ---
 # <a name="using-the-visual-layer-with-xaml"></a>Utilisation de la couche visuelle avec le contenu XAML
 
@@ -25,7 +25,7 @@ La fonctionnalité d’interopérabilité entre l’infrastructure XAML et la co
 - Ombres portées au pixel près
 
 Comme ces effets et animations peuvent être appliqués au contenu XAML existant, vous n’avez pas besoin de restructurer énormément votre application XAML pour tirer parti des nouvelles fonctionnalités.
-Les animations de disposition, les ombres et les effets de flou sont abordés dans la section Recettes ci-après. Pour obtenir un exemple de code implémentant la parallaxe, consultez [l’exemple ParallaxingListItems](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2010586/ParallaxingListItems). Le [référentiel WindowsUIDevLabs](https://github.com/Microsoft/WindowsUIDevLabs) comprend également plusieurs exemples pour implémenter des animations, des ombres et des effets.
+Les animations de disposition, les ombres et les effets de flou sont abordés dans la section Recettes ci-après. Pour obtenir un exemple de code implémentant la parallaxe, consultez [l’exemple ParallaxingListItems](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK 10586/ParallaxingListItems). Le [référentiel WindowsUIDevLabs](https://github.com/microsoft/WindowsCompositionSamples) comprend également plusieurs exemples pour implémenter des animations, des ombres et des effets.
 
 ## <a name="the-xamlcompositionbrushbase-class"></a>Classe XamlCompositionBrushBase
 
@@ -151,7 +151,7 @@ Appliquez une ombre portée au pixel près à un élément **UIElement**, par ex
 3. Configurer l’élément **DropShadow** pour obtenir sa forme à partir de l’élément cible via un masque
     - L’élément **DropShadow** est rectangulaire par défaut, cette étape n’est donc pas nécessaire si la cible est rectangulaire
 4. Attacher l’ombre à un nouvel élément **SpriteVisual** et définir l’élément **SpriteVisual** comme l’enfant de l’élément hôte
-5. Lier la taille de l’élément **SpriteVisual** à la taille de l’hôte en utilisant une **ExpressionAnimation**
+5. Lier la taille de l’élément **SpriteVisual** à la taille de l’hôte en utilisant une **ExpressionAnimation**.
 
 ```xaml
 <Grid Width="200" Height="200">
@@ -292,7 +292,7 @@ Créez un effet qui estompe et teint le contenu en arrière-plan. Notez que les 
 3.  Créer un élément **CompositionEffectBrush** en fonction de l’arborescence d’effet
 4.  Définir l’entrée de l’élément **CompositionEffectBrush** sur **CompositionBackdropBrush**, ce qui permet d’appliquer un effet au contenu se trouvant derrière un élément **SpriteVisual**
 5.  Définir l’élément **CompositionEffectBrush** comme le contenu d’un nouvel élément **SpriteVisual** et définir l’élément **SpriteVisual** comme l’enfant de l’élément hôte. Vous pouvez également utiliser une classe XamlCompositionBrushBase.
-6.  Lier la taille de l’élément **SpriteVisual** à la taille de l’hôte en utilisant une **ExpressionAnimation**
+6.  Lier la taille de l’élément **SpriteVisual** à la taille de l’hôte en utilisant une **ExpressionAnimation**.
 
 ```xaml
 <Grid Width="300" Height="300" Grid.Column="1">
@@ -364,6 +364,6 @@ private void InitializeFrostedGlass(UIElement glassHost)
 
 - [Vue d’ensemble de couche visuelle](https://docs.microsoft.com/windows/uwp/composition/visual-layer)
 - [**ElementCompositionPreview** classe](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Hosting.ElementCompositionPreview)
-- Exemples d’interface utilisateur et de composition avancés dans le [GitHub WindowsUIDevLabs](https://github.com/microsoft/windowsuidevlabs).
-- [Exemple de BasicXamlInterop](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2010586/BasicXamlInterop)
-- [Exemple de ParallaxingListItems](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2010586/ParallaxingListItems)
+- Exemples d’interface utilisateur et de composition avancés dans le [GitHub WindowsUIDevLabs](https://github.com/microsoft/WindowsCompositionSamples).
+- [Exemple de BasicXamlInterop](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK 10586/BasicXamlInterop)
+- [Exemple de ParallaxingListItems](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK 10586/ParallaxingListItems)

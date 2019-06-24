@@ -5,12 +5,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 097ff0bb9e2ac8d36780a692172afb0a7933fdd1
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 275dc6ab7cdb310dff817a3e0017568ad2fed80c
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66364966"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317121"
 ---
 # <a name="show-multiple-views-for-an-app"></a>Afficher plusieurs vues d’une application
 
@@ -44,7 +44,7 @@ De même, l’infrastructure XAML enveloppe l’objet [**CoreWindow**](https://d
 
 Chaque disposition d'application est unique, mais nous vous recommandons d'inclure un bouton « nouvelle fenêtre » dans un emplacement prévisible, comme le coin supérieur droit du contenu, qui pourra être ouvert dans une nouvelle fenêtre. Envisagez également d’inclure une option de menu contextuel pour « Ouvrir dans une nouvelle fenêtre ».
 
-Examinons les étapes nécessaires pour créer une nouvelle vue. Ici, la nouvelle vue est lancée en réponse à un clic sur un bouton.
+Examinons les étapes nécessaires pour créer une nouvelle vue. Ici, la nouvelle vue est lancée suite à un clic sur un bouton.
 
 ```csharp
 private async void Button_Click(object sender, RoutedEventArgs e)
@@ -83,7 +83,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 3.  Sur le nouveau thread, remplissez la fenêtre.
 
-    Vous devez utiliser la méthode [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows) pour planifier le travail sur le thread d’interface utilisateur de la nouvelle vue. Vous utilisez une [expression lambda](https://go.microsoft.com/fwlink/p/?LinkId=389615) pour transmettre une fonction en tant qu’argument à la méthode **RunAsync**. Le travail que vous effectuez dans la fonction lambda se répercute sur le thread de la nouvelle vue.
+    Vous devez utiliser la méthode [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) pour planifier le travail sur le thread d’interface utilisateur de la nouvelle vue. Vous utilisez une [expression lambda](https://go.microsoft.com/fwlink/p/?LinkId=389615) pour transmettre une fonction en tant qu’argument à la méthode **RunAsync**. Le travail que vous effectuez dans la fonction lambda se répercute sur le thread de la nouvelle vue.
 
     En XAML, vous ajoutez généralement [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) à la propriété [**Content**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.content) de [**Window**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window), puis parcourez **Frame** vers une [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page) XAML où vous avez défini le contenu de votre application. Pour en savoir plus, voir [Navigation pair à pair entre deux pages](../basics/navigate-between-two-pages.md).
 
@@ -125,7 +125,7 @@ Si des vues secondaires sont ouvertes, la fenêtre de la vue principale peut êt
 Les autres vues, notamment les vues que vous avez créées en appelant [**CreateNewView**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.createnewview) dans le code de votre application, sont des vues secondaires. La vue principale et les vues secondaires sont stockées dans la collection [**CoreApplication.Views**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.views). En règle générale, vous créez des vues secondaires en réponse à une action de l’utilisateur. Dans certains cas, le système crée des vues secondaires pour votre application.
 
 > [!NOTE]
-> Vous pouvez utiliser la fonctionnalité d’*accès affecté* de Windows pour exécuter une application en [mode plein écran](https://technet.microsoft.com/library/mt219050.aspx). Dans ce cas, le système crée une vue secondaire pour présenter l’interface utilisateur de votre application au-dessus de l’écran de verrouillage. Les vues secondaires créées par l’application ne sont pas autorisées. Ainsi, si vous essayez d’afficher votre propre vue secondaire en mode plein écran, une exception est levée.
+> Vous pouvez utiliser la fonctionnalité d’*accès affecté* de Windows pour exécuter une application en [mode plein écran](https://docs.microsoft.com/windows/manage/set-up-a-device-for-anyone-to-use). Dans ce cas, le système crée une vue secondaire pour présenter l’interface utilisateur de votre application au-dessus de l’écran de verrouillage. Les vues secondaires créées par l’application ne sont pas autorisées. Ainsi, si vous essayez d’afficher votre propre vue secondaire en mode plein écran, une exception est levée.
 
 ## <a name="switch-from-one-view-to-another"></a>Basculer d’une vue à une autre
 

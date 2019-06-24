@@ -9,12 +9,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: e0ae94b0f8631c88f48098f8c2f3df000c25252c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: e4b919d42cb113c6ec9f2710baec6c9aa1765840
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359426"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317589"
 ---
 # <a name="uwp-apis-available-to-desktop-apps"></a>API UWP disponibles pour les applications de bureau
 
@@ -29,14 +29,14 @@ La plupart des API UWP fonctionnent correctement sur les applications empaqueté
 |--------------|---------|
 | Rendez-vous, contacts et messages électroniques | Toutes les API ne sont pas actuellement prises en charge pour les applications empaquetées. |
 | Authentification et identité des utilisateurs | Toutes les API ne sont pas actuellement prises en charge pour les applications empaquetées. |
-| Tâches en arrière-plan | Bien que les applications empaquetées puissent inscrire des tâches en arrière-plan, seules les applications UWP peuvent s’exécuter <i>en tant que</i> tâches en arrière-plan. Pour plus d’informations, voir [l’exemple de tâche en arrière-plan sur GitHub](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/BackgroundTasksSample). |
+| Tâches en arrière-plan | Bien que les applications empaquetées puissent inscrire des tâches en arrière-plan, seules les applications UWP peuvent s’exécuter <i>en tant que</i> tâches en arrière-plan. Pour plus d’informations, voir [Exemple de tâche en arrière-plan sur GitHub](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/BackgroundTasksSample). |
 | Bluetooth | Toutes les API ne sont pas actuellement prises en charge pour les applications empaquetées. |
 | Chat et appels téléphoniques | Les applications empaquetées ne peuvent pas s’exécuter sur un appareil mobile tant qu’elles n’ont pas été entièrement transférées vers UWP. |
 | Activation des contrats | Seules les applications UWP complètes peuvent être activées par un contrat. |
 | Chiffrement | Toutes les API ne sont pas actuellement prises en charge pour les applications empaquetées. |
 | Géolocalisation | Toutes les API ne sont pas actuellement prises en charge pour les applications empaquetées. |
 | Sélecteurs de fichiers et de dossiers | Les applications empaquetées disposent d’un accès complet au système de fichiers et n’ont pas besoin de sélecteurs UWP. |
-| Support | Toutes les API ne sont pas actuellement prises en charge pour les applications empaquetées. |
+| Media | Toutes les API ne sont pas actuellement prises en charge pour les applications empaquetées. |
 | Point de service | Toutes les API ne sont pas actuellement prises en charge pour les applications empaquetées. |
 | Cartes à puce | Toutes les API ne sont pas actuellement prises en charge pour les applications empaquetées. |
 | PlayReady | Toutes les API ne sont pas actuellement prises en charge pour les applications empaquetées. |
@@ -50,7 +50,7 @@ Parfois, les API dans ces domaines peuvent sembler fonctionner correctement. Tou
 
 Voici une liste complète des API UWP pris en charge dans les applications de bureau. Vous pouvez afficher [API pris en charge uniquement dans les applications empaquetées](#new) ou [API pris en charge dans les applications empaquetées et applications de bureau](#both).
 
-Pour obtenir des exemples sur l’utilisation des API UWP, consultez le [Desktop Bridge exemples](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) et [exemples d’applications Universal Windows Platform (UWP)](https://github.com/Microsoft/Windows-universal-samples) sur GitHub. Vous pouvez également consulter le billet de blog de création d’application pour Windows [Appel d’API Windows 10 à partir d’une application de bureau](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application).
+Pour obtenir des exemples sur l’utilisation des API UWP, consultez le [Desktop Bridge exemples](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) et [exemples d’applications Universal Windows Platform (UWP)](https://github.com/Microsoft/Windows-universal-samples) sur GitHub. Vous pouvez également consulter le billet de blog de création d’application pour Windows [Appel d’API Windows 10 à partir d’une application de bureau](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application/).
 
 <a id="new" />
 

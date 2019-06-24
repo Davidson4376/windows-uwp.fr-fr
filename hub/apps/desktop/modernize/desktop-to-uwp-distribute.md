@@ -8,12 +8,12 @@ ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 45d298aca60155915900f494654dce8e89fb1ee0
-ms.sourcegitcommit: b9e2cd5232ad98f4ef367881b92000a3ae610844
+ms.openlocfilehash: 2d10836da46cce4d862f7f727890b0c9c107df5a
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67131905"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317063"
 ---
 # <a name="distribute-your-packaged-desktop-app"></a>Distribuer votre application de bureau empaquetée
 
@@ -26,7 +26,7 @@ Si vous décidez de [empaqueter votre application de bureau dans un package MSIX
 
 Le [Microsoft Store](https://www.microsoft.com/store/apps) est une méthode pratique pour rendre votre application accessible aux clients.
 
-Publier votre application sur le Microsoft Store pour atteindre l’audience plus large. En outre, les clients d’organisation peuvent acquérir votre application pour distribuer en interne à leur organisation via le [Microsoft Store pour entreprises](https://www.microsoft.com/business-store).
+Publier votre application sur le Microsoft Store pour atteindre l’audience plus large. En outre, les clients d’organisation peuvent acquérir votre application pour distribuer en interne à leur organisation via le [Microsoft Store pour entreprises](https://businessstore.microsoft.com/store).
 
 Si vous envisagez de publier dans le Microsoft Store, vous êtes invité à répondre à quelques questions supplémentaires dans le cadre du processus de soumission. Ce, parce que votre manifeste du package déclare une fonctionnalité restreinte nommée **runFullTrust** et que nous avons besoin d'approuver l’utilisation de cette fonctionnalité par votre application. Vous trouverez plus d’informations sur cette exigence ici : [Des capacités restreintes](/windows/uwp/packaging/app-capability-declarations#restricted-capabilities).
 

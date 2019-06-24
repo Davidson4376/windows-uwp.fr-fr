@@ -1,19 +1,19 @@
 ---
 ms.assetid: 0CBCEEA0-2B0E-44A1-A09A-F7A939632F3A
-title: Animations dans une table de montage séquentiel
+title: Animations dans une table de montage
 description: Les animations de table de montage séquentiel ne sont pas seulement des animations au sens visuel.
 ms.date: 07/13/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ebc87c685d92fa4dbc1a954e2fc6f0cf549a5554
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 62f603a6ff5aadc1c3e5342db6a7d771f8c37a7b
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66366076"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320839"
 ---
-# <a name="storyboarded-animations"></a>Animations dans une table de montage séquentiel
+# <a name="storyboarded-animations"></a>Animations dans une table de montage
 
 Les animations de table de montage séquentiel ne sont pas seulement des animations au sens visuel. Une animation de table de montage séquentiel permet de changer la valeur d’une propriété de dépendance en tant que fonction de temps. Vous pouvez avoir notamment besoin d’une animation de table de montage séquentiel qui ne provient pas de la bibliothèque des animations pour définir l’état visuel d’un contrôle dans un modèle de contrôle ou une définition de page.
 
@@ -70,11 +70,11 @@ Pour connecter une animation à une cible, vous devez référencer la cible avec
 
 ### <a name="targeting-the-dependency-property-to-animate"></a>Ciblage de la propriété de dépendance à animer
 
-Vous définissez la valeur de [**Storyboard.TargetProperty**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v%3Dvs.95)) dans l’animation. Cela détermine quelle propriété spécifique de l’objet ciblé est animée.
+Vous définissez la valeur de [**Storyboard.TargetProperty**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v=vs.95)) dans l’animation. Cela détermine quelle propriété spécifique de l’objet ciblé est animée.
 
 Parfois vous devez cibler une propriété qui n’est pas une propriété immédiate de l’objet cible, mais qui est imbriquée plus profondément dans une relation objet-propriété. Vous devez souvent faire cela afin d’explorer un ensemble de valeurs de propriétés et d’objets contributives jusqu’à ce que vous puissiez référencer un type de propriété qui peut être animé ([**Double**](https://docs.microsoft.com/dotnet/api/system.double?redirectedfrom=MSDN), [**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point), [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color)). Ce concept porte le nom de *ciblage indirect* et la syntaxe de ciblage d’une propriété de cette manière porte le nom de *chemin d’accès de propriété*.
 
-Voici un exemple : Un exemple courant de scénario pour une animation de table de montage séquentiel consiste à changer la couleur d’une partie de l’interface utilisateur ou d’un contrôle d’une application afin d’indiquer l’état de ce contrôle. Supposons que vous vouliez animer le [**Foreground**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.foreground) d’un [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) pour qu’il soit vert au lieu d’être rouge. Vous vous attendez à ce qu’intervienne [**ColorAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ColorAnimation) et vous avez raison. Cependant, aucune des propriétés sur les éléments d’interface utilisateur qui modifient la couleur de l’objet n’est de type [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color). Elles sont en fait de type [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush). Par conséquent, pour votre animation, vous devez cibler la propriété [**Color**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) de la classe [**SolidColorBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) dont le type est dérivé de **Brush**. Ce type est en général utilisé pour les propriétés de couleur d’interface utilisateur. Voici ce que cela donne pour la formation d’un chemin d’accès de propriété pour le ciblage d’une propriété de votre animation :
+En voici un exemple. Un exemple courant de scénario pour une animation de table de montage séquentiel consiste à changer la couleur d’une partie de l’interface utilisateur ou d’un contrôle d’une application afin d’indiquer l’état de ce contrôle. Supposons que vous vouliez animer le [**Foreground**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.foreground) d’un [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) pour qu’il soit vert au lieu d’être rouge. Vous vous attendez à ce qu’intervienne [**ColorAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ColorAnimation) et vous avez raison. Cependant, aucune des propriétés sur les éléments d’interface utilisateur qui modifient la couleur de l’objet n’est de type [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color). Elles sont en fait de type [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush). Par conséquent, pour votre animation, vous devez cibler la propriété [**Color**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) de la classe [**SolidColorBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) dont le type est dérivé de **Brush**. Ce type est en général utilisé pour les propriétés de couleur d’interface utilisateur. Voici ce que cela donne pour la formation d’un chemin d’accès de propriété pour le ciblage d’une propriété de votre animation :
 
 ```xaml
 <Storyboard x:Name="myStoryboard">
@@ -101,7 +101,7 @@ Vous remarquerez que certains de ces exemples utilisent des crochets autour des 
 
 Vous pouvez également animer des propriétés XAML jointes. Veillez à toujours placer le nom de la propriété jointe entre parenthèses, par exemple `(Canvas.Left)`. Pour plus d’informations, voir [Animation des propriétés XAML jointes](./storyboarded-animations.md#animating-xaml-attached-properties).
 
-Pour plus d’informations sur la façon d’utiliser un chemin d’accès de propriété pour le ciblage indirect de la propriété à animer, voir [Syntaxe de Property-path](https://docs.microsoft.com/windows/uwp/xaml-platform/property-path-syntax) ou [**Propriété jointe Storyboard.TargetProperty**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v%3Dvs.95)).
+Pour plus d’informations sur la façon d’utiliser un chemin d’accès de propriété pour le ciblage indirect de la propriété à animer, voir [Syntaxe de Property-path](https://docs.microsoft.com/windows/uwp/xaml-platform/property-path-syntax) ou [**Propriété jointe Storyboard.TargetProperty**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v=vs.95)).
 
 ### <a name="animation-types"></a>Types d’animation
 
@@ -306,7 +306,7 @@ myStoryboard->Begin();
 myStoryBoard.Begin()
 ```
 
-Vous pouvez gérer l’événement [**Completed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.completed) si vous souhaitez qu’une autre logique s’exécute après que l’animation a fini d’appliquer les valeurs. De même, pour le dépannage des interactions système de propriétés/animation, la méthode [**GetAnimationBaseValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.getanimationbasevalue) peut être utile.
+Vous pouvez gérer l’événement [**Completed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.completed) si vous souhaitez qu’une autre logique s’exécute après que l’animation a fini d’appliquer les valeurs. De même, pour la résolution des problèmes liés aux interactions système de propriétés/animation, la méthode [**GetAnimationBaseValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.getanimationbasevalue) peut être utile.
 
 > [!TIP]
 > Lorsque vous écrivez le code d’un scénario d’application et envisagez de démarrer une animation directement à partir de ce code, vérifiez si la bibliothèque d’animations ne contient pas déjà une animation ou une transition correspondant à votre scénario d’interface utilisateur. Les animations de la bibliothèque s’exécutent de façon homogène sur toutes les applications Windows Runtime et sont plus faciles à utiliser.
@@ -323,7 +323,7 @@ Il existe un moyen de démarrer une animation qui peut être déclaré entièrem
 
 ## <a name="animating-xaml-attached-properties"></a>Animation des propriétés XAML jointes
 
-Il ne s’agit pas d’un scénario courant, mais vous pouvez appliquer une valeur animée à une propriété XAML jointe. Pour plus d’informations sur la nature des propriétés jointes et leur fonctionnement, voir [Vue d’ensemble des propriétés jointes](https://docs.microsoft.com/windows/uwp/xaml-platform/attached-properties-overview). Le ciblage des propriétés jointes nécessite une [syntaxe de chemin de propriété](https://docs.microsoft.com/windows/uwp/xaml-platform/property-path-syntax) qui place entre parenthèses le nom de la propriété. Vous pouvez animer les propriétés jointes intégrées telles que [**Canvas.ZIndex**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc190397(v%3Dvs.95)) à l’aide d’un objet [**ObjectAnimationUsingKeyFrames**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames) qui applique les valeurs entières discrètes. Toutefois, une limitation existante d’une implémentation XAML Windows Runtime ne vous permet pas d’animer une propriété jointe personnalisée.
+Il ne s’agit pas d’un scénario courant, mais vous pouvez appliquer une valeur animée à une propriété XAML jointe. Pour plus d’informations sur la nature des propriétés jointes et leur fonctionnement, voir [Vue d’ensemble des propriétés jointes](https://docs.microsoft.com/windows/uwp/xaml-platform/attached-properties-overview). Le ciblage des propriétés jointes nécessite une [syntaxe de chemin de propriété](https://docs.microsoft.com/windows/uwp/xaml-platform/property-path-syntax) qui place entre parenthèses le nom de la propriété. Vous pouvez animer les propriétés jointes intégrées telles que [**Canvas.ZIndex**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc190397(v=vs.95)) à l’aide d’un objet [**ObjectAnimationUsingKeyFrames**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames) qui applique les valeurs entières discrètes. Toutefois, une limitation existante d’une implémentation XAML Windows Runtime ne vous permet pas d’animer une propriété jointe personnalisée.
 
 ## <a name="more-animation-types-and-next-steps-for-learning-about-animating-your-ui"></a>Autres types d’animation et étapes suivantes pour apprendre à animer votre interface utilisateur
 
@@ -337,7 +337,7 @@ Jusqu’à présent nous vous avons montré les animations personnalisées qui s
 * [Animations de storyboard pour les états visuels](https://docs.microsoft.com/previous-versions/windows/apps/jj819808(v=win.10))
 * [Modèles de contrôle](https://docs.microsoft.com/windows/uwp/controls-and-patterns/control-templates)
 * [**table de montage séquentiel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard)
-* [**Storyboard.TargetProperty**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v%3Dvs.95))
+* [**Storyboard.TargetProperty**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v=vs.95))
  
 
  

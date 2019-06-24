@@ -6,12 +6,12 @@ ms.date: 05/11/2018
 ms.topic: article
 keywords: windows 10, uwp, annonce, publicité, directives, meilleures pratiques
 ms.localizationpriority: medium
-ms.openlocfilehash: 7bb187092158386c503b91973d8d63ce291b4760
-ms.sourcegitcommit: c62b260eecd373e57b19a623bae77e29180e0f3d
+ms.openlocfilehash: cf7f61f427ef0b1a0ff5b6f3b66d02d13d02e4ab
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66565513"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320682"
 ---
 # <a name="ui-and-user-experience-guidelines-for-ads"></a>Recommandations pour l'expérience et l'interface utilisateur pour les annonces
 
@@ -25,21 +25,21 @@ Cet article fournit des recommandations pour concevoir des expériences exceptio
 Avant d’examiner nos recommandations s'agissant des différents types de publicités décrits dans cet article, passez tout d’abord en revue ces recommandations générales pour améliorer vos revenus publicitaires.
 
 * [Planifiez soigneusement les emplacements de votre publicité](https://blogs.windows.com/buildingapps/2017/04/10/monetizing-app-advertisement-placement/). Consultez nos recommandations connexes sur [l'optimisation de la visibilité de vos unités publicitaires](optimize-ad-unit-viewability.md).
-* [Utilisez des bannières publicitaires spots comme repli pour les spots vidéo publicitaires](https://blogs.windows.com/buildingapps/2017/04/17/monetizing-app-use-interstitial-banner-fallback-interstitial-video).
+* [Utilisez des bannières publicitaires spots comme repli pour les spots vidéo publicitaires](https://blogs.windows.com/buildingapps/2017/04/17/monetizing-app-use-interstitial-banner-fallback-interstitial-video/).
 * [Connaissez vos utilisateurs pour servir des publicités mieux ciblées](https://blogs.windows.com/buildingapps/2017/05/17/monetize-app-know-user-serve-better-targeted-ads/).
 * [Utilisez les bibliothèques de publicités les plus récentes](https://blogs.windows.com/buildingapps/2017/05/22/earn-money-moving-latest-advertising-libraries/).
-* [Définissez correctement les paramètres de la réglementation COPPA pour votre application](https://blogs.windows.com/buildingapps/2017/06/21/monetizing-app-set-coppa-settings-app).
+* [Définissez correctement les paramètres de la réglementation COPPA pour votre application](https://blogs.windows.com/buildingapps/2017/06/21/monetizing-app-set-coppa-settings-app/).
 
 
 ## <a name="guidelines-for-banner-ads"></a>Recommandations pour les bannières publicitaires
 
 Les sections suivantes fournissent des recommandations sur la façon d’implémenter des [bannières publicitaires](banner-ads.md) dans votre app à l’aide d’objets [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol). Elles donnent également des exemples d’implémentation qui ne respectent pas les règles stipulées dans la [politique 10.10.1](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) des Politiques du Microsoft Store.
 
-### <a name="best-practices"></a>Meilleures pratiques
+### <a name="best-practices"></a>Bonnes pratiques
 
 Nous vous recommandons de suivre ces bonnes pratiques quand vous implémentez des bannières publicitaires dans votre application :
 
-* [Utilisez des tailles de l'Interactive Advertising Bureau](https://blogs.windows.com/buildingapps/2017/04/03/monetizing-app-use-interactive-advertising-bureau-ad-sizes) adaptées à la disposition sur l’appareil utilisé.
+* [Utilisez des tailles de l'Interactive Advertising Bureau](https://blogs.windows.com/buildingapps/2017/04/03/monetizing-app-use-interactive-advertising-bureau-ad-sizes/) adaptées à la disposition sur l’appareil utilisé.
 
 * Réservez la majeure partie de l’interface utilisateur de votre application aux contrôles et au contenu fonctionnels.
 
@@ -87,7 +87,7 @@ Quand ils sont utilisés de façon élégante, les [spots publicitaires](interst
 
 Les sections suivantes fournissent des recommandations sur la façon d’implémenter des annonces vidéo et des bannières spots publicitaires dans votre app à l’aide d’objets [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad). Elles donnent également des exemples d’implémentation qui ne respectent pas les règles stipulées dans la [politique 10.10.1](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) des Politiques du Microsoft Store. Étant donné que vous connaissez votre application mieux que quiconque, sauf en matière de stratégie, nous vous laissons prendre la meilleure décision finale. Ce qu’il faut absolument retenir c’est que les évaluations de vos applications et le montant de vos recettes sont étroitement liés.
 
-### <a name="best-practices"></a>Meilleures pratiques
+### <a name="best-practices"></a>Bonnes pratiques
 
 Nous vous recommandons de suivre ces bonnes pratiques quand vous implémentez des spots publicitaires dans votre application :
 
@@ -135,7 +135,7 @@ Nous vous recommandons d’éviter ces pratiques quand vous implémentez des spo
 
 * Ne récupérez pas un spot vidéo plus de 5 minutes avant d’appeler [InterstitialAd.Show](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.show). Un bon inventaire va optimiser la conversion de publicités récupérées en impressions facturables.
 
-* Ne pénalisez pas un utilisateur pour les défaillances d’affichage de publicités, par exemple quand aucune publicité n’est disponible. Par exemple, si vous affichez une option d’interface utilisateur de type « Regarder une publicité pour obtenir *xxx* », vous devez fournir *xxx* si l’utilisateur a rempli sa part du contrat. Deux options à envisager :
+* Ne pénalisez pas un utilisateur pour les défaillances d’affichage de publicités, par exemple quand aucune publicité n’est disponible. Par exemple, si vous affichez une option d’interface utilisateur de type « Regarder une publicité pour obtenir *xxx* », vous devez fournir *xxx* si l’utilisateur a rempli sa part du contrat. Deux options sont à envisager :
 
     * N’incluez pas l’option, sauf si l’événement [InterstitialAd.AdReady](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.adready) a été déclenché.
 
@@ -187,7 +187,7 @@ Au minimum, vous devez toujours montrer à l’utilisateur les éléments de pub
     * Le texte *parrainé par* (disponible dans la propriété **SponsoredBy**). Ce texte est fourni par l'annonceur.
     * À la place du texte *parrainé par*, vous pouvez choisir d’afficher un autre texte qui permet de différencier la publicité native du reste de votre application, par exemple « Contenu sponsorisé », « Contenu promotionnel », « Contenu recommandé », etc.
 
-### <a name="user-experience"></a>Expérience de l'utilisateur
+### <a name="user-experience"></a>Expérience utilisateur
 
 Votre publicité native doit être délimitée clairement du reste de votre application et être entourée d’espace pour éviter les clics accidentels. Utilisez des bordures, des arrière-plans différents ou une autre interface utilisateur pour séparer le contenu de la publicité du reste de votre application. N’oubliez pas que les clics accidentels ne sont pas utiles pour votre chiffre d’affaires publicitaire ni pour l'expérience de votre utilisateur final à long terme.
 

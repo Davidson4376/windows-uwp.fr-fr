@@ -6,19 +6,19 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, répondre, les réponses, passez en revue
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d45b5144bb13e66c506c4a55115bf252288064d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: fa73c8f43c449e8cf7b1c5aa67574f6ff00e7a15
+ms.sourcegitcommit: 7effecb544952b493250337fc622848232fa5995
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57633964"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67325861"
 ---
 # <a name="respond-to-customer-reviews"></a>Répondre aux avis des clients
 
 
 Vous pouvez répondre aux révisions de votre application pour permettre aux clients de savoir que vous écoutez leurs commentaires. Les réponses aux avis permettent d’indiquer aux clients les nouvelles fonctionnalités ou les bogues corrigés d’après leurs commentaires ou d’obtenir des commentaires plus précis sur les améliorations à apporter à votre application. Vos réponses seront affichera dans le Microsoft Store pour tous les clients Windows 10 voir. Vous pouvez également envoyer votre réponse par courrier électronique au client (si elles n’ont pas été désinscrit et que vous utilisent un appareil exécutant Windows 10, version 1803 ou ultérieure).
 
-Pour afficher les révisions de votre application et fournir des réponses, recherchez l’application dans [partenaires](https://partner.microsoft.com/dashboard). Dans le menu de navigation gauche, développez *Analytique** puis cliquez sur **révisions** pour afficher le [passe en revue les rapports](reviews-report.md). Sélectionnez **répondre pour passer en revue** pour fournir votre réponse.
+Pour afficher les révisions de votre application et fournir des réponses, recherchez l’application dans [partenaires](https://partner.microsoft.com/dashboard). Dans le menu de navigation de gauche, développez **Analyse**, puis cliquez sur **Avis** afin d'afficher le [Rapport sur les avis](reviews-report.md). Sélectionnez **répondre pour passer en revue** pour fournir votre réponse.
 
 > [!TIP]
 > Outre l’utilisation de partenaires pour répondre aux révisions, vous pouvez répondre aux révisions [par programmation](../monetize/submit-responses-to-app-reviews.md).

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9dfd86d53805573d002984aaf33ba5f1bf17241c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3a55ea95f5c67a4184e1fd1592c4b6ac3356a75c
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582554"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317696"
 ---
 # <a name="app-to-app-communication"></a>Communication entre les applications
 
@@ -36,4 +36,4 @@ Outre le contrat de partage, les applications peuvent également intégrer des t
 | [Glisser-déplacer](../design/input/drag-and-drop.md) | Cet article explique comment ajouter le glisser-déplacer dans votre application UWP. Glisser-déplacer est une méthode naturelle et classique d’interaction avec le contenu comme les images et les fichiers. Une fois implémenté, le glisser-déplacer fonctionne parfaitement dans toutes les directions, notamment d’application à application, d’application à bureau et de bureau à application. |
 
 ## <a name="see-also"></a>Voir également
-- [Développer des applications UWP](https://developer.microsoft.com/windows/develop)
+- [Développer des applications UWP](https://docs.microsoft.com/windows/uwp/develop/)

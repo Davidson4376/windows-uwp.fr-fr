@@ -5,12 +5,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, importer des descriptions dans le store, exporter des descriptions du store, importer exporter, description dans le store csv
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d98795d6ab43f92ad2927553b037524e2fc1ec7
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: b45f12a9ef7212ddb23b647894189491bfa73549
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63784769"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320635"
 ---
 # <a name="import-and-export-store-listings"></a>Importer et exporter des descriptions dans le Store
 
@@ -27,7 +27,7 @@ N’oubliez pas que vous pouvez toujours créer ou mettre à jour les listes dir
 
 Dans la page de vue d’ensemble de la soumission d’une application, cliquez sur **Export listing** (dans la section **Store listings**) pour générer un fichier .csv encodé en UTF-8. Enregistrez ce fichier sur votre ordinateur.
 
-Vous pouvez modifier ce fichier à l’aide de Microsoft Excel ou d’un autre éditeur. Notez que les versions Office 365 d’Excel vous permettent d’enregistrer un fichier .csv au format **CSV UTF-8 (délimité par des virgules) (*.csv)**, mais que les autres versions risquent de ne pas prendre en charge cette fonctionnalité. Pour plus d’informations sur les versions d’Excel qui prennent en charge cette fonctionnalité, consultez le [bulletin relatif aux nouveautés d’Excel 2016](https://support.office.com/en-us/article/What-s-new-in-Excel-2016-for-Windows-5fdb9208-ff33-45b6-9e08-1f5cdb3a6c73) ; pour plus d’informations sur l’encodage au format UTF-8 dans différents éditeurs, [cliquez ici](https://help.surveygizmo.com/help/encode-an-excel-file-to-utf-8-or-utf-16).
+Vous pouvez modifier ce fichier à l’aide de Microsoft Excel ou d’un autre éditeur. Notez que les versions Office 365 d’Excel vous permettent d’enregistrer un fichier .csv au format **CSV UTF-8 (délimité par des virgules) (*.csv)** , mais que les autres versions risquent de ne pas prendre en charge cette fonctionnalité. Pour plus d’informations sur les versions d’Excel qui prennent en charge cette fonctionnalité, consultez le [bulletin relatif aux nouveautés d’Excel 2016](https://support.office.com/article/what-s-new-in-excel-for-office-365-5fdb9208-ff33-45b6-9e08-1f5cdb3a6c73?ui=en-US&rs=en-001&ad=US) ; pour plus d’informations sur l’encodage au format UTF-8 dans différents éditeurs, [cliquez ici](https://help.surveygizmo.com/help/encode-an-excel-file-to-utf-8-or-utf-16).
       
 Si vous n’avez pas encore créé de descriptions pour votre produit, le fichier .csv que vous avez exporté ne contient aucune donnée personnalisée. Ce fichier comporte des colonnes **Champ**, **ID**, **Type** et **valeur par défaut**, ainsi que des lignes qui correspondent à chaque élément pouvant apparaître dans une description dans le Windows Store.
 
@@ -36,7 +36,7 @@ Si vous avez déjà créé des descriptions (ou chargé des packages), ce fichie
 Voici une vue d’ensemble du contenu de chacune des colonnes du fichier .csv exporté :
 - La colonne **Champ** contient un nom associé à chaque partie d’une description dans le Windows Store. Ils correspondent aux mêmes éléments que vous pouvez fournir lors de la création de listes de Store dans Partner Center, bien que certains noms sont légèrement différentes. Dans le cas des éléments pour lesquels vous pouvez entrer plusieurs types d’éléments, le fichier affiche le nombre maximal de lignes autorisé. Par exemple, pour **Fonctionnalités de l’application**, le fichier affiche les lignes **Fonctionnalité1**, **Fonctionnalité2**, etc., jusqu’à **Fonctionnalité20** (puisque vous pouvez spécifier jusqu’à 20 fonctionnalités d’application).
 - Le **ID** colonne contient un nombre qui associe des partenaires avec chaque champ. 
-- Le **Type** colonne fournit des indications générales sur le type d’informations à fournir pour ce champ, tel que **texte** ou **chemin d’accès relatif (ou URL du fichier dans espace partenaires)**. 
+- Le **Type** colonne fournit des indications générales sur le type d’informations à fournir pour ce champ, tel que **texte** ou **chemin d’accès relatif (ou URL du fichier dans espace partenaires)** . 
 - La colonne **valeur par défaut** (ainsi que toute colonne libellée avec des codes de paramètres régionaux de langue) représente le texte ou les composants associés à chaque partie de la description dans le Windows Store. Vous pouvez modifier les champs de ces colonnes pour mettre à jour vos descriptions dans le Windows Store.
 
 >[!IMPORTANT]
@@ -65,7 +65,7 @@ La suppression des informations dans le champ d’une langue donnée, sans suppr
 
 La plupart des champs de vos descriptions exportées, tels que les champs **Description** et **ReleaseNotes** de l’exemple précédent, requièrent une saisie de texte. Pour ces types de champs, il vous suffit d’entrer le texte approprié dans le champ associé à chaque langue. Prenez soin de respecter les restrictions de longueur et les autres exigences propres à chacun des champs. Pour plus d’informations sur ces exigences, consultez l’article [Créer des annonces d’application dans le Windows Store](create-app-store-listings.md).
 
-La fourniture d’informations pour les champs qui correspondent à des composants, tels que des images et des bandes-annonces, se révèle légèrement plus complexe. Au lieu de **texte**, le **Type** pour ces ressources est **chemin d’accès relatif (ou URL du fichier dans espace partenaires)**. 
+La fourniture d’informations pour les champs qui correspondent à des composants, tels que des images et des bandes-annonces, se révèle légèrement plus complexe. Au lieu de **texte**, le **Type** pour ces ressources est **chemin d’accès relatif (ou URL du fichier dans espace partenaires)** . 
      
 Si vous avez déjà chargé des composants pour vos descriptions dans le Windows Store, ces composants sont représentés par une URL. Ces URL sont réutilisables dans plusieurs descriptions d’un produit, ou même pour différents produits du même compte de développeur ; si vous le souhaitez, vous pouvez donc copier ces URL pour les réutiliser dans un autre champ de votre choix.
 
@@ -84,7 +84,7 @@ Par exemple, si votre dossier racine est nommé **my_folder** et que vous souhai
 
 ## <a name="import-listings"></a>Importer des descriptions
 
-Une fois que vous avez entré toutes vos modifications dans le fichier .csv (et que vous y avez inclus tous les composants que vous souhaitez charger), vous devez enregistrer ce fichier avant de le charger. Si votre version de Microsoft Excel prend en charge l’encodage UTF-8, veillez à sélectionner **Enregistrer sous** et à utiliser le format **CSV UTF-8 (délimité par des virgules) (*.csv)**. Si vous utilisez un autre éditeur pour visualiser et modifier votre fichier .csv, assurez-vous que ce fichier est encodé en UTF-8 avant de le charger.
+Une fois que vous avez entré toutes vos modifications dans le fichier .csv (et que vous y avez inclus tous les composants que vous souhaitez charger), vous devez enregistrer ce fichier avant de le charger. Si votre version de Microsoft Excel prend en charge l’encodage UTF-8, veillez à sélectionner **Enregistrer sous** et à utiliser le format **CSV UTF-8 (délimité par des virgules) (*.csv)** . Si vous utilisez un autre éditeur pour visualiser et modifier votre fichier .csv, assurez-vous que ce fichier est encodé en UTF-8 avant de le charger.
 
 Une fois que vous êtes prêt à charger le fichier .csv mis à jour et à importer vos données de description, sélectionnez **Import listings** sur la page de vue d’ensemble de votre soumission. Si vous importez uniquement un fichier .csv, choisissez **Importer au format CSV**, accédez à votre fichier, puis cliquez sur **Ouvrir**. Si vous importez un dossier contenant des fichiers images, choisissez Import folder, accédez à votre dossier, puis cliquez sur **Sélectionner un dossier**. Assurez-vous que votre dossier ne contient qu’un seul fichier .csv, ainsi que les composants dont vous effectuez le chargement. 
 

@@ -6,17 +6,17 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: edd40cc4-2604-4bc6-bd81-f671389a70fa
 ms.localizationpriority: medium
-ms.openlocfilehash: 019db8c93b61f84dde400f7be9f98bf82b1466e8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: afebfd089b80b7402929bd85ea482b86aca0e694
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57660324"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320216"
 ---
 # <a name="bringing-html-games-to-uwp-on-xbox"></a>Intégration de jeux HTML dans UWP sur Xbox
-Xbox One constitue une excellente plateforme pour les jeux basés sur HTML 5. Les jeux HTML 5 s’exécutent sur le moteur de rendu [Edge](https://developer.microsoft.com/microsoft-edge/). Edge est rapide et prend entièrement en charge les fonctionnalités HTML 5 et CSS 3, telles que WebGL et la zone de dessin.
+Xbox One constitue une excellente plateforme pour les jeux basés sur HTML 5. Les jeux HTML 5 s’exécutent sur le moteur de rendu [Edge](https://developer.microsoft.com/microsoft-edge). Edge est rapide et prend entièrement en charge les fonctionnalités HTML 5 et CSS 3, telles que WebGL et la zone de dessin.
 
-Des moteurs de jeu connus, tels que [Construct 2](https://www.scirra.com/blog/176/announcing-xbox-one-export-beta), sont pris en charge par Xbox One. Nous n’avons pas testé chaque infrastructure et moteur HTML. Cependant, d’après ce que nous avons pu observer jusqu’à présent, nous avons de bonnes raisons de croire que la plupart d’entre eux fonctionnent sur Xbox One.
+Des moteurs de jeu connus, tels que [Construct 2](https://www.construct.net/en/blogs/construct-official-blog-1/announcing-xbox-one-export-beta-857), sont pris en charge par Xbox One. Nous n’avons pas testé chaque infrastructure et moteur HTML. Cependant, d’après ce que nous avons pu observer jusqu’à présent, nous avons de bonnes raisons de croire que la plupart d’entre eux fonctionnent sur Xbox One.
 
 Les jeux HTML font concurrence égale avec n’importe quel autre type de jeu. Les développeurs peuvent obtenir un accès complet aux API natives, telles que les entrées de la manette, Kinect et plus encore.
 
@@ -31,6 +31,6 @@ Cette vidéo approfondit les applications web empaquetées et les applications w
 
 Pour commencer, téléchargez le moteur de votre choix et recherchez les instructions sur les applications Windows 10. Veillez également à lire le [guide de prise en main](getting-started.md) pour découvrir comment faire de votre console un kit de développement et comment effectuer des déploiements à partir de Visual Studio.
 
-## <a name="see-also"></a>Voir également
+## <a name="see-also"></a>Voir aussi
 - [Intégration de jeux existants dans Xbox](development-lanes-landing.md)
 - [UWP sur Xbox One](index.md)

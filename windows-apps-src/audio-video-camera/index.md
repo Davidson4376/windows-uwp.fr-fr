@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 98bc1e93c918310b902c70709df1c2cc1b38a238
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: e3e29dabf074eab59f6c788c139524f7dc2474df
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360846"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318318"
 ---
 # <a name="audio-video-and-camera"></a>Audio, vidéo et appareil photo
 
@@ -40,7 +40,7 @@ Cette section fournit des informations sur la création d’une application Wind
 | [Capture d’écran](screen-capture.md) | Décrit comment utiliser l’[espace de noms Windows.Graphics.Capture](https://docs.microsoft.com/uwp/api/windows.graphics.capture) pour l’acquisition d’images à partir d’une fenêtre d’affichage ou d’application, afin de créer des flux vidéo ou des captures instantanées pour créer des expériences collaboratives et interactives. |
 
 ## <a name="see-also"></a>Voir également
-- [Développer des applications UWP](https://developer.microsoft.com/windows/develop)
+- [Développer des applications UWP](https://docs.microsoft.com/windows/uwp/develop/)
 
  
 

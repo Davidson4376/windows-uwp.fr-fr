@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, cœur de métier, métier, applications d’entreprise, store pour entreprises, store pour éducation, entreprise
 ms.localizationpriority: medium
-ms.openlocfilehash: d44d2b248ddc2bff6ffa91860621fe315fb22c47
-ms.sourcegitcommit: 978df7dfd3813de51609b6a44aedcd402083a5fd
+ms.openlocfilehash: cf970c1812b4200cea4e4902ad883ef8b0b5e141
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66826152"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319997"
 ---
 # <a name="distribute-lob-apps-to-enterprises"></a>Distribuer des applications métier aux entreprises
 
@@ -68,17 +68,17 @@ Pour les applications métier, la [classification par âge](age-ratings.md) du p
 
 ## <a name="enterprise-deployment-of-lob-apps"></a>Déploiement d’applications métier dans les entreprises
 
-Lorsque vous cliquez sur **Envoyer au Store**, le processus de certification de l'application s'exécute. À l’issue de ce processus, un administrateur de l’entreprise doit ajouter l’application à son magasin privé dans le portail Microsoft Store pour Entreprises ou Microsoft Store pour Éducation. L'entreprise peut alors déployer l'application à l'attention de ses utilisateurs.
+Lorsque vous cliquez sur **Envoyer au Store**, le processus de certification de l'application s'exécute. À l’issue de ce processus, un administrateur de l’entreprise doit ajouter l’application à son magasin privé dans le portail Microsoft Store pour Entreprises ou Microsoft Store pour Éducation. L’entreprise peut alors déployer l’application à l’attention de ses utilisateurs.
 
 > [!NOTE]
-> Pour obtenir votre application métier, l’organisation doit se trouver dans un [marché pris en charge](https://technet.microsoft.com/itpro/windows/whats-new/windows-store-for-business-overview#supported-markets), et vous ne devez pas avoir [exclu ce marché](define-pricing-and-market-selection.md) lorsque vous avez soumis l’application. 
+> Pour obtenir votre application métier, l’organisation doit se trouver dans un [marché pris en charge](https://docs.microsoft.com/windows/whats-new/windows-store-for-business-overview#supported-markets), et vous ne devez pas avoir [exclu ce marché](define-pricing-and-market-selection.md) lorsque vous avez soumis l’application. 
 
-Pour plus d'informations, voir [Utilisation des applications métier](https://go.microsoft.com/fwlink/p/?LinkId=698846) et [Distribuer des applications à l'aide de votre magasin privé](https://go.microsoft.com/fwlink/p/?LinkId=698847).
+Pour plus d’informations, consultez les articles [Utilisation des applications cœur de métier](https://go.microsoft.com/fwlink/p/?LinkId=698846) et [Distribuer des applications à l’aide de votre magasin privé](https://go.microsoft.com/fwlink/p/?LinkId=698847).
 
 
 ## <a name="update-lob-apps"></a>Mettre à jour des applications métiers
 
-Pour publier les mises à jour d'une application que vous avez déjà publiée en tant qu'application métier, il vous suffit de créer une soumission. Vous pouvez transférer de nouveaux packages ou apporter des modifications, puis cliquer sur **Envoyer au Store** pour mettre à disposition la version mise à jour. Veillez à ce que les sélections d’entreprises dans **Visibilité** restent les mêmes, sauf si vous souhaitez leur apporter des modifications, par exemple en sélectionnant une autre entreprise pouvant acquérir l’application ou en supprimant l’une des entreprises auxquelles vous l’avez déjà distribuée.
+Pour publier les mises à jour d’une application que vous avez déjà publiée en tant qu’application métier, il vous suffit de créer une autre soumission. Vous pouvez charger de nouveaux packages ou apporter des modifications, puis cliquer sur **Envoyer au Store** pour mettre à disposition la version mise à jour. Veillez à ce que les sélections d’entreprises dans **Visibilité** restent les mêmes, sauf si vous souhaitez leur apporter des modifications, par exemple en sélectionnant une autre entreprise pouvant acquérir l’application ou en supprimant l’une des entreprises auxquelles vous l’avez déjà distribuée.
 
 Si vous souhaitez ne plus offrir une application que vous avez déjà publiée en tant qu’application métier et que vous souhaitez empêcher toute nouvelle acquisition, vous devez créer une soumission. En premier lieu, vous devez modifier votre sélection sous **Visibilité** en choisissant **Vente au détail** au lieu de **Distribution d’applications métier**. Puis, dans la section [Détectabilité](choose-visibility-options.md#discoverability), choisissez **Rendre ce produit disponible mais non détectable dans le Store** avec l’option **Empêcher l’acquisition**.
 
@@ -94,7 +94,7 @@ En mettant vos applications à la disposition d’une entreprise par le biais de
 
 Dans certains cas, les entreprises ne souhaitent pas leurs applications métier devant être soumis via des partenaires (par exemple, que pour des raisons de conformité ou pour les applications qui ont besoin de fonctionnalités supplémentaires). Ces entreprises peuvent alors déployer les applications directement sur des machines par chargement indépendant, sans utiliser Microsoft Store pour Entreprises ni Microsoft Store pour Éducation.
 
-Pour plus d'informations, voir [Charger la version test d'applications métier dans Windows 10](https://go.microsoft.com/fwlink/p/?LinkId=623433).
+Pour plus d’informations, consultez l’article [Chargement indépendant d’applications métier dans Windows 10](https://go.microsoft.com/fwlink/p/?LinkId=623433).
 
  
 

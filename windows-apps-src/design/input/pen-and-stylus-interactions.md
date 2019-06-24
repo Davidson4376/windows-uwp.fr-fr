@@ -8,17 +8,17 @@ keywords: Windows Ink, entrée manuscrite Windows, DirectInk, InkPresenter, InkC
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d60c85efe8f0a959ac66ffbd3dc8a05f312d0f2
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 427d359676bd064e577ab4f13f7b0a17f61d7e3e
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365650"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317168"
 ---
 # <a name="pen-interactions-and-windows-ink-in-uwp-apps"></a>Interactions avec le stylet et Windows Ink dans les applications UWP
 
 ![Stylet surface](images/ink/hero-small.png)  
-*Stylet Surface* (disponible à l’achat dans la [Boutique Microsoft](https://aka.ms/purchasesurfacepen)).
+*Stylet Surface* (disponible à l’achat dans la [Microsoft Store](https://aka.ms/purchasesurfacepen)).
 
 ## <a name="overview"></a>Vue d'ensemble
 
@@ -64,8 +64,7 @@ Par défaut, l’élément [**InkCanvas**](https://docs.microsoft.com/uwp/api/Wi
 Dans cet exemple, un élément [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) recouvre une image d’arrière-plan.
 
 > [!NOTE]
-> Un InkCanvas a la valeur par défaut [ **hauteur** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Height) et [ **largeur** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Width) propriétés égal à zéro, sauf s’il est l’enfant d’un élément automatiquement les tailles ses éléments enfants, tels que [StackPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.stackpanel
-) ou [grille](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid) contrôles.
+> Un InkCanvas a la valeur par défaut [ **hauteur** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Height) et [ **largeur** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Width) propriétés égal à zéro, sauf s’il est l’enfant d’un élément automatiquement les tailles ses éléments enfants, tels que [StackPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.stackpanel) ou [grille](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid) contrôles.
 
 ```xaml
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -455,10 +454,10 @@ En appelant [**ActivateCustomDrying**](https://docs.microsoft.com/uwp/api/window
 
 Vous pouvez également personnaliser l’encre sèche pour un [SwapChainPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.swapchainpanel), mais la synchronisation avec le thread d’interface utilisateur n’est pas garantie et il peut y avoir un délai entre le moment où l’encre est restituée dans votre SwapChainPanel et celui où l’entre est supprimée du InkCanvas.
 
-Pour obtenir un exemple complet de cette fonctionnalité, consultez [l’exemple d’entrée manuscrite complexe](https://go.microsoft.com/fwlink/p/?LinkID=620314).
+Pour obtenir un exemple complet de cette fonctionnalité, consultez l’[exemple d’entrée manuscrite complexe](https://go.microsoft.com/fwlink/p/?LinkID=620314).
 
 > [!NOTE]
-> Séchage personnalisé et élément [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar)  
+> Séchage personnalisé et [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar)  
 > Si votre application remplace le comportement par défaut du rendu d’entrée manuscrite de l’élément [**InkPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPresenter) par une implémentation de séchage personnalisé, les traits d’encre restitués ne sont plus disponibles pour l’élément InkToolbar et les commandes d’effacement intégrées de l’élément InkToolbar ne fonctionneront pas comme prévu. Pour fournir des fonctionnalités d’effacement, vous devez gérer tous les événements de pointeur, effectuer le test de positionnement sur chaque trait et remplacer la commande intégrée « Effacer toutes les entrées manuscrites ».
 
 ## <a name="other-articles-in-this-section"></a>Autres articles de cette section
@@ -469,7 +468,7 @@ Pour obtenir un exemple complet de cette fonctionnalité, consultez [l’exemple
 | [Store et récupérer des traits d’encre](save-and-load-ink.md) | Stockez des données de traits d’encre dans un fichier GIF (Graphics Interchange Format) à l’aide des métadonnées intégrées ISF (Ink Serialized Format). |
 | [Ajouter un InkToolbar à une UWP encrage application](ink-toolbar.md) | Ajoutez un élément InkToolbar par défaut à une application d’entrée manuscrite de plateforme Windows universelle (UWP), ajoutez un bouton de stylet personnalisé à l’élément InkToolbar et liez le bouton de stylet personnalisé à une définition de stylet personnalisé. |
 
-## <a name="related-articles"></a>Articles connexes
+## <a name="related-articles"></a>Articles associés
 
 * [Prise en main : Prise en charge de l’encre dans votre application UWP](../../get-started/ink-walkthrough.md)
 * [Gestion des entrées du pointeur](handle-pointer-input.md)

@@ -1,17 +1,17 @@
 ---
 title: Lancer une application pour obtenir des résultats
-description: Découvrez comment démarrer une application à partir d’une autre, et échanger des données entre les deux. On parle de démarrage d’une application pour afficher les résultats.
+description: Découvrez comment démarrer une application à partir d’une autre, et échanger des données entre les deux. On parle de « lancement d’une application pour obtenir des résultats ».
 ms.assetid: AFC53D75-B3DD-4FF6-9FC0-9335242EE327
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 23d4a4e0159fc18ac524937326e69d6fbc3a627e
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 64a093ddd8a53d72ccb6780b73f280e7b2874612
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370709"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320955"
 ---
 # <a name="launch-an-app-for-results"></a>Lancer une application pour obtenir des résultats
 
@@ -20,10 +20,10 @@ ms.locfileid: "66370709"
 
 **API importantes**
 
--   [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.windows)
+-   [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriforresultsasync)
 -   [**ValueSet**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.ValueSet)
 
-Découvrez comment démarrer une application à partir d’une autre, et échanger des données entre les deux. On parle de *démarrage d’une application pour afficher les résultats*. L’exemple suivant vous montre comment utiliser [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.windows) afin de démarrer une application pour afficher les résultats.
+Découvrez comment démarrer une application à partir d’une autre, et échanger des données entre les deux. On parle de *démarrage d’une application pour afficher les résultats*. L’exemple suivant vous montre comment utiliser [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriforresultsasync) afin de démarrer une application pour afficher les résultats.
 
 Nouvelle communication application-application API dans Windows 10 permettent à Windows applications (et d’applications Web de Windows) lancer une application et échanger des données et fichiers. Cela vous permet de créer des solutions hybrides à partir de plusieurs applications. Grâce à ces nouvelles API, les tâches complexes qui, auparavant, auraient obligé l’utilisateur à lancer plusieurs applications, peuvent désormais être gérées de manière transparente. Ainsi, votre application peut démarrer une application de réseau social pour choisir un contact, ou une application de validation d’achat pour effectuer un processus de paiement.
 
@@ -36,8 +36,8 @@ Dans le fichier Package.appxmanifest de l’application lancée, ajoutez une ext
 
 L’attribut **ReturnResults** dans l’extension de protocole accepte l’une des valeurs suivantes :
 
--   **optional** : l’application peut être démarrée pour afficher les résultats via la méthode [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.windows), ou à d’autres fins via la méthode [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync). Si vous utilisez l’élément **optional**, l’application lancée doit déterminer si elle a été démarrée pour afficher les résultats. Pour ce faire, elle peut vérifier l’argument d’événement [**OnActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onactivated). Si la propriété [**IActivatedEventArgs.Kind**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.iactivatedeventargs.kind) de l’argument renvoie [**ActivationKind.ProtocolForResults**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ActivationKind) ou si le type de l’argument d’événement est [**ProtocolActivatedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs), l’application a été lancée via **LaunchUriForResultsAsync**.
--   **always** : l’application peut être démarrée uniquement pour afficher les résultats ; autrement dit, elle ne peut répondre qu’à [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.windows).
+-   **optional** : l’application peut être démarrée pour afficher les résultats via la méthode [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriforresultsasync), ou à d’autres fins via la méthode [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync). Si vous utilisez l’élément **optional**, l’application lancée doit déterminer si elle a été démarrée pour afficher les résultats. Pour ce faire, elle peut vérifier l’argument d’événement [**OnActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onactivated). Si la propriété [**IActivatedEventArgs.Kind**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.iactivatedeventargs.kind) de l’argument renvoie [**ActivationKind.ProtocolForResults**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ActivationKind) ou si le type de l’argument d’événement est [**ProtocolActivatedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs), l’application a été lancée via **LaunchUriForResultsAsync**.
+-   **always** : l’application peut être démarrée uniquement pour afficher les résultats ; autrement dit, elle ne peut répondre qu’à [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriforresultsasync).
 -   **none** : l’application ne peut pas être démarrée pour afficher les résultats ; elle ne peut répondre qu’à [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync).
 
 Dans cet exemple d’extension de protocole, l’application peut être démarrée uniquement pour afficher les résultats. Cela permet de simplifier la logique figurant dans la méthode **OnActivated** (abordée ci-dessous), car nous avons uniquement besoin de gérer les cas de « démarrage pour afficher les résultats », et non les autres modes d’activation possibles de l’application.
@@ -186,7 +186,7 @@ string familyName = Windows.ApplicationModel.Package.Current.Id.FamilyName;
 ## <a name="remarks"></a>Notes
 
 
-L’exemple de cette procédure inclut une introduction de type « hello world » pour le démarrage d’une application afin d’afficher les résultats. Les points à noter sont les suivants : la nouvelle API [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.windows) vous permet de démarrer une application de manière asynchrone et de communiquer via la classe [**ValueSet**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.ValueSet). Les données à transmettre via un élément **ValueSet** doivent présenter une taille de 100 Ko au maximum. Si vous devez transmettre des quantités de données supérieures, vous pouvez partager des fichiers à l’aide de la classe [**SharedStorageAccessManager**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.SharedStorageAccessManager) afin de créer des jetons de fichier que vous pouvez transmettre entre les applications. Par exemple, pour un élément **ValueSet** appelé `inputData`, vous pouvez stocker le jeton dans un fichier que vous souhaitez partager avec l’application lancée :
+L’exemple de cette procédure inclut une introduction de type « hello world » pour le démarrage d’une application afin d’afficher les résultats. Les points à noter sont les suivants : la nouvelle API [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriforresultsasync) vous permet de démarrer une application de manière asynchrone et de communiquer via la classe [**ValueSet**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.ValueSet). Les données à transmettre via un élément **ValueSet** doivent présenter une taille de 100 Ko au maximum. Si vous devez transmettre des quantités de données supérieures, vous pouvez partager des fichiers à l’aide de la classe [**SharedStorageAccessManager**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.SharedStorageAccessManager) afin de créer des jetons de fichier que vous pouvez transmettre entre les applications. Par exemple, pour un élément **ValueSet** appelé `inputData`, vous pouvez stocker le jeton dans un fichier que vous souhaitez partager avec l’application lancée :
 
 ```cs
 inputData["ImageFileToken"] = SharedStorageAccessManager.AddFile(myFile);
@@ -198,7 +198,7 @@ transférez-le ensuite à l’application lancée via **LaunchUriForResultsAsync
 
 
 * [**LaunchUri**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync)
-* [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.windows)
+* [**LaunchUriForResultsAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriforresultsasync)
 * [**ValueSet**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.ValueSet)
 
  

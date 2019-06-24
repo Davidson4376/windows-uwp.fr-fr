@@ -6,12 +6,12 @@ ms.date: 08/01/2018
 ms.topic: article
 keywords: windows 10, uwp, API de collection du Microsoft Store, API d’achat du Microsoft Store, afficher des produits, octroyer des produits
 ms.localizationpriority: medium
-ms.openlocfilehash: 0bf85a73cb35044b4be2282c9a13c1e65b836a92
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 184937133b85ae2cac7a21bb6002af70b06d34da
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57604004"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319925"
 ---
 # <a name="manage-product-entitlements-from-a-service"></a>Gérer les droits sur les produits à partir d’un service
 
@@ -25,7 +25,7 @@ Ces API sont constituées des méthodes REST, qui sont conçues pour être utili
 > [!NOTE]
 > L’API de collection et l’API d’achat du Microsoft Store utilisent l’authentification Azure Active Directory (Azure AD) pour accéder aux informations de propriété client. Pour utiliser ces API, vous (ou votre organisation) devez disposer d’un annuaire Azure AD et d’une autorisation [Administrateur global](https://go.microsoft.com/fwlink/?LinkId=746654) pour l’annuaire. Si vous utilisez déjà Office 365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’un annuaire Azure AD.
 
-## <a name="overview"></a>Vue d’ensemble
+## <a name="overview"></a>Vue d'ensemble
 
 Les étapes suivantes décrivent le processus de bout en bout pour l’utilisation de l’API de collection et de l'API d’achat du Microsoft Store :
 
@@ -84,7 +84,7 @@ Avant de pouvoir utiliser l’API de collecte de Microsoft Store ou acheter des 
 
 ## <a name="step-3-create-azure-ad-access-tokens"></a>Étape 3 : Créer des jetons d’accès Azure AD
 
-Pour pouvoir récupérer une clé d’ID du Microsoft Store ou appeler l’API de collection ou d’achat du Microsoft Store, votre service doit créer plusieurs jetons d’accès Azure AD différents qui représentent votre identité d’éditeur. Chaque jeton est utilisé avec une autre API. La durée de vie de chacun des jetons est de 60 minutes, et vous pouvez les actualiser une fois qu’ils sont arrivés à expiration.
+Pour pouvoir récupérer une clé d’ID du Microsoft Store ou appeler l’API de collection ou d’achat du Microsoft Store, votre service doit créer plusieurs jetons d’accès Azure AD différents qui représentent votre identité d’éditeur. Chaque jeton est utilisé avec une autre API. La durée de vie de chacun des jetons est de 60 minutes, et vous pouvez les actualiser une fois qu’ils sont arrivés à expiration.
 
 > [!IMPORTANT]
 > Créez des jetons d’accès Azure AD uniquement dans le contexte de votre service, et non dans votre application. Votre clé secrète client risque d’être compromise si elle est envoyée à votre application.
@@ -107,7 +107,7 @@ Selon les méthodes que vous voulez appeler dans l’API de collection ou d’ac
 
 ### <a name="create-the-tokens"></a>Créer les jetons
 
-Pour créer les jetons d’accès, utilisez l’API OAuth 2.0 dans votre service en suivant les instructions de la section [Appels de service à service à l’aide des informations d’identification du client](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service) pour envoyer une requête HTTP POST au point de terminaison ```https://login.microsoftonline.com/<tenant_id>/oauth2/token```. Voici un exemple de requête.
+Pour créer les jetons d’accès, utilisez l’API OAuth 2.0 dans votre service en suivant les instructions de la section [Appels de service à service à l’aide des informations d’identification du client](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/) pour envoyer une requête HTTP POST au point de terminaison ```https://login.microsoftonline.com/<tenant_id>/oauth2/token```. Voici un exemple de requête.
 
 ``` syntax
 POST https://login.microsoftonline.com/<tenant_id>/oauth2/token HTTP/1.1
@@ -122,7 +122,7 @@ grant_type=client_credentials
 
 Pour chaque jeton, spécifiez les données de paramètre suivantes :
 
-* Pour le *client\_id* et *client\_secret* paramètres, spécifiez l’ID d’application et la clé secrète client pour votre application que vous avez récupérées à partir de la [Portail de gestion azure](https://manage.windowsazure.com). Ces deux paramètres sont nécessaires pour créer un jeton d’accès disposant du niveau d’authentification requis par l’API de collection ou d’achat du Microsoft Store.
+* Pour le *client\_id* et *client\_secret* paramètres, spécifiez l’ID d’application et la clé secrète client pour votre application que vous avez récupérées à partir de la [Portail de gestion azure](https://portal.azure.com/). Ces deux paramètres sont nécessaires pour créer un jeton d’accès disposant du niveau d’authentification requis par l’API de collection ou d’achat du Microsoft Store.
 
 * Pour le paramètre *ressource*, spécifiez l'un des URI d’audience répertoriés dans la [section précédente](#access-tokens), selon le type de jeton d’accès que vous créez.
 
@@ -196,7 +196,7 @@ Lorsque votre service dispose d’une clé d’ID du Microsoft Store qui lui pe
 Pour chaque scénario, fournissez les informations suivantes à l’API :
 
 -   Dans l’en-tête de la demande, transmettez le jeton d’accès Azure AD associé à la valeur d’URI d’audience `https://onestore.microsoft.com`. Il s’agit d’un des jetons que vous avez créés à [l’étape 3 précédente](#step-3). Ce jeton représente votre identité d’éditeur.
--   Dans le corps de la demande, transmettez la clé d’ID du Microsoft Store que vous avez récupérée à [l’étape 4 précédente](#step-4) à partir du code côté client dans votre application. Cette clé représente l’identité de l’utilisateur dont vous souhaitez accéder aux informations de propriété.
+-   Dans le corps de la demande, transmettez la clé d’ID du Microsoft Store que vous avez récupérée à [l’étape 4 précédente](#step-4) à partir du code côté client dans votre application. Cette clé représente l’identité de l’utilisateur pour lequel vous souhaitez accéder aux informations de propriété.
 
 ### <a name="diagram"></a>Diagramme
 

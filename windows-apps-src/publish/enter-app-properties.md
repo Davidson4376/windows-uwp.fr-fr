@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, paramètres de jeu, mode d’affichage, configuration requise, configuration matérielle requise, matériel minimum, matériel recommandé, politique de confidentialité, coordonnées du support technique, site web de l’application, support
 ms.localizationpriority: medium
-ms.openlocfilehash: ec3b78da4e56ab5994155c41505bbdde42b44e12
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 5bc1283560334d2eac97fd358feabfca0f411014
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63774047"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320042"
 ---
 # <a name="enter-app-properties"></a>Entrer les propriétés d’une application
 
@@ -46,7 +46,7 @@ Pour déterminer plus facilement si votre application requiert une politique de 
 
 ### <a name="website"></a>Site web
 
-Entrez l’URL de la page web de votre application. Cette URL doit pointer vers une page de votre propre site web, et non vers la description web de votre application dans le Windows Store. Ce champ est facultatif, mais recommandé.
+Entrez l’URL de la page web de votre application. Cette URL doit pointer vers une page de votre propre site web, et non vers la description web de votre application dans le Store. Ce champ est facultatif, mais recommandé.
 
 ### <a name="support-contact-info"></a>Coordonnées du support technique
 
@@ -67,7 +67,7 @@ Si votre jeu prend en charge des options multijoueurs, veillez à indiquer le no
 
 ## <a name="display-mode"></a>Mode d’affichage
 
-Cette section vous permet d’indiquer si votre produit est conçu pour s’exécuter dans un affichage immersif (pas 2D) pour [Windows Mixed Reality](https://developer.microsoft.com/windows/mixed-reality) sur les PC et/ou les appareils HoloLens. Si tel est le cas, vous devrez également :
+Cette section vous permet d’indiquer si votre produit est conçu pour s’exécuter dans un affichage immersif (pas 2D) pour [Windows Mixed Reality](https://developer.microsoft.com/mixed-reality) sur les PC et/ou les appareils HoloLens. Si tel est le cas, vous devrez également :
 - Sélectionner **Matériel minimum** ou **Matériel recommandé** pour le **casque immersif Windows Mixed Reality** dans la section [Configuration requise](#system-requirements) qui s’affiche plus bas dans la page **Propriétés**.
 - Spécifiez la **Configuration de délimitation** (si PC est sélectionné) afin que les utilisateurs sachent s’ils doivent l'utiliser dans une position assise ou debout uniquement, ou s’ils sont autorisés à (ou obligés de) se déplacer lors de son utilisation. 
 

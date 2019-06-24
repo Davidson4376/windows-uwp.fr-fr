@@ -1,23 +1,23 @@
 ---
 title: Technologies de jeu des applications pour la plateforme Windows universelle (UWP)
-description: Ce guide décrit les technologies disponibles pour le développement de jeux UWP.
+description: Ce guide décrit les technologies disponibles pour le développement de jeux UWP (Universal Windows Platform).
 ms.assetid: bc4d4648-0d6e-efbb-7608-80bd09decd6e
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, jeux, technologie, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: ba15a4f965dc582a8bd4eaeca211367ea1fcb5cb
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: c6d2b0bd04fd14804f65072c8a698e1a240ce00e
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368690"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321304"
 ---
 # <a name="game-technologies-for-uwp-apps"></a>Technologies de jeu des applications UWP
 
 
 
-Ce guide décrit les technologies disponibles pour le développement de jeux UWP.
+Ce guide décrit les technologies disponibles pour le développement de jeux UWP (Universal Windows Platform).
 
 ##  <a name="benefits-of-windows10-for-game-development"></a>Avantages de Windows 10 pour le développement de jeux
 
@@ -159,7 +159,7 @@ De nombreuses API sont liées au développement de jeux, mais tous les jeux ne d
     <p>Voir la documentation concernant <a href="https://docs.microsoft.com/windows/desktop/xaudio2/xaudio2-apis-portal">XAudio2</a>.</p></td>
     </tr>
     <tr class="even">
-    <td align="left">Media Foundation</td>
+    <td align="left">Media Foundation</td>
     <td align="left"><p>Microsoft Media Foundation est conçue pour la lecture de fichiers multimédias et de flux audio et vidéo, mais peut également servir dans des jeux quand des fonctionnalités de niveau supérieur à XAudio2 sont requises et qu’une certaine surcharge supplémentaire est acceptable.</p>
     <p><strong>Quand utiliser</strong></p>
     <p>Media Foundation est particulièrement utile pour les scènes cinématographiques ou les composants non-interactifs de votre jeu. Media Foundation est également utile pour le décodage de fichiers audio avant leur lecture à l’aide de XAudio2.</p>
@@ -293,7 +293,7 @@ De nombreuses API sont liées au développement de jeux, mais tous les jeux ne d
     </colgroup>
     <thead>
     <tr class="header">
-    <th align="left">Bibliothèque</th>
+    <th align="left">Library</th>
     <th align="left">Description</th>
     </tr>
     </thead>
@@ -323,7 +323,7 @@ De nombreuses API sont liées au développement de jeux, mais tous les jeux ne d
 
 Le [programme Xbox Live Creators](https://developer.microsoft.com/games/xbox/xboxlive/creator) permet aux développeurs d’intégrer la Xbox Live à leur jeu UWP et publier sur Xbox One et Windows 10. Intégrez dans votre titre des fonctionnalités sociales de Xbox Live telles que la connexion, la présence, les classements, etc., avec un temps de développement minime. Les fonctionnalités sociales de Xbox Live visent à faire croître votre public de façon drastique en vous faisant connaître auprès de plus de 55 millions de joueurs actifs.
 
-Si vous souhaitez accéder à d’autres fonctionnalités Xbox Live, bénéficier d’une aide en termes de marketing et de développement et avoir la chance de figurer dans le Windows Store Xbox One principal, soumettez une demande de participation au programme [ID@Xbox](https://www.xbox.com/developers/id). Pour voir les fonctionnalités disponibles pour les programmes Créateurs Xbox Live et ID@Xbox, voir le [tableau des fonctionnalités](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#feature-table).
+Si vous souhaitez accéder à d’autres fonctionnalités Xbox Live, bénéficier d’une aide en termes de marketing et de développement et avoir la chance de figurer dans le Windows Store Xbox One principal, soumettez une demande de participation au programme [ID@Xbox](https://www.xbox.com/developers/id). Pour voir les fonctionnalités disponibles pour les programmes Créateurs Xbox Live et ID@Xbox, voir le [tableau des fonctionnalités](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#feature-table).
 
 Pour plus d’informations, accédez à [Ajout de Xbox Live à votre jeu](e2e.md#adding-xbox-live-to-your-game).
 

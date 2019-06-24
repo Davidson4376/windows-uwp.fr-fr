@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e9db0960070c77485fbe8b2f3231f7ce8035b5c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 2b77fb147ab614b19993700d5d99572f0247d54e
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361490"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318269"
 ---
 # <a name="process-media-frames-with-mediaframereader"></a>Traiter des images multimédias avec MediaFrameReader
 
@@ -43,7 +43,7 @@ L’exemple de code de cet article utilise des API des espaces de noms suivants,
 
 [!code-cs[FramesUsing](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetFramesUsing)]
 
-## <a name="select-frame-sources-and-frame-source-groups"></a>Sélectionnez des sources d’images et des groupes de sources d’images
+## <a name="select-frame-sources-and-frame-source-groups"></a>Sélectionner des sources d’images et des groupes de sources d’images
 De nombreuses applications qui traitent des images multimédias doivent récupérer ces éléments de plusieurs sources simultanément, comme des appareils photos couleur et de profondeur d’un appareil. Le [ **MediaFrameSourceGroup** ](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameSourceGroup) objet représente un ensemble de sources de frame de média peut être utilisé simultanément. Appelez la méthode statique [**MediaFrameSourceGroup.FindAllAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup.findallasync) afin de récupérer une liste de l’ensemble des groupes de sources d’images pris en charge par l’appareil actuel.
 
 [!code-cs[FindAllAsync](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetFindAllAsync)]
@@ -93,7 +93,7 @@ Appelez [**InitializeAsync**](https://docs.microsoft.com/uwp/api/windows.media.c
 ## <a name="set-the-preferred-format-for-the-frame-source"></a>Définir le format préféré de la source d’images
 Pour définir le format préféré d’une source d’images, vous devez obtenir un objet [**MediaFrameSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameSource) représentant la source. Pour obtenir cet objet, accédez au dictionnaire [**Frames**](https://docs.microsoft.com/previous-versions/windows/apps/phone/jj207578(v=win.10)) de l’objet **MediaCapture** initialisé, en spécifiant l’identificateur de la source d’images que vous souhaitez utiliser. C’est pourquoi nous avons enregistré l’objet [**MediaFrameSourceInfo**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameSourceInfo) lorsque nous sélectionnions un groupe de sources d’images.
 
-La propriété [**MediaFrameSource.SupportedFormats**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesource.supportedformats) comporte une liste d’objets [**MediaFrameFormat**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameFormat) décrivant les formats pris en charge pour la source d’images. Utilisez la méthode d’extension Linq **Where** pour sélectionner un format basé sur les propriétés souhaitées. Dans cet exemple, le format sélectionné présente une largeur de 1 080 pixels et peut fournir des images au format RVB 32 bits. La méthode d’extension **FirstOrDefault** sélectionne la première entrée de la liste. Si le format sélectionné est NULL, le format demandé n’est pas pris en charge par la source des images. Si le format est pris en charge, vous pouvez demander que la source l’utilise en appelant [**SetFormatAsync**](https://developer.microsoft.com/windows/apps/develop).
+La propriété [**MediaFrameSource.SupportedFormats**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesource.supportedformats) comporte une liste d’objets [**MediaFrameFormat**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameFormat) décrivant les formats pris en charge pour la source d’images. Utilisez la méthode d’extension Linq **Where** pour sélectionner un format basé sur les propriétés souhaitées. Dans cet exemple, le format sélectionné présente une largeur de 1 080 pixels et peut fournir des images au format RVB 32 bits. La méthode d’extension **FirstOrDefault** sélectionne la première entrée de la liste. Si le format sélectionné est NULL, le format demandé n’est pas pris en charge par la source des images. Si le format est pris en charge, vous pouvez demander que la source l’utilise en appelant [**SetFormatAsync**](https://docs.microsoft.com/windows/uwp/develop/).
 
 [!code-cs[GetPreferredFormat](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetGetPreferredFormat)]
 
@@ -127,11 +127,11 @@ Les images arrivant en tant qu’objets **SoftwareBitmap**, vous devez créer un
 
 Il est désormais temps d’implémenter le gestionnaire d’événements **FrameArrived**. Quand le gestionnaire est appelé, le paramètre *sender* contient une référence à l’objet **MediaFrameReader** qui déclenche l’événement. Appelez [**TryAcquireLatestFrame**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.tryacquirelatestframe) sur cet objet afin d’essayer d’obtenir la dernière image. Comme son nom l’indique, **TryAcquireLatestFrame** peut ne pas réussir à renvoyer une image. Par conséquent, quand vous accédez aux propriétés VideoMediaFrame puis SoftwareBitmap, assurez-vous de détecter la définition de la valeur NULL. Dans cet exemple, l’opérateur conditionnel NULL ? est utilisé pour accéder à l’instance **SoftwareBitmap**. Ensuite, la valeur NULL est recherchée sur l’objet récupéré.
 
-Le contrôle **Image** peut afficher des images uniquement au format BRGA8, avec aucune valeur alpha ou avec des valeurs alpha prémultipliées. Si l’image arrivante n’est pas dans ce format, la méthode statique [**Convert**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.windows) est utilisée pour convertir l’image bitmap logicielle au format approprié.
+Le contrôle **Image** peut afficher des images uniquement au format BRGA8, avec aucune valeur alpha ou avec des valeurs alpha prémultipliées. Si l’image arrivante n’est pas dans ce format, la méthode statique [**Convert**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.convert) est utilisée pour convertir l’image bitmap logicielle au format approprié.
 
 Ensuite, la méthode [**Interlocked.Exchange**](https://docs.microsoft.com/dotnet/api/system.threading.interlocked.exchange?redirectedfrom=MSDN#System_Threading_Interlocked_Exchange__1___0____0_) est utilisée pour remplacer la référence de l’image bitmap en entrée par l’image bitmap de la mémoire tampon d’arrière-plan. Cette méthode échange des références au cours d’une opération atomique thread-safe. Après le remplacement, l’ancienne image de mémoire tampon d’arrière-plan, désormais dans la variable *softwareBitmap*, est supprimée à des fins de nettoyage de ses ressources.
 
-Ensuite, l’instance [**CoreDispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher) associée à l’élément **Image** est utilisée pour créer une tâche qui s’exécutera sur le thread d’interface utilisateur en appelant [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows). Étant donné que les tâches asynchrones seront exécutées au sein de la tâche, l’expression lambda transmise à **RunAsync** est déclarée avec le mot-clé *async*.
+Ensuite, l’instance [**CoreDispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher) associée à l’élément **Image** est utilisée pour créer une tâche qui s’exécutera sur le thread d’interface utilisateur en appelant [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync). Étant donné que les tâches asynchrones seront exécutées au sein de la tâche, l’expression lambda transmise à **RunAsync** est déclarée avec le mot-clé *async*.
 
 Au sein de la tâche, la variable *_taskRunning* est examinée afin de garantir qu’une seule instance de la tâche s’exécute à la fois. SI la tâche n’est pas en cours d’exécution, l’élément *_taskRunning* est défini sur True, ceci pour prévenir toute nouvelle réexécution. Dans une boucle *while*, **Interlocked.Exchange** est appelé pour l’exécution d’une copie d’une mémoire tampon d’arrière-plan sur une instance **SoftwareBitmap** temporaire, jusqu’à ce que l’image de la mémoire tampon d’arrière-plan soit définie sur NULL. À chaque fois que l’image bitmap temporaire est remplie, la propriété **Source** du contrôle **Image** est castée en instance **SoftwareBitmapSource**, puis [**SetBitmapAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.softwarebitmapsource.setbitmapasync) est appelée pour définir la source de l’image.
 
@@ -148,7 +148,7 @@ Lorsque vous avez fini de lire les images, assurez-vous d’arrêter le lecteur 
 
 [!code-cs[Cleanup](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetCleanup)]
 
-Pour plus d’informations sur le nettoyage de vos objets de capture multimédia lorsque votre application est interrompue, consultez la section [**Accès à l’aperçu simple de l’appareil photo**](simple-camera-preview-access.md).
+Pour plus d’informations sur le nettoyage de vos objets de capture multimédia lorsque votre application est interrompue, consultez la section [**Afficher l’aperçu de l’appareil photo**](simple-camera-preview-access.md).
 
 ## <a name="the-framerenderer-helper-class"></a>La classe d’assistance FrameRenderer
 Le [profil d’appareil photo](https://go.microsoft.com/fwlink/?LinkId=823230) Windows universel fournit une classe d’assistance qui facilite l’affichage d’images de sources couleur, infrarouges et de profondeur dans votre application. Généralement, vous ne vous contentez pas d’afficher les données infrarouge et de profondeur à l’écran, mais cette classe d’assistance est un outil utile permettant d’illustrer la fonctionnalité du lecteur d’images et de déboguer votre propre implémentation du lecteur d’images.

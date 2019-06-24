@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, jeux, monétisation
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ef957700f6554ccece9d0c3bf51ccf4244a4b74
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 4c84c42da0e2653f0e5958583ad0ee9b9babe3bc
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368415"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318953"
 ---
 #  <a name="monetization-for-games"></a>Monétisation pour les jeux
 
@@ -43,7 +43,7 @@ Le processus de détermination du prix peut inclure vos [responsabilités fiscal
 ### <a name="sale-price"></a>Prix de vente
 
 Une façon de promouvoir votre jeu consiste à réduire son prix pendant une période limitée. Vous pouvez également définir le prix de vente comme étant __gratuit__ pour permettre le téléchargement de votre jeu sans paiement.
-Vous pouvez planifier des campagnes de vente à l’avance, en définissant à la fois la date de début et la date de fin de la vente. Pour plus d’informations, voir [Vendre des applications et des composants additionnels à prix réduit](https://docs.microsoft.com/windows/uwp/publish/put-apps-and-add-ons-on-sale).
+Vous pouvez planifier des campagnes de vente à l’avance, en définissant à la fois la date de début et la date de fin de la vente. Pour plus d’informations, consultez l’article [Commercialiser des applications et composants additionnels](https://docs.microsoft.com/windows/uwp/publish/put-apps-and-add-ons-on-sale).
 
 ## <a name="in-game-purchases"></a>Achats dans le jeu
 
@@ -183,7 +183,7 @@ Voici quelques meilleures pratiques pour vous aider dans le processus de concept
 * [Meilleures pratiques pour les annonces de bannière](https://docs.microsoft.com/windows/uwp/monetize/ui-and-user-experience-guidelines)
 * [Meilleures pratiques pour les spots vidéo publicitaires](https://docs.microsoft.com/windows/uwp/monetize/ui-and-user-experience-guidelines)
 
-Pour des solutions aux problèmes de développement courants, tels que le non-affichage des publicités, le clignotement et la disparition de la boîte noire ou la non-actualisation des publicités, voir [Guides de dépannage](https://docs.microsoft.com/windows/uwp/monetize/troubleshooting-guides).
+Pour des solutions aux problèmes de développement courants, tels que le non-affichage des publicités, le clignotement et la disparition de la boîte noire ou la non-actualisation des publicités, voir [Guides de résolution des problèmes](https://docs.microsoft.com/windows/uwp/monetize/troubleshooting-guides).
 
 ### <a name="prepare-for-release-by-replacing-ad-unit-test-values"></a>Se préparer au lancement en remplaçant les valeurs de test de l’unité publicitaire
 
@@ -195,7 +195,7 @@ Voici d’autres réseaux publicitaires qui proposent des kits de développement
 
 #### <a name="vungle"></a>Vungle
 
-Le Kit de développement logiciel (SDK) Vungle pour Windows offre des publicités vidéo dans les jeux et les applications. Pour télécharger le Kit de développement logiciel, accédez au [Kit de développement logiciel (SDK) Vungle](https://v.vungle.com/sdk).
+Le Kit de développement logiciel (SDK) Vungle pour Windows offre des publicités vidéo dans les jeux et les applications. Pour télécharger le Kit de développement logiciel, accédez au [Kit de développement logiciel (SDK) Vungle](https://publisher.vungle.com/sdk/).
 
 #### <a name="smaato"></a>Smaato
 

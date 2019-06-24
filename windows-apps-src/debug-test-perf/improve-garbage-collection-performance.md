@@ -1,24 +1,24 @@
 ---
 ms.assetid: F912161D-3767-4F35-88C0-E1ECDED692A2
 title: Améliorer les performances du nettoyage de la mémoire (garbage collection)
-description: Les applications de plateforme Windows universelle (UWP) écrites en C# et Visual Basic bénéficient de la gestion automatique de la mémoire du récupérateur de mémoire .NET. Cette section résume les meilleures pratiques en termes de comportement et de performance du récupérateur de mémoire .NET pour les applications UWP.
+description: Les applications UWP écrites en C# et Visual Basic bénéficient de la gestion automatique de la mémoire du récupérateur de mémoire .NET. Cette section résume les meilleures pratiques en termes de comportement et de performances du récupérateur de mémoire .NET pour les applications UWP.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6dfdc0c8a888890d4052dda1ac7cbf0ed2b6a667
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 996cc797ff46bd7eb9a172d66ffbb1fd6fe621bc
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66362384"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317541"
 ---
 # <a name="improve-garbage-collection-performance"></a>Améliorer les performances du nettoyage de la mémoire (garbage collection)
 
 
-Les applications de plateforme Windows universelle (UWP) écrites en C# et Visual Basic bénéficient de la gestion automatique de la mémoire du récupérateur de mémoire .NET. Cette section résume les meilleures pratiques en termes de comportement et de performance du récupérateur de mémoire .NET pour les applications UWP. Pour plus d’informations sur le fonctionnement du récupérateur de mémoire .NET et les outils en matière de débogage et d’analyse des performances du récupérateur de mémoire, voir [Nettoyage de la mémoire](https://docs.microsoft.com/dotnet/standard/garbage-collection/index).
+Les applications UWP écrites en C# et Visual Basic bénéficient de la gestion automatique de la mémoire du récupérateur de mémoire .NET. Cette section résume les meilleures pratiques en termes de comportement et de performances du récupérateur de mémoire .NET pour les applications UWP. Pour plus d’informations sur le fonctionnement du récupérateur de mémoire .NET et les outils en matière de débogage et d’analyse des performances du récupérateur de mémoire, voir [Nettoyage de la mémoire](https://docs.microsoft.com/dotnet/standard/garbage-collection/index).
 
-**Remarque**  avoir à intervenir dans le comportement par défaut du garbage collector est fortement indicative général des problèmes de mémoire avec votre application. Pour plus d’informations, voir [Utilisation de l’outil d’utilisation de la mémoire pendant le débogage dans Visual Studio 2015](https://blogs.msdn.microsoft.com/devops/2014/11/13/memory-usage-tool-while-debugging-in-visual-studio-2015/). Cette rubrique s’applique uniquement au code C# et Visual Basic.
+**Remarque**  avoir à intervenir dans le comportement par défaut du garbage collector est fortement indicative général des problèmes de mémoire avec votre application. Pour plus d’informations, voir [Utilisation de l’outil d’utilisation de la mémoire pendant le débogage dans Visual Studio 2015](https://devblogs.microsoft.com/devops/memory-usage-tool-while-debugging-in-visual-studio-2015/). Cette rubrique s’applique uniquement au code C# et Visual Basic.
 
  
 

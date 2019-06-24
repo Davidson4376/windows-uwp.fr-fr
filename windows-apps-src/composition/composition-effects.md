@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b07ab7fa6b65e16f39d9e2a77a677d33d3c70254
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: afcb94ca0e6692d5dfede526f1368b71920ab771
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360510"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318205"
 ---
 # <a name="composition-effects"></a>Effets de composition
 
@@ -44,7 +44,7 @@ Actuellement, les compositions prennent en charge les effets suivants :
 | Effet de fusion :         | crée un effet de fusion qui combine deux images. La composition fournit 21 des 26 [modes de fusion](https://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_Effects_BlendEffectMode.htm) pris en charge dans Win2D.        |
 | Source de couleur :         | génère une image contenant une couleur unie.                                                                                                                                                                               |
 | Composite :            | combine deux images. La composition fournit l’ensemble des 13 [modes composites](https://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_CanvasComposite.htm) pris en charge dans Win2D.                                              |
-| Contraste :             | augmente ou diminue le contraste d’une image.                                                                                                                                                                           |
+| Contraste             | augmente ou diminue le contraste d’une image.                                                                                                                                                                           |
 | Exposition :             | augmente ou diminue l’exposition d’une image.                                                                                                                                                                           |
 | Nuances de gris :            | convertit une image en gris monochrome.                                                                                                                                                                                   |
 | Transfert gamma :       | modifie les couleurs d’une image en appliquant une fonction de transfert gamma par canal.                                                                                                                                           |
@@ -142,7 +142,7 @@ Ce didacticiel de démarrage rapide vous montre comment utiliser certaines fonct
 
 ### <a name="installing-visual-studio"></a>Installation de Visual Studio
 
-- Si vous n’avez pas installé une version prise en charge de Visual Studio, accédez à la page de téléchargements de Visual Studio [ici](https://www.visualstudio.com/downloads/download-visual-studio-vs.aspx).
+- Si vous n’avez pas installé une version prise en charge de Visual Studio, accédez à la page de téléchargements de Visual Studio [ici](https://visualstudio.microsoft.com/downloads/download-visual-studio-vs).
 
 ### <a name="creating-a-new-project"></a>Création d’un projet
 
@@ -237,7 +237,7 @@ LoadImage(surfaceBrush);
 
 ## <a name="more-information"></a>Plus d’informations
 
-- [Microsoft – GitHub de Composition](https://github.com/Microsoft/composition)
+- [Microsoft – GitHub de Composition](https://github.com/microsoft/WindowsCompositionSamples)
 - [**Windows.UI.Composition**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition)
 - [Équipe de Composition de Windows sur Twitter](https://twitter.com/wincomposition)
 - [Vue d’ensemble de la composition](https://blogs.windows.com/buildingapps/2015/12/08/awaken-your-creativity-with-the-new-windows-ui-composition/)

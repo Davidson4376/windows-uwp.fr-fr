@@ -5,12 +5,12 @@ ms.date: 08/24/2017
 ms.topic: article
 keywords: windows 10, uwp, achats dans l’application, IAP, extensions, codes d'erreur
 ms.localizationpriority: medium
-ms.openlocfilehash: ba505b30076c356a39ae195e1d187cbc49d8a66a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: e887e5fec2a2e04658332a25a3a6c8e23fe2550c
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57662874"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321718"
 ---
 # <a name="error-codes-for-store-operations"></a>Codes d’erreur pour les opérations du Store
 
@@ -22,7 +22,7 @@ Cet article décrit les codes d’erreur courants que vous pouvez rencontrer lor
 
 Les codes d’erreur suivants sont liés aux opérations d’achat in-app.
 
-|  Error code  |  Description  |
+|  Code d’erreur  |  Description  |
 |--------------|---------------|
 | 0x803F6100   | L’achat in-app n’a pas pu aboutir car le Monde des enfants est actif. Pour terminer l’achat, connectez-vous à l’appareil avec votre compte Microsoft et exécutez à nouveau l’application.               |
 | 0x803F6101   | L’application spécifiée est introuvable. L’application n'est peut-être plus disponible dans le Store ou vous avez peut-être fourni un ID Store incorrect pour l’application.     |
@@ -44,7 +44,7 @@ Les codes d’erreur suivants sont liés aux opérations d’achat in-app.
 
 Les codes d’erreur suivants sont liés à la gestion des licences des applications ou extensions
 
-|  Error code  |  Description  |
+|  Code d’erreur  |  Description  |
 |--------------|---------------|
 | 0x803F700C   | L’appareil est actuellement hors ligne. Pour utiliser cette application alors que le périphérique est hors ligne, ouvrez les paramètres du Store et activez/désactivez le paramètre **Autorisations hors ligne**.            |
 | 0x803F8001   | Vous n’avez pas de droits sur le produit. Vous pouvez utiliser un compte Microsoft différent de celui qui a été utilisé pour acheter le produit.           |
@@ -53,7 +53,7 @@ Les codes d’erreur suivants sont liés à la gestion des licences des applicat
 | 0x803F8009<br/>0x803F800A   | La période d’évaluation de l’application a expiré.   |
 | 0x803F8190   |  La licence ne permet pas d'utiliser le produit dans le pays ou la région où se trouve actuellement votre appareil.  |
 | 0x803F81F5<br/>0x803F81F6<br/>0x803F81F7<br/>0x803F81F8<br/>0x803F81F9   |  Vous avez atteint le nombre maximal d’appareils qui peut être utilisé avec des jeux et des applications à partir du Store. Pour utiliser ce jeu ou cette application sur l’appareil actuel, commencez par supprimer un autre appareil de votre compte.  |
-| 0x803F9000<br/>0x803F9001    |  La licence a expiré ou est endommagée. Pour résoudre cette erreur, essayez d’exécuter le [résolution des problèmes pour les applications Windows](https://support.microsoft.com/help/4027498/windows-run-the-troubleshooter-for-windows-apps) pour réinitialiser le cache de Store.     |
+| 0x803F9000<br/>0x803F9001    |  La licence a expiré ou est endommagée. Pour résoudre cette erreur, essayez d’exécuter le [résolution des problèmes pour les applications Windows](https://support.microsoft.com/help/4027498/microsoft-store-fix-problems-with-apps) pour réinitialiser le cache de Store.     |
 | 0x803F9006    |  L’opération n’a pas pu aboutir car l’utilisateur autorisé pour ce produit n’est pas connecté à l’appareil avec son compte Microsoft.            |
 | 0x803F9008<br/>0x803F9009    |  Votre périphérique est hors ligne. Votre appareil doit être en ligne pour pouvoir utiliser ce produit.            |
 | 0x803F900A    |  L’abonnement a expiré.            |
@@ -63,7 +63,7 @@ Les codes d’erreur suivants sont liés à la gestion des licences des applicat
 
 Les codes d’erreur suivants sont liés aux [mises à jour des packages à installation automatique](../packaging/self-install-package-updates.md).
 
-|  Error code  |  Description  |
+|  Code d’erreur  |  Description  |
 |--------------|---------------|
 | 0x803F6200   | L'accord de l’utilisateur est nécessaire pour télécharger la mise à jour du package.               |
 | 0x803F6201   | L'accord de l’utilisateur est nécessaire pour télécharger et installer la mise à jour du package.                                                  |

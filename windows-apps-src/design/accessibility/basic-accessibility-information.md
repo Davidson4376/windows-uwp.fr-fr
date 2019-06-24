@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c4b796c8af493508328730c2b958a0beb38bf60c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: a50ca6eaeecd2528eaa0d8558ef70552ae49944a
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361958"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317294"
 ---
 # <a name="expose-basic-accessibility-information"></a>Présenter des informations d’accessibilité élémentaires  
 
@@ -32,7 +32,7 @@ Le tableau suivant décrit comment définir ou obtenir un nom accessible pour di
 | Type d’élément | Description |
 |--------------|-------------|
 | Texte statique | Pour les éléments [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) et [**RichTextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock), un nom accessible est déterminé automatiquement à partir du texte visible (interne). Tout le texte dans cet élément est utilisé comme nom. Voir [Nom du texte interne](#name_from_inner_text). |
-| Images | L’élément [**Image**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) XAML n’a pas d’analogue direct pour l’attribut HTML **alt** de type **img** et éléments similaires. Vous devez utiliser [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name?view=netframework-4.8) pour fournir un nom ou utiliser la technique de légendage. Voir [Noms accessibles pour les images](#images). |
+| les images, | L’élément [**Image**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) XAML n’a pas d’analogue direct pour l’attribut HTML **alt** de type **img** et éléments similaires. Vous devez utiliser [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name?view=netframework-4.8) pour fournir un nom ou utiliser la technique de légendage. Voir [Noms accessibles pour les images](#images). |
 | Éléments de formulaire | Le nom accessible pour un élément de formulaire doit être identique à l’étiquette affichée pour cet élément. Voir [Étiquettes et LabeledBy](#labels). |
 | Boutons et liens | Par défaut, le nom accessible d’un bouton ou d’un lien est basé sur le texte visible, les mêmes règles que celles décrites dans [Nom du texte interne](#name_from_inner_text) étant appliquées. Dans les cas où un bouton contient uniquement une image, utilisez [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name?view=netframework-4.8) pour fournir un équivalent texte-uniquement de l’action prévue du bouton. |
 
@@ -97,7 +97,7 @@ XAML
 <span id="LABELS"/>
 
 ## <a name="labels-and-labeledby"></a>Étiquettes et LabeledBy.  
-Le meilleur moyen d’associer une étiquette à un élément de formulaire consiste à utiliser un objet [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) avec un **x:Name** comme texte d’étiquette, puis à définir la propriété jointe [**AutomationProperties.LabeledBy**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms591292(v%3Dvs.95)) sur l’élément de formulaire pour faire référence à l’étiquetage **TextBlock** par son nom XAML. Si vous utilisez ce modèle, quand l’utilisateur clique sur une étiquette, le focus bascule vers le contrôle associé et les technologies d’assistance peuvent utiliser le texte d’étiquette comme nom accessible pour le champ de formulaire. Voici un exemple qui illustre cette technique.
+Le meilleur moyen d’associer une étiquette à un élément de formulaire consiste à utiliser un objet [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) avec un **x:Name** comme texte d’étiquette, puis à définir la propriété jointe [**AutomationProperties.LabeledBy**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms591292(v=vs.95)) sur l’élément de formulaire pour faire référence à l’étiquetage **TextBlock** par son nom XAML. Si vous utilisez ce modèle, quand l’utilisateur clique sur une étiquette, le focus bascule vers le contrôle associé et les technologies d’assistance peuvent utiliser le texte d’étiquette comme nom accessible pour le champ de formulaire. Voici un exemple qui illustre cette technique.
 
 XAML
 ```xml

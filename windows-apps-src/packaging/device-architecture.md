@@ -5,12 +5,12 @@ ms.date: 07/13/2017
 ms.topic: article
 keywords: windows 10, uwp, création de packages, architecture, configuration de package
 ms.localizationpriority: medium
-ms.openlocfilehash: 338dac1d43e08257fa00b51c0c311a090f3d95c0
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c691605ad121ee1e218bfe7947a9026a46fc5234
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57619934"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319803"
 ---
 # <a name="app-package-architectures"></a>Architectures de package d’application
 
@@ -44,7 +44,7 @@ Cette configuration est utilisée moins fréquemment que la configuration x86. I
 La configuration Windows 10 sur ARM inclut certains PC de bureau, appareils mobiles et quelques appareils IoT Standard (Rasperry Pi 2, Raspberry Pi 3 et DragonBoard). Les PC de bureau Windows 10 sur ARM sont une nouveauté de la famille Windows, donc si vous êtes développeur d’applications UWP, vous devriez soumettre des packages ARM au Windows Store pour une expérience optimale sur ces PC.
 
 >[!NOTE]
-> Pour générer votre application UWP en mode natif de cibler la plateforme ARM64, vous devez disposer de Visual Studio 2017 version 15.9 ou ultérieure. Pour plus d’informations, consultez [ce billet de blog](https://blogs.windows.com/buildingapps/2018/11/15/official-support-for-windows-10-on-arm-development).
+> Pour générer votre application UWP en mode natif de cibler la plateforme ARM64, vous devez disposer de Visual Studio 2017 version 15.9 ou ultérieure. Pour plus d’informations, consultez [ce billet de blog](https://blogs.windows.com/buildingapps/2018/11/15/official-support-for-windows-10-on-arm-development/).
 
 Pour plus d’informations, consultez [Windows 10 sur ARM](../porting/apps-on-arm.md). Découvrez cette discussion //Build pour voir une démonstration de [Windows 10 sur ARM](https://channel9.msdn.com/Events/Build/2017/P4171) et en savoir plus sur son fonctionnement.
 

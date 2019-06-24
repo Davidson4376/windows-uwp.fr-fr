@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 07707160846f3d63c7d0c097fb7b84def08be9e7
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: d4aa6b0b1a7d0e4d805e43ba308730ee483927aa
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66366694"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320901"
 ---
 # <a name="drag-animations"></a>Animations de glissement
 
@@ -22,7 +22,7 @@ ms.locfileid: "66366694"
 
 Utilisez les animations de glisser-déplacer lors du déplacement d’objets par les utilisateurs, par exemple pour le déplacement d’un élément dans une liste ou le positionnement d’un élément au-dessus d’un autre.
 
-> **API importantes** : [**Classe de DragItemThemeAnimation**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.dragitemthemeanimation.)
+> **API importantes** : [**Classe de DragItemThemeAnimation**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.dragitemthemeanimation)
 
 
 ## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
@@ -54,15 +54,15 @@ Utilisez les animations de glisser-déplacer lors du déplacement d’objets par
 -   N’utilisez pas l’animation de glissement entre les objets par éloignement si vous n’avez pas d’abord utilisé l’animation de glissement entre les objets.
 
 
-## <a name="related-articles"></a>Articles connexes
+## <a name="related-articles"></a>Articles associés
 
 **pour les développeurs**
 * [Vue d’ensemble des animations](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)
 * [Animer des séquences de glisser-déplacer](https://docs.microsoft.com/previous-versions/windows/apps/jj649427(v=win.10))
 * [Démarrage rapide : Animation de votre interface utilisateur à l’aide de la bibliothèque d’animations](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
-* [**DragItemThemeAnimation class**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.dragitemthemeanimation.)
-* [**DropTargetItemThemeAnimation class**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.droptargetitemthemeanimation.)
-* [**DragOverThemeAnimation class**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.dragoverthemeanimation.)
+* [**DragItemThemeAnimation class**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.dragitemthemeanimation)
+* [**DropTargetItemThemeAnimation class**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.droptargetitemthemeanimation)
+* [**DragOverThemeAnimation class**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.dragoverthemeanimation)
 
 
  

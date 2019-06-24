@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6bdd859a922cf3252f5896da2652a0b73e20a079
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: a07fae7920bbcddd4c68b052aa82c072312b4995
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371194"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67322150"
 ---
 # <a name="dependency-properties-overview"></a>Vue d’ensemble des propriétés de dépendance
 
 Cette rubrique décrit le système de propriétés de dépendance disponible quand vous écrivez une application Windows Runtime en C++, C# ou Visual Basic avec des définitions XAML pour l’interface utilisateur.
 
-## <a name="what-is-a-dependency-property"></a>Qu’est-ce qu’une propriété de dépendance ?
+## <a name="what-is-a-dependency-property"></a>Qu’est-ce qu’une propriété de dépendance ?
 
 Une propriété de dépendance est un type spécialisé de propriété Plus précisément, il s’agit d’une propriété dont la valeur est suivie et influencée par un système de propriétés dédié qui fait partie de Windows Runtime.
 
@@ -30,11 +30,11 @@ Le but des propriétés de dépendance est de fournir un moyen systémique pour 
 - modèles à utilisation multiples tels que ressources et styles ;
 - valeurs connues par le biais de relations parent-enfant avec d’autres éléments dans l’arborescence d’objets.
 
-Une propriété de dépendance représente ou prend en charge une fonctionnalité spécifique du modèle de programmation pour la définition d’une application Windows Runtime avec XAML pour l’interface utilisateur et C#, extensions du composant Microsoft Visual Basic ou Visual C++ (C++ / c++ / CX) pour le code. Ces fonctionnalités comprennent :
+Une propriété de dépendance représente ou prend en charge une fonctionnalité spécifique du modèle de programmation pour la définition d’une application Windows Runtime avec XAML pour l’interface utilisateur et C#, extensions du composant Microsoft Visual Basic ou Visual C++ (C++ / c++ / CX) pour le code. Ces fonctionnalités incluent :
 
 - Liaison de données
 - Styles
-- Animations dans une table de montage séquentiel
+- Animations dans une table de montage
 - Comportement de « PropertyChanged » (il est possible d’implémenter une propriété de dépendance afin de fournir des rappels capables de propager des modifications à d’autres propriétés de dépendance)
 - Utilisation d’une valeur par défaut provenant de métadonnées de propriété
 - Utilitaire système de propriétés générales tel que [**ClearValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.clearvalue) et recherche de métadonnées
@@ -170,7 +170,7 @@ Les styles et modèles constituent deux des scénarios pour la définition de pr
 
 Les valeurs qui proviennent des styles ou des modèles sont des valeurs différées, semblables aux liaisons. Il en est ainsi pour que les utilisateurs de contrôles puissent remodéliser les contrôles ou redéfinir les styles. Et c’est pourquoi les méthodes setter de propriété dans les styles peuvent uniquement agir sur les propriétés de dépendance, pas sur les propriétés ordinaires.
 
-### <a name="storyboarded-animations"></a>Animations dans une table de montage séquentiel
+### <a name="storyboarded-animations"></a>Animations dans une table de montage
 
 Vous pouvez animer la valeur d’une propriété de dépendance à l’aide d’une animation dans une table de montage séquentiel. Dans Windows Runtime, les animations dans une table de montage séquentiel ne sont pas simplement des décorations visuelles. Il est plus utile de penser aux animations en termes de technique de machine à états qui peut définir les valeurs des propriétés individuelles ou de toutes les propriétés et de tous les visuels d’un contrôle, et modifier ces valeurs dans le temps.
 
@@ -194,7 +194,7 @@ Vous pouvez délibérément affecter à la propriété la valeur par défaut mê
 
 ## <a name="dependencyobject-and-threading"></a>**DependencyObject** et threads
 
-Toutes les instances de [**DependencyObject**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyObject) doivent être créées sur le thread d’interface utilisateur associé au [**Window**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window) actuel qui est affiché par une application Windows Runtime. Bien qu’il soit indispensable de créer chaque **DependencyObject** sur le thread d’interface utilisateur principal, les objets sont accessibles à l’aide d’une référence de répartiteur en provenance des autres threads, via l’accès à la propriété [**Dispatcher**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.dispatcher). Vous pouvez ensuite appeler des méthodes telles que [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows) sur l’objet [**CoreDispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher) et exécuter votre code dans les règles des restrictions de thread sur le thread d’interface utilisateur.
+Toutes les instances de [**DependencyObject**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyObject) doivent être créées sur le thread d’interface utilisateur associé au [**Window**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window) actuel qui est affiché par une application Windows Runtime. Bien qu’il soit indispensable de créer chaque **DependencyObject** sur le thread d’interface utilisateur principal, les objets sont accessibles à l’aide d’une référence de répartiteur en provenance des autres threads, via l’accès à la propriété [**Dispatcher**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.dispatcher). Vous pouvez ensuite appeler des méthodes telles que [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) sur l’objet [**CoreDispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher) et exécuter votre code dans les règles des restrictions de thread sur le thread d’interface utilisateur.
 
 Les aspects relatifs aux threads de [**DependencyObject**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyObject) sont importants, car en règle générale, seul le code qui s’exécute sur le thread d’interface utilisateur peut modifier ou même lire la valeur d’une propriété de dépendance. Les problèmes de threads peuvent généralement être évités dans le code d’interface utilisateur classique qui utilise correctement les modèles **async** et les threads de travail d’arrière-plan. En règle générale, vous rencontrez des problèmes de threads relatifs à **DependencyObject** uniquement si vous définissez vos propres types **DependencyObject** et tentez de les utiliser pour des sources de données ou d’autres scénarios avec lesquels **DependencyObject** n’est pas nécessairement approprié.
 

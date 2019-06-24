@@ -8,12 +8,12 @@ keywords: retour visuel, retour de focus, retour tactile, visualisation de conta
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f716b930a4d8b96a55a5741e5a520be624526fa
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 9ab5d8b12539b7669f3459e62159177bfd95269d
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66363539"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317155"
 ---
 # <a name="guidelines-for-visual-feedback"></a>Recommandations en matière de retour visuel
 
@@ -106,13 +106,13 @@ Pour modifier les couleurs pour chaque contrôle, modifiez simplement les propri
 <Slider Width="200" FocusVisualPrimaryBrush="DarkRed" FocusVisualSecondaryBrush="Pink"/>
 ```
 
-## <a name="related-articles"></a>Articles connexes
+## <a name="related-articles"></a>Articles associés
 
 **Pour les concepteurs**
 * [Instructions pour l’affichage panoramique](guidelines-for-panning.md)
 
 **pour les développeurs**
-* [Interactions de l’utilisateur personnalisé](https://developer.microsoft.com/windows/design/inputs-devices)
+* [Interactions de l’utilisateur personnalisé](https://docs.microsoft.com/windows/uwp/design/layout/index)
 
 **Exemples**
 * [Exemple d’entrée de base](https://go.microsoft.com/fwlink/p/?LinkID=620302)

@@ -5,20 +5,20 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: windows 10, uwp, services de Microsoft Store, API d'analyse du Microsoft Store, analyse Xbox Live, multijoueurs
 ms.localizationpriority: medium
-ms.openlocfilehash: 58f470abdf7cbf0770bf01dd123a8fdfd2c2cbea
-ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.openlocfilehash: b80a9dc8828459e7734370061e960fad64ab7015
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58162994"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321776"
 ---
 # <a name="get-xbox-live-multiplayer-data"></a>Obtenir des données multijoueur Xbox Live
 
 
-Utilisez cette méthode dans l'API d'analyse du Microsoft Store pour obtenir les données multijoueurs pour votre  [jeu compatible Xbox Live](https://docs.microsoft.com/gaming/xbox-live//index.md) chaque jour ou chaque mois. Ces informations sont également disponibles dans le [rapport d’analytique de Xbox](../publish/xbox-analytics-report.md) dans Partner Center.
+Utilisez cette méthode dans l'API d'analyse du Microsoft Store pour obtenir les données multijoueurs pour votre  [jeu compatible Xbox Live](https://docs.microsoft.com/gaming/xbox-live/index.md) chaque jour ou chaque mois. Ces informations sont également disponibles dans le [rapport d’analytique de Xbox](../publish/xbox-analytics-report.md) dans Partner Center.
 
 > [!IMPORTANT]
-> Cette méthode prend uniquement en charge les jeux pour Xbox et les jeux qui utilisent les services Xbox Live. Ces jeux doivent passer par le [processus d’approbation de concept](../gaming/concept-approval.md), qui inclut les jeux publiés par des [partenaires Microsoft](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#microsoft-partners) et les jeux soumis via le [programme ID@Xbox](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#id). Cette méthode ne prend actuellement pas en charge les jeux publiés via le [Programme Créateurs Xbox Live](https://docs.microsoft.com/gaming/xbox-live//get-started-with-creators/get-started-with-xbox-live-creators.md).
+> Cette méthode prend uniquement en charge les jeux pour Xbox et les jeux qui utilisent les services Xbox Live. Ces jeux doivent passer par le [processus d’approbation de concept](../gaming/concept-approval.md), qui inclut les jeux publiés par des [partenaires Microsoft](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#microsoft-partners) et les jeux soumis via le [programme ID@Xbox](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#id). Cette méthode ne prend actuellement pas en charge les jeux publiés via le [Programme Créateurs Xbox Live](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md).
 
 ## <a name="prerequisites"></a>Prérequis
 
@@ -39,7 +39,7 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 
 ### <a name="request-header"></a>En-tête de requête
 
-| Header        | Type   | Description                                                                 |
+| Header        | type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | chaîne | Obligatoire. Le jeton d’accès Azure AD sous la forme **PORTEUR** &lt; *jeton*&gt;. |
 
@@ -47,12 +47,12 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 ### <a name="request-parameters"></a>Paramètres de la requête
 
 
-| Paramètre        | Type   |  Description      |  Obligatoire  
+| Paramètre        | type   |  Description      |  Requis  
 |---------------|--------|---------------|------|
 | applicationId | chaîne | [ID Store](in-app-purchases-and-trials.md#store-ids) du jeu pour lequel vous voulez récupérer des données multijoueurs Xbox Live.  |  Oui  |
 | metricType | chaîne | Une chaîne qui spécifie le type de données d’analytique Xbox Live à récupérer. Pour cette méthode, spécifiez la valeur **multiplayerdaily** pour obtenir des données multijoueur quotidiennes ou **multiplayermonthly** des données multijoueur mensuelles.  |  Oui  |
 | startDate | date | Dans la plage de dates, la date de début de la récupération des données multijoueurs. Pour **multiplayerdaily**, la valeur par défaut est de 3 mois avant la date actuelle. Pour **multiplayermonthly**, la valeur par défaut est de 1 an avant la date actuelle. |  Non  |
-| endDate | date | Dans la plage de dates, la date de fin de la récupération des données multijoueurs. La valeur par défaut est la date actuelle. |  Non  |
+| endDate | date | Dans la plage de dates, la date de fin de la récupération des données multijoueurs. La valeur par défaut est la date du jour. |  Non  |
 | top | entier | Le nombre de lignes de données à renvoyer dans la requête. La valeur maximale et la valeur par défaut en l’absence de définition est 10000. Si la requête comporte davantage de lignes, le corps de la réponse inclut un lien sur lequel vous cliquez pour solliciter la page suivante de données. |  Non  |
 | skip | entier | Le nombre de lignes à ignorer dans la requête. Utilisez ce paramètre pour parcourir de grands ensembles de données. Par exemple, indiquez top=10000 et skip=0 pour obtenir les 10000 premières lignes de données, top=10000 et skip=10000 pour obtenir les 10000 lignes suivantes, et ainsi de suite. |  Non  |
 | Filter | chaîne  | Une ou plusieurs instructions qui filtrent les lignes de la réponse. Chaque instruction comporte un champ Nom dans le corps de la réponse et une valeur, qui sont associés aux opérateurs **eq** ou **ne**, et les instructions peuvent être combinées à l’aide des opérateurs **and** ou **or**. Les valeurs de chaîne doivent être entourées par des guillemets dans le paramètre *filter*. Vous pouvez spécifier les champs suivants dans le corps de réponse :<p/><ul><li><strong>deviceType</strong></li><li><strong>packageVersion</strong></li><li><strong>market</strong></li><li><strong>subscriptionName</strong></li></ul> | Non   |
@@ -71,23 +71,23 @@ Authorization: Bearer <your access token>
 
 ## <a name="response"></a>Réponse
 
-| Value      | Type   | Description                  |
+| Value      | type   | Description                  |
 |------------|--------|-------------------------------------------------------|
-| Value      | tableau  | Un tableau d’objets qui contient des données du mode multijoueur, où chaque objet représente un ensemble de données pour la période quotidienne ou mensuelle spécifiée qui est organisé selon les valeurs**filter** et **groupby**. Pour plus d’informations sur les données de chaque objet, consultez les sections [Analyse quotidienne des données multijoueurs](#daily-multiplayer-analytics) et [Analyse mensuelle des données multijoueurs](#monthly-multiplayer-analytics).     |
-| @nextLink  | chaîne | S’il existe des pages supplémentaires de données, cette chaîne comporte un URI que vous pouvez utiliser pour solliciter la page suivante de données. Par exemple, cette valeur est renvoyée si le paramètre **top** de la requête est défini sur 10000 mais que la requête présente plus de 10000 rangées de données. |
-| TotalCount | entier    | Nombre total de lignes dans les résultats de la requête. |
+| Value      | array  | Un tableau d’objets qui contient des données du mode multijoueur, où chaque objet représente un ensemble de données pour la période quotidienne ou mensuelle spécifiée qui est organisé selon les valeurs**filter** et **groupby**. Pour plus d’informations sur les données de chaque objet, consultez les sections [Analyse quotidienne des données multijoueurs](#daily-multiplayer-analytics) et [Analyse mensuelle des données multijoueurs](#monthly-multiplayer-analytics).     |
+| @nextLink  | chaîne | S’il existe des pages supplémentaires de données, cette chaîne comporte un URI que vous pouvez utiliser pour demander la page suivante. Par exemple, cette valeur est renvoyée si le paramètre **top** de la requête est défini sur 10000 mais que la requête présente plus de 10000 rangées de données. |
+| TotalCount | entier    | Nombre total de lignes dans les résultats de données de la requête. |
 
 
 ### <a name="daily-multiplayer-analytics"></a>Analyse quotidienne des données multijoueurs
 
 Les éléments du tableau *Value* qui contiennent les valeurs suivantes lorsque vous demandez des données d'analyse quotidienne du mode multijoueur (autrement dit, lorsque vous spécifiez **multiplayerdaily** pour le paramètre **metricType**).
 
-| Value               | Type   | Description                           |
+| Value               | type   | Description                           |
 |---------------------|--------|-------------------------------------------|
 | date                | chaîne | La date pour les données en mode multijoueur. |
 | applicationId       | chaîne | L’ID Store du jeu pour laquelle vous récupérez les données multijoueurs.     |
 | applicationName       | chaîne |  Le nom du jeu pour laquelle vous récupérez les données multijoueurs.     |
-| market       | chaîne | Le code pays à deux lettres ISO 3166 du marché d'où proviennent les données du mode multijoueur.       |
+| marché       | chaîne | Le code pays à deux lettres ISO 3166 du marché d'où proviennent les données du mode multijoueur.       |
 | packageVersion     | chaîne |  La version du package en quatre parties du jeu.  |
 | deviceType          | chaîne | Une des chaînes suivantes spécifiant le type d’appareil d'où proviennent les données du mode multijoueur :<p/><ul><li><strong>Console</strong></li><li><strong>PC</strong></li><li>**Inconnu**</li></ul>  |
 | subscriptionName     | chaîne |  Le nom de l’abonnement utilisé pour les données en mode multijoueur. Les valeurs possibles sont **Xbox Game Pass** et **""** (aucun abonnement).  |
@@ -105,12 +105,12 @@ Les éléments du tableau *Value* qui contiennent les valeurs suivantes lorsque 
 
 Les éléments du tableau *Value* qui contiennent les valeurs suivantes lorsque vous demandez des données d'analyse mensuelle du mode multijoueur (autrement dit, lorsque vous spécifiez **multiplayermonthly** pour le paramètre **metricType**).
 
-| Value               | Type   | Description                           |
+| Value               | type   | Description                           |
 |---------------------|--------|-------------------------------------------|
 | date                | chaîne | Première date du mois pour les données multijoueurs. |
 | applicationId       | chaîne | L’ID Store du jeu pour laquelle vous récupérez les données multijoueurs.     |
 | applicationName       | chaîne |  Le nom du jeu pour laquelle vous récupérez les données multijoueurs.     |
-| market       | chaîne | Le code pays à deux lettres ISO 3166 du marché d'où proviennent les données du mode multijoueur.       |
+| marché       | chaîne | Le code pays à deux lettres ISO 3166 du marché d'où proviennent les données du mode multijoueur.       |
 | packageVersion     | chaîne |  La version du package en quatre parties du jeu.  |
 | deviceType          | chaîne | Une des chaînes suivantes spécifiant le type d’appareil d'où proviennent les données du mode multijoueur :<p/><ul><li><strong>Console</strong></li><li><strong>PC</strong></li><li>**Inconnu**</li></ul>  |
 | subscriptionName     | chaîne |  Le nom de l’abonnement utilisé pour les données en mode multijoueur. Les valeurs possibles sont **Xbox Game Pass** et **""** (aucun abonnement).  |

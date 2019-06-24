@@ -7,12 +7,12 @@ ms.date: 05/18/2018
 ms.topic: article
 keywords: Windows 10, uwp, notification, collection, groupe, l’expérience utilisateur, obtenir des conseils de l’expérience utilisateur, des conseils, action, toast, centre de maintenance, noninterruptive, notifications efficaces, les notifications non intrusives, exploitables, gérer, d’organiser
 ms.localizationpriority: medium
-ms.openlocfilehash: 878df85db9ab0e33db06a86ddb726f07dc28f013
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 327a2add84343be3b972f7bb1f232298e7ef92ad
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57615764"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320730"
 ---
 # <a name="toast-notification-ux-guidance"></a>Recommandations relatives à l’expérience utilisateur Notification toast
 Les notifications sont une partie nécessaire de vie moderne ; elles aident les utilisateurs à être plus productif et engagés avec les applications et sites Web, mais aussi être informé avec les mises à jour. Toutefois, les notifications peuvent activer rapidement à partir d’utile d’overbearing et intrusive si elles ne sont pas conçues de façon orientée utilisateur. Vos notifications sont un clic droit en dehors de l’arrêt et il est peu probable une fois qu’ils sont désactivés, ils sont activées à nouveau.  Par conséquent, assurez-vous que vos notifications sont respectueux de l’espace d’écran de l’utilisateur et l’heure, afin que ce canal engagement ouvert.
@@ -26,7 +26,7 @@ Notifications actionnables autoriser vos utilisateurs à être productifs sans o
 
 ![Notification exploitable avec la zone de texte d’entrée et des boutons pour définir des rappels et répondre à la notification](images/actionable-notification-example01.png)
 
-Ci-dessus est un exemple d’une notification qui s’appuie sur les actions. Le sentiment de finalisation de tâches est un sentiment positif universellement et faire passer cette sensation à votre application ou un site Web en envoyant des notifications ayant un contenu pertinent dans. Notifications actionnables peuvent également aider à augmenter la productivité, à la fois dans les scénarios d’entreprise et grand public, en réduisant le temps aux utilisateurs de l’action Appliquer pour accomplir ces tâches plus petites. Nous vous recommandons, y compris les actions que vos utilisateurs effectuer régulièrement ou autres éléments que vous cherchez à former vos utilisateurs à faire.  Certains exemples comprennent notamment :
+Ci-dessus est un exemple d’une notification qui s’appuie sur les actions. Le sentiment de finalisation de tâches est un sentiment positif universellement et faire passer cette sensation à votre application ou un site Web en envoyant des notifications ayant un contenu pertinent dans. Notifications actionnables peuvent également aider à augmenter la productivité, à la fois dans les scénarios d’entreprise et grand public, en réduisant le temps aux utilisateurs de l’action Appliquer pour accomplir ces tâches plus petites. Nous vous recommandons, y compris les actions que vos utilisateurs effectuer régulièrement ou autres éléments que vous cherchez à former vos utilisateurs à faire.  Voici quelques exemples :
 * Convenance, placement, marquage ou starring contenu
 * Approuver ou refuser les notes de frais, les congés, autorisations, etc.
 * Réponse à des messages, des messages électroniques, groupe de conversations, commentaires, etc. de inline.
@@ -65,4 +65,4 @@ Si vous envoyez dès aujourd'hui des notifications à votre application UWP, vou
 * [Contenu de toast](adaptive-interactive-toasts.md)
 * [Notifications brutes](raw-notification-overview.md)
 * [Mise à jour en attente](toast-pending-update.md)
-* [Bibliothèque de notifications sur GitHub (partie de la boîte à outils de la Communauté Windows)](https://github.com/Microsoft/UWPCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
+* [Bibliothèque de notifications sur GitHub (partie de la boîte à outils de la Communauté Windows)](https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)

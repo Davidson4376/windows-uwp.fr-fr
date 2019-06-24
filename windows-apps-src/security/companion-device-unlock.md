@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, sécurité
 ms.assetid: 89f3d331-20cd-457b-83e8-1a22aaab2658
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ddadde2502e8512ba38dc30c6ac24d22631d62c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: f653ebe874bfa4d4ad8bb608acf9495f02191de7
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372645"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320624"
 ---
 # <a name="windows-unlock-with-windows-hello-companion-iot-devices"></a>Déverrouillage Windows avec les appareils (IoT) complémentaires
 
@@ -38,7 +38,7 @@ Il existe de nombreuses façons de créer une excellente expérience de déverro
 
 ### <a name="biometric-enabled-windows-hello-companion-devices"></a>Appareils complémentaires Windows Hello fonctionnant par biométrie
 
-Si l’appareil complémentaire prend en charge la biométrie, [Windows Biometric Framework](https://msdn.microsoft.com/library/windows/hardware/mt608302(v=vs.85).aspx) peut, dans certains cas, s’avérer être une meilleure solution que l’infrastructure d’appareil complémentaire Windows Hello. Contactez [cdfonboard@microsoft.com](mailto:cdfonboard@microsoft.com) pour que nous vous aidions à choisir l’approche la mieux adaptée.
+Si l’appareil complémentaire prend en charge la biométrie, [Windows Biometric Framework](https://msdn.microsoft.com/windows/hardware/commercialize/design/device-experiences/windows-hello) peut, dans certains cas, s’avérer être une meilleure solution que l’infrastructure d’appareil complémentaire Windows Hello. Contactez [cdfonboard@microsoft.com](mailto:cdfonboard@microsoft.com) pour que nous vous aidions à choisir l’approche la mieux adaptée.
 
 ### <a name="components-of-the-solution"></a>Composants de la solution
 
@@ -638,7 +638,7 @@ Les messages d’erreur et d’aide sont les suivants. Le nom du dispositif est 
 
 - « Effectuez un balayage vers le haut ou appuyez sur la barre d’espace pour vous connecter avec *nom de l’appareil*. »
 - « Configuration de votre appareil compagnon. Veuillez patienter ou utilisez une autre option de connexion. »
-- « Posez *nom de l’appareil* sur le lecteur NFC pour vous connecter. »
+- « Appuyez sur *nom de l’appareil* sur le lecteur NFC pour vous connecter. »
 - « Recherche en cours de *nom de l’appareil*... »
 - « Branchez *nom de l’appareil* sur un port USB pour vous connecter. »
 

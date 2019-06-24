@@ -5,12 +5,12 @@ ms.date: 05/17/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 579f92cc51ed5f9eeea522d81cfdb030f85ef0da
-ms.sourcegitcommit: f282c906cddf0d57217484e61a5cbd2fe8469421
+ms.openlocfilehash: b947d0b6cc83dc6bca45efb7103a933e79972e3b
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65852274"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317452"
 ---
 # <a name="version-adaptive-apps-use-new-apis-while-maintaining-compatibility-with-previous-versions"></a>Version des applications flexibles : Utiliser les nouvelles API tout en conservant la compatibilité avec les versions précédentes
 
@@ -59,9 +59,9 @@ Pour modifier la version Minimum et la version Cible d’un projet déjà créé
 | Mise à jour d’octobre 2018 | 1809 | 17763 |
 | Mise à jour de mai 2019 | 1903 | 18362 |
 
-Vous pouvez télécharger les versions finales du SDK à partir des [archives de Windows SDK et de l’émulateur](https://developer.microsoft.com/downloads/sdk-archive). Vous pouvez télécharger la dernière version du Kit de développement logiciel Windows Insider Preview dans la section du site [Windows Insider](https://insider.windows.com/Home/BuildWithWindows) dédiée aux développeurs.
+Vous pouvez télécharger les versions finales du SDK à partir des [archives du SDK Windows et de l’émulateur](https://developer.microsoft.com/windows/downloads/sdk-archive). Vous pouvez télécharger la dernière version du Kit de développement logiciel (SDK) Windows Insider Preview dans la section du site [Windows Insider](https://insider.windows.com/for-developers/) dédiée aux développeurs.
 
- Pour plus d’informations sur les mises à jour Windows 10, consultez [les informations de version de Windows 10](https://technet.microsoft.com/windows/release-info). Pour obtenir des informations importantes sur la politique de support de Windows 10, consultez le [fiche d’information du cycle de vie Windows](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet).
+ Pour plus d’informations sur les mises à jour Windows 10, consultez [les informations de version de Windows 10](https://www.microsoft.com/itpro/windows-10/release-information). Pour obtenir des informations importantes sur la politique de support de Windows 10, consultez le [fiche d’information du cycle de vie Windows](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet).
 
 ## <a name="perform-api-checks"></a>Effectuer des vérifications des API
 
@@ -90,11 +90,11 @@ Le contrat API le plus important et le plus utilisé est **Windows.Foundation.Un
 
 Dans toutes les version de Windows 10, vous pouvez utiliser la classe ApiInformation dans une condition à l’intérieur de votre code pour tester la présence de l’API que vous voulez appeler. Dans votre code adaptatif, vous pouvez utiliser différentes méthodes de la classe, telles que IsTypePresent, IsEventPresent, IsMethodPresent et IsPropertyPresent, pour tester les API au niveau de granularité dont vous avez besoin.
 
-Pour obtenir plus d’informations et des exemples, voir **[Code adaptatif de version](version-adaptive-code.md)**.
+Pour obtenir plus d’informations et des exemples, voir **[Code adaptatif de version](version-adaptive-code.md)** .
 
 Si la version Minimum de vos applications est la build 15063 (Creators Update) ou version ultérieure, vous pouvez utiliser le *XAML conditionnel* pour définir des propriétés et instancier des objets dans le balisage sans avoir à utiliser le code-behind. Le XAML conditionnel permet d'utiliser la méthode ApiInformation.IsApiContractPresent dans le balisage.
 
-Pour obtenir plus d'informations et des exemples, voir **[XAML conditionnel](conditional-xaml.md)**.
+Pour obtenir plus d'informations et des exemples, voir **[XAML conditionnel](conditional-xaml.md)** .
 
 ## <a name="test-your-version-adaptive-app"></a>Tester votre application adaptative de version
 
@@ -103,7 +103,7 @@ Lorsque vous utilisez du code adaptatif de version ou du XAML conditionnel pour 
 Vous ne pouvez pas tester tous les chemins de code conditionnel sur un seul périphérique. Pour vous assurer que tous les chemins de code sont testés, vous devez déployer et tester votre application sur un appareil distant (ou une machine virtuelle) exécutant la version Minimum du système d’exploitation pris en charge.
 Pour plus d’informations sur le débogage à distance, voir [Déploiement et débogage des applications UWP](deploying-and-debugging-uwp-apps.md).
 
-## <a name="related-articles"></a>Articles connexes
+## <a name="related-articles"></a>Articles associés
 
 - [Qu’est une application UWP](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
 - [Détection dynamique des fonctionnalités avec les contrats d’API](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)

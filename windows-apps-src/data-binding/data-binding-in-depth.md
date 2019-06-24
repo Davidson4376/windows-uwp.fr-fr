@@ -1,7 +1,7 @@
 ---
 ms.assetid: 41E1B4F1-6CAF-4128-A61A-4E400B149011
 title: Présentation détaillée de la liaison de données
-description: La liaison est un moyen dont dispose l’interface de votre application pour afficher des données et éventuellement rester synchronisée avec ces données.
+description: La liaison de données est un moyen dont dispose l’interface utilisateur de votre application pour afficher des données et éventuellement rester synchronisée avec ces données.
 ms.date: 10/05/2018
 ms.topic: article
 keywords: windows 10, uwp
@@ -9,12 +9,12 @@ ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: 972556a3d8d46dce11b251fc11d209fa96d3b751
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 150ea5fc9f5e91171f29cc985351856487e91d4a
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66362592"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318758"
 ---
 # <a name="data-binding-in-depth"></a>Présentation détaillée de la liaison de données
 
@@ -30,7 +30,7 @@ ms.locfileid: "66362592"
 
 Cette rubrique porte sur la liaison de données dans les applications Universal Windows Platform (UWP). Les API décrites ici se trouvent dans le [ **Windows.UI.Xaml.Data** espace de noms](/uwp/api/windows.ui.xaml.data).
 
-La liaison est un moyen dont dispose l’interface de votre application pour afficher des données et éventuellement rester synchronisée avec ces données. La liaison de données vous permet de séparer les problématiques liées aux données de celles liées à l’interface utilisateur, ce qui se traduit par un modèle conceptuel plus simple et l’amélioration de la lisibilité, de la testabilité et de la gestion de la maintenance de votre application.
+La liaison de données est un moyen dont dispose l’interface utilisateur de votre application pour afficher des données et éventuellement rester synchronisée avec ces données. La liaison de données vous permet de séparer les problématiques liées aux données de celles liées à l’interface utilisateur, ce qui se traduit par un modèle conceptuel plus simple et l’amélioration de la lisibilité, de la testabilité et de la gestion de la maintenance de votre application.
 
 Vous pouvez utiliser la liaison de données pour simplement afficher des valeurs à partir d’une source de données lorsque l’interface utilisateur est affichée pour la première fois, et non pas pour répondre aux modifications apportées à ces valeurs. Il s’agit d’un mode de liaison appelée *à usage unique*, et il fonctionne bien pour une valeur qui ne change pas pendant l’exécution. Ou bien, vous pouvez choisir pour les valeurs « Observer » et pour mettre à jour l’interface utilisateur quand ils changent. Ce mode est appelé *unidirectionnel*, et il fonctionne bien pour les données en lecture seule. Enfin, vous pouvez choisir d’observer les valeurs et de mettre à jour l’interface utilisateur de telle sorte que les modifications apportées par l’utilisateur aux valeurs de l’interface utilisateur soient transmises automatiquement à la source de données. Ce mode est appelé *bidirectionnelle*, et il fonctionne bien pour les données en lecture-écriture. Voici quelques exemples.
 
@@ -43,7 +43,7 @@ Indépendamment du mode, il existe deux types de liaison, et elles sont tous deu
 **Exemples d’applications qui illustrent {x : Bind}**
 
 -   [Exemple avec {x:Bind}](https://go.microsoft.com/fwlink/p/?linkid=619989).
--   [QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame).
+-   [QuizGame](https://github.com/microsoft/Windows-appsample-networkhelper).
 -   [Exemple d’éléments de base d’une interface utilisateur XAML](https://go.microsoft.com/fwlink/p/?linkid=619992).
 
 **Exemples d’applications qui illustrent la {liaison de}**
@@ -199,7 +199,7 @@ void HostViewModel::PropertyChanged(winrt::event_token const& token) noexcept
 
 La propriété **NextButtonText** est maintenant observable. Lorsque vous créez une liaison à sens unique ou bidirectionnelle à cette propriété (nous vous expliquerons comment ultérieurement), l’objet de liaison qui en résulte s’abonne à l’événement **PropertyChanged**. Lorsque cet événement est déclenché, le gestionnaire de l’objet de liaison reçoit un argument contenant le nom de la propriété qui a changé. Voilà comment l’objet de liaison connaît la propriété dont il doit lire à nouveau la valeur.
 
-Afin que vous n’êtes pas obligé d’implémenter le modèle ci-dessus plusieurs fois, si vous utilisez C# vous pouvez simplement dériver de la **BindableBase** basse classe que vous trouverez dans le [QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame) exemple ( le dossier « Commun »). En voici un exemple :
+Afin que vous n’êtes pas obligé d’implémenter le modèle ci-dessus plusieurs fois, si vous utilisez C# vous pouvez simplement dériver de la **BindableBase** basse classe que vous trouverez dans le [QuizGame](https://github.com/microsoft/Windows-appsample-networkhelper) exemple ( le dossier « Commun »). En voici un exemple :
 
 ```csharp
 public class HostViewModel : BindableBase
@@ -519,7 +519,7 @@ Pour afficher une valeur par défaut à utiliser chaque fois que la source de li
 Si vous liez un contrôle de texte à une valeur autre qu’une chaîne, le moteur de liaison de données convertit la valeur en chaîne. Si la valeur est un type de référence, le moteur de liaison de données récupère la valeur de chaîne en appelant [**ICustomPropertyProvider.GetStringRepresentation**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.icustompropertyprovider.getstringrepresentation) ou [**IStringable.ToString**](https://docs.microsoft.com/windows/desktop/api/windows.foundation/nf-windows-foundation-istringable-tostring) s’ils sont disponibles, et sinon appelle [**Object.ToString**](https://docs.microsoft.com/dotnet/api/system.object.tostring?redirectedfrom=MSDN#System_Object_ToString). Notez, toutefois, que le moteur de liaison ignore toute implémentation de **ToString** qui masque l’implémentation de la classe de base. Les implémentations de sous-classe doivent plutôt remplacer la méthode **ToString** de la classe de base. De même, dans les langages natifs, tous les objets managés semblent implémenter [**ICustomPropertyProvider**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.ICustomPropertyProvider) et [**IStringable**](https://docs.microsoft.com/windows/desktop/api/windows.foundation/nn-windows-foundation-istringable). Toutefois, tous les appels à **GetStringRepresentation** et **IStringable.ToString** sont routés vers **Object.ToString** ou une substitution de cette méthode, et jamais vers une nouvelle implémentation de **ToString** qui masque l’implémentation de la classe de base.
 
 > [!NOTE]
-> Depuis Windows 10, version 1607, l’infrastructure XAML fournit un convertisseur intégré permettant de convertir une valeur booléenne en valeur Visibility. Le convertisseur mappe **true** à la valeur d’énumération **Visible**et **false** à la valeur d’énumération **Collapsed**. Vous pouvez ainsi lier une propriété Visibility à une valeur booléenne sans avoir à créer de convertisseur. Pour utiliser le convertisseur intégré, la version du SDK cible de votre application doit être 14393 ou une version ultérieure. Vous ne pouvez pas l’utiliser si votre application cible des versions antérieures de Windows 10. Pour plus d’informations sur les versions cibles, voir [Code adaptatif de version](https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
+> Depuis Windows 10, version 1607, l’infrastructure XAML fournit un convertisseur intégré permettant de convertir une valeur booléenne en valeur Visibility. Le convertisseur mappe **true** à la valeur d’énumération **Visible**et **false** à la valeur d’énumération **Collapsed**. Vous pouvez ainsi lier une propriété Visibility à une valeur booléenne sans avoir à créer de convertisseur. Pour utiliser le convertisseur intégré, la version du SDK cible de votre application doit être 14393 ou une version ultérieure. Vous ne pouvez pas l’utiliser si votre application cible des versions antérieures de Windows 10. Pour plus d’informations sur les versions cibles, voir [Code adaptatif de version](https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
 
 ## <a name="function-binding-in-xbind"></a>Liaison de fonction dans {x:Bind}
 
@@ -604,7 +604,7 @@ Click="{x:Bind RootFrame.GoForward}"/>
 
 Les méthodes surchargées ne peuvent pas être utilisées pour gérer un événement avec cette technique. En outre, si la méthode qui gère l’événement comporte des paramètres, ceux-ci doivent tous être attribuables à partir des types de l’ensemble des paramètres de l’événement, respectivement. Dans notre exemple, la méthode [**Frame.GoForward**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.goforward) n’est pas surchargée et elle ne comporte aucun paramètre (mais elle serait toujours valide même avec deux paramètres **object**). [**Frame.GoBack** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.goback) est surchargés, cependant, nous ne pouvons pas utiliser cette méthode avec cette technique.
 
-La technique de liaison d’événement est similaire à l’implémentation et l’utilisation de commandes (une commande est une propriété qui renvoie un objet implémentant l’interface [**ICommand**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand)). Les extensions de balisage [{x:Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) et [{Binding}](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension) fonctionnent toutes deux avec les commandes. Pour ne pas avoir à implémenter plusieurs fois le modèle de commande, vous pouvez utiliser la classe d’assistance **DelegateCommand**, disponible dans l’exemple [QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame) (dans le dossier « Common »).
+La technique de liaison d’événement est similaire à l’implémentation et l’utilisation de commandes (une commande est une propriété qui renvoie un objet implémentant l’interface [**ICommand**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand)). Les extensions de balisage [{x:Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) et [{Binding}](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension) fonctionnent toutes deux avec les commandes. Pour ne pas avoir à implémenter plusieurs fois le modèle de commande, vous pouvez utiliser la classe d’assistance **DelegateCommand**, disponible dans l’exemple [QuizGame](https://github.com/microsoft/Windows-appsample-networkhelper) (dans le dossier « Common »).
 
 ## <a name="binding-to-a-collection-of-folders-or-files"></a>Liaison à une collection de dossiers ou de fichiers
 
@@ -792,7 +792,7 @@ MyTextBox.SetBinding(TextBox.ForegroundProperty, binding)
 |---------|----------|-----------|-------|
 | Path est la propriété par défaut. | `{x:Bind a.b.c}` | `{Binding a.b.c}` | | 
 | Propriété Path | `{x:Bind Path=a.b.c}` | `{Binding Path=a.b.c}` | Dans x:Bind, Path a pour racine Page par défaut et non DataContext. | 
-| Indexation | `{x:Bind Groups[2].Title}` | `{Binding Groups[2].Title}` | Se lie à l’élément spécifié dans la collection. Seuls les index basés sur des entiers sont pris en charge. | 
+| Indexeur | `{x:Bind Groups[2].Title}` | `{Binding Groups[2].Title}` | Se lie à l’élément spécifié dans la collection. Seuls les index basés sur des entiers sont pris en charge. | 
 | Propriétés jointes | `{x:Bind Button22.(Grid.Row)}` | `{Binding Button22.(Grid.Row)}` | Les propriétés jointes sont spécifiées à l’aide de parenthèses. Si la propriété n’est pas déclarée dans un espace de noms XAML, vous devez la faire précéder d’un espace de noms xml mappé sur un espace de noms de code au début du document. | 
 | Transtypage | `{x:Bind groups[0].(data:SampleDataGroup.Title)}` | Inutile. | Les conversions de type (transtypage) sont spécifiées à l’aide de parenthèses. Si la propriété n’est pas déclarée dans un espace de noms XAML, vous devez la faire précéder d’un espace de noms xml mappé sur un espace de noms de code au début du document. | 
 | Converter | `{x:Bind IsShown, Converter={StaticResource BoolToVisibility}}` | `{Binding IsShown, Converter={StaticResource BoolToVisibility}}` | Les convertisseurs doivent être déclarés à la racine de Page/ResourceDictionary ou dans le fichier App.xaml. | 

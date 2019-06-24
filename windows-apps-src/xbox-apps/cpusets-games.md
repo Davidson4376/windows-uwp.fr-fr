@@ -4,12 +4,12 @@ description: Cet article présente la nouvelle API CPUSets disponible sur la pl
 ms.topic: article
 ms.localizationpriority: medium
 ms.date: 02/08/2017
-ms.openlocfilehash: 49662d476d6d022ca05d53e9358fc547fda92a32
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 693abe68fcc7e4a341d773c6fa1af0d777c60c15
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57625664"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67322157"
 ---
 # <a name="cpusets-for-game-development"></a>API CPUSets pour le développement de jeux
 
@@ -51,9 +51,9 @@ Les informations contenues dans chaque instance de cette structure de données r
 
 | Nom du membre  | Type de données | Description |
 | ------------- | ------------- | ------------- |
-| Type  | CPU_SET_INFORMATION_TYPE  | Type des informations dans la structure. Si la valeur de ce paramètre n’est pas **CpuSetInformation**, il doit être ignoré.  |
+| type  | CPU_SET_INFORMATION_TYPE  | Type des informations dans la structure. Si la valeur de ce paramètre n’est pas **CpuSetInformation**, il doit être ignoré.  |
 | Id  | unsigned long  | ID du jeu de processeurs spécifié. Il s’agit de l’ID qui doit être utilisé avec les fonctions du jeu de processeurs, comme **SetThreadSelectedCpuSets**.  |
-| Group  | unsigned short  | Spécifie le groupe de processeurs du jeu de processeurs. Les groupes de processeurs permettent à un PC de disposer de plus de 64 cœurs logiques et rendent possible l’échange à chaud des UC alors que le système est en cours d’exécution. Il est rare de rencontrer un PC qui n’est pas un serveur disposant de plusieurs groupes. Sauf si vous écrivez des applications destinées à s’exécuter sur des serveurs de grandes tailles ou batteries de serveurs, il est préférable d’utiliser des jeux de processeurs dans un groupe unique, car la plupart des PC grand public ne possèdent qu’un seul groupe de processeurs. Toutes les autres valeurs de cette structure portent sur le groupe.  |
+| Regrouper  | unsigned short  | Spécifie le groupe de processeurs du jeu de processeurs. Les groupes de processeurs permettent à un PC de disposer de plus de 64 cœurs logiques et rendent possible l’échange à chaud des UC alors que le système est en cours d’exécution. Il est rare de rencontrer un PC qui n’est pas un serveur disposant de plusieurs groupes. Sauf si vous écrivez des applications destinées à s’exécuter sur des serveurs de grandes tailles ou batteries de serveurs, il est préférable d’utiliser des jeux de processeurs dans un groupe unique, car la plupart des PC grand public ne possèdent qu’un seul groupe de processeurs. Toutes les autres valeurs de cette structure portent sur le groupe.  |
 | LogicalProcessorIndex  | unsigned char  | Index relatif au groupe du jeu de processeurs.  |
 | CoreIndex  | unsigned char  | Index relatif au groupe du cœur de processeur physique dans lequel se trouve le jeu de processeurs.  |
 | LastLevelCacheIndex  | unsigned char  | Index relatif au groupe du dernier cache associé à ce jeu de processeurs. Il s’agit du cache le plus lent, sauf si le système utilise des nœuds NUMA ; en général, c’est le cache L2 ou L3.  |
@@ -186,12 +186,12 @@ La disposition du cache illustrée dans la Figure 1 est un exemple du type de d
 
 ![Cache de l’appareil Lumia 950](images/cpusets-lumia950cache.png)
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 L’API CPUSets disponible pour le développement UWP fournit une quantité considérable d’informations, ainsi qu’un contrôle étroit sur les options de multithreading. Par rapport aux précédentes API multithread pour le développement Windows, la complexité ajoutée peut nécessiter certaines améliorations, mais la flexibilité améliorée de cette API offre de meilleures performances sur différents PC grand public et autres cibles matérielles.
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
-- [Jeux de processeur (MSDN)](https://msdn.microsoft.com/library/windows/desktop/mt186420(v=vs.85).aspx)
+- [Jeux de processeur (MSDN)](https://docs.microsoft.com/windows/desktop/ProcThread/cpu-sets)
 - [Exemple CPUSets fourni par ATG](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/Samples/System/CPUSets)
 - [UWP sur Xbox One](index.md)
 

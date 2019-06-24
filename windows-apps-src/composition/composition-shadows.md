@@ -5,12 +5,12 @@ ms.date: 07/16/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9541ea1c00d473bc4881a80d8597625592e278f9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 4a47a5f8ffca1d9ca2ddab05fe0baf2f85977d7f
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57630834"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318193"
 ---
 # <a name="shadows-in-windows-ui"></a>Ombres dans l’interface utilisateur de Windows
 
@@ -113,9 +113,9 @@ shadow.StartAnimation("BlurRadius", blurAnimation);
 
 Si vous souhaitez ajouter une ombre à des éléments de framework plus complexes, il existe plusieurs façons pour assurer l’interopérabilité avec les ombres entre XAML et la Composition :
 
-1. Utilisez le [DropShadowPanel](https://github.com/Microsoft/UWPCommunityToolkit/blob/master/Microsoft.Toolkit.Uwp.UI.Controls/DropShadowPanel/DropShadowPanel.Properties.cs) disponibles dans le Kit de ressources de communauté de Windows. Consultez le [DropShadowPanel documentation](https://docs.microsoft.com/windows/uwpcommunitytoolkit/controls/DropShadowPanel) pour plus d’informations sur comment l’utiliser.
+1. Utilisez le [DropShadowPanel](https://github.com/windows-toolkit/WindowsCommunityToolkit/blob/master/Microsoft.Toolkit.Uwp.UI.Controls/DropShadowPanel/DropShadowPanel.Properties.cs) disponibles dans le Kit de ressources de communauté de Windows. Consultez le [DropShadowPanel documentation](https://docs.microsoft.com/windows/uwpcommunitytoolkit/controls/DropShadowPanel) pour plus d’informations sur comment l’utiliser.
 1. Créer un visuel pour les utiliser en tant que l’hôte de clichés instantanés & Lier à la documentation XAML visuel.
-1. Utilisation de la galerie d’exemples Composition [SamplesCommon](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SamplesCommon/SamplesCommon) contrôle CompositionShadow personnalisé. Consultez l’exemple présenté ici pour l’utilisation.
+1. Utilisation de la galerie d’exemples Composition [SamplesCommon](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SamplesCommon/SamplesCommon) contrôle CompositionShadow personnalisé. Consultez l’exemple présenté ici pour l’utilisation.
 
 ## <a name="performance"></a>Performances
 
@@ -124,12 +124,12 @@ Bien que la couche visuelle a de nombreuses optimisations en place pour rendre l
 Caractéristiques des clichés instantanés| Coût
 ------------- | -------------
 Capture rectangulaire    | Faible
-Shadow.Mask      | Élevée
-CompositionDropShadowSourcePolicy.InheritFromVisualContent | Élevée
+Shadow.Mask      | High
+CompositionDropShadowSourcePolicy.InheritFromVisualContent | High
 Rayon de flou statique | Faible
-Animer le rayon de flou | Élevée
+Animer le rayon de flou | High
 
 ## <a name="additional-resources"></a>Ressources complémentaires
 
 - [COMPOSITION DropShadow API](/uwp/api/Windows.UI.Composition.DropShadow)
-- [Référentiel GitHub de WindowsUIDevLabs](https://github.com/Microsoft/WindowsUIDevLabs)
+- [Référentiel GitHub de WindowsUIDevLabs](https://github.com/microsoft/WindowsCompositionSamples)

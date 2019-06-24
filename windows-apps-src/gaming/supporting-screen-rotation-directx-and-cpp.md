@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, jeux, orientation de l’écran, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 8cb741e8eb87987c51324c5f4e5f2d0f0da23f74
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 84dc81734d945e32d222bdc3e1fe9c7468f078bb
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368011"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321156"
 ---
 # <a name="supporting-screen-orientation-directx-and-c"></a>Prise en charge de l’orientation de l’écran (DirectX et C++)
 
@@ -368,7 +368,7 @@ Maintenant, présentez la chaîne d’échange.
 
 Par défaut, Windows 10 fournit une fenêtre courte mais notable de temps pour n’importe quelle application, quel que soit le modèle d’application ou de la langue, pour effectuer la rotation de l’image. Il est toutefois probable que si votre application effectue le calcul de rotation à l’aide de l’une des techniques décrites ici, cette rotation sera terminée bien avant la fin de ce laps de temps. Vous souhaiteriez récupérer ce temps et terminer l’animation de rotation, n’est-ce pas ? C’est ici que [**CoreWindowResizeManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindowResizeManager) entre en jeu.
 
-Voici comment utiliser [**CoreWindowResizeManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindowResizeManager) : quand un événement [**DisplayInformation::OrientationChanged**](https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation.orientationchanged) est déclenché, appelez [**CoreWindowResizeManager::GetForCurrentView**](https://docs.microsoft.com/previous-versions//hh404170(v=vs.85)) dans le gestionnaire d’événements pour obtenir une instance de **CoreWindowResizeManager** et, une fois la disposition de la nouvelle orientation terminée et présentée, appelez la méthode [**NotifyLayoutCompleted**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindowresizemanager.notifylayoutcompleted) pour signaler à Windows qu’il peut terminer l’animation de rotation et afficher l’écran d’application.
+Voici comment utiliser [**CoreWindowResizeManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindowResizeManager) : quand un événement [**DisplayInformation::OrientationChanged**](https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation.orientationchanged) est déclenché, appelez [**CoreWindowResizeManager::GetForCurrentView**](https://docs.microsoft.com/previous-versions/hh404170(v=vs.85)) dans le gestionnaire d’événements pour obtenir une instance de **CoreWindowResizeManager** et, une fois la disposition de la nouvelle orientation terminée et présentée, appelez la méthode [**NotifyLayoutCompleted**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindowresizemanager.notifylayoutcompleted) pour signaler à Windows qu’il peut terminer l’animation de rotation et afficher l’écran d’application.
 
 Voici ce à quoi pourrait ressembler le code dans votre gestionnaire d’événements pour [**DisplayInformation::OrientationChanged**](https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation.orientationchanged) :
 

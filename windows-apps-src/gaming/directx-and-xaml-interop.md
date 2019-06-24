@@ -1,19 +1,19 @@
 ---
-title: Technologie interop DirectX et XAML
-description: Vous pouvez utiliser XAML (Extensible Application Markup Language) et Microsoft DirectX conjointement dans votre jeu de plateforme Windows universelle (UWP).
+title: Interopérabilité DirectX et XAML
+description: Vous pouvez utiliser XAML (Extensible Application Markup Language) et Microsoft DirectX conjointement dans votre jeu de plateforme Windows universelle (UWP).
 ms.assetid: 0fb2819a-61ed-129d-6564-0b67debf5c6b
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, jeux, directx, interopérabilité xaml
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a7b9800bbcc9746db03eae50a99b701bfbfa815
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: ad03a86ba18f11d8d63c2c98649e7f159f3d4f52
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368869"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321289"
 ---
-# <a name="directx-and-xaml-interop"></a>Technologie interop DirectX et XAML
+# <a name="directx-and-xaml-interop"></a>Interopérabilité DirectX et XAML
 
 
 
@@ -32,7 +32,7 @@ DirectX fournit deux bibliothèques puissantes pour les graphiques 2D et 3D : D
 Si vous implémentez une interopérabilité de XAML et DirectX personnalisée, vous devez connaître les deux concepts suivants :
 
 -   Les surfaces partagées sont des régions dimensionnées de l’affichage, définies par XAML, dans lesquelles vous pouvez dessiner indirectement à l’aide de DirectX en utilisant les types [Windows::UI::Xaml::Media::ImageSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imagesource). Pour les surfaces partagées, vous ne contrôlez pas le moment précis où le nouveau contenu s’affiche à l’écran. Au lieu de cela, les mises à jour appliquées à une surface partagée sont synchronisées avec les mises à jour de l’infrastructure XAML.
--   Les [chaînes d’échange](https://msdn.microsoft.com/library/windows/desktop/bb206356(v=vs.85).aspx) constituent une collection de mémoires tampons servant à afficher les graphismes avec une latence minimale. En règle générale, les chaînes d’échange sont mises à jour à une cadence de 60 images par seconde séparément du thread d’interface utilisateur. Cependant, les chaînes d’échange consomment plus de mémoire et de ressources processeur pour prendre en charge des mises à jour rapides, et sont plus difficiles à utiliser dans la mesure où vous devez gérer plusieurs threads.
+-   Les [chaînes d’échange](https://docs.microsoft.com/windows/desktop/direct3d9/what-is-a-swap-chain-) constituent une collection de mémoires tampons servant à afficher les graphismes avec une latence minimale. En règle générale, les chaînes d’échange sont mises à jour à une cadence de 60 images par seconde séparément du thread d’interface utilisateur. Cependant, les chaînes d’échange consomment plus de mémoire et de ressources processeur pour prendre en charge des mises à jour rapides, et sont plus difficiles à utiliser dans la mesure où vous devez gérer plusieurs threads.
 
 Déterminez à quelle fin vous utilisez la technologie DirectX. Voulez-vous l’utiliser pour composer ou animer un contrôle unique qui doit tenir dans les dimensions de la fenêtre d’affichage ? Contiendra-t-elle une sortie qui doit être rendue et contrôlée en temps réel, comme dans un jeu ? Si c’est le cas, vous devrez probablement implémenter une chaîne d’échange. Sinon, une surface partagée devrait faire l’affaire.
 
@@ -72,7 +72,7 @@ Voici le processus de base de création et de mise à jour d’un objet [Surface
         (void **)&m_sisNativeWithD2D);
     ```
 
-3.  Créez les unités DXGI et D2D en appelant d’abord [D3D11CreateDevice](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice) et [D2D1CreateDevice](https://msdn.microsoft.com/library/windows/desktop/hh404272(v=vs.85).aspx) puis en passant le périphérique et le contexte vers [ISurfaceImageSourceNativeWithD2D::SetDevice](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-isurfaceimagesourcenativewithd2d-setdevice). 
+3.  Créez les unités DXGI et D2D en appelant d’abord [D3D11CreateDevice](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice) et [D2D1CreateDevice](https://docs.microsoft.com/windows/desktop/api/d2d1_1/nf-d2d1_1-d2d1createdevice) puis en passant le périphérique et le contexte vers [ISurfaceImageSourceNativeWithD2D::SetDevice](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-isurfaceimagesourcenativewithd2d-setdevice). 
 
     > [!NOTE]
     > Si vous comptez dessiner votre **SurfaceImageSource** à partir d’un thread en arrière-plan, vous devez également vous assurer que le périphérique DXGI a activé l’accès multithread. Cette opération doit uniquement être réalisée si vous comptez dessiner depuis un thread d’arrière-plan, pour des raisons de performances.
@@ -116,7 +116,7 @@ Voici le processus de base de création et de mise à jour d’un objet [Surface
     m_sisNativeWithD2D->SetDevice(m_d2dDevice.Get());
     ```
 
-4.  Fournissez un pointeur vers l'objet [ID2D1DeviceContext](https://docs.microsoft.com/windows/desktop/api/dxgi/nn-dxgi-idxgisurface) à [ISurfaceImageSourceNativeWithD2D::BeginDraw](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-isurfaceimagesourcenativewithd2d-begindraw)et utilisez le contexte de dessin retourné pour dessiner des contenus du rectangle souhaité dans **SurfaceImageSource**. **ISurfaceImageSourceNativeWithD2D::BeginDraw** et les commandes de dessin peuvent être utilisées à partir d’un thread d’arrière-plan. Seule est dessinée la zone désignée pour la mise à jour dans le paramètre *updateRect*.
+4.  Fournissez un pointeur vers l'objet [ID2D1DeviceContext](https://docs.microsoft.com/windows/desktop/api/dxgi/nn-dxgi-idxgisurface) à [ISurfaceImageSourceNativeWithD2D::BeginDraw](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-isurfaceimagesourcenativewithd2d-begindraw)et utilisez le contexte de dessin retourné pour dessiner des contenus du rectangle souhaité dans **SurfaceImageSource**. **ISurfaceImageSourceNativeWithD2D::BeginDraw** et les commandes de dessin peuvent être utilisées à partir d’un thread d’arrière-plan. Seule la zone désignée pour la mise à jour dans le paramètre *updateRect* est dessinée.
 
     Cette méthode retourne le décalage de points (x,y) du rectangle cible mis à jour dans le paramètre *offset*. Ce décalage permet de déterminer où dessiner votre contenu mis à jour avec **ID2D1DeviceContext**.
 
@@ -317,7 +317,7 @@ Voici le processus de base de création et de mise à jour d’un objet [Virtual
 
 6.  Enfin, pour chaque région à mettre à jour :
 
-    1.  Fournissez un pointeur vers l'objet **ID2D1DeviceContext** à **ISurfaceImageSourceNativeWithD2D::BeginDraw**et utilisez le contexte de dessin retourné pour dessiner des contenus du rectangle souhaité dans **SurfaceImageSource**. **ISurfaceImageSourceNativeWithD2D::BeginDraw** et les commandes de dessin peuvent être utilisées à partir d’un thread d’arrière-plan. Seule est dessinée la zone désignée pour la mise à jour dans le paramètre *updateRect*.
+    1.  Fournissez un pointeur vers l'objet **ID2D1DeviceContext** à **ISurfaceImageSourceNativeWithD2D::BeginDraw**et utilisez le contexte de dessin retourné pour dessiner des contenus du rectangle souhaité dans **SurfaceImageSource**. **ISurfaceImageSourceNativeWithD2D::BeginDraw** et les commandes de dessin peuvent être utilisées à partir d’un thread d’arrière-plan. Seule la zone désignée pour la mise à jour dans le paramètre *updateRect* est dessinée.
 
         Cette méthode retourne le décalage de points (x,y) du rectangle cible mis à jour dans le paramètre *offset*. Ce décalage permet de déterminer où dessiner votre contenu mis à jour avec **ID2D1DeviceContext**.
 

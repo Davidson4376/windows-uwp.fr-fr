@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, impression
 ms.localizationpriority: medium
-ms.openlocfilehash: 68f8f990209a66a8677afbd1913c95bfd2fce187
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 8d13f67ecff5c670707ca1832ea44b85ca8319d9
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370290"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321563"
 ---
 # <a name="customize-the-print-preview-ui"></a>Personnaliser l’interface utilisateur d’aperçu avant impression
 
@@ -54,9 +54,9 @@ Toutefois, les modifications que vous apportez par le biais de cette méthode af
 
 ### <a name="define-the-options-to-display"></a>Définir les options à afficher
 
-Une fois l’écran de l’application chargé, il s’inscrit au contrat d’impression. La définition du gestionnaire d’événements [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597) fait partie de ce processus d’inscription. Le code nécessaire pour personnaliser les options affichées dans l’interface utilisateur d’aperçu avant impression est ajouté au gestionnaire d’événements **PrintTaskRequested**.
+Une fois l’écran de l’application chargé, il s’inscrit au contrat d’impression. La définition du gestionnaire d’événements [**PrintTaskRequested**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_#Windows_Foundation_IAsyncOperationWithProgress_2_Progress) fait partie de ce processus d’inscription. Le code nécessaire pour personnaliser les options affichées dans l’interface utilisateur d’aperçu avant impression est ajouté au gestionnaire d’événements **PrintTaskRequested**.
 
-Modifiez le gestionnaire d’événements [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597) pour inclure les instructions [**printTask.options**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printtask.options) qui configurent les paramètres d’impression que vous voulez afficher dans l’interface utilisateur d’aperçu avant impression. Pour l’écran de votre application pour lequel vous voulez afficher une liste personnalisée des options d’impression, remplacez le gestionnaire d’événements **PrintTaskRequested** dans la classe d’assistance pour inclure du code qui spécifie les options à afficher lors de l’impression de l’écran.
+Modifiez le gestionnaire d’événements [**PrintTaskRequested**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_#Windows_Foundation_IAsyncOperationWithProgress_2_Progress) pour inclure les instructions [**printTask.options**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printtask.options) qui configurent les paramètres d’impression que vous voulez afficher dans l’interface utilisateur d’aperçu avant impression. Pour l’écran de votre application pour lequel vous voulez afficher une liste personnalisée des options d’impression, remplacez le gestionnaire d’événements **PrintTaskRequested** dans la classe d’assistance pour inclure du code qui spécifie les options à afficher lors de l’impression de l’écran.
 
 ``` csharp
 protected override void PrintTaskRequested(PrintManager sender, PrintTaskRequestedEventArgs e)
@@ -109,7 +109,7 @@ Vous pouvez également définir les valeurs par défaut des options dans l’int
 
 ## <a name="add-new-print-options"></a>Ajouter des options d’impression
 
-Cette section montre comment créer une option d’impression, définir une liste de valeurs que l’option prend en charge, puis ajouter l’option à l’aperçu avant impression. Comme dans la section précédente, ajoutez la nouvelle option d’impression au gestionnaire d’événements [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597).
+Cette section montre comment créer une option d’impression, définir une liste de valeurs que l’option prend en charge, puis ajouter l’option à l’aperçu avant impression. Comme dans la section précédente, ajoutez la nouvelle option d’impression au gestionnaire d’événements [**PrintTaskRequested**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_#Windows_Foundation_IAsyncOperationWithProgress_2_Progress).
 
 Premièrement, obtenez un objet [**PrintTaskOptionDetails**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing.OptionDetails.PrintTaskOptionDetails). Celui-ci est utilisé pour ajouter la nouvelle option d’impression à l’interface utilisateur d’aperçu avant impression. Effacez ensuite la liste d’options qui sont affichées dans l’interface utilisateur d’aperçu avant impression et ajoutez les options que vous voulez afficher quand l’utilisateur souhaite imprimer à partir de l’application. Après cela, créez l’option d’impression et initialisez la liste de valeurs de l’option. Enfin, ajoutez la nouvelle option et affectez un gestionnaire pour l’événement **OptionChanged**.
 

@@ -10,12 +10,12 @@ dev_langs:
 - vb
 - cppcx
 - cppwinrt
-ms.openlocfilehash: 9e13138ca634c075eba0c9b1331f6af4176de1eb
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 768509b3b22eef32e26d9e5423c00e2ee65f4b81
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360429"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318031"
 ---
 # <a name="xaml-lighting"></a>Éclairage XAML
 
@@ -498,4 +498,4 @@ Les résultats de ce XAML ressemblent à ceci.
 
 ## <a name="additional-resources"></a>Ressources complémentaires
 
-* Exemples d’interface utilisateur et de composition avancés dans le [GitHub WindowsUIDevLabs](https://github.com/microsoft/windowsuidevlabs).
+* Exemples d’interface utilisateur et de composition avancés dans le [GitHub WindowsUIDevLabs](https://github.com/microsoft/WindowsCompositionSamples).

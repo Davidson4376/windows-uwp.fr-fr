@@ -5,19 +5,19 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: windows 10, uwp, services de Microsoft Store, API d'analyse du Microsoft Store, analyse Xbox Live, réussites
 ms.localizationpriority: medium
-ms.openlocfilehash: f1d9f7f27e4d0a219aa8bf474b9f57efbb1c74a0
-ms.sourcegitcommit: e63fbd7a63a7e8c03c52f4219f34513f4b2bb411
+ms.openlocfilehash: 422024445be4662aab0a47b5527369c8b7091446
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58162614"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317770"
 ---
 # <a name="get-xbox-live-achievements-data"></a>Obtenir des données de réussite Xbox Live
 
-Utilisez cette méthode dans l'API d'analyse du Microsoft Store pour connaître le nombre de clients ayant déverrouillé chaque succès pour votre [jeu Xbox Live](https://docs.microsoft.com/gaming/xbox-live//index.md) au cours de la dernière journée pour laquelle des données de succès sont disponibles, pour les 30 jours précédant cette journée et pour la durée de vie totale de votre jeu jusqu'à ce jour. Ces informations sont également disponibles dans le [rapport d’analytique de Xbox](../publish/xbox-analytics-report.md) dans Partner Center.
+Utilisez cette méthode dans l'API d'analyse du Microsoft Store pour connaître le nombre de clients ayant déverrouillé chaque succès pour votre [jeu Xbox Live](https://docs.microsoft.com/gaming/xbox-live/index.md) au cours de la dernière journée pour laquelle des données de succès sont disponibles, pour les 30 jours précédant cette journée et pour la durée de vie totale de votre jeu jusqu'à ce jour. Ces informations sont également disponibles dans le [rapport d’analytique de Xbox](../publish/xbox-analytics-report.md) dans Partner Center.
 
 > [!IMPORTANT]
-> Cette méthode prend uniquement en charge les jeux pour Xbox et les jeux qui utilisent les services Xbox Live. Ces jeux doivent passer par le [processus d’approbation de concept](../gaming/concept-approval.md), qui inclut les jeux publiés par des [partenaires Microsoft](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#microsoft-partners) et les jeux soumis via le [programme ID@Xbox](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md#id). Cette méthode ne prend actuellement pas en charge les jeux publiés via le [Programme Créateurs Xbox Live](https://docs.microsoft.com/gaming/xbox-live//get-started-with-creators/get-started-with-xbox-live-creators.md).
+> Cette méthode prend uniquement en charge les jeux pour Xbox et les jeux qui utilisent les services Xbox Live. Ces jeux doivent passer par le [processus d’approbation de concept](../gaming/concept-approval.md), qui inclut les jeux publiés par des [partenaires Microsoft](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#microsoft-partners) et les jeux soumis via le [programme ID@Xbox](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#id). Cette méthode ne prend actuellement pas en charge les jeux publiés via le [Programme Créateurs Xbox Live](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md).
 
 ## <a name="prerequisites"></a>Prérequis
 
@@ -38,7 +38,7 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 
 ### <a name="request-header"></a>En-tête de requête
 
-| Header        | Type   | Description                                                                 |
+| Header        | type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | chaîne | Obligatoire. Le jeton d’accès Azure AD sous la forme **PORTEUR** &lt; *jeton*&gt;. |
 
@@ -46,7 +46,7 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 ### <a name="request-parameters"></a>Paramètres de la requête
 
 
-| Paramètre        | Type   |  Description      |  Obligatoire  
+| Paramètre        | type   |  Description      |  Requis  
 |---------------|--------|---------------|------|
 | applicationId | chaîne | [ID Store](in-app-purchases-and-trials.md#store-ids) du jeu pour lequel vous voulez récupérer des données de succès Xbox Live.  |  Oui  |
 | metricType | chaîne | Une chaîne qui spécifie le type de données d’analytique Xbox Live à récupérer. Pour cette méthode, spécifiez la valeur **achievements** .  |  Oui  |
@@ -66,16 +66,16 @@ Authorization: Bearer <your access token>
 
 ## <a name="response"></a>Réponse
 
-| Value      | Type   | Description                  |
+| Value      | type   | Description                  |
 |------------|--------|-------------------------------------------------------|
-| Value      | tableau  | Un tableau d’objets contenant des données pour chaque succès de votre jeu. Pour plus d’informations sur les données incluses dans chaque objet, voir le tableau suivant.                                                                                                                      |
-| @nextLink  | chaîne | S’il existe des pages supplémentaires de données, cette chaîne comporte un URI que vous pouvez utiliser pour solliciter la page suivante de données. Par exemple, cette valeur est renvoyée si le paramètre **top** de la requête est défini sur 100 mais que la requête présente plus de 100 rangées de données. |
-| TotalCount | entier    | Nombre total de lignes dans les résultats de la requête.  |
+| Value      | array  | Un tableau d’objets contenant des données pour chaque succès de votre jeu. Pour plus d’informations sur les données incluses dans chaque objet, voir le tableau suivant.                                                                                                                      |
+| @nextLink  | chaîne | S’il existe des pages supplémentaires de données, cette chaîne comporte un URI que vous pouvez utiliser pour demander la page suivante. Par exemple, cette valeur est renvoyée si le paramètre **top** de la requête est défini sur 100 mais que la requête présente plus de 100 rangées de données. |
+| TotalCount | entier    | Nombre total de lignes dans les résultats de données de la requête.  |
 
 
 Les éléments du tableau *Value* comportent les valeurs suivantes :
 
-| Value               | Type   | Description                           |
+| Value               | type   | Description                           |
 |---------------------|--------|-------------------------------------------|
 | applicationId       | chaîne | L’ID Store du jeu pour laquelle vous récupérez les données de succès.     |
 | reportDateTime     | chaîne |  La date pour les données de succès.    |

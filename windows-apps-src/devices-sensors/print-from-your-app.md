@@ -6,12 +6,12 @@ ms.date: 01/29/2018
 ms.topic: article
 keywords: Windows 10, uwp, impression
 ms.localizationpriority: medium
-ms.openlocfilehash: 743df4398792d910626f63900d244ab4da388fb0
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 1a60def61e974bca493fb932cc0fb8716ba521f0
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66369824"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321489"
 ---
 # <a name="print-from-your-app"></a>Imprimer à partir de votre application
 
@@ -137,7 +137,7 @@ Dans cet exemple, une fenêtre d’impression s’affiche dans le gestionnaire d
 
 ## <a name="format-your-apps-content"></a>Mettre en forme le contenu de votre application
 
-Lors de l’appel de **ShowPrintUIAsync**, l’événement [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597) est déclenché. Le gestionnaire d’événements **PrintTaskRequested** présenté dans cette étape crée une classe [**PrintTask**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing.PrintTask) en appelant la méthode [**PrintTaskRequest.CreatePrintTask**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printtaskrequest.createprinttask) et transmet le titre de la page d’impression et le nom d’un délégué [**PrintTaskSourceRequestedHandler**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printtask.source). Notez que dans cet exemple, le délégué **PrintTaskSourceRequestedHandler** est défini inline. Le délégué **PrintTaskSourceRequestedHandler**, qui fournit le contenu mis en forme pour l’impression, est décrit plus tard.
+Lors de l’appel de **ShowPrintUIAsync**, l’événement [**PrintTaskRequested**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_#Windows_Foundation_IAsyncOperationWithProgress_2_Progress) est déclenché. Le gestionnaire d’événements **PrintTaskRequested** présenté dans cette étape crée une classe [**PrintTask**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing.PrintTask) en appelant la méthode [**PrintTaskRequest.CreatePrintTask**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printtaskrequest.createprinttask) et transmet le titre de la page d’impression et le nom d’un délégué [**PrintTaskSourceRequestedHandler**](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printtask.source). Notez que dans cet exemple, le délégué **PrintTaskSourceRequestedHandler** est défini inline. Le délégué **PrintTaskSourceRequestedHandler**, qui fournit le contenu mis en forme pour l’impression, est décrit plus tard.
 
 Dans cet exemple, un gestionnaire d’achèvement est également défini pour déceler les erreurs. La gestion des événements d’achèvement est recommandée ; de cette façon, votre application peut informer l’utilisateur en cas d’erreur et fournir des solutions possibles. De même, votre application peut utiliser l’événement d’achèvement pour indiquer à l’utilisateur les prochaines étapes à suivre une fois le travail d’impression terminé.
 
@@ -258,7 +258,7 @@ Cette étape crée une nouvelle option d’impression, définit une liste de val
 | **Imprimer la sélection**  | Imprime uniquement le contenu sélectionné par l’utilisateur.|
 | **Plage d’impression**      | Affiche un contrôle d’édition dans lequel l’utilisateur peut entrer les pages à imprimer.|
 
-Premièrement, modifiez le gestionnaire d’événements [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597) pour ajouter le code afin d’obtenir un objet [**PrintTaskOptionDetails**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing.OptionDetails.PrintTaskOptionDetails).
+Premièrement, modifiez le gestionnaire d’événements [**PrintTaskRequested**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_#Windows_Foundation_IAsyncOperationWithProgress_2_Progress) pour ajouter le code afin d’obtenir un objet [**PrintTaskOptionDetails**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing.OptionDetails.PrintTaskOptionDetails).
 
 ```csharp
 PrintTaskOptionDetails printDetailedOptions = PrintTaskOptionDetails.GetFromPrintTaskOptions(printTask.Options);

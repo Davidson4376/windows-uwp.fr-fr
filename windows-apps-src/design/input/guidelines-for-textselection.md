@@ -8,12 +8,12 @@ keywords: clavier, texte, entrées, interactions avec l’utilisateur
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: fc227904e57577a30eb2d171a060fb69d39b71f0
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 8dab8d26436d312601b749bed7e97048ed5805bb
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66363500"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67317286"
 ---
 # <a name="selecting-text-and-images"></a>Sélection de texte et d’images
 
@@ -104,12 +104,12 @@ Par exemple, il est possible également d’utiliser des barres de redimensionne
 
 *Éditeur d’images avec les barres de défilement de rognage.*
 
-## <a name="related-articles"></a>Articles connexes
+## <a name="related-articles"></a>Articles associés
 
 
 
 **pour les développeurs**
-* [Interactions de l’utilisateur personnalisé](https://developer.microsoft.com/windows/design/inputs-devices)
+* [Interactions de l’utilisateur personnalisé](https://docs.microsoft.com/windows/uwp/design/layout/index)
 
 **Exemples**
 * [Exemple d’entrée de base](https://go.microsoft.com/fwlink/p/?LinkID=620302)

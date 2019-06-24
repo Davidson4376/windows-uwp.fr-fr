@@ -8,16 +8,16 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 08a7ca0b08a9df57d3c496f33f963fcd9d0ebfe2
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: a3fa029c5046b1c3f20058275aec0ff901706e65
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66367039"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320945"
 ---
 # <a name="create-adaptive-tiles"></a>Créer des vignettes adaptatives
 
-Modèles de vignette Adaptive sont une nouvelle fonctionnalité dans Windows 10, ce qui vous permet de concevoir votre propre contenu de notification de vignette à l’aide d’un langage de balisage simple et flexible qui s’adapte aux densités d’écran. Cet article vous indique comment créer des vignettes dynamiques adaptatives pour votre application de plateforme Windows universelle (UWP). Pour obtenir la liste complète des éléments et attributs adaptatifs, voir [Schéma des vignettes adaptatives](../tiles-and-notifications/tile-schema.md).
+Modèles de vignette Adaptive sont une nouvelle fonctionnalité dans Windows 10, ce qui vous permet de concevoir votre propre contenu de notification de vignette à l’aide d’un langage de balisage simple et flexible qui s’adapte aux densités d’écran. Cet article vous explique comment créer des vignettes dynamiques adaptatives pour votre application de plateforme Windows universelle (UWP). Pour obtenir la liste complète des éléments et attributs adaptatifs, voir [Schéma des vignettes adaptatives](../tiles-and-notifications/tile-schema.md).
 
 (Si vous le souhaitez, vous pouvez toujours utiliser les modèles prédéfinis à partir de la [catalogue de modèles de vignette Windows 8](https://docs.microsoft.com/previous-versions/windows/apps/hh761491(v=win.10)) lors de la conception des notifications pour Windows 10.)
 
@@ -203,7 +203,7 @@ TileContent content = new TileContent()
 
 ![tailles de vignettes adaptatives : petite, moyenne, large et grande](images/adaptive-tiles-sizes.png)
 
-## <a name="branding"></a>Personnalisation
+## <a name="branding"></a>Branding
 
 
 Vous pouvez contrôler la personnalisation en bas d’une vignette dynamique (nom d’affichage et logo d’angle) à l’aide de l’attribut branding de la charge utile de notification. Vous pouvez choisir de ne rien afficher (valeur « none »), d’afficher uniquement le nom (valeur « name »), d’afficher uniquement le logo (valeur « logo ») ou d’afficher à la fois le nom et le logo (valeur « nameAndLogo »).
@@ -415,13 +415,13 @@ new AdaptiveText()
 |                                |                           |             |
 |--------------------------------|---------------------------|-------------|
 | &lt;text hint-style="\*" /&gt; | Hauteur de police               | Épaisseur de police |
-| caption                        | 12 pixels effectifs (epx) | Normale     |
-| corps                           | 15 epx                    | Normale     |
+| caption                        | 12 pixels effectifs (epx) | Normal     |
+| body                           | 15 epx                    | Normal     |
 | base                           | 15 epx                    | Semibold    |
-| subtitle                       | 20 epx                    | Normale     |
+| subtitle                       | 20 epx                    | Normal     |
 | title                          | 24 epx                    | Semilight   |
-| sous-titre                      | 34 epx                    | Maigre       |
-| en-tête                         | 46 epx                    | Maigre       |
+| subheader                      | 34 epx                    | Light       |
+| header                         | 46 epx                    | Light       |
 
  
 
@@ -481,7 +481,7 @@ new AdaptiveText()
 ## <a name="groups-and-subgroups"></a>Groupes et sous-groupes
 
 
-Les groupes vous permettent de déclarer au niveau sémantique que le contenu d’un groupe est associé et doit être affiché en totalité pour qu’il soit intelligible. Par exemple, vous pouvez avoir deux éléments de texte, un en-tête et un sous-titre, et il ne serait pas logique de n’afficher que l’en-tête. En regroupant ces éléments à l’intérieur d’un sous-groupe, les éléments sont tous affichés (s’ils peuvent s’ajuster à la vignette) ou pas affichés du tout (s’ils ne peuvent pas s’ajuster à la vignette).
+Les groupes vous permettent de déclarer au niveau sémantique que le contenu à l’intérieur du groupe est lié et qu’il doit être affiché dans son intégralité pour qu’il ait du sens. Par exemple, vous pouvez avoir deux éléments de texte, un en-tête et un sous-titre, et il ne serait pas logique de n’afficher que l’en-tête. En regroupant ces éléments à l’intérieur d’un sous-groupe, les éléments sont tous affichés (s’ils peuvent s’ajuster à la vignette) ou pas affichés du tout (s’ils ne peuvent pas s’ajuster à la vignette).
 
 Pour que l’expérience soit la meilleure possible sur les appareils et les écrans, indiquez plusieurs groupes. L’indication de plusieurs groupes permet à votre vignette de s’adapter aux écrans plus grands.
 
@@ -631,11 +631,11 @@ Pour qu’une colonne soit deux fois plus large qu’une autre colonne, attribue
 </tr>
 <tr class="even">
 <td align="left">1</td>
-<td align="left">33,3 %</td>
+<td align="left">33,3 %</td>
 </tr>
 <tr class="odd">
 <td align="left">2</td>
-<td align="left">66,7 %</td>
+<td align="left">66,7 %</td>
 </tr>
 <tr class="even">
 <td align="left">Poids total : 3</td>
@@ -666,7 +666,7 @@ Si vous souhaitez que les première et seconde colonnes occupent respectivement 
 </tr>
 <tr class="odd">
 <td align="left">80</td>
-<td align="left">80 %</td>
+<td align="left">80 %</td>
 </tr>
 <tr class="even">
 <td align="left">Poids total : 100</td>
@@ -787,7 +787,7 @@ private static AdaptiveSubgroup CreateSubgroup(string day, string image, string 
 
 ![Exemple d’une vignette météo](images/adaptive-tiles-weathertile.png)
 
-## <a name="images"></a>Images
+## <a name="images"></a>les images,
 
 
 L’élément &lt;image&gt; permet d’afficher des images dans la notification par vignette. Les images peuvent être incorporées au sein du contenu de la vignette (par défaut), en tant qu’image d’arrière-plan derrière le contenu ou en tant qu’image furtive qui s’anime à partir du haut de la notification.
@@ -1393,7 +1393,7 @@ TileWide = new TileBinding()
 * [Schéma de contenu de vignette](../tiles-and-notifications/tile-schema.md)
 * [Envoyer une notification de vignette local](sending-a-local-tile-notification.md)
 * [Modèles de vignette spéciaux](special-tile-templates-catalog.md)
-* [UWP Community Toolkit - Notifications](https://github.com/Microsoft/UWPCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
+* [UWP Community Toolkit - Notifications](https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
 * [Notifications de Windows sur GitHub](https://github.com/WindowsNotifications)
 
  

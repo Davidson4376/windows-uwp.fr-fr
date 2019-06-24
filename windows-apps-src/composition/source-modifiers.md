@@ -5,18 +5,18 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, animation
 ms.localizationpriority: medium
-ms.openlocfilehash: 834f631cd5c4b8696e75f83f194b95f809b1cf8a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 87e4eb90b4801d01ecb85c91b5e64ccc9155d199
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57649864"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318092"
 ---
 # <a name="pull-to-refresh-with-source-modifiers"></a>Tirer pour actualiser à l'aide de modificateurs de source
 
 Dans cet article, nous expliquons plus en détail comment utiliser la fonctionnalité SourceModifier d’un InteractionTracker et illustrons son utilisation en créant un contrôle personnalisé tirer pour actualiser.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 À ce stade, nous partons du principe que vous êtes familiarisé avec les concepts abordés dans les articles suivants :
 
@@ -48,7 +48,7 @@ Pour l'expérience utilisateur final, nous voulons créer l’effet de « rési
 
 ![Liste avec tirer pour actualiser](images/animation/city-list.gif)
 
-Vous trouverez le code de travail de cette expérience dans le [référentiel Window UI Dev Labs sur GitHub](https://github.com/Microsoft/WindowsUIDevLabs). Voici la procédure détaillée de conception de cette expérience.
+Vous trouverez le code de travail de cette expérience dans le [référentiel Window UI Dev Labs sur GitHub](https://github.com/microsoft/WindowsCompositionSamples). Voici la procédure détaillée de conception de cette expérience.
 Dans votre code de balisage XAML, vous disposez des éléments suivants :
 
 ```xaml

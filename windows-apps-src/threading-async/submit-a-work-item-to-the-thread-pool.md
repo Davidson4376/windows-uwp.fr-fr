@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, threads, pool de threads
 ms.localizationpriority: medium
-ms.openlocfilehash: ff47115c228e3cf6530e12aa4686c88660f16fcd
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 0ff0eca18eeab72dbf0a2f9a539e452a5923392d
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371548"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67322017"
 ---
 # <a name="submit-a-work-item-to-the-thread-pool"></a>Envoyer un élément de travail au pool de threads
 
@@ -31,7 +31,7 @@ Créez un élément de travail en appelant [**RunAsync**](https://docs.microsoft
 Trois versions de [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync) sont disponibles pour que vous puissiez éventuellement spécifier la priorité de l’élément de travail et contrôler s’il est exécuté simultanément avec d’autres éléments de travail.
 
 >[!NOTE]
->Utilisez [ **CoreDispatcher.RunAsync** ](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows) pour accéder à la thread d’interface utilisateur et afficher la progression à partir de l’élément de travail.
+>Utilisez [ **CoreDispatcher.RunAsync** ](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) pour accéder à la thread d’interface utilisateur et afficher la progression à partir de l’élément de travail.
 
 L’exemple suivant crée un élément de travail et fournit une expression lambda pour effectuer la tâche :
 
@@ -195,7 +195,7 @@ const unsigned int n = 9999;
 // A shared pointer to the result.
 // We use a shared pointer to keep the result alive until the
 // thread is done.
-std::shared_ptr<unsigned long> nthPrime = make_shared<unsigned long int>(0);
+std::shared_ptr<unsigned long> nthPrime = std::make_shared<unsigned long int>(0);
 
 // Simulates work by searching for the nth prime number. Uses a
 // naive algorithm and counts 2 as the first prime number.
@@ -275,7 +275,7 @@ Notez que l’élément de travail vérifie la propriété [**IAsyncInfo.Status*
 
 ## <a name="handle-work-item-completion"></a>Gérer l’achèvement de l’élément de travail
 
-Fournissez un gestionnaire d’achèvement en définissant la propriété [**IAsyncAction.Completed**](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncaction.completed) de l’élément de travail. Fournissez un délégué (vous pouvez utiliser une expression lambda ou une fonction déléguée) pour gérer l’achèvement de l’élément de travail. Par exemple, utilisez [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.windows) pour accéder au thread d’interface utilisateur et afficher le résultat.
+Fournissez un gestionnaire d’achèvement en définissant la propriété [**IAsyncAction.Completed**](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncaction.completed) de l’élément de travail. Fournissez un délégué (vous pouvez utiliser une expression lambda ou une fonction déléguée) pour gérer l’achèvement de l’élément de travail. Par exemple, utilisez [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) pour accéder au thread d’interface utilisateur et afficher le résultat.
 
 L’exemple suivant met à jour l’interface utilisateur avec le résultat de l’élément de travail envoyé à l’étape 1 :
 

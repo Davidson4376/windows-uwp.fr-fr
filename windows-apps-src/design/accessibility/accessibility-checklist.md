@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e8e9395517511a40c215e31816962c186968c9f3
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 9b789102b90e63e5456c030f6eb90df372354d7a
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66362100"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318998"
 ---
 # <a name="accessibility-checklist"></a>Liste de vérification de l’accessibilité
 
@@ -25,7 +25,7 @@ Nous fournissons ici une liste de vérification qui vous permet de vous assurer 
 
     Le nom accessible est une chaîne de texte courte et descriptive qui est utilisée par les lecteurs d’écran pour présenter un élément d’interface utilisateur. Certains éléments d’interface utilisateur tels que [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) et [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) effectuent la promotion de leur contenu texte comme nom accessible par défaut ; voir [Informations d’accessibilité élémentaires](basic-accessibility-information.md#name_from_inner_text).
 
-    Vous devez définir le nom accessible de manière explicite pour les images ou autres contrôles qui n’effectuent pas la promotion du contenu de texte interne comme nom accessible implicite. Vous devez utiliser des étiquettes pour les éléments de formulaires afin que le texte d’étiquette puisse être utilisé comme cible [**LabeledBy**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms591292(v%3Dvs.95)) dans le modèle Microsoft UI Automation pour la corrélation entre les étiquettes et les entrées. Si vous souhaitez fournir davantage d’instructions dans l’interface utilisateur que celles normalement fournies par le nom accessible, des descriptions accessibles et des info-bulles aident les utilisateurs à mieux comprendre l’interface utilisateur.
+    Vous devez définir le nom accessible de manière explicite pour les images ou autres contrôles qui n’effectuent pas la promotion du contenu de texte interne comme nom accessible implicite. Vous devez utiliser des étiquettes pour les éléments de formulaires afin que le texte d’étiquette puisse être utilisé comme cible [**LabeledBy**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms591292(v=vs.95)) dans le modèle Microsoft UI Automation pour la corrélation entre les étiquettes et les entrées. Si vous souhaitez fournir davantage d’instructions dans l’interface utilisateur que celles normalement fournies par le nom accessible, des descriptions accessibles et des info-bulles aident les utilisateurs à mieux comprendre l’interface utilisateur.
 
     Pour plus d’informations, voir les sections [Nom accessible](basic-accessibility-information.md#accessible_name) et [Description accessible](basic-accessibility-information.md).
 
@@ -41,7 +41,7 @@ Nous fournissons ici une liste de vérification qui vous permet de vous assurer 
 
 3. Vérifiez le texte est une taille accessible en lecture
 
-    * Windows inclut divers outils d’accessibilité et les paramètres que les utilisateurs peuvent tirer parti et ajuster à leurs propres besoins et les préférences pour la lecture de texte. Par exemple :
+    * Windows inclut divers outils d’accessibilité et les paramètres que les utilisateurs peuvent tirer parti et ajuster à leurs propres besoins et les préférences pour la lecture de texte. Il s’agit des éléments suivants :
         * L’outil Loupe, qui agrandit une zone sélectionnée de l’interface utilisateur. Vous devez vous assurer de que la disposition du texte dans votre application ne soit pas difficile à utiliser la loupe pour la lecture.
         * Paramètres globaux de mise à l’échelle et la résolution dans **Paramètres -> système -> Affichage -> mise à l’échelle et la disposition**. Exactement quelles options de dimensionnement sont disponibles peuvent varier car cela dépend des capacités du périphérique d’affichage.
         * Paramètres de taille de texte dans **Paramètres -> Options d’ergonomie -> affichage**. Ajuster la **agrandir le texte** paramètre pour spécifier uniquement la taille du texte dans la prise en charge des contrôles dans l’ensemble des applications et des écrans (tous les contrôles de texte UWP prend en charge le texte de l’expérience sans toute personnalisation ou la création de modèles de mise à l’échelle).

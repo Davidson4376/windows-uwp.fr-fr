@@ -6,12 +6,12 @@ ms.date: 03/27/2018
 ms.topic: article
 keywords: Windows 10, uwp, jeux, services cloud
 ms.localizationpriority: medium
-ms.openlocfilehash: 15a7e3bed746a31ce2d8f458045cdd1126b71b8c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: b1b63c6eb3c803b26ead85332affe1fc4f20e314
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368991"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321331"
 ---
 #  <a name="using-cloud-services-for-uwp-games"></a>Utilisation des services de cloud computing pour les jeux UWP
 
@@ -111,7 +111,7 @@ Découvrez comment des développeurs ont implémenté des solutions de cloud com
         </td>
     </tr>
     <tr>
-        <td><a href="https://www.crimecoast.com/">Escouade de pixel</a></td>
+        <td><a href="http://www.crimecoast.com/">Escouade de pixel</a></td>
         <td>Pixels Squad a développé <b>Crime Coast</b> à l’aide du moteur de jeu Unity et d’Azure. <b>Crime Coast</b> est un jeu social de stratégie disponible sur les plateformes Android, iOS et Windows. Ont été utilisés dans ce jeu le stockage d’objets Blob Azure, un cache Azure Redis géré, un ensemble d’ordinateurs virtuels IIS à charge équilibrée et un hub de notification Microsoft. Découvrez comment cette société a géré la mise à l’échelle et l’augmentation du nombre de joueurs avec 5 000 joueurs simultanés.
         </td>
         <td>
@@ -136,7 +136,7 @@ Découvrez comment des développeurs ont implémenté des solutions de cloud com
 
 ## <a name="how-to-design-your-cloud-backend"></a>Comment concevoir votre serveur principal dans le cloud
 
-Alors que les fabricants et les concepteurs de jeu discutent des fonctions et fonctionnalités nécessaires, nous vous recommandons de vous pencher sur la façon dont vous voulez concevoir votre infrastructure de jeu. À partir du moment où vous voulez développer des jeux pour différents appareils et sur différentes plateformes parmi les principales, pensez à Azure comme serveur principal pour votre jeu.
+Alors que les fabricants et les concepteurs de jeu discutent des fonctions et fonctionnalités nécessaires, nous vous recommandons de vous pencher sur la façon dont vous voulez concevoir votre infrastructure de jeu. À partir du moment où vous voulez développer des jeux pour différents appareils et les principales plateformes, pensez à Azure comme serveur principal pour votre jeu.
 
 ### <a name="understanding-iaas-paas-or-saas"></a>Comprendre IaaS, PaaS ou SaaS
 
@@ -182,8 +182,8 @@ Voici quelques-unes des façons dont vous pouvez utiliser les offres de services
 | Collecte et analyse des données de jeu| Traitement parallèle massif des données à partir de bases de données relationnelles et non relationnelles | [Entrepôt de données Azure](https://azure.microsoft.com/services/sql-data-warehouse/)| Entrepôt de données élastique en tant que service doté de fonctionnalités adaptées aux besoins des entreprises   |
 | Inciter les utilisateurs à accroître leur utilisation et leur fidélisation| Envoyer des notifications Push ciblées à n'importe quelle plateforme à partir de n'importe quel système principal pour susciter l’intérêt et encourager des actions de jeu spécifiques | [Azure Notification Hubs](https://azure.microsoft.com/services/notification-hubs/)| Diffusion rapide en mode Push pour toucher des millions d’appareils mobiles sur toutes les plateformes principales &mdash; iOS, Android, Windows, Kindle, Baidu. Votre jeu peut être hébergé sur n’importe quel serveur principal &mdash; cloud ou local.|
 | Diffuser du contenu multimédia en continu à votre public local et dans le monde entier tout en le protégeant| Permet de regarder des bandes annonces de jeu et des clips cinématographiques de qualité professionnelle à partir de tous les appareils| [Azure Media Services](https://azure.microsoft.com/services/media-services/)| Diffusion en continu de vidéo à la demande et en direct avec fonctionnalités de Content Delivery Network intégrées. Utiliser un lecteur pour tous vos besoins de lecture, avec chiffrement et protection du contenu inclus.| 
-| Développer, distribuer et effectuer un bêta-test de vos applications mobiles | Tester et distribuer votre application mobile. Gestion des performances des applications et de l'expérience utilisateur. | [HockeyApp](https://azure.microsoft.com/services/hockeyapp/)| Intègre des rapports d’incidents et des métriques utilisateurs avec une plateforme de distribution d’applications et de commentaires des utilisateurs. Prend en charge les applications Android, Cordova, iOS, OS X, Unity, Windows et Xamarin. Envisagez également de [Visual Studio Mobile Center](https://www.visualstudio.com/vs/mobile-center/) &mdash; centre de contrôle pour les applications qui combine analytique enrichi, rapports sur les incidents, push notifications, distribution d’applications et bien plus encore. |
-| Création de campagnes marketing pour accroître l’utilisation et la fidélisation  | Envoyer des notifications push à certains joueurs pour susciter l’intérêt et encourager des actions de jeu spécifiques en fonction de l’analyse des données | [Mobile engagement](https://azure.microsoft.com/services/mobile-engagement/) : sera retiré en mars 2018 et n’est actuellement disponible que pour les clients existants |  Augmenter le temps de jeu et la fidélisation des utilisateurs sur toutes les principales plateformes (iOS, Android, Windows, Windows Phone) |
+| Développer, distribuer et effectuer un bêta-test de vos applications mobiles | Tester et distribuer votre application mobile. Gestion des performances des applications et de l'expérience utilisateur. | [HockeyApp](https://azure.microsoft.com/services/hockeyapp/)| Intègre des rapports d’incidents et des métriques utilisateurs avec une plateforme de distribution d’applications et de commentaires des utilisateurs. Prend en charge les applications Android, Cordova, iOS, OS X, Unity, Windows et Xamarin. Envisagez également de [Visual Studio Mobile Center](https://visualstudio.microsoft.com/app-center/) &mdash; centre de contrôle pour les applications qui combine analytique enrichi, rapports sur les incidents, push notifications, distribution d’applications et bien plus encore. |
+| Création de campagnes marketing pour accroître l’utilisation et la fidélisation  | Envoyer des notifications push à certains joueurs pour susciter l’intérêt et encourager des actions de jeu spécifiques en fonction de l’analyse des données | [Mobile engagement](https://azure.microsoft.com/services/mobile-engagement/) : sera retiré en mars 2018 et n’est actuellement disponible que pour les clients existants |  Augmenter le temps de jeu et la fidélisation des utilisateurs sur toutes les plateformes principales (iOS, Android, Windows, Windows Phone) |
 
 
 ##  <a name="startup-and-developer-resources"></a>Ressources pour start-up et développeurs
@@ -206,7 +206,7 @@ Voici quelques-unes des façons dont vous pouvez utiliser les offres de services
 ## <a name="tools-and-other-useful-links"></a>Outils et autres liens utiles
 
 * [Forums MSDN &mdash; plateforme Azure](https://social.msdn.microsoft.com/Forums/azure/home?category=windowsazureplatform)
-* [Outil de test de charge en fonction de cloud](https://www.visualstudio.com/team-services/cloud-load-testing/)
+* [Outil de test de charge en fonction de cloud](https://visualstudio.microsoft.com/team-services/cloud-load-testing/)
 * [Kits SDK et outils de ligne de commande](https://azure.microsoft.com/downloads/)
     
 ## <a name="software-as-a-service-for-game-backend"></a>Serveur principal de jeu et logiciels en tant que service

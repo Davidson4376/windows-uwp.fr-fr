@@ -13,12 +13,12 @@ design-contact: jeffarn
 dev-contact: ''
 doc-status: ''
 ms.localizationpriority: medium
-ms.openlocfilehash: df81348dee781d1c329562d558ed8df30fd40bc5
-ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.openlocfilehash: 0e8cee688cbfbda0fe3822017b769560fc0fffe3
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59244115"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319383"
 ---
 # <a name="designing-for-mixed-reality"></a>Conception pour la réalité mixte
 
@@ -38,7 +38,7 @@ Les casques HoloLens et Windows Mixed Reality prennent en charge les applicati
 
 Une application immersive remplace la totalité de l’affichage visible par l’utilisateur, en le plaçant au centre d’une vue créée par l’application. Par exemple, un jeu immersif peut placer l’utilisateur sur la surface d’une planète extraterrestre, ou une application servant de guide peut placer l’utilisateur dans un village d’Amérique du Sud. La création d’une application immersive nécessite des graphiques 3D ou des vidéos stéréographiques capturées. Les applications immersives sont souvent développées à l’aide d’un moteur de jeu tiers comme Unity, ou avec DirectX.
 
-Si vous créez des applications immersives, visitez le [Centre de développement Windows Mixed Reality](https://developer.microsoft.com/windows/mixed-reality) pour plus d’informations.
+Si vous créez des applications immersives, visitez le [Centre de développement Windows Mixed Reality](https://developer.microsoft.com/mixed-reality) pour plus d’informations.
 
 Une application 2D s’exécute en tant que fenêtre traditionnelle plate dans la vue de l’utilisateur. Sur HoloLens, cela signifie une vue épinglée au mur ou un point dans l’espace dans le salon ou le bureau réel de l’utilisateur. Dans un casque Windows Mixed Reality, l’application est épinglée à un mur dans la [page d’accueil de réalité mixte](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/your-mixed-reality-home) (parfois appelée *Maison sur la falaise*).
 
@@ -82,7 +82,7 @@ Plusieurs méthodes d’entrée inédites ont été conçues spécialement pour 
 * [Mouvements de la main](https://developer.microsoft.com/windows/mixed-reality/gestures) (HoloLens uniquement, mais uniquement utilisé pour le lancement des applications 2D)
 * [Prise en charge de la manette de jeu](https://developer.microsoft.com/windows/mixed-reality/hardware_accessories) (les deux environnements)
 * [Appareils Clicker](https://developer.microsoft.com/windows/mixed-reality/hardware_accessories) (HoloLens uniquement)
-* [Contrôleurs de mouvement](https://developer.microsoft.com/windows/mixed-reality/motion_controllers) (appareils de réalité mixte uniquement, comme illustrés ci-dessus.)
+* [Contrôleurs de mouvement](https://docs.microsoft.com/windows/mixed-reality/motion-controllers) (appareils de réalité mixte uniquement, comme illustrés ci-dessus.)
 
 Ces contrôleurs rendent l’interaction avec des objets virtuels naturelle et précise. Certaines de ces interactions sont gratuites. Par exemple, les HoloLens sélectionnez mouvement ou en cliquant sur la clé de Windows du contrôleur de mouvement ou un déclencheur génère la réponse d’entrée, que vous pouvez l’imaginer, là encore, sans codage de votre part.
 
@@ -98,7 +98,7 @@ Lors de la création d’une application UWP qui pourra être potentiellement ut
 
 * La fonction glisser-déplacer peut ne pas fonctionner correctement avec des contrôleurs de mouvement, des manettes de jeu ou des mouvements. Si votre application dépend fortement de la fonction glisser -déplacer, vous devrez fournir une autre méthode pour prendre en charge cette action, telle que la présentation d’une boîte de dialogue confirmant si des objets doivent être déplacés vers un nouvel emplacement.
 
-* Soyez conscient de la façon dont les sons changent. Si votre application génère des effets sonores, le son proviendra de l’emplacement où est localisée votre application dans le monde virtuel. À mesure que l’utilisateur s’éloignera de l’application, le son diminuera. Voir [Son spatial](https://developer.microsoft.com/windows/mixed-reality/spatial_sound) pour plus d’informations.
+* Soyez conscient de la façon dont les sons changent. Si votre application génère des effets sonores, le son proviendra de l’emplacement où est localisée votre application dans le monde virtuel. À mesure que l’utilisateur s’éloignera de l’application, le son diminuera. Voir [Son spatial](https://docs.microsoft.com/windows/mixed-reality/spatial-sound) pour plus d’informations.
 
 * Tenez compte du champ de vision et fournissez des affordances. Tous les appareils n’offrent pas un champ de vision aussi étendu qu’un moniteur d’ordinateur. Voir [Image holographique](https://developer.microsoft.com/windows/mixed-reality/holographic_frame) pour plus de détails. En outre, l’utilisateur peut se trouver éloigné d’une application en cours d’exécution. Autrement dit, l’application peut apparaître épinglée au mur à un emplacement différent dans le monde (réel ou virtuel). Il faudra peut-être que votre application attire l’attention des utilisateurs, ou prenez en compte que la vue entière n'est pas visible en permanence. Les notifications toast sont disponibles, mais un autre moyen d’obtenir l’attention de l’utilisateur peut être de générer une alerte sonore ou [vocale](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/SpeechRecognitionAndSynthesis/cs/Scenario_SynthesizeText.xaml.cs).
 
@@ -160,11 +160,11 @@ bool isViewingInMR = Windows.ApplicationModel.Preview.Holographic.HolographicApp
 
 
 
-## <a name="related-articles"></a>Articles connexes
+## <a name="related-articles"></a>Articles associés
 
 
-* [Limitations actuelles pour les applications utilisant des API à partir du shell](https://developer.microsoft.com/windows/mixed-reality/current_limitations_for_apps_using_apis_from_the_shell)
-* [Création d’applications 2D](https://developer.microsoft.com/windows/mixed-reality/building_2d_apps)
+* [Limitations actuelles pour les applications à l’aide des API à partir de l’interpréteur de commandes](https://developer.microsoft.com/windows/mixed-reality/current_limitations_for_apps_using_apis_from_the_shell)
+* [Création d’applications 2D](https://developer.microsoft.com/windows/mixed-reality/building_2d_apps)
 * [HoloLens : Création d’applications 2D UWP pour Microsoft HoloLens](https://channel9.msdn.com/Events/Build/2016/B854)
 * [XAML conditionnel](https://docs.microsoft.com/en-us/windows/uwp/debug-test-perf/conditional-xaml)
 

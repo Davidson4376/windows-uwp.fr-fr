@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: da18981a2be03c40e15df666f58d60ac91b6f130
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: dee2bcb05b9d30177c68b1beac468ac19f4a1be9
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360769"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318343"
 ---
 # <a name="legacy-background-media-playback"></a>Lecture multimédia en arrière-plan héritée
 
@@ -64,7 +64,7 @@ Les données peuvent être transmises en tant qu’argument aux méthodes d’en
 
 La durée de vie d’une tâche en arrière-plan est étroitement liée à l’état de lecture actuelle de votre application. Par exemple, lorsque l’utilisateur met en pause la lecture audio, le système peut terminer ou annuler votre application en fonction des circonstances. Après une période de temps sans lecture audio, le système peut arrêter automatiquement la tâche en arrière-plan.
 
-La méthode [**IBackgroundTask.Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.) est appelée lorsque votre application accède pour la première fois à [**BackgroundMediaPlayer.Current**](https://docs.microsoft.com/uwp/api/windows.media.playback.backgroundmediaplayer.current) dans le code de l’application au premier plan ou lorsque vous enregistrez un gestionnaire pour l’événement [**MessageReceivedFromBackground**](https://docs.microsoft.com/uwp/api/windows.media.playback.backgroundmediaplayer.messagereceivedfrombackground), selon la première éventualité. Il est recommandé de vous inscrire au gestionnaire de messages reçus avant d’appeler **BackgroundMediaPlayer.Current** pour la première fois afin que l’application au premier plan ne manque pas les messages envoyés à partir du processus en arrière-plan.
+La méthode [**IBackgroundTask.Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.run) est appelée lorsque votre application accède pour la première fois à [**BackgroundMediaPlayer.Current**](https://docs.microsoft.com/uwp/api/windows.media.playback.backgroundmediaplayer.current) dans le code de l’application au premier plan ou lorsque vous enregistrez un gestionnaire pour l’événement [**MessageReceivedFromBackground**](https://docs.microsoft.com/uwp/api/windows.media.playback.backgroundmediaplayer.messagereceivedfrombackground), selon la première éventualité. Il est recommandé de vous inscrire au gestionnaire de messages reçus avant d’appeler **BackgroundMediaPlayer.Current** pour la première fois afin que l’application au premier plan ne manque pas les messages envoyés à partir du processus en arrière-plan.
 
 Pour garder active une tâche en arrière-plan, votre application devra demander une [**BackgroundTaskDeferral**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskDeferral) dans la méthode **Run** et appeler [**BackgroundTaskDeferral.Complete**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskdeferral.complete) lorsque l’instance de la tâche reçoit les événements [**Canceled**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance.canceled) ou [**Completed**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.completed). Ne créez pas de boucle ou n’attendez pas dans la méthode **Run**, car cela utilise des ressources et le système risque de mettre fin à la tâche en arrière-plan de votre application.
 
@@ -114,11 +114,11 @@ Toutefois, cela ne signifie pas que le premier plan dépend de l’arrière-plan
 
 Le tableau suivant répertorie les stratégies sont appliqués selon les types d’appareils.
 
-| Sous-stratégie             | Bureau  | Mobile   | Autre    |
+| Sous-stratégie             | Bureau  | Mobile   | Autres    |
 |------------------------|----------|----------|----------|
-| **Exclusivité**        | Désactivée | Enabled  | Enabled  |
-| **Délai d’inactivité** | Désactivée | Enabled  | Désactivée |
-| **Durée de vie partagée**    | Enabled  | Désactivée | Désactivée |
+| **Exclusivité**        | Désactivé | Enabled  | Enabled  |
+| **Délai d’inactivité** | Désactivé | Enabled  | Désactivé |
+| **Durée de vie partagée**    | Enabled  | Désactivé | Désactivé |
 
 
  
