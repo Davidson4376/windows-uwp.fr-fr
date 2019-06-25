@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b9d8d8a381c0fce186b39853f57d35c1dce4b8f8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57601254"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63773370"
 ---
 # <a name="masterdetails-pattern"></a>Modèle Maître/Détails
 
@@ -21,7 +21,7 @@ ms.locfileid: "57601254"
 
 Le modèle Maître/Détails possède un volet principal (généralement avec un [affichage Liste](lists.md)) et un volet d’informations correspondant au contenu. Lorsqu’un élément de la liste principale est sélectionné, le volet d’informations est mis à jour. Ce modèle est souvent utilisé pour le courrier électronique et les carnets d’adresses.
 
-> **API importantes** : [Classe de ListView](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView), [fractionnementaffichage des classes](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview)
+> **API importantes** : [classe ListView](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView), [classe SplitView](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview)
 
 ![Exemple de modèle Maître/Détails](images/HIGSecOne_MasterDetail.png)
 
@@ -39,8 +39,8 @@ Lorsque vous implémentez le modèle Maître/Détails, nous vous recommandons d�
 
 | Largeur de fenêtre disponible | Style recommandé |
 |------------------------|-------------------|
-| 320 epx-640 epx        | Mode Empilé           |
-| 641 epx ou plus large       | Côte à côte      |
+| 320 epx-640 epx        | Mode Empilé           |
+| 641 epx ou plus large       | Côte à côte      |
 
  
 ## <a name="stacked-style"></a>Style empilé
@@ -57,9 +57,9 @@ L’une des façons de créer le modèle Maître/Détails empilé consiste à ut
 
 ![Parties du modèle Maître/Détails de style empilé](images/patterns-md-stacked-parts.png)
 
-Pour la page d'affichage Maître, un contrôle [affichage Liste](lists.md) fonctionne bien pour présenter des listes pouvant contenir des images et du texte. 
+Pour la page d'affichage Maître, un contrôle d’[affichage Liste](lists.md) fonctionne bien pour présenter des listes pouvant contenir des images et du texte. 
 
-Pour la page d’affichage Détails, utilisez l’[élément de contenu](../layout/layout-panels.md) le plus logique. Si vous disposez d’un grand nombre de champs distincts, pensez à utiliser une disposition **Grille** pour organiser les éléments dans un formulaire.
+Pour la page d’affichage Détails, utilisez l’[élément de contenu](../layout/layout-panels.md) le plus logique. Si vous disposez d’un grand nombre de champs distincts, pensez à utiliser une disposition **en grille** pour organiser les éléments dans un formulaire.
 
 Pour la navigation entre les pages, voir [historique de navigation et navigation vers l’arrière pour les applications UWP](../basics/navigation-history-and-backwards-navigation.md).
 
@@ -75,17 +75,17 @@ La liste du volet principal possède un objet visuel de sélection pour indiquer
 
 L’une des façons de créer un modèle Maître/Détails côte à côte consiste à utiliser le contrôle [mode Fractionné](split-view.md). Placez l'affichage Maître dans le volet du mode Fractionné et l’affichage Détails dans le contenu du mode Fractionné.
 
-![Parties du mode Fractionné Maître/Détail](images/patterns_md_splitview_parts.png)
+![parties du mode Fractionné Maître/Détail](images/patterns_md_splitview_parts.png)
 
 Pour le volet principal, un contrôle d’[affichage Liste](lists.md) fonctionne bien pour présenter des listes pouvant contenir des images et du texte.
 
-Pour le contenu des détails, utilisez l’[élément de contenu](../layout/layout-panels.md) le plus logique. Si vous disposez d’un grand nombre de champs distincts, pensez à utiliser une disposition **Grille** pour organiser les éléments dans un formulaire.
+Pour le contenu des détails, utilisez l’[élément de contenu](../layout/layout-panels.md) le plus logique. Si vous disposez d’un grand nombre de champs distincts, pensez à utiliser une disposition **en grille** pour organiser les éléments dans un formulaire.
 
 ## <a name="adaptive-layout"></a>Disposition adaptative
 
 Pour implémenter un modèle Maître/Détails pour n’importe quelle taille d’écran, créez une interface utilisateur réactive avec une [disposition adaptative](../layout/layouts-with-xaml.md).
 
-![Disposition adaptative Maître/Détail](images/patterns_masterdetail.png)
+![disposition adaptative Maître/Détails](images/patterns_masterdetail.png)
 
 ### <a name="create-an-adaptive-masterdetails-pattern"></a>Créer un modèle Maître/Détails adaptatif
 Pour créer une disposition adaptative, définissez différents [**VisualStates**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.visualstate) pour votre interface utilisateur et déclarez des points d’arrêt pour les différents états avec des [**AdaptiveTriggers**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.AdaptiveTrigger).
@@ -93,16 +93,16 @@ Pour créer une disposition adaptative, définissez différents [**VisualStates*
 ## <a name="get-the-sample-code"></a>Obtenir l’exemple de code
 
 Les exemples suivants implémentent le modèle Maître/Détails avec des dispositions adaptatives et illustrent la liaison de données avec des ressources statiques, de base de données et en ligne : 
-- [Exemple de représentation maître/détail](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlMasterDetail) 
-- [Exemple de sélection supplémentaire de maître/détails](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
-- [Exemple de Studio de modèle Windows maître/détail](https://github.com/Microsoft/WindowsTemplateStudio/tree/master/templates/Uwp/Pages/MasterDetail)
-- [Exemple de base de données de commandes client](https://github.com/Microsoft/Windows-appsample-customers-orders-database)
-- [Exemple de lecteur RSS](https://github.com/Microsoft/Windows-appsample-rssreader)
+- [Exemple de Maître/Détails](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlMasterDetail) 
+- [Exemples de Maître/Détails et de Sélection](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
+- [Exemple de Maître/Détails Windows Template Studio](https://github.com/Microsoft/WindowsTemplateStudio/tree/master/templates/Uwp/Pages/MasterDetail)
+- [Exemple de base de données de commandes de clients](https://github.com/Microsoft/Windows-appsample-customers-orders-database)
+- [Exemple de lecteur RSS](https://github.com/Microsoft/Windows-appsample-rssreader)
 
 ## <a name="related-articles"></a>Articles connexes
 
 - [Listes](lists.md)
 - [Recherche](search.md)
-- [Barres d’application et de commande](app-bars.md)
-- [Classe de ListView](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView)
-- [Classe de fractionnementaffichage des](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview)
+- [Barre de l’application et barre de commandes](app-bars.md)
+- [Classe ListView](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView)
+- [Classe SplitView](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview)
