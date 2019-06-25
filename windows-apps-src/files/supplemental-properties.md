@@ -1,63 +1,63 @@
 ---
-title: À l’aide des propriétés supplémentaires
-description: Présentation de l’utilisation des propriétés supplémentaires et des détails sur la façon dont elles ont été implémentées dans Windows
+title: Utilisation des propriétés supplémentaires
+description: Introduction à l’utilisation des propriétés supplémentaires et présentation de leur implémentation dans Windows
 ms.date: 01/10/2017
 ms.topic: article
-keywords: Windows 10, uwp, API WinRT, indexeur, recherche
+keywords: windows 10, uwp, API WinRT, indexation, recherche, uwp
 localizationpriority: medium
 ms.openlocfilehash: 2a77bfc37d853efd28bde9bc3043d072888822f2
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66369266"
 ---
-# <a name="using-supplemental-properties"></a>À l’aide des propriétés supplémentaires  
+# <a name="using-supplemental-properties"></a>Utilisation des propriétés supplémentaires  
 
-## <a name="summary"></a>Récapitulatif  
-- Propriétés supplémentaires autoriser les applications pour baliser les fichiers avec les propriétés sans modifier le fichier 
-- Utile pour les cas où vous avez des propriétés qui sont difficiles à calculer, ou le fichier ne peut pas être modifié. 
-- À l’aide des propriétés supplémentaires est identique à l’aide de n’importe quelle autre propriété sur le système de propriétés de Windows  
+## <a name="summary"></a>Résumé  
+- Les propriétés supplémentaires permettent aux applications d’étiqueter des fichiers avec des propriétés sans modifier ceux-ci 
+- Elles sont utiles lorsque vous disposez de propriétés dont le traitement informatique est difficile ou lorsque le fichier ne peut pas être modifié 
+- L’utilisation des propriétés supplémentaires est similaire à celle des autres propriétés du système de propriétés Windows  
 
 ## <a name="introduction"></a>Introduction 
-La plupart des nouvelles applications intéressantes dans ces dernières années requièrent opérations intensives d’UC sur les fichiers d’utilisateur pour extraire des propriétés utiles à partir des fichiers au-delà des tâches de base comme la date de création en cours d’exécution. Ces applications de l’objet ensemble reconnaissance dans les images, intent extraction dans des e-mails et l’analyse de texte pour regrouper les documents. Cela est piloté par l’informatique puissantes est désormais disponible sur les ordinateurs pour la plupart des particuliers.   
+La plupart des nouvelles applications passionnantes développées ces dernières années nécessitent l’exécution d’opérations gourmandes en ressources d’UC sur les fichiers utilisateur afin d’en extraire des propriétés plus utiles que les informations de base (la date de création, par exemple). Ces applications permettent la reconnaissance d’objets dans les images, l’extraction d’intentions dans les e-mails et l’analyse de texte pour le regroupement de documents. Cela s’explique par la puissance de calcul qui est désormais disponible sur la plupart des PC grand public.   
 
-Rendre ces métadonnées instantanément consultable permet aux utilisateurs d’être exponentiellement plus productifs. Simplement savoir que votre fille est dans l’image est intéressant, mais la possibilité de rechercher l’image associée avec sa grand-mère est beaucoup plus utile. Il rend l’expérience de l’utilisation d’une idée de l’ordinateur plus personnelle et plus active. Comme une personne de l’ordinateur est contacter pour vous aider à trouver vos précieux métrages. 
+La disponibilité instantanée de ces métadonnées accroît la productivité des utilisateurs de façon exponentielle. Il est intéressant de savoir que votre fille figure sur une photo, mais il est beaucoup plus utile de pouvoir trouver la photo d’elle avec sa grand-mère. Cela permet de personnaliser l’utilisation d’un ordinateur et de la rendre plus vivante. Comme si une personne située dans l’ordinateur vous aidait à retrouver vos souvenirs les plus précieux. 
 
-Depuis des décennies, la solution pour la recherche rapide sur Windows a été l’indexeur, et dans la mise à jour Creators il a été mis à jour pour prendre en charge ces nouveaux scénarios. Les applications sont désormais en mesure de baliser les fichiers avec des propriétés supplémentaires au-delà de celles qui sont extraites par le système. Ces propriétés sont traitées comme des citoyens de première classe  
+Depuis des décennies, la solution de recherche rapide sous Windows a été l'indexeur, et dans la mise à jour de Creators Update, celui-ci a été mis à jour pour prendre en charge ces nouveaux scénarios. Les applications sont maintenant capables d’étiqueter les fichiers avec des propriétés supplémentaires en plus de celles qui sont extraites par le système. Ces propriétés sont traitées comme des citoyens de première classe  
 
-## <a name="windows-properties"></a>Propriétés de Windows 
-Le [système de propriétés de Windows](https://docs.microsoft.com/windows/desktop/properties/windows-properties-system) a été un élément essentiel de l’interaction avec les fichiers depuis des années. Il permet aux applications de lire les propriétés des fichiers sans avoir à comprendre les mécanismes internes de tous les différents formats de fichiers ou un fichier peut être dans des langues. Tout cela est abstrait, pour vous en tant que développeur, il vous suffit poser pour obtenir la liste et spécifier l’ordre croissant ou décroissant.  
+## <a name="windows-properties"></a>Propriétés Windows 
+Le [système de propriétés Windows](https://docs.microsoft.com/windows/desktop/properties/windows-properties-system) a été un élément clé de l’interaction avec les fichiers pendant des années. Il permet aux applications de lire les propriétés des fichiers sans qu’il soit nécessaire de comprendre le fonctionnement interne des formats ou des langages dans lesquels les fichiers sont enregistrés. Tout ce qui est abstrait pour vous en tant que développeur, tout ce que vous avez à faire est de demander une liste et de spécifier si vous souhaitez que l’ordre soit croissant ou décroissant.  
 
-Le système de propriétés est étroitement avec l’indexeur de Windows : il lit toutes les propriétés des fichiers dans son étendue et les stocke. Lorsqu’une application demande pour obtenir la liste de tous les .docx dans un dossier à trier par date de modification, à l’exception de ceux créés par John Smith l’indexeur peut revenir ultérieurement la liste instantanément.  
+Le système de propriétés est étroitement associé à l'indexeur Windows - il lit toutes les propriétés des fichiers dans son étendue et les stocke. Plus tard, lorsqu’une application demande qu’une liste de tous les fichiers .docx d’un dossier soit triée par date de modification à l’exception de ceux écrits par John Smith, l’indexeur peut renvoyer la liste instantanément.  
 
-L’inconvénient de la façon dont ces systèmes fonctionnent ensemble est que l’indexeur utilisée pour exiger toutes les propriétés qu’il serait stocker sur un fichier soit disponible instantanément. Cela limitait il de savoir que sur les propriétés plus intéressantes qui prennent plus de temps à calculer dans la mesure où il est nécessaire de mal.  
+Dans ce mode de fonctionnement conjoint des systèmes, l’indexeur exigeait que toutes les propriétés qu’il stockait sur un fichier soient disponibles instantanément. En raison de cette contrainte, l’indexeur ne pouvait connaître des propriétés plus intéressantes dont le traitement demande plus de temps.  
 
-À l’aide de propriétés est cependant facile, l’application peut demander un ensemble trié de propriétés relatives à un fichier, comme utiliser une base de données, ou il peut transmettre une requête semblable à l’aide d’un moteur de recherche. L’indexeur traite la requête et retourner les résultats. Cela permettent aux développeurs la possibilité de combiner leurs filtres (par exemple uniquement des fichiers de jpg de recherche) avec la requête d’un utilisateur (nom de fichier en commençant par « bird »). 
+L’utilisation des propriétés est cependant aisée ; en effet, l’application peut soit demander un ensemble trié de propriétés relatives à un fichier, un peu comme si elle travaillait avec une base de données, soit envoyer une requête comme si elle utilisait un moteur de recherche. L’indexeur traite la requête et renvoie les résultats. Cela donne aux développeurs la possibilité de combiner leurs filtres (par exemple effectuer des recherches uniquement dans les fichiers jpg) avec la requête de l’utilisateur (nom de fichier commençant par « oiseau »). 
 
 ## <a name="supplemental-properties"></a>Propriétés supplémentaires 
 
-Propriétés supplémentaires se comportent comme des propriétés Windows régulières avec une différence très importante : ils ne vont pas à écrire lorsque le fichier est ajouté à l’indexeur. Une propriété supplémentaire doit être ajoutée par une autre application sur le système plus tard. Cela peut signifier deux minutes plus tard une fois terminée reconnaissance d’objet, ou il peut s’agir jours plus tard. 
+Les propriétés supplémentaires se comportent de la même manière que les propriétés Windows normales avec une différence notable : elles ne sont pas écrites lorsque le fichier est ajouté à l’indexeur. Une propriété supplémentaire doit être ajoutée ultérieurement par une autre application sur le système. Une fois la reconnaissance de l’objet terminée, l’opération peut avoir lieu ultérieurement, que ce soit deux minutes ou deux jours plus tard. 
 
-Une fois que la propriété est écrite il peut être recherché, filtrée, triée ou regroupée comme toute autre propriété sur le système. Ainsi il peut être utilisé dans les requêtes combinées avec d’autres propriétés sur le système, soit supplémentaires ou non. Cela vous donner la possibilité de combiner facilement des propriétés supplémentaires avec votre code de système de fichiers existant sans avoir à effectuer une réécriture.  
+Une fois écrite, la propriété peut être recherchée, filtrée, triée ou regroupée comme n’importe quelle autre propriété du système. Elle peut également être utilisée dans des requêtes combinées avec d’autres propriétés du système, qu’elles soient supplémentaires ou standards. Cela vous donne l’avantage de combiner aisément des propriétés supplémentaires avec le code de votre système de fichiers existant sans avoir à le réécrire.  
 
 ### <a name="example-scenarios"></a>Exemples de scénario 
 
-Il existe des milliers de propriétés différentes, que vous pouvez écrire à une propriété supplémentaire, mais il existe deux principaux scénarios pour lesquels ce didacticiel sera conserver en revenant à :  
+Il existe des milliers de propriétés différentes que vous pourriez écrire dans une propriété supplémentaire, mais, pour des raisons pratiques, ce didacticiel aborde les scénarios clés suivants :  
 
 #### <a name="tagging-pictures-with-extracted-properties"></a>Marquage des images avec les propriétés extraites 
-Ces applications peuvent utiliser un modèle formé ML pour extraire des fonctionnalités à partir d’une image que le système ne connaît comme objet dans l’image. Il peut ensuite prendre les objets qu’il identifie dans l’image et les ajouter au système de propriétés pour les recherches plus tard ou de regroupement.  
+Ces applications peuvent utiliser un modèle formé par ML afin d’extraire les caractéristiques d’une image inconnues du système, comme un objet dans l’image. Ce modèle peut alors récupérer les objets qu’il identifie dans l’image et les ajouter au système de propriétés afin de permettre aux utilisateurs d’effectuer des recherches sur ces critères ou de regrouper les objets ultérieurement.  
 
-#### <a name="tagging-files-with-an-app-specific-id"></a>Fichiers de balisage avec un ID d’application spécifique 
-De nombreuses applications de synchronisation de fichier utilisent leur propre ID unique pour effectuer le suivi des fichiers lors de leur déplacement entre le serveur et les appareils clients différents. Le client de synchronisation peut écrire ce code au système de propriétés sans incidence sur le fichier. Cet ID est maintenant disponible à l’application plus tard pour un accès rapide et disponibles pour toute autre application sur le système pour lire lors de la communication avec le fournisseur de synchronisation. 
+#### <a name="tagging-files-with-an-app-specific-id"></a>Marquer les fichiers avec un identifiant spécifique à l'application 
+De nombreuses applications de synchronisation de fichiers utilisent les ID uniques des fichiers pour suivre les déplacements de ceux-ci entre le serveur et divers appareils clients. Le client de synchronisation peut écrire cet ID dans le système de propriétés sans affecter le fichier. L’ID est mis à la disposition, à la fois, de l’application en vue d’un accès rapide si nécessaire, et des autres applications du système afin d’être lu dans le cadre de communications avec le fournisseur de synchronisation. 
 
-Il existe de nombreuses autres options pour l’utilisation des propriétés supplémentaires, mais ces deux types d’effectuer les bons exemples, car elles nécessitent une recherche rapide ou recherche, sont des éléments d’information, le système ne connaît pas et ne peut pas être ajouté au fichier lui-même.  
+L’utilisation de propriétés supplémentaires s’accompagne de nombreuses autres options, mais les deux exemples fournis sont satisfaisants, car ces informations sont rapidement identifiables dans le cadre d’une interrogation ou d’une recherche, elles sont inconnues du système et elles ne peuvent pas être ajoutées au fichier lui-même.  
 
-### <a name="using-supplemental-properties"></a>À l’aide des propriétés supplémentaires 
-En utilisant les propriétés supplémentaires est identique à l’écriture d’une propriété normale au système de fichiers. Si vous êtes à l’aise avec utilisation StorageFiles et propriétés, vous pouvez ignorer sur cela. Sinon, nous allons étudier un exemple rapide d’écriture d’une propriété unique dans un fichier, puis en lisant plus tard dans la même propriété.  
+### <a name="using-supplemental-properties"></a>Utilisation des propriétés supplémentaires 
+L'utilisation des propriétés supplémentaires est différente de l’écriture d’une propriété normale dans le système de fichiers. Si vous êtes familiarisé avec l'utilisation de StorageFiles et de ses propriétés, vous pouvez ignorer cette étape. Dans le cas contraire, abordons ensemble un court exemple d’écriture d’une propriété dans un fichier, puis lisons la même propriété ultérieurement.  
 
-### <a name="writing-supplemental-properties"></a>Écriture de propriétés supplémentaires  
-L’exemple sera modifier uniquement le premier fichier qu’il trouve, par souci de simplicité, mais généralement une application ajoute la propriété à chaque fichier qu’il trouve.  
+### <a name="writing-supplemental-properties"></a>Écriture de propriétés complémentaires  
+Dans l’exemple, par souci de simplicité, seul le premier fichier trouvé est modifié, mais généralement une application ajoute la propriété à chaque fichier qu’elle rencontre.  
 
 ```csharp
 // Only indexed jpg files are going to be used 
@@ -80,10 +80,10 @@ props.Add(new KeyValuePair<string, object>("System.Supplemental.ResourceId", fil
 await file.Properties.SavePropertiesAsync(props); 
 ```
 
-Il existe un contrôle important que si l’emplacement est indexé avant l’écriture d’une propriété. Dans cet exemple, nous utilisons les options de requête pour filtrer uniquement les emplacements indexés. Si ce n’est pas possible, vous pouvez vérifier l’état indexée du dossier parent (fichier. GetParentAsync(). GetIndexedStateAsync()). Dans les deux cas génèrera les mêmes résultats 
+Avant d’écrire une propriété, il est important de vérifier si l’emplacement est indexé. Dans cet exemple, nous utilisons les options de requête pour filtrer uniquement les emplacements indexés. Si ce n’est pas possible, vous pouvez vérifier l’état indexé du dossier parent (file.GetParentAsync().GetIndexedStateAsync()). Dans les deux cas, vous obtiendrez les mêmes résultats 
 
 ### <a name="reading-supplemental-properties"></a>Lecture des propriétés supplémentaires 
-Là encore, la lecture d’une propriété supplémentaire est identique à la lecture de toute autre propriété de système de fichiers. Dans cet exemple l’application sera simplement lire une propriété à partir d’un fichier pour qu'a déjà un objet StorageFile, mais il peut également lire les autres propriétés en même temps.  
+Encore une fois, la lecture d’une propriété supplémentaire est similaire à celle de toute autre propriété du système de fichiers. Dans cet exemple, l’application lit une seule propriété d’un fichier pour lequel elle possède déjà un StorageFile, mais elle peut aussi lire d’autres propriétés simultanément.  
 
 ```csharp
 // An object to hold the result from the indexer, and a string to store  
@@ -101,61 +101,61 @@ if (returnedProps.TryGetValue("System.Supplemental.ResourceId", out uncheckedRes
     } 
 } 
 ```
-Il existe une vérification de s’assurer que la valeur provenant du système de propriétés est ce que vous attendez. Bien qu’il est peu probable, il est possible de que la valeur a été effacée dans la mesure où votre application a l’écrit. Ce point sera abordé en détail ci-dessous.  
+Il est nécessaire de vérifier que la valeur extraite du système de propriétés correspond bien à la valeur attendue. Bien que cela soit peu probable, il est possible que la valeur ait été effacée depuis que votre application l’a écrite. Cette question sera abordée en détail ci-après.  
 
 ### <a name="implementation-notes"></a>Remarques d’implémentation 
-Il existe quelques choix subtiles qui ont été apportées à la conception des propriétés supplémentaires. Pour vous aider à votre implémentation, les sections suivantes ont été copiées à partir de la spécification de conception ingénierie pour la fonctionnalité. Ils fournissent un aperçu dans la façon dont la fonctionnalité a été conçue et pourquoi certaines limitations existent. 
+La conception des propriétés supplémentaires a fait l’objet de quelques choix judicieux. Pour vous aider dans votre implémentation, les sections suivantes ont été copiées à partir des spécifications de conception technique de la fonctionnalité. Elles vous donnent un aperçu sur la conception de la fonctionnalité et les raisons de l’existence de certaines limites définies. 
 
 ### <a name="supplemental-properties-available"></a>Propriétés supplémentaires disponibles 
-Il existe uniquement deux propriétés disponibles à utiliser pour les applications au départ : System.Supplemental.ResourceId et System.Supplemental.AlbumID. S’il est nécessaire pour plus d’informations qu’ils peuvent être ajoutés. L’ID de l’album est une chaîne à valeurs multiples qui peut être utilisée pour de nombreuses applications différentes et l’ID de ressource est utilisé comme un ID unique pour les fournisseurs de synchronisation de cloud. 
+Initialement, seules deux propriétés sont utilisables par les applications : System.Supplemental.ResourceId et System.Supplemental.AlbumID. Il est possible d’en ajouter d’autres si nécessaire. L’ID de l’album est une chaîne à valeurs multiples qui peut être utilisée pour un grand nombre d’applications différentes, tandis que le ResourceId est utilisé comme un ID unique pour les fournisseurs de synchronisation cloud. 
 
 #### <a name="file-system-support"></a>Prise en charge du système de fichiers 
-Dans la mesure où FAT mis en forme un support amovible est un scénario important, des propriétés supplémentaires prendra en charge des lecteurs FAT et NTFS. Cela garantit que les propriétés supplémentaires seront disponibles pour tous les utilisateurs, quel que soit leur type d’appareil.   
+Comme les supports amovibles formatés en FAT sont nombreux, les propriétés supplémentaires prennent en charge les lecteurs FAT et NTFS. Cela garantira que les propriétés supplémentaires seront disponibles pour tous les utilisateurs, quel que soit leur type d’appareil.   
 
 ### <a name="non-indexed-locations"></a>Emplacements non indexés  
-Sur le bureau, il existe un nombre de dossiers qui ne sont pas indexés. Dans ce cas, les applications peuvent toujours doivent avoir accès aux propriétés supplémentaires. Toutefois, les propriétés supplémentaires ne sont pas disponibles en dehors des emplacements indexés. Ce compromis a été apportée pour plusieurs raisons :  
+Sur le bureau, un certain nombre de dossiers ne sont pas indexés. Dans ces cas, les applications peuvent toujours avoir besoin d’accéder à des propriétés supplémentaires. Cependant, les propriétés supplémentaires ne sont pas disponibles à l’extérieur des emplacements indexés. Ce compromis a dû à plusieurs raisons :  
 
-- Toutes les bibliothèques et les emplacements de stockage cloud sont indexés par défaut.   
-  Ceux-ci sont les emplacements que les applications UWP pour être principalement à l’aide. Il existe des autres emplacements qui ne sont pas indexées (lecteurs de système ou réseau), mais ils sont moins fréquemment utilisées pour stocker les données de l’utilisateur. 
+- Les bibliothèques et les emplacements de stockage en ligne sont tous indexés par défaut.   
+  Il s’agit des emplacements que les applications UWP utilisent principalement. D’autres emplacements qui ne sont pas indexés (lecteurs système ou réseau), mais ils sont moins souvent utilisés pour stocker les données utilisateur. 
 
-- La conception de surface d’API de WinRT suppose que l’indexeur est presque toujours disponible.  
-  Par conséquent, l’indexeur est déjà disponible dans la plupart des emplacements sont intéressées par les applications. Si les utilisateurs sont trouvés pour stocker des données dans les emplacements non indexés, la solution la plus simple sera pour ajouter cet emplacement à l’index. Travail de propriétés puis supplémentaires, énumération seront plus rapide et applications seront en mesure de modifier le suivi de l’emplacement.
+- La conception de surface WinRT API suppose que l’indexeur est presque toujours disponible.  
+  Ainsi, l’indexeur est déjà disponible dans la plupart des emplacements qui intéressent les applications. Si les utilisateurs stockent des données dans des emplacements non indexés, la solution la plus simple sera d’ajouter cet emplacement à l'index. Grâce à l’implémentation des propriétés supplémentaires, l’énumération sera plus rapide, et les applications seront en mesure de changer le suivi de l’emplacement.
 
-### <a name="reading-or-writing-supplemental-properties-from-a-file-in-a-non-indexed-location"></a>Lecture ou écriture des propriétés supplémentaires à partir d’un fichier dans un emplacement Non-Indexed 
-Dans le cas où une application tente d’écrire une propriété supplémentaire dans un emplacement qui n’est pas actuellement indexé, puis l’appel d’API lèvera une exception. Il s’agit de la même exception est levée en tant que lorsque quelqu'un tente de mettre à jour le System.Music.AlbumArtist sur un fichier .docx (Args non valide).  
+### <a name="reading-or-writing-supplemental-properties-from-a-file-in-a-non-indexed-location"></a>Lecture ou écriture de propriétés supplémentaires à partir d’un fichier dans un emplacement non indexé 
+Dans le cas où une application tente d’écrire une propriété supplémentaire à un emplacement qui n’est pas encore indexé, l’appel d’API génère une exception. Ce sera la même exception qui sera levée, comme lorsque quelqu’un essaie de mettre à jour System.Music.AlbumArtist sur un fichier.docx (arguments non valides).  
  
-### <a name="change-notifications"></a>Les notifications de modifications :  
-Notifications de modification de la plateforme Windows universelle et le suivi des modifications continueront à fonctionner pour les propriétés supplémentaires, comme ils le font pour les propriétés standards. Cela permettra d’applications qui offrent aux données pour effectuer le suivi de toutes les modifications effectuées à un de leurs applications 
+### <a name="change-notifications"></a>Notifications de modifications :  
+Les notifications de modification et le suivi des modifications UWP continueront de fonctionner pour les propriétés supplémentaires comme ils le font pour les propriétés standards. Cela permettra aux applications qui fournissent des données de suivre toutes les modifications apportées à l’une d’elles 
   
-### <a name="invalidating-properties"></a>Invalider les propriétés :  
-Chaque fois qu’un fichier est modifié ou déplacé sur le système, les propriétés supplémentaires sur un fichier peuvent devenir obsolètes. Applications envoyant les données seront celles avec les informations sur si les données sont valides ou doivent être mis à jour le système propose uniquement les outils pour eux de savoir eux-mêmes.  
+### <a name="invalidating-properties"></a>Invalidation de propriétés :  
+Les propriétés supplémentaires d’un fichier peuvent devenir obsolètes lorsque celui-ci est modifié ou déplacé sur le système. Les applications qui pousseront les données seront chargées de fournir les informations sur la validité des données ou sur la nécessité de les mettre à jour de sorte que le système leur offrira simplement les outils nécessaires pour qu’elles puissent les comprendre elles-mêmes.  
  
-Dans le cas d’un fichier est modifié, mais pas déplacé ou renommé, toutes les propriétés supplémentaires sur le fichier reste inchangées. Les applications seront en mesure de s’inscrire aux notifications de modification via la surface d’API existante et de mettre à jour les propriétés en fonction des besoins. 
+Dans le cas où un fichier est modifié mais pas déplacé ou renommé, toutes les propriétés supplémentaires du fichier restent inchangées. Les applications pourront s’enregistrer afin de recevoir des notifications de modification via la surface d’API existante et de mettre à jour les propriétés si nécessaire. 
  
-Si le fichier est déplacé, les propriétés vont être invalidé. L’application sera recevoir les notifications de modification de soit supprimer, créer, renommé ou déplacé en fonction de l’exactement l’opération soit terminée. Une fois que l’application a reçu la notification de modification, il sera en mesure d’inspecter le fichier et mettre à jour les propriétés supplémentaires sur le fichier en fonction des besoins. 
+Si le fichier est déplacé, les propriétés seront invalidées. L’application recevra les notifications de modification de suppression, de création, de changement de nom ou de déplacement en fonction de la manière exacte dont l’opération est effectuée. Après avoir reçu la notification de modification, l’application peut inspecter le fichier et mettre à jour les propriétés supplémentaires de celui-ci si nécessaire. 
  
-### <a name="indexer-rebuilds"></a>Reconstructions d’indexeur  
-Parfois l’index du système doit être reconstruit pour l’une des diverses raisons : le schéma de propriété peut changer, l’utilisateur peut activer EDP ou simplement le fichier de base de données peut être endommagé. Dans ce cas, les propriétés supplémentaires ne seront pas préservées. Nous avons envisagé de travailler pour essayer de conserver les propriétés supplémentaires lors de l’index est reconstruit, mais il y avait deux principaux BLOQUEURS :  
+### <a name="indexer-rebuilds"></a>Reconstructions de l’indexeur  
+Il peut arriver que l’index du système doive être reconstruit pour un certain nombre de raisons : le schéma des propriétés peut changer, l'utilisateur peut activer la Protection des données d'entreprise ou simplement le fichier de base de données peut être endommagé. Dans ces cas, les propriétés supplémentaires doivent être effacées. Nous avons tout fait pour essayer de préserver les propriétés supplémentaires lors de la reconstruction de l'index, mais nous avons été confrontés à des contraintes majeures :  
 
 ### <a name="protecting-the-data"></a>Protection des données 
-Dans le cas où le fichier de base de données est endommagé, soit en erreurs disque ou des logiciels non autorisés, il sera impossible de protéger les données stockées dans ce fichier. Il devra être stockées ailleurs sur le système ou d’une certaine manière isolé du reste de la base de données. 
+Dans le cas où le fichier de base de données est endommagé, soit par des erreurs disque, soit par un logiciel malveillant, il est impossible de protéger les données qui ont été stockées dans ce fichier. Il faudrait que le fichier soit stocké ailleurs dans le système ou isolé du reste de la base de données. 
 
-Étant donné que nous faisons déjà beaucoup de travail pour que l’index moins susceptible d’être endommagée, cela permet de réduire le taux d’incidence de ce cas quand même.  
-Maintenir le mappage entre les fichiers et leurs métadonnées pendant la reconstruction 
+Nous nous efforçons d’écarter les risques d’endommagement de l’index car nous considérons que l’intégrité de celui-ci est essentielle.  
+Maintien de la correspondance entre les fichiers et leurs métadonnées pendant les reconstructions 
 
-Même si l’index peut protéger les données sur une reconstruction, il est impossible de savoir si le fichier a changé pendant la reconstruction de l’index. Les données qui protège l’index à partir du fichier peuvent être n’est plus valides si le fichier est modifié ou déplacé.  
+Bien que l’index puisse protéger les données dans le cadre d’une reconstruction, il est impossible de savoir si le fichier a été modifié pendant la reconstruction de l'index. Les données du fichier que l’index protège peuvent ne plus être valides si celui-ci est modifié ou déplacé.  
 Comportement 
 
-Dans le cas d’une reconstruction d’indexeur, toutes les données supplémentaires seront perdues. Applications sera chargées de remettre les données dans l’indexeur a été perdue pendant la reconstruction. Cela place une charge supplémentaire sur les applications, mais est jugé raisonnable dans la mesure où ils seront toujours maintenir l’état maître pour toutes leurs données.  
+Dans le cas d’une reconstruction de l’indexeur, toutes les données supplémentaires sont perdues. Les applications doivent replacer dans l’indexeur les données qui ont été perdues pendant la reconstruction. Bien que cela représente une charge supplémentaire pour les applications, celle-ci est jugée raisonnable car les applications garderont la maîtrise de toutes leurs données.  
 
-### <a name="recovering"></a>La récupération 
-Une fois que les applications ont remarqué que l’index est reconstruit, ils seront responsables de la mise à jour les propriétés supplémentaires à leur convenance.  
+### <a name="recovering"></a>Récupération 
+Après avoir identifié que l’index est en cours de reconstruction, les applications doivent mettre à jour les propriétés supplémentaires à leur convenance.  
 ### <a name="privacy"></a>Confidentialité 
-Certaines des propriétés qui peuvent être écrites dans les fichiers seront telles que les utilisateurs peuvent souhaiter pas les partager avec d’autres applications. Applications doivent être en mesure d’indiquer que les informations qu’ils écrivent dans les propriétés va être privée soit leurs applications, partagées avec seulement quelques autres applications ou publiques à chaque application sur le système.  
+Les utilisateurs peuvent ne pas vouloir partager certaines propriétés avec d’autres applications en raison de la nature de celles-ci. Les applications doivent être en mesure d’indiquer que les informations qu’elles écrivent dans les propriétés seront privées (accessibles par elles uniquement), partagées avec seulement quelques autres applications ou publiques pour chaque application du système.  
 
-Bien qu’il s’agit potentiellement une fonctionnalité intéressante pour certains des premiers de la fonctionnalité, ils pensent que l’obtention des propriétés publiques toujours va ajouter un grand nombre de fonctionnalités à la conception. Par conséquent, cette fonctionnalité est marquée comme une agréable d’avoir, et nous devons continuer à créer la fonctionnalité sans prise en charge pour masquer les valeurs si nécessaire. Ajout d’ultérieurement s’ouvre davantage de scénarios, il est donc important de prendre en compte dans les conceptions.  
+Bien qu’il s’agisse d’une fonctionnalité potentiellement intéressante pour certains des utilisateurs précoces de la fonctionnalité, ceux-ci estiment que la récupération de propriétés publiques donnera encore de la valeur à la conception. C’est pourquoi nous devrions continuer à construire la fonctionnalité sans support pour masquer les valeurs si nécessaire. Son ajout ultérieur ouvre d’autres possibilités dont il est important de tenir compte dans toutes les conceptions.  
 
 ## <a name="conclusions"></a>Conclusions 
-C’est tout, les propriétés supplémentaires sont un moyen simple pour stocker les propriétés de fichier plus dans le système. Leur utilisation est bien sûr facultative, mais elle peut octroyer à votre application un avantage sur les autres applications qui ne sont pas en mesure de trier et de rechercher leurs données aussi rapidement. 
+Les propriétés supplémentaires permettent de stocker ainsi une quantité plus grande de propriétés de fichiers dans le système. Bien que facultative, leur utilisation peut donner à votre application un avantage sur d’autres applications qui ne sont pas en mesure de trier et de rechercher leurs données aussi rapidement. 
 
-Nous attendons de voir les applications à commencer à utiliser ces propriétés. Si vous avez des questions sur la manière dont l’utilisation l’en-tête faites-le nous savoir dans les commentaires ci-dessous 
+Nous sommes impatients que des applications commencent à utiliser ces propriétés. Si vous avez des questions sur l’utilisation de l'en-tête, veuillez nous en faire part dans les commentaires ci-dessous 
