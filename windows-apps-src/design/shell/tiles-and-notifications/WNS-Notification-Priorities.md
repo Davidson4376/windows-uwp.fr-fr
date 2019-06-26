@@ -5,12 +5,12 @@ ms.date: 01/10/2017
 ms.topic: article
 keywords: Windows 10, uwp, API WinRT, WNS
 localizationpriority: medium
-ms.openlocfilehash: 2719c3228c95075eb2a940d12b6c91049b67f524
-ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.openlocfilehash: f5c4b9f1db58a091dc4f9389888ad3739c4439e5
+ms.sourcegitcommit: b0edd3c09f931b9b62f9c2d17037fb58d826174f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58291787"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67349872"
 ---
 # <a name="wns-notification-priorities"></a>Priorités de Notification WNS
 En définissant la priorité d’une notification avec un en-tête simple pour WNS publier des messages, vous pouvez contrôler la façon dont les notifications sont remises dans les situations sensibles de la batterie.
@@ -41,7 +41,7 @@ Notez que de nombreuses applications auront des notifications d’une priorité 
 
 ## <a name="setting-the-priority"></a>Définition des priorités
 
-Définition des priorités sur la demande de notification s’effectue via un en-tête supplémentaire sur la requête POST, `X-WNS-PRIORITY`. Il s’agit d’un entier compris entre 0 et 3 qui mappe à une priorité : 
+Définition des priorités sur la demande de notification s’effectue via un en-tête supplémentaire sur la requête POST, `X-WNS-PRIORITY`. Il s’agit d’un entier compris entre 1 et 4 qui mappe à une priorité : 
 
 | Nom de la priorité | Valeur de X-WNS-priorité | La valeur par défaut pour : |
 |---------------|----------------------|------------------|

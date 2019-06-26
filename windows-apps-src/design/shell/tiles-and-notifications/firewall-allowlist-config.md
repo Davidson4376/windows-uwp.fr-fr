@@ -11,18 +11,20 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, WNS, service de notifications de windows, notification, windows, pare-feu, résolution des problèmes, l’adresse IP, le trafic, entreprise, réseau, IPv4, adresse IP virtuelle, nom de domaine complet, adresse IP publique
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ed4ad6ed828abda9d487ef96beca9b655c92421
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 23a9b11cd961e03217aba8ca3d1d988447a2f80b
+ms.sourcegitcommit: b0edd3c09f931b9b62f9c2d17037fb58d826174f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66366670"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67349857"
 ---
 # <a name="allowing-windows-notification-traffic-through-enterprise-firewalls"></a>Autoriser le trafic de Notification de Windows à travers des pare-feu d’entreprise
 
 ## <a name="background"></a>Arrière-plan
 De nombreuses entreprises utilisent des pare-feu pour bloquer le trafic réseau indésirable ; Malheureusement, cela peut également bloquer les choses importantes comme les communications de Service de Notification Windows. Cela signifie que toutes les notifications envoyées via WNS seront supprimées. Pour éviter ce problème, les administrateurs réseau peuvent ajouter la liste des canaux WNS approuvées à leur liste d’exemption pour autoriser le trafic WNS à franchir le pare-feu. Vous trouverez ci-dessous plus d’informations sur la façon et les éléments à ajouter. 
 
+> [!Note] 
+À compter du 24/6/2019, les clients Windows **ne le faites pas** prise en charge des serveurs proxy, la connexion à WNS doit être une connexion directe.
 
 ## <a name="what-information-should-be-added-to-the-allowlist"></a>Quelles informations doivent être ajoutées à l’allowlist
 Ci-dessous est une liste qui contient les noms de domaine complets, les adresses IP virtuelles, ainsi que les IP plages d’adresses utilisées par le Service de Notification Windows. 
