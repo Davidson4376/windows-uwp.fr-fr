@@ -1,56 +1,56 @@
 ---
 ms.assetid: 3a17e682-40be-41b4-8bd3-fbf0b15259d6
 title: Créer une application « Hello World » (JS)
-description: Ce didacticiel vous apprend à utiliser JavaScript et HTML pour créer une simple &\#0034 ; Hello, world &\#0034 ; application qui cible la plateforme Windows universelle (UWP) sur Windows 10.
+description: Ce didacticiel vous explique comment utiliser JavaScript et HTML pour créer une simple application &\#0034;Hello, world&\#0034; ciblant la plateforme Windows universelle (UWP) sur Windows 10.
 ms.date: 03/06/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c5b99c95167940c1ae51dbe96a3e43dc6fb0af34
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.openlocfilehash: 682a69726b20be52a3217f49bed4947b8b621230
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57620424"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64564502"
 ---
 # <a name="create-a-hello-world-app-js"></a>Créer une application « Hello World » (JS)
 
-Ce didacticiel vous apprend à utiliser JavaScript et HTML pour créer un simple « Hello, world » application qui cible la plateforme Windows universelle (UWP) sur Windows 10. Avec un seul projet dans Microsoft Visual Studio, vous pouvez créer une application qui s’exécute sur n’importe quel appareil Windows 10.
+Ce didacticiel vous explique comment utiliser JavaScript et HTML pour créer une simple application « Hello World » ciblant la plateforme Windows universelle (UWP) sur Windows 10. Dans Microsoft Visual Studio, un seul projet vous permet de générer une application qui s’exécute sur n’importe quel appareil Windows 10.
 
 > [!NOTE]
-> Ce didacticiel utilise Visual Studio Community 2017. Si vous utilisez une autre version de Visual Studio, son aspect peut vous sembler légèrement différent.
+> Ce didacticiel utilise Visual Studio Community 2017. Si vous utilisez une autre version de Visual Studio, son aspect peut vous sembler légèrement différent.
 
 
 Vous allez apprendre à effectuer les opérations suivantes :
 
--   Créer un nouveau **Visual Studio 2017** projet qui cible **Windows 10** et **UWP**.
--   ajouter du contenu HTML et JavaScript ;
+-   créer un projet **Visual Studio 10** qui cible **Windows 10** et la **plateforme Windows universelle (UWP)** ;
+-   ajouter du contenu HTML et JavaScript ;
 -   exécuter le projet sur l’ordinateur local dans Visual Studio.
 
 ## <a name="before-you-start"></a>Avant de commencer...
 
--   [Qu’est-ce qu’une application UWP ?](universal-application-platform-guide.md).
--   Pour suivre ce didacticiel, vous avez besoin de Windows 10 et Visual Studio 2017. [Se préparer](get-set-up.md).
+-   [Qu’est-ce qu’une application UWP ?](universal-application-platform-guide.md)
+-   Pour suivre ce didacticiel, vous avez besoin de Windows 10 et de Visual Studio. [Se préparer](get-set-up.md).
 -   Nous partons également du principe que vous utilisez la disposition de fenêtre par défaut de Visual Studio. Si vous modifiez la disposition par défaut, vous pouvez la réinitialiser dans le menu **Fenêtre** en choisissant la commande **Rétablir la disposition de fenêtre**.
 
-## <a name="step-1-create-a-new-project-in-visual-studio"></a>Étape 1 : Créer un nouveau projet dans Visual Studio.
+## <a name="step-1-create-a-new-project-in-visual-studio"></a>Étape 1 : Créer un projet dans Visual Studio.
 
-1.  Lancez Visual Studio 2017.
+1.  Ouvrez Visual Studio.
 
 2.  À partir du menu **Fichier**, sélectionnez **Nouveau &gt; Projet...** pour ouvrir la boîte de dialogue *Nouveau projet*.
 
 3.  Dans la liste de modèles de gauche, ouvrez **Installés > Modèles > JavaScript**, puis choisissez **Windows universel** pour afficher la liste des modèles de projet UWP.
 
-    (Si aucun modèle universel n’apparaît, c’est qu’il vous manque les composants permettant de créer des applications UWP. Vous pouvez répéter la procédure d’installation et ajouter la prise en charge UWP en cliquant sur **Ouvrir le programme d'installation de Visual Studio** dans la boîte de dialogue *Nouveau projet*. Voir [Préparation](get-set-up.md)
+    (Si aucun modèle universel n’apparaît, c’est qu’il vous manque les composants permettant de créer des applications UWP. Vous pouvez répéter la procédure d’installation et ajouter la prise en charge UWP en cliquant sur **Ouvrir le programme d’installation de Visual Studio** dans la boîte de dialogue *Nouveau projet*. Voir [Préparation](get-set-up.md)
 
-4.  Choisissez le modèle **Application vide (Windows universel)**, puis entrez « HelloWorld » comme **Nom**. Sélectionnez **OK**.
+4.  Choisissez le modèle **Application vide (Windows universel)** , puis entrez « HelloWorld » comme **Nom**. Sélectionnez **OK**.
 
     ![Fenêtre Nouveau projet](images/win10-js-01.png)
 
 > [!NOTE]
-> Si vous utilisez Visual Studio pour la première fois, il est possible que la boîte de dialogue Paramètres s'affiche et vous demande d’activer le **Mode développeur**. Le mode développeur est un paramètre qui permet d'accéder à certaines fonctionnalités, telles que l’autorisation d’exécuter des applications directement plutôt qu’uniquement à partir du Windows Store. Pour plus d’informations, consultez [Activer votre appareil pour le développement](enable-your-device-for-development.md). Pour continuer avec ce guide, sélectionnez le **Mode développeur**, cliquez sur **Oui** et fermez la boîte de dialogue.
+> Si vous utilisez Visual Studio pour la première fois, il est possible que la boîte de dialogue Paramètres s’affiche et vous demande d’activer le **Mode développeur**. Le mode développeur est un paramètre qui permet d’accéder à certaines fonctionnalités, telles que l’autorisation d’exécuter des applications directement plutôt qu’uniquement à partir du Store. Pour plus d’informations, consultez [Activer votre appareil pour le développement](enable-your-device-for-development.md). Pour continuer avec ce guide, sélectionnez le **Mode développeur**, cliquez sur **Oui** et fermez la boîte de dialogue.
 
- ![Boîte de dialogue d'activation du mode développeur](images/win10-cs-00.png)
+ ![Boîte de dialogue d’activation du mode développeur](images/win10-cs-00.png)
 
 5.  La boîte de dialogue Version cible/Version minimale s’affiche. Les paramètres par défaut étant appropriés pour ce didacticiel, sélectionnez **OK** pour créer le projet.
 
@@ -65,9 +65,9 @@ Même si le modèle **Application vide (Windows universel)** est dépouillé, il
 
 ### <a name="whats-in-the-files"></a>Que contiennent les fichiers ?
 
-Pour afficher et modifier un fichier de votre projet, double-cliquez dessus dans l’**Explorateur de solutions**. 
+Pour afficher et modifier un fichier de votre projet, double-cliquez dessus dans l’**Explorateur de solutions**.
 
-*default.CSS*
+*default.css*
 
 -  Feuille de style par défaut utilisée par l’application.
 
@@ -75,18 +75,18 @@ Pour afficher et modifier un fichier de votre projet, double-cliquez dessus dans
 
 - Fichier JavaScript par défaut. Il est référencé dans le fichier index.html.
 
-*index.HTML*
+*index.html*
 
-- Page de l’application web qui se charge et s'affiche lors du lancement de l’application.
+- Page de l’application web qui se charge et s’affiche lors du lancement de l’application.
 
-*Un ensemble d’images de logo*
+*Ensemble d’images de logo*
 -   Assets/Square150x150Logo.scale-200.png représente votre application dans le menu Démarrer.
--   Assets/StoreLogo.png représente votre application dans le Microsoft Store.
+-   Assets/StoreLogo.png représente votre application dans le Microsoft Store.
 -   Assets/SplashScreen.scale-200.png est l’écran de démarrage qui s’affiche quand votre application démarre.
 
-## <a name="step-2-adding-a-button"></a>Étape 2 : Ajout d’un bouton
+## <a name="step-2-adding-a-button"></a>Étape 2 : Ajouter un bouton
 
-Cliquez sur *index.html* pour le sélectionner dans l’éditeur et remplacez le code HTML qu’il contient par :
+Cliquez sur *index.html* pour le sélectionner dans l’éditeur et remplacez le code HTML qu’il contient par :
 
 ```html
 <!DOCTYPE html>
@@ -107,16 +107,16 @@ Cliquez sur *index.html* pour le sélectionner dans l’éditeur et remplacez le
 </html>
 ```
 
-Il doit se présenter comme suit :
+Il doit se présenter comme suit :
 
  ![Code HTML du projet](images/win10-js-03.png)
 
-Ce code HTML fait référence au fichier *main.js* qui contiendra notre code JavaScript. Il ajoute une seule ligne de texte et un bouton unique dans le corps de la page web. Un *ID* est attribué au bouton afin que le code JavaScript puissent le référencer.
+Ce code HTML fait référence au fichier *main.js* qui contiendra notre code JavaScript. Il ajoute une seule ligne de texte et un bouton unique dans le corps de la page web. Un *ID* est attribué au bouton afin que le code JavaScript puisse le référencer.
 
 
-## <a name="step-3-adding-some-javascript"></a>Étape 3 : Ajout du code JavaScript
+## <a name="step-3-adding-some-javascript"></a>Étape 3 : Ajout de code JavaScript
 
-Nous allons maintenant ajouter le code JavaScript. Cliquez sur *main.js* pour le sélectionner et ajoutez les éléments suivants :
+Nous allons maintenant ajouter le code JavaScript. Cliquez sur *main.js* pour le sélectionner, et ajoutez les éléments suivants :
 
 ```javascript
 // Your code here!
@@ -135,18 +135,18 @@ function sayHello() {
 
 ```
 
-Il doit se présenter comme suit :
+Il doit se présenter comme suit :
 
  ![Code JavaScript du projet](images/win10-js-04.png)
 
-Ce code JavaScript déclare deux fonctions. La fonction *window.onload* est appelée automatiquement lorsque le fichier *index.html* s’affiche. Il trouve le bouton (à l’aide de l’ID que nous avons déclaré) et ajoute un gestionnaire onclick : la méthode qui sera appelée lorsque l’utilisateur cliquera sur le bouton.
+Ce code JavaScript déclare deux fonctions. La fonction *window.onload* est appelée automatiquement lorsque le fichier *index.html* s’affiche. Il trouve le bouton (à l’aide de l’ID que nous avons déclaré) et ajoute un gestionnaire onclick : la méthode qui sera appelée lorsque l’utilisateur cliquera sur le bouton.
 
-La deuxième fonction, *sayHello()*, crée et affiche une boîte de dialogue. Elle est très similaire à la fonction *Alert()* que vous connaissez peut-être d'un précédent développement JavaScript.
+La deuxième fonction, *sayHello()* , crée et affiche une boîte de dialogue. Elle ressemble beaucoup à la fonction *Alert()* que vous connaissez peut-être d’un précédent développement JavaScript.
 
 
-## <a name="step-4-run-the-app"></a>Étape 4 : Exécutez l’application !
+## <a name="step-4-run-the-app"></a>Étape 4 : Exécuter l’application.
 
-Vous pouvez maintenant exécuter l’application en appuyant sur F5. L’application se charge, la page web s’affiche. Cliquez sur le bouton et la boîte de dialogue s’ouvre.
+Vous pouvez maintenant exécuter l’application en appuyant sur F5. L’application se charge, la page web s’affiche. Cliquez sur le bouton : la boîte de dialogue s’ouvre.
 
  ![Exécution du projet](images/win10-js-05.png)
 
@@ -155,9 +155,7 @@ Vous pouvez maintenant exécuter l’application en appuyant sur F5. L’applica
 ## <a name="summary"></a>Résumé
 
 
-Félicitations, vous avez créé une application JavaScript pour Windows 10 et la plateforme Windows universelle. Cet exemple est ridiculement simple, mais vous pouvez désormais commencer à ajouter vos bibliothèques et infrastructures JavaScript préférées pour créer votre propre application. Comme il s'agit d'une application UWP, vous pouvez la publier dans le Windows Store. Pour obtenir un exemple d’ajout d’infrastructures tierces, consultez les projets suivants :
+Félicitations ! Vous venez de créer une application JavaScript pour Windows 10 et UWP. Cet exemple est ridiculement simple, mais vous pouvez désormais commencer à ajouter vos bibliothèques et infrastructures JavaScript préférées pour créer votre propre application. Comme il s’agit d’une application UWP, vous pouvez la publier dans le Store. Pour obtenir un exemple d’ajout d’infrastructures tierces, consultez les projets suivants :
 
-* [Une UWP 2D simple jeu pour le Microsoft Store, écrite en JavaScript et CreateJS](get-started-tutorial-game-js2d.md)
-* [Une jeu pour le Microsoft Store, écrite en JavaScript et threeJS UWP 3D](get-started-tutorial-game-js3d.md)
-
-
+* [Jeu UWP 2D simple pour le Microsoft Store, écrit en JavaScript et CreateJS](get-started-tutorial-game-js2d.md)
+* [Jeu UWP 3D pour le Microsoft Store, écrit en JavaScript et threeJS](get-started-tutorial-game-js3d.md)

@@ -7,18 +7,18 @@ keywords: windows 10, uwp
 ms.assetid: f384ca56-f2b2-4793-b251-f7f5735376bb
 ms.localizationpriority: medium
 ms.openlocfilehash: 0629201b695f6df6f7f3e2084a73d72b10b82be5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57658634"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63813614"
 ---
 # <a name="application-development-for-windows-as-a-service"></a>Développement d’applications pour Windows en tant que service
 
 **S’applique à**
 -   Windows 10
 -   Windows 10 Mobile
--   Windows 10 IoT Core 
+-   Windows 10 IoT Standard 
 
 Dans l’environnement d’aujourd’hui, où les attentes des utilisateurs sont souvent déterminées par des expériences liées à des appareils spécifiques, les cycles de produit complets se mesurent en mois, plutôt qu’en années. En outre, de nouvelles versions doivent être rendues disponibles en permanence, dont le déploiement ne doit avoir qu’un impact minimal sur les utilisateurs. Microsoft a conçu Windows 10 pour répondre à ces exigences, en implémentant une nouvelle approche en termes d’innovation, de développement et de remise appelée [Windows en tant que service (WaaS)](https://docs.microsoft.com/windows/deployment/update/waas-overview). La clé de la mise en place de cycles de produit sensiblement plus courts tout en conservant des niveaux élevés de qualité est une approche innovante de la phase de test, centrée sur une communauté d’initiés, que Microsoft a implémentée pour Windows 10. Cette communauté d’initiés, appelés « Windows Insiders », compte des millions d’utilisateurs dans le monde entier. Les Windows Insiders qui décident de rejoindre la communauté testent de nombreuses builds tout au long du cycle d’un produit, et leurs commentaires apportent à Microsoft un retour d’expérience via une méthodologie itérative nommée distribution de version d’évaluation.
 
@@ -28,18 +28,18 @@ Les builds distribuées en tant que versions d’évaluation permettent à l’�
 
 Parallèlement au lancement de builds Insider Preview destinées aux Windows Insiders, Microsoft publie en permanence deux types de versions de Windows 10 destinées au grand public :
 
-**Mises à jour des fonctionnalités** installer les dernières fonctionnalités, les expériences et les fonctionnalités sur les appareils qui exécutent déjà Windows 10. Ces mises à jour contenant une copie complète de Windows, elles permettent également aux clients d’installer Windows 10 sur des appareils exécutant déjà Windows 7 ou Windows 8.1, ainsi que sur de nouveaux appareils sur lesquels aucun système d’exploitation n’est encore installé. Microsoft prévoit de publier des mises à jour semestrielle. 
+Les **mises à jour des fonctionnalités** installent les nouvelles fonctions, expériences et fonctionnalités sur des appareils exécutant déjà Windows 10. Ces mises à jour contenant une copie complète de Windows, elles permettent également aux clients d’installer Windows 10 sur des appareils exécutant déjà Windows 7 ou Windows 8.1, ainsi que sur de nouveaux appareils sur lesquels aucun système d’exploitation n’est encore installé. Microsoft prévoit de publier des mises à jour semestrielles. 
 
 Les **mises à jour qualité** contiennent les résolutions des problèmes de sécurité et d’autres résolutions de bogues importants. Elles sont fournies pour améliorer chaque fonctionnalité actuellement prise en charge, à une cadence d’une à plusieurs par mois. Microsoft continue à publier des mises à jour qualité le mardi (« Update Tuesday » ou « Patch Tuesday »). En outre, Microsoft peut publier des mises à jour qualité supplémentaires pour Windows 10 en dehors des mardis si nécessaire pour répondre aux besoins des clients.
 
-Au cours du développement de Windows 10, Microsoft a simplifié l’ingénierie et le cycle de publication des produits Windows afin de pouvoir fournir plus rapidement les fonctions, expériences et fonctionnalités souhaitées par les clients. Nous avons également créé de nouvelles façons de fournir et d’installer les mises à jour des fonctionnalités et les mises à jour qualité, qui simplifient les déploiements et la gestion en cours, élargissent la base des employés pouvant être tenus informés des dernières fonctionnalités et expériences de Windows, et réduisent le coût total de possession. Par conséquent, nous avons implémenté les nouvelles options de maintenance – appelées canal semi-annuel et Long-Term Servicing canal (LTSC) – qui fournissent des solutions pragmatiques pour conserver davantage de périphériques plus à jour dans les environnements d’entreprise qu’auparavant.
+Au cours du développement de Windows 10, Microsoft a simplifié l’ingénierie et le cycle de publication des produits Windows afin de pouvoir fournir plus rapidement les fonctions, expériences et fonctionnalités souhaitées par les clients. Nous avons également créé de nouvelles façons de fournir et d’installer les mises à jour des fonctionnalités et les mises à jour qualité, qui simplifient les déploiements et la gestion en cours, élargissent la base des employés pouvant être tenus informés des dernières fonctionnalités et expériences de Windows, et réduisent le coût total de possession. Nous avons donc implémenté de nouvelles options de maintenance (appelées Canal semi-annuel et Long-Term Servicing Channel (LTSC)) qui offrent des solutions pragmatiques permettant de maintenir plus d’appareils à jour dans les environnements d’entreprise qu’auparavant.
 
-Le tableau suivant décrit les différents canaux de maintenance et leurs attributs de clé.
+Le tableau ci-après décrit les différents canaux de maintenance et leurs principaux attributs.
 
 | Option de maintenance | Disponibilité de nouvelles mises à niveau de fonctionnalités pour installation | Durée de vie de maintenance | Principaux avantages | Éditions prises en charge |
 | --- | --- | --- | --- | --- |
-| Canal semi-annuel (ciblé) | Immédiatement après la première publication par Microsoft | 18 mois | Met les nouvelles fonctionnalités à la disposition des utilisateurs dès que possible | Famille, Professionnel, Éducation, Entreprise, Mobile, IoT Standard, Windows 10 IoT Standard Professionnel (IoT Standard Professionnel) |
-| Canal semi-annuel | Environ 4 mois après la première publication par Microsoft | 18 mois suivant quand tout d’abord publiées | Offre plus de temps pour tester les nouvelles mises à niveau de fonctionnalités avant le déploiement | Professionnel, Éducation, Entreprise, Mobile Entreprise, IoT Standard Professionnel |
+| Canal semi-annuel (ciblé) | Immédiatement après la première publication par Microsoft | 18 mois | Met les nouvelles fonctionnalités à la disposition des utilisateurs dès que possible | Famille, Professionnel, Éducation, Entreprise, Mobile, IoT Standard, Windows 10 IoT Standard Professionnel (IoT Standard Professionnel) |
+| Canal semi-annuel | Environ 4 mois après la première publication par Microsoft | 18 mois à compter de la première publication | Offre plus de temps pour tester les nouvelles mises à niveau de fonctionnalités avant le déploiement | Professionnel, Éducation, Entreprise, Mobile Entreprise, IoT Standard Professionnel |
 | Canal de maintenance à long terme (LTSC) | Immédiatement après la publication par Microsoft | 10 ans | Permet le déploiement à long terme de versions sélectionnées de Windows 10 dans des configurations impliquant peur de changement | Entreprise LTSB |
 
 Pour plus d’informations, voir [Options de maintenance de Windows 10 pour les mises à jour et les mises à niveau](https://docs.microsoft.com/windows/deployment/update/waas-overview#servicing-channels).
@@ -64,12 +64,12 @@ Les sections suivantes contiennent des informations supplémentaires sur les mes
 
 Nous comprenons que la compatibilité soit importante pour les développeurs. Les éditeurs de logiciels indépendants et les développeurs veulent s’assurer que leurs applications s’exécuteront comme prévu sur toutes les versions prises en charge du système d’exploitation Windows. L’investissement des consommateurs et des entreprises est essentiel ici : ils souhaitent s’assurer que les applications qu’ils ont payées continueront de fonctionner. Nous savons que la compatibilité est le principal critère motivant les décisions d’achat. Les applications qui sont écrites correctement en respectant les meilleures pratiques entraînent beaucoup moins d’évolution du code lorsqu’une nouvelle version de Windows est publiée et réduisent la fragmentation. Pour ces applications, l’investissement en termes d’ingénierie est réduit pour la maintenance, et le délai de commercialisation est plus court.
 
-À l’époque de Windows 7, la compatibilité était une approche extrêmement réactive. Dans Windows 8, nous avons commencé à examiner cela différemment, il était de travailler au sein de Windows pour vous assurer que la compatibilité en conception plutôt qu’une étape ultérieure. Windows 10 est la version du système d’exploitation relevant de la conception la plus compatible à ce jour. Voici quelques moyens clés qui nous ont permis d’atteindre cet objectif :
--   **Les données de télémétrie application**: Ceci nous permet de comprendre la popularité d’application dans l’écosystème Windows d’informer les tests de compatibilité.
--   **Les partenariats ISV**: Travailler directement avec des partenaires externes à leur fournir des données et aider à résoudre les problèmes que nos utilisateurs rencontrent.
--   **Révisions de conception, la détection en amont**: Partenaire avec fonctionnalité permet aux équipes de réduire le nombre de modifications avec rupture dans Windows. La vérification de la compatibilité est l’une des étapes que doivent effectuer nos équipes chargées des fonctionnalités.
--   **Communication**: Contrôle plus strict sur les modifications de l’API et des communications.
--   **Version d’évaluation et des commentaires d’une boucle**: Insiders de Windows reçoivent des builds récentes qui aident à améliorer notre capacité à rechercher les problèmes de compatibilité avant une build finale est envoyée à des clients. Ce processus de commentaires ne révèle pas seulement les bogues, il nous permet également de nous assurer que nous fournissons à nos clients les fonctionnalités qu’ils souhaitent.
+À l’époque de Windows 7, la compatibilité était une approche extrêmement réactive. Dans Windows 8, nous avons commencé à l’envisager différemment, en travaillant dans Windows pour nous assurer que la compatibilité tenait plus de la conception que d’un ajout ultérieur. Windows 10 est la version du système d’exploitation relevant de la conception la plus compatible à ce jour. Voici quelques moyens clés qui nous ont permis d’atteindre cet objectif :
+-   **Télémétrie applicative** : Elle nous permet de comprendre la popularité des applications dans l’écosystème Windows afin de fournir des informations sur les tests de compatibilité.
+-   **Partenariats avec des éditeurs de logiciels indépendants** : Nous collaborons directement avec des partenaires externes pour leur fournir des données et les aider à résoudre les problèmes rencontrés par nos utilisateurs.
+-   **Vérifications de la conception, détection en amont** : Nous travaillons en partenariat avec les équipes chargées des fonctionnalités pour réduire le nombre de modifications fondamentales dans Windows. La vérification de la compatibilité est l’une des étapes que doivent effectuer nos équipes chargées des fonctionnalités.
+-   **Communication** : Contrôle plus étroit des modifications des API et communication améliorée.
+-   **Distribution de version d’évaluation et système de remontée de l’information** : Les Windows Insiders reçoivent des builds avec version d’évaluation, qui nous aident à améliorer notre capacité à trouver les problèmes de compatibilité avant la publication d’une version finale. Ce processus de commentaires ne révèle pas seulement les bogues, il nous permet également de nous assurer que nous fournissons à nos clients les fonctionnalités qu’ils souhaitent.
 
 ## <a name="best-practices-for-app-compatibility"></a>Bonnes pratiques en matière de compatibilité des applications
 
@@ -79,7 +79,7 @@ Les sections suivantes contiennent certaines recommandations de Microsoft pour v
 
 ### <a name="windows-version-check"></a>Vérification de la version de Windows
 
-La version du système d’exploitation a été incrémentée pour passer à Windows 10. Cela signifie que le numéro de version interne a été remplacé par 10.0. Comme précédemment, nous faisons le maximum pour maintenir la compatibilité entre les applications et l’appareil après modification d’une version du système d’exploitation. Pour la plupart des catégories d’applications (sans les dépendances de noyau), la modification n’affecte pas négativement de fonctionnalités de l’application, et les applications existantes continueront de fonctionner correctement sur Windows 10.
+La version du système d’exploitation a été incrémentée pour passer à Windows 10. Cela signifie que le numéro de version interne a été remplacé par 10.0. Comme précédemment, nous faisons le maximum pour maintenir la compatibilité entre les applications et l’appareil après modification d’une version du système d’exploitation. Pour la plupart des catégories d’applications (sans dépendances vis-à-vis du noyau), cette modification n’a pas d’impact négatif sur les fonctionnalités des applications, et les applications existantes continuent de fonctionner parfaitement sur Windows 10.
 
 La manifestation de cette modification est propre à l’application. En d’autres termes, une application qui vérifie spécifiquement la version du système d’exploitation obtient un numéro de version supérieur, ce qui peut conduire aux situations suivantes :
 -   Les programmes d’installation des applications peuvent ne pas être en mesure d’installer les applications, ou les applications peuvent être dans l’impossibilité de démarrer.
@@ -100,11 +100,11 @@ Vos applications ne doivent pas appeler des API Windows non documentées ni dé
 
 ### <a name="develop-universal-windows-platform-uwp-and-centennial-apps"></a>Développer des applications Centennial et de plateforme Windows universelle (UWP)
 
-Nous encourageons tous les éditeurs d’applications Win32 indépendants à développer dorénavant des applications de [plateforme Windows universelle (UWP)](https://go.microsoft.com/fwlink/?LinkID=780560) et, plus spécifiquement, des applications [Centennial](https://go.microsoft.com/fwlink/?LinkID=780562). Les avantages sont nombreux à développer ces packages d’applications plutôt qu’à utiliser des programmes d’installation Win32 traditionnels. Les applications UWP sont également prises en charge dans les [Microsoft Store](https://go.microsoft.com/fwlink/?LinkID=780563), donc il est plus facile pour vous permettre de mettre à jour automatiquement, de vos utilisateurs vers une version cohérente en réduisant les coûts de prise en charge.
+Nous encourageons tous les éditeurs d’applications Win32 indépendants à développer dorénavant des applications de [plateforme Windows universelle (UWP)](https://go.microsoft.com/fwlink/?LinkID=780560) et, plus spécifiquement, des applications [Centennial](https://go.microsoft.com/fwlink/?LinkID=780562). Les avantages sont nombreux à développer ces packages d’applications plutôt qu’à utiliser des programmes d’installation Win32 traditionnels. Comme les applications UWP sont également prises en charge dans le [Microsoft Store](https://go.microsoft.com/fwlink/?LinkID=780563), il vous est plus facile de mettre à jour automatiquement les applications de vos utilisateurs vers une version cohérente, ce qui réduit vos coûts de support technique.
 
 Si vos types d’application Win32 ne fonctionnent pas avec le modèle Centennial, nous vous recommandons vivement d’utiliser le programme d’installation approprié et de vous assurer qu’il a été complètement testé. Un programme d’installation représente la première expérience de votre utilisateur ou de votre client avec votre application ; vous devez donc vous assurer de son bon fonctionnement. Il arrive trop souvent qu’il ne fonctionne pas correctement ou qu’il n’ait pas été complètement testé. Le [Kit de certification des applications Windows](https://go.microsoft.com/fwlink/?LinkID=780565) peut vous aider à tester l’installation et la désinstallation de votre application Win32. Il peut également vous permettre d’identifier l’utilisation d’API non documentées, ainsi que d’autres problèmes de base liés aux performances, avant vos utilisateurs.
 
-**Meilleures pratiques :**
+**Meilleures pratiques :**
 -   Utilisez des programmes d’installation qui fonctionnent pour les versions 32 bits et 64 bits de Windows.
 -   Concevez vos programmes d’installation pour qu’ils s’exécutent dans plusieurs scénarios (niveau de l’utilisateur ou de l’ordinateur).
 -   Conservez tous les composants redistribuables de Windows dans le package d’origine. Si vous réorganisez le package de ces composants, il se peut que le programme d’installation soit rompu.
@@ -116,10 +116,10 @@ La distribution de version d’évaluation du système d’exploitation Windows 
 
 Si votre application figure dans le Windows Store, vous pouvez distribuer une version d’évaluation de votre application par son intermédiaire, ce qui signifie que votre application pourra être installée par nos Windows Insiders. Les utilisateurs peuvent installer votre application et vous envoyer des commentaires préliminaires sur celle-ci avant que vous ne la publiiez à destination de la population. Les sections suivantes décrivent les étapes permettant de tester vos applications par rapport aux builds avec version d’évaluation de Windows.
 
-### <a name="step-1-become-a-windows-insider-and-participate-in-flighting"></a>Étape 1 : Devenir un initié de Windows et de participer à la version d’évaluation
+### <a name="step-1-become-a-windows-insider-and-participate-in-flighting"></a>Étape 1 : Devenez un Windows Insider et prenez part à la distribution de version d’évaluation
 Au titre de [Windows Insider](https://go.microsoft.com/fwlink/p/?LinkId=521639), vous pouvez nous aider à façonner l’avenir de Windows : vos commentaires nous aideront à améliorer les fonctions et fonctionnalités de la plateforme. Il s’agit d’une communauté active dans laquelle vous pouvez communiquer avec d’autres passionnés, rejoindre des forums, échanger des conseils et découvrir les prochains événements destinés uniquement aux Insiders.
 
-Étant donné que vous avez accès à afficher un aperçu des versions de Windows 10, Windows 10 Mobile et la dernière version du SDK de Windows et l’émulateur, vous avez tous les outils à votre disposition pour développer des applications de qualité et explorez les nouveautés de la plateforme Windows universelle et le Microsoft Store.
+Comme vous avez accès aux versions d’évaluation de Windows 10, de Windows 10 Mobile, et à la dernière version du SDK Windows et de l’émulateur, vous disposez de tous les outils nécessaires pour développer des applications réussies et explorer les nouveautés de la plateforme Windows universelle et du Microsoft Store.
 
 C’est là aussi une excellente occasion de créer du matériel remarquable, à l’aide des versions d’évaluation des kits de développement de matériel afin de pouvoir développer des pilotes universels pour Windows. Windows IoT Standard Insider Preview est également disponible sur les plateformes de développement IoT prises en charge pour que vous puissiez créer des solutions connectées fantastiques à l’aide de la plateforme Windows universelle.
 
@@ -131,24 +131,24 @@ Avant que vous ne deveniez un Windows Insider, notez que ce programme s’adres
 -   Savent ce qu’est un fichier ISO et comment l’utiliser.
 -   N’effectuent pas l’installation de ces logiciels sur leur ordinateur ou leur appareil qu’ils utilisent tous les jours.
 
-### <a name="step-2-test-your-scenarios"></a>Étape 2 : Tester vos scénarios
+### <a name="step-2-test-your-scenarios"></a>Étape 2 : Testez vos scénarios
 
 Une fois que vous avez procédé à une mise à jour vers une build avec version d’évaluation, vous pouvez commencer à tester l’application et à collecter des commentaires à l’aide des exemples de cas de test suivants. Pour la plupart de ces tests, veillez à utiliser des systèmes x86 et AMD64.
-**Test de la nouvelle installation :** Sur une nouvelle installation de Windows 10, assurez-vous que votre application est totalement fonctionnelle. Si votre application échoue à ce test et au test de mise à niveau, il est probable que le problème soit imputable à des modifications du système d’exploitation sous-jacent ou à des bogues dans l’application. Si, après un examen approfondi, il en ressort que le problème est dû à des modifications du système d’exploitation sous-jacent, veillez à utiliser le programme Windows Insider pour fournir des commentaires et collaborer sur des solutions.
+**Test de nouvelle installation :** Sur une nouvelle installation de Windows 10, assurez-vous que votre application est totalement fonctionnelle. Si votre application échoue à ce test et au test de mise à niveau, il est probable que le problème soit imputable à des modifications du système d’exploitation sous-jacent ou à des bogues dans l’application. Si, après un examen approfondi, il en ressort que le problème est dû à des modifications du système d’exploitation sous-jacent, veillez à utiliser le programme Windows Insider pour fournir des commentaires et collaborer sur des solutions.
 
-**Test de mise à niveau :** Vérifiez que votre application fonctionne après la mise à niveau d’une version de niveau inférieur de Windows (Windows 7 ou Windows 8.1) vers Windows 10. Votre application ne doit pas provoquer de restaurations pendant la mise à niveau et doit continuer de fonctionner comme prévu après celle-ci. Ce point est essentiel pour obtenir une mise à niveau parfaite.
+**Test de mise à niveau :** Vérifiez que votre application fonctionne après la mise à niveau d’une version de niveau inférieur de Windows (Windows 7 ou Windows 8.1) vers Windows 10. Votre application ne doit pas provoquer de restaurations pendant la mise à niveau et doit continuer de fonctionner comme prévu après celle-ci. Ce point est essentiel pour obtenir une mise à niveau parfaite.
 
-**Réinstallez le Test :** Vérifiez que les fonctionnalités de l’application peuvent être restaurées en la réinstallant une fois que vous avez mis à niveau le PC vers Windows 10 à partir d’un système d’exploitation de niveau inférieur. Si votre application a échoué au test de mise à niveau, et que vous n’êtes pas en mesure de restreindre la cause de ces problèmes, il est possible qu’une réinstallation puisse restaurer les fonctionnalités perdues. Un test de réinstallation réussi indique que certaines parties de l’application peuvent ne pas avoir été migrées vers Windows 10.
+**Test de réinstallation :** Vérifiez que les fonctionnalités de l’application peuvent être restaurées en la réinstallant une fois que vous avez mis à niveau le PC vers Windows 10 à partir d’un système d’exploitation de niveau inférieur. Si votre application a échoué au test de mise à niveau, et que vous n’êtes pas en mesure de restreindre la cause de ces problèmes, il est possible qu’une réinstallation puisse restaurer les fonctionnalités perdues. Un test de réinstallation réussi indique que certaines parties de l’application peuvent ne pas avoir été migrées vers Windows 10.
 
-**Système d’exploitation\\Test de fonctionnalités d’appareil :** Vérifiez que votre application fonctionne comme prévu si elle s’appuie sur des fonctionnalités spécifiques dans le système d’exploitation. Les zones courantes à tester incluent les zones ci-dessous, souvent par rapport à une sélection de modèles de PC couramment utilisés afin d’assurer une large couverture :
+**Test des fonctionnalités du système d’exploitation\\de l’appareil :** Vérifiez que votre application fonctionne comme prévu si elle s’appuie sur des fonctionnalités spécifiques dans le système d’exploitation. Les zones courantes à tester incluent les zones ci-dessous, souvent par rapport à une sélection de modèles de PC couramment utilisés afin d’assurer une large couverture :
 -   Audio
 -   Fonctionnalités de périphérique USB (clavier, souris, clé USB, disque dur externe, etc.)
 -   Bluetooth
--   Graphiques\\afficher (plusieurs écrans, projection, rotation d’écran et ainsi de suite)
+-   Graphismes\\Affichage (multimoniteur, projection, rotation d’écran, etc.)
 -   Écran tactile (orientation, clavier visuel, stylet, mouvements, etc.)
--   Pavé tactile (gauche\\boutons droit, appuyez sur, faites défiler et ainsi de suite)
--   Pen (unique\\double tap, appuyez sur, suspension, gomme et ainsi de suite)
--   Impression\\analyse
+-   Pavé tactile (boutons droit\\gauche, appui, défilement, etc.)
+-   Stylet (appui simple\\double, appui prolongé, gomme, etc.)
+-   Impression\\Numérisation
 -   Capteurs (accéléromètre, fusion, etc.)
 -   Appareil photo
 
@@ -156,8 +156,8 @@ Une fois que vous avez procédé à une mise à jour vers une build avec version
 
 Faites-nous savoir comment votre application se comporte par rapport aux builds avec version d’évaluation. Lorsque vous découvrez des problèmes avec votre application au cours des tests, consignez les bogues via le portail du partenaire si vous y avez accès ou en contactant votre représentant Microsoft. Nous vous encourageons à nous transmettre ces informations afin que nous puissions générer une expérience de qualité pour nos utilisateurs.
 
-### <a name="step-4-register-on-ready-for-windows"></a>Étape 4 : Inscrire dans prêt pour Windows
+### <a name="step-4-register-on-ready-for-windows"></a>Étape 4 : Inscrivez-vous sur Ready for Windows
 Le site web [Ready for Windows](https://go.microsoft.com/fwlink/?LinkID=780580) est un répertoire de logiciels prenant en charge Windows 10. Il est destiné aux administrateurs informatiques d’entreprises et d’organisations du monde entier qui envisagent d’utiliser Windows 10 pour leurs déploiements. Les administrateurs informatiques peuvent consulter le site pour voir si les logiciels déployés dans leur entreprise sont pris en charge dans Windows 10.
 
 ## <a name="related-topics"></a>Rubriques connexes
-[Options pour les mises à niveau et mises à jour de maintenance de Windows 10](https://technet.microsoft.com/itpro/windows/manage/introduction-to-windows-10-servicing)
+[Options de maintenance de Windows 10 pour les mises à jour et les mises à niveau](https://technet.microsoft.com/itpro/windows/manage/introduction-to-windows-10-servicing)

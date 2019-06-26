@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a9d3b4b9b404ab2c0828ea302f0c564ae1c8e7b4
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66372782"
 ---
 # <a name="rssatom-feeds"></a>Flux RSS/Atom
@@ -44,7 +44,7 @@ L’isolement réseau permet à un développeur de définir pour chaque applicat
 
 L’isolement réseau affecte tous les éléments de classe des espaces de noms [**Windows.Web.Syndication**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication) et [**Windows.Web.AtomPub**](https://docs.microsoft.com/uwp/api/Windows.Web.AtomPub) qui essaient d’accéder au réseau. Windows applique activement l’isolement réseau. Un appel à un élément de classe de l’espace de noms **Windows.Web.Syndication** ou **Windows.Web.AtomPub** qui conduit à un accès réseau peut échouer en raison de l’isolement réseau si la fonctionnalité réseau appropriée n’a pas été activée.
 
-Les fonctionnalités réseau d’une application sont configurées dans le manifeste de l’application à la création de cette dernière. Fonctionnalités de réseau sont généralement ajoutées à l’aide de Microsoft Visual Studio 2015 lors du développement de l’application. Elles peuvent également être définies manuellement dans le fichier manifeste de l’application à l’aide d’un éditeur de texte.
+Les fonctionnalités réseau d’une application sont configurées dans le manifeste de l’application à la création de cette dernière. Les fonctionnalités réseau sont généralement ajoutées à l’aide de Microsoft Visual Studio 2015 lors du développement de l’application. Elles peuvent également être définies manuellement dans le fichier manifeste de l’application à l’aide d’un éditeur de texte.
 
 Pour plus d’informations sur l’isolement réseau et les fonctionnalités de réseau, voir la section « Fonctionnalités » dans la rubrique [Notions de base en matière de réseau](networking-basics.md).
 
@@ -56,7 +56,7 @@ Cette section montre comment récupérer et afficher un flux web à l’aide des
 
 Pour vous assurer que votre application UWP est prête à être utilisée en réseau, vous devez définir les fonctionnalités réseau nécessaires dans le fichier **Package.appxmanifest** du projet. Si votre application doit se connecter en qualité de client à des services distants sur Internet, la fonctionnalité **internetClient** est nécessaire. Pour plus d’informations, voir la section « Fonctionnalités » dans la rubrique [Notions de base en matière de réseau](networking-basics.md).
 
-**Récupération de contenu syndiqué à partir d’un flux web**
+**Récupération d’un contenu syndiqué dans un flux web**
 
 Nous allons maintenant examiner du code qui illustre comment extraire un flux puis afficher chaque élément qu’il contient. Avant de pouvoir configurer et envoyer la requête, nous allons définir quelques variables que nous utiliserons durant l’opération et initialiser une instance de [**SyndicationClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication.SyndicationClient), qui définit les méthodes et propriétés que nous utiliserons pour extraire et afficher le flux.
 

@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f9dba57d8e75ba105a2154be5add5b101a4a6aa4
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66369332"
 ---
 # <a name="files-and-folders-in-the-music-pictures-and-videos-libraries"></a>Fichiers et dossiers dans les bibliothèques de musique, d’images et de vidéos
@@ -19,10 +19,10 @@ Ajoutez les dossiers existants de musique, images ou vidéos dans les bibliothè
 
 Une bibliothèque est une collection virtuelle de dossiers, qui comprend un dossier connu par défaut, ainsi que d’autres dossiers que l’utilisateur a ajouté à la bibliothèque à l’aide de votre application ou d’une des applications intégrées. Par exemple, la bibliothèque d’images inclut le dossier connu d’images par défaut. L’utilisateur peut ajouter ou supprimer des dossiers dans la bibliothèque d’images à l’aide de votre application ou de l’application Photos intégrée.
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Conditions préalables
 
 
--   **Comprendre la programmation asynchrone pour les applications de plateforme universelle Windows (UWP)**
+-   **Comprendre la programmation asynchrone pour les applications pour la plateforme Windows universelle (UWP)**
 
     Pour apprendre à écrire des applications asynchrones en C# ou Visual Basic, voir [Appeler des API asynchrones en C# ou Visual Basic](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). Pour apprendre à écrire des applications asynchrones en C++, voir [Programmation asynchrone en C++](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
 
@@ -30,7 +30,7 @@ Une bibliothèque est une collection virtuelle de dossiers, qui comprend un doss
 
     Dans Visual Studio, ouvrez le fichier manifeste de l’application dans le concepteur du manifeste. Dans la page **Fonctionnalités**, sélectionnez les bibliothèques gérées par votre application.
 
-    -   **Bibliothèque musicale**
+    -   **Médiathèque**
     -   **Bibliothèque d’images**
     -   **Vidéothèque**
 
@@ -173,7 +173,7 @@ Sur les périphériques où l’appareil photo enregistre à la fois une image b
 
 Les dossiers Pellicule et Images enregistrées ne prennent pas en charge les requêtes profondes.
 
-**Ouverture d’une photo dans l’application qui capturée**
+**Ouverture d’une photo dans l’application qui l’a capturée**
 
 Si vous voulez laisser l’utilisateur rouvrir une photo dans l’application qui l’a capturée, vous pouvez enregistrer le **CreatorAppId** avec les métadonnées de la photo en utilisant du code similaire à celui de l’exemple suivant. Dans cet exemple, **testPhoto** est un [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile).
 

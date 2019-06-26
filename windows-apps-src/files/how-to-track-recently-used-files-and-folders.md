@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 97ad2485abab0bd4733699bc4ffcf29e17a22844
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66369444"
 ---
 # <a name="track-recently-used-files-and-folders"></a>Suivre les fichiers et dossiers récemment utilisés
@@ -25,11 +25,11 @@ Effectuez le suivi des fichiers auxquels l’utilisateur accède fréquemment en
 Les éléments récents de votre application sont représentés par la classe [**StorageItemMostRecentlyUsedList**](https://docs.microsoft.com/uwp/api/Windows.Storage.AccessCache.StorageItemMostRecentlyUsedList), que vous pouvez obtenir à partir de la propriété [**StorageApplicationPermissions.MostRecentlyUsedList**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageapplicationpermissions.mostrecentlyusedlist) statique. Les éléments récents sont stockés en tant qu’objets [**IStorageItem**](https://docs.microsoft.com/uwp/api/Windows.Storage.IStorageItem), ce qui signifie que des objets [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) (qui représentent des fichiers) et [**StorageFolder**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFolder) (qui représentent des dossiers) peuvent être ajoutés aux éléments récents.
 
 > [!NOTE]
-> Pour obtenir des exemples complets, consultez le [exemple de sélecteur de fichier](https://go.microsoft.com/fwlink/p/?linkid=619994) et [exemple d’accès de fichier](https://go.microsoft.com/fwlink/p/?linkid=619995).
+> Pour obtenir des exemples complets, reportez-vous à l’[exemple de sélecteur de fichiers](https://go.microsoft.com/fwlink/p/?linkid=619994) et à l’[exemple d’accès aux fichiers](https://go.microsoft.com/fwlink/p/?linkid=619995).
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Conditions préalables
 
--   **Comprendre la programmation asynchrone pour les applications de plateforme universelle Windows (UWP)**
+-   **Comprendre la programmation asynchrone pour les applications pour la plateforme Windows universelle (UWP)**
 
     Pour apprendre à écrire des applications asynchrones en C# ou Visual Basic, voir [Appeler des API asynchrones en C# ou Visual Basic](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). Pour apprendre à écrire des applications asynchrones en C++, voir [Programmation asynchrone en C++](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
 
@@ -52,10 +52,10 @@ Les éléments récents de votre application sont représentés par la classe [*
     string mruToken = mru.Add(file, "profile pic");
     ```
 
-    [**StorageItemMostRecentlyUsedList.Add** ](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.add) est surchargé. Dans l’exemple, nous utilisons [**Add(IStorageItem, String)** ](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.add) afin de pouvoir associer des métadonnées au fichier. La définition des métadonnées vous permet d’enregistrer la finalité de l’élément, par exemple, « image du profil ». Vous pouvez également ajouter le fichier à la liste Utilisés récemment sans métadonnées en appelant [**Add(IStorageItem)** ](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.add). Chaque fois que vous ajoutez un élément aux éléments récents, la méthode retourne une chaîne d’identification unique, ou jeton, qui est utilisée pour récupérer l’élément.
+    [**StorageItemMostRecentlyUsedList.Add**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.add) est surchargé. Dans l’exemple, nous utilisons [**Add(IStorageItem, String)** ](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.add) afin de pouvoir associer des métadonnées au fichier. La définition des métadonnées vous permet d’enregistrer la finalité de l’élément, par exemple, « image du profil ». Vous pouvez également ajouter le fichier à la liste Utilisés récemment sans métadonnées en appelant [**Add(IStorageItem)** ](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.add). Chaque fois que vous ajoutez un élément aux éléments récents, la méthode retourne une chaîne d’identification unique, ou jeton, qui est utilisée pour récupérer l’élément.
 
 > [!TIP]
-> Le jeton étant nécessaire pour récupérer un élément de la liste des fichiers utilisés récemment, il convient de le conserver quelque part. Pour plus d’informations sur les données d’application, consultez [Gestion des données d’application](https://docs.microsoft.com/previous-versions/windows/apps/hh465109(v=win.10)).
+> Le jeton étant nécessaire pour récupérer un élément de la liste Utilisés récemment, il convient de le conserver quelque part. Pour plus d’informations sur les données d’application, consultez [Gestion des données d’application](https://docs.microsoft.com/previous-versions/windows/apps/hh465109(v=win.10)).
 
 ## <a name="use-a-token-to-retrieve-an-item-from-the-mru"></a>Utiliser un jeton pour récupérer un élément de la liste des éléments récents
 

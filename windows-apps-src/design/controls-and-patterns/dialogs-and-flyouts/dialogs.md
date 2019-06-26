@@ -13,26 +13,26 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 1277d9089e900451ac4c537805079ff479f808fa
-ms.sourcegitcommit: f47620e72ff8127fae9b024c70ddced3a5c45d91
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66748445"
 ---
 # <a name="dialog-controls"></a>Contrôles de boîte de dialogue
 
-Les contrôles de boîte de dialogue sont des superpositions de l’interface utilisateur modales qui fournissent des informations contextuelles d’application. Ils bloquent les interactions avec la fenêtre de l’application jusqu'à ce qu’explicitement ignoré. Elles exigent souvent une forme d’action de la part de l’utilisateur.
+Les contrôles de boîtes de dialogue sont des superpositions d’interface utilisateur modales qui fournissent des informations contextuelles sur l’application. Ils bloquent les interactions avec la fenêtre de l’application jusqu’à ce qu’elles soient masquées explicitement. Elles exigent souvent une forme d’action de la part de l’utilisateur.
 
 ![Exemple de boîte de dialogue](../images/dialogs/dialog_RS2_delete_file.png)
 
 
-> **API importantes** : [Classe de ContentDialog](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)
+> **API importantes** : [Classe ContentDialog](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
 Utilisez les boîtes de dialogue pour notifier les utilisateurs d’informations importantes ou pour demander une confirmation ou des informations supplémentaires avant de pouvoir effectuer une action.
 
-Pour obtenir des recommandations sur quand utiliser une boîte de dialogue et quand utiliser un menu volant (un contrôle similaire), consultez [boîtes de dialogue et menus volants](index.md). 
+Pour savoir quand utiliser une boîte de dialogue ou un menu volant (contrôle similaire), consultez [Boîtes de dialogue et menus volants](index.md). 
 
 ## <a name="examples"></a>Exemples
 
@@ -61,11 +61,11 @@ Pour obtenir des recommandations sur quand utiliser une boîte de dialogue et qu
     -   Présentez le message, l’erreur ou la question bloquante aussi simplement que possible.
     -   Si vous indiquez un titre dans la boîte de dialogue, la zone de contenu doit fournir des détails supplémentaires ou clarifier la terminologie utilisée. Ne répétez pas le titre en utilisant une formulation légèrement différente.
 -   Au moins un bouton de boîte de dialogue doit apparaître.
-    -   Assurez-vous que votre boîte de dialogue dispose d’au moins un bouton correspondant à une action sans échec, non destructrice, par exemple : « D’accord ! », « Fermer » ou « Annuler ». Utilisez l’API CloseButton pour ajouter ce bouton.
-    -   Utilisez des réponses spécifiques au contenu ou à l’instruction principale, sous forme de texte de bouton. Par exemple, utilisez la question « Autorisez-vous NomApplication à accéder à votre emplacement ? », suivie des boutons Autoriser et Bloquer. Les réponses spécifiques peuvent être comprises plus rapidement, ce qui favorise une prise de décision efficace.
+    -   Assurez-vous que votre boîte de dialogue dispose d’au moins un bouton correspondant à une action sans échec, non destructrice, par exemple : « D’accord ! », « Fermer » ou « Annuler ». Utilisez l’API CloseButton pour ajouter ce bouton.
+    -   Utilisez des réponses spécifiques du contenu ou de l’instruction principale, sous forme de texte de bouton. Par exemple, utilisez la question « Autorisez-vous NomApplication à accéder à votre emplacement ? », suivie des boutons Autoriser et Bloquer. Les réponses spécifiques peuvent être comprises plus rapidement, ce qui favorise une prise de décision efficace.
     - Veillez à ce que le texte des boutons d’action soit concis. Les chaînes courtes permettent à l’utilisateur de choisir de manière sûre et rapide.
-    - En plus de l’action sans échec, non destructrice, vous pouvez éventuellement présenter à l’utilisateur un ou deux boutons d’action liés à l’instruction principale. Ces boutons d’action « faire » confirment le message principal de la boîte de dialogue. Utilisez les API PrimaryButton et SecondaryButton pour ajouter ces actions « faire ».
-    - Les boutons d’action « faire » doivent s’afficher à l’extrême gauche. L’action sans échec, non destructrice, doit s’afficher à l’extrême droite.
+    - En plus de l’action sans échec et non destructrice, vous pouvez éventuellement présenter à l’utilisateur un ou deux boutons d’action liés à l’instruction principale. Ces boutons d’action « faire » confirment le message principal de la boîte de dialogue. Utilisez les API PrimaryButton et SecondaryButton pour ajouter ces actions « faire ».
+    - Les boutons d’action « faire » doivent s’afficher à l’extrême gauche. L’action sans échec et non destructrice doit s’afficher à l’extrême droite.
     - Vous pouvez éventuellement choisir de différencier l’un des trois boutons comme bouton par défaut de la boîte de dialogue. Utilisez l’API DefaultButton pour différencier l’un des boutons.  
 -   N’utilisez pas de boîtes de dialogue pour les erreurs qui sont liées à un emplacement spécifique de la page, telles que les erreurs de validation (dans les champs de mot de passe, par exemple). Utilisez plutôt le canevas de l’application afin d’afficher les erreurs insérées.
 - Utilisez la [classe ContentDialog](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog) pour créer votre expérience de boîte de dialogue. N’utilisez pas l’API MessageDialog déconseillée.
@@ -119,7 +119,7 @@ private async void DisplayDeleteFileDialog()
 ```
 
 ## <a name="provide-a-safe-action"></a>Fournir une action sans échec
-Étant donné que les boîtes de dialogue bloquent les interactions des utilisateurs et dans la mesure où les boutons sont le principal mécanisme permettant aux utilisateurs d’ignorer la boîte de dialogue, assurez-vous que votre boîte de dialogue contient au moins un bouton « sans échec » et non destructeur, tel que « Fermer » ou « D’accord ! ». **Toutes les boîtes de dialogue doivent contenir au moins un bouton d’action sans échec pour fermer la boîte de dialogue.** Cela garantit que l’utilisateur peut fermer la boîte de dialogue en toute confiance, sans effectuer d’action.<br>![Une boîte de dialogue un bouton](../images/dialogs/dialog_RS2_one_button.png)
+Étant donné que les boîtes de dialogue bloquent les interactions des utilisateurs et dans la mesure où les boutons sont le principal mécanisme permettant aux utilisateurs d’ignorer la boîte de dialogue, assurez-vous que votre boîte de dialogue contient au moins un bouton « sans échec » et non destructeur, tel que « Fermer » ou « D’accord ! ». **Toutes les boîtes de dialogue doivent contenir au moins un bouton d’action sans échec permettant de fermer la boîte de dialogue.** Cela garantit que l’utilisateur peut fermer la boîte de dialogue en toute confiance, sans effectuer d’action.<br>![Une boîte de dialogue à un bouton](../images/dialogs/dialog_RS2_one_button.png)
 
 ```csharp
 private async void DisplayNoWifiDialog()
@@ -135,7 +135,7 @@ private async void DisplayNoWifiDialog()
 }
 ```
 
-Lorsque les boîtes de dialogue sont utilisées pour afficher une question bloquante, votre boîte de dialogue doit proposer à l’utilisateur des boutons d’action liés à la question. Le bouton « sans échec » et non destructeur peut s’accompagner d’un ou deux boutons d’action « faire ». Lorsque vous proposez plusieurs options à l’utilisateur, assurez-vous que les boutons expliquent clairement les actions sans échec « faire » et « ne pas faire » liées à la question proposée.
+Lorsque les boîtes de dialogue sont utilisées pour afficher une question bloquante, votre boîte de dialogue doit proposer à l’utilisateur des boutons d’action liés à la question. Le bouton « sans échec » et non destructeur peut s’accompagner d’un ou deux boutons d’action « faire ». Lorsque vous proposez plusieurs options à l’utilisateur, assurez-vous que les boutons expliquent clairement les actions sans échec « faire » et « ne pas faire » liées à la question proposée.
 
 ![Une boîte de dialogue à deux boutons](../images/dialogs/dialog_RS2_two_button.png)
 
@@ -154,7 +154,7 @@ private async void DisplayLocationPromptDialog()
 }
 ```
 
-Les boîtes de dialogue à trois boutons sont utilisées lorsque vous proposez à l’utilisateur deux actions « faire » et une action « ne pas faire ». Les boîtes de dialogue à trois boutons doivent être utilisées avec parcimonie, en distinguant clairement l’action secondaire et l’action sans échec/fermer.
+Les boîtes de dialogue à trois boutons sont utilisées lorsque vous proposez à l’utilisateur deux actions « faire » et une action « ne pas faire ». Les boîtes de dialogue à trois boutons doivent être utilisées avec parcimonie, en distinguant clairement l’action secondaire et l’action sans échec/fermer.
 
 ![Une boîte de dialogue à trois boutons](../images/dialogs/dialog_RS2_three_button.png)
 
@@ -177,29 +177,29 @@ private async void DisplaySubscribeDialog()
 ## <a name="the-three-dialog-buttons"></a>Les trois boutons de la boîte de dialogue
 ContentDialog présente trois différents types de boutons que vous pouvez utiliser pour créer une expérience de boîte de dialogue.
 
-- **CloseButton** - Requis - Représente l’action sans échec, non destructrice, qui permet à l’utilisateur de fermer la boîte de dialogue. S’affiche comme bouton à l’extrême droite.
-- **PrimaryButton** - Facultatif - Représente la première action « faire ». S’affiche comme bouton à l’extrême gauche.
-- **SecondaryButton** - Facultatif - Représente la seconde action « faire ». S’affiche comme bouton du milieu.
+- **CloseButton** - Requis - Représente l’action sans échec et non destructrice qui permet à l’utilisateur de fermer la boîte de dialogue. S’affiche comme bouton à l’extrême droite.
+- **PrimaryButton** - Facultatif - Représente la première action « faire ». S’affiche comme bouton à l’extrême gauche.
+- **SecondaryButton** - Facultatif - Représente la seconde action « faire ». S’affiche comme bouton du milieu.
 
-L’utilisation des boutons intégrés positionne les boutons de manière adéquate. Assurez-vous qu’ils répondent aux événements de clavier, que la zone de commande reste visible même lorsque le clavier visuel clavier est affiché, et qu’ils offrent à la boîte de dialogue une apparence cohérente avec les autres boîtes de dialogue.
+L’utilisation des boutons intégrés positionne les boutons de manière adéquate. Assurez-vous qu’ils répondent aux événements de clavier, que la zone de commande reste visible même lorsque le clavier visuel est affiché, et qu’ils offrent à la boîte de dialogue une apparence cohérente avec les autres boîtes de dialogue.
 
 ### <a name="closebutton"></a>CloseButton
-Chaque boîte de dialogue doit contenir un bouton d’action sans échec, non destructeur, qui permet à l’utilisateur de fermer la boîte de dialogue en toute confiance.
+Chaque boîte de dialogue doit contenir un bouton d’action sans échec et non destructeur qui permet à l’utilisateur de fermer la boîte de dialogue en toute confiance.
 
-Utilisez l’API ContentDialog.CloseButton pour créer ce bouton. Cela vous permet de créer l’expérience utilisateur adéquate pour toutes les entrées, notamment souris, clavier, tactile et boîtier de commande. Cette expérience se produit dans les cas suivants :
+Utilisez l’API ContentDialog.CloseButton pour créer ce bouton. Cela vous permet de créer l’expérience utilisateur adéquate pour toutes les entrées, notamment souris, clavier, interaction tactile et boîtier de commande. Cette expérience se produit dans les cas suivants :
 <ol>
     <li>L’utilisateur clique ou appuie sur le CloseButton </li>
     <li>L’utilisateur appuie sur le bouton Précédent du système </li>
     <li>L’utilisateur appuie sur la touche ÉCHAP du clavier </li>
-    <li>L’utilisateur appuie sur bouton B du boîtier de commande </li>
+    <li>L’utilisateur appuie sur bouton B du boîtier de commande </li>
 </ol>
 
 Quand l’utilisateur clique sur un bouton de la boîte de dialogue, la méthode [ShowAsync](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog.ShowAsync) retourne un [ContentDialogResult](/uwp/api/Windows.UI.Xaml.Controls.ContentDialogResult) pour indiquer le bouton sur lequel l’utilisateur clique. Le fait d’appuyer sur le CloseButton renvoie ContentDialogResult.None.
 
 ### <a name="primarybutton-and-secondarybutton"></a>PrimaryButton et SecondaryButton
-Outre le CloseButton, vous pouvez éventuellement proposer à l’utilisateur un ou deux boutons d’action liés à l’instruction principale.
-Tirez parti de PrimaryButton pour la première action « faire » et SecondaryButton pour la seconde action « faire ». Dans les boîtes de dialogue à trois boutons, le PrimaryButton représente généralement l’action « faire » positive, tandis que le SecondaryButton représente généralement une action « faire » neutre ou secondaire.
-Par exemple, une application peut inviter l’utilisateur à s’abonner à un service. En tant qu’action « faire » affirmative, le PrimaryButton intégrerait le texte S’abonner, tandis qu’en tant qu’action « faire » neutre, le SecondaryButton intégrerait le texte Essayer. Le CloseButton permettrait à l’utilisateur d’annuler sans effectuer l’une ou l’autre des actions.
+Outre CloseButton, vous pouvez éventuellement proposer à l’utilisateur un ou deux boutons d’action liés à l’instruction principale.
+Tirez parti de PrimaryButton pour la première action « faire » et SecondaryButton pour la seconde action « faire ». Dans les boîtes de dialogue à trois boutons, le PrimaryButton représente généralement l’action « faire » positive, tandis que le SecondaryButton représente généralement une action « faire » neutre ou secondaire.
+Par exemple, une application peut inviter l’utilisateur à s’abonner à un service. En tant qu’action « faire » affirmative, PrimaryButton intégrerait le texte S’abonner, alors qu’en tant qu’action « faire » neutre, le SecondaryButton intégrerait le texte Essayer. CloseButton permettrait à l’utilisateur d’annuler sans effectuer l’une ou l’autre des actions.
 
 Lorsque l’utilisateur clique sur le PrimaryButton, la méthode [ShowAsync](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog.ShowAsync) renvoie ContentDialogResult.Primary.
 Lorsque l’utilisateur clique sur le SecondaryButton, la méthode [ShowAsync](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog.ShowAsync) renvoie ContentDialogResult.Secondary.
@@ -207,12 +207,12 @@ Lorsque l’utilisateur clique sur le SecondaryButton, la méthode [ShowAsync](/
 ![Une boîte de dialogue à trois boutons](../images/dialogs/dialog_RS2_three_button.png)
 
 ### <a name="defaultbutton"></a>DefaultButton
-Vous pouvez éventuellement choisir de différencier l’un des trois boutons comme bouton par défaut. La spécification d’un bouton par défaut déclenche les événements suivants :
+Vous pouvez éventuellement choisir de différencier l’un des trois boutons comme bouton par défaut. La spécification d’un bouton par défaut déclenche les événements suivants :
 - Le bouton reçoit le traitement visuel du bouton d’accent
 - Le bouton répond automatiquement à la touche ENTRÉE
-    - Lorsque l’utilisateur appuie sur la touche ENTRÉE du clavier, le gestionnaire d’événements de clic associé au bouton par défaut se déclenche et le ContentDialogResult renvoie la valeur associée au bouton par défaut
-    - Si l’utilisateur a placé le focus du clavier sur un contrôle qui gère la touche ENTRÉE, le bouton par défaut ne répondra pas aux appuis sur ENTRÉE
-- Le bouton recevra automatiquement le focus lors de l’ouverture de la boîte de dialogue, sauf si le contenu de la boîte de dialogue contient une interface utilisateur pouvant être active
+    - Lorsque l’utilisateur appuie sur la touche ENTRÉE du clavier, le gestionnaire d’événements de clic associé au bouton par défaut se déclenche et ContentDialogResult renvoie la valeur associée au bouton par défaut
+    - Si l’utilisateur a placé le focus du clavier sur un contrôle qui gère la touche ENTRÉE, le bouton par défaut ne répond pas aux appuis sur ENTRÉE
+- Le bouton reçoit automatiquement le focus lors de l’ouverture de la boîte de dialogue, sauf si le contenu de la boîte de dialogue contient une interface utilisateur pouvant être active
 
 Utilisez la propriété ContentDialog.DefaultButton pour spécifier le bouton par défaut. Par défaut, aucun bouton par défaut n’est défini.
 
@@ -248,15 +248,15 @@ Une boîte de dialogue de confirmation classique comprend deux boutons : un bou
     </li>
 </ul>
 
-> Certaines plateformes placent le bouton d’affirmation à droite, et non à gauche. Pourquoi est-il conseillé de le placer sur la gauche ?  Si vous partons du principe que la plupart des utilisateurs sont droitiers et qu’ils tiennent leur téléphone de la main droite, ils trouveront certainement plus confortable d’appuyer sur le bouton lorsqu’il se trouve à gauche, autrement dit dans le prolongement du pouce. Les boutons placés à droite de l’écran obligent l’utilisateur à rentrer leur pouce, ce qui représente une position moins confortable.
+> Certaines plateformes placent le bouton d’affirmation à droite, et non à gauche. Pourquoi est-il conseillé de le placer sur la gauche ?  Si vous partons du principe que la plupart des utilisateurs sont droitiers et qu’ils tiennent leur téléphone de la main droite, ils trouveront certainement plus confortable d’appuyer sur le bouton lorsqu’il se trouve à gauche, autrement dit dans le prolongement du pouce. Les boutons placés à droite de l’écran obligent l’utilisateur à enfoncer son pouce, ce qui est moins confortable.
 
-## <a name="contentdialog-in-appwindow-or-xaml-islands"></a>ContentDialog dans AppWindow ou Xaml (îles)
+## <a name="contentdialog-in-appwindow-or-xaml-islands"></a>ContentDialog dans AppWindow ou Xaml Islands
 
-> REMARQUE : Cette section s’applique uniquement aux applications qui ciblent Windows 10, version 1903 ou version ultérieure. AppWindow et îles de XAML ne sont pas disponibles dans les versions antérieures. Pour plus d’informations sur le contrôle de version, consultez [Version des applications flexibles](../../../debug-test-perf/version-adaptive-apps.md).
+> REMARQUE : Cette section concerne les applications ciblant Windows 10, version 1903 ou versions ultérieures. AppWindow et XAML Islands ne sont pas disponibles dans les versions antérieures. Pour plus d’informations sur les versions, voir [Applications adaptatives de version](../../../debug-test-perf/version-adaptive-apps.md).
 
-Par défaut, le contenu de boîtes de dialogue affichent modal relatif à la racine [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview). Lorsque vous utilisez ContentDialog à l’intérieur de l’un [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) ou un [îlot de XAML](/apps/desktop/modernize/xaml-islands), vous devez définir manuellement le [XamlRoot](/uwp/api/windows.ui.xaml.uielement.xamlroot) sur la boîte de dialogue à la racine de l’hôte XAML.
+Par défaut, le contenu de boîtes de dialogue s’affiche de manière modale, en fonction de la racine [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview). Lorsque vous utilisez ContentDialog dans [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) ou [XAML Island](/apps/desktop/modernize/xaml-islands), vous devez définir manuellement [XamlRoot](/uwp/api/windows.ui.xaml.uielement.xamlroot) dans la boîte de dialogue à la racine de l’hôte XAML.
 
-Pour ce faire, définissez XamlRoot propriété du ContentDialog sur le même XamlRoot en tant qu’élément déjà dans le AppWindow ou XAML (île), comme illustré ici.
+Pour ce faire, définissez la propriété XamlRoot de ContentDialog sur le même XamlRoot en tant qu’élément déjà présent dans AppWindow ou XAML Islands, comme illustré ici.
 
 ```csharp
 private async void DisplayNoWifiDialog()
@@ -280,14 +280,14 @@ private async void DisplayNoWifiDialog()
 ```
 
 > [!WARNING]
-> Il peut être seulement un ContentDialog ouvrir par thread à la fois. Essayez d’ouvrir deux ContentDialogs lève une exception, même s’ils essaient d’ouvrir dans AppWindows distinct.
+> Un seul ContentDialog peut être ouvert à la fois sur un même thread. Toute tentative d’ouverture de deux ContentDialog lève une exception, même si la tentative d’ouverture se fait dans des AppWindows distinctes.
 
 ## <a name="get-the-sample-code"></a>Obtenir l’exemple de code
 
-- [Exemples de la Galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) - Affichez tous les contrôles XAML dans un format interactif.
+- [Exemple de Galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) : tous les contrôles XAML dans un format interactif.
 
 ## <a name="related-articles"></a>Articles connexes
 - [Info-bulles](../tooltips.md)
-- [Menus et le menu contextuel](../menus.md)
-- [Classe de menu volant](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
-- [Classe de ContentDialog](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)
+- [Menus et menus contextuels](../menus.md)
+- [Classe Flyout](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
+- [Classe ContentDialog](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)

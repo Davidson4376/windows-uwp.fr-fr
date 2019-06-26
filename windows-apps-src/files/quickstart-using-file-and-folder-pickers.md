@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5d45c907215f21977b0a59acede5a8314d6ed168
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66369326"
 ---
 # <a name="open-files-and-folders-with-a-picker"></a>Ouvrir des fichiers et dossiers à l’aide d’un sélecteur
@@ -24,12 +24,12 @@ ms.locfileid: "66369326"
 Accédez aux fichiers et dossiers en permettant à l’utilisateur d’interagir avec ceux-ci à l’aide d’un sélecteur. Vous pouvez utiliser les classes [**FileOpenPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker) et [**FileSavePicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileSavePicker) pour accéder à des fichiers et la classe [**FolderPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FolderPicker) pour accéder à un dossier.
 
 > [!NOTE]
-> Pour obtenir un exemple complet, consultez la [exemple de sélecteur de fichier](https://go.microsoft.com/fwlink/p/?linkid=619994).
+> Pour obtenir un exemple complet, consultez l’[exemple de sélecteur de fichiers](https://go.microsoft.com/fwlink/p/?linkid=619994).
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Conditions préalables
 
 
--   **Comprendre la programmation asynchrone pour les applications de plateforme universelle Windows (UWP)**
+-   **Comprendre la programmation asynchrone pour les applications pour la plateforme Windows universelle (UWP)**
 
     Pour apprendre à écrire des applications asynchrones en C# ou Visual Basic, voir [Appeler des API asynchrones en C# ou Visual Basic](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). Pour apprendre à écrire des applications asynchrones en C++, voir [Programmation asynchrone en C++](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
 
@@ -91,7 +91,7 @@ else
 
 Utiliser un sélecteur de fichiers consiste à créer et à personnaliser un objet sélecteur de fichiers, puis à afficher le sélecteur à l'utilisateur afin de lui permettre de sélectionner un ou plusieurs éléments.
 
-1.  **Créer et personnaliser un FileOpenPicker**
+1.  **Créer et personnaliser un sélecteur FileOpenPicker**
 
     ```cs
     var picker = new Windows.Storage.Pickers.FileOpenPicker();
@@ -103,17 +103,17 @@ Utiliser un sélecteur de fichiers consiste à créer et à personnaliser un obj
     ```
     Définissez des propriétés sur l’objet sélecteur de fichiers qui sont pertinentes pour vos utilisateurs et votre application.
 
-    Cet exemple crée un affichage visuellement, des images dans un emplacement pratique l’utilisateur peut être sélectionnés en définissant trois propriétés : [**ViewMode**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.viewmode), [ **SuggestedStartLocation**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.suggestedstartlocation), et [ **FileTypeFilter**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.filetypefilter).
+    Cet exemple crée un riche éventail visuel d’images dans un emplacement approprié où l’utilisateur peut opérer une sélection en définissant trois propriétés : [**ViewMode**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.viewmode), [**SuggestedStartLocation**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.suggestedstartlocation) et [**FileTypeFilter**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.filetypefilter).
 
-    -   Paramètre [ **ViewMode** ](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.viewmode) à la [ **PickerViewMode** ](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.PickerViewMode) **miniature** valeur enum crée un environnement riche affichage visuel à l’aide d’images miniatures pour représenter les fichiers dans le sélecteur de fichiers. Procédez de la sorte pour sélectionner des fichiers visuels tels que des images ou des vidéos. Autrement, utilisez [**PickerViewMode.List**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.PickerViewMode). Une application de messagerie hypothétique offrant des fonctionnalités permettant de **joindre une image ou une vidéo** et de **joindre un document** définirait la propriété **ViewMode** appropriée pour la fonctionnalité avant d’afficher le sélecteur de fichiers.
+    -   La définition de [**ViewMode**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.viewmode) sur la valeur enum [**Thumbnail**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.PickerViewMode) **PickerViewMode** crée un riche éventail visuel au travers d’images miniatures pour représenter les fichiers dans le sélecteur de fichiers. Procédez de la sorte pour sélectionner des fichiers visuels tels que des images ou des vidéos. Autrement, utilisez [**PickerViewMode.List**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.PickerViewMode). Une application de messagerie hypothétique offrant des fonctionnalités permettant de **joindre une image ou une vidéo** et de **joindre un document** définirait la propriété **ViewMode** appropriée pour la fonctionnalité avant d’afficher le sélecteur de fichiers.
 
     -   Définir [**SuggestedStartLocation**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.suggestedstartlocation) sur Images avec [**PickerLocationId.PicturesLibrary**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.PickerLocationId) permet à l’utilisateur de démarrer à un emplacement où il est susceptible de trouver des images. Définissez **SuggestedStartLocation** sur un emplacement approprié pour le type de fichier sélectionné, par exemple, Musique, Images, Vidéos ou Documents. À partir de l’emplacement de départ, l’utilisateur peut accéder à d’autres emplacements.
 
     -   L’utilisation du [**FileTypeFilter**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.filetypefilter) pour spécifier les types de fichiers permet à l’utilisateur de se concentrer sur la sélection de fichiers appropriés. Si vous souhaitez remplacer d’anciens types de fichiers dans le **FileTypeFilter** par de nouvelles entrées, vous pouvez utiliser la méthode [**ReplaceAll**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileextensionvector.replaceall) à la place de la méthode [**Add**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileextensionvector.append).
 
-2.  **Afficher la classe FileOpenPicker**
+2.  **Afficher FileOpenPicker**
 
-    - **Pour sélectionner un seul fichier**
+    - **Pour sélectionner un fichier**
 
         ```cs
         Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();
@@ -173,4 +173,4 @@ else
 ```
 
 > [!TIP]
-> Chaque fois que votre application accède à un fichier ou à un dossier par le biais d’un sélecteur, ajoutez-le aux listes [**FutureAccessList**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageapplicationpermissions.futureaccesslist) ou [**MostRecentlyUsedList**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageapplicationpermissions.mostrecentlyusedlist) de votre application pour en garder la trace. Pour plus d’informations sur l’utilisation de ces listes, consultez [Comment suivre les fichiers et les dossiers récemment utilisés](how-to-track-recently-used-files-and-folders.md).
+> Chaque fois que votre application accède à un fichier ou à un dossier par le biais d’un sélecteur, ajoutez ce dernier aux listes [**FutureAccessList**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageapplicationpermissions.futureaccesslist) ou [**MostRecentlyUsedList**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageapplicationpermissions.mostrecentlyusedlist) de votre application pour en garder la trace. Pour plus d’informations sur l’utilisation de ces listes, consultez [Comment suivre les fichiers et les dossiers récemment utilisés](how-to-track-recently-used-files-and-folders.md).

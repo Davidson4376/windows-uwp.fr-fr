@@ -1,83 +1,77 @@
 ---
 ms.assetid: A77DA371-C0FE-4FAE-9E77-ADC3C9314EDF
 title: Créer votre première application
-description: Créer une application de plateforme universelle Windows (UWP) pour Windows 10 à l’aide de votre langage de programmation préféré.
+description: Créez une application de plateforme Windows universelle (UWP) pour Windows 10 à l’aide de votre langage de programmation favori.
 ms.date: 01/25/2017
 ms.topic: article
-keywords: windows 10, uwp, première application, c#, c++, JavaScript
+keywords: windows 10, uwp, première application, c#, c++, JavaScript
 ms.localizationpriority: medium
-ms.openlocfilehash: 4627a3cfd2bad5f3c9740a1345b5e020ce7981fc
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.openlocfilehash: 9e42f627624cb559a84b7da73958f7aa93b0fee2
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57657134"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64564550"
 ---
 # <a name="create-your-first-app"></a>Créer votre première application
 
-Bienvenue sur la [plateforme UWP](universal-application-platform-guide.md) ! Ces didacticiels visent à vous aider à créer votre première application UWP dans le langage de votre choix.
+Bienvenue sur la [plateforme UWP](universal-application-platform-guide.md) ! Ces didacticiels visent à vous aider à créer votre première application UWP dans le langage de votre choix.
 
-Pour commencer, choisissez le langage de votre choix.
+Pour commencer, choisissez un langage.
 
 ## <a name="c-and-xaml"></a>C# et XAML
 
 Exploitez vos compétences .NET, WPF ou Silverlight pour créer des application en XAML avec C#.
 
-* [Créer un dossier « Hello, world » à l’aide de XAML avec des applicationsC#](create-a-hello-world-app-xaml-universal.md)
+* [Créer une application « Hello World » en utilisant XAML avec C#](create-a-hello-world-app-xaml-universal.md)
 
-Si vous souhaitez découvrir les notions de base, ou simplement vous rafraîchir la mémoire, consultez ces ressources :
+Si vous souhaitez découvrir les notions de base ou simplement vous rafraîchir la mémoire, consultez ces ressources :
 
-* [C#Principes de base pour les débutants](https://go.microsoft.com/fwlink/?linkid=850801)
+* [Principes de base de C# pour les néophytes](https://go.microsoft.com/fwlink/?linkid=850801)
 * [Principes de base de VB pour les néophytes](https://go.microsoft.com/fwlink/?linkid=850802)
 * [Guide pour le développeur vers Windows 10](https://go.microsoft.com/fwlink/?linkid=850804)
-* [Académie virtuelle Microsoft](https://www.microsoftvirtualacademy.com/)
 
-Si vous souhaitez consulter des ressources un peu plus amusantes que « Hello, World ! », essayez ces didacticiels :
+Si vous souhaitez consulter des ressources un peu plus amusantes que « Hello, World! », essayez ces didacticiels :
 
-* [XAML et la liaison de données dans UWP](xaml-basics-intro.md)
-* [Une UWP 2D simple jeu pour le Microsoft Store, écrite en C# et MonoGame](get-started-tutorial-game-mg2d.md)
+* [XAML et liaison de données dans UWP](xaml-basics-intro.md)
+* [Un jeu UWP simple en 2D pour le Microsoft Store, écrit en C# et MonoGame](get-started-tutorial-game-mg2d.md)
 
 
-## <a name="visualc-component-extensions-ccx-and-xaml"></a>Extensions de composant Visual C++ (C++ / c++ / CX) et XAML
+## <a name="visualc-component-extensions-ccx-and-xaml"></a>Extensions des composants Visual C++ (C++/CX) et XAML
 
-Tirer parti de vos compétences en programmation C++ pour créer des applications à l’aide des extensions du composant Visual C++ (C++ / c++ / CX) avec XAML.
+Exploitez votre savoir-faire en matière de programmation C++ pour créer des applications à l’aide d’extensions de composants Visual C++ (C++/CX) avec XAML.
 
-* [Créer un dossier « Hello, world » application à l’aide de XAML avec C / c++ / CX](create-a-basic-windows-10-app-in-cpp.md)
+* [Créer une application « Hello World » en utilisant XAML avec C++/CX](create-a-basic-windows-10-app-in-cpp.md)
 
-En savoir plus sur C++ :
+En savoir plus sur C++ :
 
-* [C++ : Un langage d’usage général et de la bibliothèque de démarrage rapide](https://www.microsoftvirtualacademy.com/training-courses/c-a-general-purpose-language-and-library-jump-start)
-* [Académie virtuelle Microsoft](https://go.microsoft.com/fwlink/p/?LinkID=389916)
+* [C++ pour les applications UWP](https://docs.microsoft.com/cpp/cppcx/universal-windows-apps-cpp?view=vs-2019)
+* [C++ pour les applications de bureau](https://docs.microsoft.com/cpp/windows/desktop-applications-visual-cpp?view=vs-2019)
 
-Si vous souhaitez consulter des ressources un peu plus amusantes que « Hello, World ! », essayez ces didacticiels :
+Si vous souhaitez consulter des ressources un peu plus amusantes que « Hello, World! », essayez ces didacticiels :
 
-* [XAML et la liaison de données dans UWP](xaml-basics-intro.md)
+* [XAML et liaison de données dans UWP](xaml-basics-intro.md)
 
 ## <a name="javascript-and-html"></a>JavaScript et HTML
 
 Valorisez vos compétences web afin de développer des applications à l’aide de HTML5, CSS3 et JavaScript.
 
-* [Créer un dossier « Hello, world » application à l’aide de HTML et JavaScript](create-a-hello-world-app-js-uwp.md)
+* [Créer une application « Hello World » en utilisant HTML et JavaScript](create-a-hello-world-app-js-uwp.md)
 
-Étendez vos compétences en JavaScript et HTML au-delà d’UWP pour créer des applications web ou explorez la réalité virtuelle sur le web avec WebVR
+Étendez vos compétences en JavaScript et HTML au-delà d’UWP pour créer des applications web, ou explorez la réalité virtuelle sur le web avec WebVR
 
-* [Documentation du développeur Microsoft Edge](https://docs.microsoft.com/microsoft-edge/)
+* [Documentation pour développeurs Microsoft Edge](https://docs.microsoft.com/microsoft-edge/)
 * [Utiliser WebVR avec Microsoft Edge](https://docs.microsoft.com/en-us/microsoft-edge/webvr/)
 
 Les applications web peuvent être facilement empaquetées dans l’infrastructure UWP en tant qu’applications web hébergées et promues sur le Microsoft Store.
 
 * [Applications web hébergées](https://developer.microsoft.com/windows/bridges/hosted-web-apps)
-* [Convertir votre application web à une application UWP](../porting/hwa-create-windows.md)
+* [Convertir votre application web en application UWP](../porting/hwa-create-windows.md)
 
-Vous avez besoin d’actualiser vos compétences web ?
-
-* [Principes de base de JavaScript pour les néophytes](https://www.microsoftvirtualacademy.com/training-courses/javascript-fundamentals-for-absolute-beginners)
-* [HTML5 et CSS3 des principes de base pour les débutants](https://www.microsoftvirtualacademy.com/training-courses/html5-css3-fundamentals-development-for-absolute-beginners)
-* [Académie virtuelle Microsoft](https://go.microsoft.com/fwlink/p/?LinkID=389916)
 
 ## <a name="see-also"></a>Voir aussi
 
 * [Commencer le codage](create-uwp-apps.md)
 * [Qu’est-ce qu’une application UWP ?](universal-application-platform-guide.md)
 * [Se préparer](get-set-up.md)
-* [S’inscrire pour le compte de Windows](sign-up.md)
+* [Créer un compte Windows](sign-up.md)
