@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, sécurité
 ms.localizationpriority: medium
-ms.openlocfilehash: 72b7f168c9f4e812b1cfb459ebea91f61a988122
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 24ae3fb7442ac955b5edf4127dfdf66176c81a43
+ms.sourcegitcommit: 4ca51472d0474be96fa3184e311b729f58998234
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371302"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67399630"
 ---
 # <a name="create-a-windows-hello-login-app"></a>Créer une application de connexion Windows Hello
 
@@ -224,10 +224,14 @@ Dans cet exercice, vous découvrirez comment vérifier que Windows Hello est bie
     }
     ```
 
--   Il vous faut une solution pour gérer les comptes. Pour ces travaux pratiques, une liste d’utilisateurs sera enregistrée et chargée localement puisqu’il n’y a ni serveur ni base de données. Cliquez avec le bouton droit sur le dossier Utilitaires, puis ajoutez une nouvelle classe appelée « AccountHelper.cs ». Modifiez la définition de classe sur publique statique. AccountHelper est une classe statique qui contient toutes les méthodes nécessaires pour enregistrer et charger la liste des comptes localement. L’enregistrement et le chargement fonctionnent à l’aide de XmlSerializer. Vous devez également vous souvenir du fichier que vous avez enregistré et de l’emplacement auquel vous l’avez enregistré. Les espaces de noms supplémentaires doivent être référencés.
+-   Il vous faut une solution pour gérer les comptes. Pour ces travaux pratiques, une liste d’utilisateurs sera enregistrée et chargée localement puisqu’il n’y a ni serveur ni base de données. Cliquez avec le bouton droit sur le dossier Utilitaires, puis ajoutez une nouvelle classe appelée « AccountHelper.cs ». Modifiez la définition de classe sur publique statique. AccountHelper est une classe statique qui contient toutes les méthodes nécessaires pour enregistrer et charger la liste des comptes localement. L’enregistrement et le chargement fonctionnent à l’aide de XmlSerializer. Vous devez également vous souvenir du fichier que vous avez enregistré et de l’emplacement auquel vous l’avez enregistré.
     
     ```cs
+    using System;
+    using System.Collections.Generic;
     using System.IO;
+    using System.Text;
+    using System.Threading.Tasks;
     using System.Xml.Serialization;
     using Windows.Storage;
     using PassportLogin.Models;
