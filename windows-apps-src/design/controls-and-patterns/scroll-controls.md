@@ -13,32 +13,32 @@ dev-contact: regisb
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: e401e700728e1d481fd2142281fe81524d146f94
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364428"
 ---
 # <a name="scroll-viewer-controls"></a>Contrôles de la visionneuse à défilement
 
 
 
-Utilisez les contrôles de la visionneuse à défilement lorsque la taille du contenu de l’interface utilisateur à afficher est supérieure à ce que vous pouvez adapter dans une zone.
+Utilisez les contrôles de la visionneuse à défilement quand la taille du contenu de l’interface utilisateur à afficher est supérieure à ce que vous pouvez adapter dans une zone.
 
-> **API importantes** : [Classe de ScrollViewer](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer), [classe ScrollBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.scrollbar)
+> **API importantes** : [classe ScrollViewer](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer), [classe ScrollBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.scrollbar)
 
-Les visionneuses à défilement permettent d’étendre le contenu au-delà des limites de la fenêtre d’affichage (zone visible). Les utilisateurs accèdent à ce contenu en manipulant la surface de la visionneuse à défilement par interaction tactile, roulette de la souris, clavier ou boîtier de commande, ou à l’aide du pointeur de souris ou du stylet pour interagir avec la barre de défilement de la visionneuse à défilement. Cette image présente plusieurs exemples de contrôles de visionneuse à défilement.
+Les visionneuses à défilement permettent d’étendre le contenu au-delà des limites de la fenêtre d’affichage (zone visible). Les utilisateurs accèdent à ce contenu en manipulant la surface de la visionneuse à défilement via une interaction tactile, la roulette de la souris, le clavier ou un boîtier de commande, ou à l’aide du pointeur de souris ou du stylet pour interagir avec la barre de défilement de la visionneuse à défilement. Cette image montre plusieurs exemples de contrôles de visionneuse à défilement.
 
 ![Capture d’écran du contrôle de barre de défilement standard](images/ScrollBar_Standard.jpg)
 
-En fonction de la situation, la barre de défilement de la visionneuse à défilement utilise deux visualisations différentes, indiquées dans l’illustration suivante : l’indicateur de mouvement panoramique (à gauche) et la barre de défilement traditionnelle (à droite).
+En fonction de la situation, la barre de défilement de la visionneuse à défilement utilise deux visualisations différentes, montrées dans l’illustration suivante : l’indicateur de mouvement panoramique (à gauche) et la barre de défilement traditionnelle (à droite).
 
 ![Exemple de l’apparence des contrôles de barre de défilement et d’indicateur de mouvement panoramique standard](images/SCROLLBAR.png)
 
 La visionneuse à défilement reconnaît la méthode d’entrée de l’utilisateur et l’utilise pour déterminer la visualisation à afficher.
 
-* Lorsque vous faites défiler la région sans manipuler directement la barre de défilement, par exemple, par interaction tactile, l’indicateur de mouvement panoramique apparaît, affichant la position de défilement actuelle.
-* Lorsque le pointeur de souris ou du stylet se déplace sur l’indicateur de mouvement panoramique, il se transforme en barre de défilement traditionnelle.  Faire glisser le curseur de la barre de défilement permet de manipuler la zone de défilement.
+* Quand vous faites défiler la région sans manipuler directement la barre de défilement, par exemple via une interaction tactile, l’indicateur de mouvement panoramique apparaît, affichant la position de défilement actuelle.
+* Quand le pointeur de la souris ou du stylet se déplace sur l’indicateur de mouvement panoramique, il se transforme en barre de défilement traditionnelle.  Faire glisser le curseur de la barre de défilement permet de manipuler la zone de défilement.
 
 <!--
 <div class="microsoft-internal-note">
@@ -49,7 +49,7 @@ See complete redlines in [UNI]http://uni/DesignDepot.FrontEnd/#/ProductNav/3378/
 ![Barres de défilement en action](images/conscious-scroll.gif)
 
 > [!NOTE]
-> Lorsque la barre de défilement est visible, elle est superposée en 16 px au-dessus du contenu à l’intérieur de votre élément ScrollViewer. Pour garantir une bonne conception de l’expérience utilisateur, vous devez vous assurer qu’aucun contenu interactif n’est masqué par cette superposition. En outre, si vous préférez ne pas avoir de chevauchement d’expérience utilisateur, laissez une marge intérieure de 16 px dans la bordure de la fenêtre d’affichage pour la barre de défilement.
+> Quand la barre de défilement est visible, elle est superposée de 16 px au-dessus du contenu à l’intérieur de votre élément ScrollViewer. Pour garantir une bonne conception de l’expérience utilisateur, vous devez vérifier qu’aucun contenu interactif n’est masqué par cette superposition. En outre, si vous préférez ne pas avoir de chevauchement dans l’expérience utilisateur, laissez une marge intérieure de 16 px dans la bordure de la fenêtre d’affichage pour la barre de défilement.
 
 ## <a name="examples"></a>Exemples
 
@@ -58,7 +58,7 @@ See complete redlines in [UNI]http://uni/DesignDepot.FrontEnd/#/ProductNav/3378/
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>Si vous disposez de l'application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/ScrollViewer">ouvrir l’application et voir l'objet ScrollViewer en action</a>.</p>
+    <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/ScrollViewer">ouvrir l’application et voir l’objet ScrollViewer en action</a>.</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
@@ -87,7 +87,7 @@ Pour ajouter un défilement vertical à votre page, placez le contenu de la page
 </Page>
 ```
 
-Ce XAML montre comment activer le défilement horizontal, placez une image dans une visionneuse de défilement et le zoom.
+Ce code XAML montre comment activer le défilement horizontal, placer une image dans une visionneuse à défilement et activer le zoom.
 
 ```xaml
 <ScrollViewer ZoomMode="Enabled" MaxZoomFactor="10"
@@ -105,7 +105,7 @@ Quand un élément **ScrollViewer** existe dans un contrôle, le contrôle hôte
 
 Pour permettre aux contrôles qui incluent un ScrollViewer d’influencer certains comportements et propriétés de l’élément ScrollViewer, ScrollViewer définit un certain nombre de propriétés XAML jointes, qui peuvent être définies dans les styles et utilisées dans les liaisons de modèle. Pour plus d’informations sur les propriétés jointes, voir [Vue d’ensemble des propriétés jointes](../../xaml-platform/attached-properties-overview.md).
 
-**ScrollViewer XAML des propriétés jointes**
+**Propriétés attachées XAML de ScrollViewer**
 
 ScrollViewer définit les propriétés XAML jointes suivantes :
 
@@ -147,10 +147,10 @@ Pour les cas où un ScrollViewer est explicite dans votre code XAML, comme indiq
 
 ## <a name="get-the-sample-code"></a>Obtenir l’exemple de code
 
-- [Exemples de la Galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) - Affichez tous les contrôles XAML dans un format interactif.
+- [Exemple de Galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) : tous les contrôles XAML dans un format interactif.
 
 ## <a name="related-topics"></a>Rubriques connexes
 
 **Pour les développeurs (XAML)**
 
-* [Classe de ScrollViewer](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer)
+* [ScrollViewer, classe](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer)

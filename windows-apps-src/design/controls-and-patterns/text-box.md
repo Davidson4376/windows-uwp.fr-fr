@@ -1,6 +1,6 @@
 ---
 ms.assetid: CC1BF51D-3DAC-4198-ADCB-1770B901C2FC
-Description: Le contrôle TextBox permet à un utilisateur de saisir du texte dans une application.
+Description: Le contrôle TextBox permet à un utilisateur d’entrer du texte dans une application.
 title: Zone de texte
 label: Text box
 template: detail.hbs
@@ -12,10 +12,10 @@ design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 2db08cc577a82ddf6973cb33e41f9bdb39fdffde
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364233"
 ---
 # <a name="text-box"></a>Zone de texte
@@ -24,7 +24,7 @@ Le contrôle TextBox permet à un utilisateur de taper du texte dans une applica
 
 Le contrôle TextBox comporte différentes fonctionnalités destinées à simplifier la saisie de texte. Il intègre un menu contextuel familier prenant en charge la copie et le collage de texte. Le bouton Effacer tout (« X ») permet à un utilisateur de supprimer rapidement l’ensemble du texte qui a été entré. Le contrôle intègre également des fonctionnalités de vérification de l’orthographe qui sont activées par défaut.
 
-> **API importantes** : [Classe de zone de texte](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox), [propriété Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.text)
+> **API importantes** : [classe TextBox class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox), [propriété Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.text)
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
@@ -47,7 +47,7 @@ Pour plus d’informations sur le choix du contrôle de texte approprié, voir l
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>Si vous disposez de l'application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/TextBox">ouvrir l’application et voir le contrôle TextBox en action</a>.</p>
+    <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/TextBox">ouvrir l’application et voir le contrôle TextBox en action</a>.</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
@@ -138,7 +138,7 @@ IsEnabled
 
 Deux propriétés vous permettent d’indiquer si le contrôle de zone de texte peut ou non afficher du texte sur plusieurs lignes. En règle générale, vous définissez ces deux propriétés pour configurer une zone de texte multiligne.
 
-- Pour que la zone de texte autorise et afficher les caractères de saut de ligne ou de retour chariot, définissez la propriété [AcceptsReturn](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.acceptsreturn) sur **true**.
+- Pour que la zone de texte autorise et affiche les caractères de saut de ligne ou de retour chariot, définissez la propriété [AcceptsReturn](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.acceptsreturn) sur **true**.
 - Pour activer la fonctionnalité de renvoi de texte à la ligne, définissez la propriété [TextWrapping](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textwrapping) sur **Wrap**. Le texte est alors automatiquement renvoyé à la ligne quand il atteint le bord de la zone de texte, quels que soient les caractères séparateurs de ligne.
 
 > **Remarque**&nbsp;&nbsp;Les contrôles TextBox et RichEditBox ne prennent pas en charge la valeur **WrapWholeWords** pour leur propriété TextWrapping. Si vous tentez d’utiliser WrapWholeWords comme valeur pour TextBox.TextWrapping ou pour RichEditBox.TextWrapping, une exception d’argument non valide est levée.
@@ -207,7 +207,7 @@ La zone de texte résultante ressemble à ce qui suit.
 
 Par défaut, les commandes figurant dans le menu contextuel de la zone de texte dépendent de l’état de cette dernière. Par exemple, le menu contextuel peut présenter les commandes ci-après lorsque la zone de texte est modifiable.
 
-Command | Condition d’affichage
+Commande | Condition d’affichage
 ------- | -------------
 Copier | L’utilisateur a sélectionné du texte.
 Cut | L’utilisateur a sélectionné du texte.
@@ -259,7 +259,7 @@ Le clavier tactile permet d’entrer du texte lorsque l’application est exécu
 
 Par exemple, si une zone de texte est utilisée uniquement pour la saisie d’un code confidentiel à 4 chiffres, définissez la propriété [InputScope](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.inputscope) sur **Number**. Cela indique au système qu’il doit afficher la disposition du pavé numérique, ce qui permet à l’utilisateur d’entrer plus facilement le code confidentiel.
 
-> **Important**&nbsp;&nbsp;L’étendue des entrées ne demande aucune validation et n’empêche pas l’utilisateur de saisir des données par le biais d’un clavier matériel ou d’un autre dispositif d’entrée. Vous restez responsable de la validation d’une entrée dans votre code, si nécessaire.
+> **Important**&nbsp;&nbsp;L’étendue des entrées ne déclenche aucune validation et n’empêche pas l’utilisateur d’entrer des données via un clavier matériel ou un autre dispositif d’entrée. Vous restez responsable de la validation d’une entrée dans votre code, si nécessaire.
 
 Les autres propriétés qui affectent le clavier tactile sont [IsSpellCheckEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.isspellcheckenabled), [IsTextPredictionEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.istextpredictionenabled) et [PreventKeyboardDisplayOnProgrammaticFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.preventkeyboarddisplayonprogrammaticfocus). (La propriété IsSpellCheckEnabled a également une incidence sur le contrôle TextBox lorsqu’un clavier matériel est utilisé.)
 
@@ -309,14 +309,14 @@ Pour plus d’informations et d’exemples, voir [Utiliser l’étendue des entr
 
 ## <a name="get-the-sample-code"></a>Obtenir l’exemple de code
 
-- [Exemples de la Galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) - Affichez tous les contrôles XAML dans un format interactif.
+- [Exemple de Galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) : tous les contrôles XAML dans un format interactif.
 
 ## <a name="related-articles"></a>Articles connexes
 
 - [Contrôles de texte](text-controls.md)
-- [Instructions pour la vérification orthographique](text-controls.md)
-- [Ajout de la recherche](https://docs.microsoft.com/previous-versions/windows/apps/hh465231(v=win.10))
-- [Instructions pour l’entrée de texte](text-controls.md)
-- [Classe de zone de texte](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
-- [Classe de PasswordBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
+- [Recommandations sur la vérification orthographique](text-controls.md)
+- [Ajout de la fonctionnalité de recherche](https://docs.microsoft.com/previous-versions/windows/apps/hh465231(v=win.10))
+- [Recommandations sur la saisie de texte](text-controls.md)
+- [TextBox, classe](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
+- [PasswordBox, classe](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
 - [String.Length, propriété](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)

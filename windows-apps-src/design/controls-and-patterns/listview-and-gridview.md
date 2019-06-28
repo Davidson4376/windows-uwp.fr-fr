@@ -1,5 +1,5 @@
 ---
-Description: Utilisez les contrôles ListView et GridView pour afficher et manipuler des jeux de données, comme une galerie d’images ou un ensemble de messages électroniques.
+Description: Utilisez les contrôles ListView et GridView pour afficher et manipuler des jeux de données, comme une galerie d’images ou un ensemble d’e-mails.
 title: Affichage Liste et affichage Grille
 label: List view and grid view
 template: detail.hbs
@@ -13,17 +13,17 @@ dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 1664da65beed21dededb481aadd56f793af20f01
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364674"
 ---
 # <a name="list-view-and-grid-view"></a>Affichage Liste et affichage Grille
 
 La plupart des applications manipulent et affichent des jeux de données, par exemple, une galerie d’image ou un ensemble d’e-mails. L’infrastructure IU XAML fournit les contrôles ListView et GridView qui facilitent l’affichage et la manipulation des données dans votre application.  
 
-> **API importantes** : [Classe de ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview), [classe GridView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview), [propriété ItemsSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource), [propriété des éléments](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.items)
+> **API importantes** : [classe ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview), [classe GridView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview), [propriété ItemsSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource), [propriété Items](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.items)
 
 Les contrôles ListView et GridView proviennent de la classe ListViewBase ; ils possèdent donc les mêmes fonctionnalités mais affichent les données différemment. Dans cet article, lorsque nous évoquons ListView, sauf indication contraire, les informations s’appliquent aux contrôles ListView et GridView. Nous pouvons faire référence aux classes telles que ListView ou ListViewItem, mais le préfixe « List » peut être remplacé par « Grid » pour l’équivalent Grid correspondant (GridView ou GridViewItem). 
 
@@ -46,7 +46,7 @@ Pour une comparaison et des recommandations plus détaillées sur le contrôle �
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>Si vous disposez de l'application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour ouvrir l’application et voir l'objet <a href="xamlcontrolsgallery:/item/ListView">ListView</a> ou <a href="xamlcontrolsgallery:/item/GridView">GridView</a> en action.</p>
+    <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour ouvrir l’application et voir l’objet <a href="xamlcontrolsgallery:/item/ListView">ListView</a> ou <a href="xamlcontrolsgallery:/item/GridView">GridView</a> en contexte.</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
@@ -165,9 +165,9 @@ Un modèle de données d’un élément définit la manière dont les données s
 
 Toutefois, en général, on souhaite afficher une représentation enrichie des données. Pour définir précisément la façon dont les éléments sont affichés dans l’affichage Liste, vous devez créer un objet [DataTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate). Le code XAML dans l’objet DataTemplate définit la disposition et l’apparence des contrôles qui permettent d’afficher un élément spécifique. Les contrôles dans la disposition peuvent être liés aux propriétés d’un objet de données ou leur contenu statique peut être défini inline. L’objet DataTemplate est affecté à la propriété [ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) de la liste de contrôle.
 
-Dans cet exemple, l’élément de données est une chaîne simple. Vous utilisez un DataTemplate pour ajouter une image à gauche de la chaîne et afficher la chaîne en bleu canard.
+Dans cet exemple, l’élément de données est une chaîne simple. Vous utilisez un DataTemplate pour ajouter une image à gauche de la chaîne et afficher la chaîne en bleu-vert.
 
-> **Remarque**&nbsp;&nbsp;Quand vous utilisez l’[extension de balisage x:Bind](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) dans un DataTemplate, vous devez spécifier le DataType (`x:DataType`) sur le DataTemplate.
+> **Remarque**&nbsp;&nbsp;Quand vous utilisez l’[extension de balisage x:Bind](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) dans un DataTemplate, vous devez spécifier le DataType (`x:DataType`) dans le DataTemplate.
 
 **XAML**
 ```XAML
@@ -198,7 +198,7 @@ Voici ce à quoi ressembleront les éléments de données affichés avec ce mod�
 
 ![Éléments de l’affichage Liste avec un modèle de données](images/listview-itemstemplate.png)
 
-Les modèles de données sont le principal moyen de définir l’aspect de votre affichage Liste. Ils peuvent également avoir un impact significatif sur les performances si votre liste affiche un grand nombre d’éléments. Dans cet article, nous utilisons des données de chaîne simple pour la plupart des exemples et nous ne spécifions pas de modèle de données. Pour plus d’informations et pour obtenir des exemples d’utilisation de modèles de données et de conteneurs d’éléments afin de définir l’apparence des éléments dans votre liste ou grille, voir [Modèles et conteneurs d'éléments](item-containers-templates.md). 
+Les modèles de données sont le principal moyen de définir l’aspect de votre affichage Liste. Ils peuvent également avoir un impact significatif sur les performances si votre liste affiche un grand nombre d’éléments. Dans cet article, nous utilisons des données de chaîne simple pour la plupart des exemples et nous ne spécifions pas de modèle de données. Pour plus d’informations et pour obtenir des exemples d’utilisation de modèles de données et de conteneurs d’éléments afin de définir l’apparence des éléments dans votre liste ou grille, consultez [Modèles et conteneurs d’éléments](item-containers-templates.md). 
 
 ## <a name="change-the-layout-of-items"></a>Modifier la disposition des éléments
 
@@ -222,7 +222,7 @@ Cet exemple montre comment créer une disposition **ListView** avec des conteneu
 - [ScrollViewer.VerticalScrollMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.verticalscrollmode) sur **Désactivé** 
 - [ScrollViewer.VerticalScrollBarVisibility](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.verticalscrollbarvisibility) sur **Masqué** 
 
-> **Remarque**&nbsp;&nbsp;Ces exemples sont affichés avec une largeur non limitée de l’affichage Liste, les barres de défilement horizontales ne sont donc pas visibles. Si vous exécutez ce code, vous pouvez définir `Width="180"` sur ListView pour afficher les barres de défilement.
+> **Remarque**&nbsp;&nbsp;Ces exemples sont affichés avec une largeur non limitée du mode Liste, les barres de défilement horizontales ne sont donc pas visibles. Si vous exécutez ce code, vous pouvez définir `Width="180"` sur ListView pour afficher les barres de défilement.
 
 **XAML**
 ```xaml
@@ -250,7 +250,7 @@ La liste résultante ressemble à ce qui suit.
 
  Dans l’exemple suivant, **ListView** dispose les éléments dans une liste d’habillage verticale en utilisant **ItemsWrapGrid** au lieu d’**ItemsStackPanel**. 
  
-> **Remarque**&nbsp;&nbsp;La hauteur de l’affichage Liste doit être limitée pour forcer le contrôle à encapsuler les conteneurs.
+> **Remarque**&nbsp;&nbsp;La hauteur du mode Liste doit être limitée pour forcer le contrôle à wrapper les conteneurs.
 
 **XAML**
 ```xaml
@@ -511,7 +511,7 @@ private void DeselectAllButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-Pour plus d’informations sur la modification de l’aspect des éléments sélectionnés, voir [Modèles et conteneurs d'éléments](item-containers-templates.md).
+Pour plus d’informations sur la modification de l’aspect des éléments sélectionnés, consultez [Modèles et conteneurs d’éléments](item-containers-templates.md).
 
 ### <a name="drag-and-drop"></a>Glisser-déplacer
 
@@ -521,10 +521,10 @@ Les contrôles ListView et GridView prennent en charge le glisser-déplacer des 
 
 - [Exemple de ListView et GridView XAML](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView) - Illustre les contrôles ListView et GridView.
 - [Exemple de fonctionnalité glisser-déposer XAML](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlDragAndDrop) - Illustre la fonctionnalité glisser-déposer avec le contrôle ListView.
-- [Exemples de la Galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) - Affichez tous les contrôles XAML dans un format interactif.
+- [Exemple de galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) : affichez tous les contrôles XAML dans un format interactif.
 
 ## <a name="related-articles"></a>Articles connexes
 
 - [Listes](lists.md)
-- [Modèles et des conteneurs d’éléments](item-containers-templates.md)
+- [Modèles et conteneurs d’éléments](item-containers-templates.md)
 - [Glisser-déplacer](https://docs.microsoft.com/windows/uwp/app-to-app/drag-and-drop)

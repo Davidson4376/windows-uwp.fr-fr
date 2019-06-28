@@ -13,17 +13,17 @@ dev-contact: tpaine
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 7381d8d99f47a69ba7398366762a7dbb4088e04a
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364175"
 ---
 # <a name="split-view-control"></a>Contrôle de mode fractionné
 
 Un contrôle de mode Fractionné inclut un volet pouvant être développé/réduit ainsi qu’une zone de contenu.
 
-> **API importantes** : [Classe de fractionnementaffichage des](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SplitView)
+> **API importantes** : [classe SplitView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SplitView)
 
 Voici un exemple de l’application Microsoft Edge utilisant SplitView pour afficher son Hub.
 
@@ -32,11 +32,11 @@ Voici un exemple de l’application Microsoft Edge utilisant SplitView pour affi
 
  La zone de contenu du mode Fractionné est toujours visible. Le volet peut être développé ou réduit ou rester ouvert, et peut s’afficher à gauche ou à droite de la fenêtre d’application. Le volet comporte quatre modes :
 
--   **Segment de recouvrement**
+-   **Overlay**
 
     Le volet est masqué jusqu’à ce qu’il soit ouvert. Lorsqu’il est ouvert, il recouvre la zone de contenu.
 
--   **inline**
+-   **Inline**
 
     Le volet est toujours visible et ne recouvre pas la zone de contenu. Les zones de volet et de contenu divisent l’espace disponible à l’écran.
 
@@ -50,9 +50,9 @@ Voici un exemple de l’application Microsoft Edge utilisant SplitView pour affi
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
-Le contrôle de mode Fractionné peut servir à créer toute expérience « à tiroirs » (c’est-à-dire que les utilisateurs peuvent ouvrir et fermer le volet supplémentaire). Par exemple, vous pouvez utiliser SplitView pour générer le modèle [maître/détails](master-details.md).
+Le contrôle de mode Fractionné peut servir à créer toute expérience « à tiroirs » (c’est-à-dire que les utilisateurs peuvent ouvrir et fermer le volet supplémentaire). Par exemple, vous pouvez utiliser SplitView pour créer le modèle [maître/détails](master-details.md).
 
-Si vous souhaitez créer un menu de navigation avec un bouton développer/réduire et une liste d’éléments de navigation, puis utilisez le contrôle [NavigationView](navigationview.md).
+Si vous voulez créer un menu de navigation avec un bouton développer/réduire et une liste d’éléments de navigation, utilisez le contrôle [NavigationView](navigationview.md).
 
 ## <a name="examples"></a>Exemples
 
@@ -61,7 +61,7 @@ Si vous souhaitez créer un menu de navigation avec un bouton développer/rédui
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>Si vous disposez de l'application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/SplitView">ouvrir l’application et voir l'objet SplitView en action</a>.</p>
+    <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/SplitView">ouvrir l’application et voir l’objet SplitView en action</a>.</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
@@ -95,9 +95,9 @@ Voici un contrôle SplitView avec un volet ouvert, qui s’affiche en ligne en r
 
 ## <a name="get-the-sample-code"></a>Obtenir l’exemple de code
 
-- [Exemples de la Galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) - Affichez tous les contrôles XAML dans un format interactif.
+- [Exemple de Galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) : tous les contrôles XAML dans un format interactif.
 
 ## <a name="related-topics"></a>Rubriques connexes
 - [Modèle de volet de navigation](navigationview.md)
-- [Affichage de liste](lists.md)
+- [Vue Liste](lists.md)
 - [Maître/détails](master-details.md)

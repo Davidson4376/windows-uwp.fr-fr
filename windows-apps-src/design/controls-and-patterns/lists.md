@@ -13,10 +13,10 @@ dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: a574ff858f8eab3fa1984ecd883a786fa0e0f19c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364721"
 ---
 # <a name="lists"></a>Listes
@@ -30,14 +30,14 @@ Les listes affichent et activent l’interaction avec du contenu basé sur des c
 
 Des recommandations en matière de conception, des fonctionnalités et des exemples sont fournis pour chaque modèle de liste.
 
-> **API importantes** : [Classe de ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), [classe GridView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView), [ComboBox (classe)](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
+> **API importantes** : [classe ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), [classe GridView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView), [classe ComboBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
 
 
 > <div id="main">
-> <strong>Windows 10 Fall Creators Update - changement de comportement</strong>
+> <strong>Windows 10 Fall Creators Update - Changement de comportement</strong>
 > </div>
-> Par défaut, au lieu d’effectuer la sélection, un stylet actif fait défiler/parcourt une liste dans les applications UWP (comme l’interaction tactile, le pavé tactile et le stylet passif).
-> Si votre application repose sur le comportement précédent, vous pouvez remplacer le défilement du stylet et rétablir le comportement précédent. Pour plus d’informations, consultez la rubrique de référence des API pour le <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer">ScrollViewer classe</a>.
+> Par défaut, au lieu d’effectuer la sélection, un stylet actif fait défiler ou parcourt une liste dans les applications UWP (comme l’interaction tactile, le pavé tactile et le stylet passif).
+> Si votre application repose sur le comportement précédent, vous pouvez remplacer le défilement du stylet et rétablir le comportement précédent. Pour plus d’informations, consultez la rubrique de référence de l’API pour la <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer">classe ScrollViewer</a>.
 
 ## <a name="list-views"></a>Affichages de liste
 
@@ -76,27 +76,27 @@ Voici un affichage Liste simple montrant des données regroupées sur un télép
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="listview-and-gridview.md">Vue liste et l’affichage de grille</a></p></td>
+<td align="left"><p><a href="listview-and-gridview.md">Mode Liste et mode Grille</a></p></td>
 <td align="left"><p>Découvrez les principaux éléments de l’utilisation d’un affichage Liste ou Grille dans votre application.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="item-containers-templates.md">Modèles et des conteneurs d’éléments</a></p></td>
+<td align="left"><p><a href="item-containers-templates.md">Modèles et conteneurs d’éléments</a></p></td>
 <td align="left"><p>Les éléments que vous affichez dans une liste ou une grille peuvent jouer un rôle majeur dans l’apparence générale de votre application. Modifiez les modèles de contrôle et les modèles de données pour définir l’apparence des éléments et donner un aspect satisfaisant à votre application.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="item-templates-listview.md">Modèles d’élément pour l’affichage de liste</a></p></td>
-<td align="left"><p>Utilisez ces exemples de modèles d'éléments de ListView pour obtenir l’apparence des types d’applications courants.</p></td>
+<td align="left"><p><a href="item-templates-listview.md">Modèles d’éléments pour le mode Liste</a></p></td>
+<td align="left"><p>Utilisez ces exemples de modèles d’éléments pour un ListView afin d’obtenir l’apparence des types d’applications courants.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="inverted-lists.md">Listes inversés</a></p></td>
+<td align="left"><p><a href="inverted-lists.md">Listes inversées</a></p></td>
 <td align="left"><p>Les listes inversées placent les nouveaux éléments ajoutés en bas, comme dans une application de chat. Suivez ces conseils pour utiliser une liste inversée dans votre application.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="pull-to-refresh.md">Extraire pour actualiser</a></p></td>
+<td align="left"><p><a href="pull-to-refresh.md">Balayer pour actualiser</a></p></td>
 <td align="left"><p>Le modèle Tirer pour actualiser permet à l’utilisateur de dérouler une liste de données à l’aide de la fonction tactile pour récupérer plus de données. Utilisez ces instructions pour implémenter le modèle tirer pour actualiser dans votre affichage Liste.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="nested-ui.md">Interface utilisateur imbriqué</a></p></td>
+<td align="left"><p><a href="nested-ui.md">Interface utilisateur imbriquée</a></p></td>
 <td align="left"><p>L’interface utilisateur imbriquée est une interface utilisateur qui expose des contrôles exploitables inclus dans un conteneur, lequel peut également être actionné par l’utilisateur. Par exemple, si un élément de l’affichage Liste contient un bouton, l’utilisateur peut sélectionner l’élément de liste ou appuyer sur le bouton imbriqué à l’intérieur. Suivez ces bonnes pratiques pour fournir la meilleure expérience d’interface utilisateur imbriquée à vos utilisateurs.</p></td>
 </tr>
 </tbody>
@@ -143,19 +143,19 @@ Un affichage Grille est une solution idéale pour une bibliothèque de contenu, 
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="listview-and-gridview.md">Vue liste et l’affichage de grille</a></p></td>
+<td align="left"><p><a href="listview-and-gridview.md">Mode Liste et mode Grille</a></p></td>
 <td align="left"><p>Découvrez les principaux éléments de l’utilisation d’un affichage Liste ou Grille dans votre application.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="item-containers-templates.md">Modèles et des conteneurs d’éléments</a></p></td>
+<td align="left"><p><a href="item-containers-templates.md">Modèles et conteneurs d’éléments</a></p></td>
 <td align="left"><p>Les éléments que vous affichez dans une liste ou une grille peuvent jouer un rôle majeur dans l’apparence générale de votre application. Modifiez les modèles de contrôle et les modèles de données pour définir l’apparence des éléments et donner un aspect satisfaisant à votre application.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="item-templates-gridview.md">Modèles d’élément pour l’affichage de grille</a></p></td>
-<td align="left"><p>Utilisez ces exemples de modèles d'éléments de GridView pour obtenir l’apparence des types d’applications courants.</p></td>
+<td align="left"><p><a href="item-templates-gridview.md">Modèles d’éléments pour le mode Grille</a></p></td>
+<td align="left"><p>Utilisez ces exemples de modèles d’éléments pour un GridView afin d’obtenir l’apparence des types d’applications courants.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="nested-ui.md">Interface utilisateur imbriqué</a></p></td>
+<td align="left"><p><a href="nested-ui.md">Interface utilisateur imbriquée</a></p></td>
 <td align="left"><p>L’interface utilisateur imbriquée est une interface utilisateur qui expose des contrôles exploitables inclus dans un conteneur, lequel peut également être actionné par l’utilisateur. Par exemple, si un élément de l’affichage Liste contient un bouton, l’utilisateur peut sélectionner l’élément de liste ou appuyer sur le bouton imbriqué à l’intérieur. Suivez ces bonnes pratiques pour fournir la meilleure expérience d’interface utilisateur imbriquée à vos utilisateurs.</p></td>
 </tr>
 </tbody>
@@ -229,9 +229,9 @@ Le mode de sélection permet aux utilisateurs de sélectionner et d’exécuter 
 
 Il existe trois modes de sélection :
 
--   Unique : L’utilisateur peut sélectionner un seul élément à la fois.
--   Plusieurs : L’utilisateur peut sélectionner plusieurs éléments sans utiliser un modificateur.
--   Étendue : L’utilisateur peut sélectionner plusieurs éléments avec un modificateur, telles que maintenir la touche MAJ enfoncée.
+-   Unique : l’utilisateur ne peut sélectionner qu’un seul élément à la fois.
+-   Multiple : l’utilisateur peut sélectionner plusieurs éléments sans utiliser de modificateur.
+-   Étendu : l’utilisateur peut sélectionner plusieurs éléments avec un modificateur, par exemple, en maintenant la touche MAJ enfoncée.
 
 L’appui sur un emplacement quelconque d’un élément entraîne la sélection de celui-ci. L’appui sur une action de la barre de commandes affecte tous les éléments sélectionnés. Si aucun élément n’est sélectionné, toutes les actions de la barre de commandes doivent être inactives, à l’exception de l’action Sélectionner tout.
 
@@ -268,8 +268,8 @@ Pour des recommandations relatives à la barre de commandes, voir [Recommandatio
 - [Glisser-déplacer](https://docs.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
 - [Images miniatures](../../files/thumbnails.md)
 
-**pour les développeurs**
-- [Classe de ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)
-- [Classe de GridView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)
-- [ComboBox (classe)](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
-- [Classe de zone de liste](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox)
+**Pour les développeurs**
+- [ListView, classe](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)
+- [GridView, classe](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)
+- [ComboBox, classe](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
+- [ListBox, classe](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox)

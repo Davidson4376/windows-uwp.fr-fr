@@ -12,10 +12,10 @@ design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: cdf361bfd993ce93e2c3b9eec4e66cb1417e36f8
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364135"
 ---
 # <a name="text-controls"></a>Contrôles de texte
@@ -23,9 +23,9 @@ ms.locfileid: "66364135"
 Les contrôles de texte comprennent les zones de saisie de texte, les zones de mot de passe, les zones de suggestion automatique et les blocs de texte. L’infrastructure XAML propose plusieurs contrôles de rendu, de saisie et de modification de texte, ainsi qu’un jeu de propriétés de mise en forme du texte.
 
 - Les contrôles d’affichage de texte en lecture seule sont [TextBlock](text-block.md) et [RichTextBlock](rich-text-block.md).
-- Les contrôles pour l’entrée de texte et la modification sont : [Zone de texte](text-box.md), [RichEditBox](rich-edit-box.md), [AutoSuggestBox](auto-suggest-box.md), et [PasswordBox](password-box.md).
+- Les contrôles pour l’entrée de texte et la modification sont : [TextBox](text-box.md), [RichEditBox](rich-edit-box.md), [AutoSuggestBox](auto-suggest-box.md) et [PasswordBox](password-box.md).
 
-> **API importantes** : [Classe TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock), [RichTextBlock classe](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock), [classe TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox), [RichEditBox classe](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichEditBox), [AutoSuggestBox classe](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox), [PasswordBox classe](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
+> **API importantes** : [classe TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock), [classe RichTextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock), [classe TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox), [classe RichEditBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichEditBox), [classe AutoSuggestBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox), [classe PasswordBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
@@ -57,18 +57,18 @@ Vous devez également utiliser un contrôle AutoSuggestBox pour implémenter une
 
 Utilisez un contrôle **RichEditBox** pour afficher et modifier les fichiers de texte. Vous n’utilisez pas un contrôle RichEditBox pour obtenir les données entrées dans votre application par l’utilisateur de la même façon que vous utilisez d’autres zones de saisie de texte standard. En fait, ce contrôle vous permet de travailler sur des fichiers de texte séparés de votre application. Le texte entré dans un contrôle RichEditBox est généralement enregistré dans un fichier .rtf.
 
-**Entrée de texte n’est la meilleure option ?**
+**La saisie de texte est-elle la meilleure option ?**
 
 Vous disposez de nombreuses méthodes pour obtenir les entrées des utilisateurs de votre application. Les questions suivantes vous aideront à déterminer si le meilleur moyen d’obtenir les entrées utilisateur consiste à utiliser l’une des zones de saisie de texte standard ou un autre contrôle.
 
--   **Il n’est pas pratique énumérer efficacement toutes les valeurs valides ?** Si tel est le cas, envisagez le recours à des contrôles par sélection, du type [case à cocher](checkbox.md), [liste déroulante](lists.md), zone de liste, [case d’option](radio-button.md), [curseur](slider.md), [bouton-bascule](toggles.md), [sélecteur de dates](date-and-time.md) ou sélecteur d’heure.
--   **Existe-t-il un relativement petit ensemble de valeurs valides ?** Si tel est le cas, utilisez plutôt une [liste déroulante](lists.md) ou une zone de liste, en particulier si les valeurs contiennent un grand nombre de caractères.
--   **Les données valides sans complètement contrainte ? Ou les données valides ne sont limitées par le format (contrainte de longueur ou types de caractères) ?** Si tel est le cas, utilisez un contrôle d’entrée de texte. Vous pouvez limiter le nombre de caractères pouvant être saisis et valider le format dans le code de votre application.
--   **La valeur représente un type de données qui a un contrôle commun spécialisé ?** Si tel est le cas, utilisez le contrôle approprié plutôt qu’un contrôle d’entrée de texte. Utilisez, par exemple, un contrôle [DatePicker](https://docs.microsoft.com/previous-versions/windows/apps/br211681(v=win.10)) plutôt qu’un contrôle d’entrée de texte pour les saisies de date.
+-   **L’énumération efficace de l’ensemble des valeurs valides est-elle faisable ?** Si tel est le cas, envisagez le recours à des contrôles par sélection, du type [case à cocher](checkbox.md), [liste déroulante](lists.md), zone de liste, [case d’option](radio-button.md), [curseur](slider.md), [bouton-bascule](toggles.md), [sélecteur de dates](date-and-time.md) ou sélecteur d’heure.
+-   **L’ensemble de valeurs valides est-il restreint ?** Si tel est le cas, utilisez plutôt une [liste déroulante](lists.md) ou une zone de liste, en particulier si les valeurs contiennent un grand nombre de caractères.
+-   **Les données valides sont entièrement sans contraintes ? Ou sont-elles limitées par le format (contraintes de longueur ou portant sur les types de caractère) ?** Si tel est le cas, utilisez un contrôle d’entrée de texte. Vous pouvez limiter le nombre de caractères pouvant être saisis et valider le format dans le code de votre application.
+-   **La valeur représente-t-elle un type de données auquel correspond un contrôle courant spécialisé ?** Si tel est le cas, utilisez le contrôle approprié plutôt qu’un contrôle d’entrée de texte. Utilisez, par exemple, un contrôle [DatePicker](https://docs.microsoft.com/previous-versions/windows/apps/br211681(v=win.10)) plutôt qu’un contrôle d’entrée de texte pour les saisies de date.
 -   Si les données sont strictement numériques :
-    -   **La valeur entrée approximative et/ou par rapport à une autre quantité sur la même page ?** Si tel est le cas, utilisez un [curseur](slider.md).
-    -   **L’utilisateur tireront parti de commentaires instantanés sur l’effet des modifications des paramètres ?** Si tel est le cas, utilisez un [curseur](slider.md), accompagné éventuellement d’un contrôle correspondant.
-    -   **La valeur entrée probablement être ajusté une fois que le résultat est observée, par exemple à l’instar de luminosité de volume ou de l’écran ?** Si tel est le cas, utilisez un [curseur](slider.md).
+    -   **La valeur à entrer est-elle approximative et/ou relative à une autre quantité spécifiée sur la même page ?** Si tel est le cas, utilisez un [curseur](slider.md).
+    -   **L’utilisateur va-t-il bénéficier d’un feedback instantané sur l’effet des modifications apportées aux paramètres ?** Si tel est le cas, utilisez un [curseur](slider.md), accompagné éventuellement d’un contrôle correspondant.
+    -   **La valeur entrée risque-t-elle d’être ajustée en fonction du résultat obtenu (par exemple le volume ou la luminosité) ?** Si tel est le cas, utilisez un [curseur](slider.md).
 
 ## <a name="examples"></a>Exemples
 
@@ -77,7 +77,7 @@ Vous disposez de nombreuses méthodes pour obtenir les entrées des utilisateurs
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>Si vous disposez de l'application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/category/Text">ouvrir l’application et voir les contrôles de texte en action</a>.</p>
+    <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/category/Text">ouvrir l’application et voir les contrôles de texte en action</a>.</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
@@ -113,17 +113,17 @@ Pour plus d’informations et d’exemples propres à chaque contrôle de texte,
 Pour découvrir les recommandations concernant les polices, voir les articles suivants :
 
 - [Recommandations en matière de typographie](../style/typography.md)
-- [Lignes directrices et Segoe MDL2 icône liste](../style/segoe-ui-symbol-font.md)
+- [Liste des icônes Segoe MDL2 et recommandations](../style/segoe-ui-symbol-font.md)
 
 ## <a name="pen-input"></a>Saisie effectuée à l’aide du stylet
 
 **S’applique à :** TextBox, RichEditBox, AutoSuggestBox
 
-À partir de Windows 10, version 1803, les zones de saisie de texte XAML présentent une prise en charge intégrée de saisie effectuée à l'aide du stylet à l’aide de [Windows Ink](../input/pen-and-stylus-interactions.md). Quand un utilisateur appuie sur une zone de texte à l’aide d’un stylet Windows, la zone de texte se transforme pour permettre à l’utilisateur d’écrire dedans directement à l'aide d'un stylet, au lieu d’ouvrir un panneau de saisie distinct.
+À partir de Windows 10, version 1803, les zones de saisie de texte XAML ont une prise en charge intégrée de la saisie effectuée à l’aide du stylet avec [Windows Ink](../input/pen-and-stylus-interactions.md). Quand un utilisateur appuie sur une zone de texte avec un stylet Windows, la zone de texte se transforme pour permettre à l’utilisateur d’écrire dedans directement avec un stylet, au lieu d’ouvrir un panneau de saisie distinct.
 
-![La zone de texte s’agrandit lorsqu'un utilisateur appuie dessus avec un stylet](images/handwritingview/handwritingview2.gif)
+![La zone de texte s’agrandit quand l’utilisateur appuie dessus avec un stylet](images/handwritingview/handwritingview2.gif)
 
-Pour plus d’informations, consultez [Text input avec la vue de l’écriture manuscrite](text-handwriting-view.md).
+Pour plus d’informations, consultez [Entrée de texte avec la vue d’écriture manuscrite](text-handwriting-view.md).
 
 ## <a name="choose-the-right-keyboard-for-your-text-control"></a>Choisir le clavier adapté à votre contrôle de texte
 
@@ -162,7 +162,7 @@ Pour plus d’informations, voir la propriété [IsColorFontEnabled](https://doc
 
 ## <a name="guidelines-for-line-and-paragraph-separators"></a>Recommandations en matière de séparateurs de lignes et de paragraphes
 
-**S’applique à :** TextBlock, RichTextBlock, multi-line TextBox, RichEditBox
+**S’applique à :** TextBlock, RichTextBlock, TextBox multiligne, RichEditBox
 
 Pour diviser un texte brut, utilisez le caractère séparateur de lignes (0x2028) et le caractère séparateur de paragraphes (0x2029). Une ligne est créée après chaque séparateur de lignes. Un paragraphe est créé après chaque séparateur de paragraphes.
 
@@ -184,11 +184,11 @@ Voici un exemple de vérificateur d’orthographe intégré :
 
 Le vérificateur d’orthographe peut être utilisé avec des contrôles de saisie de texte dans deux objectifs :
 
--   **Pour les fautes d’orthographe automatique**
+-   **Pour corriger automatiquement les fautes d’orthographe**
 
     Le vérificateur d’orthographe corrige automatiquement les mots mal orthographiés, lorsqu’il est certain de la correction. Par exemple, il remplace automatiquement « puor » par « pour ».
 
--   **Pour afficher d’autres orthographes**
+-   **Pour montrer d’autres orthographes**
 
     Lorsque le vérificateur d’orthographe n’est pas sûr des corrections, il souligne le mot mal orthographié en rouge et affiche des suggestions dans un menu contextuel lorsque vous appuyez ou faites un clic droit sur le mot.
 
@@ -202,10 +202,10 @@ Pour les contrôles TextBox et RichEditBox, la vérification orthographique est 
 
 **Pour les concepteurs**
 - [Recommandations en matière de typographie](../style/typography.md)
-- [Lignes directrices et Segoe MDL2 icône liste](../style/segoe-ui-symbol-font.md)
-- [Ajout de la recherche](https://docs.microsoft.com/previous-versions/windows/apps/hh465231(v=win.10))
+- [Liste des icônes Segoe MDL2 et recommandations](../style/segoe-ui-symbol-font.md)
+- [Ajout de la fonctionnalité de recherche](https://docs.microsoft.com/previous-versions/windows/apps/hh465231(v=win.10))
 
 **Pour les développeurs (XAML)**
-- [Classe de zone de texte](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
-- [Classe de Windows.UI.Xaml.Controls PasswordBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
+- [TextBox, classe](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
+- [PasswordBox Windows.UI.Xaml.Controls, classe](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
 - [String.Length, propriété](https://docs.microsoft.com/dotnet/api/system.string.length?redirectedfrom=MSDN#System_String_Length)

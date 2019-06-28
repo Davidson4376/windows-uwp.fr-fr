@@ -12,10 +12,10 @@ design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 6c8cc237dec082096eb235237490e4f5d29cc6dd
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364320"
 ---
 # <a name="semantic-zoom"></a>Zoom sémantique
@@ -29,7 +29,7 @@ Le zoom sémantique permet à l’utilisateur de basculer entre deux affichages 
 
 Par exemple, s’il consulte un carnet d’adresses, l’utilisateur peut effectuer un zoom arrière pour accéder rapidement à la lettre « W » et effectuer un zoom avant sur cette lettre pour afficher les noms associés. 
 
-> **API importantes** : [Classe de SemanticZoom](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom), [ListView classe](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), [classe GridView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)
+> **API importantes** : [classe SemanticZoom](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom), [classe ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), [classe GridView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)
 
 **Fonctionnalités** :
 
@@ -50,7 +50,7 @@ Ne confondez pas le zoom sémantique avec le zoom optique. Ces deux types de zoo
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>Si vous disposez de l'application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/SemanticZoom">ouvrir l’application et voir l'objet SemanticZoom en action</a>.</p>
+    <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/SemanticZoom">ouvrir l’application et voir l’objet SemanticZoom en action</a>.</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
@@ -59,7 +59,7 @@ Ne confondez pas le zoom sémantique avec le zoom optique. Ces deux types de zoo
 </tr>
 </table>
 
-**Application de photos**
+**Application Photos**
 
 Zoom sémantique utilisé dans l’application Photos. Les photos sont regroupées par mois. La sélection d’un en-tête de mois dans l’affichage Grille par défaut effectue un zoom arrière sur l’affichage Liste du mois pour une navigation plus rapide.
 
@@ -80,9 +80,9 @@ Les 3 éléments dont vous avez besoin pour un zoom sémantique sont les suivan
 - Une vue avec zoom avant qui affiche les données au niveau de l’élément.
 - Une vue avec zoom arrière qui affiche les données au niveau du groupe.
 
-Avant d’utiliser un zoom sémantique, vous devez comprendre comment utiliser un affichage Liste avec des données regroupées. Pour plus d’informations, consultez [affichage liste et affichage de grille](listview-and-gridview.md). 
+Avant d’utiliser un zoom sémantique, vous devez comprendre comment utiliser un affichage Liste avec des données regroupées. Pour plus d’informations, consultez [Vue Liste et vue Grille](listview-and-gridview.md). 
 
-> **Remarque**&nbsp;&nbsp;Pour définir la vue avec zoom avant et la vue avec zoom arrière du contrôle SemanticZoom, vous pouvez utiliser l’un ou l’autre des deux contrôles qui implémentent l’interface [ISemanticZoomInformation](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ISemanticZoomInformation). L’infrastructure XAML fournit 3 contrôles qui implémentent cette interface : ListView, GridView et Hub.
+> **Remarque**&nbsp;&nbsp;Pour définir la vue avec zoom avant et la vue avec zoom arrière du contrôle SemanticZoom, vous pouvez utiliser l’un ou l’autre des deux contrôles qui implémentent l’interface [ISemanticZoomInformation](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ISemanticZoomInformation). L’infrastructure XAML fournit 3 contrôles qui implémentent cette interface : ListView, GridView et Hub.
  
  Ce code XAML montre la structure du contrôle SemanticZoom. Vous attribuez d’autres contrôles aux propriétés ZoomedInView et ZoomedOutView.
  
@@ -100,7 +100,7 @@ Avant d’utiliser un zoom sémantique, vous devez comprendre comment utiliser u
  
 Ces exemples sont tirés de la page SemanticZoom de l’[Exemple d’éléments de base d’une interface utilisateur XAML](https://go.microsoft.com/fwlink/p/?LinkId=619992). Vous pouvez télécharger l’exemple pour voir le code complet, y compris la source de données. Le zoom sémantique utilise un contrôle GridView pour fournir la vue avec zoom avant et un contrôle ListView pour la vue avec zoom arrière.
   
-**Définir la vue Zoom avant**
+**Définir la vue avec zoom avant**
 
 Voici le contrôle GridView pour la vue avec zoom avant. La vue avec zoom avant doit afficher les éléments de données individuels dans des groupes. L’exemple suivant indique comment afficher les éléments dans une grille avec une image et du texte. 
 
@@ -140,7 +140,7 @@ L’apparence des en-têtes de groupe est définie dans la ressource `ZoomedInGr
 </DataTemplate>
 ```
 
-**Définir la vue Zoom arrière**
+**Définir la vue avec zoom arrière**
 
 Ce code XAML définit un contrôle ListView pour la vue avec zoom arrière. Cet exemple indique comment afficher les en-têtes de groupe sous forme de texte dans une liste.
 
@@ -195,14 +195,14 @@ private void SemanticZoom_ViewChangeStarted(object sender, SemanticZoomViewChang
 
 ## <a name="get-the-sample-code"></a>Obtenir l’exemple de code
 
-- [Exemples de la Galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) - Affichez tous les contrôles XAML dans un format interactif.
+- [Exemple de Galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) : tous les contrôles XAML dans un format interactif.
 
 
 ## <a name="related-articles"></a>Articles connexes
 
-- [Principes fondamentaux de conception de navigation](../basics/navigation-basics.md)
-- [Vue liste et l’affichage de grille](listview-and-gridview.md)
-- [Modèles et des conteneurs d’éléments](item-containers-templates.md)
+- [Notions de base de la conception de la navigation](../basics/navigation-basics.md)
+- [Vue Liste et vue Grille](listview-and-gridview.md)
+- [Modèles et conteneurs d’éléments](item-containers-templates.md)
 
 
 

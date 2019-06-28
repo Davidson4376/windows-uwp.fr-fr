@@ -12,10 +12,10 @@ design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c6eb22fbe0488fa9a36160ce9e704d10727e4c9
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364480"
 ---
 # <a name="search-and-find-in-page"></a>Recherche et recherche dans la page
@@ -24,26 +24,26 @@ ms.locfileid: "66364480"
 
 L’option de recherche est l’un des moyens les plus courants pour rechercher du contenu dans votre application. Les recommandations de cet article abordent différents aspects de l’expérience de recherche, les étendues de recherche, l’implémentation et des exemples de recherche en contexte.
 
-> **API importantes** : [Classe de AutoSuggestBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox)
+> **API importantes** : [Classe AutoSuggestBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox)
 
 ## <a name="elements-of-the-search-experience"></a>Aspects de l’expérience de recherche
 
 
-**Entrée.**    Est le mode courant d’entrée de recherche de texte et est l’objectif de ce guide. Les modes d’entrée Voix et Webcam sont également couramment utilisés, mais ils nécessitent généralement de pouvoir communiquer avec le matériel et, dans certains cas, l’ajout de contrôles ou d’une interface utilisateur personnalisée au sein de l’application.
+**Entrée.**   La saisie de texte est le mode d’entrée de recherche le plus courant et le sujet principal de ce guide. Les modes d’entrée Voix et Webcam sont également couramment utilisés, mais ils nécessitent généralement de pouvoir communiquer avec le matériel et, dans certains cas, l’ajout de contrôles ou d’une interface utilisateur personnalisée au sein de l’application.
 
-**Entrée de zéro.**    Une fois que l’utilisateur a activé le champ d’entrée, mais avant que l’utilisateur a entré du texte, vous pouvez afficher ce que l'on appelle un « zéro entré canevas. » Le canevas d’entrée nulle apparaît généralement dans les canevas de l’application, afin que la fonction de [suggestion automatique](auto-suggest-box.md) remplace ce contenu lorsque l’utilisateur commence à entrer sa requête. L’historique des dernières recherches, les tendances des recherches, les suggestions de recherche contextuelle, les astuces et les conseils sont tous de bons candidats pour l’état d’entrée nulle.
+**Entrée nulle.**   Lorsque le champ d’entrée est activé par l’utilisateur, mais qu’aucun texte n’a été saisi, vous pouvez afficher ce que l’on appelle un « canevas d’entrée nulle ». Le canevas d’entrée nulle apparaît généralement dans les canevas de l’application, afin que la fonction de [suggestion automatique](auto-suggest-box.md) remplace ce contenu lorsque l’utilisateur commence à entrer sa requête. L’historique des dernières recherches, les tendances des recherches, les suggestions de recherche contextuelle, les astuces et les conseils sont tous de bons candidats pour l’état d’entrée nulle.
 
 ![Exemple de Cortana dans un canevas d’entrée nulle](images/search-cortana-example.png)
 
  
 
-**Formulation /-suggestion automatique de la requête.**    Formulation remplace aucun contenu d’entrée dès que l’utilisateur commence à entrer de requête. Lorsque les utilisateurs entrent une chaîne de requête, ces derniers aperçoivent un ensemble de suggestions de requête ou d’options de désambiguïsation mis à jour en continu afin d’accélérer le processus d’entrée et de les aider à formuler leur requête. Le comportement des suggestions de requête est intégré au [contrôle de suggestion automatique](auto-suggest-box.md). Il permet également d’afficher l’icône à l’intérieur de la recherche (comme un micro ou une icône de validation). Tout autre comportement incombe à l’application.
+**Formulation de requêtes/Suggestion automatique.**   La formulation de requêtes remplace le contenu d’entrée nulle dès que l’utilisateur commence à entrer sa requête. Lorsque les utilisateurs entrent une chaîne de requête, ces derniers aperçoivent un ensemble de suggestions de requête ou d’options de désambiguïsation mis à jour en continu afin d’accélérer le processus d’entrée et de les aider à formuler leur requête. Le comportement des suggestions de requête est intégré au [contrôle de suggestion automatique](auto-suggest-box.md). Il permet également d’afficher l’icône à l’intérieur de la recherche (comme un micro ou une icône de validation). Tout autre comportement incombe à l’application.
 
 ![Exemple de suggestion automatique de requête/formulation](images/search-autosuggest-example.png)
 
  
 
-**Jeu de résultats.**    Apparaissent généralement des résultats de la recherche directement sous le champ d’entrée de recherche. Bien que facultative, la juxtaposition des entrées et des résultats permet de maintenir un contexte et d’accéder immédiatement à la modification de la dernière requête ou à la saisie d’une nouvelle requête. Ce lien peut être indiqué plus loin en remplaçant le texte d’information par la requête à l’origine du jeu de résultats.
+**Ensemble de résultats.**   En règle générale, les résultats de la recherche apparaissent directement sous le champ de recherche. Bien que facultative, la juxtaposition des entrées et des résultats permet de maintenir un contexte et d’accéder immédiatement à la modification de la dernière requête ou à la saisie d’une nouvelle requête. Ce lien peut être indiqué plus loin en remplaçant le texte d’information par la requête à l’origine du jeu de résultats.
 
 Vous pouvez faciliter l’accès aux fonctions de modification de la dernière requête et de saisie d’une nouvelle requête en mettant en surbrillance la dernière requête lorsque le champ est réactivé. Ainsi, la dernière chaîne est remplacée par la séquence de touches saisie, mais la chaîne est conservée afin que l’utilisateur puisse placer son curseur et modifier ou ajouter la chaîne précédente.
 
@@ -56,11 +56,11 @@ La fonction recherche est d’utilisation. Les interfaces utilisateur de recherc
 
 Voici quelques exemples d’étendues de recherche courantes :
 
-**Global** et **contextuelles/affiner.**   Recherche dans plusieurs sources de cloud et du contenu local. Résultats variés incluant des URL, des documents, des médias, des actions, des applications et plus encore.
+**Global** et **Contextuel/Optimal.**   Rechercher dans plusieurs sources du cloud et du contenu local. Résultats variés incluant des URL, des documents, des médias, des actions, des applications et plus encore.
 
-**Web.**    Rechercher un index sur le web. Les résultats peuvent contenir des pages, des entités et des réponses.
+**Web.**   Rechercher dans un index web. Les résultats peuvent contenir des pages, des entités et des réponses.
 
-**Mes pages.**    Recherche sur un ou plusieurs appareils, cloud, les graphiques sociaux et bien plus encore. Les résultats sont différents, mais sont limités par le lien aux comptes d’utilisateur.
+**Mes sélections.**   Rechercher des informations sur plusieurs appareils, dans le cloud, dans des graphes sociaux et plus encore. Les résultats sont différents, mais sont limités par le lien aux comptes d’utilisateur.
 
 Utilisez un texte d’information afin d’indiquer l’étendue de la recherche. Par exemple :
 
@@ -200,7 +200,7 @@ La Recherche dans la page a un compteur de correspondances :
 
 
 
-## <a name="implementing-find-in-page"></a>**Implémentation de page de recherche**
+## <a name="implementing-find-in-page"></a>**Implémentation de la recherche dans la page**
 
 -   Les visionneuses de documents, lecteurs et navigateurs, qui sont les types d’applications les plus susceptibles d’offrir la fonctionnalité de recherche dans la page, offrent à l’utilisateur une expérience d’affichage/lecture plein écran.
 -   La fonctionnalité de recherche dans la page est une fonctionnalité secondaire qui doit figurer dans une barre de commandes.

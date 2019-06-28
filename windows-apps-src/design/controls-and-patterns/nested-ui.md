@@ -12,10 +12,10 @@ design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: aa672c99dc83e7955c4d4f91b5bc34620c48ed01
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364548"
 ---
 # <a name="nested-ui-in-list-items"></a>Interface utilisateur imbriquée dans des éléments de liste
@@ -26,7 +26,7 @@ L’interface utilisateur imbriquée est une interface utilisateur (UI) qui expo
 
 Vous pouvez utiliser l’interface utilisateur imbriquée pour présenter des options supplémentaires permettant d’accélérer la réalisation d’actions importantes. Toutefois, plus le nombre d’actions exposées augmente, plus votre interface utilisateur devient compliquée. Vous devez être particulièrement vigilant lorsque vous choisissez d’utiliser ce modèle d’interface utilisateur. Cet article fournit des recommandations qui vont vous permettre de déterminer le meilleur mode de fonctionnement de votre interface utilisateur spécifique.
 
-> **API importantes** : [Classe de ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview), [classe GridView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview)
+> **API importantes** : [classe ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview), [classe GridView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview)
 
 Dans cet article, nous abordons la création d’une interface utilisateur imbriquée dans les éléments [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) et [GridView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview). Bien que les autres cas d’interface utilisateur imbriquée ne soient pas abordés dans cette section, ces concepts sont transférables. Avant de commencer, vous devez être familiarisé avec les instructions générales concernant l’utilisation des contrôles ListView ou GridView dans votre interface utilisateur, qui se trouvent dans les articles [Listes](lists.md) et [Affichage Liste et affichage Grille](listview-and-gridview.md).
 
@@ -37,7 +37,7 @@ Dans cet article, nous utilisons les termes *liste*, *élément de liste*, et *i
 
 ![Parties de l’interface utilisateur imbriquée](images/nested-ui-example-1.png)
 
-> REMARQUE&nbsp;&nbsp;Les contrôles ListView et GridView proviennent de la classe [ListViewBase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase) ; ils possèdent donc les mêmes fonctionnalités mais affichent les données différemment. Dans cet article, lorsque nous parlons de listes, les informations s’appliquent aux contrôles ListView et GridView.
+> REMARQUE&nbsp;&nbsp;ListView et GridView dérivent tous deux de la classe [ListViewBase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase) ; ils ont donc les mêmes fonctionnalités, mais affichent les données différemment. Dans cet article, lorsque nous parlons de listes, les informations s’appliquent aux contrôles ListView et GridView.
 
 ## <a name="primary-and-secondary-actions"></a>Actions principales et secondaires
 
@@ -109,7 +109,7 @@ Si votre interface utilisateur de liste comportant des éléments imbriqués pre
 
 ![Parties de l’interface utilisateur imbriquée](images/nested-ui-navigation.png)
 
-**Gamepad**
+**Boîtier de commande**
 
 Lorsque la saisie est effectuée à l’aide d’un boîtier de commande, proposez l’expérience utilisateur suivante :
 
@@ -167,7 +167,7 @@ Pour terminer cette interface utilisateur, définissez les propriétés suivante
 
 Lorsque les éléments de liste n’effectuent aucune action, nous recommandons de procéder ainsi pour gérer la navigation avec un boîtier de commande ou un clavier.
 
-**Gamepad**
+**Boîtier de commande**
 
 Lorsque la saisie est effectuée à l’aide d’un boîtier de commande, proposez l’expérience utilisateur suivante :
 

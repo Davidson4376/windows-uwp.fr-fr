@@ -13,10 +13,10 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 841903f9bc998af5ead2a3486c500487cb070855
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364301"
 ---
 # <a name="sliders"></a>Curseurs
@@ -25,7 +25,7 @@ ms.locfileid: "66364301"
 
 Un curseur est un contrôle qui permet à l’utilisateur d’effectuer une sélection parmi une plage de valeurs en déplaçant un contrôle curseur de position le long d’une ligne.
 
-> **API importantes** : [Classe Slider](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.slider), [propriété Value](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.value), [événement ValueChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged)
+> **API importantes** : [classe Slider](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.slider), [propriété Value](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.value), [événement ValueChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged)
 
 ![Contrôle de curseur](images/controls/slider.png)
 
@@ -40,11 +40,11 @@ N’utilisez pas un curseur pour les paramètres binaires. Utilisez un [bouton b
 
 Voici les autres facteurs à prendre en compte lorsque vous hésitez à utiliser un curseur :
 
--   **Le paramètre semble une quantité relative ?** Si ce n’est pas le cas, utilisez des [cases d’option](radio-button.md) ou une [zone de liste](lists.md).
--   **Est le paramètre exact, appelée valeur numérique ?** Si tel est le cas, utilisez une [zone de texte](text-box.md) numérique.
--   **Un utilisateur tireront parti de commentaires instantanés sur l’effet des modifications des paramètres ?** Si tel est le cas, utilisez un curseur. Par exemple, les utilisateurs choisissent plus facilement une couleur lorsqu’ils voient immédiatement le résultat des modifications qu’ils ont apportées aux valeurs de teinte, de saturation ou de luminosité.
--   **Le paramètre dispose d’une plage de valeurs de quatre ou plus ?** Si ce n’est pas le cas, utilisez des [cases d’option](radio-button.md).
--   **L’utilisateur peut modifier la valeur ?** Les curseurs sont pour l’interaction utilisateur. Pour les valeurs que l’utilisateur ne peut pas modifier, utilisez plutôt du texte en lecture seule.
+-   **Le paramètre s’apparente-t-il à une quantité relative ?** Si ce n’est pas le cas, utilisez des [cases d’option](radio-button.md) ou une [zone de liste](lists.md).
+-   **Le paramètre est-il une valeur numérique exacte connue ?** Si tel est le cas, utilisez une [zone de texte](text-box.md) numérique.
+-   **Un utilisateur va-t-il bénéficier d’un feedback instantané sur l’effet des modifications apportées aux paramètres ?** Si tel est le cas, utilisez un curseur. Par exemple, les utilisateurs choisissent plus facilement une couleur lorsqu’ils voient immédiatement le résultat des modifications qu’ils ont apportées aux valeurs de teinte, de saturation ou de luminosité.
+-   **Le paramètre a-t-il une plage de quatre valeurs ou plus ?** Si ce n’est pas le cas, utilisez des [cases d’option](radio-button.md).
+-   **L’utilisateur peut-il changer la valeur ?** Les curseurs sont pour l’interaction utilisateur. Pour les valeurs que l’utilisateur ne peut pas modifier, utilisez plutôt du texte en lecture seule.
 
 Si vous devez choisir entre un curseur et une zone de texte numérique, utilisez plutôt une zone de texte numérique si :
 
@@ -62,7 +62,7 @@ Utilisez un curseur si :
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>Si vous disposez de l'application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/Slider">ouvrir l’application et voir l'objet Curseur en action</a>.</p>
+    <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/Slider">ouvrir l’application et voir l’objet Slider en action</a>.</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
@@ -117,7 +117,7 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
 
 -   Veillez à ce que la taille du contrôle permette à l’utilisateur de définir facilement la valeur souhaitée. Pour les paramètres ayant des valeurs distinctes, assurez-vous que l’utilisateur peut facilement sélectionner n’importe quelle valeur à l’aide de la souris. Assurez-vous que les extrémités du curseur restent toujours dans les limites de la zone d’affichage.
 -   Fournissez un retour immédiat pendant ou juste après une sélection de l’utilisateur (lorsque cela est faisable). Par exemple, le contrôle du volume Windows émet un son pour indiquer le volume audio sélectionné.
--   Utilisez des étiquettes pour afficher les différentes valeurs de la plage. Exception : Si le curseur est orienté verticalement et l’étiquette du haut est Maximum, élevé, plus ou équivalent, vous pouvez omettre les autres étiquettes, car la signification est claire.
+-   Utilisez des étiquettes pour afficher les différentes valeurs de la plage. Exception : Si le curseur est orienté à la verticale et que l’étiquette supérieure est Maximum, Haut, Plus ou un équivalent, vous n’êtes pas obligé d’ajouter les autres étiquettes, car la signification est évidente.
 -   Si vous désactivez le curseur, désactivez aussi l’ensemble des étiquettes ou retours visuels associés.
 -   Tenez compte de l’orientation du texte lorsque vous définissez la direction du flux et/ou l’orientation de votre curseur. Selon la langue, le script est lu de gauche à droite ou de droite à gauche.
 -   N’utilisez pas un curseur comme indicateur de progression.
@@ -169,7 +169,7 @@ La direction de la plage est le sens dans lequel vous déplacez le curseur lorsq
     -   Étiquetez les deux extrémités de la plage du curseur, à moins que cela ne soit pas nécessaire avec une orientation verticale.
     -   Utilisez un seul mot, si possible, pour chaque étiquette.
     -   N’utilisez pas de ponctuation finale.
-    -   Veillez à ce que ces étiquettes soient descriptives et balancées. Exemples : Maximum/Minimum, plus/moins, Low/High, Soft/bruyant.
+    -   Veillez à ce que ces étiquettes soient descriptives et balancées. Exemples : Maximum/Minimum, Plus/Moins, Bas/Haut, Faible/Fort.
 -   **Étiquettes de valeur**
 
     Une étiquette de valeur affiche la valeur actuelle du curseur.
@@ -188,8 +188,8 @@ Lors de la conception d’un curseur personnalisé, réfléchissez à la meilleu
 
 ## <a name="get-the-sample-code"></a>Obtenir l’exemple de code
 
-- [Exemples de la Galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) - Affichez tous les contrôles XAML dans un format interactif.
+- [Exemple de Galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) : tous les contrôles XAML dans un format interactif.
 
 ## <a name="related-topics"></a>Rubriques connexes
-- [Activer/désactiver commutateurs](toggles.md)
-- [Classe de curseur](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Slider)
+- [Boutons bascule](toggles.md)
+- [Slider, classe](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Slider)

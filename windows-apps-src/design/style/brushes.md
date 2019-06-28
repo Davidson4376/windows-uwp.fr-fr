@@ -7,17 +7,17 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e5f8dfc780b50e70f92fc388a04258ce7be11a4
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66366840"
 ---
 # <a name="using-brushes-to-paint-backgrounds-foregrounds-and-outlines"></a>Utilisation des pinceaux pour peindre des arrière-plans, des premiers plans et des contours
 
-Utilisez les objets [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) pour peindre les intérieurs ou les contours de formes, de texte et de parties de contrôles XAML, afin que l’objet peint soit visible dans une interface utilisateur. Examinons les pinceaux proposés et leur utilisation.
+Vous utilisez des objets [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) pour peindre les intérieurs ou les contours de formes, de texte et de parties de contrôles XAML, afin que l’objet peint soit visible dans une interface utilisateur. Examinons les pinceaux proposés et leur utilisation.
 
-> **API importantes** :  [Classe de pinceau](/uwp/api/Windows.UI.Xaml.Media.Brush)
+> **API importantes** :  [classe Brush](/uwp/api/Windows.UI.Xaml.Media.Brush)
 
 ## <a name="introduction-to-brushes"></a>Vue d’ensemble des pinceaux
 
@@ -37,7 +37,7 @@ Un pinceau [**SolidColorBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.X
 
 ### <a name="predefined-color-names"></a>Noms de couleur prédéfinis
 
-Vous pouvez utiliser un nom de couleur prédéfini, comme [**Yellow**](https://docs.microsoft.com/uwp/api/windows.ui.colors.yellow) ou [**Magenta**](https://docs.microsoft.com/uwp/api/windows.ui.colors.magenta). Vous disposez de 256 couleurs nommées. L’analyseur XAML convertit le nom de la couleur en une structure [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color) avec les canaux de couleur appropriés. Les 256 couleurs nommées sont basées sur le *X11* les noms de couleurs dans les feuilles de Style en cascade, niveau 3 (CSS3) spécification, car vous est peut-être déjà familiarisé avec cette liste de nommé couleurs si vous avez une expérience précédente avec le développement web ou conception.
+Vous pouvez utiliser un nom de couleur prédéfini, comme [**Yellow**](https://docs.microsoft.com/uwp/api/windows.ui.colors.yellow) ou [**Magenta**](https://docs.microsoft.com/uwp/api/windows.ui.colors.magenta). Vous disposez de 256 couleurs nommées. L’analyseur XAML convertit le nom de la couleur en une structure [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color) avec les canaux de couleur appropriés. Étant donné que les 256 couleurs nommées s’appuient sur les noms de couleurs *X11* issus de la spécification CSS3 (Cascading Style Sheets, Level 3), vous connaissez peut-être déjà cette liste de couleurs nommées si vous avez de l’expérience en matière de développement ou de conception de sites web.
 
 Vous trouverez ci-dessous un exemple dans lequel la propriété [**Fill**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.shape.fill) d’un objet [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) présente la couleur prédéfinie [**Red**](https://docs.microsoft.com/uwp/api/windows.ui.colors.red).
 
@@ -53,9 +53,9 @@ Si vous définissez un objet [**SolidColorBrush**](https://docs.microsoft.com/uw
 
 ### <a name="hexadecimal-color-values"></a>Valeurs de couleur hexadécimales
 
-Vous pouvez, à l’aide d’une chaîne au format hexadécimal, déclarer des valeurs de couleurs 24 bits précises avec un canal alpha sur 8 bits pour un objet [**SolidColorBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush). Deux caractères dans la plage 0 à F définissent chaque valeur du composant, et l’ordre des valeurs de composants de la chaîne hexadécimale est le suivant : canal alpha (opacité), canal rouge, canal vert et canal bleu (**ARGB**). Par exemple, la valeur hexadécimale «\#FFFF0000 » définit un rouge entièrement opaque (alpha = « FF », rouge = « FF », vert = « 00 » et bleu = « 00 »).
+Vous pouvez, à l’aide d’une chaîne au format hexadécimal, déclarer des valeurs de couleurs 24 bits précises avec un canal alpha sur 8 bits pour un objet [**SolidColorBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush). Deux caractères dans la plage 0 à F définissent chaque valeur du composant, et l’ordre des valeurs de composants de la chaîne hexadécimale est le suivant : canal alpha (opacité), canal rouge, canal vert et canal bleu (**ARGB**). Par exemple, la valeur hexadécimale « \#FFFF0000 » définit un rouge entièrement opaque (alpha=« FF », rouge=« FF », vert=« 00 » et bleu=« 00 »).
 
-Cet exemple XAML définit la [ **remplir** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.shape.fill) propriété d’un [ **Rectangle** ](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) sur la valeur hexadécimale «\#FFFF0000 » et donne un résultat identique à l’aide de la couleur nommée [ **Colors.Red**](https://docs.microsoft.com/uwp/api/windows.ui.colors.red).
+L’exemple XAML suivant définit la propriété [**Fill**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.shape.fill) d’un objet [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) sur la valeur hexadécimale « \#FFFF0000 » et aboutit au même résultat que l’utilisation de la couleur nommée [**Colors.Red**](https://docs.microsoft.com/uwp/api/windows.ui.colors.red).
 
 ```xml
 <StackPanel>
@@ -63,7 +63,7 @@ Cet exemple XAML définit la [ **remplir** ](https://docs.microsoft.com/uwp/api/
 </StackPanel>
 ```
 
-### <a name="span-idpropertyelementsyntaxspanspan-idpropertyelementsyntaxspanspan-idpropertyelementsyntaxspanproperty-element-syntax"></a><span id="Property_element_syntax__"></span><span id="property_element_syntax__"></span><span id="PROPERTY_ELEMENT_SYNTAX__"></span>Syntaxe d’élément de propriété
+### <a name="span-idpropertyelementsyntaxspanspan-idpropertyelementsyntaxspanspan-idpropertyelementsyntaxspanproperty-element-syntax"></a><span id="Property_element_syntax__"></span><span id="property_element_syntax__"></span><span id="PROPERTY_ELEMENT_SYNTAX__"></span>Syntaxe des éléments de la propriété
 
 Vous pouvez utiliser la syntaxe des éléments de propriété pour définir un pinceau [**SolidColorBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush). Cette syntaxe est plus détaillée que les méthodes précédentes, mais elle vous permet de spécifier des valeurs de propriétés supplémentaires sur un élément, telles que la propriété [**Opacity**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.brush.opacity). Pour plus d’informations sur la syntaxe XAML, y compris la syntaxe des éléments de propriété, voir [Vue d’ensemble du langage XAML](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-overview) et [Guide la syntaxe XAML](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-syntax-guide).
 
@@ -77,7 +77,7 @@ Dans les exemples précédents, la chaîne « SolidColorBrush » n’apparaît
 </Rectangle>
 ```
 
-## <a name="span-idlineargradientbrushesspanspan-idlineargradientbrushesspanspan-idlineargradientbrushesspanlinear-gradient-brushes"></a><span id="Linear_gradient_brushes_"></span><span id="linear_gradient_brushes_"></span><span id="LINEAR_GRADIENT_BRUSHES_"></span>Pinceaux de dégradé linéaires
+## <a name="span-idlineargradientbrushesspanspan-idlineargradientbrushesspanspan-idlineargradientbrushesspanlinear-gradient-brushes"></a><span id="Linear_gradient_brushes_"></span><span id="linear_gradient_brushes_"></span><span id="LINEAR_GRADIENT_BRUSHES_"></span>Pinceaux de dégradé linéaire
 
 Un objet [**LinearGradientBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.LinearGradientBrush) peint une zone en dégradé défini le long d’une ligne. Cette ligne est appelée *axe de dégradé*. Vous devez spécifier les couleurs du dégradé et leur emplacement le long de l’axe à l’aide d’objets [**GradientStop**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.GradientStop). Par défaut, l’axe de dégradé court du coin supérieur gauche vers le coin inférieur droit de la zone peinte par le pinceau, ce qui produit une ombre diagonale.
 
@@ -105,9 +105,9 @@ L’exemple suivant permet de créer un dégradé linéaire constitué de quatre
 
 La couleur de chaque point entre les extrémités est interpolée de façon linéaire sous la forme d’une combinaison de la couleur spécifiée par les deux points limites. L’illustration met en relief ces points de dégradés. Les cercles indiquent la position des points de dégradé, et la ligne en pointillés représente l’axe de dégradé.
 
-![Points de dégradé](images/linear-gradients-stops.png) vous pouvez modifier la ligne à laquelle les points de dégradé sont positionnés en définissant le [ **StartPoint** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.lineargradientbrush.startpoint) et [ **point de terminaison** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.lineargradientbrush.endpoint) propriétés à être des valeurs différentes de celles du `(0,0)` et `(1,1)` à partir des valeurs par défaut. En modifiant les valeurs de coordonnées **StartPoint** et **EndPoint**, vous pouvez créer des dégradés horizontaux ou verticaux, inverser le sens du dégradé ou condenser son étalement afin de l’appliquer à une plage plus petite que la zone peinte totale. Pour condenser le dégradé, vous attribuez à la propriété **StartPoint** et/ou à la propriété **EndPoint** des valeurs comprises entre 0 et 1. Par exemple, pour obtenir un dégradé horizontal dont l’effet se produit en totalité sur la moitié gauche du pinceau, tandis que le côté droit conserve la dernière couleur unie définie par l’objet [**GradientStop**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.GradientStop), vous spécifiez une propriété **StartPoint** d’une valeur `(0,0)` et une propriété **EndPoint** d’une valeur `(0.5,0)`.
+![Points de dégradé](images/linear-gradients-stops.png) Vous pouvez changer la ligne de positionnement des points de dégradé en affectant aux propriétés [**StartPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.lineargradientbrush.startpoint) et [**EndPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.lineargradientbrush.endpoint) des valeurs différentes des valeurs par défaut initiales `(0,0)` et `(1,1)`. En modifiant les valeurs de coordonnées **StartPoint** et **EndPoint**, vous pouvez créer des dégradés horizontaux ou verticaux, inverser le sens du dégradé ou condenser son étalement afin de l’appliquer à une plage plus petite que la zone peinte totale. Pour condenser le dégradé, vous attribuez à la propriété **StartPoint** et/ou à la propriété **EndPoint** des valeurs comprises entre 0 et 1. Par exemple, pour obtenir un dégradé horizontal dont l’effet se produit en totalité sur la moitié gauche du pinceau, tandis que le côté droit conserve la dernière couleur unie définie par l’objet [**GradientStop**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.GradientStop), vous spécifiez une propriété **StartPoint** d’une valeur `(0,0)` et une propriété **EndPoint** d’une valeur `(0.5,0)`.
 
-### <a name="span-idusetoolstomakegradientsspanspan-idusetoolstomakegradientsspanspan-idusetoolstomakegradientsspanuse-tools-to-make-gradients"></a><span id="Use_tools_to_make_gradients"></span><span id="use_tools_to_make_gradients"></span><span id="USE_TOOLS_TO_MAKE_GRADIENTS"></span>Utilisez les outils pour rendre des dégradés
+### <a name="span-idusetoolstomakegradientsspanspan-idusetoolstomakegradientsspanspan-idusetoolstomakegradientsspanuse-tools-to-make-gradients"></a><span id="Use_tools_to_make_gradients"></span><span id="use_tools_to_make_gradients"></span><span id="USE_TOOLS_TO_MAKE_GRADIENTS"></span>Utiliser des outils pour rendre les dégradés
 
 Maintenant que vous savez comment fonctionnent les dégradés linéaires, vous pouvez utiliser Visual Studio ou Blend pour les créer plus facilement. Pour créer un dégradé, sélectionnez l’objet auquel vous souhaitez l’appliquer dans l’aire de conception ou dans une vue XAML. Développez **Pinceau**, puis sélectionnez l’onglet **Dégradé linéaire** (voir la capture d’écran suivante).
 
@@ -137,7 +137,7 @@ Voici le rendu de l’objet [**ImageBrush**](https://docs.microsoft.com/uwp/api/
 
 ![Rendu d’ImageBrush](images/brushes-imagebrush.jpg)
 
-[**ImageBrush** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.ImageBrush) et [ **Image** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) faire référence à un fichier de source d’image par identificateur URI (Uniform Resource), où ce fichier image source utilise plusieurs formats d’image possible. Ces fichiers sources d’image sont spécifiés sous forme d’URI. Pour plus d’informations sur la spécification de sources d’images, sur les formats d’images utilisables et sur leur empaquetage dans une application, voir [Image et ImageBrush](https://docs.microsoft.com/windows/uwp/controls-and-patterns/images-imagebrushes).
+[**ImageBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.ImageBrush) et [**Image**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) référencent un fichier source d’image par un URI (Uniform Resource Identifier), où ce fichier utilise plusieurs formats d’image possibles. Ces fichiers sources d’image sont spécifiés sous forme d’URI. Pour plus d’informations sur la spécification de sources d’images, sur les formats d’images utilisables et sur leur empaquetage dans une application, voir [Image et ImageBrush](https://docs.microsoft.com/windows/uwp/controls-and-patterns/images-imagebrushes).
 
 ## <a name="brushes-and-text"></a>Pinceaux et texte
 
@@ -147,19 +147,19 @@ Même lorsque vous utilisez une couleur unie, veillez à ce que le contraste ent
 
 ## <a name="webviewbrush"></a>WebViewBrush
 
-Un objet [**WebViewBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebViewBrush) est un type particulier de pinceau pouvant accéder au contenu qui est normalement affiché dans un contrôle [**WebView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebView). Au lieu de restituer le contenu dans la zone de contrôle **WebView** rectangulaire, l’objet **WebViewBrush** peint ce contenu sur un autre élément qui possède une propriété de type [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) pour une surface de rendu. L’objet **WebViewBrush** n’est pas approprié pour chaque scénario de pinceau, mais il est utile pour les transitions d’un objet **WebView**. Pour plus d’informations, voir [**WebViewBrush**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.WebViewBrush).
+Un objet [**WebViewBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebViewBrush) est un type particulier de pinceau pouvant accéder au contenu qui est normalement affiché dans un contrôle [**WebView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebView). Au lieu de restituer le contenu dans la zone de contrôle **WebView** rectangulaire, l’objet **WebViewBrush** peint ce contenu sur un autre élément qui possède une propriété de type [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) pour une surface de rendu. L’objet **WebViewBrush** n’est pas approprié pour chaque scénario de pinceau, mais il est utile pour les transitions d’un objet **WebView**. Pour plus d’informations, consultez [**WebViewBrush**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.WebViewBrush).
 
 ## <a name="xamlcompositionbrushbase"></a>XamlCompositionBrushBase
 
-[**XamlCompositionBrushBase** ](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase) est une classe de base utilisée pour créer des pinceaux qui utilisent [ **CompositionBrush** ](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Composition.CompositionBrush) pour peindre des éléments XAML UI.
+[**XamlCompositionBrushBase**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase) est une classe de base utilisée pour créer des pinceaux personnalisés utilisant [**CompositionBrush**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Composition.CompositionBrush) pour peindre des éléments d’interface utilisateur XAML.
 
-Cela active l’interopérabilité « liste déroulante »entre les couches Windows.UI.Xaml et Windows.UI.Composition, tel que décrit dans la [**vue d’ensemble de la couche visuelle**](/windows/uwp/composition/visual-layer). 
+Ceci permet une interopérabilité « liste déroulante »entre les couches Windows.UI.Xaml et Windows.UI.Composition, comme décrit dans [**Vue d’ensemble de la couche visuelle**](/windows/uwp/composition/visual-layer). 
 
-Pour créer un pinceau personnalisé, créez une nouvelle catégorie qui hérite de XamlCompositionBrushBase et qui implémente les méthodes requises.
+Pour créer un pinceau personnalisé, créez une classe qui hérite de XamlCompositionBrushBase et qui implémente les méthodes nécessaires.
 
-Par exemple, cela peut être utilisé pour appliquer des [**effets**](/windows/uwp/composition/composition-effects) aux éléments d’interface utilisateur XAML à l'aide d'un [**CompositionEffectBrush**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Composition.CompositionEffectBrush), comme un **GaussianBlurEffect** ou un [**SceneLightingEffect**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Composition.Effects.SceneLightingEffect) qui contrôle les propriétés réfléchissantes d’un élément UIElement XAML lorsque celui-ci est allumé par un [**XamlLight**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.xamllight).
+Par exemple, ceci peut être utilisé pour appliquer des [**effets**](/windows/uwp/composition/composition-effects) aux éléments d’interface utilisateur XAML à l’aide d’un [**CompositionEffectBrush**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Composition.CompositionEffectBrush), comme un **GaussianBlurEffect** ou un [**SceneLightingEffect**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Composition.Effects.SceneLightingEffect) qui contrôle les propriétés réfléchissantes d’un élément UIElement XAML quand celui-ci est éclairé par une [**XamlLight**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.xamllight).
 
-Pour obtenir des exemples de code, voir la page de référence de la classe [**XamlCompositionBrushBase**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase).
+Pour obtenir des exemples de code, consultez la page de référence de la classe [**XamlCompositionBrushBase**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase).
 
 ## <a name="brushes-as-xaml-resources"></a>Pinceaux en tant que ressources XAML
 
@@ -189,10 +189,10 @@ blueBrush = ref new SolidColorBrush(Windows::UI::Colors::Blue);
 
 Pour [**WebViewBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebViewBrush) et [**ImageBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.ImageBrush), utilisez le constructeur par défaut, puis appelez d’autres API avant d’essayer d’utiliser ce pinceau pour une propriété d’interface utilisateur.
 
--   [**ImageSource** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imagebrush.imagesourceproperty) nécessite un [ **BitmapImage** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapImage) (pas un URI) lorsque vous définissez un [ **ImageBrush** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.ImageBrush) à l’aide de code. Si votre source est un flux, utilisez la méthode [**SetSourceAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync) pour initialiser la valeur. Si votre source est un URI incluant du contenu de votre application qui utilise les modèles **ms-appx** ou **ms-resource**, utilisez le constructeur [**BitmapImage**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.) qui prend un URI. Vous pouvez également envisager de gérer l’événement [**ImageOpened**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imagebrush.imageopened) s’il existe des problèmes de délai liés à la récupération ou au décodage de la source de l’image, auquel cas un contenu alternatif peut s’avérer nécessaire à afficher tant que la source de l’image n’est pas disponible.
+-   [**ImageSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imagebrush.imagesourceproperty) nécessite une classe [**BitmapImage**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapImage) (et non pas un URI) quand vous définissez un [**ImageBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.ImageBrush) en utilisant du code. Si votre source est un flux, utilisez la méthode [**SetSourceAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync) pour initialiser la valeur. Si votre source est un URI incluant du contenu de votre application qui utilise les modèles **ms-appx** ou **ms-resource**, utilisez le constructeur [**BitmapImage**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.) qui prend un URI. Vous pouvez également envisager de gérer l’événement [**ImageOpened**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imagebrush.imageopened) s’il existe des problèmes de délai liés à la récupération ou au décodage de la source de l’image, auquel cas un contenu alternatif peut s’avérer nécessaire à afficher tant que la source de l’image n’est pas disponible.
 -   Pour la classe [**WebViewBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebViewBrush), vous pouvez avoir besoin d’appeler la méthode [**Redraw**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webviewbrush.redraw) si vous avez récemment réinitialisé la propriété [**SourceName**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webviewbrush.sourcename) ou que le contenu de la classe [**WebView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebView) est également remplacé à l’aide de code.
 
-Pour obtenir des exemples de code, voir les pages de référence pour [**WebViewBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebViewBrush),  [**ImageBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.ImageBrush) et [**XamlCompositionBrushBase**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase).
+Pour obtenir des exemples de code, consultez les pages de référence pour [**WebViewBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebViewBrush), [**ImageBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.ImageBrush) et [**XamlCompositionBrushBase**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase).
  
 
  

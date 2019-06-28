@@ -9,17 +9,17 @@ keywords: windows 10, uwp
 ms.assetid: 97eae5f3-c16b-4aa5-b4a1-dd892cf32ead
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b34f88d198ec80c67e5aac7b57001e42fe5c516
-ms.sourcegitcommit: aa5a055e3ff9ee9defc73ed9567196d59f59542a
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/10/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66825019"
 ---
 # <a name="inking-controls"></a>Contrôles pour l’entrée manuscrite
 
 
 
-Il existe deux différents contrôles qui facilitent l’écriture manuscrite dans les applications Universal Windows Platform (UWP) : [InkCanvas](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) et [InkToolbar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar).
+Il existe deux contrôles différents qui facilitent l’entrée manuscrite dans les applications de plateforme Windows universelle (UWP) : [InkCanvas](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) et [InkToolbar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar).
 
 Le contrôle InkCanvas permet de restituer une entrée de stylet sous la forme d’un trait d’encre (via les paramètres par défaut de couleur et d’épaisseur) ou d’un trait d’effacement. Ce contrôle est une superposition transparente qui n’inclut pas d’interface utilisateur intégrée permettant de modifier les propriétés de traits d’encre par défaut.
 
@@ -35,7 +35,7 @@ Par défaut, le contrôle InkToolbar comprend des boutons pour dessiner, effacer
 
 <img src="images/ink-tools-invoked-toolbar.png" width="300" alt="InkToolbar palette flyout">
 
-> **API importantes** : [InkCanvas (classe)](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas), [InkToolbar classe](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar), [InkPresenter classe](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter), [Windows.UI.Input.Inking](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking)
+> **API importantes** : [classe InkCanvas](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas), [classe InkToolbar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar), [classe InkPresenter](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter), [Windows.UI.Input.Inking](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking)
 
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
@@ -56,7 +56,7 @@ Associez InkCanvas avec un élément InkToolbar pour fournir une interface utili
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>Si vous disposez de l'application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/InkCanvas">ouvrir l’application et voir l'objet InkCanvas en action</a>.</p>
+    <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/InkCanvas">ouvrir l’application et voir l’objet InkCanvas en action</a>.</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
@@ -68,12 +68,12 @@ Associez InkCanvas avec un élément InkToolbar pour fournir une interface utili
 **Microsoft Edge**
 
 Microsoft Edge utilise InkCanvas et InkToolbar pour **Notes Web**.  
-![InkCanvas est utilisé pour l’encre dans Microsoft Edge](images/ink-tools-edge.png)
+![InkCanvas est utilisé pour effectuer une entrée manuscrite dans Microsoft Edge](images/ink-tools-edge.png)
 
-**Espace de travail Windows Ink**
+**Espace de travail Windows Ink**
 
 Les éléments InkCanvas et InkToolbar sont également utilisés pour **bloc-croquis** et **croquis sur capture d’écran**  dans l’**Espace de travail Windows Ink**.  
-![InkToolbar dans l’espace de travail Windows Ink](images/ink-tools-ink-workspace.png)
+![InkToolbar dans l’espace de travail Windows Ink](images/ink-tools-ink-workspace.png)
 
 ## <a name="create-an-inkcanvas-and-inktoolbar"></a>Créer un élément InkCanvas et InkToolbar
 
@@ -84,7 +84,7 @@ L’ajout d’un InkCanvas à votre application nécessite une seule ligne de ba
 ```
 
 > [!NOTE]
-> Pour la personnalisation InkCanvas détaillée à l’aide de InkPresenter, consultez le [« Pen interactions et l’encre de Windows dans les applications UWP »](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions) article.
+> Pour la personnalisation détaillée d’InkCanvas à l’aide d’InkPresenter, consultez l’article [« Interactions avec le stylet et Windows Ink dans les applications UWP »](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions).
 
 Le contrôle InkToolbar doit être utilisé en association avec un contrôle InkCanvas. L’intégration d’un contrôle InkToolbar (et de tous les outils intégrés) dans votre application nécessite une ligne supplémentaire de balisage :
 
@@ -137,7 +137,7 @@ En fonction de votre application et de la fonctionnalité d’entrée manuscrite
 - Bascule personnalisée : définit l’état d’une fonctionnalité définie par l’application sur activé ou désactivé. Lorsqu’elle est activée, la fonctionnalité fonctionne conjointement avec l’outil actif.
 
 > [!NOTE]
-> Vous ne pouvez pas modifier l’ordre d’affichage des boutons intégrés. L’ordre d’affichage par défaut est : Stylo à bille, Crayon, surligneur, gomme et règle. Les stylets personnalisés sont ajoutés au dernier stylet par défaut, les boutons d’outil personnalisé sont ajoutés entre le dernier bouton de stylet et le bouton de gomme, et les boutons de bascule personnalisés sont ajoutés après le bouton de règle. (Les boutons personnalisés sont ajoutés dans l’ordre que vous avez spécifié.)
+> Vous ne pouvez pas modifier l’ordre d’affichage des boutons intégrés. L’ordre d’affichage par défaut est : stylo à bille, crayon, surligneur, gomme et règle. Les stylets personnalisés sont ajoutés au dernier stylet par défaut, les boutons d’outil personnalisé sont ajoutés entre le dernier bouton de stylet et le bouton de gomme, et les boutons de bascule personnalisés sont ajoutés après le bouton de règle. (Les boutons personnalisés sont ajoutés dans l’ordre que vous avez spécifié.)
 
 Bien que l’élément InkToolbar peut être un élément de niveau supérieur, il est généralement exposé par le biais d’un bouton « Entrée manuscrite » ou d’une commande. Nous vous recommandons d’utiliser le glyphe EE56 de la police Segoe MLD2 Assets comme une icône de niveau supérieur.
 
@@ -148,7 +148,7 @@ Tous les boutons de stylet et d’outil intégrés incluent un menu volant où i
 Le menu volant s’affiche quand le bouton d’un outil actif est à nouveau sélectionné. Lorsque la couleur ou la taille est modifiée, le menu volant se ferme automatiquement et permet de reprendre l’entrée manuscrite. Les outils et stylets personnalisés peuvent utiliser le menu volant par défaut ou définir un menu volant personnalisé.
 
 La gomme dispose également d’un menu volant proposant la commande **Supprimer toutes les entrées manuscrites**.  
-![InkToolbar avec flyout gomme appelé](images/ink-tools-erase-all-ink.png)
+![InkToolbar avec appel du menu volant gomme](images/ink-tools-erase-all-ink.png)
 
  Pour plus d’informations sur la personnalisation et l’extensibilité, consultez l’[exemple de SimpleInk](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk).
 
@@ -164,12 +164,12 @@ La gomme dispose également d’un menu volant proposant la commande **Supprimer
 
 ## <a name="get-the-sample-code"></a>Obtenir l’exemple de code
 
-- [Exemple SimpleInk](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk) - Montre 8 scénarios autour des fonctionnalités de personnalisation et d’extensibilité des contrôles InkCanvas et InkToolbar. Chaque scénario fournit des indications de base sur les situations courantes d’entrée manuscrite et les implémentations de contrôles.
-- [Exemple de ComplexInk](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk) - Montre des scénarios d’entrée manuscrite plus avancés.
-- [Exemples de la Galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) - Affichez tous les contrôles XAML dans un format interactif.
+- [Exemple SimpleInk](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk) : montre 8 scénarios autour des fonctionnalités de personnalisation et d’extensibilité des contrôles InkCanvas et InkToolbar. Chaque scénario fournit des indications de base sur les situations courantes d’entrée manuscrite et les implémentations de contrôles.
+- [Exemple ComplexInk](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk) : montre des scénarios d’entrée manuscrite plus avancés.
+- [Exemple de Galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) : tous les contrôles XAML dans un format interactif.
 
 ## <a name="related-articles"></a>Articles connexes
 
-- [Interactions du stylet et entrée manuscrite de Windows dans les applications UWP](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions)
-- [Reconnaître les traits d’encre de Windows en tant que texte et formes](https://docs.microsoft.com/windows/uwp/design/input/convert-ink-to-text)
-- [Store et récupérer des données du trait d’encre de Windows](https://docs.microsoft.com/windows/uwp/design/input/save-and-load-ink)
+- [Interactions avec le stylet et Windows Ink dans les applications UWP](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions)
+- [Reconnaître les traits Windows Ink en tant que texte et formes](https://docs.microsoft.com/windows/uwp/design/input/convert-ink-to-text)
+- [Stocker et récupérer les données de traits Windows Ink](https://docs.microsoft.com/windows/uwp/design/input/save-and-load-ink)
