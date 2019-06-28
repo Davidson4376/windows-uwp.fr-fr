@@ -8,18 +8,18 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 62dc89b9e17f1ae9c2394629100e0bd54606594b
-ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
+ms.openlocfilehash: e6074202a05c80a9dc759cdf81b2c20c7cc17d07
+ms.sourcegitcommit: b8087f8b6cf8367f8adb7d6db4581d9aa47b4861
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66215125"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67414100"
 ---
 # <a name="host-uwp-xaml-controls-in-desktop-apps-xaml-islands"></a>Contrôle de l’hôte UWP XAML dans les applications de bureau (îles XAML)
 
 À compter de Windows 10, version 1903, vous pouvez héberger des contrôles UWP dans les applications de bureau non UWP à l’aide d’une fonctionnalité appelée *XAML îles*. Cette fonctionnalité vous permet d’améliorer l’apparence et les fonctionnalités de vos applications de bureau existantes avec les dernières fonctionnalités de l’interface utilisateur de Windows 10 qui sont uniquement disponibles via les contrôles UWP. Cela signifie que vous pouvez utiliser les fonctionnalités UWP comme [Windows Ink](/windows/uwp/design/input/pen-and-stylus-interactions) et les contrôles qui prennent en charge la [Fluent Design System](/windows/uwp/design/fluent-design-system/index) dans votre existante, Windows Forms, applications WPF et Win32 C++.
 
-Nous fournissons plusieurs façons d’utiliser des îlots de XAML dans votre WPF, Windows Forms, et C++ applications Win32, en fonction de la technologie ou d’un framework que vous utilisez.
+Nous fournissons plusieurs façons d’utiliser des îlots de XAML dans votre WPF, Windows Forms, et C++ applications Win32, en fonction de la technologie ou d’un framework que vous utilisez. 
 
 > [!NOTE]
 > Si vous avez des commentaires concernant les îles de XAML, créez un nouveau problème dans le [Microsoft.Toolkit.Win32 référentiel](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/issues) et y laisser vos commentaires. Si vous préférez envoyer vos commentaires en privé, vous pouvez l’envoyer à XamlIslandsFeedback@microsoft.com. Vos idées et les scénarios sont extrêmement importantes pour nous.
@@ -35,7 +35,7 @@ Nous fournissons plusieurs façons d’utiliser des îlots de XAML dans votre WP
 > [!NOTE]
 > Les applications de bureau Win32 C++ doivent utiliser le XAML UWP API d’hébergement pour héberger des contrôles UWP. Les contrôles de l’île de XAML dans le Kit de ressources de communauté de Windows ne sont pas disponibles pour C++ des applications de bureau Win32.
 
-Il existe deux types de contrôles XAML (île) fournis par le Kit de ressources de communauté de Windows pour les applications WPF et Windows Forms : *encapsulé les contrôles* et *contrôles hôtes*.
+Il existe deux types de contrôles XAML (île) fournis par le Kit de ressources de communauté de Windows pour les applications WPF et Windows Forms : *encapsulé les contrôles* et *contrôles hôtes*. 
 
 ### <a name="wrapped-controls"></a>Contrôles inclus dans un wrapper
 
@@ -67,14 +67,6 @@ Voici un aperçu de la façon dont ces contrôles sont organisés du point de vu
 ![Architecture de contrôle de l'hôte](images/xaml-islands/host-controls.png)
 
 Les API qui s’affichent en bas de ce diagramme sont livrés avec le SDK Windows. Les contrôles inclus dans un wrapper et les contrôles hôtes sont disponibles via les packages Nuget dans le Kit de ressources de communauté de Windows.
-
-## <a name="feature-roadmap"></a>Feuille de route de fonctionnalité
-
-Depuis la version de Windows 10, version 1903, les contrôles inclus dans un wrapper et les contrôles hôtes dans le Kit de ressources de communauté de Windows sont toujours en version préliminaire de développeur jusqu'à ce que la version 1.0 des contrôles est disponible.
-
-* Version 1.0 des contrôles pour le .NET Framework 4.6.2 et ultérieurement planifiés pour être publié dans le [version 6.0 du Kit de ressources](https://github.com/windows-toolkit/WindowsCommunityToolkit/milestones).
-* Version 1.0 des contrôles pour .NET Core 3 sont prévus pour une version ultérieure du Kit de ressources.
-* Si vous souhaitez essayer les dernières versions préliminaires des versions de ces contrôles version 1.0 pour .NET Framework et .NET Core 3, consultez le **6.0.0-preview3** de packages NuGet dans le [UWP Community Toolkit](https://dotnet.myget.org/gallery/uwpcommunitytoolkit) galerie.
 
 ## <a name="requirements"></a>Configuration requise
 
@@ -112,8 +104,19 @@ Si vous ne souhaitez empaqueter votre application dans un package MSIX, vous pou
     </assembly>
     ```
 
+## <a name="feature-roadmap"></a>Feuille de route de fonctionnalité
+
+Depuis la version de Windows 10, version 1903, les contrôles inclus dans un wrapper et les contrôles hôtes dans le Kit de ressources de communauté de Windows sont toujours en version préliminaire de développeur jusqu'à ce que la version 1.0 des contrôles est disponible.
+
+* Version 1.0 des contrôles pour le .NET Framework 4.6.2 et ultérieurement planifiés pour être publié dans le [version 6.0 du Kit de ressources](https://github.com/windows-toolkit/WindowsCommunityToolkit/milestones).
+* Version 1.0 des contrôles pour .NET Core 3 sont prévus pour une version ultérieure du Kit de ressources.
+* Si vous souhaitez essayer les dernières versions préliminaires des versions de ces contrôles version 1.0 pour .NET Framework et .NET Core 3, consultez le **6.0.0-preview3** de packages NuGet dans le [UWP Community Toolkit](https://dotnet.myget.org/gallery/uwpcommunitytoolkit) galerie.
+
+Pour plus d’informations, consultez [ce billet de blog](https://blogs.windows.com/windowsdeveloper/2019/06/13/xaml-islands-v1-updates-and-roadmap).
+
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
 Pour plus d’informations générales et des didacticiels sur l’utilisation de XAML (îles), consultez les articles et ressources suivants :
 
-* [Îles de XAML Lab](https://github.com/Microsoft/Windows-AppConsult-XAMLIslandsLab/tree/microsoftlearn). Ce laboratoire complet fournit des instructions détaillées pour l’utilisation de contrôles inclus dans un wrapper et des contrôles hôtes dans le Kit de ressources de communauté de Windows pour ajouter des contrôles UWP à une application WPF line-of-business. Ce laboratoire inclut le [le code complet de l’application WPF](https://github.com/Microsoft/Windows-AppConsult-XAMLIslandsLab/tree/microsoftlearn/Lab) ainsi que [des instructions détaillées](https://github.com/Microsoft/Windows-AppConsult-XAMLIslandsLab/blob/microsoftlearn/Manual/README.md) pour chaque étape du processus.
+* [Moderniser un didacticiel d’application WPF](modernize-wpf-tutorial.md): Ce didacticiel fournit des instructions détaillées pour l’utilisation de contrôles inclus dans un wrapper et des contrôles hôtes dans le Kit de ressources de communauté de Windows pour ajouter des contrôles UWP à une application WPF line-of-business. Ce didacticiel inclut le code complet pour l’application WPF, ainsi que des instructions détaillées pour chaque étape dans le processus.
+* [Îles de XAML v1 - mises à jour et feuille de route](https://blogs.windows.com/windowsdeveloper/2019/06/13/xaml-islands-v1-updates-and-roadmap): Ce billet de blog explique de nombreuses questions courantes sur XAML (îles) et fournit une feuille de route du développement détaillées.
