@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, test bêta, distribution limitée, bêta, test, testeurs
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c0a4d1053c35a831458c832131659b9cb888259
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 6cf7fb20129c0b616fcdb537ff8e612aec9b94a4
+ms.sourcegitcommit: 4aef8c01ba9321401d5729a1ec6d46452ee76faf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63787177"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67468915"
 ---
 # <a name="beta-testing-and-targeted-distribution"></a>Tests bêta et distribution ciblée
 
@@ -65,12 +65,12 @@ Pour utiliser cette option :
 Contrairement aux options décrites ci-dessus, cette option fonctionne pour les clients sur Windows Phone 8.1, ainsi que Windows 10 (mais non sur Windows 8.x). Nul ne peut trouver l’application en recherchant ou en naviguant dans le Store, mais quiconque disposant du lien direct vers sa description du Store peut la télécharger sur un appareil exécutant Windows Phone 8.1 ou version antérieure, ou sur Windows 10. Gardez à l’esprit que, pour que vos testeurs puissent télécharger l’application librement, vous devez définir son prix sur **Gratuit**.
 
 Pour utiliser cette option :
-- Dans la section **Visibilité** de la page **Tarification et disponibilité**, sous [Détectabilité](choose-visibility-options.md#discoverability), sélectionnez **Rendre ce produit disponible mais non détectable dans le Store**. Choisissez l’option pour **lien Direct uniquement : Tous les clients avec un lien direct vers la liste du produit peuvent télécharger, sauf sur Windows 8.x.**.
+- Dans la section **Visibilité** de la page **Tarification et disponibilité**, sous [Détectabilité](choose-visibility-options.md#discoverability), sélectionnez **Rendre ce produit disponible mais non détectable dans le Store**. Choisissez l’option pour **lien Direct uniquement : Tous les clients avec un lien direct vers la liste du produit peuvent télécharger, sauf sur Windows 8.x.** .
 - Après la publication de votre produit, distribuez le lien (l’**URL** sur la [page Identité des applications](view-app-identity-details.md)) à vos testeurs afin qu’ils puissent l’essayer.
 - Lorsque vous êtes prêt à rendre l’application accessible au public, créez une soumission et redéfinissez l’option **Visibilité** sur **Rendre ce produit disponible et détectable dans le Store** (en plus d’autres modifications que vous souhaitez apporter).
 
 > [!IMPORTANT]
-> À compter du 31 octobre 2018, produits nouvellement créé ne peut pas inclure les packages ciblant Windows Phone 8.x ou une version antérieure. Pour plus d’informations, consultez ce [billet de blog](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97).
+> À compter du 31 octobre 2018, produits nouvellement créé ne peut pas inclure les packages ciblant Windows Phone 8.x ou une version antérieure. Pour plus d’informations, consultez ce [billet de blog](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store).
 
 ## <a name="targeted-distribution-to-windows-phone-customers-with-specified-email-addresses"></a>Distribution ciblée à des clients Windows Phone disposant d’adresses de messagerie spécifiées
 

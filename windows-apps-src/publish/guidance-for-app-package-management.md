@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c75eb1a4b28b015b83557f74957a3370f478a26e
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: f514177ad5de7774e6926165435fd3b2d7b5e1f7
+ms.sourcegitcommit: 4aef8c01ba9321401d5729a1ec6d46452ee76faf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63790780"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67468952"
 ---
 # <a name="guidance-for-app-package-management"></a>Aide sur la gestion des packages d’application
 
@@ -31,7 +31,7 @@ Les différents systèmes d’exploitation peuvent exécuter différents types d
 En règle générale, les systèmes d’exploitation plus récents peuvent exécuter des packages ciblant des versions antérieures pour la même famille d’appareils. Appareils Windows 10 peuvent exécuter toutes les précédentes versions du système d’exploitation pris en charge (par famille de périphériques). Appareils Windows 10 desktop peuvent exécuter des applications qui ont été créées pour Windows 8.1 ou Windows 8 ; Les appareils mobiles Windows 10 peuvent exécuter des applications qui ont été créées pour Windows Phone 8.1, Windows Phone 8 et même Windows Phone 7.x. Toutefois, les clients sur Windows 10 n’obtiendrez ces packages si l’application n’inclut pas les packages UWP ciblant la famille d’appareils applicables.
 
 > [!IMPORTANT]
-> À compter du 31 octobre 2018, produits nouvellement créé ne peut pas inclure les packages ciblant 8.x/Windows de Windows Phone 8.x ou une version antérieure. Pour plus d’informations, consultez ce [billet de blog](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/).
+> À compter du 31 octobre 2018, produits nouvellement créé ne peut pas inclure les packages ciblant 8.x/Windows de Windows Phone 8.x ou une version antérieure. Pour plus d’informations, consultez ce [billet de blog](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store).
 
 
 ## <a name="removing-an-app-from-the-store"></a>Suppression d'une application du Windows Store

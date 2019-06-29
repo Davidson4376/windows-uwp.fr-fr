@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, personnaliser, description,version antérieure
 ms.localizationpriority: medium
-ms.openlocfilehash: 50c14ed3fa7f7f5f7d1b4c80bb8165b3f27e522a
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 2d9a9e86397ca5e85697543f99481b43f438a063
+ms.sourcegitcommit: 4aef8c01ba9321401d5729a1ec6d46452ee76faf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63777700"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67468966"
 ---
 # <a name="create-platform-specific-store-listings"></a>Création d’annonces Windows Store spécifiques à la plateforme
 
@@ -21,7 +21,7 @@ Si votre application publiée précédemment comporte des packages qui ciblent d
 Les clients sur Windows 10 (y compris Xbox) seront affiche toujours la valeur par défaut [annonce de Store](create-app-store-listings.md). Vous ne voyez pas l’option de création de listes de Store spécifique à la plateforme, sauf si vous avez déjà publié votre application avec les packages qui prennent en charge une ou plusieurs versions du système d’exploitation antérieures. 
 
 > [!IMPORTANT]
-> À compter du 31 octobre 2018, produits nouvellement créé ne peut pas inclure les packages ciblant 8.x/Windows de Windows Phone 8.x ou une version antérieure. Pour plus d’informations, consultez ce [billet de blog](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97).
+> À compter du 31 octobre 2018, produits nouvellement créé ne peut pas inclure les packages ciblant 8.x/Windows de Windows Phone 8.x ou une version antérieure. Pour plus d’informations, consultez ce [billet de blog](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store).
 
 Les listes spécifiques à la plateforme Store peuvent être utiles si vous souhaitez mentionner les fonctionnalités qui s’affichent uniquement dans une version de système d’exploitation, ou que vous souhaitez fournir des captures d’écran qui sont spécifiques à un système d’exploitation spécifique (indépendamment du type d’appareil).
 

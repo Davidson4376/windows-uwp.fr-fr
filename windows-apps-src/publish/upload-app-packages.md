@@ -6,19 +6,19 @@ ms.date: 10/02/2018
 ms.topic: article
 keywords: Windows 10, uwp, packages, téléchargement, chargement du package
 ms.localizationpriority: medium
-ms.openlocfilehash: 07643b42a4c897c3af1865b895fb174e0eee4a3e
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 97735a8e860f7c941cc35d77a21496696683640f
+ms.sourcegitcommit: 4aef8c01ba9321401d5729a1ec6d46452ee76faf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63787933"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67468878"
 ---
 # <a name="upload-app-packages"></a>Chargement des packages d’application
 
 Le **Packages** page est quand vous chargez tous les fichiers de package (.msix, .msixupload, .msixbundle, .appx, .appxupload et/ou .appxbundle) pour l’application que vous envoyez. Vous pouvez charger tous vos packages pour la même application sur cette page, et quand un client télécharge votre application, le Store fournira automatiquement chaque client avec le package qui convient mieux à leur appareil. Une fois vos packages chargés, vous verrez un tableau indiquant [les packages offerts aux familles d’appareils Windows 10 spécifiques](#device-family-availability) (et aux systèmes d’exploitation plus anciens, le cas échéant), classés par ordre.
 
 > [!IMPORTANT]
-> À compter du 31 octobre 2018, produits nouvellement créé ne peut pas inclure les packages ciblant 8.x/Windows de Windows Phone 8.x ou une version antérieure. Pour plus d’informations, consultez ce [billet de blog](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97).
+> À compter du 31 octobre 2018, produits nouvellement créé ne peut pas inclure les packages ciblant 8.x/Windows de Windows Phone 8.x ou une version antérieure. Pour plus d’informations, consultez ce [billet de blog](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store).
 
 Pour plus d’informations sur le contenu et sur la structure d’un package, voir [Exigences relatives au package de l’application](app-package-requirements.md). Vous souhaiterez également en savoir plus sur [comment numéros de version impact sur les packages qui sont remis à des clients spécifiques](package-version-numbering.md) et [comment gérer les packages pour différents scénarios](guidance-for-app-package-management.md).
 

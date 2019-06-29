@@ -5,12 +5,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 749466e8ebce798f68295df28ad9f11a15e46702
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 69facfe9b1cdac408fe1fd63dfa144de072dfdfd
+ms.sourcegitcommit: 4aef8c01ba9321401d5729a1ec6d46452ee76faf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365023"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67468981"
 ---
 # <a name="responsive-layouts-with-xaml"></a>Dispositions dynamiques avec XAML
 
@@ -22,7 +22,7 @@ Une disposition dynamique repose principalement sur l’utilisation appropriée 
 
 Le système de disposition XAML prend en charge à la fois les dispositions statique et fluide. Dans une disposition statique, vous affectez aux contrôles des positions et des tailles de pixels explicites. Lorsque l’utilisateur change la résolution ou l’orientation de son appareil, l’interface utilisateur n’est pas modifiée. Les dispositions statiques peuvent être tronquées selon les facteurs de formes et tailles d’écran. D’un autre côté, les dispositions fluides rétrécissent, s’agrandissent et s’ajustent dynamiquement à l’espace visuel disponible sur un appareil. 
 
-Dans la pratique, vous utilisez une combinaison d’éléments statiques et fluides pour créer votre interface utilisateur. Vous utilisez toujours des valeurs et des éléments statiques à certains endroits, mais assurez-vous que l’interface utilisateur globale s’adapte à différentes résolutions, tailles d’écran et vues.
+Dans la pratique, vous utilisez une combinaison d’éléments statiques et fluides pour créer votre interface utilisateur. Vous toujours utilisez des éléments statiques et des valeurs à certains endroits, mais veillez à ce que l’interface utilisateur globale ne répond à différentes résolutions, les tailles d’écran et les vues.
 
 Nous vous expliquons ici comment utiliser les propriétés XAML et les panneaux de disposition pour créer une disposition fluide.
 
