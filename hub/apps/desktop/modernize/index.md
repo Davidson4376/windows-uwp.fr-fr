@@ -6,18 +6,18 @@ ms.date: 04/17/2019
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 6153a0a094d03081388c15ec31696ef277ef7081
-ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
+ms.openlocfilehash: 47cb292b1f5aeed9473cac0f27074f449dc67032
+ms.sourcegitcommit: b8087f8b6cf8367f8adb7d6db4581d9aa47b4861
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66215213"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67414110"
 ---
 # <a name="modernize-your-desktop-apps"></a>Moderniser vos applications de bureau
 
 Windows 10 et la plateforme universelle Windows (UWP) comportent de nombreuses fonctionnalités qui vous permettent de moderniser l’expérience utilisateur dans vos applications de bureau. La plupart de ces fonctionnalités sont disponibles sous forme de composants modulaires que vous pouvez incorporer dans vos applications de bureau, à votre rythme, sans avoir à réécrire le code des applications pour une autre plateforme. Enrichissez vos applications de bureau existantes avec les composants Windows 10 et UWP de votre choix.
 
-Cet article décrit les fonctionnalités Windows 10 et UWP que vous pouvez utiliser dans vos applications de bureau dès aujourd’hui.
+Cet article décrit les fonctionnalités Windows 10 et UWP que vous pouvez utiliser dans vos applications de bureau dès aujourd’hui. Pour un didacticiel qui montre comment moderniser une application existante pour utiliser un grand nombre des fonctionnalités de cet article, consultez le didacticiel [Moderniser une application WPF](modernize-wpf-tutorial.md).
 
 > [!NOTE]
 > Avez-vous besoin d’aide pour migrer vos applications de bureau vers Windows 10 ? Le service [Soutien aux applications du bureau](https://docs.microsoft.com/FastTrack/win-10-desktop-app-assure) fournit gratuitement un support direct aux développeurs souhaitant migrer leurs applications vers Windows 10. Ce programme est mis à la disposition de tous les ISV et toutes les entreprises éligibles. Pour plus d’informations sur les critères d’éligibilité et sur le programme lui-même, consultez [https://aka.ms/DesktopAppAssure](https://aka.ms/DesktopAppAssure). Pour démarrer maintenant, [envoyez votre demande](https://aka.ms/DesktopAppAssureRequest).
