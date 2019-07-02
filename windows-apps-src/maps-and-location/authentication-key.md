@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, clé d’authentification de cartes, contrôle de cartes
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f62ecfab5bd8d09092e5264831327b8c63666bc
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: bb6cf66a6725e8231fac693a81a39bc2f0b15fd2
+ms.sourcegitcommit: 68051d2adcf3facc036c9f4c76d82bb4d342a75f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370513"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67498900"
 ---
 # <a name="request-a-maps-authentication-key"></a>Demander une clé d’authentification de cartes
 
@@ -48,7 +48,7 @@ Pour créer une clé
     -   **Nom de l’application :** Le nom de votre application.
     -   **URL de l’application (facultatif) :** L’URL de votre application.
     -   **Type de clé :** Sélectionnez **base** ou **Enterprise**.
-    -   **Type d’application :** Sélectionnez **application Windows universelle** pour une utilisation dans votre application Windows universelle.
+    -   **Type d’application :** Sélectionnez **Windows Application** pour une utilisation dans votre application Windows universelle.
 
     Voici un exemple de formulaire :
 

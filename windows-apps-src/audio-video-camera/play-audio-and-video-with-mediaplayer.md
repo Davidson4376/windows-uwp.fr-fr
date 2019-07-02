@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d25cd3f8a963d85f704e32482475827462ddba58
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 3d2d95711196a9bf2ab113527e5fc8f44459dc3d
+ms.sourcegitcommit: d8ce1a25ac0373acafb394837eb5c0737f6efec8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318262"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67486431"
 ---
 # <a name="play-audio-and-video-with-mediaplayer"></a>Lire du contenu audio et vidéo avec MediaPlayer
 
@@ -33,8 +33,8 @@ Lorsque vous avez terminé d’utiliser une instance **MediaPlayer** sur l’app
 
 [!code-cs[CloseMediaPlayer](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetCloseMediaPlayer)]
 
-## <a name="use-mediaplayerelement-to-render-video-in-xaml"></a>Utiliser MediaPlayerElement afin d’afficher du contenu vidéo en XAML
-Vous pouvez lire du contenu multimédia dans une instance **MediaPlayer** sans l’afficher au format XAML, mais de nombreuses applications de lecture de contenus multimédias sont définies pour ce type d’affichage. Pour ce faire, utilisez le contrôle léger [**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement). Tout comme **MediaElement**, **MediaPlayerElement** vous permet de spécifier si les contrôles de transport intégrés doivent être affichés.
+## <a name="use-mediaplayerelement-to-render-video-in-xaml"></a>Utiliser MediaPlayerElement afin d’afficher du contenu vidéo dans XAML
+Vous pouvez lire du contenu multimédia dans une instance **MediaPlayer** sans l’afficher au format XAML, mais de nombreuses applications de lecture de contenus multimédias sont définies pour ce type d’affichage. Pour ce faire, utilisez le contrôle léger [**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement). Tout comme **MediaElement**, **MediaPlayerElement** vous permet de spécifier si les contrôles intégrés de transport doivent être affichés.
 
 [!code-xml[MediaPlayerElementXAML](./code/MediaPlayer_RS1/cs/MainPage.xaml#SnippetMediaPlayerElementXAML)]
 
@@ -112,7 +112,7 @@ Enfin, l’élément [**NormalizedSourceRect**](https://docs.microsoft.com/uwp/a
 
 [!code-cs[ManipulationDelta](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetManipulationDelta)]
 
-Dans le gestionnaire d’événements [**DoubleTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.doubletapped), le rectangle source est redéfini sur (0,0,1,1) pour rétablir l’affichage de l’intégralité de la vidéo.
+Dans le gestionnaire d’événement [**DoubleTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.doubletapped), le rectangle source est redéfini sur (0,0,1,1) pour rétablir l’affichage de l’intégralité de la vidéo.
 
 [!code-cs[DoubleTapped](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetDoubleTapped)]
 
@@ -189,7 +189,7 @@ Notez que si la valeur de décalage d’un lecteur correspond à une position de
 ## <a name="play-spherical-video-with-mediaplayer"></a>Lire du contenu vidéo sphérique avec MediaPlayer
 À partir de Windows 10, version 1703, **MediaPlayer** prend en charge la projection équirectangulaire pour la lecture de contenu vidéo sphérique. Un contenu vidéo sphérique ne diffère pas d’un contenu vidéo 2D standard, étant donné que **MediaPlayer** restitue cette vidéo aussi longtemps que l’encodage vidéo est pris en charge. Dans le cas d’une vidéo sphérique contenant une balise de métadonnées qui indique que la vidéo utilise une projection équirectangulaire, **MediaPlayer** peut restituer la vidéo en utilisant un champ de vision et une orientation de vue spécifiés. Cette approche autorise les scénarios tels que la lecture d’une vidéo de réalité virtuelle avec un casque ou des lunettes d’affichage ou le simple défilement d’un contenu vidéo sphérique à l’aide d’une entrée à la souris ou au clavier.
 
-Pour lire un contenu vidéo sphérique, suivez la procédure de lecture d’un contenu vidéo précédemment décrite dans cet article. Une étape supplémentaire consiste à enregistrer un gestionnaire pour l’événement [**MediaPlayer.MediaOpened**])https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer#Windows_Media_Playback_MediaPlayer_MediaOpened). Cet événement vous permet d’activer et de contrôler les paramètres de lecture de contenu vidéo sphérique.
+Pour lire un contenu vidéo sphérique, suivez la procédure de lecture d’un contenu vidéo précédemment décrite dans cet article. L’une étape supplémentaire consiste à inscrire un gestionnaire pour le [ **MediaPlayer.MediaOpened** ](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer#Windows_Media_Playback_MediaPlayer_MediaOpened) événement. Cet événement vous permet d’activer et de contrôler les paramètres de lecture de contenu vidéo sphérique.
 
 [!code-cs[OpenSphericalVideo](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetOpenSphericalVideo)]
 
@@ -231,11 +231,11 @@ Pour plus d’informations sur Win2D, consultez le [référentiel GitHub Win2D](
 **Pour ajouter le package NuGet de Win2D à votre projet d’effet**
 
 1.  Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur votre projet, puis sélectionnez **Gérer les packages NuGet**.
-2.  Dans la partie supérieure de la fenêtre, sélectionnez l’onglet **Parcourir**.
+2.  En haut de la fenêtre, sélectionnez l’onglet **Explorer**.
 3.  Dans la zone de recherche, entrez **Win2D**.
 4.  Sélectionnez **Win2D.uwp**, puis **Installer** dans le volet droit.
 5.  La boîte de dialogue **Examiner les modifications** vous indique le package à installer. Cliquez sur **OK**.
-6.  Acceptez la licence du package.
+6.  Acceptez la licence de package.
 
 ## <a name="detect-and-respond-to-audio-level-changes-by-the-system"></a>Détecter les changements de niveau audio initiés par le système et y répondre
 À partir de Windows 10, version 1803, votre application peut détecter quand le système baisse ou désactive le niveau audio d’un objet **MediaPlayer** en cours de lecture. Par exemple, le système peut baisser, ou « atténuer », le niveau de lecture audio lorsqu’une alarme sonne. Le système désactive votre application lorsqu’elle passe à l’arrière-plan si la fonctionnalité *backgroundMediaPlayback* n’a pas été déclarée dans le manifeste de l’application. La classe [**AudioStateMonitor**](https://docs.microsoft.comuwp/api/windows.media.audio.audiostatemonitor) vous permet de vous inscrire pour recevoir un événement lorsque le système modifie le volume d’un flux audio. Accédez à la propriété **AudioStateMonitor** d’un objet **MediaPlayer** et enregistrez un gestionnaire pour l’événement [**SoundLevelChanged**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor.soundlevelchanged) afin d’être averti lorsque le niveau audio de cet objet **MediaPlayer** est modifié par le système.

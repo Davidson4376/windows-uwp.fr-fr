@@ -6,12 +6,12 @@ keywords: liste de vérification, windows, uwp, soumission, soumettre, jeu, appl
 ms.date: 10/31/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2fe5d44823821208a2384aec9d66037c4da3865f
-ms.sourcegitcommit: 4aef8c01ba9321401d5729a1ec6d46452ee76faf
+ms.openlocfilehash: 7c535b77c68f4375f70fe344165f96d66a551eaf
+ms.sourcegitcommit: d8ce1a25ac0373acafb394837eb5c0737f6efec8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67468932"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67486420"
 ---
 # <a name="app-submissions"></a>Soumissions d’application
 
@@ -96,10 +96,8 @@ Vous devez indiquer toutes les informations requises pour au moins l’une des l
 | **Captures d’écran**               | Obligatoire (au moins une capture d’écran, quatre ou plus recommandées)          | [Captures d’écran](app-screenshots-and-images.md#screenshots)          |
 | **Logos de Store**               | Recommandé ; obligatoire pour certaines versions du système d’exploitation | [Logos de Store](app-screenshots-and-images.md#store-logos)             |
 | **Codes de fin**                  | Facultatif                                    | [Codes de fin](app-screenshots-and-images.md#trailers)                | 
-| **Image de Windows 10 et Xbox (art de Super héros de 16:9)**     | Recommandé        | [Windows 10 et Xbox image (art de Super héros de 16:9)
-](app-screenshots-and-images.md#windows-10-and-xbox-image-169-super-hero-art) |
-| **Images de Xbox**     | Requis pour l’affichage correct si vous publiez sur Xbox        | [Images Xbox
-](app-screenshots-and-images.md#xbox-images) |
+| **Image de Windows 10 et Xbox (art de Super héros de 16:9)**     | Recommandé        | [Image de Windows 10 et Xbox (art de Super héros de 16:9)](app-screenshots-and-images.md#windows-10-and-xbox-image-169-super-hero-art) |
+| **Images de Xbox**     | Requis pour l’affichage correct si vous publiez sur Xbox        | [Images de Xbox](app-screenshots-and-images.md#xbox-images) |
 | **Champs supplémentaires**  | Facultatif                                    | [Champs supplémentaires](create-app-store-listings.md#supplemental-fields) 
 | **Termes de recherche**              | Facultatif                                    | [Termes de recherche](create-app-store-listings.md#search-terms)         |
 | **Informations de copyright et de marque** | Facultatif                                 | [Informations de copyright et de marque](create-app-store-listings.md#copyright-and-trademark-info) |

@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, compte de développeur, individuel, société, entreprise
 ms.localizationpriority: medium
-ms.openlocfilehash: 7556ca526ecfa28b1d97346501ec1875f938ca35
-ms.sourcegitcommit: 978df7dfd3813de51609b6a44aedcd402083a5fd
+ms.openlocfilehash: 92f657386c3a5d1ca6815b9b0a9e56b4d6f2578b
+ms.sourcegitcommit: 35a511c2b29ae3d5008612a5fc13d3eb6370d2d0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66826216"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67495743"
 ---
 # <a name="account-types-locations-and-fees"></a>Types de compte, emplacements et frais
 
@@ -58,198 +58,196 @@ La colonne **Revenu** décrit ici le mode de [versement](getting-paid-apps.md) q
 
 La colonne **PayPal** indique si PayPal est un mode de paiement pris en charge qui peut être utilisé pour votre [compte de revenu](setting-up-your-payout-account-and-tax-forms.md) (et, sauf indication contraire, pour vos frais d’inscription de compte de développeur).
 
-| Pays/région                    | Frais de l'inscription individuelle | Frais de l'inscription d’entreprise | Revenu           | PayPal |
-|-----------------------------------|---------------------|------------------|------------------|--------|
-| Afghanistan                       | 19 USD              | 99 USD           | USD payé à la banque | Non     |
-| Albanie                           | 19 USD              | 99 USD           | USD payé à la banque | Non     |
-| Algérie                           | 1535 DZD            | 7000 DZD         | USD payé à la banque | Non     |  
-| Andorre                           | 14 EUR              | 75 EUR           | Aucun revenu        | Non     |  
-| Angola                            | 19 USD              | 99 USD           | USD payé à la banque | Non     |  
-| Antigua-et-Barbuda               | 19 USD              | 99 USD           | XCD payé à la banque | Non     |  
-| Argentine                         | 106 ARS             | 420 ARS          | USD payé à la banque | Non     |  
-| Arménie                           | 19 USD              | 99 USD           | USD payé à la banque | Non     |  
-| Australie                         | 21 AUD              | 110 AUD          | AUD payé à la banque | Oui    |  
-| Autriche                           | 14 EUR              | 75 EUR           | EUR payé à la banque | Oui    |  
-| Azerbaïdjan                        | 19 USD              | 99 USD           | AZN payé à la banque | Non     |  
-| Bahamas                       | 19 USD              | 99 USD           | Aucun revenu        | Non     |  
-| Bahreïn                           | 7 BHD               | 38 BHD           | BHD payé à la banque | Non     |  
-| Bangladesh                        | 1468 BDT            | 7600 BDT         | BDT payé à la banque | Non     |  
-| Barbade (La)                          | 19 USD              | 99 USD           | Aucun revenu        | Non     |  
-| Bélarus                           | 19 USD              | 99 USD           | USD payé à la banque | Non     |  
-| Belgique                           | 14 EUR              | 75 EUR           | EUR payé à la banque | Oui    |  
-| Belize                            | 19 USD              | 99 USD           | Aucun revenu        | Non     |  
-| Bénin                             | 19 USD              | 99 USD           | XOF payé à la banque | Non     |  
-| Bhoutan                            | 19 USD              | 99 USD           | Aucun revenu        | Non     |  
-| Bolivie                           | 19 USD              | 99 USD           | USD payé à la banque | Non     |  
-| Bosnie-Herzégovine            | 19 USD              | 99 USD           | USD payé à la banque | Non     |  
-| Botswana                          | 19 USD              | 99 USD           | BWP payé à la banque | Non     |  
-| Brésil                            | 46 BRL              | 160 BRL          | USD payé à la banque | Non     |  
-| Brunei                            | 19 USD              | 99 USD           | Aucun revenu        | Non     |  
-| Bulgarie                          | 28 BGN              | 160 BGN          | BGN payé à la banque | Non     |  
-| Burkina-Faso                      | 19 USD              | 99 USD           | XOF payé à la banque | Non     |  
-| Burundi                           | 19 USD              | 99 USD           | USD payé à la banque | Non     |  
-| Cap Vert                        | 19 USD              | 99 USD           | Aucun revenu        | Non     |  
-| Cambodge                          | 19 USD              | 99 USD           | USD payé à la banque | Non     |  
-| Cameroun                          | 19 USD              | 99 USD           | XAF payé à la banque | Non     |  
-| Canada                            | 20 CAD              | 99 CAD           | CAD payé à la banque | Oui    |  
-| République centrafricaine          | 19 USD              | 99 USD           | XAF payé à la banque | Non     |  
-| Tchad                              | 19 USD              | 99 USD           | XAF payé à la banque | Non     |  
-| Chili                             | 9776 CLP            | 46000 CLP        | USD payé à la banque | Non     |  
-| Chine                             | 116 CNY             | 600 CNY          | USD payé à la banque | Oui*   |  
-| Colombie                          | 36543 COP           | 180000 COP       | USD payé à la banque | Non     |  
-| Comores (Les)                           | 19 USD              | 99 USD           | USD payé à la banque | Non     |  
-| Congo                             | 19 USD              | 99 USD           | XAF payé à la banque | Non     |  
-| Congo (RDC)                       | 19 USD              | 99 USD           | USD payé à la banque | Non     |  
-| Costa Rica                        | 9578 CRC            | 49725 CRC        | CRC payé à la banque | Non     |  
-| Côte d’Ivoire                     | 19 USD              | 99 USD           | XOF payé à la banque | Non     |  
-| Croatie                           | 107 HRK             | 500 HRK          | HRK payé à la banque | Non     |  
-| Chypre                            | 14 EUR              | 75 EUR           | EUR payé à la banque | Oui    |  
-| République tchèque                    | 365 CZK             | 1720 CZK         | CZK payé à la banque | Oui    |  
-| Danemark                           | 106 DKK             | 530 DKK          | DKK payé à la banque | Oui    |  
-| Djibouti                          | 19 USD              | 99 USD           | Aucun revenu        | Non     | 
-| Dominique                          | 19 USD              | 99 USD           | XCD payé à la banque | Non     | 
-| République dominicaine                | 19 USD              | 99 USD           | DOP payé à la banque | Non     |  
-| Équateur (République de)                           | 19 USD              | 99 USD           | USD payé à la banque | Non     |  
-| Égypte                             | 133 EGP             | 600 EGP          | EGP payé à la banque | Non     |  
-| Salvador                       | 19 USD              | 99 USD           | USD payé à la banque | Non     |  
-| Guinée équatoriale                 | 19 USD              | 99 USD           | Aucun revenu        | Non     |  
-| Érythrée                           | 19 USD              | 99 USD           | USD payé à la banque | Non     |  
-| Estonie                           | 14 EUR              | 75 EUR           | EUR payé à la banque | Oui    |  
-| Éthiopie                          | 19 USD              | 99 USD           | ETB payé à la banque | Non     |  
-| Féroé (îles)                     | 19 USD              | 99 USD           | Aucun revenu        | Non     |  
-| Fidji                              | 19 USD              | 99 USD           | FJD payé à la banque | Non     |  
-| Finlande                           | 14 EUR              | 75 EUR           | EUR payé à la banque | Oui    |  
-| France                            | 14 EUR              | 75 EUR           | EUR payé à la banque | Oui    |  
-| Gabon                             | 19 USD              | 99 USD           | Aucun revenu        | Non     |  
-| Gambie                        | 19 USD              | 99 USD           | Aucun revenu        | Non     |  
-| Géorgie                           | 19 USD              | 99 USD           | USD payé à la banque | Non     |  
-| Allemagne                           | 14 EUR              | 75 EUR           | EUR payé à la banque | Oui    |  
-| Ghana                             | 19 USD              | 99 USD           | GHS payé à la banque | Non     |  
-| Grèce                            | 14 EUR              | 75 EUR           | EUR payé à la banque | Oui    |  
-| Groenland                         | 19 USD              | 99 USD           | Aucun revenu        | Non     |  
-| Grenade                           | 19 USD              | 99 USD           | Aucun revenu        | Non     |  
-| Guatemala                         | 145 GTQ             | 750 GTQ          | GTQ payé à la banque | Non     |  
-| Guinée                            | 19 USD              | 99 USD           | USD payé à la banque | Non     |  
-| Guinée-Bissau                     | 19 USD              | 99 USD           | Aucun revenu        | Non     |  
-| Guyana                            | 19 USD              | 99 USD           | Aucun revenu        | Non     |  
-| Haïti                             | 19 USD              | 99 USD           | USD payé à la banque | Non     |  
-| Honduras                          | 19 USD              | 99 USD           | USD payé à la banque | Non     |  
-| Hong Kong R.A.S.                     | 147 HKD             | 760 HKD          | HKD payé à la banque | Oui    |  
-| Hongrie                           | 4237 HUF            | 18800 HUF        | HUF payé à la banque | Oui*   |  
-| Islande                           | 2319 ISK            | 11929 ISK        | USD payé à la banque | Non     | 
-| Inde                             | 1201 INR            | 4500 INR         | INR payé à la banque | Non     |  
-| Indonésie                         | 203015 IDR          | 1000000 IDR      | IDR payé à la banque | Non     | 
-| Irak                              | 22078 IQD           | 120000 IQD       | USD payé à la banque | Non     |  
-| Irlande                           | 14 EUR              | 75 EUR           | EUR payé à la banque | Oui    |  
-| Israël                            | 67 ILS              | 350 ILS          | ILS payé à la banque | Oui    |  
-| Italie                             | 14 EUR              | 75 EUR           | EUR payé à la banque | Oui    |  
-| Jamaïque                           | 19 USD              | 99 USD           | JMD payé à la banque | Non     |  
-| Japon                             | 1847 JPY            | 9800 JPY         | JPY payé à la banque | Oui    |  
-| Jordanie                            | 13 JOD              | 70 JOD           | JOD payé à la banque | Non     |  
-| Kazakhstan                        | 2897 KZT            | 15038 KZT        | KTZ payé à la banque | Non     |  
-| Kenya                             | 1900 KES            | 9999 KES         | KES payé à la banque | Non     |  
-| Kiribati                          | 19 USD              | 99 USD           | Aucun revenu        | Non     |  
-| Corée                             | 21216 KRW           | 108000 KRW       | USD payé à la banque | Non     |  
-| Koweït                            | 5 KWD               | 28 KWD           | KWD payé à la banque | Non     |  
-| Kirghizistan                        | 19 USD              | 99 USD           | Aucun revenu        | Non     |  
-| Laos                              | 19 USD              | 99 USD           | USD payé à la banque | Non     |  
-| Lettonie                            | 14 EUR              | 75 EUR           | EUR payé à la banque | Non     |  
-| Liban                           | 28690 LBP           | 149686 LBP       | LBP payé à la banque | Non     |  
-| Lesotho                           | 19 USD              | 99 USD           | Aucun revenu        | Non     |  
-| Liberia                           | 19 USD              | 99 USD           | USD payé à la banque | Non     |  
-| Libye                             | 19 USD              | 99 USD           | Aucun revenu        | Non     |  
-| Liechtenstein                     | 17 CHF              | 93 CHF           | CHF payé à la banque | Oui    |  
-| Lituanie                         | 14 EUR              | 75 EUR           | EUR payé à la banque | Non     |  
-| Luxembourg                        | 14 EUR              | 75 EUR           | EUR payé à la banque | Oui    |  
-| Macao R.A.S.                         | 19 USD              | 99 USD           | Aucun revenu        | Non     |  
-| Macédoine (Ex-République yougoslave de)                 | 19 USD              | 99 USD           | USD payé à la banque | Non     |  
-| Madagascar                        | 19 USD              | 99 USD           | USD payé à la banque | Non     |  
-| Malawi                            | 19 USD              | 99 USD           | MWK payé à la banque | Non     |  
-| Malaisie                          | 62 MYR              | 300 MYR          | USD payé à la banque | Non     |  
-| Maldives                          | 19 USD              | 99 USD           | Aucun revenu        | Non     |  
-| Mali                              | 19 USD              | 99 USD           | XOF payé à la banque | Non     |  
-| Malte                             | 14 EUR              | 75 EUR           | EUR payé à la banque | Oui    |  
-| Marshall (îles)                  | 19 USD              | 99 USD           | Aucun revenu        | Non     |  
-| Mauritanie                        | 5681 MRO            | 30046 MRO        | Aucun revenu        | Non     |  
-| Maurice                         | 19 USD              | 99 USD           | MUR payé à la banque | Non     |  
-| Mexique                            | 247 MXN             | 1140 MXN         | MXN payé à la banque | Oui    |  
-| Micronésie                        | 19 USD              | 99 USD           | Aucun revenu        | Non     |  
-| Monaco                            | 14 EUR              | 75 EUR           | EUR payé à la banque | Non     |  
-| Mongolie                          | 19 USD              | 99 USD           | USD payé à la banque | Non     |  
-| Monténégro                        | 14 EUR              | 75 EUR           | EUR payé à la banque | Non     |  
-| Maroc                           | 158 MAD             | 800 MAD          | MAD payé à la banque | Non     |  
-| Mozambique                        | 19 USD              | 99 USD           | USD payé à la banque | Non     |  
-| Myanmar                           | 19 USD              | 99 USD           | Aucun revenu        | Non     |  
-| Namibie                           | 19 USD              | 99 USD           | Aucun revenu        | Non     |  
-| Nauru                             | 19 USD              | 99 USD           | Aucun revenu        | Non     |  
-| Népal                             | 19 USD              | 99 USD           | USD payé à la banque | Non     |  
-| Pays-Bas                       | 14 EUR              | 75 EUR           | EUR payé à la banque | Oui    |  
-| Nouvelle-Zélande                       | 24 NZD              | 140 NZD          | NZD payé à la banque | Oui    |  
-| Nicaragua                         | 19 USD              | 99 USD           | USD payé à la banque | Non     |  
-| Niger                             | 19 USD              | 99 USD           | XOF payé à la banque | Non     |  
-| Nigeria                           | 3700 NGN            | 19500 NGN        | NGN payé à la banque | Non     |  
-| Norvège                            | 113 NOK             | 580 NOK          | NOK payé à la banque | Oui    |  
-| Oman                              | 7 OMR               | 40 OMR           | OMR payé à la banque | Non     |  
-| Pakistan                          | 1959 PKR            | 9000 PKR         | PKR payé à la banque | Non     |  
-| Palau                             | 19 USD              | 99 USD           | Aucun revenu        | Non     |  
-| Panama                            | 19 USD              | 99 USD           | USD payé à la banque | Non     |  
-| Papouasie-Nouvelle-Guinée                  | 19 USD              | 99 USD           | Aucun revenu        | Non     |  
-| Paraguay                          | 19 USD              | 99 USD           | USD payé à la banque | Non     |  
-| Pérou                              | 54 PEN              | 280 PEN          | PEN payé à la banque | Non     |  
-| Philippines                       | 832 PHP             | 4400 PHP         | PHP payé à la banque | Oui    |  
-| Pologne                            | 59 PLN              | 280 PLN          | PLN payé à la banque | Oui    |  
-| Portugal                          | 14 EUR              | 75 EUR           | EUR payé à la banque | Oui    |  
-| Qatar                             | 69 QAR              | 360 QAR          | QAR payé à la banque | Non     |  
-| Roumanie                           | 14 EUR              | 75 EUR           | USD payé à la banque | Non     |  
-| Russie                            | 626 RUB             | 3000 RUB         | RUB payé à la banque | Oui*   |  
-| Rwanda                            | 19 USD              | 99 USD           | RWF payé à la banque | Non     |  
-| Saint Kitts et Nevis             | 19 USD              | 99 USD           | Aucun revenu        | Non     |  
-| Sainte-Lucie                       | 19 USD              | 99 USD           | Aucun revenu        | Non     |  
-| Saint-Vincent-et-les-Grenadines  | 19 USD              | 99 USD           | XCD payé à la banque | Non     |  
-| Samoa                             | 19 USD              | 99 USD           | Aucun revenu        | Non     |  
-| Saint-Marin                        | 14 EUR              | 75 EUR           | Aucun revenu        | Non     |  
-| São Tomé et Príncipe             | 19 USD              | 99 USD           | Aucun revenu        | Non     |  
-| Arabie saoudite                      | 71 SAR              | 380 SAR          | SAR payé à la banque | Non     |  
-| Sénégal                           | 19 USD              | 99 USD           | XOF payé à la banque | Non     |  
-| Serbie                            | 1619 RSD            | 7000 RSD         | USD payé à la banque | Non     |  
-| Seychelles                        | 19 USD              | 99 USD           | Aucun revenu        | Non     |  
-| Sierra Leone                      | 19 USD              | 99 USD           | USD payé à la banque | Non     |  
-| Singapour                         | 24 SGD              | 120 SGD          | SGD payé à la banque | Oui    |  
-| Slovaquie                          | 14 EUR              | 75 EUR           | EUR payé à la banque | Oui    |  
-| Slovénie                          | 14 EUR              | 75 EUR           | EUR payé à la banque | Oui    |  
-| Salomon (îles)                   | 19 USD              | 99 USD           | Aucun revenu        | Non     |  
-| Somalie                           | 19 USD              | 99 USD           | USD payé à la banque | Non     |  
-| Afrique du Sud                      | 193 ZAR             | 700 ZAR          | ZAR payé à la banque | Non     |  
-| Espagne                             | 14 EUR              | 75 EUR           | EUR payé à la banque | Oui    |  
-| Sri Lanka                         | 19 USD              | 99 USD           | LKR payé à la banque | Non     |  
-| Surinam                          | 19 USD              | 99 USD           | Aucun revenu        | Non     |  
-| Swaziland                         | 19 USD              | 99 USD           | Aucun revenu        | Non     |  
-| Suède                            | 123 SEK             | 700 SEK          | SEK payé à la banque | Oui    |  
-| Suisse                       | 17 CHF              | 90 CHF           | CHF payé à la banque | Oui    |  
-| Taïwan                            | 568 TWD             | 2840 TWD         | USD payé à la banque | Oui    |  
-| Tadjikistan                        | 19 USD              | 99 USD           | USD payé à la banque | Non     |  
-| Tanzanie                          | 19 USD              | 99 USD           | TZS payé à la banque | Non     |  
-| Thaïlande                          | 601 THB             | 3000 THB         | THB payé à la banque | Oui    |  
-| Timor-Leste                       | 19 USD              | 99 USD           | USD payé à la banque | Non     |  
-| Togo                              | 19 USD              | 99 USD           | XOF payé à la banque | Non     |  
-| Tonga                             | 19 USD              | 99 USD           | TOP payé à la banque | Non     |  
-| Trinité-et-Tobago               | 122 TTD             | 636 TTD          | TTD payé à la banque | Non     |  
-| Tunisie                           | 31 TND              | 140 TND          | TND payé à la banque | Non     |  
-| Turquie                            | 37 TRY              | 160 TRY          | TRY payé à la banque | Non     |  
-| Turkménistan                      | 19 USD              | 99 USD           | USD payé à la banque | Non     |  
-| Tuvalu                            | 19 USD              | 99 USD           | Aucun revenu        | Non     |  
-| Ouganda                            | 19 USD              | 99 USD           | UGX payé à la banque | Non     |  
-| Ukraine                           | 156 UAH             | 800 UAH          | USD payé à la banque | Non     |  
-| Émirats arabes unis              | 19 USD              | 99 USD           | EUR payé à la banque | Oui    |  
-| Royaume-Uni                    | 12 GBP              | 65 GBP           | GBP payé à la banque | Oui    |  
-| États-Unis                     | 19 USD              | 99 USD           | USD payé à la banque | Oui    |  
-| Uruguay                           | 19 USD              | 99 USD           | UYU payé à la banque | Non     |  
-| Ouzbékistan                        | 19 USD              | 99 USD           | USD payé à la banque | Non     |  
-| Vanuatu                           | 19 USD              | 99 USD           | Aucun revenu        | Non     |  
-| Venezuela                         | 119 VEF             | 420 VEF          | USD payé à la banque | Non     |  
-| Vietnam                           | 400425 VND          | 2000000 VND      | VND payé à la banque | Non     |  
-| Yémen                             | 4080 YER            | 21245 YER        | Aucun revenu        | Non     |  
-| Zambie                            | 19 USD              | 99 USD           | ZMK payé à la banque | Non     |  
-| Zimbabwe                          | 19 USD              | 99 USD           | USD payé à la banque | Non     |
-
-\*  PayPal peut être utilisé comme mode de paiement pour les comptes de paiement dans ce marché, mais ne peut pas être utilisée pour payer les frais d’inscription de compte développeur.
+| Pays/région                    | Frais de l'inscription individuelle | Frais de l'inscription d’entreprise |
+|-----------------------------------|---------------------|------------------|
+| Afghanistan                       | 19 USD              | 99 USD           |
+| Albanie                           | 19 USD              | 99 USD           |
+| Algérie                           | 1535 DZD            | 7000 DZD         |  
+| Andorre                           | 14 EUR              | 75 EUR           |  
+| Angola                            | 19 USD              | 99 USD           |  
+| Antigua-et-Barbuda               | 19 USD              | 99 USD           |  
+| Argentine                         | 106 ARS             | 420 ARS          |  
+| Arménie                           | 19 USD              | 99 USD           |  
+| Australie                         | 21 AUD              | 110 AUD          |  
+| Autriche                           | 14 EUR              | 75 EUR           |  
+| Azerbaïdjan                        | 19 USD              | 99 USD           |  
+| Bahamas                       | 19 USD              | 99 USD           |  
+| Bahreïn                           | 7 BHD               | 38 BHD           |  
+| Bangladesh                        | 1468 BDT            | 7600 BDT         |  
+| Barbade (La)                          | 19 USD              | 99 USD           |  
+| Bélarus                           | 19 USD              | 99 USD           |  
+| Belgique                           | 14 EUR              | 75 EUR           |  
+| Belize                            | 19 USD              | 99 USD           |  
+| Bénin                             | 19 USD              | 99 USD           |  
+| Bhoutan                            | 19 USD              | 99 USD           |  
+| Bolivie                           | 19 USD              | 99 USD           |  
+| Bosnie-Herzégovine            | 19 USD              | 99 USD           |  
+| Botswana                          | 19 USD              | 99 USD           |  
+| Brésil                            | 46 BRL              | 160 BRL          |  
+| Brunei                            | 19 USD              | 99 USD           |  
+| Bulgarie                          | 28 BGN              | 160 BGN          |  
+| Burkina-Faso                      | 19 USD              | 99 USD           |  
+| Burundi                           | 19 USD              | 99 USD           |  
+| Cap Vert                        | 19 USD              | 99 USD           |  
+| Cambodge                          | 19 USD              | 99 USD           |  
+| Cameroun                          | 19 USD              | 99 USD           |  
+| Canada                            | 20 CAD              | 99 CAD           |  
+| République centrafricaine          | 19 USD              | 99 USD           |  
+| Tchad                              | 19 USD              | 99 USD           |  
+| Chili                             | 9776 CLP            | 46000 CLP        |  
+| Chine                             | 116 CNY             | 600 CNY          |  
+| Colombie                          | 36543 COP           | 180000 COP       |  
+| Comores (Les)                           | 19 USD              | 99 USD           |  
+| Congo                             | 19 USD              | 99 USD           |  
+| Congo (RDC)                       | 19 USD              | 99 USD           |  
+| Costa Rica                        | 9578 CRC            | 49725 CRC        |  
+| Côte d’Ivoire                     | 19 USD              | 99 USD           |  
+| Croatie                           | 107 HRK             | 500 HRK          |  
+| Chypre                            | 14 EUR              | 75 EUR           |  
+| République tchèque                    | 365 CZK             | 1720 CZK         |  
+| Danemark                           | 106 DKK             | 530 DKK          |  
+| Djibouti                          | 19 USD              | 99 USD           | 
+| Dominique                          | 19 USD              | 99 USD           | 
+| République dominicaine                | 19 USD              | 99 USD           |  
+| Équateur (République de)                           | 19 USD              | 99 USD           |  
+| Égypte                             | 133 EGP             | 600 EGP          |  
+| Salvador                       | 19 USD              | 99 USD           |  
+| Guinée équatoriale                 | 19 USD              | 99 USD           |  
+| Érythrée                           | 19 USD              | 99 USD           |  
+| Estonie                           | 14 EUR              | 75 EUR           |  
+| Éthiopie                          | 19 USD              | 99 USD           |  
+| Féroé (îles)                     | 19 USD              | 99 USD           |  
+| Fidji                              | 19 USD              | 99 USD           |  
+| Finlande                           | 14 EUR              | 75 EUR           |  
+| France                            | 14 EUR              | 75 EUR           |  
+| Gabon                             | 19 USD              | 99 USD           |  
+| Gambie                        | 19 USD              | 99 USD           |  
+| Géorgie                           | 19 USD              | 99 USD           |  
+| Allemagne                           | 14 EUR              | 75 EUR           |  
+| Ghana                             | 19 USD              | 99 USD           |  
+| Grèce                            | 14 EUR              | 75 EUR           |  
+| Groenland                         | 19 USD              | 99 USD           |  
+| Grenade                           | 19 USD              | 99 USD           |  
+| Guatemala                         | 145 GTQ             | 750 GTQ          |  
+| Guinée                            | 19 USD              | 99 USD           |  
+| Guinée-Bissau                     | 19 USD              | 99 USD           |  
+| Guyana                            | 19 USD              | 99 USD           |  
+| Haïti                             | 19 USD              | 99 USD           |  
+| Honduras                          | 19 USD              | 99 USD           |  
+| Hong Kong R.A.S.                     | 147 HKD             | 760 HKD          |  
+| Hongrie                           | 4237 HUF            | 18800 HUF        |  
+| Islande                           | 2319 ISK            | 11929 ISK        |
+| Inde                             | 1201 INR            | 4500 INR         |  
+| Indonésie                         | 203015 IDR          | 1000000 IDR      |
+| Irak                              | 22078 IQD           | 120000 IQD       |  
+| Irlande                           | 14 EUR              | 75 EUR           |  
+| Israël                            | 67 ILS              | 350 ILS          |  
+| Italie                             | 14 EUR              | 75 EUR           |  
+| Jamaïque                           | 19 USD              | 99 USD           |  
+| Japon                             | 1847 JPY            | 9800 JPY         |  
+| Jordanie                            | 13 JOD              | 70 JOD           |  
+| Kazakhstan                        | 2897 KZT            | 15038 KZT        |  
+| Kenya                             | 1900 KES            | 9999 KES         |  
+| Kiribati                          | 19 USD              | 99 USD           |  
+| Corée                             | 21216 KRW           | 108000 KRW       |  
+| Koweït                            | 5 KWD               | 28 KWD           |  
+| Kirghizistan                        | 19 USD              | 99 USD           |  
+| Laos                              | 19 USD              | 99 USD           |  
+| Lettonie                            | 14 EUR              | 75 EUR           |  
+| Liban                           | 28690 LBP           | 149686 LBP       |  
+| Lesotho                           | 19 USD              | 99 USD           |  
+| Liberia                           | 19 USD              | 99 USD           |  
+| Libye                             | 19 USD              | 99 USD           |  
+| Liechtenstein                     | 17 CHF              | 93 CHF           |  
+| Lituanie                         | 14 EUR              | 75 EUR           |  
+| Luxembourg                        | 14 EUR              | 75 EUR           |  
+| Macao R.A.S.                         | 19 USD              | 99 USD           |  
+| Macédoine (Ex-République yougoslave de)                 | 19 USD              | 99 USD           |  
+| Madagascar                        | 19 USD              | 99 USD           |  
+| Malawi                            | 19 USD              | 99 USD           |  
+| Malaisie                          | 62 MYR              | 300 MYR          |  
+| Maldives                          | 19 USD              | 99 USD           |  
+| Mali                              | 19 USD              | 99 USD           |  
+| Malte                             | 14 EUR              | 75 EUR           |  
+| Marshall (îles)                  | 19 USD              | 99 USD           |  
+| Mauritanie                        | 5681 MRO            | 30046 MRO        |  
+| Maurice                         | 19 USD              | 99 USD           |  
+| Mexique                            | 247 MXN             | 1140 MXN         |  
+| Micronésie                        | 19 USD              | 99 USD           |  
+| Monaco                            | 14 EUR              | 75 EUR           |  
+| Mongolie                          | 19 USD              | 99 USD           |  
+| Monténégro                        | 14 EUR              | 75 EUR           |  
+| Maroc                           | 158 MAD             | 800 MAD          |  
+| Mozambique                        | 19 USD              | 99 USD           |  
+| Myanmar                           | 19 USD              | 99 USD           |  
+| Namibie                           | 19 USD              | 99 USD           |  
+| Nauru                             | 19 USD              | 99 USD           |  
+| Népal                             | 19 USD              | 99 USD           |  
+| Pays-Bas                       | 14 EUR              | 75 EUR           |  
+| Nouvelle-Zélande                       | 24 NZD              | 140 NZD          |  
+| Nicaragua                         | 19 USD              | 99 USD           |  
+| Niger                             | 19 USD              | 99 USD           |  
+| Nigeria                           | 3700 NGN            | 19500 NGN        |  
+| Norvège                            | 113 NOK             | 580 NOK          |  
+| Oman                              | 7 OMR               | 40 OMR           |  
+| Pakistan                          | 1959 PKR            | 9000 PKR         |  
+| Palau                             | 19 USD              | 99 USD           |  
+| Panama                            | 19 USD              | 99 USD           |  
+| Papouasie-Nouvelle-Guinée                  | 19 USD              | 99 USD           |  
+| Paraguay                          | 19 USD              | 99 USD           |  
+| Pérou                              | 54 PEN              | 280 PEN          |  
+| Philippines                       | 832 PHP             | 4400 PHP         |  
+| Pologne                            | 59 PLN              | 280 PLN          |  
+| Portugal                          | 14 EUR              | 75 EUR           |  
+| Qatar                             | 69 QAR              | 360 QAR          |  
+| Roumanie                           | 14 EUR              | 75 EUR           |  
+| Russie                            | 626 RUB             | 3000 RUB         |  
+| Rwanda                            | 19 USD              | 99 USD           |  
+| Saint Kitts et Nevis             | 19 USD              | 99 USD           |  
+| Sainte-Lucie                       | 19 USD              | 99 USD           |  
+| Saint-Vincent-et-les-Grenadines  | 19 USD              | 99 USD           |  
+| Samoa                             | 19 USD              | 99 USD           |  
+| Saint-Marin                        | 14 EUR              | 75 EUR           |  
+| São Tomé et Príncipe             | 19 USD              | 99 USD           |  
+| Arabie saoudite                      | 71 SAR              | 380 SAR          |  
+| Sénégal                           | 19 USD              | 99 USD           |  
+| Serbie                            | 1619 RSD            | 7000 RSD         |  
+| Seychelles                        | 19 USD              | 99 USD           |  
+| Sierra Leone                      | 19 USD              | 99 USD           |  
+| Singapour                         | 24 SGD              | 120 SGD          |  
+| Slovaquie                          | 14 EUR              | 75 EUR           |  
+| Slovénie                          | 14 EUR              | 75 EUR           |  
+| Salomon (îles)                   | 19 USD              | 99 USD           |  
+| Somalie                           | 19 USD              | 99 USD           |  
+| Afrique du Sud                      | 193 ZAR             | 700 ZAR          |  
+| Espagne                             | 14 EUR              | 75 EUR           |  
+| Sri Lanka                         | 19 USD              | 99 USD           |  
+| Surinam                          | 19 USD              | 99 USD           |  
+| Swaziland                         | 19 USD              | 99 USD           |  
+| Suède                            | 123 SEK             | 700 SEK          |  
+| Suisse                       | 17 CHF              | 90 CHF           |  
+| Taïwan                            | 568 TWD             | 2840 TWD         |  
+| Tadjikistan                        | 19 USD              | 99 USD           |  
+| Tanzanie                          | 19 USD              | 99 USD           |  
+| Thaïlande                          | 601 THB             | 3000 THB         |  
+| Timor-Leste                       | 19 USD              | 99 USD           |  
+| Togo                              | 19 USD              | 99 USD           |  
+| Tonga                             | 19 USD              | 99 USD           |  
+| Trinité-et-Tobago               | 122 TTD             | 636 TTD          |  
+| Tunisie                           | 31 TND              | 140 TND          |  
+| Turquie                            | 37 TRY              | 160 TRY          |  
+| Turkménistan                      | 19 USD              | 99 USD           |  
+| Tuvalu                            | 19 USD              | 99 USD           |  
+| Ouganda                            | 19 USD              | 99 USD           |  
+| Ukraine                           | 156 UAH             | 800 UAH          |  
+| Émirats arabes unis              | 19 USD              | 99 USD           |  
+| Royaume-Uni                    | 12 GBP              | 65 GBP           |  
+| États-Unis                     | 19 USD              | 99 USD           |  
+| Uruguay                           | 19 USD              | 99 USD           |  
+| Ouzbékistan                        | 19 USD              | 99 USD           |  
+| Vanuatu                           | 19 USD              | 99 USD           |  
+| Venezuela                         | 119 VEF             | 420 VEF          |  
+| Vietnam                           | 400425 VND          | 2000000 VND      |  
+| Yémen                             | 4080 YER            | 21245 YER        |  
+| Zambie                            | 19 USD              | 99 USD           |  
+| Zimbabwe                          | 19 USD              | 99 USD           |

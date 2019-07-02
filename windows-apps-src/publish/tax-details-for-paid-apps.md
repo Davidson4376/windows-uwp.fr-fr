@@ -6,12 +6,12 @@ ms.date: 03/05/2019
 ms.topic: article
 keywords: Windows 10, uwp, taxes, taxes sur les applications, exigences fiscales, développement commercial, taux d’imposition
 ms.localizationpriority: medium
-ms.openlocfilehash: 82f10abe57d9d5542286183180012b26478f88cf
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 3c23189df3daf71090493c6080308749c632f871
+ms.sourcegitcommit: 35a511c2b29ae3d5008612a5fc13d3eb6370d2d0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63788154"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67495754"
 ---
 # <a name="tax-details-for-windows-appgame-developers-and-azure-marketplace-publishers"></a>Détails de taxe pour les développeurs d’application/jeu de Windows et les serveurs de publication Azure Marketplace
 
@@ -275,7 +275,7 @@ Ce qui suit s’applique uniquement aux éditeurs de la place de marché Azure, 
 ## <a name="mixed-remittance-countriesregions-for-windows-appgame-developers"></a>Envoi de fonds mixte pays/régions pour les développeurs de Windows/jeu de l’application
 
 
-Certains partenaires de facturation Microsoft peuvent recueillir et verser les taxes sur les ventes, l’utilisation, les biens et services, la valeur ajoutée ou des taxes similaires éventuellement applicables à l’acquisition par les Clients de vos Applications ou Produits in-app par l’intermédiaire du Windows Store dans les pays/régions ci-dessous. Les [rapports](payout-summary.md#downloading-payment-transactions) que Microsoft met à votre disposition identifieront les transactions pour lesquelles un partenaire de facturation a recueilli les taxes sur les ventes, l’utilisation, les biens et services, la valeur ajoutée ou des taxes similaires applicables à l’acquisition par les Clients de vos Applications ou Produits in-app par l’intermédiaire du Windows Store. À l’exception des transactions décrites dans ces rapports, ni Microsoft, ni ses fournisseurs de services de facturation ne pourront verser des taxes sur les ventes, l’utilisation, les biens et services, la valeur ajoutée ou des taxes similaires liées à l’acquisition par les Clients de vos Applications ou Produits in-app dans ces pays. Il vous appartient de réviser les rapports qui vous sont fournis et de déterminer et d’honorer vos obligations éventuelles en matière d’enregistrement, de collecte et de versement de taxes liées aux transactions impliquant vos Applications ou Produits in-app.
+Certains partenaires de facturation Microsoft peuvent recueillir et verser les taxes sur les ventes, l’utilisation, les biens et services, la valeur ajoutée ou des taxes similaires éventuellement applicables à l’acquisition par les Clients de vos Applications ou Produits in-app par l’intermédiaire du Windows Store dans les pays/régions ci-dessous. Les [rapports](payout-summary.md#transaction-history-download-export) que Microsoft met à votre disposition identifieront les transactions pour lesquelles un partenaire de facturation a recueilli les taxes sur les ventes, l’utilisation, les biens et services, la valeur ajoutée ou des taxes similaires applicables à l’acquisition par les Clients de vos Applications ou Produits in-app par l’intermédiaire du Windows Store. À l’exception des transactions décrites dans ces rapports, ni Microsoft, ni ses fournisseurs de services de facturation ne pourront verser des taxes sur les ventes, l’utilisation, les biens et services, la valeur ajoutée ou des taxes similaires liées à l’acquisition par les Clients de vos Applications ou Produits in-app dans ces pays. Il vous appartient de réviser les rapports qui vous sont fournis et de déterminer et d’honorer vos obligations éventuelles en matière d’enregistrement, de collecte et de versement de taxes liées aux transactions impliquant vos Applications ou Produits in-app.
 
 | Pays/régions de versement mixte |
 |------------------------------------|

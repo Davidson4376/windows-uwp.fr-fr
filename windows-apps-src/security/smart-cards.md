@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, sécurité
 ms.localizationpriority: medium
-ms.openlocfilehash: 5498480e0dbe2c8be96d92df766b15676a3e6b7b
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: ff17facbb22e4e336b302415b0b64d0dffda93e0
+ms.sourcegitcommit: 68051d2adcf3facc036c9f4c76d82bb4d342a75f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371932"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67498887"
 ---
 # <a name="smart-cards"></a>Cartes à puce
 
@@ -82,6 +82,9 @@ SmartCardProvisioning provisioning = await
 ```
 
 Une fois que la méthode [**RequestVirtualSmartCardCreationAsync**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardprovisioning.requestvirtualsmartcardcreationasync) retourne l’objet [**SmartCardProvisioning**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardProvisioning) associé, la carte à puce virtuelle est mise en service et prête à l’emploi.
+
+>[!NOTE]
+>Pour créer une carte à puce virtuelle à l’aide d’une application UWP, l’utilisateur qui exécute l’application doit être un membre du groupe Administrateurs. Si l’utilisateur n’est pas un membre du groupe Administrateurs, la création d’une carte à puce virtuelle échouera.
 
 ## <a name="handle-authentication-challenges"></a>Gérer les demandes d’authentification
 

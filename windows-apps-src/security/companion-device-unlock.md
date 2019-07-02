@@ -6,18 +6,18 @@ ms.topic: article
 keywords: windows 10, uwp, sécurité
 ms.assetid: 89f3d331-20cd-457b-83e8-1a22aaab2658
 ms.localizationpriority: medium
-ms.openlocfilehash: f653ebe874bfa4d4ad8bb608acf9495f02191de7
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 8bba51627445c553c67b2c02bd66d65486f9caf6
+ms.sourcegitcommit: 68051d2adcf3facc036c9f4c76d82bb4d342a75f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320624"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67498908"
 ---
 # <a name="windows-unlock-with-windows-hello-companion-iot-devices"></a>Déverrouillage Windows avec les appareils (IoT) complémentaires
 
 Un appareil complémentaire Windows Hello est un appareil pouvant agir en conjonction avec votre ordinateur de bureau Windows 10 pour améliorer l’expérience d’authentification utilisateur. S’appuyant sur l’infrastructure du dispositif complémentaire Windows Hello, un dispositif complémentaire peut enrichir considérablement l’expérience Windows Hello même en l’absence de biométrie (par exemple, si l’ordinateur de bureau Windows 10 ne dispose pas d’appareil photo pour l’authentification faciale ou d’un lecteur d’empreintes digitales).
 
-> **Remarque** Microsoft sera être dépréciation de l’infrastructure Windows Hello Compagnon d’appareil à l’avenir et publiera la date tôt pour garantir les clients ont un délai suffisant pour déployer des solutions alternatives.
+> **Remarque** Microsoft sera dépréciation de l’API pour l’infrastructure d’appareil Windows Hello le guide dans la première moitié de 2020.
 
 > **Remarque** L’infrastructure du dispositif complémentaire Windows Hello est une fonctionnalité spécialisée qui n’est pas disponible pour tous les développeurs d’applications. Pour utiliser cette infrastructure, votre application doit être spécialement approvisionnée par Microsoft et répertorier la fonctionnalité *secondaryAuthenticationFactor* dans son manifeste. Pour obtenir l’approbation, contactez [cdfonboard@microsoft.com](mailto:cdfonboard@microsoft.com).
 
@@ -638,7 +638,7 @@ Les messages d’erreur et d’aide sont les suivants. Le nom du dispositif est 
 
 - « Effectuez un balayage vers le haut ou appuyez sur la barre d’espace pour vous connecter avec *nom de l’appareil*. »
 - « Configuration de votre appareil compagnon. Veuillez patienter ou utilisez une autre option de connexion. »
-- « Appuyez sur *nom de l’appareil* sur le lecteur NFC pour vous connecter. »
+- « Posez *nom de l’appareil* sur le lecteur NFC pour vous connecter. »
 - « Recherche en cours de *nom de l’appareil*... »
 - « Branchez *nom de l’appareil* sur un port USB pour vous connecter. »
 
