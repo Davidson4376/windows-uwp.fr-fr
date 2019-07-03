@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, acpi, gpio, i2c, spi, uefi
 ms.assetid: 2fbdfc78-3a43-4828-ae55-fd3789da7b34
 ms.localizationpriority: medium
-ms.openlocfilehash: 3dbb06f53f760724da312e00f545d799d6a24200
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 991d86dd61c660553e5b0a3fdbbdec0336c7fb8b
+ms.sourcegitcommit: d63e5a4fd24434068067cae5b8fb3bed4931247e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321573"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67515151"
 ---
 # <a name="enable-usermode-access-to-gpio-i2c-and-spi"></a>Activer l’accès en mode utilisateur à GPIO, I2C et SPI
 
@@ -268,13 +268,13 @@ Si un signal GPIO passe à travers un convertisseur de niveau avant d’atteindr
 Windows prend en charge deux modèles de numérotation de broche :
 
 * Numérotation séquentielle de broche : les utilisateurs voient des nombres comme 0, 1, 2 jusqu’au nombre de broches exposées. 0 est la première ressource GpioIo déclarée dans ASL, 1 est la deuxième ressource GpioIo déclarée dans ASL et ainsi de suite.
-* Numérotation native de broche : les utilisateurs voient les numéros de broche spécifiés dans les descripteurs GpioIo, par exemple, 4, 5, 12, 13, ... .
+* Numéros de code confidentiel natif – les utilisateurs voient les numéros de port spécifié dans les descripteurs de GpioIo, par exemple, 4, 5, 12, 13,...
 
 ```cpp
 Package (2) { “GPIO-UseDescriptorPinNumbers”, 1 },
 ```
 
-La propriété **UseDescriptorPinNumbers** indique à Windows d’utiliser la numérotation native de broche au lieu de la numérotation séquentielle. Si la propriété UseDescriptorPinNumbers n’est pas spécifiée ou si sa valeur vaut zéro, Windows utilise la numérotation séquentielle de broche par défaut.
+La propriété **UseDescriptorPinNumbers** indique à Windows d’utiliser la numérotation native de broche au lieu de la numérotation séquentielle de broche. Si la propriété UseDescriptorPinNumbers n’est pas spécifiée ou si sa valeur vaut zéro, Windows utilise la numérotation séquentielle de broche par défaut.
 
 Si la numérotation native de broche est utilisée, vous devez également spécifier la propriété **PinCount**.
 
@@ -682,7 +682,7 @@ reg query HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\rhproxy
 
 Si la clé de Registre n’est pas présente, rhproxy n’existe pas sur votre système. Rhproxy est présent sur toutes les versions de Windows IoT Core et Windows Enterprise version 15063 et ultérieures.
 
-### <a name="compile-and-load-asl-with-acpitabldat"></a>Compilez et chargez ASL avec ACPITABL.dat
+### <a name="compile-and-load-asl-with-acpitabldat"></a>Compiler et charger ASL avec ACPITABL.dat
 
 Vous avez créé un nœud ASL rhproxy, il est donc temps de compiler et de charger. Vous pouvez compiler le nœud rhproxy dans un fichier AML autonome pouvant être ajouté aux tables système ACPI. Sinon, si vous avez accès à des sources ACPI de votre système, vous pouvez insérer le nœud rhproxy directement dans les tables ACPI de votre plateforme. Toutefois, pendant le chargement initial, il peut être plus facile d’utiliser `ACPITABL.dat`.
 
@@ -807,7 +807,7 @@ Utilisez les exemples suivants pour valider le fonctionnement des appareils à p
 | IoT-SPI | https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/IoT-SPI |
 | CustomSerialDeviceAccess | https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomSerialDeviceAccess |
 
-### <a name="run-the-hlk-tests"></a>Exécutez les tests HLK
+### <a name="run-the-hlk-tests"></a>Exécuter les tests HLK
 
 Téléchargez le [Kit d’évaluation de matériel en laboratoire (HLK)](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit). Les tests suivants sont disponibles :
 
@@ -852,7 +852,7 @@ Cliquez sur Exécuter la sélection. Vous pouvez accéder à une documentation s
 | I2cTestTool | https://developer.microsoft.com/windows/iot/samples/I2cTestTool |
 | SpiTestTool | https://developer.microsoft.com/windows/iot/samples/spitesttool |
 | MinComm (Série) | https://github.com/ms-iot/samples/tree/develop/MinComm |
-| Kit d’évaluation de matériel en laboratoire (HLK) | https://msdn.microsoft.com/library/windows/hardware/dn930814.aspx |
+| Windows Hardware Lab Kit (HLK) | https://msdn.microsoft.com/library/windows/hardware/dn930814.aspx |
 
 ## <a name="apendix"></a>Annexe
 
