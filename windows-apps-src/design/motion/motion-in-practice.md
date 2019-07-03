@@ -11,12 +11,12 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: bc879e43d7e117a4e61e8b6de4bb5437d126e84b
-ms.sourcegitcommit: 7effecb544952b493250337fc622848232fa5995
+ms.openlocfilehash: 8cf010533d2d62559bb8dc0d214e04ab917e62bd
+ms.sourcegitcommit: d534f81590d881a18d677a648c59913029837a84
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/22/2019
-ms.locfileid: "67325853"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67535438"
 ---
 # <a name="bringing-it-together"></a>Synthèse
 
@@ -26,16 +26,13 @@ Voici 3 manières d’appliquer les principes de base du mouvement Fluent dans 
 
 :::row:::
     :::column:::
-        **Implicit animation**
-        Automatic tween and timing between values in a parameter change to achieve very simple Fluent motion using the standardized values.
+**Animation implicite** interpolation automatique et minutage entre des valeurs d’une modification de paramètre pour obtenir le mouvement de Fluent très simple à l’aide des valeurs normalisées.
     :::column-end:::
     :::column:::
-        **Built-in animation**
-        System components, such as common controls and shared motion, are "Fluent by default". Fundamentals have been applied in a manner consistent with their implied usage.
+**Animation intégrée** composants du système, tels que les contrôles communs et partagée motion, sont « Fluent par défaut ». Principes de base ont été appliqués de manière cohérente avec leur utilisation implicite.
     :::column-end:::
     :::column:::
-        **Custom animation following guidance recommendations**
-        There may be times when the system does not yet provide an exact motion solution for your scenario. In those cases, use the baseline fundamental recommendations as a starting point for your experiences.
+**Animation personnalisée que vous suiviez les recommandations des conseils** il peut arriver lorsque le système ne fournit pas encore une solution de mouvement exacte pour votre scénario. Dans ce cas, utilisez les recommandations fondamentales de base comme point de départ pour vos expériences.
     :::column-end:::
 :::row-end:::
 
@@ -45,16 +42,14 @@ Voici 3 manières d’appliquer les principes de base du mouvement Fluent dans 
 
 :::row:::
     :::column:::
-        <b>Direction Forward Out:</b><br>
-        Fade out: 150m; Easing: Default Accelerate
-        <b>Direction Forward In:</b><br>
-        Slide up 150px: 300ms; Easing: Default Decelerate
+<b>Direction de sortie vers l’avant :</b><br>
+Fondu : 150m ; Accélération : Par défaut accélérer <b>Direction à suivre dans :</b><br>
+Faites glisser les 150 px : 300 millisecondes ; Accélération : Par défaut décélérer
     :::column-end:::
     :::column:::
-         <b>Direction Backward Out:</b><br>
-        Slide down 150px: 150ms; Easing: Default Accelerate
-        <b>Direction Backward In:</b><br>
-        Fade in: 300ms; Easing: Default Decelerate
+<b>Direction descendante Out :</b><br>
+Faites glisser vers le bas 150 px : 150ms ; Accélération : Par défaut accélérer <b>Direction descendante dans :</b><br>
+Apparition en fondu : 300 millisecondes ; Accélération : Par défaut décélérer
     :::column-end:::
 :::row-end:::
 
@@ -64,12 +59,12 @@ Voici 3 manières d’appliquer les principes de base du mouvement Fluent dans 
 
 :::row:::
     :::column:::
-        <b>Direction Expand:</b><br>
-        Grow: 300ms; Easing: Standard
+<b>Développez de direction :</b><br>
+La croissance : 300 millisecondes ; Accélération : Standard
     :::column-end:::
     :::column:::
-        <b>Direction Contract:</b><br>
-        Grow: 150ms; Easing: Default Accelerate
+<b>Contrat de direction :</b><br>
+La croissance : 150ms ; Accélération : Accélérer la valeur par défaut
     :::column-end:::
 :::row-end:::
 
