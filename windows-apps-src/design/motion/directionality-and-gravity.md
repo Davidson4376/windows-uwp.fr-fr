@@ -11,12 +11,12 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 3cdb20516d4f21933c7770f43701af322e09c886
-ms.sourcegitcommit: 7effecb544952b493250337fc622848232fa5995
+ms.openlocfilehash: 8f1e36f0febeeaac5a12d408d7be8a717f0ab398
+ms.sourcegitcommit: 7c3b88198178d6f6a535f35e1bf8665410d41d92
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/22/2019
-ms.locfileid: "67325868"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67569124"
 ---
 # <a name="directionality-and-gravity"></a>Direction et gravité
 
@@ -43,8 +43,8 @@ Le mouvement directionnel est soumis à des forces telles que la gravité. L'app
 
 :::row:::
     :::column:::
-        Direction of movement corresponds to physical motion. Just like in nature, objects can move in any world axis - X,Y,Z. This is how we think of the movement of objects on the screen.
-        When you move objects, avoid unnatural collisions. Keep in mind where objects come from and go to, and alway support higher level constructs that may be used in the scene, such as scroll direction or layout hierarchy.
+Sens du déplacement correspond à physique mouvement. Exactement comme dans la nature, les objets peuvent se déplacer sur n'importe quel axe du monde : X, Y, Z. C'est ainsi que nous envisageons le mouvement des objets à l’écran.
+Lorsque vous déplacez des objets, éviter les collisions non naturelles. N’oubliez pas où les objets proviennent et accèdent à et toujours prendre en charge les constructions de niveau supérieur qui peuvent être utilisées dans la scène, tels que de la hiérarchie de direction ou de mise en page de défilement.
     :::column-end:::
     :::column:::
         ![direction backward in](images/Direction.gif)
@@ -75,8 +75,7 @@ Cela présente plusieurs avantages :
 
 :::row:::
     :::column:::
-        **Forward-In**
-        Celebrate content entering the scene in a manner that does not collide with outgoing content. Content decelerates into the scene.
+**Avant de** Célébrez contenu entrant de la scène d’une manière qui ne sont pas en conflit avec le contenu sortant. Contenu décélère dans la scène.
     :::column-end:::
     :::column:::
         ![direction forward in](images/forwardIN.gif)
@@ -84,8 +83,7 @@ Cela présente plusieurs avantages :
 :::row-end:::
 :::row:::
     :::column:::
-        **Forward-Out**
-        Content exits quickly. Objects accelerate off screen.
+**Avant-Out** contenu se ferme rapidement. Objets accélèrent hors écran.
     :::column-end:::
     :::column:::
         ![direction forward out](images/forwardOUT.gif)
@@ -93,8 +91,7 @@ Cela présente plusieurs avantages :
 :::row-end:::
 :::row:::
     :::column:::
-        **Backward-In**
-        Same as Forward-In, but reversed.
+**Vers l’arrière de** identique avant, sorti mais inversée.
     :::column-end:::
     :::column:::
         ![direction backward in](images/backwardIN.gif)
@@ -102,8 +99,7 @@ Cela présente plusieurs avantages :
 :::row-end:::
 :::row:::
     :::column:::
-        **Backward-Out**
-        Same as Forward-Out, but reversed.
+**À la sortie vers l’arrière** identique à transférer à la sortie, mais inversée.
     :::column-end:::
     :::column:::
         ![direction backward out](images/backwardOUT.gif)
