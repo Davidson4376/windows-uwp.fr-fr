@@ -8,12 +8,12 @@ ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 814d8c04943e32ff4d2f0c81bd847e78becd5ebb
-ms.sourcegitcommit: a4fe508e62827a10471e2359e81e82132dc2ac5a
+ms.openlocfilehash: 38a5a6fae3e6477321a8879a50dff21e10fd92e2
+ms.sourcegitcommit: 48ca9c99b52f93a805d5afeb7045ba4bf6597371
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/03/2019
-ms.locfileid: "66468327"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67622946"
 ---
 # <a name="integrate-your-packaged-desktop-app-with-windows-10-and-uwp"></a>Intégrer votre application de bureau empaquetée avec Windows 10 et UWP
 
@@ -288,8 +288,8 @@ Pour vous assurer que les utilisateurs d’ouvrir votre nouvelle application emp
 
 #### <a name="xml-namespaces"></a>Espaces de noms XML
 
-* http://schemas.microsoft.com/appx/manifest/uap/windows10
-* http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
+* http:\//schemas.microsoft.com/appx/manifest/uap/windows10
+* http:\//schemas.microsoft.com/appx/manifest/uap/windows10/3"
 
 #### <a name="elements-and-attributes-of-this-extension"></a>Éléments et attributs de cette extension
 

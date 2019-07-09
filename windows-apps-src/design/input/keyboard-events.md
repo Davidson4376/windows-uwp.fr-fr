@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 0aac8f82f4dd6a40f5672af8c000905cfa9c747e
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 9ef2007648c21e015aa2ae692d28efa56c922bf5
+ms.sourcegitcommit: 7585bf66405b307d7ed7788d49003dc4ddba65e6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365638"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67660196"
 ---
 # <a name="keyboard-events"></a>Événements de clavier
 
@@ -165,7 +165,8 @@ void MainPage::OnNavigatedTo(NavigationEventArgs^ e)
     (void) e;    // Unused parameter
     this->Loaded+=ref new RoutedEventHandler(this,&amp;MainPage::ProgrammaticFocus);
 }
-void MainPage::ProgrammaticFocus(Object^ sender, RoutedEventArgs^ e) {
+void MainPage::ProgrammaticFocus(Object^ sender, RoutedEventArgs^ e) 
+{
     this->Focus(Windows::UI::Xaml::FocusState::Programmatic);
 }
 
@@ -192,7 +193,8 @@ void KeyboardSupport::MainPage::Grid_KeyDown(Platform::Object^ sender, Windows::
 
 void KeyboardSupport::MainPage::Grid_KeyUp(Platform::Object^ sender, Windows::UI::Xaml::Input::KeyRoutedEventArgs^ e)
 {
-    if (IsCtrlKeyPressed()) {
+    if (IsCtrlKeyPressed()) 
+    {
         if (e->Key==VirtualKey::P) { DemoMovie->Play(); }
         if (e->Key==VirtualKey::A) { DemoMovie->Pause(); }
         if (e->Key==VirtualKey::S) { DemoMovie->Stop(); }
@@ -328,7 +330,7 @@ Vous pouvez remplacer les événements de touche pour certains contrôles spéci
 Dans l’exemple suivant, nous sous-classe le contrôle et que vous remplacez le comportement de l’événement KeyDown pour déplacer le focus sur le contrôle GridView de contenu lorsqu’une touche de direction est enfoncée.
 
 ```csharp
-public class CustomGridView : GridView
+  public class CustomGridView : GridView
   {
     protected override void OnKeyDown(KeyRoutedEventArgs e)
     {
@@ -393,7 +395,7 @@ Vous pouvez nettement faciliter et accélérer la saisie de données par les uti
 * [Exemple de clavier tactile](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
 * [Exemple d’entrée de base](https://go.microsoft.com/fwlink/p/?LinkID=620302)
 * [Exemple d’entrée à faible latence](https://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [Exemple d’éléments visuels de focus](https://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [Exemples de visuels de focus](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 **Exemples d’archive**
 * [Exemple d’entrée](https://go.microsoft.com/fwlink/p/?linkid=226855)
