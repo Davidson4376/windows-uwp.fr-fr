@@ -11,10 +11,10 @@ template: detail.hbs
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: cd11427ed1b53641a25c32742ca114b121efcfe8
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66363960"
 ---
 # <a name="xaml-styles"></a>Styles XAML
@@ -33,7 +33,7 @@ Les styles permettent d’extraire des paramètres de propriété visuels afin d
 
 Vous pouvez définir un style inline en langage XAML pour un contrôle ou sous la forme de ressource réutilisable. Vous définissez les ressources dans le fichier XAML d’une page individuelle, dans le fichier App.xaml ou dans le fichier XAML d’un dictionnaire de ressources distinct. Le fichier XAML d’un dictionnaire de ressources peut être partagé entre plusieurs applications et plusieurs dictionnaires de ressources peuvent être fusionnés dans une seule application. L’endroit où la ressource est définie détermine l’étendue (champ d’application) de son utilisation. Les ressources au niveau page sont uniquement disponibles dans la page où elles sont définies. Si des ressources sont définies avec la même clé à la fois dans App.xaml et dans une page, la ressource de la page remplace la ressource de App.xaml. Si une ressource est définie dans un fichier de dictionnaire de ressources distinct, son étendue est déterminée par l’endroit où le dictionnaire de ressources est référencé.
 
-Dans la définition de [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style), vous avez besoin d’un attribut [TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.style.targettype) et d’une collection d’un ou de plusieurs éléments [Setter](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter). L’attribut **TargetType** est une chaîne spécifiant le type [FrameworkElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement) auquel appliquer le style. La valeur **TargetType** doit spécifier un type dérivé de **FrameworkElement** qui est défini par Windows Runtime ou un type personnalisé disponible dans un assembly référencé. Si vous essayez d’appliquer un style à un contrôle et que le type de ce contrôle ne correspond pas à l’attribut **TargetType** du style que vous essayez d’appliquer, une exception se produit.
+Dans la définition de [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style), vous avez besoin d’un attribut [TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.style.targettype) et d’une collection d’un ou de plusieurs éléments [Setter](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter). L’attribut **TargetType** est une chaîne qui spécifie le type [FrameworkElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement) auquel appliquer le style. La valeur **TargetType** doit spécifier un type dérivé de **FrameworkElement** qui est défini par Windows Runtime ou un type personnalisé disponible dans un assembly référencé. Si vous essayez d’appliquer un style à un contrôle et que le type de ce contrôle ne correspond pas à l’attribut **TargetType** du style que vous essayez d’appliquer, une exception se produit.
 
 Chaque élément [Setter](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter) nécessite un élément [Property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.setter.property) et [Value](https://docs.microsoft.com/uwp/api/windows.ui.xaml.setter.value). Ces paramètres de propriété indiquent quelle est la propriété de contrôle à laquelle ce paramètre s’applique, ainsi que la valeur à définir pour cette propriété. Vous pouvez définir la valeur **Setter.Value** avec une syntaxe d’attribut ou une syntaxe d’élément de propriété. Le code XAML ci-dessous montre le style appliqué aux boutons illustrés précédemment. Dans ce code XAML, les deux premiers éléments **Setter** utilisent une syntaxe d’attribut, tandis que le dernier élément **Setter**, relatif à la propriété [BorderBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.borderbrush), utilise une syntaxe d’élément de propriété. L’[attribut x:Key](../../xaml-platform/x-key-attribute.md) n’étant pas utilisé, le style est appliqué implicitement aux boutons. La section suivante explique la notion d’application implicite et explicite de styles.
 
@@ -67,7 +67,7 @@ Chaque élément [Setter](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Set
 Si vous définissez un style en tant que ressource, vous pouvez l’appliquer à vos contrôles de deux façons :
 
 -   Implicitement, en définissant uniquement un élément [TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.style.targettype) pour [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style).
--   Explicitement, en spécifiant un élément [TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.style.targettype) et un attribut [x:Key attribute](../../xaml-platform/x-key-attribute.md) pour [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style), puis en définissant la propriété [Style](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.style) du contrôle cible avec une référence [Extension de balisage {StaticResource}](https://docs.microsoft.com/windows/uwp/xaml-platform/staticresource-markup-extension) qui utilise la clé explicite.
+-   Explicitement, en spécifiant un élément [TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.style.targettype) et un attribut [x:Key](../../xaml-platform/x-key-attribute.md) pour [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style), puis en définissant la propriété [Style](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.style) du contrôle cible avec une référence [Extension de balisage {StaticResource}](https://docs.microsoft.com/windows/uwp/xaml-platform/staticresource-markup-extension) qui utilise la clé explicite.
 
 Si un style contient l’[attribut x:Key](../../xaml-platform/x-key-attribute.md), vous ne pouvez l’appliquer à un contrôle qu’en définissant la propriété [Style](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.style) du contrôle sur le style associé à la clé. En revanche, un style sans attribut x:Key est automatiquement appliqué à chaque contrôle de son type cible qui, sinon, n’a pas de paramètre de style explicite.
 
@@ -107,7 +107,7 @@ Dans cet exemple, l’[attribut x:Key](../../xaml-platform/x-key-attribute.md) e
 
 ## <a name="use-based-on-styles"></a>Utiliser des styles basés sur d’autres styles
 
-Pour faciliter la gestion des styles et optimiser leur réutilisation, vous pouvez créer des styles héritant d’autres styles. Pour créer des styles hérités, vous devez utiliser la propriété [BasedOn](https://docs.microsoft.com/uwp/api/windows.ui.xaml.style.basedon). Les styles héritant d’autres styles doivent cibler le même type de contrôle ou un contrôle dérivé du type ciblé par le style de référence. Par exemple, si le contrôle cible du style de référence est [ContentControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentControl), les styles basés sur ce style peuvent cibler également **ContentControl** ou des types dérivés de **ContentControl**, tels que [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) et [ScrollViewer](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer). Si vous ne définissez aucune valeur dans le style qui hérite, celle du style de référence est utilisée. Pour modifier une valeur issue du style de référence, le style qui hérite écrase cette valeur. L’exemple suivant présente un type **Button** et un type [CheckBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox) avec des styles basés sur le même style de référence.
+Pour faciliter la gestion des styles et optimiser leur réutilisation, vous pouvez créer des styles héritant d’autres styles. Pour créer des styles hérités, vous devez utiliser la propriété [BasedOn](https://docs.microsoft.com/uwp/api/windows.ui.xaml.style.basedon). Les styles héritant d’autres styles doivent cibler le même type de contrôle ou un contrôle dérivé du type ciblé par le style de référence. Par exemple, si le contrôle cible du style de référence est [ContentControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentControl), les styles basés sur ce style peuvent cibler également **ContentControl** ou des types dérivés de **ContentControl** , tels que [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) et [ScrollViewer](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer). Si vous ne définissez aucune valeur dans le style qui hérite, celle du style de référence est utilisée. Pour modifier une valeur issue du style de référence, le style qui hérite écrase cette valeur. L’exemple suivant présente un type **Button** et un type [CheckBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox) avec des styles basés sur le même style de référence.
 
 ![Boutons stylés à l’aide de styles basés sur d’autres styles](images/styles-buttons-based-on.png)
 
@@ -147,7 +147,7 @@ Pour appliquer rapidement des styles à vos contrôles, cliquez avec le bouton d
 
 ## <a name="lightweight-styling"></a>Création d’un style léger
 
-Le remplacement des pinceaux système est généralement effectué au niveau de l’application ou de la page. Dans les deux cas, la substitution de la couleur s’appliquera à tous les contrôles qui font référence à ce pinceau (dans un code XAML, de nombreux contrôles peuvent référencer le même pinceau système).
+Le remplacement des pinceaux système est généralement effectué au niveau de l’application ou de la page. Dans les deux cas, la substitution de la couleur s’appliquera à tous les contrôles qui font référence à ce pinceau (dans du code XAML, de nombreux contrôles peuvent référencer le même pinceau système).
 
 ![Boutons stylés](images/LightweightStyling_ButtonStatesExample.png)
 
@@ -165,7 +165,7 @@ Le remplacement des pinceaux système est généralement effectué au niveau de 
 </Page.Resources>
 ```
 
-Pour les états du type PointerOver (souris déplacée sur le bouton), **PointerPressed** (activation du bouton), ou Disabled (impossible d’interagir avec le bouton). Ces fins sont ajoutés sur les noms de style léger d’origine : **ButtonBackgroundPointerOver**, **ButtonForegroundPointerPressed**, **ButtonBorderBrushDisabled**, etc. Modification de ces formes, permet de garantir que vos contrôles sont colorés manière cohérente pour le thème de votre application.
+Pour les états du type PointerOver (souris déplacée sur le bouton), **PointerPressed** (activation du bouton), ou Disabled (impossible d’interagir avec le bouton). Ces terminaisons sont ajoutées aux noms de style léger d’origine : **ButtonBackgroundPointerOver**, **ButtonForegroundPointerPressed**, **ButtonBorderBrushDisabled**, etc. En modifiant ces pinceaux, vous avez la garantie que vos contrôles seront colorés de manière cohérente, suivant le thème de votre application.
 
 Le fait de placer ces remplacements de pinceau au niveau **App.Resources** a pour effet d’affecter tous les boutons de l’ensemble de votre application, et non une seule page.
 

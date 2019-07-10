@@ -1,23 +1,23 @@
 ---
 description: Cette rubrique montre comment inscrire et révoquer des délégués de gestion d’événements à l’aide de C++/WinRT.
 title: Gérer des événements en utilisant des délégués en C++/WinRT
-ms.date: 03/04/2019
+ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projeté, projection, gérer, événement, délégué
 ms.localizationpriority: medium
-ms.openlocfilehash: c647168f44ffbfc4d753700a87825b5ca7b28544
-ms.sourcegitcommit: c315ec3e17489aeee19f5095ec4af613ad2837e1
-ms.translationtype: MT
+ms.openlocfilehash: 00870a196517f975d2736298513be7567f3dd29e
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58921675"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64745054"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrt"></a>Gérer des événements en utilisant des délégués en C++/WinRT
 
-Cette rubrique montre comment inscrire et révoquer des délégués de gestion d’événements à l’aide de [C++ / c++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt). Vous pouvez gérer un événement à l’aide de n’importe quel objet de type fonction C++ standard.
+Cette rubrique montre comment inscrire et révoquer des délégués de gestion d’événements à l’aide de [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt). Vous pouvez gérer un événement à l’aide de n’importe quel objet de type fonction C++ standard.
 
 > [!NOTE]
-> Pour plus d’informations sur l’installation et à l’aide de la C++Extension WinRT Visual Studio (VSIX) et le package NuGet (qui ensemble fournissent le modèle de projet et créez prise en charge), consultez [prise en charge de Visual Studio pour C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+> Pour plus d’informations sur l’installation et l’utilisation de l’extension VSIX (Visual Studio Extension) C++/WinRT et du package NuGet (qui fournissent ensemble la prise en charge des modèles et des builds de projet), consultez [Prise en charge de Visual Studio pour C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 ## <a name="register-a-delegate-to-handle-an-event"></a>Inscrire un délégué pour gérer un événement
 
@@ -49,9 +49,9 @@ MainPage::MainPage()
 ```
 
 > [!IMPORTANT]
-> Lorsque vous inscrivez le délégué, l’exemple de code ci-dessus passe un brutes *cela* pointeur (pointant vers l’objet en cours). Pour savoir comment établir un nom fort ou une référence faible à l’objet actuel, consultez le **si vous utilisez une fonction membre en tant que délégué** sous-section dans la section [en toute sécurité l’accès à la *cela* pointeur avec un délégué de gestion des événements](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate).
+> Lorsque vous inscrivez le délégué, l’exemple de code ci-dessus passe un pointeur *ceci* brut (pointant vers l’objet actif). Pour savoir comment établir une référence forte ou faible à l’objet actif, consultez la sous-section **Si vous utilisez une fonction membre en tant que délégué** dans la section [Accès sécurisé au pointeur *this* avec un délégué de gestion des événements](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate).
 
-Il existe d’autres façons de construire un **RoutedEventHandler**. Voici le bloc de syntaxe pris à partir de la rubrique de documentation pour [ **RoutedEventHandler** ](/uwp/api/windows.ui.xaml.routedeventhandler) (choisissez  *C++/WinRT* à partir de la **langage** liste déroulante dans le coin supérieur droit de la page Web). Notez les différents constructeurs : l’un d’entre eux prend une expression lambda ; un autre une fonction gratuite, et un autre (celui que nous avons utilisé ci-dessus) prend un objet et un pointeur-vers-fonction-membre.
+Il existe d’autres façons de construire un **RoutedEventHandler**. Vous trouverez ci-dessous le bloc de syntaxe extrait de la rubrique de documentation relative à [**RoutedEventHandler**](/uwp/api/windows.ui.xaml.routedeventhandler) (choisir *C++/WinRT* dans la liste déroulante **Langage** en haut à droite de la page web). Notez les différents constructeurs : l’un d’entre eux prend une expression lambda ; un autre une fonction gratuite, et un autre (celui que nous avons utilisé ci-dessus) prend un objet et un pointeur-vers-fonction-membre.
 
 ```cppwinrt
 struct RoutedEventHandler : winrt::Windows::Foundation::IUnknown
@@ -68,24 +68,24 @@ struct RoutedEventHandler : winrt::Windows::Foundation::IUnknown
 La syntaxe de l’opérateur d’appel de fonction est également intéressante. Elle vous indique ce que doivent être les paramètres de votre délégué. Comme vous pouvez le constater, dans ce cas, la syntaxe de l’opérateur d’appel de fonction correspond aux paramètres de notre **MainPage::ClickHandler**.
 
 > [!NOTE]
-> Pour un événement donné, pour déterminer les détails de son délégué et les paramètres de ce délégué, consultez d’abord la rubrique de documentation pour l’événement lui-même. Prenons le [UIElement.KeyDown événement](/uwp/api/windows.ui.xaml.uielement.keydown) comme exemple. Consultez cette rubrique, puis choisissez  *C++/WinRT* à partir de la **langage** liste déroulante. Dans le bloc de syntaxe au début de la rubrique, vous verrez ceci.
+> Pour un événement donné, afin de déterminer les détails de son délégué et les paramètres de ce délégué, consultez d’abord la rubrique de documentation pour l’événement lui-même. Prenons [l’événement UIElement.KeyDown](/uwp/api/windows.ui.xaml.uielement.keydown) comme exemple. Consultez cette rubrique, puis choisissez *C++/WinRT* dans la liste déroulante **Language**. Dans le bloc de syntaxe au début de la rubrique, vous verrez ceci.
 > 
 > ```cppwinrt
 > // Register
 > event_token KeyDown(KeyEventHandler const& handler) const;
 > ```
 >
-> Qu’info nous indique que le **UIElement.KeyDown** événement (la rubrique nous sommes sur) a un type de délégué de **KeyEventHandler**, puisque c’est le type que vous transmettez lorsque vous inscrivez un délégué avec ce type d’événement. Donc, maintenant, suivez le lien sur le sujet à celle [KeyEventHandler délégué](/uwp/api/windows.ui.xaml.input.keyeventhandler) type. Ici, le bloc de syntaxe contient un opérateur d’appel de fonction. Et, comme indiqué ci-dessus, qui vous indique ce que les paramètres de votre délégué doivent être.
+> Ces informations nous indiquent que l’événement **UIElement.KeyDown** (la rubrique active) a un type de délégué **KeyEventHandler**, puisque c’est le type que vous transmettez lorsque vous inscrivez un délégué avec ce type d’événement. Donc, maintenant, suivez le lien dans la rubrique vers le type [Délégué KeyEventHandler](/uwp/api/windows.ui.xaml.input.keyeventhandler). Ici, le bloc de syntaxe contient un opérateur d’appel de fonction. Et, comme mentionné ci-dessus, elle vous indique ce que doivent être les paramètres de votre délégué.
 > 
 > ```cppwinrt
 > void operator()(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::Input::KeyRoutedEventArgs const& e) const;
 > ```
 >
->  Comme vous pouvez le voir, le délégué doit être déclarée comme prenant un **IInspectable** en tant que l’expéditeur et une instance de la [KeyRoutedEventArgs classe](/uwp/api/windows.ui.xaml.input.keyroutedeventargs) en tant que les arguments.
+>  Comme vous pouvez le voir, le délégué doit être déclaré avec un **IInspectable** comme expéditeur et une instance de la [classe KeyRoutedEventArgs](/uwp/api/windows.ui.xaml.input.keyroutedeventargs) comme arguments.
 >
-> Pour prendre un autre exemple, examinons le [Popup.Closed événement](/uwp/api/windows.ui.xaml.controls.primitives.popup.closed). Son type délégué est [EventHandler\<IInspectable\>](/uwp/api/windows.foundation.eventhandler). Par conséquent, votre délégué prendra une **IInspectable** en tant que l’expéditeur et l’autre **IInspectable** (car c’est la le **EventHandler**du paramètre de type) en tant que les arguments.
+> Pour prendre un autre exemple, examinons [l’événement Popup.Closed](/uwp/api/windows.ui.xaml.controls.primitives.popup.closed). Son type de délégué est [EventHandler\<IInspectable\>](/uwp/api/windows.foundation.eventhandler). Par conséquent, votre délégué prendra **IInspectable** comme expéditeur et un autre **IInspectable** (car c’est le paramètre type de **EventHandler**) comme arguments.
 
-Si vous n’effectuez pas beaucoup de tâches dans votre gestionnaire d’événements, vous pouvez utiliser une fonction lambda au lieu d’une fonction membre. Là encore, il est peut-être pas évident au vu de l’exemple de code ci-dessous, mais un **RoutedEventHandler** délégué est construit à partir d’une fonction lambda qui, là encore, doit correspondre à la syntaxe de l’opérateur d’appel de fonction que nous avons discuté ci-dessus.
+Si vous n’effectuez pas beaucoup de tâches dans votre gestionnaire d’événements, vous pouvez utiliser une fonction lambda au lieu d’une fonction membre. Là encore, l’exemple de code ci-dessous n’est peut-être pas très parlant, mais un délégué **RoutedEventHandler** est construit à partir d’une fonction lambda qui, à nouveau, doit correspondre à la syntaxe de l’opérateur d’appel de fonction dont nous avons discuté plus haut.
 
 ```cppwinrt
 MainPage::MainPage()
@@ -140,9 +140,9 @@ private:
 };
 ```
 
-Au lieu d’une référence forte, comme dans l’exemple ci-dessus, vous pouvez stocker une référence faible au bouton (consultez [références fortes et faibles en C / c++ / WinRT](weak-references.md)).
+Au lieu d’une référence forte, comme dans l’exemple ci-dessus, vous pouvez stocker une référence faible sur le bouton (voir [Références fortes et faibles en C++/WinRT](weak-references.md)).
 
-Lorsque vous inscrivez un délégué, vous pouvez également spécifier **winrt::auto_revoke** (qui est une valeur de type [ **winrt::auto_revoke_t**](/uwp/cpp-ref-for-winrt/auto-revoke-t)) pour demander un revoker d’événement (de type [ **winrt::event_revoker**](/uwp/cpp-ref-for-winrt/event-revoker)). Revoker de l’événement concerne une référence faible à la source d’événement (l’objet qui déclenche l’événement) pour vous. Vous pouvez révoquer manuellement en appelant la fonction membre **event_revoker::revoke** ; mais le révocateur d'événement appelle cette fonction lui-même automatiquement lorsqu'il est hors de portée. La fonction **revoke** vérifie si la source d’événement existe toujours et, si tel est le cas, révoque votre délégué. Dans cet exemple, il n’est pas nécessaire de stocker la source d’événement ni d’avoir un destructeur.
+Autre possibilité, lorsque vous inscrivez un délégué, vous pouvez spécifier **winrt::auto_revoke** (qui est une valeur de type [**winrt::auto_revoke_t**](/uwp/cpp-ref-for-winrt/auto-revoke-t)) pour demander un révocateur d’événement (de type [**winrt::event_revoker**](/uwp/cpp-ref-for-winrt/event-revoker)). Le révocateur d'événement contient pour vous une référence faible à la source de l’événement (l’objet qui déclenche l’événement). Vous pouvez révoquer manuellement en appelant la fonction membre **event_revoker::revoke** ; mais le révocateur d'événement appelle cette fonction lui-même automatiquement lorsqu'il est hors de portée. La fonction **revoke** vérifie si la source d’événement existe toujours et, si tel est le cas, révoque votre délégué. Dans cet exemple, il n’est pas nécessaire de stocker la source d’événement ni d’avoir un destructeur.
 
 ```cppwinrt
 struct Example : ExampleT<Example>
@@ -175,7 +175,7 @@ Button::Click_revoker Click(winrt::auto_revoke_t,
 ```
 
 > [!NOTE]
-> Dans l’exemple de code ci-dessus, `Button::Click_revoker` est un alias de type pour `winrt::event_revoker<winrt::Windows::UI::Xaml::Controls::Primitives::IButtonBase>`. Un modèle semblable s’applique à tous les événements C++/WinRT. Chaque événement Windows Runtime a une surcharge de fonction revoke qui retourne un revoker d’événement, et ce type de revoker est un membre de la source d’événements. Par conséquent, afin de prendre un autre exemple, le [ **CoreWindow::SizeChanged** ](/uwp/api/windows.ui.core.corewindow.sizechanged) événement a une surcharge de fonction d’inscription qui retourne une valeur de type **CoreWindow::SizeChanged_revoker**.
+> Dans l’exemple de code ci-dessus, `Button::Click_revoker` est un alias de type pour `winrt::event_revoker<winrt::Windows::UI::Xaml::Controls::Primitives::IButtonBase>`. Un modèle semblable s’applique à tous les événements C++/WinRT. Chaque événement Windows Runtime a une surcharge de fonction revoke qui retourne un revoker d’événement, et le type de ce revoker est un membre de la source d’événements. Pour prendre un autre exemple, l’événement [**CoreWindow::SizeChanged**](/uwp/api/windows.ui.core.corewindow.sizechanged) a une surcharge de fonction d’inscription qui retourne une valeur de type **CoreWindow::SizeChanged_revoker**.
 
 
 Vous pouvez envisager de révoquer les gestionnaires dans un scénario de navigation de page. Si vous naviguez à plusieurs reprises dans une page, puis revenez en arrière, vous pourriez alors révoquer tous les gestionnaires lorsque vous quittez la page. Autre possibilité, si vous réutilisez la même instance de page, vérifiez la valeur de votre jeton et ne faites l’inscription que si elle n’a pas encore été définie (`if (!m_token){ ... }`). Une troisième option consiste à stocker un révocateur d’événement dans la page en tant que membre de données. Et une quatrième option, comme décrit plus loin dans cette rubrique, consiste à capturer une référence forte ou faible à l’objet *this* dans votre fonction lambda.
@@ -185,6 +185,9 @@ Vous pouvez envisager de révoquer les gestionnaires dans un scénario de naviga
 Les exemples ci-dessus utilisent le type délégué **RoutedEventHandler**, mais il existe bien entendu beaucoup d’autres types de délégués. Par exemple, les actions et opérations asynchrones (avec et sans progression) sont terminées et/ou les événements de progression qui attendent les délégués du type correspondant. Par exemple, l’événement de progression d’une opération asynchrone avec progression (à savoir tout ce qui implémente [**IAsyncOperationWithProgress**](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_)) requiert un délégué de type [**AsyncOperationProgressHandler**](/uwp/api/windows.foundation.asyncoperationprogresshandler). Voici un exemple de code de création d’un délégué de ce type à l’aide d’une fonction lambda. L’exemple montre également comment créer un délégué [**AsyncOperationWithProgressCompletedHandler**](/uwp/api/windows.foundation.asyncoperationwithprogresscompletedhandler).
 
 ```cppwinrt
+#include <winrt/Windows.Foundation.h>
+#include <winrt/Windows.Web.Syndication.h>
+
 using namespace winrt;
 using namespace Windows::Foundation;
 using namespace Windows::Web::Syndication;
@@ -198,18 +201,18 @@ void ProcessFeedAsync()
 
     async_op_with_progress.Progress(
         [](IAsyncOperationWithProgress<SyndicationFeed, RetrievalProgress> const& /* sender */, RetrievalProgress const& args)
-    {
-        uint32_t bytes_retrieved = args.BytesRetrieved;
-        // use bytes_retrieved;
-    });
+        {
+            uint32_t bytes_retrieved = args.BytesRetrieved;
+            // use bytes_retrieved;
+        });
 
     async_op_with_progress.Completed(
         [](IAsyncOperationWithProgress<SyndicationFeed, RetrievalProgress> const& sender, AsyncStatus const /* asyncStatus */)
-    {
-        SyndicationFeed syndicationFeed = sender.GetResults();
-        // use syndicationFeed;
-    });
-    
+        {
+            SyndicationFeed syndicationFeed = sender.GetResults();
+            // use syndicationFeed;
+        });
+
     // or (but this function must then be a coroutine, and return IAsyncAction)
     // SyndicationFeed syndicationFeed{ co_await async_op_with_progress };
 }
@@ -218,9 +221,9 @@ void ProcessFeedAsync()
 Comme l’indique le commentaire sur la « coroutine » ci-dessus, au lieu d’utiliser un délégué avec les événements terminés des actions et des opérations asynchrones, vous trouverez sans doute plus naturel d’utiliser des coroutines. Pour plus d’informations et des exemples de code, voir [Opérations concurrentes et asynchrones avec C++/WinRT](concurrency.md).
 
 > [!NOTE]
-> Il n’est pas correct implémenter plusieurs *Gestionnaire d’achèvement* pour une action ou opération asynchrone. Vous pouvez avoir soit un délégué unique pour son événement terminé, ou vous pouvez `co_await` il. Si vous avez les deux, la seconde échoue.
+> Il n’est pas correct d’implémenter plusieurs *gestionnaires d’achèvement* pour une action ou opération asynchrone. Vous pouvez soit avoir un délégué unique pour son événement terminé, soit le `co_await`. Si vous avez les deux, le deuxième échoue.
 
-Si vous respectez avec les délégués au lieu d’une coroutine, puis vous pouvez opter pour une syntaxe plus simple.
+Si vous utilisez les délégués au lieu d’une coroutine, vous pouvez opter pour une syntaxe plus simple.
 
 ```cppwinrt
 async_op_with_progress.Completed(
@@ -246,9 +249,9 @@ winrt::hstring f(ListView listview)
 }
 ```
 
-## <a name="safely-accessing-the-this-pointer-with-an-event-handling-delegate"></a>En toute sécurité l’accès à la *cela* pointeur avec un délégué de gestion des événements
+## <a name="safely-accessing-the-this-pointer-with-an-event-handling-delegate"></a>Accès sécurisé au pointeur *this* avec un délégué de gestion des événements.
 
-Si vous gérez un événement avec la fonction de membre d’un objet, ou à partir de dans une fonction lambda à l’intérieur d’une fonction membre objet, vous devez réfléchir à la durée de vie relative au destinataire d’événement (l’objet gérant l’événement) et la source d’événement (l’objet déclenche l’événement). Pour plus d’informations et d’exemples de code, consultez [références fortes et faibles en C / c++ / WinRT](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate).
+Si vous gérez un événement avec la fonction membre d’un objet, ou à partir d’une fonction lambda au sein de la fonction membre d’un objet, vous devez penser aux durées de vie relatives du destinataire d’événement (l’objet qui gère l’événement) et de la source d’événement (l’objet qui déclenche l’événement). Pour plus d’informations et d’exemples de code, consultez [Références fortes et faibles en C++/WinRT](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate).
 
 ## <a name="important-apis"></a>API importantes
 * [winrt::auto_revoke_t marker struct](/uwp/cpp-ref-for-winrt/auto-revoke-t)
@@ -258,4 +261,4 @@ Si vous gérez un événement avec la fonction de membre d’un objet, ou à par
 ## <a name="related-topics"></a>Rubriques connexes
 * [Créer des événements en C++/WinRT](author-events.md)
 * [Opérations concurrentes et asynchrones avec C++/WinRT](concurrency.md)
-* [Les références fortes et faibles en C / c++ / WinRT](weak-references.md)
+* [Références fortes et faibles en C++/WinRT](weak-references.md)

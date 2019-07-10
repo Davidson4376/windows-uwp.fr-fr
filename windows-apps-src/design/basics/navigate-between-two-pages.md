@@ -14,17 +14,17 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 3bc377e87d01106a1a2e7157dbe08f1ab022f52a
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66361058"
 ---
 # <a name="implement-navigation-between-two-pages"></a>Implémenter la navigation entre deux pages
 
 Découvrez comment utiliser une trame et les pages pour activer une navigation pair à pair de base dans votre application. 
 
-> **API importantes** : [**Windows.UI.Xaml.Controls.Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) class, [**Windows.UI.Xaml.Controls.Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page) class, [**Windows.UI.Xaml.Navigation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Navigation) namespace
+> **API importantes** : classe [**Windows.UI.Xaml.Controls.Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame), classe [**Windows.UI.Xaml.Controls.Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page), espace de noms [**Windows.UI.Xaml.Navigation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Navigation)
 
 ![Navigation pair à pair](images/peertopeer.png)
 
@@ -34,7 +34,7 @@ Découvrez comment utiliser une trame et les pages pour activer une navigation p
 2.  Dans le volet gauche de la boîte de dialogue **Nouveau projet**, choisissez le nœud **Visual C#**  >  **Windows** > **Universel** ou **Visual C++**  > **Windows** > **Universel**.
 3.  Dans le volet central, choisissez **Application vide**.
 4.  Dans le champ **Nom**, entrez **NavApp1**, puis choisissez le bouton **OK**.
-    La solution est créée et les fichiers projet apparaissent dans l’**Explorateur de solutions**.
+    La solution est créée et les fichiers projet apparaissent dans **l’Explorateur de solutions**.
 5.  Pour exécuter le programme, choisissez **Déboguer** > **Démarrer le débogage** dans le menu, ou appuyez sur F5.
     Une page vide s’affiche.
 6.  Pour arrêter le débogage et revenir à Visual Studio, quittez l’application ou cliquez sur **Arrêter le débogage** dans le menu.
@@ -117,7 +117,7 @@ void Page1::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 }
 ```
 
-Ajoutez le contenu suivant à l’interface utilisateur de Page2.xaml.
+Ajoutez le contenu suivant à l’interface utilisateur de Page2.xaml :
 
 -   Ajoutez un élément [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) nommé `pageTitle` en tant qu’élément enfant de la racine [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid). Modifiez la valeur de la propriété [**Text**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text) en la définissant sur `Page 2`.
 ```xaml
@@ -296,7 +296,7 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 ```
 
 > [!NOTE]
-> Ici le code utilise la valeur de retour de [ **Navigate** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.navigate) pour lever une exception d’application si la navigation vers le frame de fenêtre initiale de l’application échoue. Quand **Navigate** retourne **true**, la navigation a lieu.
+> Le code utilise ici la valeur de retour de [**Navigate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.navigate) pour lever une exception d’application en cas d’échec de la navigation vers la fenêtre initiale de l’application. Quand **Navigate** retourne **true**, la navigation a lieu.
 
 À présent, générez et exécutez l’application. Cliquez sur le lien « Click to go to page 2 ». La deuxième page indiquant « Page 2 » en haut doit être chargée et affichée dans le cadre.
 
@@ -304,21 +304,21 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 
 Avant d’ajouter d’autres fonctionnalités à notre application, examinons la façon dont les pages que nous venons d’ajouter prennent en charge la navigation dans l’application.
 
-Tout d’abord, un [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame), appelé `rootFrame`, est créé pour l’application dans la méthode `App.OnLaunched` du fichier code-behind App.xaml. La classe **Frame** prend en charge diverses méthodes de navigation telles que [**Navigate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.navigate), [**GoBack**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.goback) et [**GoForward**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.goforward), ainsi que les propriétés telles que [**BackStack**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.backstack), [**ForwardStack**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.forwardstack) et [**BackStackDepth**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.backstackdepth).
+Tout d’abord, un [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame), appelé `rootFrame`, est créé pour l’application dans la méthode `App.OnLaunched` du fichier code-behind App.xaml. La classe **Frame** prend en charge diverses méthodes de navigation telles que [**Navigate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.navigate), [**GoBack**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.goback) et [**GoForward**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.goforward), et les propriétés telles que [**BackStack**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.backstack), [**ForwardStack**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.forwardstack) et [**BackStackDepth**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.backstackdepth).
  
 La méthode [**Navigate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.navigate) est utilisée pour afficher le contenu dans ce **Frame**. Par défaut, cette méthode charge MainPage.xaml. Dans notre exemple, `Page1` est transmis à la méthode **Navigate**, qui charge alors `Page1` dans le **Frame**. 
 
-`Page1` est une sous-classe de la [ **Page** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page) classe. La classe **Page** possède une propriété en lecture seule **Frame** qui obtient l’objet **Frame** contenant l’objet **Page**. Lorsque le gestionnaire d’événements **Click** de l’objet **HyperlinkButton** de `Page1` appelle `this.Frame.Navigate(typeof(Page2))`, l’objet **Frame** affiche le contenu de Page2.xaml.
+`Page1` est une sous-classe de la classe [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page). La classe **Page** possède une propriété en lecture seule **Frame** qui obtient l’objet **Frame** contenant l’objet **Page**. Lorsque le gestionnaire d’événements **Click** de l’objet **HyperlinkButton** de `Page1` appelle `this.Frame.Navigate(typeof(Page2))`, l’objet **Frame** affiche le contenu de Page2.xaml.
 
-Pour finir, chaque fois qu’une page est chargée dans la trame, cette page est ajoutée comme une [**PageStackEntry**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Navigation.PageStackEntry) à la [**BackStack**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.backstack) ou [**ForwardStack**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.forwardstack) de la [**trame**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.frame). L’[historique et la navigation vers l’arrière](navigation-history-and-backwards-navigation.md) sont ainsi possibles.
+Pour finir, chaque fois qu’une page est chargée dans la trame, cette page est ajoutée comme une [**PageStackEntry**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Navigation.PageStackEntry) à la [**BackStack**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.backstack) ou [**ForwardStack**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.forwardstack) de la [**trame**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.frame). [L’historique et la navigation vers l’arrière](navigation-history-and-backwards-navigation.md) sont ainsi possibles.
 
 ## <a name="3-pass-information-between-pages"></a>3. Passer des informations entre les pages
 
 Notre application navigue entre deux pages, mais elle n’effectue pour le moment rien d’intéressant. Souvent, lorsqu’une application possède plusieurs pages, celles-ci doivent partager des informations. Passons des informations de la première page à la deuxième.
 
-Dans Page1.xaml, remplacez le **HyperlinkButton** vous avez ajouté précédemment par le code suivant [ **StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel).
+Dans Page1.xaml, remplacez l’objet **HyperlinkButton** que vous avez ajouté précédemment par l’objet [**StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) suivant.
 
-Ici, nous ajoutons un [ **TextBlock** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) étiquette et un [ **zone de texte** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) `name` permettant d’entrer une chaîne de texte.
+Ici, nous ajoutons une étiquette [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) et un objet [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) (`name`) pour entrer une chaîne de texte.
 
 ```xaml
 <StackPanel>
@@ -451,6 +451,6 @@ Page1::Page1()
 ```
 
 ## <a name="related-articles"></a>Articles connexes
-* [Principes fondamentaux de conception de navigation pour les applications UWP](https://docs.microsoft.com/windows/uwp/layout/navigation-basics)
-* [Instructions pour les onglets et des tableaux croisés dynamiques](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tabs-pivot)
-* [Instructions pour les volets de navigation](https://docs.microsoft.com/windows/uwp/controls-and-patterns/nav-pane)
+* [Informations de base relatives à la conception de la navigation pour les applications UWP](https://docs.microsoft.com/windows/uwp/layout/navigation-basics)
+* [Recommandations relatives aux onglets et aux sélecteurs de vue](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tabs-pivot)
+* [Recommandations en matière de volets de navigation](https://docs.microsoft.com/windows/uwp/controls-and-patterns/nav-pane)

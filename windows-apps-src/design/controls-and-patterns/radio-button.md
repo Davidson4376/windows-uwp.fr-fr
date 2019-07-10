@@ -13,15 +13,15 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 91903365a258d54804b420cd217dd7c25d79406a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57606134"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63813686"
 ---
 # <a name="radio-buttons"></a>Cases d’option
 
-> **API importantes** : [Classe RadioButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RadioButton), [événement activé](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.Checked), [propriété IsChecked](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked)
+> **API importantes** : [classe RadioButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RadioButton), [événement Checked](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.Checked), [propriété IsChecked](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked)
 
 Les cases d’option permettent aux utilisateurs de sélectionner une option dans un ensemble. Chaque option est représentée par une seule case d’option et les utilisateurs peuvent activer une seule case d’option dans un groupe de cases d’option.
 
@@ -53,7 +53,7 @@ Lorsque les options sont des numéros incrémentés de manière fixe (10, 20, 30
 
 S’il existe plus de huit options, utilisez une [liste déroulante](lists.md) ou une [zone de liste](lists.md).
 
-![zone de liste modifiable](images/combo_box_scroll.png)
+![combo box](images/combo_box_scroll.png)
 
 Si les options disponibles dépendent du contexte actuel de l’application, ou sont amenées à changer de manière dynamique, utilisez une [zone de liste](lists.md) à sélection unique.
 
@@ -191,10 +191,10 @@ Cette illustration montre la manière convenable de positionner et espacer les c
 
 **Pour les concepteurs**
 - [Boutons](buttons.md)
-- [Activer/désactiver commutateurs](toggles.md)
+- [Boutons bascule](toggles.md)
 - [Cases à cocher](checkbox.md)
-- [Listes et des zones de liste déroulante](lists.md)
+- [Listes et zones de liste modifiable](lists.md)
 - [Curseurs](slider.md)
 
 **Pour les développeurs (XAML)**
-- [Classe de case d’option](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.radiobutton)
+- [Classe RadioButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.radiobutton)

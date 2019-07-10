@@ -9,17 +9,17 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 61fa4f8afa0404591831be4136c16672503274f2
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66362776"
 ---
 # <a name="images-and-image-brushes"></a>Images et pinceaux image
 
 Pour afficher une image, vous pouvez utiliser l’objet **Image** ou l’objet **ImageBrush**. Un objet Image affiche une image, tandis qu’un objet ImageBrush peint un autre objet avec une image. 
 
-> **API importantes** : [Classe de l’image](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image), [Source, propriété](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image.source), [classe ImageBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.ImageBrush), [propriété ImageSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imagebrush.imagesource)
+> **API importantes** : [classe Image](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image), [propriété Source](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image.source), [classe ImageBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.ImageBrush), [propriété ImageSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imagebrush.imagesource)
 
 ## <a name="are-these-the-right-elements"></a>S’agit-il des éléments appropriés ?
 Utilisez un élément **Image** pour afficher une image autonome dans votre application.
@@ -56,7 +56,7 @@ Voici l’objet Image affiché.
 
 ![Exemple d’un élément d’image](images/Image_Licorice.jpg)
 
-Dans cet exemple, la propriété [Source](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image.source) indique l’emplacement de l’image à afficher. Vous pouvez définir la Source en spécifiant une URL absolue (par exemple, http://contoso.com/myPicture.jpg) ou en spécifiant une URL relative à la structure d’empaquetage de votre application. Dans le cadre de notre exemple, nous plaçons le fichier image « licorice.jpg » dans le fichier racine de notre projet, puis nous déclarons les paramètres du projet qui incluent le fichier image en tant que contenu.
+Dans cet exemple, la propriété [Source](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image.source) indique l’emplacement de l’image à afficher. Vous pouvez définir la propriété Source en spécifiant une URL absolue (par exemple, http://contoso.com/myPicture.jpg) ) ou en spécifiant une URL relative à la structure de votre package d’application. Dans le cadre de notre exemple, nous plaçons le fichier image « licorice.jpg » dans le fichier racine de notre projet, puis nous déclarons les paramètres du projet qui incluent le fichier image en tant que contenu.
 
 ### <a name="imagebrush"></a>ImageBrush
 
@@ -80,10 +80,10 @@ Voici l’objet Ellipse peint par l’objet ImageBrush.
 
 Si vous ne définissez pas les valeurs [Width](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.width) ou [Height](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.height) d’un objet **Image**, ce dernier est affiché avec les dimensions de l’image spécifiée par la propriété **Source**. Le fait de définir les valeurs **Width** et **Height** crée une zone rectangulaire dans laquelle l’image est affichée. Vous pouvez spécifier la façon dont l’image remplit cette zone à l’aide de la propriété [Stretch](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image.stretch). La propriété Stretch accepte ces valeurs qui sont définies par l’énumération [Stretch](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Stretch) :
 
--   **Aucun** : L’image ne s’étirent pour remplir les dimensions de la sortie. Faites preuve de prudence avec le paramètre Stretch : si l’image source est plus grande que la zone qui doit la contenir, votre image sera découpée. Cela n’est pas généralement souhaitable car, contrairement à une propriété [Clip](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.clip) délibérée, vous n’avez aucun contrôle sur la fenêtre d’affichage.
--   **Uniform**: L’image est étirée pour s’adapter à la sortie. Mais les proportions du contenu sont conservées. Valeur par défaut.
--   **UniformToFill**: L’image est étirée afin qu’il remplit la zone de sortie mais conserve ses proportions d’origine de complètement.
--   **Remplir**: L’image est étirée pour s’adapter à la sortie. Étant donné que la hauteur et la largeur du contenu sont mises à l’échelle indépendamment, les dimensions d’origine de l’image risquent de ne pas être conservées. C’est-à-dire que l’image risque d’être déformée afin de remplir complètement la zone de sortie.
+-   **Aucun** : L’image n’est pas étirée pour remplir les dimensions de sortie. Faites preuve de prudence avec le paramètre Stretch : si l’image source est plus grande que la zone qui doit la contenir, votre image sera découpée. Cela n’est pas généralement souhaitable car, contrairement à une propriété [Clip](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.clip) délibérée, vous n’avez aucun contrôle sur la fenêtre d’affichage.
+-   **Uniform** : L’image est mise à l’échelle afin de correspondre aux dimensions de sortie. Mais les proportions du contenu sont conservées. Il s'agit de la valeur par défaut.
+-   **UniformToFill** : L’image est mise à l’échelle de sorte qu’elle remplisse complètement la zone de sortie tout en conservant ses proportions d’origine.
+-   **Fill** : L’image est mise à l’échelle afin de correspondre aux dimensions de sortie. Étant donné que la hauteur et la largeur du contenu sont mises à l’échelle indépendamment, les dimensions d’origine de l’image risquent de ne pas être conservées. C’est-à-dire que l’image risque d’être déformée afin de remplir complètement la zone de sortie.
 
 ![Exemple de paramètres d’étirement.](images/Image_Stretch.jpg)
 
@@ -147,7 +147,7 @@ La classe [RenderTargetBitmap](https://docs.microsoft.com/uwp/api/Windows.UI.Xam
 
 ### <a name="image-sources-and-scaling"></a>Sources d’images et mise à l’échelle
 
-Vous devez créer vos sources d’images selon plusieurs tailles recommandées afin de vous assurer que votre application garde son aspect esthétique lorsque Windows la redimensionne. Lorsque vous spécifiez une propriété **Source** pour un objet **Image**, vous pouvez utiliser une convention d’affectation de noms qui référencera automatiquement la ressource appropriée pour la mise à l’échelle actuelle. Pour plus de détails de la convention d’affectation de noms et plus d’informations, consultez [Guide de démarrage rapide : L’utilisation des ressources de fichiers ou d’images](https://docs.microsoft.com/previous-versions/windows/apps/hh965325(v=win.10)).
+Vous devez créer vos sources d’images selon plusieurs tailles recommandées afin de vous assurer que votre application garde son aspect esthétique lorsque Windows la redimensionne. Lorsque vous spécifiez une propriété **Source** pour un objet **Image**, vous pouvez utiliser une convention d’affectation de noms qui référencera automatiquement la ressource appropriée pour la mise à l’échelle actuelle. Pour connaître les spécificités de la convention d’affectation de noms et obtenir plus d’informations, voir [Démarrage rapide : Utilisation de ressources de fichiers ou d’images](https://docs.microsoft.com/previous-versions/windows/apps/hh965325(v=win.10)).
 
 Pour plus d’informations sur la conception prenant en charge la mise à l’échelle, voir [Recommandations en matière d’expérience utilisateur pour la disposition et la mise à l’échelle](https://developer.microsoft.com/windows/design).
 
@@ -162,10 +162,10 @@ Si vous définissez un élément Image ou ImageBrush à l’aide de code, utilis
 
 ## <a name="get-the-sample-code"></a>Obtenir l’exemple de code
 
-- [Exemples de la Galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) - Affichez tous les contrôles XAML dans un format interactif.
+- [Exemple de Galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) : tous les contrôles XAML dans un format interactif.
 
 ## <a name="related-articles"></a>Articles connexes
 
 -   [Audio, vidéo et appareil photo](https://docs.microsoft.com/windows/uwp/audio-video-camera/index)
--   [Classe d’image](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image)
+-   [Classe Image](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image)
 -   [Classe ImageBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.ImageBrush)

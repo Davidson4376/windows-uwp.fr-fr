@@ -12,21 +12,21 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: ac2bd55d1cea25359c3c609148c7098532d76c46
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57654054"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63796411"
 ---
 # <a name="command-design-basics-for-uwp-apps"></a>Informations de base relatives à la conception des commandes pour les applications UWP
 
-Dans une application Universal Windows Platform (UWP), *commande éléments* sont des éléments d’interface utilisateur interactives qui permettent aux utilisateurs d’effectuer des actions telles que l’envoi d’un e-mail, suppression d’un élément ou envoi d’un formulaire. *Commande interfaces* sont composés d’éléments de commande courants, les surfaces de commande qui les hébergent, les interactions prises en charge et les expériences qu’ils fournissent.
+Dans une application de plateforme Windows universelle (UWP), les *éléments de commande* sont les éléments d’interface utilisateur interactifs qui permettent aux utilisateurs d’effectuer des actions, telles que l’envoi d’un e-mail, la suppression d’un élément ou l’envoi d’un formulaire. Les *interfaces de commande* sont constituées d’éléments de commande courants, des surfaces de commande qui les hébergent, des interactions qu’elles prennent en charge et des expériences proposées.
 
-## <a name="provide-the-best-command-experience"></a>Fournir la meilleure expérience de commande
+## <a name="provide-the-best-command-experience"></a>Proposer la meilleure expérience de commande
 
-L’aspect le plus important d’une interface de commande est ce que vous essayez de laisser un utilisateur à accomplir. Lorsque vous planifiez la fonctionnalité de votre application, envisagez les étapes requises pour effectuer ces tâches et les expériences utilisateur que vous souhaitez activer. Une fois que vous avez effectué une première ébauche de ces expériences, vous pouvez prendre des décisions sur les outils et les interactions pour les implémenter.
+L’aspect le plus important d’une interface de commande est ce que vous essayez de laisser un utilisateur accomplir. Lorsque vous planifiez la fonctionnalité de votre application, envisagez les étapes requises pour effectuer ces tâches et les expériences utilisateur que vous souhaitez activer. Une fois que vous avez élaboré une première ébauche de ces expériences, vous pouvez prendre des décisions concernant les outils et les interactions pour les implémenter.
 
-Voici certaines expériences de commande communes :
+Voici quelques expériences de commande courantes :
 
 - Envoi d’informations
 - Sélection de paramètres et d’options
@@ -34,7 +34,7 @@ Voici certaines expériences de commande communes :
 - Ouverture, enregistrement et suppression de fichiers
 - Modification ou création de contenu
 
-Soyez créatif avec la conception de vos expériences de commande. Choisissez quels périphériques d’entrée votre application prend en charge et la façon dont votre application répond à chaque appareil. En prenant en charge le plus large éventail de fonctionnalités et des préférences vous rendez votre application comme utilisable, portable et accessible que possible (voir [design pour les applications Universal Windows Platform (UWP) d’exécution des commandes](../controls-and-patterns/commanding.md) pour plus de détails).
+Soyez créatif avec la conception de vos expériences de commande. Choisissez les appareils d’entrée pris en charge par votre application et la façon dont votre application répond à chaque appareil. Par la prise en charge du plus large éventail de fonctionnalités et de préférences, vous rendez votre application aussi utilisable, portable et accessible que possible (consultez [Conception des commandes pour les applications de plateforme Windows universelle (UWP)](../controls-and-patterns/commanding.md) pour plus de détails).
 
 
 
@@ -42,9 +42,9 @@ Soyez créatif avec la conception de vos expériences de commande. Choisissez qu
 When designing a command interface, the most important decision is choosing what a user can do. To plan the right type of interactions, focus on your app - consider the user experiences you want to enable, and what steps users will need to take. Once you decide what you want users to accomplish, then you can provide them the tools to do so.
 -->
 
-## <a name="choose-the-right-command-elements"></a>Choisissez les éléments de bon de commande
+## <a name="choose-the-right-command-elements"></a>Choisir les éléments de commande appropriés
 
-À l’aide des éléments appropriés dans une interface de commande peut faire la différence entre une application intuitive, facile à utiliser et une application difficile à confusion. Un ensemble complet d’éléments de commande sont disponibles dans la plateforme Windows universelle (UWP). Voici une liste de certains des éléments de commande plus courants de UWP.
+L’utilisation d’éléments adéquats dans une interface de commande peut faire toute la différence entre une application intuitive et facile à utiliser, et une application dont l’utilisation est complexe et déroutante. Un ensemble complet d’éléments de commande est disponible dans la plateforme Windows universelle (UWP). Voici une liste de quelques-uns des éléments de commande UWP les plus courants.
 
 :::row:::
     :::column:::
@@ -100,11 +100,11 @@ Pour obtenir la liste complète de ces éléments, voir [Contrôles et élément
 
 ## <a name="place-commands-on-the-right-surface"></a>Placer les commandes sur la surface appropriée
 
-Vous pouvez placer des éléments de la commande sur un nombre d’appareils surface dans votre application, y compris le canevas de l’application ou une commande spéciale conteneurs, par exemple une barre de commandes, un menu volant de barre de commande, une barre de menus ou une boîte de dialogue.
+Vous pouvez placer les éléments de commande sur un certain nombre de surfaces dans votre application, notamment le canevas d’application ou des conteneurs de commande spécifiques, comme une barre de commandes, un menu volant de barre de commandes, une barre de menus ou une boîte de dialogue.
 
-Toujours essayer permettre aux utilisateurs de manipuler du contenu directement plutôt que par le biais des commandes qui agissent sur le contenu, telles que le glisser -déplacer pour réorganiser les éléments de liste plutôt que des boutons de commande haut et bas. 
+Essayez toujours de laisser les utilisateurs manipuler du contenu directement plutôt que par le biais des commandes qui agissent sur le contenu, par exemple le glisser-déplacer pour réorganiser des éléments de liste plutôt que des boutons de commande vers le haut et vers le bas. 
 
-Toutefois, cela peut-être pas possible avec certains périphériques d’entrée, ou lors de la prise en compte les préférences et les capacités de l’utilisateur spécifique. Dans ce cas, fournissez intuitivité commandes autant que possible et placer ces éléments de la commande sur une surface de commande dans votre application.
+Toutefois, cela peut ne pas être possible avec certains appareils d’entrée ou lors de la prise en compte de préférences et de capacités spécifiques à l’utilisateur. Dans ce cas, fournissez autant d’affordances de commandes que possible et placez ces éléments de commande sur une surface de commande dans votre application.
 
 Voici une liste de quelques-unes des surfaces de commande les plus courantes.
 
@@ -142,12 +142,12 @@ Voici une liste de quelques-unes des surfaces de commande les plus courantes.
         <p>UWP also provides a set of traditional menus and context menus; for more info, see the <a href="../controls-and-patterns/menus.md">menus and context menus overview</a>.</p>
 :::row-end:::
 
-## <a name="provide-command-feedback"></a>Fournir des commentaires de commande 
+## <a name="provide-command-feedback"></a>Fournir des commentaires sur la commande 
 
-Commentaires de la commande communique avec les utilisateurs qu’une interaction ou une commande a été détecté et comment la commande a été interprétée et gérée, et si la commande a réussi ou non. Cela permet aux utilisateurs de comprendre qu’elles ont faites et qu’ils peuvent faire ensuite. Idéalement, les commentaires doivent être intégrés naturellement à l'interface utilisateur pour que les utilisateurs n’aient pas à être interrompus ou à prendre de mesures supplémentaires, à moins que cela ne soit absolument nécessaire.
+Les commentaires sur la commande communiquent aux utilisateurs qu’une interaction ou commande a été détectée, comment la commande a été interprétée et gérée, et si la commande a réussi ou non. Cela permet aux utilisateurs de comprendre ce qu’ils ont fait et ce qu’ils peuvent faire ensuite. Idéalement, les commentaires doivent être intégrés naturellement à l’interface utilisateur pour que les utilisateurs n’aient pas à être interrompus ou à prendre de mesures supplémentaires, à moins que cela ne soit absolument nécessaire.
 
 > [!NOTE]
-> Fournir des commentaires uniquement lorsque cela est nécessaire, et uniquement s’il n’est pas disponible ailleurs. Gardez à l’interface utilisateur de votre application et non encombré, sauf si vous ajoutez la valeur.
+> Fournissez des commentaires uniquement quand cela est nécessaire et quand ils ne sont pas disponibles ailleurs. Maintenez l’interface utilisateur de votre application claire et simple, à moins que cela n’ajoute une valeur.
 
 Voici quelques solutions pour fournir des commentaires dans votre application.
 
@@ -168,7 +168,7 @@ Voici quelques solutions pour fournir des commentaires dans votre application.
     :::column span="2":::
         <b>Flyouts</b>
 
-       <a href="../controls-and-patterns/dialogs-and-flyouts/index.md">Menus volants</a> sont des fenêtres contextuelles contextuelles légères qui peuvent être ignorées en appuyant sur ou cliquez quelque part en dehors du menu volant.
+       Les <a href="../controls-and-patterns/dialogs-and-flyouts/index.md">menus volants</a> sont des fenêtres contextuelles légères qui peuvent être fermées en appuyant ou en cliquant quelque part à l’extérieur du menu volant.
 :::row-end:::
 
 :::row:::
@@ -187,7 +187,7 @@ Voici quelques solutions pour fournir des commentaires dans votre application.
 
 ### <a name="when-to-confirm-or-undo-actions"></a>Quand confirmer ou annuler des actions
 
-Quelle que soit la façon dont bien conçu l’interface utilisateur de votre application est, tous les utilisateurs effectuer une action qu’ils souhaitent qu’ils n’avaient pas. Votre application peut aider dans ces situations en exigeant la confirmation d’une action, ou en fournissant un moyen d’annuler les actions récentes.
+Même si l’interface utilisateur de votre application a été très bien conçue, il arrivera inévitablement à tous les utilisateurs d’effectuer une action non souhaitée. Votre application peut remédier à ce genre de situation en demandant à l’utilisateur de confirmer une action ou en lui offrant un moyen d’annuler les actions récentes.
 
 :::row:::
     :::column:::

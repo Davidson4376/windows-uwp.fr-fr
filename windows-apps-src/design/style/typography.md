@@ -7,15 +7,15 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 76196add0829dcfa0aa638a2d8ae6995fafce69e
-ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59244385"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63820611"
 ---
 # <a name="typography"></a>Typographie
 
-![image hero](images/header-typography.svg)
+![Image Hero](images/header-typography.svg)
 
 En tant que représentation visuelle du langage, la typographie a pour mission principale de communiquer des informations. Son style doit toujours être aligné sur cet objectif. Dans cet article, nous décrirons comment appliquer un style à la typographie de votre application UWP pour aider les utilisateurs à comprendre facilement et efficacement le contenu.
 
@@ -154,7 +154,7 @@ Lorsque la quantité de texte s’étend au-delà de l’espace disponible, nous
     :::column-end:::
 :::row-end:::
 
-**Remarque**: Si les conteneurs ne sont pas bien définis (par exemple, aucune différenciation couleur d’arrière-plan), ou lorsqu’il existe un lien pour afficher plus de texte, puis utiliser des points de suspension.
+**Remarque** : Si les conteneurs ne sont pas clairement définis (par exemple, sans couleur d’arrière-plan de différenciation), ou s’il existe un lien pour afficher plus de texte, utilisez des ellipses.
 
 ## <a name="languages"></a>Langues 
 
@@ -171,7 +171,7 @@ Utilisez les API de [mappage de police LanguageFont](https://docs.microsoft.com/
 <tr class="header">
 <th align="left">Famille de polices</th>
 <th align="left">Styles</th>
-<th align="left">Notes</th>
+<th align="left">Remarques</th>
 </tr>
 </thead>
 <tbody>
@@ -244,7 +244,7 @@ Les polices sans-serif sont un excellent choix pour les titres et les éléments
 <tr class="header">
 <th align="left">Famille de polices</th>
 <th align="left">Styles</th>
-<th align="left">Notes</th>
+<th align="left">Remarques</th>
 </tr>
 </thead>
 <tbody>
@@ -287,7 +287,7 @@ Les polices serif sont parfaites pour présenter de grandes quantités de texte.
 <tr class="header">
 <th align="left">Famille de polices</th>
 <th align="left">Styles</th>
-<th align="left">Notes</th>
+<th align="left">Remarques</th>
 </tr>
 </thead>
 <tbody>
@@ -323,7 +323,7 @@ Les polices serif sont parfaites pour présenter de grandes quantités de texte.
 <tr class="header">
 <th align="left">Famille de polices</th>
 <th align="left">Styles</th>
-<th align="left">Notes</th>
+<th align="left">Remarques</th>
 </tr>
 </thead>
 <tbody>

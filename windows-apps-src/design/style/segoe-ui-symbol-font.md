@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 076e4b0ddf30a23271bbb6b488f235f7233b28c2
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57649054"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63834295"
 ---
 # <a name="segoe-mdl2-icons"></a>Icônes Segoe MDL2
 
@@ -22,11 +22,11 @@ ms.locfileid: "57649054"
 
 Cet article répertorie les icônes fournies par la police Segoe MDL2 Assets. 
 
-> **API importantes** : [**Symbole enum**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol), [ **FontIcon classe**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)
+> **API importantes** : [**énumération Symbol**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol), [**classe FontIcon**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)
 
 ## <a name="about-segoe-mdl2-assets"></a>À propos de la police Segoe MDL2 Assets
 
-Depuis la publication de Windows 10, la police Segoe MDL2 Assets a remplacé la police d’icône Segoe UI Symbol Windows 8/8.1. <!-- It can be used in much the same manner as the older font, but many glyphs have been redrawn in the Windows 10 icon style with the font’s metrics set so that icons are aligned within the font’s em-square instead of on a typographic baseline. --> (**Segoe UI symbole** sera toujours disponible en tant que « héritée » ressource, mais nous recommandons la mise à jour de votre application pour utiliser la nouvelle **Segoe MDL2 actifs**.)
+Depuis la publication de Windows 10, la police Segoe MDL2 Assets a remplacé la police d’icône Segoe UI Symbol Windows 8/8.1. <!-- It can be used in much the same manner as the older font, but many glyphs have been redrawn in the Windows 10 icon style with the font’s metrics set so that icons are aligned within the font’s em-square instead of on a typographic baseline. --> (**Segoe UI Symbol** reste disponible comme ressource « héritée », mais nous vous recommandons de mettre à jour votre application avec la nouvelle police **Segoe MDL2 Assets**.)
 
 La plupart des icônes et des contrôles d’interface utilisateur inclus dans la police **Segoe MDL2 Assets** sont mappés à la zone d’utilisation privée d’Unicode. La zone d’utilisation privée permet aux développeurs de polices d’affecter des valeurs Unicode privées à des glyphes qui ne correspondent pas à des points de code existants. Cette opération peut s’avérer utile lors de la création d’une police de symboles, mais elle génère un problème d’interopérabilité. Si la police n’est pas disponible, les glyphes n’apparaissent pas. Utilisez ces glyphes uniquement lorsque vous pouvez spécifier la police **Segoe MDL2 Assets**.
 
@@ -43,7 +43,7 @@ Tous les glyphes de la police **Segoe MDL2 Assets** ayant la même à largeur fi
 De nombreuses icônes offrent également des formes en miroir utilisables dans des langues qui s’écrivent de droite à gauche, comme l’arabe, l’hébreu et le persan.
 
 ## <a name="using-the-icons"></a>Utilisation des icônes
-Si vous développez une application dans C#/VB/C++ et XAML, vous pouvez utiliser des glyphes spécifiés à partir de Segoe MDL2 actifs avec la [symbole d’énumération](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol). 
+Si vous développez une application en C#/VB/C++ et XAML, vous pouvez utiliser les glyphes spécifiés de la police Segoe MDL2 Assets avec [l’énumération Symbol](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol). 
 
 ```xaml
 <SymbolIcon Symbol="GlobalNavigationButton"/>
@@ -55,15 +55,15 @@ Si vous souhaitez utiliser un glyphe de la police **Segoe MDL2 Assets** qui n’
 <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE700;"/>
 ```
 
-Vous pouvez également utiliser la ressource statique `SymbolThemeFontFamily` pour accéder à **Segoe MDL2 actifs**, au lieu de spécifier la police par nom :
+Vous pouvez également utiliser la ressource statique `SymbolThemeFontFamily` pour accéder à **Segoe MDL2 Assets**, au lieu de spécifier la police par nom :
 ```xaml
 <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE700;"/>
 ```
 
 
 ## <a name="how-do-i-get-this-font"></a>Comment obtenir cette police ?
-* Sur Windows 10 : Il n’a rien à faire, la police est fourni avec Windows.
-* Sur un Mac, vous devez télécharger et installer la police : <a href="https://aka.ms/SegoeFonts">Obtenir les polices icône Segoe UI et MDL2</a>
+* Sous Windows 10 : Vous n’avez rien à faire, la police est fournie avec Windows.
+* Sur un Mac, vous devez télécharger et installer la police : <a href="https://aka.ms/SegoeFonts">Obtenir les polices d’icônes Segoe UI et MDL2</a>
 
 ## <a name="icon-list"></a>Liste des icônes
 Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses autres icônes que nous pouvons afficher ici. La plupart des icônes sont destinées à un usage spécifique et ne sont généralement pas utilisées ailleurs.
@@ -270,7 +270,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E731.png" width="32" height="32" alt="EMI" /></td>
   <td>E731</td>
-  <td>INTERFÉRENCES ÉLECTROMAGNÉTIQUES</td>
+  <td>EMI</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E734.png" width="32" height="32" alt="FavoriteStar" /></td>
   <td>E734</td>
@@ -1758,7 +1758,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E8FF.png" width="32" height="32" alt="Preview" /></td>
   <td>E8FF</td>
-  <td>Preview</td>
+  <td>Préversion</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E902.png" width="32" height="32" alt="Group" /></td>
   <td>E902</td>
@@ -2362,7 +2362,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E9D5.png" width="32" height="32" alt="CheckList" /></td>
   <td>E9D5</td>
-  <td>Liste de vérification</td>
+  <td>CheckList</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E9D9.png" width="32" height="32" alt="Diagnostic" /></td>
   <td>E9D9</td>
@@ -2370,7 +2370,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E9E9.png" width="32" height="32" alt="Equalizer" /></td>
   <td>E9E9</td>
-  <td>Égaliseur</td>
+  <td>Equalizer</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E9F3.png" width="32" height="32" alt="Process" /></td>
   <td>E9F3</td>
@@ -2382,7 +2382,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/E9F9.png" width="32" height="32" alt="ReportDocument" /></td>
   <td>E9F9</td>
-  <td>Objet ReportDocument</td>
+  <td>ReportDocument</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EA0C.png" width="32" height="32" alt="VideoSolid" /></td>
   <td>EA0C</td>
@@ -2394,7 +2394,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/EA18.png" width="32" height="32" alt="Shield" /></td>
   <td>EA18</td>
-  <td>Bouclier</td>
+  <td>Shield</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EA1F.png" width="32" height="32" alt="Info2" /></td>
   <td>EA1F</td>
@@ -2690,7 +2690,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/EB44.png" width="32" height="32" alt="Radar" /></td>
   <td>EB44</td>
-  <td>En radar</td>
+  <td>Radar</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EB47.png" width="32" height="32" alt="BusSolid" /></td>
   <td>EB47</td>
@@ -3094,7 +3094,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/EBE8.png" width="32" height="32" alt="Bug" /></td>
   <td>EBE8</td>
-  <td>Bogue</td>
+  <td>Bug</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EBFC.png" width="32" height="32" alt="TabletMode" /></td>
   <td>EBFC</td>
@@ -3210,7 +3210,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/EC32.png" width="32" height="32" alt="Cafe" /></td>
   <td>EC32</td>
-  <td>Café</td>
+  <td>Cafe</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EC37.png" width="32" height="32" alt="MobSignal1" /></td>
   <td>EC37</td>
@@ -3974,11 +3974,11 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
  </tr>
 <tr><td><img src="images/segoe-mdl/EF3B.png" width="32" height="32" alt="Replay" /></td>
   <td>EF3B</td>
-  <td>relecture</td>
+  <td>Replay</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EF3C.png" width="32" height="32" alt="Eyedropper" /></td>
   <td>EF3C</td>
-  <td>Pipette</td>
+  <td>Eyedropper</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/EF3D.png" width="32" height="32" alt="LineDisplay" /></td>
   <td>EF3D</td>
@@ -5081,7 +5081,7 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
   <td>VerticalBatteryCharging2</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F600.png" width="32" height="32" alt="VerticalBatteryCharging3" /></td>
-  <td>RUBRIQUES F600</td>
+  <td>F600</td>
   <td>VerticalBatteryCharging3</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F601.png" width="32" height="32" alt="VerticalBatteryCharging4" /></td>
@@ -5166,8 +5166,8 @@ Gardez à l’esprit que la police **Segoe MDL2 Assets** comprend de nombreuses 
 
 ## <a name="related-articles"></a>Articles connexes
 
-* [Instructions pour les icônes](../style/icons.md)
-* [Énumération de symbole](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.Symbol)
-* [Classe de FontIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)
+* [Recommandations en matière d’icônes](../style/icons.md)
+* [Énumération Symbol](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.Symbol)
+* [Classe FontIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)
 
 

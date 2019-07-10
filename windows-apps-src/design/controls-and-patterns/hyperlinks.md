@@ -13,10 +13,10 @@ dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: b17220a039612e0b13cd9842800c37c39bf194dd
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66362760"
 ---
 # <a name="hyperlinks"></a>Liens hypertexte
@@ -25,7 +25,7 @@ ms.locfileid: "66362760"
 
 Les liens hypertexte redirigent l’utilisateur vers une autre partie de l’application ou une autre application, ou lancent un URI spécifique dans une application de navigateur distincte. Vous pouvez ajouter un lien hypertexte à une application XAML de deux façons : à l’aide d’un élément de texte **Hyperlink** ou d’un contrôle **HyperlinkButton**.
 
-> **API importantes** : [Élément de texte de lien hypertexte](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Hyperlink), [contrôle HyperlinkButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton)
+> **API importantes** : [élément de texte Hyperlink](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Hyperlink), [contrôle HyperlinkButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton)
 
 ![Bouton Lien hypertexte](images/controls/hyperlink-button.png)
 
@@ -109,7 +109,7 @@ helpLinkButton.NavigateUri = new Uri("http://www.contoso.com");
 
 Pour les deux types de liens hypertexte, vous gérez navigation de la même manière. Vous pouvez définir la propriété **NavigateUri** ou gérez l’événement **Click**.
 
-**Accédez à un URI**
+**Accéder à un URI**
 
 Pour utiliser le lien hypertexte afin d’accéder à un URI, définissez la propriété NavigateUri. Lorsqu’un utilisateur clique ou appuie sur le lien hypertexte, l’URI spécifié s’ouvre dans le navigateur par défaut. Le navigateur par défaut s’exécute dans un processus distinct de votre application.
 
@@ -134,7 +134,7 @@ Vous ne pouvez rien faire au niveau du gestionnaire d’événements Click pour 
 ## <a name="hyperlink-underlines"></a>Soulignement de lien hypertexte
 Par défaut, les liens hypertexte sont soulignés. Ce trait de soulignement est important, car il permet de répondre aux exigences d’accessibilité. Les utilisateurs daltoniens utilisent le trait de soulignement pour distinguer les liens hypertexte du reste du texte. Si vous désactivez les traits de soulignement, pensez à ajouter un type de format spécial permettant de distinguer les liens hypertexte du reste du texte, tel que FontWeight ou FontStyle.
 
-**Éléments de texte de lien hypertexte**
+**Éléments de texte Hyperlink**
 
 Vous pouvez définir la propriété [UnderlineStyle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.hyperlink.underlinestyle) pour désactiver le trait de soulignement. Si vous le désactivez, pensez à utiliser [FontWeight](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.textelement.fontweight) ou [FontStyle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.textelement.fontstyle) pour différencier le texte du lien du reste du texte.
 
@@ -160,7 +160,7 @@ Dans la mesure où un élément Hyperlink n’est pas un [UIElement](https://doc
 
 L’élément Hyperlink a des restrictions sur le contenu qui peut exister dans sa collection [Inlines](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.span.inlines). Plus précisément, un élément Hyperlink autorise uniquement les types [Run](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.run) et d’autres types [Span](/uwp/api/windows.ui.xaml.documents.span) qui ne sont pas un autre élément Hyperlink. [InlineUIContainer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.inlineuicontainer) ne peut pas être dans la collection Inlines d’un élément Hyperlink. Toute tentative d’ajout de contenu restreint lève une exception d’argument invalide ou une exception d’analyse XAML.
 
-**Comportement de lien hypertexte et le style de thème /**
+**Élément Hyperlink et comportement de thème/style**
 
 L’élément Hyperlink n’hérite pas de [Control](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control), il n’a donc pas de propriété [Style](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.style) ni de [Template](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.template). Vous pouvez modifier les propriétés qui sont héritées de [TextElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.textelement), tel que Foreground ou FontFamily, pour changer l’apparence d’un élément Hyperlink. Cependant, vous ne pouvez pas utiliser de style ou de modèle commun pour appliquer des modifications. Au lieu d’utiliser un modèle, pensez à utiliser des ressources communes pour les valeurs des propriétés de l’élément Hyperlink afin de garantir la cohérence. Certaines propriétés de l’élément Hyperlink utilisent par défaut la valeur d’extension de balisage {ThemeResource} fournie par le système. Cela permet à l’apparence de l’élément Hyperlink de s’adapter aux modifications du thème du système apportées par l’utilisateur au moment de l’exécution.
 
@@ -175,13 +175,13 @@ La couleur par défaut du lien hypertexte est la couleur d’accentuation du sys
 
 ## <a name="get-the-sample-code"></a>Obtenir l’exemple de code
 
-- [Exemples de la Galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) - Affichez tous les contrôles XAML dans un format interactif.
+- [Exemple de Galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) : tous les contrôles XAML dans un format interactif.
 
 ## <a name="related-articles"></a>Articles connexes
 
 - [Contrôles de texte](text-controls.md)
-- [Instructions pour les info-bulles](tooltips.md)
+- [Recommandations en matière d’info-bulles](tooltips.md)
 
 **Pour les développeurs (XAML)**
-- [Classe de Windows.UI.Xaml.Documents.Hyperlink](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Hyperlink)
-- [Windows.UI.Xaml.Controls.HyperlinkButton class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton)
+- [Classe Windows.UI.Xaml.Documents.Hyperlink](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Hyperlink)
+- [Classe Windows.UI.Xaml.Controls.HyperlinkButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton)

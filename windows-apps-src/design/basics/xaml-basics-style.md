@@ -1,25 +1,25 @@
 ---
 title: Créer des styles personnalisés
 description: Cet article décrit les principes fondamentaux des éléments d'interface utilisateur de stylisation en XAML
-keywords: XAML, UWP, Prise en main
+keywords: XAML, UWP, Bien démarrer
 ms.date: 08/31/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: d540b41620110a41676d08f5e6239efd0ef4ca46
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66361231"
 ---
 # <a name="tutorial-create-custom-styles"></a>Tutoriel : Créer des styles personnalisés
 
-Ce didacticiel vous montre comment personnaliser l’interface utilisateur de notre application XAML. Avertissement : ce didacticiel peut impliquer ou non une licorne. (Ce n'est pas une blague !)  
+Ce tutoriel vous montre comment personnaliser l’interface utilisateur de notre application XAML. Avertissement : ce tutoriel peut impliquer ou non une licorne. (Ce n'est pas une blague !)  
 
-## <a name="prerequisites"></a>Prérequis
-* [Visual Studio 2017 et le SDK Windows 10 (10.0.15063.468 ou version ultérieure)](https://developer.microsoft.com/windows/downloads)
+## <a name="prerequisites"></a>Conditions préalables
+* [Visual Studio 2017 et le SDK Windows 10 (10.0.15063.468 ou version ultérieure)](https://developer.microsoft.com/windows/downloads)
 
-## <a name="part-0-get-the-code"></a>Notamment le tome 0 Obtenir le code
+## <a name="part-0-get-the-code"></a>Partie 0 : Obtenir le code
 Le point de départ de ce laboratoire se trouve dans le référentiel d’exemples PhotoLab, dans le dossier [xaml-basics-starting-points/style/](https://github.com/Microsoft/Windows-appsample-photo-lab/tree/master/xaml-basics-starting-points/style). Après avoir cloné ou téléchargé le référentiel, vous pouvez modifier le projet en ouvrant PhotoLab.sln avec Visual Studio 2017.
 
 L’application PhotoLab comporte deux pages principales :
@@ -27,18 +27,18 @@ L’application PhotoLab comporte deux pages principales :
 **MainPage.xaml :** présente un affichage de galerie de photos, ainsi que des informations sur chaque fichier d’image.
 ![MainPage](../basics/images/xaml-basics/mainpage.png)
 
-**DetailPage.xaml :** affiche une seule photo une fois qu'elle a été sélectionnée. Un menu d'édition volant permet de modifier la photo, de la renommer et de l'enregistrer.
+**DetailPage.xaml :** affiche une seule photo une fois qu'elle a été sélectionnée. Un menu d’édition volant permet de modifier la photo, de la renommer et de l’enregistrer.
 ![DetailPage](../basics/images/xaml-basics/detailpage.png)
 
-## <a name="part-1-create-a-fancy-slider-control"></a>Partie 1 : Créer un contrôle slider fantaisie  
+## <a name="part-1-create-a-fancy-slider-control"></a>Partie 1 : Créer un contrôle de curseur fantaisie  
 
 La plateforme Windows universelle (UWP) fournit un certain nombre de méthodes pour personnaliser l’apparence de votre application. Des paramètres de polices et de typographie aux effets de flou, en passant par les couleurs et les dégradés, vous disposez d'un grand nombre d’options. 
 
-Pour la première partie de ce didacticiel, nous allons égayer quelques uns de nos contrôles d’édition de photos. 
+Pour la première partie de ce tutoriel, nous allons égayer quelques uns de nos contrôles d’édition de photos. 
 
 <figure>
     <img src="../basics/images/xaml-basics/slider-start.png" />
-    <figure>*Un curseur humble avec le style par défaut.*</figure>
+    <figure>*Curseur modeste avec le style par défaut.*</figure>
 </figure>
 
 Ces curseurs sont très bien, ils font tout ce qu'un curseur doit faire, mais ils ne sont pas très fantaisistes. Nous allons arranger ça. 
@@ -58,12 +58,12 @@ Le curseur d’exposition ajuste l’exposition de l’image : faites-le glisse
 
 3. Utilisez un élément Polygon pour créer une forme d’arrière-plan pour le curseur d'exposition.
 
-    L'[espace de noms Windows.XAML.Ui.Shapes](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Shapes) fournit sept formes au choix. Vous pouvez choisir une ellipse, un rectangle, et un objet appelé Path, qui permet de réaliser toutes sortes de formes, et oui, même une licorne ! 
+    [L’espace de noms Windows.XAML.Ui.Shapes](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Shapes) fournit sept formes au choix. Vous pouvez choisir une ellipse, un rectangle, et un objet appelé Path, qui permet de réaliser toutes sortes de formes, et oui, même une licorne ! 
     
     <!-- TODO reduce size -->
     ![Une licorne](../basics/images/xaml-basics/unicorn.png)
     
-    > **En savoir plus :** Le [dessiner des formes](https://docs.microsoft.com/en-us/windows/uwp/graphics/drawing-shapes) article vous indique tout ce que vous devez savoir sur les formes XAML. 
+    > **En savoir plus :** L'article [Dessiner des formes](https://docs.microsoft.com/en-us/windows/uwp/graphics/drawing-shapes) vous explique tout ce que vous devez savoir sur les formes XAML. 
     
     Nous voulons créer un widget d'aspect triangulaire, qui ressemble à la forme dessinée sur le contrôle de volume d’une chaîne stéréo.
     
@@ -88,7 +88,7 @@ Le curseur d’exposition ajuste l’exposition de l’image : faites-le glisse
         Minimum="-2"
         Maximum="2" />
     ```
-    **Après avoir**
+    **Après**
     ```xaml
     <Polygon Grid.Row="2" Stretch="Fill"
                 Points="0,20 200,20 200,0" HorizontalAlignment="Stretch"  
@@ -135,7 +135,7 @@ Le curseur d’exposition ajuste l’exposition de l’image : faites-le glisse
             Minimum="-1"
             Maximum="1" />
     ```
-    **Après avoir**
+    **Après**
     ```xaml
     <TextBlock Grid.Row="2"
                 Grid.Column="1"
@@ -165,7 +165,7 @@ Le curseur d’exposition ajuste l’exposition de l’image : faites-le glisse
 
     ![Deux curseurs fantaisies](../basics/images/xaml-basics/style-2sliders-done.png)
 
-7. **Crédit supplémentaire**
+7. **Exercice supplémentaire**
 
     Ajoutez une forme d’arrière-plan au curseur de teinte qui présente un dégradé du vert au rouge. 
 
@@ -184,7 +184,7 @@ Pour définir un style, vous ajoutez un élément [Style](https://docs.microsoft
 
 Vous pouvez créer des styles nommés et des styles généraux. Un style nommé doit être explicitement appliqué à des contrôles spécifiques ; un style général est appliqué à tout contrôle qui correspond au **TargetType** spécifié. 
 
-Dans cet exemple, l’attribut **x:Key** est associé au premier style et le type cible de ce dernier est **Button**. La propriété **Style** du premier bouton est définie sur cette clé : le style est donc un style nommé et doit être appliqué explicitement. Le type cible du deuxième style est **Button** et aucun attribut **x:Key** n’est associé à ce dernier : le style est donc appliqué automatiquement au deuxième bouton.
+Dans cet exemple, **l’attribut x:Key** est associé au premier style et le type cible de ce dernier est **Button**. La propriété **Style** du premier bouton est définie sur cette clé : le style est donc un style nommé et doit être appliqué explicitement. Le type cible du deuxième style est **Button** et aucun attribut **x:Key** n’est associé à ce dernier : le style est donc appliqué automatiquement au deuxième bouton.
 
 
 ```XAML
@@ -263,7 +263,7 @@ Examinez les autres blocs de texte, notez que ces mêmes propriétés sont défi
         </Grid.Resources>
     ```
 
-    **Après avoir**
+    **Après**
     ```XAML
         <Grid.Resources>
             <Style TargetType="Slider">
@@ -303,7 +303,7 @@ Examinez les autres blocs de texte, notez que ces mêmes propriétés sont défi
             </Style>                            
     ```    
 
-    **Après avoir**
+    **Après**
     ```XAML
             <Style TargetType="TextBlock"
                    x:Key="ValueTextBox">
@@ -326,7 +326,7 @@ Examinez les autres blocs de texte, notez que ces mêmes propriétés sont défi
                 Text="{x:Bind item.Exposure.ToString('N', culture), Mode=OneWay}" />   
     ```
 
-    **Après avoir**
+    **Après**
     ```XAML
      <TextBlock Grid.Row="2"
                 Grid.Column="1"
@@ -342,7 +342,7 @@ Examinez les autres blocs de texte, notez que ces mêmes propriétés sont défi
 Félicitations, vous avez terminé la partie 2 !
 
 
-## <a name="part-3-use-a-control-template-to-make-a-fancy-slider"></a>Partie 3 : Utiliser un modèle de contrôle pour rendre un curseur fantaisie
+## <a name="part-3-use-a-control-template-to-make-a-fancy-slider"></a>Partie 3 : Utiliser un modèle de contrôle pour réaliser un curseur fantaisie
 
 Vous souvenez-vous comment, dans la partie 1, nous avons ajouté une forme derrière le curseur pour lui donner de l'allure ?
 
@@ -648,7 +648,7 @@ Nous avons bien travaillé, mais il existe un meilleur moyen d’obtenir le mêm
         </Grid.RowDefinitions>        
     ```
 
-    **Après avoir**
+    **Après**
     ```XAML
     <Grid x:Name="HorizontalTemplate" MinHeight="44">
         <Grid.ColumnDefinitions>
@@ -693,7 +693,7 @@ Nous avons bien travaillé, mais il existe un meilleur moyen d’obtenir le mêm
         </Polygon>           
     ```
     
-    **Après avoir**
+    **Après**
     ```XAML
         <Polygon Grid.Row="0" Grid.RowSpan="3"  Grid.ColumnSpan="3" Stretch="Fill"
                     Points="0,20 200,20 200,0" HorizontalAlignment="Stretch"  
@@ -713,7 +713,7 @@ Nous avons bien travaillé, mais il existe un meilleur moyen d’obtenir le mêm
                     Grid.ColumnSpan="3" />          
     ```
     
-    **Après avoir**
+    **Après**
     ```XAML
         <Rectangle x:Name="HorizontalTrackRect"
                     Height="{ThemeResource SliderTrackThemeHeight}"
@@ -752,7 +752,7 @@ Nous avons bien travaillé, mais il existe un meilleur moyen d’obtenir le mêm
             Template="{StaticResource FancySliderControlTemplate}"/>    
     ```
     
-    **Après avoir**
+    **Après**
     ```XAML
     <Slider Header="Exposure" 
             Grid.Row="2"  Foreground="Transparent"
@@ -793,7 +793,7 @@ Nous avons bien travaillé, mais il existe un meilleur moyen d’obtenir le mêm
             Maximum="1" />
     ```
     
-    **Après avoir**
+    **Après**
     ```XAML
     <Slider Header="Temperature"
             Grid.Row="3" Foreground="Transparent"
@@ -835,7 +835,7 @@ Nous avons bien travaillé, mais il existe un meilleur moyen d’obtenir le mêm
             Maximum="1" />
     ```
     
-    **Après avoir**
+    **Après**
     ```XAML
     <Slider Header="Tint"
             Grid.Row="4" Foreground="Transparent"
@@ -861,4 +861,4 @@ Nous avons bien travaillé, mais il existe un meilleur moyen d’obtenir le mêm
     Comme vous pouvez le constater, nos mises à jour ont amélioré le positionnement du polygone. Désormais, le bas du polygone est aligné sur le bas du curseur de défilement.
     
 <!-- TODO correct folder -->
-Félicitations, vous avez terminé le didacticiel ! Si vous êtes bloqué et que vous souhaitez consulter la solution définitive, vous trouverez l’exemple complet dans le [référentiel d’exemples d'applications UWP](https://github.com/Microsoft/Windows-universal-samples).
+Félicitations, vous avez terminé le tutoriel ! Si vous êtes bloqué et que vous souhaitez consulter la solution définitive, vous trouverez l’exemple complet dans le [référentiel d’exemples d'applications UWP](https://github.com/Microsoft/Windows-universal-samples).

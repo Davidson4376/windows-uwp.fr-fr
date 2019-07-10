@@ -1,31 +1,31 @@
 ---
 description: Cette rubrique décrit les différentes catégories de valeurs qui existent dans C++. Vous aurez sans doute entendu parler de lvalues et rvalues, mais il existe aussi d’autres types.
-title: Catégories de valeur et les références à ceux-ci
+title: Catégories de valeurs et références à celles-ci
 ms.date: 08/11/2018
 ms.topic: article
-keywords: Windows 10, uwp, standard, c ++, cpp, winrt, projection, déplacement, le transfert, les catégories de valeur, sémantique de déplacement, transfert parfait, lvalue, rvalue, glvalue ayant, prvalue, xvalue
+keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, déplacement, transfert, catégories de valeurs, sémantique de déplacement, transfert parfait, lvalue, rvalue, glvalue, prvalue, xvalue
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 1860f562233ceefa6d9ebb3741378b3265b4c3a9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57593014"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63797072"
 ---
-# <a name="value-categories-and-references-to-them"></a>Catégories de valeur et les références à ceux-ci
-Cette rubrique décrit les différentes catégories de valeurs (et les références à des valeurs) qui existent dans C++. Vous serez sans doute avez-vous entendu parler de *lvalues* et *rvalues*, mais vous ne pouvez pas imaginer d'entre eux dans cette rubrique présente les termes. Et autres types de valeurs, trop.
+# <a name="value-categories-and-references-to-them"></a>Catégories de valeurs et références à celles-ci
+Cette rubrique décrit les différentes catégories de valeurs (et les références aux valeurs) qui existent en C++. Vous aurez sans doute entendu parler de *lvalues* et de *rvalues*, mais vous ne les considérez peut-être pas dans les mêmes termes que ceux présentés par cette rubrique. Et il existe également d’autres types de valeurs.
 
-Chaque expression en C++ génère une valeur qui appartienne à une des catégories présentées dans cette rubrique. Il existe des aspects de langage C++, ses facilies, règles, qui exigent une bonne compréhension de ces catégories de valeur et les références à ceux-ci. Par exemple, en prenant l’adresse d’une valeur, la copie d’une valeur, le déplacement d’une valeur et une valeur à une autre fonction de transfert. Cette rubrique n’aborde tous ces aspects en détail, mais il fournit des informations fondamentales pour une compréhension solide d'entre eux.
+Chaque expression en C++ génère une valeur qui appartient à l’une des catégories présentées dans cette rubrique. Certains aspects du langage C++, ses installations et ses règles exigent une bonne compréhension de ces catégories de valeurs et les références à celles-ci. Par exemple, prendre l’adresse d’une valeur, copier une valeur, déplacer une valeur et transférer une valeur à une autre fonction. Cette rubrique n’aborde pas tous ces aspects en détail, mais elle fournit des informations de base permettant de bien les comprendre.
 
-Les informations dans cette rubrique sont encadrée en termes d’analyse de Stroustrup de catégories de valeur par les deux propriétés indépendantes de l’identité et movability [Stroustrup, 2013].
+Les informations fournies dans cette rubrique sont encadrées en termes d’analyse de catégories de valeur de Stroustrup par les deux propriétés indépendantes d’identité et de mobilité [Stroustrup, 2013].
 
-## <a name="an-lvalue-has-identity"></a>Une lvalue possède une identité
-Que signifie pour une valeur d’avoir *identité*? Si vous avez (ou vous pouvez tirer) à l’adresse mémoire d’une valeur et l’utiliser en toute sécurité, identité n’a la valeur. De cette façon, vous pouvez effectuer plus de comparer le contenu de valeurs : vous pouvez comparer ou les distinguer par identité.
+## <a name="an-lvalue-has-identity"></a>Une lvalue a une identité
+Que signifie, pour une valeur, d’avoir une *identité* ? Si vous avez (ou que vous pouvez prendre) l’adresse mémoire d’une valeur et l’utiliser de manière sécurisée, la valeur a une identité. Ainsi, vous pouvez effectuer bien plus que comparer le contenu de valeurs : vous pouvez les comparer ou les différencier par identité.
 
-Un *lvalue* possède une identité. Il est désormais une question d’intérêt historique uniquement que la lettre « l » dans « lvalue » est l’abréviation de « left » (par exemple, le-gauche d’une assignation). En C++, une lvalue peut apparaître sur la gauche *ou* sur la droite d’une assignation. La lettre « l » dans « lvalues », puis, n’en fait vous aide à comprendre ni définir ce qu’ils sont. Vous devez uniquement comprendre que ce que nous appelons une lvalue est une valeur qui a une identité.
+Une *lvalue* a une identité. Le fait que le « l » dans « lvalue » soit l’abréviation de « left » (gauche) (comme dans le côté gauche d’une assignation) ne présente désormais qu’un intérêt purement historique. En C++, une lvalue peut apparaître à gauche *ou* à droite d’une assignation. Le « l » dans « lvalues » ne vous permet pas vraiment de comprendre ni de définir ce qu’elles sont. Vous devez seulement comprendre que ce que nous appelons une lvalue est une valeur qui a une identité.
 
-Exemples d’expressions qui sont des lvalues : une variable nommée ou une constante ; ou une fonction qui retourne une référence. Exemples d’expressions qui sont *pas* lvalues incluent : une table temporaire ; ou une fonction qui retourne par valeur.
+Une variable ou une constante nommée, ou encore une fonction qui retourne une référence constituent des exemples d’expressions qui sont des lvalues. Un élément temporaire ou une fonction qui produit un retour par valeur constituent des exemples d’expressions qui en sont *pas* des lvalues.
 
 ```cppwinrt
 int& get_by_ref() { ... }
@@ -42,53 +42,53 @@ int main()
 }
 ```
 
-Maintenant, bien qu’il soit une instruction vraie que lvalues ont identité, cela valeurs x. Nous allons passer plus ce qui un *xvalue* est plus loin dans cette rubrique. Pour le moment, seulement à l’esprit qu’il existe une catégorie de valeur appelée glvalue ayant, pour « généralisée lvalue ». Le sur-ensemble de glvalues contient les deux lvalues (également appelé *lvalues classique*) et les valeurs x. Par conséquent, tandis que « une lvalue a identité » a la valeur true, l’ensemble complet des éléments ayant une identité est l’ensemble de glvalues, comme indiqué dans cette illustration.
+Maintenant, même s’il est vrai que les lvalues ont une identité, c’est également le cas des xvalues. Nous examinerons plus en détail ce qu’est une *xvalue* plus loin dans cette rubrique. Pour le moment, sachez simplement qu’il existe une catégorie de valeurs appelée glvalue, pour « generalized lvalue » (lvalue généralisée). Le sur-ensemble des glvalues contient à la fois les lvalues (également appelées *lvalues classiques*) et les xvalues. Par conséquent, même s’il est vrai qu’« une lvalue a une identité », l’ensemble complet des éléments ayant une identité est l’ensemble des glvalues, comme indiqué dans cette illustration.
 
-![Une lvalue possède une identité](images/has-identity1.png)
+![Une lvalue a une identité](images/has-identity1.png)
 
-## <a name="an-rvalue-is-movable-an-lvalue-is-not"></a>Une rvalue est mobile ; n’est pas une lvalue
-Mais il existe des valeurs qui ne sont pas glvalues. Par conséquent, il existe des valeurs que vous avez *ne peut pas* obtenir une adresse de mémoire pour (ou vous ne pouvez pas y recourir pour être valide). Nous avons vu certaines de ces valeurs dans l’exemple de code ci-dessus. Cela ressemble à un inconvénient. Mais en réalité l’avantage d’une valeur qui est que vous pouvez *déplacer* à partir de (qui est généralement bon marché), plutôt que de copie à partir de celle-ci (qui est généralement coûteux). Déplacement d’une valeur signifie qu’il n’est plus à la place, qu'il est utilisé pour être. Tente d’y accéder à la place, que ce n’est donc quelque chose à être évitée. Une discussion sur quand et *comment* pour déplacer une valeur est hors de portée pour cette rubrique. Pour cette rubrique, nous devons savoir qu’une valeur qui peut être déplacé est appelée un *rvalue* (ou *rvalue classique*).
+## <a name="an-rvalue-is-movable-an-lvalue-is-not"></a>Une rvalue est déplaçable ; une lvalue ne l’est pas
+Il y a toutefois des valeurs qui ne sont pas des glvalues. Par conséquent, il existe des valeurs pour lesquelles vous *ne pouvez pas* obtenir une adresse de mémoire (ou sur la validité desquelles vous ne pouvez pas compter). Nous avons vu de telles valeurs dans l’exemple de code ci-dessus. Cela peut paraître un inconvénient. Mais, en réalité, l’avantage d’une valeur comme celle-ci est que vous pouvez *vous déplacer* à partir de celle-ci (ce qui est généralement économique), au lieu de copier à partir de celle-ci (ce qui est généralement coûteux). Un déplacement à partir d’une valeur signifie qu’elle n’est plus à l’emplacement où elle se trouvait avant. Par conséquent, il faut éviter de tenter d’y accéder à cet emplacement. Quand et *comment* déplacer une valeur n’est pas abordé dans cette rubrique. Dans cette rubrique, nous devons juste savoir qu’une valeur qui peut être déplacée est appelée *rvalue* (ou *rvalue classique*).
 
-« R » dans « rvalue » est l’abréviation de « droite » (par exemple, le droit côté d’une assignation). Mais vous pouvez utiliser des rvalues et des références à des rvalues, en dehors des affectations. « R » dans « rvalues », puis, n'est pas la chose pour vous concentrer sur. Vous devez uniquement comprendre que ce que nous appelons une rvalue est une valeur qui peut être déplacé.
+Le « r » dans « rvalue » est l’abréviation de « right » (droite) comme dans le côté droit d’une assignation). Mais vous pouvez utiliser des rvalues et des références à des rvalues en dehors des affectations. Le « r » dans « rvalues » n’est donc pas le point sur lequel il faut se concentrer. Vous devez seulement comprendre que ce que nous appelons une rvalue est une valeur qui est déplaçable.
 
-Une lvalue, à l’inverse, n’est pas déplaçable, comme indiqué dans cette illustration. Une lvalue déplacé serait Relevez la définition de *lvalue*, et il serait un problème inattendu pour le code qui très raisonnablement être en mesure de continuer à accéder à la valeur lvalue.
+À l’inverse, une lvalue n’est pas déplaçable, comme le montre cette illustration. Une lvalue déplacée défierait la définition d’une *lvalue*, ce qui constituerait un problème inattendu pour le code qui, de façon très raisonnable, était supposé pouvoir continuer à accéder à la lvalue.
 
-![Une rvalue est mobile ; n’est pas une lvalue](images/is-movable.png)
+![Une rvalue est déplaçable ; une lvalue ne l’est pas](images/is-movable.png)
 
-Vous ne pouvez pas déplacer une lvalue. Mais il y a *est* une sorte de glvalue ayant (l’ensemble des objets avec l’identité) que vous pouvez déplacer&mdash;si vous savez ce que vous faites (y compris en veillant à ne pas y accéder après le déplacement)&mdash;et qui est la valeur de x. Nous y reviendrons cette idée recliquez ci-dessous, lorsque nous examinons l’image complète des catégories de valeur.
+Vous ne pouvez pas déplacer une lvalue. Mais il *existe* une sorte de glvalue (l’ensemble d’éléments ayant une identité) que vous pouvez déplacer, si vous savez ce que vous faites (en veillant notamment à ne pas y accéder après le déplacement) : il s’agit de la xvalue. Nous reviendrons à ce concept une fois ci-dessous, quand nous examinerons la vue complète des catégories de valeurs.
 
-## <a name="rvalue-references-and-reference-binding-rules"></a>Références rvalue et les règles de liaison de référence
-Cette section présente la syntaxe pour une référence à une valeur rvalue. Nous allons devoir attendre une autre rubrique dans un traitement substantiels de déplacement et de transfert, mais ce sont des problèmes sont résolus par des références rvalue. Avant d’examiner les références rvalue, cependant, nous devons d’abord être plus clair sur `T&` &mdash;la chose que nous avons anciennement appelé simplement « une référence ». C’est « une lvalue (non-const) référence », qui fait référence à une valeur à laquelle l’utilisateur de la référence peut écrire.
+## <a name="rvalue-references-and-reference-binding-rules"></a>Références rvalue et règles de liaison des références
+Cette section présente la syntaxe d’une référence à une rvalue. Nous allons devoir attendre une autre rubrique pour examiner un traitement substantiel de déplacement et de transfert, mais ce sont des problèmes qui sont résolus par les références rvalue. Toutefois, avant d’étudier les références rvalue, nous devons d’abord clarifier ce qu’est `T&`, l’élément que nous avons auparavant simplement appelé « référence ». Il s’agit réellement d’« une référence lvalue (non-const) », qui fait référence à une valeur à laquelle l’utilisateur de la référence peut écrire.
 
 ```cppwinrt
 template<typename T> T& get_by_lvalue_ref() { ... } // Get by lvalue (non-const) reference.
 template<typename T> void set_by_lvalue_ref(T&) { ... } // Set by lvalue (non-const) reference.
 ```
 
-Une référence lvalue peut lier à une lvalue, mais pas à une valeur rvalue.
+Une référence lvalue peut établir une liaison à une lvalue, mais pas à une rvalue.
 
-Il existe des références constantes lvalue (`T const&`), qui font référence aux objets auxquels l’utilisateur de la référence *ne peut pas* écriture (par exemple, une constante).
+Ensuite, il existe des références const lvalue (`T const&`), qui font référence à des objets auxquels l’utilisateur de la référence *ne peut pas* écrire (par exemple, une constante).
 
 ```cppwinrt
 template<typename T> T const& get_by_lvalue_cref() { ... } // Get by lvalue const reference.
 template<typename T> void set_by_lvalue_cref(T const&) { ... } // Set by lvalue const reference.
 ```
 
-Une référence const lvalue peut lier à une lvalue ou rvalue.
+Une référence const lvalue peut établir une liaison à une lvalue ou à une rvalue.
 
-La syntaxe pour une référence à une rvalue du type `T` est écrite sous la forme `T&&`. Une référence rvalue fait référence à une valeur peut être déplacée&mdash;une valeur dont le contenu nous n’avez pas besoin de conserver une fois que nous avons utilisé (par exemple, une variable temporaire). Depuis le point entière est à déplacer à partir de (modification ainsi) la valeur liée à une référence rvalue, `const` et `volatile` qualificateurs (également appelés des qualificateurs cv) ne s’appliquent pas aux références rvalue.
+La syntaxe d’une référence à une rvalue de type `T` est écrite sous la forme `T&&`. Une référence rvalue fait référence à une valeur déplaçable, c’est-à-dire une valeur dont que nous n’avons pas besoin de conserver le contenu une fois que nous l’avons utilisée (par exemple, un élément temporaire). Étant donné que l’objectif principal est de se déplacer à partir la valeur liée à une référence rvalue (en la modifiant donc), les qualificateurs `const` et `volatile` (également appelés « qualificateurs cv ») ne s’appliquent pas aux références rvalue.
 
 ```cppwinrt
 template<typename T> T&& get_by_rvalue_ref() { ... } // Get by rvalue reference.
 struct A { A(A&& other) { ... } }; // A move constructor takes an rvalue reference.
 ```
 
-Une référence rvalue lie à une valeur rvalue. En fait, en termes de résolution de surcharge, une rvalue *préfère* doit être lié à une référence rvalue à une référence const lvalue. Mais une référence rvalue ne peut pas lier à une lvalue car, comme nous l’avons dit, une référence rvalue fait référence à une valeur dont le contenu est supposé nous n’avez pas besoin de conserver (par exemple, le paramètre pour un constructeur de déplacement).
+Une référence rvalue établit une liaison à une rvalue. En réalité, en termes de résolution de surcharge, une rvalue *préfère* être liée à une référence rvalue plutôt qu’à une référence const lvalue. Mais une référence rvalue ne peut pas établir une liaison à une lvalue car, comme nous l’avons dit, une référence rvalue fait référence à une valeur dont on présume que nous n’avons pas besoin de conserver le contenu (par exemple, le paramètre d’un constructeur de déplacement).
 
-Vous pouvez également transmettre une rvalue où un argument par valeur est attendu, via la construction de copie (ou par le biais de construction de déplacement, si la valeur rvalue est une valeur de x).
+Vous pouvez également transmettre une rvalue où un argument par valeur est attendu, par le biais d’une construction de copie (ou par le biais d’une construction de déplacement, si la rvalue est une xvalue).
 
-## <a name="a-glvalue-has-identity-a-prvalue-does-not"></a>A un glvalue ayant une identité ; n’est pas le cas d’une prvalue
-À ce stade, nous savons que ce qui a une identité. Et nous savons ce qu’est mobile et ce qui n’est pas. Mais nous n’avons pas encore le jeu nommé des valeurs qui *ne* ont identité. Que l’ensemble est appelé le *prvalue*, ou *rvalue pure*.
+## <a name="a-glvalue-has-identity-a-prvalue-does-not"></a>Une glvalue a une identité ; une prvalue n’en a pas
+À ce stade, nous savons ce qu’est une identité. Et nous savons ce qui est déplaçable et ce qui ne l’est pas. Mais nous n’avons pas encore nommé l’ensemble des valeurs qui n’ont*pas* d’identité. Cet ensemble est appelé *prvalue*, ou *rvalue pure*.
 
 ```cppwinrt
 int& get_by_ref() { ... }
@@ -101,21 +101,21 @@ int main()
 }
 ```
 
-![Une lvalue possède une identité ; n’est pas le cas d’une prvalue](images/has-identity2.png)
+![Une lvalue a une identité ; une prvalue n’en a pas](images/has-identity2.png)
 
-## <a name="the-complete-picture-of-value-categories"></a>L’image complète des catégories de valeur
-Il reste uniquement pour combiner les informations et les illustrations ci-dessus dans une seule image d’ensemble.
+## <a name="the-complete-picture-of-value-categories"></a>Vue complète des catégories de valeurs
+Il reste uniquement à regrouper les informations et les illustrations ci-dessus en une seule vue complète.
 
-![L’image complète des catégories de valeur](images/value-categories.png)
+![Vue complète des catégories de valeurs](images/value-categories.png)
 
-### <a name="glvalue-i"></a>glvalue ayant (i)
-Un glvalue ayant (lvalue généralisé) a l’identité.
+### <a name="glvalue-i"></a>glvalue (i)
+Une glvalue (lvalue généralisée) a une identité.
 
-### <a name="lvalue-im"></a>lvalue (j’ai\&\!m)
-Une lvalue (il s’agit d’un type de glvalue ayant) a une identité, mais ne peut être déplacée. Ce sont les valeurs généralement en lecture-écriture qui vous passez par référence ou par référence const ou par valeur si la copie est bon marché. Impossible de lier une lvalue en référence rvalue.
+### <a name="lvalue-im"></a>lvalue (i\&\!m)
+Une lvalue (sorte de glvalue) a une identité, mais ne peut pas être déplacée. Il s’agit de valeurs généralement en lecture-écriture que vous passez par référence ou par référence const, ou encore par valeur si la copie est économique. Une lvalue ne peut pas être liée à une référence rvalue.
 
-### <a name="xvalue-im"></a>valeur x (j’ai\&m)
-Une valeur de x (une sorte de glvalue ayant, mais également un type de rvalue) a une identité et peut également être déplacé. Cela peut être une lvalue espièglerie que vous avez décidé de déplacer, car la copie est coûteuse, et vous serez veiller à ne pas y accéder par la suite. Voici comment vous pouvez activer une lvalue en une valeur de x.
+### <a name="xvalue-im"></a>xvalue (i\&m)
+Une xvalue (sorte de glvalue, mais également sorte de rvalue) a une identité et peut aussi être déplacée. Ce peut être une ancienne lvalue que vous avez décidé de déplacer car la copie est coûteuse, et vous veillerez à ne pas y accéder par la suite. Voici comment vous pouvez transformer une lvalue en xvalue.
 
 ```cppwinrt
 struct A { ... };
@@ -123,9 +123,9 @@ A a; // a is an lvalue...
 static_cast<A&&>(a); // ...but this expression is an xvalue.
 ```
 
-Dans l’exemple de code ci-dessus, nous n’avons pas quoi que ce soit encore transféré. Nous avons créé une xvalue en effectuant un cast d’une lvalue en référence rvalue sans nom. Il peut toujours être identifié par son nom lvalue ; mais, comme une valeur de x, il est désormais *compatible* d’en cours de déplacement. Les raisons pour ce faire, et les déplacer réellement l’aspect, devront attendre une autre rubrique. Mais vous pouvez considérer le « x » dans « xvalue « signification » expert seule » si qui vous aide à. En convertissant une lvalue dans une xvalue (il s’agit d’un type de rvalue), la valeur devient alors capable d’être lié à une référence rvalue.
+Dans l’exemple de code ci-dessus, nous n’avons encore rien déplacé. Nous avons juste créé une xvalue en effectuant un cast d’une lvalue en référence rvalue sans nom. Elle peut toujours être identifiée par son nom d’lvalue ; mais en tant que xvalue, elle est désormais *capable* d’être déplacée. Les raisons de le faire et ce à quoi ressemble un déplacement réellement feront l’objet d’une autre rubrique. Mais si cela vous aide, vous pouvez considérer que le « x » de « xvalue » signifie « expert seulement ». En effectuant un cast d’une lvalue en xvalue (sorte de rvalue), la valeur devient capable d’être liée à une référence rvalue.
 
-Voici deux autres exemples de valeurs x&mdash;appelant une fonction qui retourne une référence rvalue sans nom et l’accès à un membre d’une valeur de x.
+Voici deux autres exemples de xvalues : un appelant une fonction qui retourne une référence rvalue sans nom et un accédant à un membre d’une xvalue.
 
 ```cppwinrt
 struct A { int m; };
@@ -134,13 +134,13 @@ f(); // This expression is an xvalue...
 f().m; // ...and so is this.
 ```
 
-### <a name="prvalue-im"></a>prvalue (\!je\&m)
-Une prvalue (rvalue pure ; un type de rvalue) dépourvu d’identité, mais peut être déplacé. Il s’agit généralement des objets temporaires, le résultat de l’appel d’une fonction qui retourne par valeur ou le résultat de l’évaluation de toute autre expression qui n’est pas un glvalue ayant,
+### <a name="prvalue-im"></a>prvalue (\!i\&m)
+Une prvalue (rvalue pure ; sorte de rvalue) n’a pas d’identité, mais est déplaçable. Il s’agit généralement d’éléments temporaires, le résultat de l’appel d’une fonction qui retourne par valeur ou le résultat de l’évaluation de toute autre expression qui n’est pas une glvalue.
 
-### <a name="rvalue-m"></a>rvalue (m)
-Une rvalue est mobile. Une rvalue *référence* fait toujours référence à une rvalue (une valeur dont le contenu est supposé nous n’avez pas besoin de conserver).
+### <a name="rvalue-m"></a>rvalue (m)
+Une rvalue est déplaçable. Une *référence* rvalue fait toujours référence à une rvalue (valeur dont on présume que nous n’avons pas besoin de conserver le contenu).
 
-Mais, une référence rvalue lui-même une rvalue ? Un *sans nom* référence rvalue (comme celles indiquées dans les exemples de code xvalue ci-dessus) est une valeur de x, Oui, il est donc une rvalue. Il préfère être lié à un paramètre de fonction de référence rvalue, telle que celle d’un constructeur de déplacement. À l’inverse (et peut-être counter-intuitively), si une référence rvalue a un nom, l’expression composée de ce nom est une lvalue. Par conséquent, il *ne peut pas* être lié à un paramètre de référence rvalue. Mais il est facile de le faire&mdash;simplement effectuer un cast en une référence rvalue sans nom (une xvalue) à nouveau.
+Mais une référence rvalue est-elle elle-même une rvalue ? Un référence rvalue *sans nom* (comme celles indiquées dans les exemples de code xvalue ci-dessus) est une xvalue. Donc, oui, il s’agit d’une rvalue. Elle préfère être liée à un paramètre de fonction de référence rvalue, comme celle d’un constructeur de déplacement. À l’inverse (et peut-être contre toute attente), si une référence rvalue a un nom, l’expression composée de ce nom est une lvalue. Par conséquent, elle *ne peut pas* être liée à un paramètre de référence rvalue. Mais il est facile de faire en sorte qu’elle le soit : il vous suffit d’en effectuer à nouveau un cast en une référence rvalue sans nom (une xvalue).
 
 ```cppwinrt
 void foo(A&) { ... }
@@ -153,40 +153,40 @@ void bar(A&& a) // a is a named rvalue reference; it's an lvalue.
 A&& get_by_rvalue_ref() { ... } // This unnamed rvalue reference is an xvalue.
 ```
 
-### <a name="im"></a>\!J’ai\&\!m
-Le type de valeur qui n’a pas identité et n’est pas mobile est l’un combinaison que nous n’avons pas encore abordé. Mais nous pouvons ignorer, car cette catégorie n’est pas une idée utile dans le langage C++.
+### <a name="im"></a>\!i\&\!m
+Le type de valeur qui n’a pas identité et qui n’est pas déplaçable est la combinaison que nous n’avons pas encore abordée. Mais nous pouvons l’ignorer, car cette catégorie n’est pas un concept utile en langage C++.
 
 ## <a name="reference-collapsing-rules"></a>Règles de réduction de référence
-Plusieurs références like dans une expression (une référence lvalue à une référence lvalue ou une référence rvalue à une référence rvalue) annuler un hors d’un autre.
+Plusieurs références similaires dans une expression (une référence lvalue à une référence lvalue, ou une référence rvalue à une référence rvalue) s’annulent mutuellement.
 
-- `A& &` est réduite à `A&`.
-- `A&& &&` est réduite à `A&&`.
+- `A& &` est réduite en `A&`.
+- `A&& &&` est réduite en `A&&`.
 
-Plusieurs références dans une expression à la différence se réduire à une référence lvalue.
+Plusieurs références différentes dans une expression sont réduites en une référence lvalue.
 
-- `A& &&` est réduite à `A&`.
-- `A&& &` est réduite à `A&`.
+- `A& &&` est réduite en `A&`.
+- `A&& &` est réduite en `A&`.
 
 ## <a name="forwarding-references"></a>Références de transfert
-Cette dernière section compare les références rvalue, dont nous avons déjà vu, avec le concept de différents d’un *transfert référence*.
+Cette dernière section compare des références rvalue, que nous avons déjà présentées, avec le nouveau concept de *référence de transfert*.
 
 ```cppwinrt
 void foo(A&& a) { ... }
 ```
 
 - `A&&` est une référence rvalue, comme nous l’avons vu. Const et volatile ne s’appliquent pas aux références rvalue.
-- `foo` accepte uniquement les rvalues de type **A**.
-- Références rvalue de la raison (tel que `A&&`) existe est afin que vous pouvez créer une surcharge qui est optimisée pour le cas d’une table temporaire (ou autres rvalue) est passé.
+- `foo` accepte uniquement des rvalues de type **A**.
+- La raison de l’existence de références rvalue (comme `A&&`) est de vous permettre de créer une autre surcharge qui est optimisée en cas de passage d’un élément temporaire (ou d’une autre rvalue).
 
 ```cppwinrt
 template <typename _Ty> void bar(_Ty&& ty) { ... }
 ```
 
-- `_Ty&&` est un *transfert référence*. Selon ce que vous transmettez à `bar`, type **_Ty** pourrait être const/non const indépendamment volatile/non volatile.
-- `bar` accepte n’importe quel lvalue ou une rvalue du type **_Ty**.
-- Le passage d’une lvalue entraîne la référence de transfert devenir `_Ty& &&`, ce qui réduit à la référence lvalue `_Ty&`.
-- Le passage d’une rvalue entraîne la référence de transfert devenir `_Ty&& &&`, ce qui réduit à la référence rvalue `_Ty&&`.
-- La raison pour laquelle les références de transfert (tel que `_Ty&&`) existe est *pas* pour l’optimisation, mais pour tirer ce que vous passez pour eux et transférer de façon transparente et efficace. Vous êtes susceptible de rencontrer une référence de transfert uniquement si vous écrivez (ou étudiez attentivement) code de bibliothèque&mdash;, par exemple, une fonction de fabrique qui transmet les arguments de constructeur.
+- `_Ty&&` est une *référence de transfert*. En fonction de ce que vous passez à `bar`, le type  **_Ty** peut être const/non-const indépendamment de volatile/non-volatile.
+- `bar` accepte n’importe quelle lvalue ou rvalue de type  **_Ty**.
+- Si une lvalue est passée, la référence de transfert devient `_Ty& &&`, qui est réduite en référence lvalue `_Ty&`.
+- Si une rvalue est passée, la référence de transfert devient `_Ty&& &&`, qui est réduite en référence rvalue `_Ty&&`.
+- La raison de l’existence de références de transfert (comme `_Ty&&`) n’est *pas* l’optimisation, mais de prendre ce que vous leur passez et de le transférer de façon transparente et efficace. Vous rencontrerez probablement une référence de transfert uniquement si vous écrivez (ou étudiez attentivement) le code de la bibliothèque ; par exemple, une fonction d’usine qui effectue un transfert sur des arguments de constructeur.
 
 ## <a name="sources"></a>Sources
-* \[Stroustrup, 2013\] Stroustrup de B. : Le langage de programmation C++, quatrième édition. Addison-Wesley. 2013.
+* \[Stroustrup, 2013\] B. Stroustrup: The C++ Programming Language, Fourth Edition. Addison-Wesley. 2013.

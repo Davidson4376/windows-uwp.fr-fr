@@ -7,11 +7,11 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: aaaf13c455d3d05d5ccfac6b2bd61418f3e8e5bb
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57662344"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63820523"
 ---
 # <a name="writing-style"></a>Style d’écriture
 
@@ -169,17 +169,17 @@ Les majuscules sont importantes, mais il est facile d’en abuser.
     :::column-end:::
 :::row-end:::
 
-## <a name="error-messages"></a>Messages d’erreur
+## <a name="error-messages"></a>Messages d'erreur
 
 Lorsqu’un problème se produit dans votre application, les utilisateurs font plus attention. Comme ils peuvent se sentir confus ou frustrés lorsqu’ils rencontrent un message d’erreur, un style et un ton adaptés peuvent avoir un impact particulièrement important.
 
-Avant tout, il est important que votre message d’erreur ne blâme pas l’utilisateur. Mais il est également important de ne pas le surcharger d'informations qu’il ne comprend pas. La plupart du temps, un utilisateur qui rencontre une erreur souhaite juste revenir à ce qu’il était en train de faire aussi rapidement et facilement que possible. Par conséquent, un message d’erreur que vous rédigez doit :
+Avant tout, il est important que votre message d’erreur ne blâme pas l’utilisateur. Mais il est également important de ne pas le surcharger d'informations qu’il ne comprend pas. La plupart du temps, un utilisateur qui rencontre une erreur souhaite juste revenir à ce qu’il était en train de faire aussi rapidement et facilement que possible. Par conséquent, un message d’erreur que vous rédigez doit suivre ces règles :
 
-* **Soyez chaleureux et détendu** en utilisant le ton de la conversation et en évitant les termes inconnus et le jargon technique.
+* **Être chaleureux et détendu** en utilisant le ton de la conversation et en évitant les termes inconnus et le jargon technique.
 
 * **Être prêt à aider** en expliquant de votre mieux à l’utilisateur ce qui s’est passé, en lui indiquant ce qui va se passer ensuite et en fournissant une solution réaliste qu’il peut effectuer.
 
-* **Soyez clair et concis** en éliminant les informations superflues.
+* **Être clair et concis** en éliminant les informations superflues.
 
 :::row:::
     :::column:::

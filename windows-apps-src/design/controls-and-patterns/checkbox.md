@@ -13,10 +13,10 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 3905ef8786a06d4221ce42511f786927c3173ba6
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66363168"
 ---
 # <a name="check-boxes"></a>Cases à cocher
@@ -25,7 +25,7 @@ ms.locfileid: "66363168"
 
 Une case à cocher permet de sélectionner ou de désélectionner des éléments d’action. Elle peut être utilisée pour un élément unique ou pour une liste de plusieurs éléments parmi lesquels l’utilisateur peut en choisir quelques-uns. Le contrôle possède trois états de sélection : l’état désélectionné, l’état sélectionné et l’état indéterminé. Sélectionnez l’état indéterminé lorsqu’une collection de sous-choix possède des états désélectionné et sélectionné.
 
-> **API importantes** : [Classe de la case à cocher](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox), [événement activé](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked), [propriété IsChecked](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked)
+> **API importantes** : [classe CheckBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox), [événement Checked](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked), [propriété IsChecked](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked)
 
 ![Exemple d’états de case à cocher](images/templates-checkbox-states-default.png)
 
@@ -56,7 +56,7 @@ Les deux contrôles **case à cocher** et **case d’option** permettent à l’
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>Si vous disposez de l'application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/CheckBox">ouvrir l’application et voir l'objet CheckBox en action</a>.</p>
+    <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/CheckBox">ouvrir l’application et voir l’objet CheckBox en action</a>.</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
@@ -185,7 +185,7 @@ private void toppingsCheckbox_Click(object sender, RoutedEventArgs e)
 
 Le contrôle CheckBox hérite de [ToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton) et peut avoir trois états : 
 
-État | Propriété | Value
+État | Propriété | Valeur
 ------|----------|------
 checked | IsChecked | **true** 
 unchecked | IsChecked | **false** 
@@ -294,16 +294,16 @@ private void SetCheckedState()
 
     ![Case à cocher avec un état indéterminé](images/checkbox4_spicy.png)
 
-    Au lieu de cela, utilisez un groupe de cases d’option qui a trois options : Pas corsée corsée et supplémentaire corsée.
+    Utilisez plutôt un groupe de cases d’options proposant trois options : Non épicé, Épicé et Très épicé.
 
-    ![Groupe de boutons radio avec trois options : Pas corsée corsée et supplémentaire corsée](images/spicyoptions.png)
+    ![Groupe de cases d’options proposant trois options : Non épicé, Épicé et Très épicé](images/spicyoptions.png)
 
 ## <a name="get-the-sample-code"></a>Obtenir l’exemple de code
 
-- [Exemples de la Galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) - Affichez tous les contrôles XAML dans un format interactif.
+- [Exemple de Galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) : tous les contrôles XAML dans un format interactif.
 
 ## <a name="related-articles"></a>Articles connexes
 
-- [Classe de la case à cocher](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 
-- [Cases d’option](radio-button.md)
-- [Bouton bascule](toggles.md)
+- [Classe CheckBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 
+- [Boutons de radio](radio-button.md)
+- [Commutateur bascule](toggles.md)

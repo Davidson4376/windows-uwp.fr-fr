@@ -10,21 +10,21 @@ dev-contact: tbd
 doc-status: not-published
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c227629ace1f3fdbb2af8582401f9273cf11c2e
-ms.sourcegitcommit: c10d7843ccacb8529cb1f53948ee0077298a886d
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58913979"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63799630"
 ---
 # <a name="contact-card"></a>Carte de visite
 
 La carte de visite affiche des coordonnées, telles que le nom, le numéro de téléphone et l’adresse, pour un [Contact](/uwp/api/Windows.ApplicationModel.Contacts.Contact) (mécanisme utilisé par UWP pour représenter les personnes et les entreprises).  La carte de visite permet également à l’utilisateur de modifier des coordonnées. Vous pouvez choisir d’afficher une carte de visite compacte ou une carte de visite complète contenant des informations supplémentaires.
 
-> **API importantes** : [Méthode de ShowContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager.showcontactcard), [ShowFullContactCard méthode](/uwp/api/windows.applicationmodel.contacts.contactmanager.showfullcontactcard), [IsShowContactCardSupported méthode](/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported), [contactez classe](/uwp/api/Windows.ApplicationModel.Contacts.Contact)  
+> **API importantes** : [méthode ShowContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager.showcontactcard), [méthode ShowFullContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager.showfullcontactcard), [méthode IsShowContactCardSupported](/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported), [classe Contact](/uwp/api/Windows.ApplicationModel.Contacts.Contact)  
 
 Vous pouvez afficher la carte de visite de deux façons :  
-* sous forme de carte de visite standard s’affichant dans un menu volant à fermeture de type abandon interactif : la carte de visite disparaît lorsque l’utilisateur clique en dehors de la carte ; 
-* sous forme de carte de visite complète occupant davantage d’espace et à fermeture classique : l’utilisateur doit cliquer sur **fermer** pour la faire disparaître. 
+* Sous forme de carte de visite standard s’affichant dans un menu volant à fermeture de type abandon interactif : la carte de visite disparaît lorsque l’utilisateur clique en dehors de la carte. 
+* Sous forme de carte de visite complète occupant davantage d’espace et à fermeture classique : l’utilisateur doit cliquer sur **fermer** pour la faire disparaître. 
 
 
 <figure>
@@ -63,9 +63,9 @@ Utilisez la carte de visite si vous souhaitez afficher les coordonnées d’un c
 
 ## <a name="show-a-standard-contact-card"></a>Afficher une carte de visite standard
 
-1. En règle générale, vous affichez une carte de visite parce que l’utilisateur a cliqué sur un élément : un bouton ou peut-être le [contrôle de photo de la personne](person-picture.md). Nous ne voulons pas que l’élément soit masqué. Pour éviter qu'il soit masqué, nous devons créer un objet [Rect](/uwp/api/windows.foundation.rect) qui décrit l’emplacement et la taille de l’élément. 
+1. En règle générale, vous affichez une carte de visite parce que l’utilisateur a cliqué sur un élément : un bouton ou peut-être le [contrôle de photo de la personne](person-picture.md). Nous ne voulons pas que l’élément soit masqué. Pour éviter qu’il soit masqué, nous devons créer un objet [Rect](/uwp/api/windows.foundation.rect) qui décrit l’emplacement et la taille de l’élément. 
 
-    Nous allons créer une fonction utilitaire qui va s'en charger : nous l'utiliserons ultérieurement.
+    Nous allons créer une fonction utilitaire qui va s’en charger : nous l’utiliserons ultérieurement.
     ```csharp
     // Gets the rectangle of the element 
     public static Rect GetElementRectHelper(FrameworkElement element) 
@@ -78,7 +78,7 @@ Utilisez la carte de visite si vous souhaitez afficher les coordonnées d’un c
 
     ```
 
-2. Déterminez si vous pouvez afficher la carte de visite en appelant la méthode [ContactManager.IsShowContactCardSupported](/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported). Si elle n’est pas prise en charge, affichez un message d’erreur. (Cet exemple suppose que vous affichez la carte de visite en réponse à un événement Click.)
+2. Déterminez si vous pouvez afficher la carte de visite en appelant la méthode [ContactManager.IsShowContactCardSupported](/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported). Si elle n’est pas prise en charge, affichez un message d’erreur (cet exemple suppose que vous affichez la carte de visite en réponse à un événement Click).
     ```csharp
     // Contact and Contact Managers are existing classes 
     private void OnUserClickShowContactCard(object sender, RoutedEventArgs e) 
@@ -94,7 +94,7 @@ Utilisez la carte de visite si vous souhaitez afficher les coordonnées d’un c
             Rect selectionRect = GetElementRect((FrameworkElement)sender); 
     ```
 
-4. Obtenez l'objet [Contact](//docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact) que vous voulez afficher. Cet exemple se contente de créer un contact simple, mais votre code doit récupérer un contact réel. 
+4. Obtenez l’objet [Contact](//docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact) que vous voulez afficher. Cet exemple se contente de créer un contact simple, mais votre code doit récupérer un contact existant. 
 
     ```csharp
                 // Retrieve the contact to display
@@ -112,7 +112,7 @@ Utilisez la carte de visite si vous souhaitez afficher les coordonnées d’un c
     } 
     ```
 
-Voici l'exemple de code complet :
+Voici l’exemple de code complet :
 
 ```csharp
 // Gets the rectangle of the element 
@@ -172,9 +172,9 @@ private void onUserClickShowContactCard()
 
 ```
 
-## <a name="retrieving-real-contacts"></a>Récupération de contacts « réels »
+## <a name="retrieving-real-contacts"></a>Récupération de contacts existants
 
-Les exemples de cet article créent un contact simple. Dans une application réelle, vous devrez probablement récupérer un contact existant. Pour obtenir des instructions, voir l'[article Contacts et calendriers](/windows/uwp/contacts-and-calendar/).
+Les exemples de cet article créent un contact simple. Dans une application réelle, vous devrez probablement récupérer un contact existant. Pour obtenir des instructions, consultez l’article [Contacts et calendriers](/windows/uwp/contacts-and-calendar/).
 
 
 

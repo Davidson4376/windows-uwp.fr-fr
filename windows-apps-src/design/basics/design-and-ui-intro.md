@@ -1,5 +1,5 @@
 ---
-Description: Les fonctionnalités de conception universelle incluses dans l’aide de chaque application UWP vous créez des applications qui s’adaptent parfaitement sur un large éventail d’appareils.
+Description: Les fonctionnalités de conception universelle incluses dans chaque application UWP vous aident à créer des applications qui s’adaptent parfaitement à toute une gamme d’appareils.
 title: $$$Présentation de la conception des applications Windows pour la plateforme Windows universelle (UWP)
 ms.assetid: 50A5605E-3A91-41DB-800A-9180717C1E86
 ms.date: 05/05/2018
@@ -8,17 +8,17 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 25dc7118fcb7d9c6e997fae458ef7846777b1262
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65983916"
 ---
 # <a name="introduction-to-uwp-app-design"></a>Présentation de la conception des applications UWP
 
 ![exemple d’application d'éclairage](images/introUWP-header.jpg)
 
-Le guide de conception pour la plateforme Windows universelle (UWP) est une ressource destinée à vous aider à concevoir des applications belles et élégantes.
+Le guide de conception pour la plateforme Windows universelle (UWP) est une ressource destinée à vous aider à concevoir et générer de belles applications abouties.
 
 Il ne s’agit pas d’une liste de règles normatives, mais plutôt d’un document dynamique, conçu pour s’adapter à l’évolution de notre [système Fluent Design](/windows/apps/fluent-design-system) ainsi qu’aux besoins de notre communauté de développement d’applications.
 
@@ -26,17 +26,17 @@ Cette nouvelle introduction présente une vue d’ensemble des fonctionnalités 
 
 ## <a name="effective-pixels-and-scaling"></a>Pixels effectifs et mise à l’échelle
 
-Applications UWP s’exécutent sur tous les [appareils Windows 10](../devices/index.md), à partir de votre téléviseur à votre tablette ou votre PC. Par conséquent, comment concevoir une interface utilisateur qui vous semble correcte sur un large éventail de périphériques et les tailles d’écran ?
+Les applications UWP s’exécutent sur tous les [appareils Windows 10](../devices/index.md), depuis votre téléviseur, jusqu'à votre tablette ou votre PC. Alors comment concevoir une interface utilisateur qui s’affiche parfaitement sur un large éventail d’appareils et de tailles d’écran ?
 
 ![même application sur différents appareils](images/universal-image-1.jpg)
 
-UWP vous aide à en ajustant automatiquement les éléments d’interface utilisateur pour qu’elles soient lisibles et faciles à utiliser sur tous les appareils et les tailles d’écran.
+UWP vous aide en ajustant automatiquement les éléments d’interface utilisateur afin de les rendre accessibles sur l’ensemble des appareils et des tailles d'écran et de pouvoir facilement interagir avec eux.
 
 Lorsque votre application est exécutée sur un appareil, le système utilise un algorithme afin de normaliser l’affichage à l’écran des éléments d’interface utilisateur. Cet algorithme de mise à l’échelle prend en compte la distance d’affichage et la densité de l’écran (en pixels par pouce) pour optimiser la taille perçue (plutôt que la taille physique). L’algorithme de mise à l’échelle garantit qu’une police de 24 pixels sur un appareil Surface Hub placé à une distance de 3 mètres est aussi lisible pour l’utilisateur qu’une police de 24 pixels sur un téléphone doté d’un écran 5 pouces distant de quelques centimètres.
 
 ![distances d’affichage des différents appareils](images/scaling-chart.png)
 
-En raison du mode de fonctionnement du système de mise à l’échelle, lorsque vous concevez une application UWP, la conception est effectuée en pixels effectifs et non en pixels physiques réels. Les pixels effectifs (epx) sont une unité de mesure virtuelle qui sert à exprimer les dimensions et l’espacement de la disposition, indépendamment de la densité de l’écran. (Dans nos recommandations, epx ep et px sont utilisées indifféremment.)
+En raison du mode de fonctionnement du système de mise à l’échelle, lorsque vous concevez une application UWP, la conception est effectuée en pixels effectifs et non en pixels physiques réels. Les pixels effectifs (epx) sont une unité de mesure virtuelle qui sert à exprimer les dimensions et l’espacement de la disposition, indépendamment de la densité de l’écran. (Dans nos recommandations, epx ep et px sont utilisées indifféremment.)
 
 Vous pouvez ignorer la densité de pixels et la résolution d’écran réelle lors de la conception. Effectuez plutôt une conception pour la résolution réelle (résolution en pixels effectifs) d’une classe de taille (pour plus d’informations, consultez l’[article Tailles d’écran et points d’arrêt](../layout/screen-sizes-and-breakpoints-for-responsive-design.md)).
 
@@ -56,9 +56,9 @@ Vous pouvez ignorer la densité de pixels et la résolution d’écran réelle l
     :::column-end:::
 :::row-end:::
 
-## <a name="layout"></a>Mise en page
+## <a name="layout"></a>Disposition
 
-Puisque les applications UWP s'adaptent automatiquement à tous les appareils, la conception d’une application UWP présentera la même structure quel que soit l'appareil. Commençons par le début de l’interface utilisateur de votre application UWP.
+Puisque les applications UWP s'adaptent automatiquement à tous les appareils, la conception d’une application UWP présentera la même structure, quel que soit l'appareil. Commençons par le début de l’interface utilisateur de votre application UWP.
 
 ### <a name="windows-frames-and-pages"></a>Fenêtres, cadres et pages
 
@@ -86,9 +86,9 @@ Puisque les applications UWP s'adaptent automatiquement à tous les appareils, l
 
 Quel aspect doivent avoir ces pages ? La plupart des pages suivent une structure commune pour garantir la cohérence, afin que les utilisateurs puissent facilement naviguer entre les pages et dans chaque page de votre application. Les pages contiennent généralement trois types d’éléments d’interface utilisateur :
 
-- Les éléments de [Navigation](navigation-basics.md) permettent aux utilisateurs de choisir le contenu à afficher.
-- Les éléments de [Commande](commanding-basics.md) permettent d’initier des actions (de manipulation, d’enregistrement ou de partage de contenu, par exemple).
-- Les éléments de [Contenu](content-basics.md) affichent le contenu de l’application.
+- Les éléments de [navigation](navigation-basics.md) permettent aux utilisateurs de choisir le contenu à afficher.
+- Les éléments de [commande](commanding-basics.md) permettent d’initier des actions (de manipulation, d’enregistrement ou de partage de contenu, par exemple).
+- Les éléments de [contenu](content-basics.md) affichent le contenu de l’application.
 
 ![Un modèle de disposition courante](../layout/images/page-components.svg)
 
@@ -152,7 +152,7 @@ Enfin, la facilité d'utilisation consiste à rendre l’expérience de votre ap
 
 Si vous concevez pour un public international, vous souhaiterez peut-être consulter la page [Globalisation et localisation](../globalizing/globalizing-portal.md).
 
-Vous souhaiterez peut-être également intégrer des [fonctionnalités d’accessibilité](../accessibility/accessibility-overview.md) pour les utilisateurs présentant des problèmes de vision, d’audition et de mobilité. Si vous intégrez l’accessibilité dès le départ dans votre conception, le fait de [rendre votre application accessible](../accessibility/accessibility-in-the-store.md) ne vous demandera que peu de temps et d’efforts supplémentaire.
+Vous souhaiterez peut-être également intégrer des [fonctionnalités d’accessibilité](../accessibility/accessibility-overview.md) pour les utilisateurs présentant des problèmes de vision, d’audition et de mobilité. Si vous intégrez l’accessibilité dès le départ dans votre conception, le fait de [rendre votre application accessible](../accessibility/accessibility-in-the-store.md) ne vous demandera que peu de temps et d’efforts supplémentaires.
 
 ## <a name="tools-and-design-toolkits"></a>Outils et kits de ressources de conception
 
@@ -170,7 +170,7 @@ Nous proposons divers outils pour vous aider à réaliser votre conception :
 
 > [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/Designing-Universal-Windows-Platform-apps/player]
 
-## <a name="next-fluent-design-system"></a>prochain : Système de conception Fluent
+## <a name="next-fluent-design-system"></a>Suivant : Système de conception Fluent
 
 Si vous souhaitez en savoir plus sur les principes sous-jacents de Fluent Design (système de conception de Microsoft) et voir plus de fonctionnalités pouvant être incorporées dans votre application UWP, accédez à [Système Fluent Design](/windows/apps/fluent-design-system).
 
@@ -178,4 +178,4 @@ Si vous souhaitez en savoir plus sur les principes sous-jacents de Fluent Desig
 
 - [Qu’est-ce qu’une application UWP ?](../../get-started/universal-application-platform-guide.md)
 - [Système de conception Fluent](/windows/apps/fluent-design-system)
-- [Présentation de la plateforme XAML](../../xaml-platform/index.md)
+- [Vue d’ensemble de la plateforme XAML](../../xaml-platform/index.md)

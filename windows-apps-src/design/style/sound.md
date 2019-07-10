@@ -13,15 +13,15 @@ dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: f04d364aac79ed232f35cbdd8378bc50393d2c74
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57614374"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63789045"
 ---
 # <a name="sound"></a>Son
 
-![image hero](images/header-sound.svg)
+![Image Hero](images/header-sound.svg)
 
 Il existe de nombreuses manières d’utiliser le son pour améliorer votre application. Vous pouvez utiliser les sons pour compléter d’autres éléments de l’interface utilisateur, afin de permettre aux utilisateurs de reconnaître les événements par un son. Le son peut être un élément d’interface utilisateur efficace pour les personnes souffrant de handicaps visuels. Vous pouvez utiliser le son pour créer une atmosphère qui immerge totalement l’utilisateur ; par exemple, vous pouvez lire une bande son fantaisiste en arrière-plan d’un jeu de puzzle ou utiliser des effets sonores menaçants pour un jeu d’horreur/de survie.
 
@@ -29,11 +29,11 @@ Il existe de nombreuses manières d’utiliser le son pour améliorer votre appl
 
 UWP fournit un système audio aisément accessible qui vous permet de bénéficier d’une expérience audio immersive dans l’ensemble de votre application par le simple actionnement d’un commutateur.
 
-[  **ElementSoundPlayer**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.elementsoundplayer) est un système audio intégré dans le code XAML qui, une fois activé, déclenche la lecture automatique de sons par tous les contrôles par défaut.
+[**ElementSoundPlayer**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.elementsoundplayer) est un système audio intégré dans le code XAML qui, une fois activé, déclenche la lecture automatique de sons par tous les contrôles par défaut.
 ```C#
 ElementSoundPlayer.State = ElementSoundPlayerState.On;
 ```
-Le **ElementSoundPlayer** a trois états différents : **Sur** **hors** et **automatique**.
+**ElementSoundPlayer** peut prendre trois états : **On**, **Off** et **Auto**.
 
 S’il est défini sur **Off**, aucun son ne sera émis, quelle que soit la plateforme sur laquelle votre application s’exécute. Si le système audio est défini sur **On**, les sons de votre application seront émis sur chaque plateforme.
 
@@ -44,9 +44,9 @@ ElementSoundPlayer.SpatialAudioMode = ElementSpatialAudioMode.Off
 ```
 
 La propriété **SpatialAudioMode** peut accepter les valeurs suivantes : 
-- **Auto** : Audio spatial se met hors tension lorsque le son est sur. 
-- **Désactivé** : Spatial audio est toujours désactivé, même si son se trouve sur.
-- **Activé** : Spatial sera toujours l’audio.
+- **Auto** : l’audio spatial est activé quand le son est activé. 
+- **Désactivé** : l’audio spatial est toujours désactivé, même si le son est activé.
+- **Activé** : l’audio spatial est toujours émis.
 
 Pour plus d’informations sur l’audio spatial et la façon dont XAML le gère, voir [AudioGraph - Audio spatial](/windows/uwp/audio-video-camera/audio-graphs#spatial-audio).
 
@@ -69,7 +69,7 @@ où le volume maximal (par rapport au volume système) est de 1.0, et le volume 
 
 Si le son par défaut d’un contrôle n’est pas souhaité, il peut être désactivé. Cette opération est effectuée par le biais de l’utilisation de l’élément **ElementSoundMode** sur le contrôle.
 
-Le **ElementSoundMode** a deux états : **Désactiver** et **par défaut**. Lorsqu’il n’est pas défini, il présente la valeur **Default**. S’il est défini sur **Off**, chaque son lu par le contrôle sera désactivé, *sauf pour le focus*.
+L’élément **ElementSoundMode** peut prendre deux états : **Off** et **Default**. Lorsqu’il n’est pas défini, il présente la valeur **Default**. S’il est défini sur **Off**, chaque son lu par le contrôle sera désactivé, *sauf pour le focus*.
 
 ```XAML
 <Button Name="ButtonName" Content="More Info" ElementSoundMode="Off"/>
@@ -118,7 +118,7 @@ ElementSoundPlayer.Play(ElementSoundKind.Hide);
 ```
 ### <a name="navigation-within-a-page"></a>Navigation dans une page
 
-Lors de la navigation entre les panneaux ou des vues dans une page de l’application (consultez [onglets et pivote](../controls-and-patterns/pivot.md)), il est généralement mouvement bidirectionnel. Cela signifie que vous pouvez accéder à la vue/au panneau suivants ou précédents sans quitter la page de l’application sur laquelle vous vous trouvez.
+La navigation entre les panneaux ou les vues d’une page de l’application ([Onglets et sélecteurs de vue](../controls-and-patterns/pivot.md)) donne généralement lieu à un mouvement bidirectionnel. Cela signifie que vous pouvez accéder à la vue/au panneau suivants ou précédents sans quitter la page de l’application sur laquelle vous vous trouvez.
 
 L’expérience audio associée à ce concept de navigation est représentée par les sons **MovePrevious** et **MoveNext**.
 

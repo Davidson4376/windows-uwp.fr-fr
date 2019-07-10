@@ -14,49 +14,49 @@ doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 210431928c5dd7c5d5dfb99855322f1560e91dd7
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66363230"
 ---
 # <a name="buttons"></a>Boutons
 
-Un bouton permet à l’utilisateur de déclencher une action immédiate. Certains boutons sont spécialisées pour des tâches particulières, telles que la navigation, d’actions répétées ou présentant des menus.
+Un bouton permet à l’utilisateur de déclencher une action immédiate. Certains boutons conviennent à des tâches spéciales, telles que la navigation, les actions répétées ou l’affichage des menus.
 
 ![Exemple de boutons](images/controls/button.png)
 
-L’infrastructure XAML fournit un contrôle de bouton standard, ainsi que plusieurs contrôles bouton spécialisé.
+Le framework XAML fournit un contrôle de bouton standard, ainsi que plusieurs contrôles de boutons spécialisés.
 
 Commande | Description
 ------- | -----------
-[Button](/uwp/api/windows.ui.xaml.controls.button) | Lance une action immédiate. Peut être utilisé avec un événement de clic ou de la liaison de commande.
-[RepeatButton](/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton) | Un bouton qui déclenche un événement Click en continu pendant enfoncé.
-[HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton) | Un bouton qui a une mise en forme comme un lien hypertexte, utilisé pour la navigation. Voir [Liens hypertexte](hyperlinks.md) pour plus d’informations.
-[DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) | Bouton avec un chevron pour ouvrir un menu volant attaché.
-[SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) | Bouton avec les deux côtés. Côté « un » lance une action, et l’autre côté ouvre un menu.
-[ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) | Un bouton bascule avec deux côtés. Active ou désactive du côté « un » activé/désactivé, et l’autre côté ouvre un menu.
+[Button](/uwp/api/windows.ui.xaml.controls.button) | Déclenche une action immédiate. Peut être utilisé avec un événement Click ou une liaison de commande.
+[RepeatButton](/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton) | Bouton qui déclenche un événement Click en continu lorsque l’utilisateur appuie dessus.
+[HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton) | Bouton qui ressemble à un lien hypertexte et qui est utilisé pour la navigation. Voir [Liens hypertexte](hyperlinks.md) pour plus d’informations.
+[DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) | Bouton comprenant un chevron pour ouvrir un menu volant attaché.
+[SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) | Bouton à deux côtés. Un côté lance une action et l’autre ouvre un menu.
+[ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) | Bouton bascule à deux côtés. Un côté active ou désactive, et l’autre ouvre un menu.
 
 | **Obtenir la bibliothèque d’interface utilisateur Windows** |
 | - |
-| DropDownButton SplitButton et ToggleSplitButton sont inclus dans le cadre de la bibliothèque d’interface utilisateur de Windows, un package NuGet qui contient les nouveaux contrôles et fonctionnalités de l’interface utilisateur pour les applications UWP. Pour plus d’informations, y compris les instructions d’installation, consultez le [vue d’ensemble de la bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| DropDownButton, SplitButton et ToggleSplitButton sont inclus dans la bibliothèque d’interface utilisateur Windows. Cette bibliothèque est un package NuGet qui contient les nouveaux contrôles et fonctionnalités d’interface utilisateur des applications UWP. Pour plus d’informations, notamment des instructions d’installation, consultez [Vue d’ensemble de la bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
 
-| **API de plateforme** | **API de bibliothèque de l’interface utilisateur de Windows** |
+| **API de plateforme** | **API de la bibliothèque d’interface utilisateur Windows** |
 | - | - |
-| [Cliquez sur l’événement](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click), [Command, propriété](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.command) | [Classe DropDownButton](/uwp/api/microsoft.ui.xaml.controls.dropdownbutton), [SplitButton classe](/uwp/api/microsoft.ui.xaml.controls.splitbutton), [ToggleSplitButton classe](/uwp/api/microsoft.ui.xaml.controls.togglesplitbutton) |
+| [Événement Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click), [Propriété Command](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.command) | [Classe DropDownButton](/uwp/api/microsoft.ui.xaml.controls.dropdownbutton), [classe SplitButton](/uwp/api/microsoft.ui.xaml.controls.splitbutton), [classe ToggleSplitButton](/uwp/api/microsoft.ui.xaml.controls.togglesplitbutton) |
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
-Utilisez un **bouton** pour permettre à l’utilisateur de lancer une action immédiate, par exemple, envoyez un formulaire.
+Utilisez **Button** pour permettre à l’utilisateur d’exécuter une action immédiate, comme l’envoi d’un formulaire.
 
-N’utilisez pas un bouton lors de l’action consiste à naviguer vers une autre page ; utiliser un [HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton) à la place. Voir [Liens hypertexte](hyperlinks.md) pour plus d’informations.
-> Exception : Pour la navigation de l’Assistant, utilisez les boutons nommés « Back » et « Suivant ». Pour les autres types de descendante navigation ou la navigation vers un niveau supérieur, utilisez un [bouton Précédent](../basics/navigation-history-and-backwards-navigation.md).
+N’utilisez pas de bouton lorsque l’action consiste à naviguer vers une autre page. Utilisez plutôt un [HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton). Voir [Liens hypertexte](hyperlinks.md) pour plus d’informations.
+> Exception : Pour la navigation dans un Assistant, utilisez les boutons « Précédent » et « Suivant ». Pour les autres types de navigation vers l’arrière ou vers un niveau supérieur, utilisez un [bouton Précédent](../basics/navigation-history-and-backwards-navigation.md).
 
-Utilisez un **RepeatButton** lorsque l’utilisateur peut souhaiter déclencher une action à plusieurs reprises. Par exemple, utiliser un RepeatButton pour incrémenter ou décrémenter une valeur dans un compteur.
+Utilisez **RepeatButton** lorsque l’utilisateur est susceptible de déclencher une action à plusieurs reprises. Par exemple, utilisez un RepeatButton pour incrémenter ou décrémenter une valeur dans un compteur.
 
-Utilisez un **DropDownButton** lorsque le bouton a un lanceur qui contient davantage d’options. Le chevron situé par défaut fournit une indication visuelle que le bouton inclut un menu volant.
+Utilisez **DropDownButton** lorsque le bouton comprend un menu volant qui contient d’autres options. Le chevron par défaut indique que le bouton comprend un menu volant.
 
-Utilisez un **SplitButton** lorsque vous souhaitez que l’utilisateur pour pouvoir lancer une action immédiate, ou choisissez indépendamment des options supplémentaires.
+Utilisez **SplitButton** lorsque vous souhaitez permettre à l’utilisateur de lancer une action immédiate ou de choisir parmi des options supplémentaires de façon indépendante.
 
 ## <a name="examples"></a>Exemples
 
@@ -65,7 +65,7 @@ Utilisez un **SplitButton** lorsque vous souhaitez que l’utilisateur pour pouv
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>Si vous disposez de l'application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/Button">ouvrir l’application et voir le bouton en action</a>.</p>
+    <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/Button">ouvrir l’application et voir le bouton en contexte</a>.</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
@@ -124,36 +124,36 @@ Lorsque vous appuyez sur un bouton avec un doigt ou un stylet, ou lorsque vous c
 
 Généralement, vous ne pouvez pas gérer les événements [PointerPressed](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed) de bas niveau sur un bouton, car un comportement Click lui est affecté à la place. Pour plus d’informations, voir [Vue d’ensemble des événements et des événements routés](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview).
 
-Vous pouvez modifier la façon dont un bouton déclenche l’événement Click en modifiant la propriété [ClickMode](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.clickmode). La valeur ClickMode par défaut est **Release**, mais vous pouvez également définir la propriété ClickMode d'un bouton sur **Hover** ou **Press**. Si ClickMode est défini sur **Hover**, l’événement Click ne peut pas être déclenché avec le clavier ou le mode tactile.
+Vous pouvez modifier la façon dont un bouton déclenche l’événement Click en modifiant la propriété [ClickMode](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.clickmode). La valeur ClickMode par défaut est **Release**, mais vous pouvez également définir la propriété ClickMode d’un bouton sur **Hover** ou **Press**. Si ClickMode est défini sur **Hover**, l’événement Click ne peut pas être déclenché avec le clavier ou le mode tactile.
 
 
 ### <a name="button-content"></a>Contenu du bouton
 
 Le bouton est un [ContentControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentControl). Sa propriété de contenu XAML est [Content](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.contentcontrol.content), ce qui permet une syntaxe comme celle-ci pour XAML : `<Button>A button's content</Button>`. Vous pouvez définir n’importe quel objet comme contenu du bouton. Si le contenu est un objet [UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement), il est affiché dans le bouton. Si le contenu est un autre type d’objet, sa représentation sous forme de chaîne est affichée dans le bouton.
 
-Le contenu d’un bouton correspond généralement à du texte. Voici des recommandations de conception pour les boutons contenant du texte :
+Un bouton contient généralement du texte. Voici des recommandations quant à la conception des boutons contenant du texte :
 -   Utilisez un texte concis, précis et suffisamment explicite qui décrit clairement l’action effectuée par le bouton. Généralement le texte d’un bouton est représenté par un seul mot, un verbe.
 -   Utilisez la police par défaut à moins que vos instructions de personnalisation imposent d’en utiliser une autre.
--   Pour les textes courts, évitez les boutons de commande trop étroits en utilisant une largeur de bouton d'au moins 120 px.
-- Pour les textes longs, évitez les boutons de commande trop larges en limitant le texte à une longueur maximale de 26 caractères.
+-   Pour les textes courts, évitez les boutons de commande trop étroits en utilisant une largeur de bouton d’au moins 120 px.
+- Pour les textes longs, évitez les boutons de commande trop larges en limitant le texte à 26 caractères.
 -   Si le contenu texte du bouton est dynamique (par exemple, s’il est [localisé](../globalizing/globalizing-portal.md)), songez au redimensionnement du bouton et à ses conséquences sur les contrôles environnants.
 
 <table>
 <tr>
-<td> <b>Devoir résoudre :</b><br> corriger les boutons dont le texte déborde. </td>
+<td> <b>Vous devez :</b><br> Corriger les boutons dont le texte déborde. </td>
 <td> <img src="images/button-wraptext.png"/> </td>
 </tr>
 <tr>
-<td> <b>Option 1 :</b><br> Augmentez la largeur du bouton, empilez les boutons et faites un renvoi à la ligne si la longueur du texte dépasse 26 caractères. </td>
+<td> <b>Option 1 :</b><br> Augmenter la largeur du bouton, empiler les boutons et faire un renvoi à la ligne si la longueur du texte dépasse 26 caractères. </td>
 <td> <img src="images/button-wraptext1.png"> </td>
 </tr>
 <tr>
-<td> <b>Option 2 :</b><br> Augmentez la hauteur du bouton et ajustez le texte avec un renvoi à la ligne. </td>
+<td> <b>Option 2 :</b><br> Augmenter la hauteur du bouton et renvoyer le texte à la ligne. </td>
 <td> <img src="images/button-wraptext2.png"> </td>
 </tr>
 </table>
 
-Vous pouvez également personnaliser les effets visuels qui constituent l’apparence du bouton. Par exemple, vous pourriez remplacer le texte par une icône, ou utiliser une icône plus du texte.
+Vous pouvez également personnaliser les visuels qui constituent l’apparence du bouton. Par exemple, vous pouvez remplacer le texte par une icône, ou utiliser une icône en plus du texte.
 
 Ici, un objet **StackPanel** qui contient une image et du texte est défini comme le contenu d’un bouton.
 
@@ -207,20 +207,20 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 
 ## <a name="create-a-drop-down-button"></a>Créer un bouton déroulant
 
-> DropDownButton nécessite Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) ou version ultérieure, ou le [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
+> L’utilisation de DropDownButton nécessite Windows 10 version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) ou ultérieure, ou la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
 
-Un [DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) est un bouton qui affiche un chevron comme un indicateur visuel qu’il possède un menu volant attaché qui contient davantage d’options. Il a le même comportement comme un bouton standard avec un menu volant ; seule l’apparence est différente.
+Un bouton déroulant ([DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton)) est un bouton qui comprend un chevron, ce qui indique qu’il contient un menu volant attaché comprenant des options supplémentaires. Son comportement est le même que celui d’un bouton standard avec un menu volant. Seule l’apparence est différente.
 
-La liste déroulante bouton hérite de l’événement Click, mais vous ne l’utilisez généralement. Au lieu de cela, vous utilisez la propriété de menu volant pour attacher un menu volant et appeler des actions à l’aide des options de menu dans le menu volant. Le menu volant s’ouvre automatiquement lorsque le bouton est activé. Veillez à spécifier le [Placement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.placement) propriété de votre menu volant pour vous assurer de l’emplacement souhaité en relation avec le bouton. L’algorithme de sélection élective par défaut peuvent ne pas produire l’emplacement prévu dans toutes les situations.
+Le bouton déroulant hérite de l’événement Click, mais vous ne l’utilisez généralement pas. En effet, vous utilisez la propriété Flyout pour attacher un menu volant et appeler des actions à l’aide des options du menu volant. Le menu volant s’ouvre automatiquement lorsque l’utilisateur clique sur le bouton. Spécifiez la propriété [Placement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.placement) de votre menu volant pour choisir l’emplacement souhaité par rapport au bouton. L’algorithme de placement par défaut peut ne pas toujours fournir l’emplacement prévu.
 
 > [!TIP]
-> Pour plus d’informations sur les menus volants, consultez [Menus et des menus contextuels](menus.md).
+> Pour plus d’informations sur les menus volants, consultez [Menus et menus contextuels](menus.md).
 
-### <a name="example---drop-down-button"></a>Exemple - bouton déroulant
+### <a name="example---drop-down-button"></a>Exemple - Bouton déroulant
 
-Cet exemple montre comment créer un bouton déroulant avec un menu volant qui contient des commandes pour l’alignement de paragraphe dans un RichEditBox. (Pour plus d’informations et de code, consultez [zone d’édition enrichie](rich-edit-box.md)).
+Cet exemple montre comment créer un bouton déroulant avec un menu volant comprenant des commandes pour l’alignement des paragraphes d’un RichEditBox (pour plus d’informations et de code, consultez [Zone d’édition enrichie](rich-edit-box.md)).
 
-![Une liste déroulante bouton avec les commandes d’alignement](images/drop-down-button-align.png)
+![Bouton déroulant avec commandes d’alignement](images/drop-down-button-align.png)
 
 ```xaml
 <DropDownButton ToolTipService.ToolTip="Alignment">
@@ -266,27 +266,27 @@ private void AlignmentMenuFlyoutItem_Click(object sender, RoutedEventArgs e)
 
 ## <a name="create-a-split-button"></a>Créer un bouton partagé
 
-> SplitButton nécessite Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) ou version ultérieure, ou le [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
+> L’utilisation de SplitButton nécessite Windows 10 version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) ou ultérieure, ou la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
 
-Un [SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) comporte deux parties qui peuvent être appelés séparément. Un composant se comporte comme un bouton standard et appelle une action immédiate. L’autre composant appelle un menu volant qui propose des options supplémentaires à l’utilisateur.
+Un bouton partagé ([SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton)) se compose de deux parties qui peuvent être appelées séparément. Un composant se comporte comme un bouton standard et appelle une action immédiate. L’autre composant appelle un menu volant qui propose des options supplémentaires à l’utilisateur.
 
 > [!NOTE]
-> Lorsqu’elle est appelée avec touch, le bouton partagé se comporte comme un bouton déroulant ; les deux moitiés du bouton appeler le menu volant. Avec d’autres méthodes d’entrée, un utilisateur peut appeler moitié du bouton séparément.
+> Lorsqu’il est appelé à l’aide d’une interaction tactile, le bouton partagé se comporte comme un bouton déroulant. Les deux parties du bouton appellent le menu volant. Avec d’autres méthodes d’entrée, l’utilisateur peut appeler séparément l’une ou l’autre de ces parties.
 
-Le comportement par défaut pour un bouton partagé est :
+Le comportement par défaut d’un bouton partagé est le suivant :
 
-- Lorsque l’utilisateur clique sur la partie de bouton, gérez l’événement Click pour appeler l’option qui est actuellement sélectionnée dans la liste déroulante.
-- Lorsque la liste déroulante est ouverte, appel de handle des éléments dans la liste déroulante pour les deux modifications option est sélectionnée, puis l’appeler. Il est important de l’appel de l’élément de menu volant car l’événement Click ne se produit lors de l’utilisation tactile de bouton.
+- Lorsque l’utilisateur clique sur la partie bouton, l’événement Click est géré de manière à appeler l’option actuellement sélectionnée dans la liste déroulante.
+- Lorsque la liste est déroulée, l’appel des éléments de la liste déroulante est géré de manière à changer l’option sélectionnée, puis à l’appeler. Il est important d’appeler l’élément de menu volant, car l’événement Click ne se produit pas lors d’une interaction tactile.
 
 > [!TIP]
-> Il existe de nombreuses façons de placer des éléments dans la liste déroulante vers le bas et de gérer leur appel. Si vous utilisez un ListView ou le GridView, une façon consiste à gérer l’événement SelectionChanged. Si vous procédez ainsi, la valeur [SingleSelectionFollowsFocus](/uwp/api/windows.ui.xaml.controls.listviewbase.singleselectionfollowsfocus) à **false**. Cela permet aux utilisateurs de parcourir les options à l’aide d’un clavier sans appel de l’élément à chaque changement.
+> Il existe de nombreuses façons de positionner les éléments d’une liste déroulante et de gérer leur appel. Si vous utilisez ListView ou GridView, vous pouvez gérer l’événement SelectionChanged. Si vous procédez ainsi, définissez [SingleSelectionFollowsFocus](/uwp/api/windows.ui.xaml.controls.listviewbase.singleselectionfollowsfocus) sur **false**. Cela permet aux utilisateurs de parcourir les options à l’aide du clavier sans appeler l’élément à chaque changement.
 
-### <a name="example---split-button"></a>Exemple - bouton partagé
+### <a name="example---split-button"></a>Exemple - Bouton partagé
 
-Cet exemple montre comment créer un bouton partagé qui est utilisé pour modifier la couleur de premier plan du texte sélectionné dans un RichEditBox. (Pour plus d’informations et de code, consultez [zone d’édition enrichie](rich-edit-box.md)).
-Fractionner les utilisations du menu volant du bouton [BottomEdgeAlignedLeft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutplacementmode) comme valeur par défaut pour son [Placement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.placement) propriété. Vous ne pouvez pas remplacer cette valeur.
+Cet exemple montre comment créer un bouton partagé permettant de modifier la couleur de premier plan du texte sélectionné dans un RichEditBox (pour plus d’informations et de code, consultez [Zone d’édition enrichie](rich-edit-box.md)).
+Le menu volant du bouton partagé utilise [BottomEdgeAlignedLeft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutplacementmode) comme valeur par défaut pour sa propriété [Placement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.placement). Vous ne pouvez pas remplacer cette valeur.
 
-![Un bouton partagé pour la sélection de couleur de premier plan](images/split-button-rtb.png)
+![Un bouton partagé pour sélectionner la couleur de premier plan](images/split-button-rtb.png)
 
 ```xaml
 <SplitButton ToolTipService.ToolTip="Foreground color"
@@ -372,31 +372,31 @@ public sealed partial class MainPage : Page
 }
 ```
 
-## <a name="create-a-toggle-split-button"></a>Créer un bouton de fractionnement bascule
+## <a name="create-a-toggle-split-button"></a>Créer un bouton partagé de basculement
 
-> ToggleSplitButton nécessite Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) ou version ultérieure, ou le [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
+> L’utilisation de ToggleSplitButton nécessite Windows 10 version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) ou ultérieure, ou la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
 
-Un [ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) comporte deux parties qui peuvent être appelés séparément. Un composant se comporte comme un bouton bascule qui peut être activé ou désactivé. L’autre composant appelle un menu volant qui propose des options supplémentaires à l’utilisateur.
+Un bouton partagé de basculement ([ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton)) se compose de deux parties qui peuvent être appelées séparément. Un composant se comporte comme un bouton bascule qui peut être activé ou désactivé. L’autre composant appelle un menu volant qui propose des options supplémentaires à l’utilisateur.
 
-Un bouton de fractionnement bascule sert généralement à activer ou désactiver une fonctionnalité lorsque la fonctionnalité a plusieurs options que l’utilisateur peut choisir. Par exemple, dans un éditeur de document, il peut servir à activer ou désactiver, les listes tandis que la liste déroulante permet de choisir le style de la liste.
+Un bouton partagé de basculement sert généralement à activer et à désactiver une fonctionnalité, lorsque celle-ci propose plusieurs options. Par exemple, dans un éditeur de document, il peut servir à activer ou à désactiver des listes, tandis que la liste déroulante est utilisée pour choisir le style de la liste.
 
 > [!NOTE]
-> Lorsqu’elle est appelée avec touch, le bouton de fractionnement bascule se comporte comme un bouton déroulant. Avec d’autres méthodes d’entrée, un utilisateur peut activer/désactiver et appeler les deux moitiés du bouton séparément. Avec touch, les deux moitiés du bouton appeler le menu volant. Par conséquent, vous devez inclure une option dans le contenu de votre menu volant pour activer / désactiver le bouton.
+> Lorsqu’il est appelé par une interaction tactile, le bouton partagé de basculement se comporte comme un bouton déroulant. Avec d’autres méthodes d’entrée, l’utilisateur peut basculer d’une partie à l’autre, et les appeler séparément. Lors d’une interaction tactile, les deux parties du bouton appellent le menu volant. Par conséquent, vous devez inclure dans le menu volant une option permettant d’activer et de désactiver le bouton.
 
-### <a name="differences-with-togglebutton"></a>Différences avec ToggleButton
+### <a name="differences-with-togglebutton"></a>Différences entre ToggleSplitButton et ToggleButton
 
-Contrairement aux [ToggleButton](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton), ToggleSplitButton n’a pas un état indéterminé. Par conséquent, vous gardez à l’esprit ces différences :
+Contrairement à [ToggleButton](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton), ToggleSplitButton n’a pas d’état indéterminé. Vous devez donc garder à l’esprit les différences suivantes :
 
-- ToggleSplitButton n’a pas un **IsThreeState** propriété ou **indéterminé** événement.
-- Le [ToggleSplitButton.IsChecked](/uwp/api/windows.ui.xaml.controls.togglesplitbutton.ischecked) propriété est simplement un **bool**, et non un **nullable bool**.
-- ToggleSplitButton a uniquement les [IsCheckedChanged](/uwp/api/windows.ui.xaml.controls.togglesplitbutton.ischeckedchanged) événement ; il n’a pas distinct **Checked** et **Unchecked** événements.
+- ToggleSplitButton n’a pas de propriété **IsThreeState** ni d’événement **Indeterminate**.
+- La propriété [ToggleSplitButton.IsChecked](/uwp/api/windows.ui.xaml.controls.togglesplitbutton.ischecked) est un **bool**, et non un **bool nullable**.
+- ToggleSplitButton comprend uniquement l’événement [IsCheckedChanged](/uwp/api/windows.ui.xaml.controls.togglesplitbutton.ischeckedchanged). Il n’a pas d’événements **Checked** et **Unchecked** distincts.
 
-### <a name="example---toggle-split-button"></a>Exemple - bascule de bouton partagé
+### <a name="example---toggle-split-button"></a>Exemple - Bouton partagé de basculement
 
-L’exemple suivant montre comment une bascule de bouton partagé peut être utilisée pour activer ou désactiver la mise en forme de liste et modifier le style de la liste, dans un RichEditBox. (Pour plus d’informations et de code, consultez [zone d’édition enrichie](rich-edit-box.md)).
-Activer/désactiver fractionner utilise du menu volant du bouton [BottomEdgeAlignedLeft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutplacementmode) comme valeur par défaut pour son [Placement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.placement) propriété. Vous ne pouvez pas remplacer cette valeur.
+L’exemple suivant montre comment un bouton partagé de basculement peut être utilisé pour activer ou désactiver la mise en forme des listes, et pour modifier le style de la liste dans un RichEditBox (pour plus d’informations et de code, consultez [Zone d’édition enrichie](rich-edit-box.md)).
+Le menu volant du bouton partagé de basculement utilise [BottomEdgeAlignedLeft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutplacementmode) comme valeur par défaut pour sa propriété [Placement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.placement). Vous ne pouvez pas remplacer cette valeur.
 
-![Un bouton de fractionnement de bascule pour sélectionner des styles de liste](images/toggle-split-button-open.png)
+![Bouton partagé de basculement pour sélectionner des styles de liste](images/toggle-split-button-open.png)
 
 ```xaml
 <ToggleSplitButton x:Name="ListButton"
@@ -509,21 +509,21 @@ private void ApplyListStyle(string listStyle)
 - Exposez seulement un ou deux boutons à la fois pour l’utilisateur, par exemple Accepter et Annuler. Si vous devez inviter l’utilisateur à effectuer plusieurs actions, pensez à utiliser des [cases à cocher](checkbox.md) ou des [cases d’option](radio-button.md) à partir desquelles l’utilisateur peut sélectionner des actions, avec un seul bouton de commande pour les déclencher.
 - Pour une action qui doit être disponible sur plusieurs pages dans votre application, pensez à utiliser une [barre d’application inférieure](app-bars.md), au lieu de dupliquer un bouton sur plusieurs pages.
 
-### <a name="recommended-single-button-layout"></a>Disposition recommandée pour un bouton unique
+### <a name="recommended-single-button-layout"></a>Disposition recommandée pour un bouton seul
 
-Si votre disposition ne requiert qu’un seul bouton, vous devez l’aligner à gauche ou à droite en fonction du contexte de son conteneur.
+Si votre disposition ne nécessite qu’un seul bouton, celui-ci doit être aligné à gauche ou à droite en fonction du contexte de son conteneur.
 
-- Les boîtes de dialogue avec un seul bouton doivent **aligner à droite** le bouton. Si votre boîte de dialogue contient un seul bouton, assurez-vous que ce bouton effectue l’action sans échec, non destructrice. Si vous utilisez la classe [ContentDialog](dialogs.md) et spécifiez un seul bouton, celui-ci sera automatiquement aligné à droite.
+- Dans les boîtes de dialogue ne comprenant qu’un seul bouton, celui-ci doit être **aligné à droite**. Si votre boîte de dialogue contient un seul bouton, vérifiez que celui-ci effectue une action non destructrice. Si vous utilisez la classe [ContentDialog](dialogs.md) et spécifiez un seul bouton, celui-ci sera automatiquement aligné à droite.
 
 ![Un bouton dans une boîte de dialogue](images/pushbutton_doc_dialog.png)
 
-- Si votre bouton s’affiche dans un élément d’interface utilisateur conteneur (par exemple, au sein d’une notification toast, un menu volant ou un élément de l’affichage Liste), vous devez **aligner à droite** le bouton dans le conteneur.
+- Si votre bouton s’affiche dans l’interface utilisateur d’un conteneur (par exemple, dans une notification toast, un menu volant ou un élément de liste), il doit être **aligné à droite** dans le conteneur.
 
 ![Un bouton dans un conteneur](images/pushbutton_doc_container.png)
 
-- Dans les pages qui contiennent un bouton unique (par exemple, un bouton « Appliquer » en bas d’une page de paramètres), vous devez **aligner à gauche** le bouton. Cela garantit que le bouton s’aligne avec le reste du contenu de la page.
+- Dans les pages qui contiennent un seul bouton (par exemple, un bouton « Appliquer » au bas d’une page de paramètres), le bouton doit être **aligné à gauche**. Vous avez ainsi la garantie que le bouton est aligné sur le reste du contenu de la page.
 
-![Un bouton sur une page](images/pushbutton_doc_page.png)
+![Un bouton dans une page](images/pushbutton_doc_page.png)
 
 ## <a name="back-buttons"></a>Boutons Précédent
 
@@ -531,11 +531,11 @@ Le bouton Précédent est un élément de l’interface utilisateur fournie par 
 
 ## <a name="get-the-sample-code"></a>Obtenir l’exemple de code
 
-- [Exemples de la Galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) - Affichez tous les contrôles XAML dans un format interactif.
+- [Exemple de Galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) : tous les contrôles XAML dans un format interactif.
 
 ## <a name="related-articles"></a>Articles connexes
 
-- [Classe Button](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button)
+- [Button, classe](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button)
 - [Cases d’option](radio-button.md)
 - [Cases à cocher](checkbox.md)
-- [Activer/désactiver commutateurs](toggles.md)
+- [Boutons bascule](toggles.md)

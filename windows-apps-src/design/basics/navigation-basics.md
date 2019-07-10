@@ -11,10 +11,10 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 1c764eeb57ec8046a93e7fb58e156fa68daea8df
-ms.sourcegitcommit: 13fe5d04bdb43c75d0fc4de18c2c3d4ae58ff982
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64564523"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a>Informations de base relatives à la conception de la navigation pour les applications UWP
@@ -29,17 +29,17 @@ Nous avons un nombre considérable de choix à faire pour la navigation. Par exe
     :::column:::
         ![navigation example 1](images/nav/nav-1.svg)
 
-Demander aux utilisateurs de suivre une série de pages dans l’ordre.
+Nous pouvons obliger l’utilisateur à accéder à toutes les pages, dans l’ordre.
     :::column-end:::
     :::column:::
         ![navigation example 2](images/nav/nav-2.svg)
 
-Fournir un menu qui permet aux utilisateurs d’accéder directement à n’importe quelle page.
+Nous pouvons également fournir un menu qui permet aux utilisateurs d’accéder directement à n’importe quelle page.
     :::column-end:::
     :::column:::
         ![navigation example 3](images/nav/nav-3.svg)
 
-Placez tout sur une seule page et fournir des mécanismes de filtrage pour afficher du contenu.
+Nous pouvons aussi tout placer sur une seule page et fournir des mécanismes de filtrage pour afficher le contenu.
     :::column-end:::
 :::row-end:::
 
@@ -49,13 +49,13 @@ Il n’existe aucune conception de navigation unique qui fonctionne pour toutes 
 
 Commençons par les principes de base d’une navigation réussie :
 
-- **Cohérence :** Répondre aux attentes des utilisateurs.
-- **Simplicité :** Ne le faites pas plus que nécessaire.
-- **Plus de clarté :** Fournir des chemins d’accès clair et options.
+- **Cohérence :** Répondre aux attentes des utilisateurs.
+- **Simplicité :** Ne pas faire plus que nécessaire.
+- **Clarté :** Fournir des chemins d’accès clair et des options.
 
 ### <a name="consistency"></a>Consistency
 
-La navigation doit être cohérente avec les attentes des utilisateurs. À l’aide de [contrôles standard](#use-the-right-controls) que les utilisateurs sont familiers avec et en suivantes les conventions standard pour les icônes, emplacement, et style rendra navigation prévisible et intuitive pour les utilisateurs.
+La navigation doit être cohérente avec les attentes des utilisateurs. Utilisez des [contrôles standard](#use-the-right-controls) auxquels les utilisateurs sont familiers et respectez les conventions standard pour les icônes, les emplacements et le style pour rendre la navigation prévisible et intuitive pour les utilisateurs.
 
 ![image des composants d'une page](images/nav/page-components.svg)
 
@@ -71,14 +71,14 @@ Un recours moins large aux éléments de navigation simplifie la prise de décis
 
         ![navview good](images/nav/navview-good.svg)
 
-Présenter les éléments de navigation dans un menu de navigation naturelle.
+Présentez les éléments de navigation dans un menu de navigation familier.
     :::column-end:::
     :::column:::
         ![don't example](images/nav/dont.svg)
 
         ![navview bad](images/nav/navview-bad.svg)
 
-Surcharger les utilisateurs de nombreuses options de navigation.
+Noyez les utilisateurs dans de nombreuses options de navigation.
     :::column-end:::
 :::row-end:::
 
@@ -96,7 +96,7 @@ Maintenant nous allons utiliser nos principes de conception (cohérence, simplic
 
 1. Réfléchissez à vos utilisateurs. Définissez le parcours qu’ils sont susceptibles de suivre dans votre application et cherchez à savoir pourquoi les utilisateurs accèdent à une page et où ils souhaitent aller ensuite.
 
-2. Évitez les hiérarchies de navigation approfondie. Au-delà de trois niveaux de navigation, vous risquez d’égarer votre utilisateur dans une hiérarchie profonde qu’il aura des difficultés à quitter.
+2. Évitez les hiérarchies de navigation profondes. Au-delà de trois niveaux de navigation, vous risquez d’égarer votre utilisateur dans une hiérarchie profonde qu’il aura des difficultés à quitter.
 
 3. Évitez l’effet « bâton sauteur ». L’effet du bâton sauteur se produit lorsqu’il existe du contenu associé, mais que la navigation vers celui-ci oblige l’utilisateur à remonter d’un niveau puis à descendre à nouveau.
 
@@ -117,7 +117,7 @@ Nous vous recommandons d’utiliser une structure plate dans les cas suivants :
 
 - Les pages peuvent être affichées dans n’importe quel ordre.
 - Les pages sont clairement distinctes les unes des autres et n’ont aucune relation parent/enfant évidente.
-- Il existe moins de 8 pages dans le groupe. <br>
+- Le groupe contient moins de 8 pages. <br>
 (S’il y a plus de pages, il peut être difficile pour les utilisateurs de comprendre dans quelle mesure les pages sont uniques ou de connaître leur emplacement actuel au sein du groupe. Si vous ne pensez pas que ce soit un problème pour votre application, lancez-vous et faites des pages des homologues. Sinon, envisagez d’utiliser une structure hiérarchique pour répartir les pages en deux groupes au moins plus petits.)
 
     :::column-end:::
@@ -134,7 +134,7 @@ Dans une structure hiérarchique, les pages sont organisées dans une structure 
 
 Les structures hiérarchiques sont parfaites pour organiser du contenu complexe qui s’étend sur un grand nombre de pages. L’inconvénient de cette structure est qu’elle surcharge la navigation : plus la structure est profonde, plus les utilisateurs doivent cliquer pour naviguer entre les pages.
 
-Nous recommandons un hiérarchique structure lorsque :
+Nous recommandons une structure hiérarchique dans les cas suivants :
         
 - Les pages doivent être parcourues dans un ordre spécifique.
 - Il existe une relation parent-enfant claire entre les pages.
@@ -150,11 +150,11 @@ Nous recommandons un hiérarchique structure lorsque :
     :::column span="2":::
         ### Combining structures
 
-Vous avez choisissez de ne pas une structure ou l’autre ; de nombreuses applications de conception de bien utilisent les deux. Une application utilise des structures plates pour les pages de niveau supérieur qui peuvent être affichées dans n’importe quel ordre, et des structures hiérarchiques pour les pages qui ont des relations plus complexes.
+Vous n’avez pas besoin de choisir entre une structure ou une autre ; de nombreuses applications très bien conçues utilisent à la fois les structures plates et hiérarchiques. Une application utilise des structures plates pour les pages de niveau supérieur qui peuvent être affichées dans n’importe quel ordre, et des structures hiérarchiques pour les pages qui ont des relations plus complexes.
 
-Si votre structure de navigation comporte plusieurs niveaux, nous vous recommandons de lier les éléments de navigation pair à pair uniquement aux homologues au sein de leur sous-arborescence actuelle. Considérez l’illustration adjacente, qui montre une structure de navigation qui a deux niveaux :
+Si votre structure de navigation comporte plusieurs niveaux, nous vous recommandons de lier les éléments de navigation pair à pair uniquement aux homologues au sein de leur sous-arborescence actuelle. Prenez en considération l’illustration adjacente, qui montre une structure de navigation à deux niveaux :
 
-- Au niveau 1, l’élément de navigation pair à pair doit donner accès aux pages A, B, C et D.
+- Pour le niveau 1, l’élément de navigation pair à pair doit donner accès aux pages A, B, C et D.
 - Au niveau 2, les éléments de navigation pair à pair des pages A2 doivent uniquement être liés aux autres pages A2. Ils ne doivent pas renvoyer aux pages de niveau 2 de la sous-arborescence C.
     :::column-end:::
 :::row-end:::
@@ -180,18 +180,18 @@ Une fois que vous avez choisi votre structure de page, vous devez déterminer co
     :::column span="2":::
         [**Top navigation and tabs**](../controls-and-patterns/navigationview.md)
 
-Affiche une liste horizontale de liens vers les pages de même niveau. Le [NavigationView](../controls-and-patterns/navigationview.md) contrôle implémente la navigation supérieure et onglets de modèles.
+Affiche une liste horizontale de liens vers les pages de même niveau. Le contrôle [NavigationView](../controls-and-patterns/navigationview.md) implémente la navigation supérieure et les modèles d’onglets.
         
 Utilisez la navigation supérieure lorsque :
 
-- Vous souhaitez afficher toutes les options de navigation sur l’écran.
+- Vous souhaitez afficher toutes les options de navigation à l’écran.
 - Vous souhaitez davantage d’espace pour le contenu de votre application.
-- Icônes ne peut pas décrire clairement vos catégories de navigation.
+- Les icônes ne peuvent pas décrire clairement vos catégories de navigation.
         
 Utilisez les onglets lorsque :
 
-- Vous souhaitez conserver l’état de page et de l’historique de navigation.
-- Vous vous attendre aux utilisateurs de basculer entre les onglets fréquemment.
+- Vous souhaitez conserver l’état de page et l’historique de navigation.
+- Vous pensez que les utilisateurs passeront fréquemment d’un onglet à l’autre.
 
 :::row-end:::
 
@@ -202,12 +202,12 @@ Utilisez les onglets lorsque :
         :::column span="2":::
     [**Pivot**](../controls-and-patterns/pivot.md)
     
-Semblable à [mode Navigation](../controls-and-patterns/navigationview.md), mais avec une prise en charge supplémentaire des fonctionnalités tactiles et de comportement de navigation légèrement différente.
+Identique à [Navigation View](../controls-and-patterns/navigationview.md), mais avec une prise en charge supplémentaire de l’interaction tactile et un comportement de navigation un peu différent.
     
-Utiliser un tableau croisé dynamique lorsque :
-- Vous souhaitez que votre application pour permettre le balayage tactile entre les catégories
-- Vous souhaitez que les options de navigation à carrousel infintely
-- Il est inutile de contrôle étendu sur le comportement de navigation entre les catégories
+Utilisez un tableau croisé dynamique lorsque :
+- Vous souhaitez que votre application autorise le balayage tactile entre les catégories
+- Vous souhaitez que les options de navigation défilent à l’infini
+- Vous n’avez pas besoin d’un contrôle étendu sur le comportement de navigation entre les catégories
 
 :::row-end:::
 
@@ -251,6 +251,6 @@ Les éléments maîtres/détails sont particulièrement bien adaptés aux boîte
 Les éléments de navigation incorporés apparaissent dans le contenu d’une page. Contrairement aux autres éléments de navigation, qui doivent être cohérents dans toutes les pages, les éléments de navigation incorporés au contenu sont uniques d’une page à l’autre.
 :::row-end:::
 
-## <a name="next-add-navigation-code-to-your-app"></a>prochain : Ajoutez le code de navigation à votre application
+## <a name="next-add-navigation-code-to-your-app"></a>Étape suivante : Ajouter du code de navigation à votre application
 
 L’article suivant [Implémenter la navigation de base](navigate-between-two-pages.md), indique le code nécessaire pour utiliser un contrôle de cadre afin d’activer la navigation de base entre deux pages de votre application.

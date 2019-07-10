@@ -9,10 +9,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: c996b22395fc8186fb1b6dc786a73fa4a97ecf16
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66363993"
 ---
 # <a name="web-view"></a>Affichage web
@@ -28,7 +28,7 @@ Utilisez un contrôle d’affichage web pour afficher du contenu HTML à mise en
 
 ## <a name="create-a-web-view"></a>Créer un affichage web
 
-**Modifier l’apparence d’un affichage web**
+**Modifier l’apparence d’une vue web**
 
 [WebView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebView) n’étant pas une sous-classe [Control](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control), aucun modèle de contrôle ne lui est associé. Toutefois, il est possible de définir différentes propriétés pour contrôler certains aspects visuels de l’affichage web.
 - Pour limiter la zone d’affichage, définissez les propriétés [Width](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.width) et [Height](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.height). 
@@ -36,11 +36,11 @@ Utilisez un contrôle d’affichage web pour afficher du contenu HTML à mise en
 - Pour contrôler l’opacité de l’affichage web, définissez la propriété [Opacity](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.opacity).
 - Pour spécifier une couleur à utiliser en arrière-plan de la page web quand le contenu HTML ne spécifie aucune couleur, définissez la propriété [DefaultBackgroundColor](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.defaultbackgroundcolor). 
 
-**Obtenir le titre de page web**
+**Obtenir le titre de la page web**
 
 Vous pouvez obtenir le titre du document HTML actuellement affiché dans l’affichage web à l’aide de la propriété [DocumentTitle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.documenttitle). 
 
-**Événements d’entrée et l’ordre de tabulation**
+**Événements d’entrée et ordre de tabulation**
 
 Bien que le contrôle WebView ne soit pas une sous-classe Control, il reçoit le focus d’entrée du clavier et fait partie intégrante de la séquence de tabulation. Il fournit une méthode [Focus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.focus), ainsi que des événements [GotFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gotfocus) et [LostFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.lostfocus), mais il ne possède aucune propriété en rapport avec la tabulation. Sa position dans la séquence de tabulation est identique à sa position dans l’ordre du document XAML. La séquence de tabulation inclut tous les éléments du contenu de l’affichage web qui peuvent recevoir le focus d’entrée. 
 
@@ -48,7 +48,7 @@ Comme indiqué dans le tableau Événements de la page consacrée à la classe [
 
 ### <a name="navigating-to-content"></a>Accès au contenu
 
-Affichage Web fournit plusieurs API pour la navigation de base : [GoBack](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.goback), [GoForward](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.goforward), [arrêter](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.stop), [Actualiser](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.refresh), [CanGoBack](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.cangoback), et [CanGoForward](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.cangoforward). Ces API vous permettent d’ajouter des fonctionnalités de navigation web standard à votre application. 
+La vue web fournit plusieurs API pour la navigation de base : [GoBack](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.goback), [GoForward](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.goforward), [Stop](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.stop), [Refresh](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.refresh), [CanGoBack](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.cangoback) et [CanGoForward](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.cangoforward). Ces API vous permettent d’ajouter des fonctionnalités de navigation web standard à votre application. 
 
 Pour définir le contenu initial de l’affichage web, définissez la propriété [Source](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.source) en XAML. L’analyseur XAML convertit automatiquement la chaîne en [Uri](https://docs.microsoft.com/uwp/api/Windows.Foundation.Uri). 
 
@@ -91,7 +91,7 @@ Vous pouvez charger du contenu local via un résolveur personnalisé à l’aide
 
 ### <a name="responding-to-navigation-events"></a>Réponse aux événements de navigation
 
-Le contrôle d’affichage web fournit plusieurs événements que vous pouvez utiliser pour répondre aux états de navigation et de chargement de contenu. Les événements se produisent dans l’ordre suivant pour le contenu de vue racine web : [NavigationStarting](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.navigationstarting), [ContentLoading](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.contentloading), [DOMContentLoaded](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.domcontentloaded), [NavigationCompleted](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.navigationcompleted)
+Le contrôle d’affichage web fournit plusieurs événements que vous pouvez utiliser pour répondre aux états de navigation et de chargement de contenu. Les événements se produisent dans l’ordre suivant pour le contenu de la vue web racine : [NavigationStarting](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.navigationstarting), [ContentLoading](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.contentloading), [DOMContentLoaded](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.domcontentloaded), [NavigationCompleted](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.navigationcompleted)
 
 
 **NavigationStarting** : se produit avant que l’affichage web accède à du nouveau contenu. Vous pouvez annuler la navigation dans un gestionnaire pour cet événement en définissant la propriété WebViewNavigationStartingEventArgs.Cancel sur true. 
@@ -258,7 +258,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 Les scripts au sein du contenu de l’affichage web peuvent utiliser **window.external.notify** avec un paramètre de chaîne pour renvoyer des informations à votre application. Pour recevoir ces messages, vous devez gérer l’événement [ScriptNotify](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.scriptnotify). 
 
-Pour permettre à une page Web externe de déclencher l’événement **ScriptNotify** durant l’appel de window.external.notify, vous devez inclure l’URI de la page dans la section **ApplicationContentUriRules** du manifeste de l’application. (Vous pouvez faire cela dans Microsoft Visual Studio sur l’onglet de l’URI de contenu du concepteur Package.appxmanifest.) Les URI dans cette liste doit utiliser le protocole HTTPS et peut contenir des caractères génériques de sous-domaine (par exemple, `https://*.microsoft.com`), mais ils ne peut pas contenir des caractères génériques de domaine (par exemple, `https://*.com` et `https://*.*`). La configuration requise pour le manifeste ne s’applique pas au contenu qui provient du package d’application, qui utilise un URI ms-local-stream:// ou qui est chargé à l’aide de [NavigateToString](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.navigatetostring). 
+Pour permettre à une page Web externe de déclencher l’événement **ScriptNotify** durant l’appel de window.external.notify, vous devez inclure l’URI de la page dans la section **ApplicationContentUriRules** du manifeste de l’application. (Vous pouvez effectuer cette opération dans Microsoft Visual Studio, sous l’onglet URI de contenu du concepteur Package.appxmanifest.) Les URI dans cette liste doivent utiliser le protocole HTTPS et peuvent contenir des caractères génériques de sous-domaine (par exemple, `https://*.microsoft.com`), mais ils ne peuvent pas contenir de caractères génériques de domaine (par exemple, `https://*.com` et `https://*.*`). La configuration requise pour le manifeste ne s’applique pas au contenu qui provient du package d’application, qui utilise un URI ms-local-stream:// ou qui est chargé à l’aide de [NavigateToString](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.navigatetostring). 
 
 ### <a name="accessing-the-windows-runtime-in-a-web-view"></a>Accès au composant Windows Runtime d’un affichage web
 
@@ -308,7 +308,7 @@ Pour obtenir une image d’aperçu du contenu actuel de l’affichage web, utili
 
 Par défaut, le contenu de l’affichage web est hébergé sur le thread d’interface utilisateur sur les appareils de bureau et en dehors de celui-ci sur tous les autres appareils. Vous pouvez utiliser la propriété statique [WebView.DefaultExecutionMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.defaultexecutionmode) pour obtenir le comportement de threading par défaut du client actuel. Si nécessaire, vous pouvez utiliser le constructeur [WebView(WebViewExecutionMode)](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.) pour remplacer ce comportement. 
 
-> **Remarque**&nbsp;&nbsp; Des problèmes de performances peuvent se présenter lorsque du contenu est hébergé sur le thread d’interface utilisateur sur des appareils mobiles. Par conséquent, veillez à effectuer des tests sur tous les appareils cibles en cas de changement de la propriété DefaultExecutionMode.
+> **Remarque**&nbsp;&nbsp;Des problèmes de performances peuvent se présenter quand du contenu est hébergé sur le thread d’interface utilisateur sur des appareils mobiles. Ainsi, veillez à effectuer des tests sur tous les appareils cibles en cas de changement de la propriété DefaultExecutionMode.
 
 Un affichage web qui héberge le contenu en dehors du thread d’interface utilisateur n’est pas compatible avec les contrôles parents qui nécessitent la propagation de mouvements entre le contrôle d’affichage web et le parent, tels que [FlipView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView), [ScrollViewer](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) et les autres contrôles associés. Ces contrôles ne sont pas en mesure de recevoir des mouvements effectués dans l’affichage web hors thread. En outre, l’impression de contenu web hors thread n’est pas directement prise en charge : vous devez imprimer un élément avec le remplissage [WebViewBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebViewBrush) à la place.
 

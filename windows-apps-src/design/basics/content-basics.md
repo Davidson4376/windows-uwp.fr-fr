@@ -1,5 +1,5 @@
 ---
-Description: Vue d’ensemble de modèles de page courants et les éléments d’interface utilisateur pour afficher le contenu dans votre application UWP.
+Description: Vue d’ensemble des éléments d’interface utilisateur et modèles de page courants pour afficher le contenu dans votre application UWP.
 title: Informations de base relatives à la conception de contenu pour les applications de plateforme Windows universelle (UWP)
 ms.assetid: 3102530A-E0D1-4C55-AEFF-99443D39D567
 label: Content design basics
@@ -10,27 +10,27 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e5b46223ea7dfa5e43b5a50a04a4c3f31307d49
-ms.sourcegitcommit: c10d7843ccacb8529cb1f53948ee0077298a886d
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58913959"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63796328"
 ---
 # <a name="content-design-basics-for-uwp-apps"></a>Informations de base relatives à la conception de contenu pour les applications UWP
 
-Une application a principalement pour objet d’offrir un accès à un contenu. Dans la mesure où les applications répondent à des buts différents, leur contenu se présente sous de nombreuses formes : dans une application de retouche photo, la photo est le contenu ; dans une application de voyage, les cartes et les informations sur les destinations sont le contenu ; et ainsi de suite. 
+Une application a principalement pour objet d’offrir un accès à un contenu. Dans la mesure où les applications répondent à des buts différents, leur contenu se présente sous de nombreuses formes : dans une application de retouche photo, la photo est le contenu ; dans une application de voyage, les cartes et les informations sur les destinations sont le contenu, et ainsi de suite. 
 
 Cet article fournit une vue d’ensemble de la présentation de contenu dans votre application. Nous y décrivons les éléments d’interface utilisateur et les modèles de page courants que vous pouvez utiliser pour afficher le contenu, quelle qu’en soit la forme.
 
 ## <a name="common-page-patterns"></a>Modèles de page courants
 
-De nombreuses applications utilisent tout ou partie de ces modèles de page pour afficher différents types de contenu. De même, n’hésitez pas à combiner ces modèles pour optimiser le contenu de votre application.
+De nombreuses applications utilisent l’ensemble ou une partie de ces modèles de page pour afficher différents types de contenu. De même, n’hésitez pas à combiner ces modèles pour optimiser le contenu de votre application.
 
 ### <a name="landing"></a>Accueil
 
 ![page d’accueil](images/content-basics/hero-screen.png)
 
-Les pages d’accueil, également connues sous le nom d’écrans bannière, apparaissent souvent au niveau supérieur d’une expérience applicative. La grande surface sert à exposer les applications, et plus particulièrement à mettre en avant le contenu que les utilisateurs peuvent vouloir parcourir et utiliser.
+Les pages d’accueil, également connues sous le nom d’écrans bannière, apparaissent souvent au niveau supérieur d’une expérience d’application. La grande surface sert à exposer les applications, et plus particulièrement à mettre en avant le contenu que les utilisateurs peuvent vouloir parcourir et utiliser.
 
 ### <a name="collections"></a>Collections
 
@@ -39,7 +39,7 @@ Les pages d’accueil, également connues sous le nom d’écrans bannière, app
 Les collections permettent aux utilisateurs de parcourir les groupes de contenu ou de données. L’[affichage Grille](../controls-and-patterns/item-templates-gridview.md) est idéal pour les photos ou les contenus centrés sur les médias ; le [mode Liste](../controls-and-patterns/item-templates-listview.md) est, quant à lui, plus particulièrement destiné aux données ou aux contenus riches en texte.
 
 
-### <a name="masterdetail"></a>Maître/Détail
+### <a name="masterdetail"></a>Maître/détail
 
 ![maître et détails](images/content-basics/master-detail.png)
 
@@ -56,11 +56,11 @@ Pour tenir compte des changements de taille de l’écran, pensez également à 
 ### <a name="forms"></a>Formulaires
 ![formulaire](images/content-basics/forms.png)
 
-Un [formulaire](../controls-and-patterns/forms.md) est un groupe de commandes qui collectent et envoient les données des utilisateurs. La plupart des applications, voire toutes, utilisent un formulaire pour les pages de paramètres, les portails de connexion, les hubs de commentaires, la création de compte, etc. 
+Un [formulaire](../controls-and-patterns/forms.md) est un groupe de contrôles qui collectent des données auprès de l’utilisateur et les envoient. La plupart des applications, voire toutes, utilisent un formulaire pour les pages de paramètres, les portails de connexion, les hubs de commentaires, la création de compte, etc. 
 
 ## <a name="common-content-elements"></a>Éléments de contenu couramment utilisés
 
-Pour créer ces modèles de page, vous devez utiliser une combinaison d’éléments de contenu. Voici quelques éléments d’interface utilisateur couramment utilisés pour afficher du contenu. (Pour en obtenir la liste complète, voir [Contrôles et modèles](../controls-and-patterns/index.md).
+Pour créer ces modèles de page, vous devez utiliser une combinaison d’éléments de contenu. Voici quelques éléments d’interface utilisateur couramment utilisés pour afficher du contenu. (Pour en obtenir la liste complète, consultez [Contrôles et modèles](../controls-and-patterns/index.md).
 
 <div class="mx-responsive-img">
 <table>
@@ -92,7 +92,7 @@ Pour créer ces modèles de page, vous devez utiliser une combinaison d’élém
 <tr class="odd">
 <td align="left">Collections <br/><br/>
     <img src="images/content-basics/listview.png" alt="list view" /></td>
-<td align="left"><a href="../controls-and-patterns/lists.md">Affichage Liste et affichage Grille</a></td>
+<td align="left"><a href="../controls-and-patterns/lists.md">Mode Liste et affichage Grille</a></td>
 <td align="left">Présente les éléments dans une liste interactive ou une grille. Utilisez ces éléments pour permettre aux utilisateurs de sélectionner un film parmi une liste de nouveautés ou de gérer un inventaire.</td>
 </tr>
 <tr class="even">
@@ -100,8 +100,8 @@ Pour créer ces modèles de page, vous devez utiliser une combinaison d’élém
     <img src="images/content-basics/textbox.png" alt="text box" /></td>
 <td align="left"><p><a href="../controls-and-patterns/text-block.md">Bloc de texte</a>, <a href="../controls-and-patterns/text-box.md">zone de texte</a>, <a href="../controls-and-patterns/rich-edit-box.md">zone d’édition enrichie</a></p>
 </td>
-<td align="left">Affiche le texte. Certains éléments permettent à l’utilisateur de modifier du texte. Pour plus d’informations, voir <a href="../controls-and-patterns/text-controls.md">Contrôles de texte</a>.
-<p>Pour savoir comment afficher du texte, voir <a href="../style/typography.md">Typographie</a>.</p>
+<td align="left">Affiche le texte. Certains éléments permettent à l’utilisateur de modifier du texte. Pour plus d’informations, consultez <a href="../controls-and-patterns/text-controls.md">Contrôles de texte</a>.
+<p>Pour savoir comment afficher du texte, consultez <a href="../style/typography.md">Typographie</a>.</p>
 </td>
 </tr>
 <tr class="odd">

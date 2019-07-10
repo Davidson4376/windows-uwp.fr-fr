@@ -1,59 +1,59 @@
 ---
 ms.openlocfilehash: f8e74688d0f7048276b12680237b85663d7e2b81
-ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/24/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66214734"
 ---
 # <a name="contributing-to-uwp-conceptual-documentation"></a>Contribution à la documentation conceptuelle UWP
 
 Nous vous remercions de l’intérêt que vous portez à la documentation de la plateforme Windows universelle (UWP). Les commentaires, modifications et ajouts que vous apportez à notre documentation nous sont précieux.
 
-## <a name="writing-content"></a>Écrire du contenu
+## <a name="writing-content"></a>Écriture de contenu
 
-Notre documentation est écrit dans un fichier Markdown, une syntaxe de style de texte léger. Si vous n’êtes pas familiarisé avec Markdown, vous pouvez [apprendre les notions de base sur GitHub](https://guides.github.com/features/mastering-markdown/). Lors de doute, vous pouvez toujours copier le style de mise en forme à partir d’autres pages dans notre documentation.
+Notre documentation est écrite dans Markdown, une syntaxe de style de texte légère. Si vous n’êtes pas familiarisé avec Markdown, vous pouvez [apprendre les notions de base sur GitHub](https://guides.github.com/features/mastering-markdown/). En cas doute, vous pouvez toujours copier le style de mise en forme à partir d’autres pages de notre documentation.
 
-## <a name="public-contributions"></a>Vos contributions publiques
+## <a name="public-contributions"></a>Contributions publiques
 
-Si vous êtes **pas** un employé de Microsoft, vous pouvez contribuer à la [référentiel de contenu public](https://github.com/MicrosoftDocs/windows-uwp). Vos contributions publiques sont appropriées pour les modifications et les éclaircissements à des pages existantes.
+Si vous ne travaillez **pas** pour Microsoft, vous pouvez quand même apporter vos contributions via le [référentiel de contenu public](https://github.com/MicrosoftDocs/windows-uwp). Vos contributions publiques permettent d’apporter des modifications et des éclaircissements aux pages existantes.
 
 ### <a name="editing-a-file"></a>Modification d’un fichier
 
-Si vous êtes déjà dans le référentiel de contenu public, commencez par naviguer vers le fichier que vous souhaitez modifier. À partir de là, sélectionnez l’icône de crayon ci-dessus le contenu affiché pour commencer à modifier.
+Si vous êtes déjà dans le référentiel de contenu public, commencez par naviguer vers le fichier que vous souhaitez modifier. De là, sélectionnez l’icône de crayon au-dessus du contenu affiché pour commencer à modifier le fichier.
 
-Si vous affichez une page dans docs.microsoft.com, vous pouvez également sélectionner le **modifier** bouton sur la partie supérieure droite de la page. Cela vous redirige vers le fichier de code source associé dans le référentiel.
+Sinon, si vous êtes en train de consulter une page sur le site docs.microsoft.com dans votre navigateur, cliquez sur le bouton **Modifier** dans la partie supérieure de la page. Cette option vous redirige vers le fichier source associé dans le référentiel.
 
-Lorsque vous commencez la modification, GitHub réplique automatiquement le dépôt officiel dans votre compte GitHub personnel, où vous pouvez apporter vos modifications. Lorsque vous avez terminé, envoyez une demande de tirage à la **docs** branche.
+Lorsque vous commencez à modifier un fichier, GitHub réplique automatiquement le référentiel officiel dans votre compte GitHub personnel, où vous pouvez effectuer vos modifications. Lorsque vous avez terminé, soumettez une requête de tirage à la branche **docs**.
 
 ### <a name="pull-requests"></a>Requêtes de tirage
 
-Après avoir envoyé votre demande de tirage, elle est évaluée par rapport à une liste de contrôle qualité du contenu pour vous assurer qu’il répond à nos normes de base. Si elle réussit, elle est affectée à un membre de l’équipe de documentation UWP pour examiner les étapes antérieures. En cas d’échec, vous êtes averti les modifications à apporter.
+Après avoir soumis votre requête de tirage, celle-ci est évaluée par rapport à une liste de contrôle qualité du contenu pour s’assurer qu’elle répond à nos normes de base. Si la requête est satisfaisante, elle est affectée à un membre de l’équipe de documentation UWP en vue d’une vérification ultérieure. Sinon, vous êtes averti des modifications à apporter.
 
-Les ou les réviseurs attribués peuvent approuver ou rejeter la demande de tirage ou travailler avec vous pour apporter des modifications.
+Les réviseurs assignés peuvent approuver ou rejeter la requête de tirage ou collaborer avec vous pour apporter d’autres modifications.
 
 ## <a name="internal-contributions"></a>Contributions internes
 
-Si vous êtes un employé de Microsoft, vous pouvez contribuer à la [référentiel de contenu privé](https://github.com/microsoftdocs/windows-uwp-pr). Vous trouverez des conseils sur l’utilisation de ce référentiel dans le [Guide de création Windows](https://review.docs.microsoft.com/windows-authoring-guide/uwp/?branch=master). Documentation sur les fonctionnalités à venir doit être fournie via le référentiel privé uniquement.
+Si vous ne travaillez pour Microsoft, vous pouvez apporter vos contributions via le [référentiel de contenu public](https://github.com/microsoftdocs/windows-uwp-pr). Vous trouverez des conseils sur l’utilisation de ce référentiel dans le [Guide de création Windows](https://review.docs.microsoft.com/windows-authoring-guide/uwp/?branch=master). La documentation sur les fonctionnalités à venir doit être fournie via le référentiel privé uniquement.
 
 ### <a name="editing-a-file"></a>Modification d’un fichier
 
-Comme dans le référentiel public, vous pouvez modifier petite vers le dépôt privé dans votre navigateur, sans avoir à créer un clone local. Vous **doit** vous assurer que vous contribuez sur la branche correcte. Pour plus d’informations sur la création de branche de votre personnel, consultez [les instructions fournies dans le Guide de création Windows](https://review.docs.microsoft.com/windows-authoring-guide/uwp/conceptual/branches?branch=master).
+Comme dans le référentiel public, vous pouvez apporter de petites modifications au référentiel privé dans votre navigateur, sans avoir à créer un clone local. Vous **devez** vous assurer que vos contributions sont publiées dans la bonne branche. Pour plus d’informations sur la création d’une branche personnelle, consultez [les instructions du Guide de création Windows](https://review.docs.microsoft.com/windows-authoring-guide/uwp/conceptual/branches?branch=master).
 
-### <a name="making-substantial-changes"></a>Apportez des modifications substantielles
+### <a name="making-substantial-changes"></a>Apport de modifications substantielles
 
-Pour apporter des modifications plus importantes à un article existant, ajouter ou modifier les images, ou contribuer un nouvel article, créez un clone local du référentiel de contenu privé. Pour plus d’informations, suivez [les instructions fournies dans le Guide de création Windows](https://review.docs.microsoft.com/windows-authoring-guide/uwp/conceptual/).
+Pour apporter d’importantes modifications à un article existant, ajouter ou modifier des images, ou contribuer à un nouvel article, créez un clone local du référentiel de contenu privé. Pour plus d’informations, suivez les [instructions du Guide de création Windows](https://review.docs.microsoft.com/windows-authoring-guide/uwp/conceptual/).
 
 ### <a name="pull-requests"></a>Requêtes de tirage
 
-Lorsque vous créez une demande de tirage dans le dépôt interne, assurez-vous que vous fusionnez votre branche de personnel dans la branche, de qu'il a été créé à partir.
+Lorsque vous créez une requête de tirage dans le référentiel interne, assurez-vous de fusionner votre branche personnelle dans la branche à partir de laquelle elle a été créée.
 
-Après avoir envoyé votre demande de tirage, elle est évaluée par rapport à un [liste de contrôle de qualité du contenu](https://review.docs.microsoft.com/windows-authoring-guide/managing-contributions/editorial-checklist?branch=master) pour vous assurer qu’il répond à nos normes de base. Si elle réussit, elle est affectée à un membre de l’équipe de documentation UWP pour examiner les étapes antérieures. En cas d’échec, vous êtes averti les modifications à apporter.
+Après avoir soumis votre requête de tirage, celle-ci est évaluée par rapport à une [liste de contrôle qualité du contenu](https://review.docs.microsoft.com/windows-authoring-guide/managing-contributions/editorial-checklist?branch=master) pour s’assurer qu’elle répond à nos normes de base. Si la requête est satisfaisante, elle est affectée à un membre de l’équipe de documentation UWP en vue d’une vérification ultérieure. Sinon, vous êtes averti des modifications à apporter.
 
-Les ou les réviseurs attribués peuvent approuver ou rejeter la demande de tirage ou travailler avec vous pour apporter des modifications. Réviseurs fusionnera pas la demande de tirage jusqu'à ce que vous avez approuvé vous-même.
+Les réviseurs assignés peuvent approuver ou rejeter la requête de tirage ou collaborer avec vous pour apporter d’autres modifications. Les réviseurs ne fusionneront pas la requête de tirage tant que vous ne l’avez pas approuvée vous-même.
 
 ## <a name="using-issues-to-provide-feedback-on-uwp-conceptual-documentation"></a>Envoi de commentaires sur la documentation conceptuelle UWP en soumettant des problèmes
 
-Si vous souhaitez fournir des commentaires sur la documentation à la place de fabrication modifie vous-même, vous pouvez [créer un problème dans le référentiel public](https://github.com/MicrosoftDocs/windows-uwp/issues). Sélectionnez le **problèmes** onglet et sélectionnez le **nouveau problème** bouton. Veillez à inclure le titre de l’article et l’URL de la page. Votre problème est assigné aux membres de l’équipe de documentation UWP pour révision.
+Si vous souhaitez fournir des commentaires sur la documentation au lieu d’apporter vous-même des modifications, vous pouvez [créer un problème dans le référentiel public](https://github.com/MicrosoftDocs/windows-uwp/issues). Cliquez sur l’onglet **Issues** (Problèmes), puis sur le bouton **New issue** (Nouveau problème). Veillez à inclure le titre de la rubrique et l’URL de la page. Votre problème est assigné aux membres de l’équipe de documentation UWP, qui l’examineront.
 
-* Pour connaître les problèmes internes, utilisez la [outil de requête contenu WDG](https://aka.ms/pubrequest).
+* Dans le cas des problèmes internes, utilisez l’[outil de demande de contenu WDG](https://aka.ms/pubrequest).

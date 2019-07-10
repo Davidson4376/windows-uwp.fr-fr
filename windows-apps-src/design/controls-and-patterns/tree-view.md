@@ -1,5 +1,5 @@
 ---
-description: Vous pouvez créer une arborescence en liant l’ItemsSource à une source de données hiérarchique, ou vous pouvez créer et gérer des objets de TreeViewNode vous-même.
+description: Vous pouvez créer une arborescence extensible en liant l’ItemsSource à une source de données hiérarchique, ou vous pouvez créer et gérer des objets TreeViewNode vous-même.
 title: Arborescence
 label: Tree view
 template: detail.hbs
@@ -15,32 +15,32 @@ dev_langs:
 - vb
 ms.custom: RS5, 19H1
 ms.openlocfilehash: d9f0396558186008430ccf1454e48f5e2194ee0e
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66364000"
 ---
 # <a name="treeview"></a>TreeView
 
-Le contrôle XAML TreeView active une liste hiérarchique comportant des nœuds de développement et de réduction qui contiennent des éléments imbriqués. Il peut être utilisé pour illustrer une structure de dossiers ou des relations imbriquées dans votre interface utilisateur.
+Le contrôle XAML TreeView active une liste hiérarchique comportant des nœuds de développement et de réduction qui contiennent des éléments imbriqués. Vous pouvez l’utiliser pour illustrer une structure de dossiers ou des relations imbriquées dans votre IU.
 
 Les API TreeView prennent en charge les fonctionnalités suivantes :
 
 - Imbrication de niveau N
 - Sélection d’un ou plusieurs nœuds
-- Liaison de données à la propriété ItemsSource TreeView et TreeViewItem
-- TreeViewItem comme la racine du modèle d’élément TreeView
-- Types arbitraires du contenu dans un TreeViewItem
-- Glisser -déplacer entre les vues de l’arborescence
+- Liaison de données à la propriété ItemsSource sur TreeView et TreeViewItem
+- TreeViewItem comme racine du modèle d’élément TreeView
+- Types arbitraires de contenu dans un TreeViewItem
+- Glisser-déplacer entre des arborescences
 
 | **Obtenir la bibliothèque d’interface utilisateur Windows** |
 | - |
-| Ce contrôle est inclus dans le cadre de la bibliothèque d’interface utilisateur de Windows, un package NuGet qui contient les nouveaux contrôles et fonctionnalités de l’interface utilisateur pour les applications UWP. Pour plus d’informations, y compris les instructions d’installation, consultez le [vue d’ensemble de la bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| Ce contrôle est inclus dans la bibliothèque d’interface utilisateur Windows, package NuGet qui contient les nouveaux contrôles et fonctionnalités d’interface utilisateur pour les applications UWP. Pour plus d’informations, notamment des instructions d’installation, consultez [Vue d’ensemble de la bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/). |
 
-| **API de plateforme** | **API de bibliothèque de l’interface utilisateur de Windows** |
+| **API de plateforme** | **API de la bibliothèque d’interface utilisateur Windows** |
 | - | - |
-| [Classe TreeView](/uwp/api/windows.ui.xaml.controls.treeview), [TreeViewNode classe](/uwp/api/windows.ui.xaml.controls.treeviewnode), [TreeView.ItemsSource propriété](/uwp/api/windows.ui.xaml.controls.treeview.itemssource) | [Classe TreeView](/uwp/api/microsoft.ui.xaml.controls.treeview), [TreeViewNode classe](/uwp/api/microsoft.ui.xaml.controls.treeviewnode), [TreeView.ItemsSource propriété](/uwp/api/microsoft.ui.xaml.controls.treeview.itemssource) |
+| [Classe TreeView](/uwp/api/windows.ui.xaml.controls.treeview), [classe TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode), [propriété TreeView.ItemsSource](/uwp/api/windows.ui.xaml.controls.treeview.itemssource) | [Classe TreeView](/uwp/api/microsoft.ui.xaml.controls.treeview), [classe TreeViewNode](/uwp/api/microsoft.ui.xaml.controls.treeviewnode), [propriété TreeView.ItemsSource](/uwp/api/microsoft.ui.xaml.controls.treeview.itemssource) |
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
@@ -55,7 +55,7 @@ Les API TreeView prennent en charge les fonctionnalités suivantes :
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>Si vous avez le <strong style="font-weight: semi-bold">galerie de contrôles XAML</strong> application installée, cliquez ici pour <a href="xamlcontrolsgallery:/item/TreeView">ouvrez l’application et voir l’arborescence en action</a>.</p>
+    <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/TreeView">ouvrir l’application et voir l’objet TreeView en action</a>.</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
@@ -66,28 +66,28 @@ Les API TreeView prennent en charge les fonctionnalités suivantes :
 
 ## <a name="treeview-ui"></a>Interface utilisateur TreeView
 
-La vue d’arborescence utilise une combinaison de mise en retrait et des icônes pour représenter la relation imbriquée entre les nœuds parents et nœuds enfants. Les nœuds réduits utilisent un chevron pointant vers la droite, et les nœuds développés un chevron pointant vers le bas.
+L’arborescence utilise une combinaison de retraits et d’icônes pour représenter la relation imbriquée existant entre les nœuds parents et les nœuds enfants. Les nœuds réduits utilisent un chevron pointant vers la droite, et les nœuds développés un chevron pointant vers le bas.
 
-![L'icône de chevron dans TreeView](images/treeview-simple.png)
+![Icône de chevron dans TreeView](images/treeview-simple.png)
 
-Vous pouvez inclure une icône dans le modèle de données d'élément de l'arborescence pour représenter les nœuds. Par exemple, si vous affichez une hiérarchie de système de fichiers, vous pouvez utiliser les icônes de dossier pour les notes de parent et les icônes de fichier pour les nœuds terminaux.
+Vous pouvez inclure une icône dans le modèle de données d’élément de l’arborescence pour représenter les nœuds. Par exemple, si vous affichez une hiérarchie de système de fichiers, vous pouvez utiliser des icônes de dossier pour les nœuds parents et des icônes de fichier pour les nœuds terminaux.
 
-![Les icônes Chevron et Dossier dans un TreeView](images/treeview-icons.png)
+![Icônes de chevron et dossier dans un TreeView](images/treeview-icons.png)
 
 ## <a name="create-a-tree-view"></a>Créer une arborescence
 
-Vous pouvez créer une arborescence en liant la [ItemsSource](/uwp/api/windows.ui.xaml.controls.treeview.itemssource) à des données hiérarchiques source, ou vous pouvez créer et gérer des objets de TreeViewNode vous-même.
+Vous pouvez créer une arborescence en liant l’[ItemsSource](/uwp/api/windows.ui.xaml.controls.treeview.itemssource) à une source de données hiérarchique, ou vous pouvez créer et gérer des objets TreeViewNode vous-même.
 
-Pour créer une arborescence, vous utilisez un contrôle [TreeView](/uwp/api/windows.ui.xaml.controls.treeview) et une hiérarchie d'objets [TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode). Vous créez la hiérarchie de nœud en ajoutant un ou plusieurs nœuds racine pour le contrôle TreeView [RootNodes](/uwp/api/windows.ui.xaml.controls.treeview.rootnodes) collection. Chaque TreeViewNode peut alors disposer de plus de nœuds ajoutés à la collection Children. Vous pouvez imbriquer des nœuds de l’arborescence à la profondeur que vous souhaitez.
+Pour créer une arborescence, vous utilisez un contrôle [TreeView](/uwp/api/windows.ui.xaml.controls.treeview) et une hiérarchie d’objets [TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode). Vous créez la hiérarchie des nœuds en ajoutant un ou plusieurs nœuds racine à la collection de [RootNodes](/uwp/api/windows.ui.xaml.controls.treeview.rootnodes) du contrôle TreeView. Chaque TreeViewNode peut alors disposer de plus de nœuds ajoutés à la collection Children. Vous pouvez imbriquer des nœuds de l’arborescence à la profondeur que vous souhaitez.
 
-Vous pouvez lier une source de données hiérarchiques pour la [ItemsSource](/uwp/api/windows.ui.xaml.controls.treeview.itemssource) propriété afin de fournir le contenu de la vue arborescence, comme vous le feriez avec les ItemsSource du ListView. De même, utilisez [ItemTemplate](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate) (et la propriété facultative [ItemTemplateSelector](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate)) pour fournir un DataTemplate qui restitue l’élément.
+Vous pouvez lier une source de données hiérarchique à la propriété [ItemsSource](/uwp/api/windows.ui.xaml.controls.treeview.itemssource) afin de fournir le contenu de l’arborescence, comme vous le feriez avec l’ItemsSource de ListView. De même, utilisez [ItemTemplate](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate) (et l’[ItemTemplateSelector](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate) facultatif) pour fournir un DataTemplate qui affiche l’élément.
 
 > [!IMPORTANT]
-> ItemsSource et ses API associé nécessitent Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) ou version ultérieure, ou le [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
+> ItemsSource et ses API associées nécessitent Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) ou ultérieure, ou la [bibliothèque d’interface utilisateur Windows](https://docs.microsoft.com/uwp/toolkits/winui/).
 >
-> ItemsSource est un autre mécanisme pour TreeView.RootNodes pour le placement du contenu dans le contrôle TreeView. Vous ne pouvez pas définir ItemsSource et rootnodes sont en même temps. Lorsque vous utilisez ItemsSource, les nœuds sont créés pour vous, et vous pouvez y accéder à partir de la propriété de TreeView.RootNodes.
+> ItemsSource est un autre mécanisme pour TreeView.RootNodes permettant de placer le contenu dans le contrôle TreeView. Vous ne pouvez pas définir ItemsSource et RootNodes en même temps. Quand vous utilisez ItemsSource, les nœuds sont créés pour vous, et vous pouvez y accéder à partir de la propriété TreeView.RootNodes.
 
-Voici un exemple d'arborescence simple déclarée en XAML. Vous ajoutez généralement les nœuds dans le code, mais nous affichons ici la hiérarchie XAML, parce qu'il peut être utile de visualiser la façon dont la hiérarchie de nœuds est créée.
+Voici un exemple d’arborescence simple déclarée en XAML. Vous ajoutez généralement les nœuds dans le code, mais nous affichons ici la hiérarchie XAML, parce qu’il peut être utile de visualiser la façon dont la hiérarchie de nœuds est créée.
 
 ```xaml
 <TreeView>
@@ -103,11 +103,11 @@ Voici un exemple d'arborescence simple déclarée en XAML. Vous ajoutez généra
 </TreeView>
 ```
 
-Dans la plupart des cas, votre arborescence affichant les données à partir d’une source de données, vous en général de déclarez la racine du contrôle TreeView dans XAML, mais ajoutez les objets TreeViewNode dans le code ou à l’aide de la liaison de données.
+Dans la plupart des cas, votre arborescence présente les données à partir d’une source de données. Donc, en général, vous déclarez le contrôle racine TreeView en XAML, mais ajoutez les objets TreeViewNode dans le code ou à l’aide de la liaison de données.
 
-### <a name="bind-to-a-hierarchical-data-source"></a>Lier à une source de données hiérarchiques
+### <a name="bind-to-a-hierarchical-data-source"></a>Lier à une source de données hiérarchique
 
-Pour créer une arborescence à l’aide de la liaison de données, la valeur est une collection hiérarchique la propriété TreeView.ItemsSource. Puis dans le modèle ItemTemplate, définissez l’enfant collection d’éléments à la propriété TreeViewItem.ItemsSource.
+Pour créer une arborescence à l’aide de la liaison de données, définissez une collection hiérarchique sur la propriété TreeView.ItemsSource. Ensuite, dans le modèle ItemTemplate, définissez la collection d’éléments enfants sur la propriété TreeViewItem.ItemsSource.
 
 ```xaml
 <TreeView ItemsSource="{x:Bind DataSource}">
@@ -120,25 +120,25 @@ Pour créer une arborescence à l’aide de la liaison de données, la valeur es
 </TreeView>
 ```
 
-Consultez _arborescence à l’aide de la liaison de données_ la section exemples pour l’intégralité du code.
+Pour obtenir le code complet, consultez _Arborescence utilisant la liaison de données_ dans la section Exemples.
 
-#### <a name="items-and-item-containers"></a>Éléments et les conteneurs d’éléments
+#### <a name="items-and-item-containers"></a>Éléments et conteneurs d’éléments
 
-Si vous utilisez TreeView.ItemsSource, ces API sont disponibles pour obtenir de l’élément de nœud ou des données à partir du conteneur et vice versa.
+Si vous utilisez TreeView.ItemsSource, ces API permettent d’obtenir l’élément de données ou le nœud à partir du conteneur et vice versa.
 
 | **[TreeViewItem](/uwp/api/windows.ui.xaml.controls.treeviewitem)** | |
 | - | - |
-| [TreeView.ItemFromContainer](/uwp/api/windows.ui.xaml.controls.treeview.itemfromcontainer) | Obtient l’élément de données pour le conteneur de TreeViewItem spécifié. |
-| [TreeView.ContainerFromItem](/uwp/api/windows.ui.xaml.controls.treeview.containerfromitem) | Obtient le conteneur de TreeViewItem pour l’élément de données spécifié. |
+| [TreeView.ItemFromContainer](/uwp/api/windows.ui.xaml.controls.treeview.itemfromcontainer) | Obtient l’élément de données pour le conteneur TreeViewItem spécifié. |
+| [TreeView.ContainerFromItem](/uwp/api/windows.ui.xaml.controls.treeview.containerfromitem) | Obtient le conteneur TreeViewItem pour l’élément de données spécifié. |
 
 | **[TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode)** | |
 | - | - |
-| [TreeView.NodeFromContainer](/uwp/api/windows.ui.xaml.controls.treeview.nodefromcontainer) | Obtient le TreeViewNode pour le conteneur de TreeViewItem spécifié. |
-| [TreeView.ContainerFromNode](/uwp/api/windows.ui.xaml.controls.treeview.containerfromnode) | Obtient le conteneur de TreeViewItem pour le TreeViewNode spécifié. |
+| [TreeView.NodeFromContainer](/uwp/api/windows.ui.xaml.controls.treeview.nodefromcontainer) | Obtient le TreeViewNode pour le conteneur TreeViewItem spécifié. |
+| [TreeView.ContainerFromNode](/uwp/api/windows.ui.xaml.controls.treeview.containerfromnode) | Obtient le conteneur TreeViewItem pour le TreeViewNode spécifié. |
 
 ### <a name="manage-tree-view-nodes"></a>Gérer les nœuds de l’arborescence
 
-Cette arborescence est identique à celle créée précédemment en XAML, mais les nœuds sont créés dans le code à la place.
+Cette arborescence est identique à celle créée en XAML, mais les nœuds sont créés dans le code à la place.
 
 ```xaml
 <TreeView x:Name="sampleTreeView"/>
@@ -179,17 +179,17 @@ Ces API sont disponibles pour la gestion de la hiérarchie de données de votre 
 | - | - |
 | [Children](/uwp/api/windows.ui.xaml.controls.treeviewnode.children) | Ajoutez des objets TreeViewNode à la collection Children d’un nœud parent pour créer votre hiérarchie de nœuds. Un nœud est le **Parent** de tous les nœuds de sa collection **Children**. |
 | [HasChildren](/uwp/api/windows.ui.xaml.controls.treeviewnode.haschildren) | **true** si le nœud a réalisé des enfants. **false** indique un dossier ou un élément vide. |
-| [HasUnrealizedChildren](/uwp/api/windows.ui.xaml.controls.treeviewnode.hasunrealizedchildren) | Utilisez cette propriété si vous remplissez des nœuds lorsqu'ils sont développés. Voir _Remplir un nœud lorsqu’il est développé_ plus loin dans cet article. |
-| [profondeur](/uwp/api/windows.ui.xaml.controls.treeviewnode.depth) | Indique la distance entre le nœud racine et un nœud enfant. |
+| [HasUnrealizedChildren](/uwp/api/windows.ui.xaml.controls.treeviewnode.hasunrealizedchildren) | Utilisez cette propriété si vous remplissez des nœuds quand ils sont développés. Consultez _Remplir un nœud quand il est développé_ plus loin dans cet article. |
+| [Depth](/uwp/api/windows.ui.xaml.controls.treeviewnode.depth) | Indique la distance entre le nœud racine et un nœud enfant. |
 | [Parent](/uwp/api/windows.ui.xaml.controls.treeviewnode.parent) | Obtient le TreeViewNode qui possède la collection **Children** dont ce nœud fait partie. |
 
-L'arborescence utilise les propriétés **HasChildren** et **HasUnrealizedChildren** pour déterminer si l’icône développer/réduire s'affiche. Si l'une de ces propriétés est **true**, l’icône s’affiche ; autrement, elle ne s'affiche pas.
+L’arborescence utilise les propriétés **HasChildren** et **HasUnrealizedChildren** pour déterminer si l’icône développer/réduire s’affiche. Si l’une de ces propriétés est **true**, l’icône s’affiche ; autrement, elle ne s’affiche pas.
 
-## <a name="tree-view-node-content"></a>Contenu d’un nœud d'arborescence
+## <a name="tree-view-node-content"></a>Contenu d’un nœud d’arborescence
 
-Vous pouvez stocker l’élément de données qu'un nœud d’arborescence représente dans sa propriété [Content](/uwp/api/windows.ui.xaml.controls.treeviewnode.content).
+Vous pouvez stocker l’élément de données qu’un nœud d’arborescence représente dans sa propriété [Content](/uwp/api/windows.ui.xaml.controls.treeviewnode.content).
 
-Dans les exemples précédents, le contenu a une valeur de chaîne simple. Ici, un nœud d’arborescence représente le dossier Images de l’utilisateur, de sorte que la bibliothèque d’images [StorageFolder](/uwp/api/windows.storage.storagefolder) est attribuée à la propriété Content du nœud.
+Dans les exemples précédents, le contenu a une valeur de chaîne simple. Ici, un nœud d’arborescence représente le dossier Images de l’utilisateur, de sorte que la bibliothèque d’images [StorageFolder](/uwp/api/windows.storage.storagefolder) est affectée à la propriété Content du nœud.
 
 ```csharp
 StorageFolder picturesFolder = KnownFolders.PicturesLibrary;
@@ -202,20 +202,20 @@ Dim picturesFolder As StorageFolder = KnownFolders.PicturesLibrary
 Dim pictureNode As New TreeViewNode With {.Content = picturesFolder}
 ```
 
-Vous pouvez fournir un [DataTemplate](/uwp/api/windows.ui.xaml.datatemplate) pour spécifier comment l'élément de données s'affiche dans l'arborescence.
+Vous pouvez fournir un [DataTemplate](/uwp/api/windows.ui.xaml.datatemplate) pour spécifier comment l’élément de données s’affiche dans l’arborescence.
 
 > [!NOTE]
-> Dans Windows 10, version 1803, vous devez redéfinir le modèle du contrôle TreeView et spécifier un ItemTemplate personnalisé si votre contenu n’est pas une chaîne. Pour plus d’informations, voir l’exemple complet à la fin de cet article. Dans les versions ultérieures, vous devez définir le [TreeView.ItemTemplate](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate) propriété.
+> Dans Windows 10, version 1803, vous devez redéfinir le modèle du contrôle TreeView et spécifier un ItemTemplate personnalisé si votre contenu n’est pas une chaîne. Pour plus d’informations, consultez l’exemple complet à la fin de cet article. Dans les versions ultérieures, définissez la propriété [TreeView.ItemTemplate](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate).
 
-### <a name="item-container-style"></a>Style d’élément de conteneur
+### <a name="item-container-style"></a>Style de conteneur d’éléments
 
-Vous utilisiez ItemsSource ou RootNodes, les éléments réelles utilisées pour afficher chaque nœud – appelé « conteneur » – est un [TreeViewItem](/uwp/api/windows.ui.xaml.controls.treeviewitem) objet. Vous pouvez appliquer un style le conteneur à l’aide de l’arborescence des propriétés ItemContainerStyle ou ItemContainerStyleSelector.
+Que vous utilisiez ItemsSource ou RootNodes, l’élément effectivement utilisé pour afficher chaque nœud, appelé « conteneur », est un objet [TreeViewItem](/uwp/api/windows.ui.xaml.controls.treeviewitem). Vous pouvez appliquer un style de conteneur à l’aide des propriétés ItemContainerStyle ou ItemContainerStyleSelector de TreeView.
 
-### <a name="item-template-selectors"></a>Sélecteurs de modèle d’élément
+### <a name="item-template-selectors"></a>Sélecteurs de modèles d’éléments
 
-Vous pouvez choisir de définir un DataTemplate différents pour les éléments de vue d’arborescence en fonction du type d’élément. Par exemple, dans une application de l’Explorateur de fichiers, vous pouvez utiliser un modèle de données pour les dossiers et l’autre pour les fichiers.
+Vous pouvez choisir de définir un DataTemplate différent pour les éléments de l’arborescence en fonction du type d’élément. Par exemple, dans une application d’explorateur de fichiers, vous pouvez utiliser un modèle de données pour les dossiers et un autre pour les fichiers.
 
-![Dossiers et fichiers à l’aide de différents modèles de données](images/treeview-icons.png)
+![Dossiers et fichiers utilisant différents modèles de données](images/treeview-icons.png)
 
 Voici un exemple montrant comment créer et utiliser un sélecteur de modèle d’élément.
 
@@ -271,29 +271,29 @@ public class ExplorerItemTemplateSelector : DataTemplateSelector
 
 Vous pouvez configurer une arborescence pour permettre à un utilisateur d’interagir avec celle-ci de différentes manières :
 
-- développer ou réduire des nœuds
-- éléments de sélection multiple ou unique
-- cliquez pour appeler un élément
+- Développer ou réduire des nœuds
+- Éléments de sélection multiple ou unique
+- Cliquer pour appeler un élément
 
 ### <a name="expandcollapse"></a>Développer/réduire
 
-N’importe quel nœud d’arborescence ayant des enfants peut toujours être développé ou réduit en cliquant sur le glyphe développer/réduire. Vous pouvez également développer ou réduire un nœud par programme et répondre lorsqu’un nœud change d’état.
+Vous pouvez développer ou réduire tout nœud d’arborescence ayant des enfants en cliquant sur le glyphe développer/réduire. Vous pouvez également développer ou réduire un nœud par programmation et répondre quand un nœud change d’état.
 
-#### <a name="expandcollapse-a-node-programmatically"></a>Développer/réduire un nœud par programme
+#### <a name="expandcollapse-a-node-programmatically"></a>Développer/réduire un nœud par programmation
 
 Il existe 2 façons de développer ou de réduire un nœud d’arborescence dans votre code.
 
-- La classe [TreeView](/uwp/api/windows.ui.xaml.controls.treeview) possède les méthodes [Collapse](/uwp/api/windows.ui.xaml.controls.treeview.collapse) et [Expand](/uwp/api/windows.ui.xaml.controls.treeview.expand). Lorsque vous appelez ces méthodes, vous passez dans le TreeViewNode que vous voulez développer ou réduire.
+- La classe [TreeView](/uwp/api/windows.ui.xaml.controls.treeview) possède les méthodes [Collapse](/uwp/api/windows.ui.xaml.controls.treeview.collapse) et [Expand](/uwp/api/windows.ui.xaml.controls.treeview.expand). Quand vous appelez ces méthodes, vous passez le TreeViewNode que vous voulez développer ou réduire.
 
-- Chaque [TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode) a la propriété [IsExpanded](/uwp/api/windows.ui.xaml.controls.treeviewnode.isexpanded). Vous pouvez utiliser cette propriété pour vérifier l’état d’un nœud ou le configurer pour modifier l’état. Vous pouvez également définir cette propriété dans le code XAML pour définir l’état initial d’un nœud.
+- Chaque [TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode) a la propriété [IsExpanded](/uwp/api/windows.ui.xaml.controls.treeviewnode.isexpanded). Vous pouvez utiliser cette propriété pour vérifier l’état d’un nœud ou le configurer pour changer l’état. Vous pouvez également définir cette propriété dans le code XAML pour définir l’état initial d’un nœud.
 
-### <a name="fill-a-node-when-its-expanding"></a>Remplir un nœud lorsqu’il se développe
+### <a name="fill-a-node-when-its-expanding"></a>Remplir un nœud quand il est développé
 
-Vous devrez peut-être afficher un grand nombre de nœuds dans votre arborescence, ou vous ne saurez peut-être pas à l'avance combien de nœuds elle contiendra. Le contrôle TreeView n’est pas virtualisé, donc vous pouvez gérer les ressources en remplissant chaque nœud lorsqu'il est développé et en supprimant les nœuds enfants lorsqu'il est réduit.
+Vous devrez peut-être afficher un grand nombre de nœuds dans votre arborescence, ou vous ne saurez peut-être pas à l’avance combien de nœuds elle contiendra. Le contrôle TreeView n’étant pas virtualisé, vous pouvez gérer les ressources en remplissant chaque nœud quand il est développé et en supprimant les nœuds enfants quand il est réduit.
 
-Gérez l'événement [Expanding](/uwp/api/windows.ui.xaml.controls.treeview.expand) et utilisez la propriété [HasUnrealizedChildren](/uwp/api/windows.ui.xaml.controls.treeviewnode.hasunrealizedchildren) pour ajouter des enfants à un nœud lorsqu’il est développé. La propriété HasUnrealizedChildren indique si le nœud doit être rempli ou si sa collection Children a déjà été remplie. Il est important de se rappeler que le TreeViewNode ne définit pas cette valeur, vous devez les gérer dans le code de votre application.
+Gérez l’événement [Expanding](/uwp/api/windows.ui.xaml.controls.treeview.expand) et utilisez la propriété [HasUnrealizedChildren](/uwp/api/windows.ui.xaml.controls.treeviewnode.hasunrealizedchildren) pour ajouter des enfants à un nœud quand il est développé. La propriété HasUnrealizedChildren indique si le nœud doit être rempli ou si sa collection Children a déjà été remplie. Il est important de garder à l’esprit que le TreeViewNode ne définit pas cette valeur, vous devez le gérer dans le code de votre application.
 
-Voici un exemple d'utilisation de ces API. Consultez l’exemple de code complet à la fin de cet article pour le contexte, y compris l’implémentation de « FillTreeNode ».
+Voici un exemple d’utilisation de ces API. Consultez l’exemple de code complet à la fin de cet article pour connaître le contexte, notamment l’implémentation du « FillTreeNode ».
 
 ```csharp
 private void SampleTreeView_Expanding(TreeView sender, TreeViewExpandingEventArgs args)
@@ -313,7 +313,7 @@ Private Sub SampleTreeView_Expanding(sender As TreeView, args As TreeViewExpandi
 End Sub
 ```
 
-Ce n’est pas obligatoire, mais vous pouvez également gérer l'événement [Collapsed](/uwp/api/windows.ui.xaml.controls.treeview.collapsed) et supprimer les nœuds enfants à la fermeture du nœud parent. Cela peut être important si votre arborescence a un grand nombre de nœuds, ou si les données de nœud utilisent beaucoup de ressources. Vous devez prendre en compte l’impact qu'a le remplissage d’un nœud à chaque ouverture sur les performances par rapport au fait de laisser les enfants sur un nœud fermé. La meilleure option dépend de votre application.
+Ce n’est pas obligatoire, mais vous pouvez également gérer l’événement [Collapsed](/uwp/api/windows.ui.xaml.controls.treeview.collapsed) et supprimer les nœuds enfants à la fermeture du nœud parent. Cela peut être important si votre arborescence a un grand nombre de nœuds, ou si les données de nœud utilisent beaucoup de ressources. Vous devez prendre en compte l’impact qu’a le remplissage d’un nœud à chaque ouverture sur les performances par rapport au fait de laisser les enfants sur un nœud fermé. La meilleure option dépend de votre application.
 
 Voici un exemple de gestionnaire de l’événement Collapsed.
 
@@ -334,16 +334,16 @@ End Sub
 
 ### <a name="invoking-an-item"></a>Appel d’un élément
 
-Un utilisateur peut appeler une action (en traitant l’élément comme un bouton) au lieu de sélectionner l’élément. Vous gérez l'événement [ItemInvoked](/uwp/api/windows.ui.xaml.controls.treeview.iteminvoked) pour répondre à cette interaction utilisateur.
+Un utilisateur peut appeler une action (en traitant l’élément comme un bouton) au lieu de sélectionner l’élément. Vous gérez l’événement [ItemInvoked](/uwp/api/windows.ui.xaml.controls.treeview.iteminvoked) pour répondre à cette interaction utilisateur.
 
 > [!NOTE]
-> Contrairement au contrôle ListView, qui a la propriété [IsItemClickEnabled](/uwp/api/windows.ui.xaml.controls.listviewbase.isitemclickenabled), appeler un élément est toujours activé sur l’arborescence. Vous pouvez toujours choisir si vous souhaitez gérer l’événement ou non.
+> Contrairement au contrôle ListView, qui a la propriété [IsItemClickEnabled](/uwp/api/windows.ui.xaml.controls.listviewbase.isitemclickenabled), l’appel d’un élément est toujours activé sur l’arborescence. Vous pouvez toujours choisir si vous souhaitez gérer l’événement ou non.
 
-**[TreeViewItemInvokedEventArgs](/uwp/api/windows.ui.xaml.controls.treeviewiteminvokedeventargs) classe**
+**Classe [TreeViewItemInvokedEventArgs](/uwp/api/windows.ui.xaml.controls.treeviewiteminvokedeventargs)**
 
-Les arguments d’événement ItemInvoked vous donnent accès à l’élément appelé. La propriété [InvokedItem](/uwp/api/windows.ui.xaml.controls.treeviewiteminvokedeventargs.invokeditem) a le nœud qui a été appelé. Vous pouvez le convertir en TreeViewNode et obtenir l’élément de données à partir de la propriété TreeViewNode.Content.
+Les arguments d’événement ItemInvoked vous permettent d’accéder à l’élément appelé. La propriété [InvokedItem](/uwp/api/windows.ui.xaml.controls.treeviewiteminvokedeventargs.invokeditem) a le nœud qui a été appelé. Vous pouvez le caster en TreeViewNode et obtenir l’élément de données à partir de la propriété TreeViewNode.Content.
 
-Voici un exemple de gestionnaire d’événements ItemInvoked. L’élément de données est un [IStorageItem](/uwp/api/windows.storage.istorageitem), et cet exemple affiche uniquement des informations sur le fichier et l’arborescence. En outre, si le nœud est un nœud de dossier, il développe ou réduit le nœud en même temps. Autrement, le nœud se développe ou se réduit uniquement lorsque vous cliquez sur le chevron.
+Voici un exemple de gestionnaire d’événements ItemInvoked. L’élément de données est un [IStorageItem](/uwp/api/windows.storage.istorageitem), et cet exemple affiche uniquement des informations sur le fichier et l’arborescence. En outre, si le nœud est un nœud de dossier, il développe ou réduit le nœud en même temps. Autrement, le nœud se développe ou se réduit uniquement quand vous cliquez sur le chevron.
 
 ```csharp
 private void SampleTreeView_ItemInvoked(TreeView sender, TreeViewItemInvokedEventArgs args)
@@ -378,19 +378,19 @@ Private Sub SampleTreeView_ItemInvoked(sender As TreeView, args As TreeViewItemI
 End Sub
 ```
 
-### <a name="item-selection"></a>Sélection d'élément
+### <a name="item-selection"></a>Sélection d’élément
 
 Le contrôle TreeView prend en charge la sélection unique et la sélection multiple. Par défaut, la sélection de nœuds est désactivée, mais vous pouvez définir la propriété [TreeView.SelectionMode](/uwp/api/windows.ui.xaml.controls.treeview.selectionmode) pour permettre la sélection de nœuds. Les valeurs [TreeViewSelectionMode](/uwp/api/windows.ui.xaml.controls.treeviewselectionmode) sont **None**, **Single** et **Multiple**.
 
 #### <a name="multiple-selection"></a>Sélection multiple
 
-Lors de la sélection multiple est activée, une case à cocher est affichée à côté de chaque nœud d’arborescence, et les éléments sélectionnés sont mis en surbrillance. Un utilisateur peut sélectionner ou désélectionner un élément à l’aide de la case à cocher. Le fait de cliquer sur l’élément permet toujours de l'appeler.
+Quand la sélection multiple est activée, une case à cocher s’affiche en regard de chaque nœud d’arborescence, et les éléments sélectionnés sont mis en surbrillance. Un utilisateur peut sélectionner ou désélectionner un élément à l’aide de la case à cocher. Le fait de cliquer sur l’élément permet toujours de l’appeler.
 
-En sélectionnant ou désélectionnant sur un nœud parent sera sélectionner ou désélectionner tous les enfants de ce nœud. Si certains, mais pas des enfants sous un nœud parent sont sélectionnés, la case à cocher du nœud parent est indiqué comme indéterminé (rempli avec une boîte noire).
+Le fait de sélectionner ou de désélectionner un nœud parent sélectionne ou désélectionne tous les enfants de ce nœud. Si seulement une partie des enfants sous un nœud parent est sélectionnée, la case à cocher du nœud parent est affichée comme étant indéterminée (elle comporte un carré noir).
 
 ![Sélection multiple dans une arborescence](images/treeview-selection.png)
 
-Les nœuds sélectionnés sont ajoutés à la collection [SelectedNodes](/uwp/api/windows.ui.xaml.controls.treeview.selectednodes) de l’arborescence. Vous pouvez appeler la méthode [SelectAll](/uwp/api/windows.ui.xaml.controls.treeview.selectall) pour sélectionner tous les nœuds d'une arborescence.
+Les nœuds sélectionnés sont ajoutés à la collection [SelectedNodes](/uwp/api/windows.ui.xaml.controls.treeview.selectednodes) de l’arborescence. Vous pouvez appeler la méthode [SelectAll](/uwp/api/windows.ui.xaml.controls.treeview.selectall) pour sélectionner tous les nœuds d’une arborescence.
 
 > [!NOTE]
 > Si vous appelez **SelectAll**, tous les nœuds réalisés sont sélectionnés, quel que soit le SelectionMode. Pour fournir une expérience utilisateur cohérente, vous ne devez appeler SelectAll que si SelectionMode est défini sur **Multiple**.
@@ -401,13 +401,13 @@ Si votre arborescence a des nœuds non réalisés, ils ne sont pas pris en compt
 
 - Si un utilisateur sélectionne un nœud parent, tous les enfants réalisés sous ce parent sont également sélectionnés. De même, si tous les nœuds enfants sont sélectionnés, le nœud parent est également sélectionné.
 - La méthode SelectAll ajoute uniquement des nœuds réalisés à la collection SelectedNodes.
-- Si un nœud parent avec des enfants non réalisés est sélectionné, les enfants sont sélectionnés lorsqu'ils sont réalisés.
+- Si un nœud parent avec des enfants non réalisés est sélectionné, les enfants sont sélectionnés quand ils sont réalisés.
 
 ## <a name="code-examples"></a>Exemples de code
 
-### <a name="tree-view-using-xaml"></a>Vue d’arborescence à l’aide de XAML
+### <a name="tree-view-using-xaml"></a>Arborescence utilisant XAML
 
-Cet exemple montre comment créer une structure d'arborescence simple en XAML. L’arborescence affiche des parfums de glace et des garnitures que l’utilisateur peut choisir, organisés par catégories. La sélection multiple est activée et lorsque l’utilisateur clique sur un bouton, les SelectedItems s'affichent dans l’interface utilisateur principale de l’application.
+Cet exemple montre comment créer une structure d’arborescence simple en XAML. L’arborescence affiche des parfums de glace et des garnitures que l’utilisateur peut choisir, organisés par catégories. La sélection multiple est activée et quand l’utilisateur clique sur un bouton, les SelectedItems s’affichent dans l’interface utilisateur principale de l’application.
 
 ```xaml
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Padding="100">
@@ -514,9 +514,9 @@ Private Sub SelectAllButton_Click(sender As Object, e As RoutedEventArgs)
 End Sub
 ```
 
-### <a name="tree-view-using-data-binding"></a>Vue d’arborescence à l’aide de la liaison de données
+### <a name="tree-view-using-data-binding"></a>Arborescence utilisant la liaison de données
 
-Cet exemple montre comment créer la même arborescence que l’exemple précédent. Toutefois, au lieu de créer la hiérarchie de données dans XAML, les données sont créées dans le code et liées à la propriété ItemsSource de l’arborescence. (Les gestionnaires d’événements de bouton illustrés dans l’exemple précédent s’appliquent à cet exemple également.)
+Cet exemple montre comment créer la même arborescence que l’exemple précédent. Toutefois, au lieu de créer la hiérarchie de données en XAML, les données sont créées dans le code et liées à la propriété ItemsSource de l’arborescence. (Les gestionnaires d’événements de bouton illustrés dans l’exemple précédent s’appliquent à cet exemple également.)
 
 ```xaml
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Padding="100">
@@ -630,14 +630,14 @@ public class Item
 }
 ```
 
-### <a name="pictures-and-music-library-tree-view"></a>Arborescence de bibliothèque d'images et de musique
+### <a name="pictures-and-music-library-tree-view"></a>Arborescence de bibliothèque d’images et de musique
 
-Cet exemple montre comment créer une arborescence montrant le contenu et la structure des bibliothèques d'images et de musique des utilisateurs. Le nombre d’éléments ne peut pas être connu à l'avance, donc chaque nœud est rempli quand il est développé et vidé lorsqu’il est réduit.
+Cet exemple montre comment créer une arborescence montrant le contenu et la structure des bibliothèques d’images et de musique des utilisateurs. Le nombre d’éléments ne peut pas être connu à l’avance, donc chaque nœud est rempli quand il est développé et vidé quand il est réduit.
 
 Un modèle d’élément personnalisé est utilisé pour afficher les éléments de données, qui sont de type [IStorageItem](/uwp/api/windows.storage.istorageitem).
 
 > [!IMPORTANT]
-> Le code dans cet exemple requiert les fonctions picturesLibrary et musicLibrary. Pour plus d’informations sur l’accès aux fichiers, voir [Autorisations d’accès aux fichiers](../../files/file-access-permissions.md), [Énumérer et interroger des fichiers et dossiers](../../files/quickstart-listing-files-and-folders.md) et [Fichiers et dossiers dans les bibliothèques de musique, d’images et de vidéos](../../files/quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md).
+> Le code dans cet exemple requiert les fonctions picturesLibrary et musicLibrary. Pour plus d’informations sur l’accès aux fichiers, consultez [Autorisations d’accès aux fichiers](../../files/file-access-permissions.md), [Énumérer et interroger des fichiers et dossiers](../../files/quickstart-listing-files-and-folders.md) et [Fichiers et dossiers dans les bibliothèques de musique, d’images et de vidéos](../../files/quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md).
 
 ```xaml
 <Page
@@ -932,5 +932,5 @@ End Sub
 ## <a name="related-articles"></a>Articles connexes
 
 - [Classe TreeView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeview)
-- [Classe de ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview)
+- [ListView, classe](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview)
 - [ListView et GridView](listview-and-gridview.md)

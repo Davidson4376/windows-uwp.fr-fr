@@ -11,19 +11,19 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c5736e917d77415eeb6df53b3fd92f7ab584884
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57644924"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63787443"
 ---
 # <a name="rating-control"></a>Contrôle d’évaluation
 
-Le contrôle d'évaluation permet aux utilisateurs de visualiser et de définir des évaluations qui reflètent le degré de satisfaction vis-à-vis du contenu et des services. Les utilisateurs peuvent interagir avec le contrôle d'évaluation avec des mouvements tactiles, un stylet, une souris, un boîtier de commande ou un clavier. Les instructions de suivi montre comment utiliser les fonctionnalités du contrôle de l’évaluation pour fournir la flexibilité et la personnalisation.
+Le contrôle d’évaluation permet aux utilisateurs de visualiser et de définir des évaluations qui reflètent le degré de satisfaction vis-à-vis du contenu et des services. Les utilisateurs peuvent interagir avec le contrôle d’évaluation avec des mouvements tactiles, un stylet, une souris, un boîtier de commande ou un clavier. Les instructions de suivi montre comment utiliser les fonctionnalités du contrôle de l’évaluation pour fournir la flexibilité et la personnalisation.
 
-> **API importantes** : [Classe de RatingControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.ratingcontrol)
+> **API importantes** : [Classe RatingControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.ratingcontrol)
 
-![Exemple de contrôle d'évaluation](images/rating_rs2_doc_ratings_intro.png)
+![Exemple de contrôle d’évaluation](images/rating_rs2_doc_ratings_intro.png)
 
 ## <a name="examples"></a>Exemples
 
@@ -32,7 +32,7 @@ Le contrôle d'évaluation permet aux utilisateurs de visualiser et de définir 
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>Si vous disposez de l'application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/RatingControl">ouvrir l’application et voir l'objet RatingControl en action</a>.</p>
+    <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/RatingControl">ouvrir l’application et voir l’objet RatingControl en action</a>.</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
@@ -43,7 +43,7 @@ Le contrôle d'évaluation permet aux utilisateurs de visualiser et de définir 
 
 ### <a name="editable-rating-with-placeholder-value"></a>Évaluation modifiable avec valeur d’espace réservé
 
-Le mode d’utilisation le plus courant du contrôle d'évaluation est peut-être l’affichage d’une évaluation moyenne tout en autorisant l’utilisateur à saisir sa propre valeur d’évaluation. Dans ce scénario, le contrôle d'évaluation est initialement défini afin de refléter l’évaluation de la satisfaction moyenne de tous les utilisateurs vis-à-vis d’un service ou d’un type de contenu particulier (morceaux de musique, vidéos, livres, etc.). Il reste dans cet état jusqu’à ce qu’un utilisateur interagisse avec le contrôle dans le but d’évaluer individuellement un élément. Cette interaction modifie l’état du contrôle des évaluations afin de refléter l’évaluation de la satisfaction personnelle de l’utilisateur.
+Le mode d’utilisation le plus courant du contrôle d’évaluation est peut-être l’affichage d’une évaluation moyenne tout en autorisant l’utilisateur à saisir sa propre valeur d’évaluation. Dans ce scénario, le contrôle d’évaluation est initialement défini afin de refléter l’évaluation de la satisfaction moyenne de tous les utilisateurs vis-à-vis d’un service ou d’un type de contenu particulier (morceaux de musique, vidéos, livres, etc.). Il reste dans cet état jusqu’à ce qu’un utilisateur interagisse avec le contrôle dans le but d’évaluer individuellement un élément. Cette interaction change l’état du contrôle des évaluations afin de refléter l’évaluation de la satisfaction personnelle de l’utilisateur.
 
 #### <a name="initial-average-rating-state"></a>État initial de l’évaluation moyenne
 ![État initial de l’évaluation moyenne](images/rating_rs2_doc_movie_aggregate.png)
@@ -74,11 +74,11 @@ private void RatingChanged(RatingControl sender, object args)
 ### <a name="read-only-rating-mode"></a>Mode d’évaluation en lecture seule
 
 Parfois, vous devez afficher les évaluations d’un contenu secondaire, par exemple celui qui s’affiche dans le contenu recommandé ou lors de l’affichage d’une liste de commentaires et de leurs évaluations correspondantes. Dans ce cas, l’utilisateur ne doit pas être en mesure de modifier l’évaluation, pour que vous puissiez attribuer le mode de lecture seule à ce contrôle.
-Le mode de lecture seule est également le mode d’utilisation recommandé du contrôle d'évaluation, lorsqu’il est utilisé dans de très grandes listes virtualisées de contenu, aussi bien pour la conception de l’interface utilisateur que pour des raisons de performances.
+Le mode de lecture seule est également le mode d’utilisation recommandé du contrôle d’évaluation, quand il est utilisé dans de très grandes listes virtualisées de contenu, aussi bien pour la conception de l’interface utilisateur que pour des raisons de performances.
 
 ![Liste longue en lecture seule](images/rating_rs2_doc_reviews.png)
 
-Pour ce faire, procédez comme suit :
+Pour ce faire, vous procéderiez comme suit :
 
 ```XAML
 <RatingControl IsReadOnly="True"/>
@@ -86,7 +86,7 @@ Pour ce faire, procédez comme suit :
 
 ## <a name="additional-functionality"></a>Fonctionnalités supplémentaires
 
-Le contrôle d'évaluation offre de nombreuses fonctionnalités supplémentaires. Vous trouverez des détails concernant l’utilisation de ces fonctionnalités dans notre documentation de référence sur MSDN.
+Le contrôle d’évaluation offre de nombreuses fonctionnalités supplémentaires. Vous trouverez des détails concernant l’utilisation de ces fonctionnalités dans notre documentation de référence sur MSDN.
 Voici une liste non exhaustive des fonctionnalités supplémentaires :
 -   Excellentes performances pour les listes longues
 -   Dimensionnement compact pour scénarios d’interface utilisateur réduite
@@ -97,4 +97,4 @@ Voici une liste non exhaustive des fonctionnalités supplémentaires :
 
 ## <a name="get-the-sample-code"></a>Obtenir l’exemple de code
 
-- [Exemples de la Galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) - Affichez tous les contrôles XAML dans un format interactif.
+- [Exemple de Galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) : tous les contrôles XAML dans un format interactif.

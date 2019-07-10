@@ -1,64 +1,64 @@
 ---
 title: Espacement et tailles
-description: Les nouveaux styles de contrôle Standard Fluent et Compact garantir une expérience de l’utilisateur à l’aise, quel que soit la méthode de saisie et de périphérique.
+description: Les nouveaux styles de contrôle Standard Fluent et Compact garantissent une expérience utilisateur agréable, quels que soient l’appareil et la méthode de saisie.
 keywords: UWP, Windows 10, contrôles, taille, densité, standard, compact
-ms.date: 4/4/2019
+ms.date: 04/19/2019
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 7b74e3dc2ad047d9e52509b71ef00b829ad63a0d
-ms.sourcegitcommit: 7a1d5198345d114c58287d8a047eadc4fe10f012
-ms.translationtype: MT
+ms.openlocfilehash: ff88332e0b44749bcd86e06adafeb596ca8678b3
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59249451"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "63820636"
 ---
-# <a name="control-size-and-density"></a>Taille du contrôle et la densité
+# <a name="control-size-and-density"></a>Taille et densité du contrôle
 
-Utilisez une combinaison de taille et de densité pour optimiser votre application Universal Windows Platform (UWP) et fournir une expérience utilisateur qui convient le mieux pour les exigences de fonctionnalités et d’interaction de votre application.
+Utilisez une combinaison de taille et de densité du contrôle pour optimiser votre application Universal Windows Platform (UWP) et fournir une expérience utilisateur qui convient le mieux pour les exigences de fonctionnalités et d’interaction de votre application.
 
-Par défaut, les applications UWP sont rendues avec une faible densité (ou `Standard`) mise en page. Toutefois, depuis WinUI 2.1, une haute densité (ou `Compact`) l’option de disposition, pour plus d’informations l’interface utilisateur riche et des scénarios similaires spécialisés, est également pris en charge. Cela peut être spécifiée via une ressource de style de base (voir les exemples ci-dessous).
+Par défaut, les applications UWP sont rendues avec une mise en page à faible densité (ou `Standard`). Toutefois, depuis WinUI 2.1, une option de mise en page à haute densité (ou `Compact`), pour une interface utilisateur riche en informations et des scénarios similaires spécialisés, est également prise en charge. Il est possible de la spécifier via une ressource de style de base (voir les exemples ci-dessous).
 
-Lors de la fonctionnalité et le comportement n’a pas changé et reste cohérent entre les deux options de taille et la densité, la taille de police de corps par défaut a été mis à jour à 14px pour tous les contrôles prendre en charge ces options de densité de deux. Cette taille de police compatible avec les appareils et les régions et garantit le que reste de votre application à charge équilibrée et à l’aise pour les utilisateurs.
+Alors que la fonctionnalité et le comportement n’ont pas changé et restent cohérents entre les deux options de taille et de densité, la taille de police de corps par défaut a été mise à jour sur 14px pour tous les contrôles afin de prendre en charge ces deux options de densité. Cette taille de police est compatible entre les divers appareils et régions, et garantit que votre application demeure équilibrée et agréable pour les utilisateurs.
 
-## <a name="fluent-standard-sizing"></a>Fluent dimensionnement Standard
+## <a name="fluent-standard-sizing"></a>Taille Fluent Standard
 
-*Dimensionnement Standard Fluent* a été créé pour fournir un équilibre entre le confort de densité et l’utilisateur des informations. En effet, tous les éléments sur l’écran alignent à une cible de pixels effective de 40 x 40 (epx), ce qui permet d’éléments d’interface utilisateur alignent sur une grille et l’échelle de manière appropriée en fonction de la mise à l’échelle au niveau du système.
+La *taille Fluent Standard* a été créée pour fournir un équilibre entre le confort de l’utilisateur et la densité des informations. Tous les éléments sur l’écran s’alignent sur une cible de pixels effectifs (epx) de 40x40, ce qui permet d’aligner les éléments de l’interface utilisateur sur une grille et de les mettre à l’échelle de manière appropriée en fonction de la mise à l’échelle au niveau du système.
 
-**Dimensionnement standard est conçu pour prendre en charge tactile et le pointeur d’entrée.**
+**La taille Standard est conçue pour prendre en charge les entrées tactiles et du pointeur.**
 
 > [!NOTE]
->Pour plus d’informations sur les pixels efficaces et la mise à l’échelle, consultez [Introduction à la conception d’application UWP](../basics/design-and-ui-intro.md#effective-pixels-and-scaling)
+>Pour plus d’informations sur les pixels effectifs et la mise à l’échelle, consultez [Présentation de la conception des applications UWP](../basics/design-and-ui-intro.md#effective-pixels-and-scaling)
 >
-> Pour plus d’informations sur la mise à l’échelle au niveau du système, consultez [alignement, marge, remplissage](../layout/alignment-margin-padding.md).
+> Pour plus d’informations sur la mise à l’échelle au niveau du système, consultez [Alignement, marge, remplissage](../layout/alignment-margin-padding.md).
 
-Pour le Kit de développement Windows 10 octobre 2018 Update (version 1809), le standard, la taille par défaut pour tous les contrôles UWP a été réduite pour faciliter l’utilisation pour tous les scénarios d’utilisation.
+Pour Windows 10 October 2018 Update (version 1809), la taille standard par défaut de tous les contrôles UWP a été diminuée pour accroître la facilité d’utilisation dans tous les scénarios d’utilisation.
 
-L’illustration suivante montre certaines du contrôle des changements de disposition qui ont été introduites avec Windows 10 octobre 2018 mettre à jour. Plus précisément, la marge entre un en-tête et le haut d’un contrôle a été réduite à partir de 8epx à 4epx, et la grille 44epx a été remplacée par une grille 40epx.
+L’illustration suivante montre certains changements de la mise en forme du contrôle qui ont été introduits dans Windows 10 October 2018 Update. Plus précisément, la marge entre un en-tête et le haut d’un contrôle a été réduite de 8epx à 4epx, et la grille 44epx a été remplacée par une grille 40epx.
 
-![Exemple de disposition de contrôle standard](images/standarddensity.png)
+![Exemple de mise en forme de contrôle standard](images/standarddensity.png)
 
-*Exemple de disposition de contrôle standard*
+*Exemple de mise en forme de contrôle standard*
 
-Cette image suivante montre les modifications apportées à contrôler les tailles pour les fenêtres de mise à jour 10 octobre 2018. Plus précisément, d’alignement sur la grille 40epx.
+L’image suivante montre les modifications apportées aux tailles de contrôle pour Windows 10 October 2018 Update. Plus précisément, l’alignement sur la grille 40epx.
 
 ![Exemple de commande standard](images/standarddensitycommanding.png)
 
-## <a name="fluent-compact-sizing"></a>Dimensionnement Compact Fluent
+## <a name="fluent-compact-sizing"></a>Taille Fluent Compact
 
-Dimensionnement compact permet denses, riche en informations des groupes de contrôles et peut aider avec les éléments suivants :
+La taille Compact permet d’obtenir des groupes de contrôles denses et riches en informations, et elle peut être utile pour ce qui suit :
 
-- Navigation du contenu volumineux.
-- Optimisation de contenu visible sur une page.
-- Naviguer et interagir avec les contrôles et le contenu
+- Navigation dans de grandes quantités de contenu.
+- Optimisation du contenu visible sur une page.
+- Navigation et interaction avec les contrôles et le contenu
 
-**Dimensionnement compact est principalement conçu pour prendre en charge d’entrée de pointeur.**
+**La taille Compact est principalement conçue pour prendre en charge les entrées du pointeur.**
 
 ### <a name="examples"></a>Exemples
 
-Dimensionnement compact est implémentée via un dictionnaire de ressources spéciales qui peut être spécifié dans votre application au niveau de la page ou sur une disposition spécifique. Le dictionnaire de ressources est disponible dans le [WinUI](https://docs.microsoft.com/en-us/uwp/toolkits/winui/) package Nuget.
+La taille Compact est implémentée via un dictionnaire de ressources spécial qui peut être spécifié dans votre application au niveau de la page ou dans une mise en forme spécifique. Le dictionnaire de ressources est disponible dans le package Nuget [WinUI](https://docs.microsoft.com/en-us/uwp/toolkits/winui/).
 
-Les exemples suivants montrent comment le `Compact` style peut être appliqué pour la page et un contrôle de grille individuel.
+Les exemples suivants montrent comment le style `Compact` peut être appliqué pour la page et un contrôle de grille individuel.
 
 #### <a name="page-level"></a>Niveau page
 
@@ -68,7 +68,7 @@ Les exemples suivants montrent comment le `Compact` style peut être appliqué p
 </Page.Resources>
 ```
 
-#### <a name="grid-level"></a>Niveau de la grille
+#### <a name="grid-level"></a>Niveau grille
 
 ```xaml
 <Grid>
@@ -80,7 +80,7 @@ Les exemples suivants montrent comment le `Compact` style peut être appliqué p
 
 ## <a name="related-articles"></a>Articles connexes
 
-- [Instructions pour les cibles de tactile](../input/guidelines-for-targeting.md)
+- [Instructions pour les cibles tactiles](../input/guidelines-for-targeting.md)
 - [Références aux ressources ResourceDictionary et XAML](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/resourcedictionary-and-xaml-resource-references)
 - [Dictionnaire de ressources](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.resourcedictionary)
 - [Styles XAML](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/xaml-styles) 

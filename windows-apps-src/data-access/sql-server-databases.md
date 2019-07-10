@@ -6,14 +6,14 @@ ms.topic: article
 keywords: windows 10, uwp, SQL Server, base de données
 ms.localizationpriority: medium
 ms.openlocfilehash: f8986f14872d4e5de2c45bba264de6619ef07141
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66360149"
 ---
 # <a name="use-a-sql-server-database-in-a-uwp-app"></a>Utiliser une base de données SQL Server dans une application UWP
-Votre application peut se connecter directement à une base de données SQL Server, puis stocker et récupérer des données à l’aide de classes dans l’espace de noms [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient?redirectedfrom=MSDN).
+Votre application peut se connecter directement à une base de données SQL Server, puis stocker et récupérer des données à l’aide de classes de l’espace de noms [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient?redirectedfrom=MSDN).
 
 Dans ce guide, nous vous proposerons une méthode pour y parvenir. Si vous installez la base de données exemple [Northwind](https://docs.microsoft.com/dotnet/framework/data/adonet/sql/linq/downloading-sample-databases) sur votre instance de SQL Server, puis que vous utilisez ces extraits de code, vous obtiendrez une interface utilisateur de base qui montre les produits de la base de données exemple.
 
@@ -23,13 +23,13 @@ Les extraits de code qui s’affichent dans ce guide sont basés sur cet [exempl
 
 ## <a name="first-set-up-your-solution"></a>Tout d’abord, configurez votre solution.
 
-Pour connecter votre application directement à une base de données SQL Server, assurez-vous que la version minimale de votre projet cible la mise à jour de Fall Creators.  Vous pouvez trouver ces informations dans la page de propriétés de votre projet UWP.
+Pour connecter votre application directement à une base de données SQL Server, assurez-vous que la version minimale de votre projet cible la mise à jour de Fall Creators.  Vous trouverez ces informations dans la page de propriétés de votre projet UWP.
 
 ![Version minimum du SDK Windows](images/min-version-fall-creators.png)
 
 Dans le concepteur de manifeste, ouvrez le fichier **package.appxmanifest** du projet UWP.
 
-Dans le **fonctionnalités** onglet, sélectionnez le **l’authentification d’entreprise** case à cocher si vous utilisez l’authentification Windows pour authentifier votre serveur SQL Server.
+Dans l’onglet **Fonctionnalités**, cochez la case **Authentification d’entreprise** si vous utilisez l’authentification Windows pour authentifier votre serveur SQL Server.
 
 ![Fonctionnalité d’authentification en entreprise](images/enterprise-authentication.png)
 
@@ -39,15 +39,15 @@ Dans le **fonctionnalités** onglet, sélectionnez le **l’authentification d�
 
 Dans cette section, nous allons effectuer les opérations suivantes :
 
-: un : Ajouter une chaîne de connexion.
+: un : Ajouter une chaîne de connexion.
 
-: deux : Créer une classe pour contenir les données de produit.
+: deux : Créer une classe pour contenir des données sur les produits.
 
-: trois : Extraire les produits à partir de la base de données SQL Server.
+: trois : Récupérer les produits à partir de la base de données SQL Server.
 
-: quatre : Ajouter une interface utilisateur de base.
+: quatre : Ajouter une interface utilisateur de base.
 
-: cinq : Remplir l’interface utilisateur avec les produits.
+: cinq : Remplir l’interface utilisateur avec des produits.
 
 >[!NOTE]
 > Cette section illustre une façon d’organiser votre code d’accès aux données. Vous y trouverez un exemple illustrant la façon dont vous pouvez utiliser [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient?redirectedfrom=MSDN) pour stocker et récupérer des données à partir d’une base de données SQL Server. Vous pouvez organiser votre code d’une manière plus appropriée pour la conception de votre application.
@@ -236,14 +236,14 @@ Ensuite, assurez-vous que votre service SQL Server Browser est en cours d’ex�
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-**Utiliser une base de données léger pour stocker des données sur l’appareil des utilisateurs**
+**Utiliser une base de données légère pour stocker des données sur le périphérique d’utilisateurs**
 
-Voir [Utiliser une base de données SQL Server dans une application UWP](sqlite-databases.md).
+Voir [Utiliser une base de données SQLite dans une application UWP](sqlite-databases.md).
 
 **Partager du code entre différentes applications sur différentes plateformes**
 
 Voir [Partager du code entre une application de bureau et une application UWP](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-migrate).
 
-**Ajouter des pages maître/détail avec des serveurs principaux SQL Azure**
+**Ajouter des pages maître/détail avec les back ends Azure SQL**
 
 Voir [Exemple de base de données de commandes de clients](https://github.com/Microsoft/Windows-appsample-customers-orders-database).
