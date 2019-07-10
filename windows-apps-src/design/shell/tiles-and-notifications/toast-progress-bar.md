@@ -3,16 +3,16 @@ Description: Découvrez comment utiliser une barre de progression au sein de vot
 title: Barre de progression du toast et liaison des données
 label: Toast progress bar and data binding
 template: detail.hbs
-ms.date: 12/7/2017
+ms.date: 12/07/2017
 ms.topic: article
 keywords: windows 10, uwp, toast, barre de progression, barre de progression du toast, notification, liaison des données du toast
 ms.localizationpriority: medium
-ms.openlocfilehash: f955f2a71fed6444c65f9550e1f4fa3baeabe092
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 742270a4cdc6cbbc9eed0879e30b3e7066722f05
+ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57624824"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67714108"
 ---
 # <a name="toast-progress-bar-and-data-binding"></a>Barre de progression du toast et liaison des données
 
@@ -32,7 +32,7 @@ L’image ci-dessous illustre une barre de progression déterminée avec toutes 
 
 <img alt="Toast with progress bar properties labeled" src="images/toast-progressbar-annotated.png" width="626"/>
 
-| Propriété | Type | Obligatoire | Description |
+| Propriété | type | Obligatoire | Description |
 |---|---|---|---|
 | **Titre** | chaîne ou [BindableString](toast-schema.md#bindablestring) | false | Obtient ou définit une chaîne de titre facultative. Prend en charge la liaison des données. |
 | **Valeur** | double ou [AdaptiveProgressBarValue](toast-schema.md#adaptiveprogressbarvalue) ou [BindableProgressBarValue](toast-schema.md#bindableprogressbarvalue) | false | Obtient ou définit la valeur de la barre de progression. Prend en charge la liaison des données. La valeur par défaut est 0. Peut être un double compris entre 0.0 et 1.0, `AdaptiveProgressBarValue.Indeterminate` ou `new BindableProgressBarValue("myProgressValue")`. |

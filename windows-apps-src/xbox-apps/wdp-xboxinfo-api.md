@@ -1,16 +1,16 @@
 ---
 title: Informations de référence sur les API Device Portal Xbox
 description: Découvrez comment accéder aux informations de référence Xbox.
-ms.date: 11/072017
+ms.date: 04/18/2019
 ms.topic: article
 keywords: Windows 10, uwp, xbox, du portail de l’appareil
 ms.localizationpriority: medium
-ms.openlocfilehash: 7aa8b11bc439266d36fbb27a7eaa7b07e924a17c
-ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.openlocfilehash: c6a8e595be9a0846df2af81ea0b7fc1605f62e5f
+ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59244035"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67714072"
 ---
 # <a name="xbox-info-api-reference"></a>Informations de référence sur les API Xbox   
 Cette API vous permet d’accéder aux informations des périphériques Xbox One.
@@ -29,11 +29,11 @@ GET | /ext/xbox/info
 
 - Aucune
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucune
 
-**Corps de la requête**
+**Corps de la demande**
 
 - Aucune
 
@@ -59,6 +59,6 @@ Code d’état HTTP      | Description
 4XX | Codes d’erreur
 5XX | Codes d’erreur
 
-**Familles d’appareils disponibles**
+**Familles de périphériques disponibles**
 
 * Windows Xbox

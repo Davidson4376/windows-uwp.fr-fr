@@ -1,19 +1,19 @@
 ---
 ms.assetid: 60fc48dd-91a9-4dd6-a116-9292a7c1f3be
-title: Vue d’ensemble du portail d’appareil Windows
+title: Vue d’ensemble de Windows Device Portal
 description: Découvrez comment Windows Device Portal vous permet de configurer et de gérer à distance votre appareil par le biais d’une connexion réseau ou USB.
-ms.date: 4/9/2019
+ms.date: 04/09/2019
 ms.topic: article
 keywords: Windows 10, uwp, le portail de l’appareil
 ms.localizationpriority: medium
-ms.openlocfilehash: 59e7e46ea68f6bb5fe7fd63e6ac35b9256103c38
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 1f776a9d0ffe15f4bec26fbf8a26ce52a73345e9
+ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317902"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67713868"
 ---
-# <a name="windows-device-portal-overview"></a>Vue d’ensemble du portail d’appareil Windows
+# <a name="windows-device-portal-overview"></a>Vue d’ensemble de Windows Device Portal
 
 Windows Device Portal vous permet de configurer et de gérer à distance votre appareil par le biais d’une connexion réseau ou USB. Il fournit également des outils de diagnostic avancés pour vous aider à résoudre les problèmes et afficher les performances en temps réel de votre appareil Windows.
 
@@ -37,7 +37,7 @@ Famille d’appareils | Activé par défaut ? | HTTP | HTTPS | USB
 --------------|----------------|------|-------|----
 HoloLens | Oui, en mode de développement | 80 (par défaut) | 443 (par défaut) | http://127.0.0.1:10080
 IoT | Oui, en mode de développement | 8080 | Activer via la clé de registre | N/A
-Xbox | Activer dans le mode de développement | Désactivé | 11443 | N/A
+Xbox | Activer dans le mode de développement | Désactivée | 11443 | N/A
 Bureau| Activer dans le mode de développement | 50080\* | 50043\* | N/A
 Phone | Activer dans le mode de développement | 80| 443 | http://127.0.0.1:10080
 
@@ -45,11 +45,11 @@ Phone | Activer dans le mode de développement | 80| 443 | http://127.0.0.1:1008
 
 Pour obtenir des instructions d’installation propres à chaque appareil, consultez :
 
-- [Portail de l’appareil pour HoloLens](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-hololens)
-- [Portail de périphérique pour IoT](https://go.microsoft.com/fwlink/?LinkID=616499)
-- [Portail des appareils mobiles](device-portal-mobile.md)
-- [Portail des appareils pour Xbox](../xbox-apps/device-portal-xbox.md)
-- [Portail des appareils pour Desktop](device-portal-desktop.md#set-up-device-portal-on-windows-desktop)
+- [Portail d’appareil pour HoloLens](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-hololens)
+- [Portail d’appareil pour IoT](https://go.microsoft.com/fwlink/?LinkID=616499)
+- [Portail d’appareil pour appareils mobiles](device-portal-mobile.md)
+- [Portail d’appareil pour Xbox](../xbox-apps/device-portal-xbox.md)
+- [Portail d’appareil pour Bureau](device-portal-desktop.md#set-up-device-portal-on-windows-desktop)
 
 ## <a name="features"></a>Fonctionnalités
 

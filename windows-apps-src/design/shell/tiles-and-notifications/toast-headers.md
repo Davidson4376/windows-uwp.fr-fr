@@ -3,16 +3,16 @@ Description: Découvrez comment utiliser des en-têtes pour regrouper visuelleme
 title: En-têtes de toast
 label: Toast headers
 template: detail.hbs
-ms.date: 12/7/2017
+ms.date: 12/07/2017
 ms.topic: article
 keywords: windows 10, uwp, toast, en-tête, en-têtes de toast, notification, regrouper les toasts, centre de notifications
 ms.localizationpriority: medium
-ms.openlocfilehash: 361b161b8cf323596a3b07665819300c78f1dcc5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c7d1e3ce0a012d36bea671f87efb8df3a5d49b5f
+ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57612104"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67714085"
 ---
 # <a name="toast-headers"></a>En-têtes de toast
 

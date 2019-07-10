@@ -2,16 +2,16 @@
 title: Données de Registre pour les contrôleurs de jeu
 description: En savoir plus sur les données qu’il est possible d’ajouter au Registre de l’ordinateur afin de pouvoir utiliser votre contrôleur dans les jeux UWP.
 ms.assetid: 2DD0B384-8776-4599-9E52-4FC0AA682735
-ms.date: 4/8/2019
+ms.date: 04/08/2019
 ms.topic: article
 keywords: Windows 10, uwp, jeux, entrée, registre, personnalisé
 ms.localizationpriority: medium
-ms.openlocfilehash: 5578faeb5a35ae909e590741de759c2597b9c7ed
-ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.openlocfilehash: 30c1f0d8c9fac09d071d158563c964c6a598e073
+ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59244395"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67714061"
 ---
 # <a name="registry-data-for-game-controllers"></a>Données de Registre pour les contrôleurs de jeu
 
@@ -31,7 +31,7 @@ Le tableau ci-dessous décrit les valeurs attendues sous l’emplacement racine 
 <table>
     <tr>
         <th>Nom</th>
-        <th>Type</th>
+        <th>type</th>
         <th>Obligatoire ?</th>
         <th>Info</th>
     </tr>
@@ -555,7 +555,7 @@ Le tableau ci-dessous répertorie les valeurs qui sont nécessaires au mappage d
 
 <table>
     <tr>
-        <th>Source</th>
+        <th>`Source`</th>
         <th>Nom de valeur</th>
         <th>Type de valeur</th>
         <th>Obligatoire ?</th>
@@ -635,7 +635,7 @@ Le tableau ci-dessous répertorie les valeurs nécessaires au mappage d’un axe
 
 <table>
     <tr>
-        <th>Source</th>
+        <th>`Source`</th>
         <th>Nom de valeur</th>
         <th>Type de valeur</th>
         <th>Obligatoire ?</th>
@@ -806,7 +806,7 @@ Les positions de commutateur peuvent être mappées à partir d’un ensemble de
 
 <table>
     <tr>
-        <th>Source</th>
+        <th>`Source`</th>
         <th>Nom de valeur</th>
         <th>Type de valeur</th>
         <th>Informations sur la valeur</th>
@@ -820,7 +820,7 @@ Les positions de commutateur peuvent être mappées à partir d’un ensemble de
     <tr>
         <td>SwitchKind</td>
         <td>REG_SZ</td>
-        <td><b>TwoWay</b>, <b>FourWay</b> ou <b>EightWay</b>
+        <td><b>TwoWay</b>, <b>FourWay</b>, ou <b>EightWay</b>
     </tr>
     <tr>
         <td>UpButtonIndex</td>
@@ -964,7 +964,7 @@ Les positions de commutateur peuvent être mappées à partir d’un ensemble de
     </tr>
 </table>
 
-#### <a name="buttonindex-values"></a>* Valeurs de ButtonIndex
+#### <a name="buttonindex-values"></a>\* Valeurs de ButtonIndex
 
 \*Index des valeurs de ButtonIndex dans le **RawGameController**du tableau de bouton :
 
@@ -1347,6 +1347,6 @@ Windows Registry Editor Version 5.00
 
 ## <a name="see-also"></a>Voir aussi
 
-* [Espace de noms Windows.Gaming.Input](https://docs.microsoft.com/uwp/api/windows.gaming.input)
-* [Espace de noms Windows.Gaming.Input.Custom](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom)
+* [Windows.Gaming.Input Namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input)
+* [Windows.Gaming.Input.Custom Namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom)
 * [Fichiers INF](https://docs.microsoft.com/windows-hardware/drivers/install/inf-files)

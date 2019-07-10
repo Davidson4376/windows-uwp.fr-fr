@@ -1,17 +1,17 @@
 ---
 ms.assetid: bf0a8b01-79f1-4944-9d78-9741e235dbe9
 title: Device Portal pour Xbox
-description: Découvrez comment activer Device Portal pour Xbox One.
-ms.date: 4/9/2019
+description: Découvrez comment activer Device Portal pour Xbox.
+ms.date: 04/09/2019
 ms.topic: article
 keywords: Windows 10, uwp, le portail de l’appareil
 ms.localizationpriority: medium
-ms.openlocfilehash: c701dc7eef4d37f28db9f9cabd7bbb0f39a92a4c
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: db0d2955f01fcae04a85c57a6dc28a32c561553a
+ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67322086"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67713843"
 ---
 # <a name="device-portal-for-xbox"></a>Device Portal pour Xbox
 
@@ -33,13 +33,13 @@ Les étapes suivantes montrent comment activer le portail d’appareil Xbox, qu
 
 5. **Fermez** la page **Accès à distance** et notez l’URL indiquée sous **Accès à distance** sur l’onglet **Accueil**.
 
-6. Entrez l’URL dans votre navigateur, puis connectez-vous avec les identifiants que vous avez configurés.
+6. Entrez l’URL dans votre navigateur, puis connectez-vous avec les informations d’identification que vous avez configurées.
 
 7. Vous recevrez un avertissement concernant le certificat fourni, similaire à celui illustré ci-dessous. Dans Edge, cliquez sur **Détails**, puis sur **Go on to the webpage** (Accéder à la page Web) pour accéder au portail d’appareil Xbox. Dans la boîte de dialogue qui s’affiche, entrez le nom d’utilisateur et mot de passe que vous avez entrés précédemment sur votre Xbox.
 
     ![Erreur de certificat Device Portal](images/device-portal-xbox-3.png)
 
-## <a name="device-portal-pages"></a>Pages Device Portal
+## <a name="device-portal-pages"></a>Pages Device Portal
 
 Le portail d’appareil Xbox fournit un ensemble de pages standard similaires à ce qui est disponible sur le portail d’appareil Windows, ainsi que plusieurs pages uniques. Pour en obtenir une description détaillée, voir [Vue d’ensemble du portail d’appareil Windows](../debug-test-perf/device-portal.md). Les sections suivantes décrivent les pages qui sont propres au portail d’appareil Xbox.
 
@@ -75,7 +75,7 @@ Une fois l’activation effectuée, dans le portail d’appareil Xbox, vous pou
 
 La page **Network** (Réseau) du portail d’appareil Xbox est presque identique à la page **Réseaux** du portail d’appareil Windows à l’exception du **suivi de Fiddler**, qui est propre au portail d’appareil Xbox. Vous pouvez ainsi exécuter Fiddler sur votre PC pour consigner et inspecter le trafic HTTP et HTTPS entre votre Xbox One et Internet. Pour plus d’informations, voir [Utilisation de Fiddler avec Xbox One lors du développement pour UWP](../xbox-apps/uwp-fiddler.md).
 
-![Réseau](images/device-portal-xbox-19.png)
+![Network (Réseau)](images/device-portal-xbox-19.png)
 
 ### <a name="media-capture"></a>Capture multimédia
 
@@ -123,7 +123,7 @@ Plusieurs sections contenant des paramètres d’affichage et/ou de modification
 
 * **Utiliser le casque audio optique ou HDMI**: Cochez cette case si vous utilisez un casque connecté via HDMI ou optique.
 
-#### <a name="display-settings"></a>Paramètres d’affichage
+#### <a name="display-settings"></a>Paramètres d'affichage
 
 * **Profondeur de couleur**: Le nombre de bits utilisés pour chaque composant de couleur d’un pixel unique.
 

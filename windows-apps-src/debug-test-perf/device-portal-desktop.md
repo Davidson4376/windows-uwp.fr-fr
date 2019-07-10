@@ -2,16 +2,16 @@
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
 title: Portail d’appareil pour Windows Desktop
 description: Découvrez comment Windows Device Portal ouvre les diagnostics et l’automatisation sur votre bureau Windows.
-ms.date: 02/6/2019
+ms.date: 02/06/2019
 ms.topic: article
 keywords: Windows 10, uwp, le portail de l’appareil
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fe1f2a51199dd12cd1d285c17c5d48c9a25b969
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 00cf497d5d57f5a3cdc5c52ecfeead7885ff7d56
+ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57654524"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67713808"
 ---
 # <a name="device-portal-for-windows-desktop"></a>Portail d’appareil pour Windows Desktop
 
@@ -71,7 +71,7 @@ Le portail d’appareil sur Windows Desktop propose les ensembles de pages stan
 - Fonctionnalités
 - Réalité mixte
 - Débogueur d’installation en continu
-- Emplacement
+- Location
 - Vide
 
 ## <a name="more-device-portal-options"></a>Autres options du portail d’appareil
@@ -81,9 +81,9 @@ Le portail d’appareil sur Windows Desktop propose les ensembles de pages stan
 Si vous souhaitez sélectionner des numéros de port pour Device Portal (par exemple, 80 et 443), vous pouvez définir les clés de Registre suivantes :
 
 - Sous `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WebManagement\Service`
-    - `UseDynamicPorts` : Un valeur DWORD requis. Définissez ce paramètre sur 0 pour conserver les numéros de port que vous avez choisis.
-    - `HttpPort` : Un valeur DWORD requis. Contient le numéro de port que Device Portal va écouter pour les connexions HTTP.    
-    - `HttpsPort` : Un valeur DWORD requis. Contient le numéro de port que Device Portal va écouter pour les connexions HTTPS.
+    - `UseDynamicPorts`: Un valeur DWORD requis. Définissez ce paramètre sur 0 pour conserver les numéros de port que vous avez choisis.
+    - `HttpPort`: Un valeur DWORD requis. Contient le numéro de port que Device Portal va écouter pour les connexions HTTP.    
+    - `HttpsPort`: Un valeur DWORD requis. Contient le numéro de port que Device Portal va écouter pour les connexions HTTPS.
     
 Dans le chemin d’accès de la même clé de Registre, vous pouvez également désactiver l’obligation d’authentification :
 - `UseDefaultAuthorizer` - `0` pour désactivé, `1` pour activé.  
@@ -115,9 +115,9 @@ Vous pouvez obtenir cette erreur lorsque vous tentez d’installer les packages 
 
 1. Accédez à **Paramètres > mise à jour & sécurité > programme Insider de Windows** et vérifiez que le **compte de Windows Insider** section a vos informations de compte correct. Si vous ne voyez pas cette section, sélectionnez **lier un compte Windows Insider**, ajoutez votre compte de messagerie et vérifiez qu’il s’affiche sous le **compte de Windows Insider** en-tête (vous devrez peut-être sélectionner **Lier un compte Windows Insider** une seconde fois pour lien réellement un compte qui vient d’être ajouté).
  
-2. Sous **le type de contenu vous souhaitez recevoir ?**, assurez-vous que **cours de développement de Windows** est sélectionné.
+2. Sous **le type de contenu vous souhaitez recevoir ?** , assurez-vous que **cours de développement de Windows** est sélectionné.
  
-3. Sous **rythme vous souhaitez obtenir de nouvelles builds ?**, assurez-vous que **Windows Insider rapide** est sélectionné.
+3. Sous **rythme vous souhaitez obtenir de nouvelles builds ?** , assurez-vous que **Windows Insider rapide** est sélectionné.
  
 4. Vous devez maintenant être en mesure d’installer le FoDs. Si vous avez confirmé que vous êtes sur Windows Insider rapide et toujours ne peut pas installer le FoDs, veuillez fournir des commentaires et attacher les fichiers journaux sous **C:\Windows\Logs\CBS**.
 
@@ -129,7 +129,7 @@ Vous pouvez obtenir cette erreur si les packages de développeur ne sont pas ins
 
 Vous pouvez obtenir cette erreur si vous êtes sur une connexion internet limitée. Il se peut que vous ne pourrez pas télécharger les packages de développeur sur une connexion limitée.
 
-## <a name="see-also"></a>Voir également
+## <a name="see-also"></a>Voir aussi
 
 * [Vue d’ensemble de Windows Device Portal](device-portal.md)
 * [Core de portail appareil référence de l’API](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)

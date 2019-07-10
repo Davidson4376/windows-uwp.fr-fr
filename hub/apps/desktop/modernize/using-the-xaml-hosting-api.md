@@ -8,16 +8,16 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 16f61c1f950583ee0fef7f30b7e17939df7ea538
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: fa38c952d4d46d83ea9b4e9f0db5f516fe09ce59
+ms.sourcegitcommit: f9a30bfd1e8eab50d0b1db97dd2f650ce66b5d34
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317755"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67690891"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-desktop-application"></a>À l’aide de le XAML UWP API d’hébergement dans une application de bureau
 
-À compter de Windows 10, version 1903, applications de bureau non UWP (y compris WPF, Windows Forms, et C++ applications Win32) peut utiliser le *XAML UWP API d’hébergement* pour héberger des contrôles UWP dans n’importe quel élément d’interface utilisateur qui est associé à un handle de fenêtre (HWND). Cette API permet aux applications de bureau de non UWP d’utiliser les dernières fonctionnalités de l’interface utilisateur de Windows 10 qui sont uniquement disponibles via les contrôles UWP. Par exemple, les applications de bureau non UWP peuvent utiliser cette API pour héberger des contrôles UWP qui utilisent le [Fluent Design System](/windows/uwp/design/fluent-design-system/index) et prennent en charge [Windows Ink](/windows/uwp/design/pen-and-stylus-interactions).
+À compter de Windows 10, version 1903, applications de bureau non UWP (y compris WPF, Windows Forms, et C++ applications Win32) peut utiliser le *XAML UWP API d’hébergement* pour héberger des contrôles UWP dans n’importe quel élément d’interface utilisateur qui est associé à un handle de fenêtre (HWND). Cette API permet aux applications de bureau de non UWP d’utiliser les dernières fonctionnalités de l’interface utilisateur de Windows 10 qui sont uniquement disponibles via les contrôles UWP. Par exemple, les applications de bureau non UWP peuvent utiliser cette API pour héberger des contrôles UWP qui utilisent le [Fluent Design System](/windows/uwp/design/fluent-design-system/index) et prennent en charge [Windows Ink](/windows/uwp/design/input/pen-and-stylus-interactions).
 
 Le XAML UWP API d’hébergement fournit la base pour un ensemble plus large de contrôles que nous mettons à disposition pour permettre aux développeurs de proposer de l’interface utilisateur Fluent à non UWP applications de bureau. Cette fonctionnalité est appelée *XAML îles*. Pour une vue d’ensemble de cette fonctionnalité, consultez [dans les applications de bureau, les contrôles UWP](xaml-islands.md).
 

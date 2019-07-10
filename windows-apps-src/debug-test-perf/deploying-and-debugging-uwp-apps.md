@@ -2,16 +2,16 @@
 ms.assetid: 9322B3A3-8F06-4329-AFCB-BE0C260C332C
 description: Cet article vous guide tout au long des étapes nécessaires pour cibler différents objectifs de déploiement et de débogage.
 title: Déploiement et débogage des applications UWP
-ms.date: 4/8/2019
+ms.date: 04/08/2019
 ms.topic: article
 keywords: windows 10, uwp, déboguer, test, performances
 ms.localizationpriority: medium
-ms.openlocfilehash: 96e6f712f1a9882a10cf0706452628329c0c085d
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 0bd1c15a971beca0b0015e774865808310138fd0
+ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317950"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67713818"
 ---
 # <a name="deploying-and-debugging-uwp-apps"></a>Déploiement et débogage des applications UWP
 
@@ -139,7 +139,7 @@ Pour utiliser les options avancées de déploiement distant, vous devez avoir la
 
 - Avoir Visual Studio 2015 Update 3 ou certains Visual Studio version ultérieure installée avec les outils de Windows 10 1.4.1 ou version ultérieure (qui inclut le SDK de mise à jour anniversaire Windows 10) nous vous recommandons d’utiliser la dernière version de Visual Studio avec les mises à jour pour vous assurer d’obtenir tous les le nouvelles fonctionnalités de développement et de sécurité.
 - Ciblez un appareil distant Xbox avec la Mise à jour anniversaire Windows 10 ou un PC avec Windows 10 Creators Update
-- Utilisez le mode d’authentification Universel
+- Utiliser le mode d’authentification Universel
 
 ### <a name="properties-pages"></a>Pages de propriétés
 
