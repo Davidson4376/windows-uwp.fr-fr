@@ -6,12 +6,12 @@ ms.date: 04/08/2019
 ms.topic: article
 keywords: windows 10, uwp, déboguer, test, performances
 ms.localizationpriority: medium
-ms.openlocfilehash: 0bd1c15a971beca0b0015e774865808310138fd0
-ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
+ms.openlocfilehash: c75eec01a41d31270e55b0da6f11ed38c971e8cb
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67713818"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820328"
 ---
 # <a name="deploying-and-debugging-uwp-apps"></a>Déploiement et débogage des applications UWP
 
@@ -65,7 +65,7 @@ Pour spécifier un ordinateur distant pour des applications en C# ou Microsoft V
 
 ![Boîte de dialogue Connexions à distance](images/debug-remote-connections.png)
 
-Pour revenir à cette boîte de dialogue, vous pouvez ouvrir les propriétés du projet et accéder à l’onglet **Déboguer**. Sélectionnez **Rechercher** à côté de **Ordinateur distant :**
+Pour revenir à cette boîte de dialogue, vous pouvez ouvrir les propriétés du projet et accéder à l’onglet **Déboguer**. Sélectionnez Rechercher à côté de **Ordinateur distant :**
 
 ![Onglet Déboguer](images/debug-remote-machine-config.png)
 
@@ -98,10 +98,10 @@ Pour plus d’informations, voir la page [Centre de téléchargement Visual Stu
 
 ## <a name="passing-command-line-debug-arguments"></a>Transmission d’arguments de ligne de commande pour le débogage
 
-Dans Visual Studio 2017, vous pouvez transmettre des arguments de ligne de commande pour le débogage lorsque vous commencez à déboguer des applications UWP. Vous pouvez accéder aux arguments de ligne de commande relatifs au débogage à partir du paramètre *args* de la méthode **OnLaunched** de la classe [**Application**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.application). Pour spécifier des arguments de ligne de commande pour le débogage, ouvrez les propriétés du projet et accédez à l’onglet **Déboguer**.
+Dans Visual Studio 2019, vous pouvez passer des arguments de ligne de commande debug lorsque vous démarrez le débogage des applications UWP. Vous pouvez accéder aux arguments de ligne de commande relatifs au débogage à partir du paramètre *args* de la méthode **OnLaunched** de la classe [**Application**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.application). Pour spécifier des arguments de ligne de commande pour le débogage, ouvrez les propriétés du projet et accédez à l’onglet **Déboguer**.
 
 > [!NOTE]
-> Cette fonctionnalité est disponible dans Visual Studio 2017 (version 15.1) pour C#, VB et C++. JavaScript est disponible dans les versions ultérieures de Visual Studio 2017. Les arguments de ligne de commande relatifs au débogage sont disponibles pour tous les types de déploiements, à l’exception du Simulateur.
+> Cette fonctionnalité est disponible dans Visual Studio 2017 (version 15.1) pour C#, VB et C++. JavaScript est disponible dans les versions ultérieures. Les arguments de ligne de commande relatifs au débogage sont disponibles pour tous les types de déploiements, à l’exception du Simulateur.
 
 Pour les projets UWP C# et VB, vous verrez un champ **Arguments de la ligne de commande :** sous **Options de démarrage**.
 
@@ -120,7 +120,7 @@ Une fois que vous avez spécifié les arguments de ligne de commande, vous pouve
 Il existe trois modes d’authentification de déploiement sur un ordinateur distant :
 
 - **Universel (protocole non chiffré)** : Utilisez ce mode d’authentification chaque fois que vous déployez sur un périphérique distant. Actuellement, ce mode convient aux appareils IoT, aux appareils Xbox et aux appareils HoloLens, ainsi qu'aux PC exécutant Creators Update ou version ultérieure. Le mode Universel (protocole non chiffré) doit uniquement être utilisé sur les réseaux approuvés. La connexion de débogage est vulnérable aux utilisateurs malveillants qui peuvent intercepter les données transmises entre la machine de développement et la machine distante, et les modifier.
-- **Windows**: Ce mode d’authentification est uniquement destiné à être utilisé pour un PC distant (bureau ou portable) les outils distants Visual Studio en cours d’exécution. Utilisez ce mode d’authentification quand vous avez accès aux informations d’identification de l’utilisateur connecté sur l’ordinateur cible. Il s’agit du canal le plus sécurisé pour le déploiement à distance.
+- **Windows** : Ce mode d’authentification est uniquement destiné à être utilisé pour un PC distant (bureau ou portable) les outils distants Visual Studio en cours d’exécution. Utilisez ce mode d’authentification quand vous avez accès aux informations d’identification de l’utilisateur connecté sur l’ordinateur cible. Il s’agit du canal le plus sécurisé pour le déploiement à distance.
 - **Aucun** : Ce mode d’authentification est uniquement destiné à être utilisé pour un PC distant (bureau ou portable) les outils distants Visual Studio en cours d’exécution. Utilisez ce mode d’authentification quand vous disposez d’un ordinateur de test configuré dans un environnement avec un compte de test connecté, et que vous ne pouvez pas entrer les informations d’identification. Vérifiez que les paramètres du débogueur distant sont définis pour n’accepter aucune authentification.
 
 ## <a name="advanced-remote-deployment-options"></a>Options avancées de déploiement distant
@@ -197,7 +197,7 @@ Vous pouvez définir les options de déploiement suivantes dans la page de propr
 
 - **Autoriser le bouclage de réseau local**
 
-  Pour des raisons de sécurité, une application UWP installée de manière standard n’est pas autorisée à effectuer des appels réseau à l’appareil sur lequel elle est installée. Par défaut, le déploiement de Visual Studio crée une exemption à cette règle pour l’application déployée. Cette exemption vous permet de tester les procédures de communication sur un seul et même ordinateur. Avant de soumettre votre application pour le Microsoft Store, vous devez tester votre application sans l’exemption.
+  Pour des raisons de sécurité, une application UWP installée de manière standard n’est pas autorisée à effectuer des appels réseau à l’appareil sur lequel elle est installée. Par défaut, le déploiement Visual Studio crée une exemption à cette règle pour l'application déployée. Cette exemption vous permet de tester les procédures de communication sur un seul ordinateur. Avant de soumettre votre application pour le Microsoft Store, vous devez tester votre application sans l’exemption.
 
   Pour supprimer l’exemption de bouclage réseau de l’application :
 
