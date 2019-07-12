@@ -6,12 +6,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e5ba7ddb6ef37b4aa54584602fc890bbabc8998
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: db5ba7fb6e13d2a5aab4b74014458073aa88e7f4
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359352"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820214"
 ---
 # <a name="tailor-your-resources-for-language-scale-high-contrast-and-other-qualifiers"></a>Personnaliser vos ressources pour la langue, l’échelle, le contraste élevé et d’autres qualificateurs
 
@@ -61,7 +61,7 @@ Le fichier dont le nom contient le qualificateur le plus approprié pour le para
 
 ## <a name="reference-a-string-or-image-resource-by-name"></a>Faire référence à une ressource de chaîne ou d’image à l’aide de son nom
 
-Voir [Faire référence à un identificateur de ressource de chaîne à partir du balisage XAML](localize-strings-ui-manifest.md#refer-to-a-string-resource-identifier-from-xaml-markup), [Faire référence à un identificateur de ressource de chaîne à partir du code](localize-strings-ui-manifest.md#refer-to-a-string-resource-identifier-from-code) et [Faire référence à une image ou une autre ressource à partir du code et du balisage XAML](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code).
+Voir [Faire référence à un identificateur de ressource de chaîne à partir du balisage XAML](localize-strings-ui-manifest.md#refer-to-a-string-resource-identifier-from-xaml), [Faire référence à un identificateur de ressource de chaîne à partir du code](localize-strings-ui-manifest.md#refer-to-a-string-resource-identifier-from-code) et [Faire référence à une image ou une autre ressource à partir du code et du balisage XAML](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code).
 
 ## <a name="actual-and-neutral-qualifier-matches"></a>Le qualificateur réel et neutre correspondent
 Vous n’avez pas besoin de fournir un fichier de ressources pour *chaque* valeur de qualificateur. Par exemple, si vous constatez que vous n'avez besoin que d'une ressource visuelle pour le contraste élevé et que d'une pour le contraste standard, vous pouvez nommer ces ressources comme suit.

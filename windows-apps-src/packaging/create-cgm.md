@@ -6,12 +6,12 @@ ms.date: 09/30/2018
 ms.topic: article
 keywords: Windows 10, UWP, mappage de groupe de contenu, installation en continu, installation en continu d’une application UWP, mappage de groupe de contenu source
 ms.localizationpriority: medium
-ms.openlocfilehash: 882db0a6a97c5ee203a072156ca3eb82615607bb
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 7e25f30a2288f6be76ce108de2056ab6407187de
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57647944"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67821034"
 ---
 # <a name="create-and-convert-a-source-content-group-map"></a>Créer et convertir un plan de contenu de groupe source
 
@@ -143,7 +143,7 @@ Vous pouvez également utiliser des caractères génériques avec du texte pour 
 
 ## <a name="convert-sourceappxcontentgroupmapxml-to-appxcontentgroupmapxml"></a>Convertir SourceAppxContentGroupMap.xml en AppxContentGroupMap.xml
 
-Pour convertir le fichier `SourceAppxContentGroupMap.xml` vers la version finale, `AppxContentGroupMap.xml`, vous pouvez utiliser Visual Studio 2017 ou l’outil de ligne de commande **MakeAppx.exe**.
+Pour convertir le `SourceAppxContentGroupMap.xml` vers la version finale, `AppxContentGroupMap.xml`, vous pouvez utiliser Visual Studio 2019 ou **MakeAppx.exe** outil de ligne de commande.
 
 Pour utiliser Visual Studio pour convertir votre mappage de groupe de contenu :
 1. Ajoutez le fichier `SourceAppxContentGroupMap.xml` à votre dossier de projet

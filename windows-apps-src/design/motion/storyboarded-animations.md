@@ -1,19 +1,19 @@
 ---
 ms.assetid: 0CBCEEA0-2B0E-44A1-A09A-F7A939632F3A
-title: Animations dans une table de montage
+title: Animations dans une table de montage séquentiel
 description: Les animations de table de montage séquentiel ne sont pas seulement des animations au sens visuel.
 ms.date: 07/13/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 62f603a6ff5aadc1c3e5342db6a7d771f8c37a7b
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: cc5b3598f2d50a49aa9d51721c2c1eb1261c8aa8
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320839"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820510"
 ---
-# <a name="storyboarded-animations"></a>Animations dans une table de montage
+# <a name="storyboarded-animations"></a>Animations dans une table de montage séquentiel
 
 Les animations de table de montage séquentiel ne sont pas seulement des animations au sens visuel. Une animation de table de montage séquentiel permet de changer la valeur d’une propriété de dépendance en tant que fonction de temps. Vous pouvez avoir notamment besoin d’une animation de table de montage séquentiel qui ne provient pas de la bibliothèque des animations pour définir l’état visuel d’un contrôle dans un modèle de contrôle ou une définition de page.
 
@@ -74,7 +74,7 @@ Vous définissez la valeur de [**Storyboard.TargetProperty**](https://docs.micro
 
 Parfois vous devez cibler une propriété qui n’est pas une propriété immédiate de l’objet cible, mais qui est imbriquée plus profondément dans une relation objet-propriété. Vous devez souvent faire cela afin d’explorer un ensemble de valeurs de propriétés et d’objets contributives jusqu’à ce que vous puissiez référencer un type de propriété qui peut être animé ([**Double**](https://docs.microsoft.com/dotnet/api/system.double?redirectedfrom=MSDN), [**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point), [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color)). Ce concept porte le nom de *ciblage indirect* et la syntaxe de ciblage d’une propriété de cette manière porte le nom de *chemin d’accès de propriété*.
 
-En voici un exemple. Un exemple courant de scénario pour une animation de table de montage séquentiel consiste à changer la couleur d’une partie de l’interface utilisateur ou d’un contrôle d’une application afin d’indiquer l’état de ce contrôle. Supposons que vous vouliez animer le [**Foreground**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.foreground) d’un [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) pour qu’il soit vert au lieu d’être rouge. Vous vous attendez à ce qu’intervienne [**ColorAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ColorAnimation) et vous avez raison. Cependant, aucune des propriétés sur les éléments d’interface utilisateur qui modifient la couleur de l’objet n’est de type [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color). Elles sont en fait de type [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush). Par conséquent, pour votre animation, vous devez cibler la propriété [**Color**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) de la classe [**SolidColorBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) dont le type est dérivé de **Brush**. Ce type est en général utilisé pour les propriétés de couleur d’interface utilisateur. Voici ce que cela donne pour la formation d’un chemin d’accès de propriété pour le ciblage d’une propriété de votre animation :
+Voici un exemple : Un exemple courant de scénario pour une animation de table de montage séquentiel consiste à changer la couleur d’une partie de l’interface utilisateur ou d’un contrôle d’une application afin d’indiquer l’état de ce contrôle. Supposons que vous vouliez animer le [**Foreground**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.foreground) d’un [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) pour qu’il soit vert au lieu d’être rouge. Vous vous attendez à ce qu’intervienne [**ColorAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ColorAnimation) et vous avez raison. Cependant, aucune des propriétés sur les éléments d’interface utilisateur qui modifient la couleur de l’objet n’est de type [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color). Elles sont en fait de type [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush). Par conséquent, pour votre animation, vous devez cibler la propriété [**Color**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) de la classe [**SolidColorBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) dont le type est dérivé de **Brush**. Ce type est en général utilisé pour les propriétés de couleur d’interface utilisateur. Voici ce que cela donne pour la formation d’un chemin d’accès de propriété pour le ciblage d’une propriété de votre animation :
 
 ```xaml
 <Storyboard x:Name="myStoryboard">
@@ -265,7 +265,7 @@ Le fait que l’activation des animations dépendantes repose sur le développeu
 En tant que développeur d’application, vous pouvez également choisir d’appliquer un paramètre pour toute l’application qui désactive toujours les animations dépendantes, même celles où la propriété **EnableDependentAnimation** a la valeur **true**. Voir [**Timeline.AllowDependentAnimations**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.allowdependentanimations).
 
 > [!TIP]
-> Si vous utilisez le volet de l’Animation dans Blend pour Visual Studio 2017, chaque fois que vous essayez d’appliquer une animation dépendante à une propriété de l’état visuel, les avertissements sont affichés dans le concepteur. Avertissements seront affichent pas dans la sortie de génération ou de la liste d’erreurs. Si vous modifiez manuellement XAML, le concepteur n’affichera pas un avertissement. Lors de l’exécution lors du débogage, sortie de débogage du volet de sortie affiche un avertissement qui n’est pas indépendante de l’animation et sera ignorée.
+> Si vous utilisez le volet de l’Animation dans Blend pour Visual Studio 2019, chaque fois que vous essayez d’appliquer une animation dépendante à une propriété de l’état visuel, les avertissements sont affichés dans le concepteur. Avertissements seront affichent pas dans la sortie de génération ou de la liste d’erreurs. Si vous modifiez manuellement XAML, le concepteur n’affichera pas un avertissement. Lors de l’exécution lors du débogage, sortie de débogage du volet de sortie affiche un avertissement qui n’est pas indépendante de l’animation et sera ignorée.
 
 
 ## <a name="starting-and-controlling-an-animation"></a>Démarrage et contrôle d’une animation
@@ -306,7 +306,7 @@ myStoryboard->Begin();
 myStoryBoard.Begin()
 ```
 
-Vous pouvez gérer l’événement [**Completed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.completed) si vous souhaitez qu’une autre logique s’exécute après que l’animation a fini d’appliquer les valeurs. De même, pour la résolution des problèmes liés aux interactions système de propriétés/animation, la méthode [**GetAnimationBaseValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.getanimationbasevalue) peut être utile.
+Vous pouvez gérer l’événement [**Completed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.completed) si vous souhaitez qu’une autre logique s’exécute après que l’animation a fini d’appliquer les valeurs. De même, pour le dépannage des interactions système de propriétés/animation, la méthode [**GetAnimationBaseValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.getanimationbasevalue) peut être utile.
 
 > [!TIP]
 > Lorsque vous écrivez le code d’un scénario d’application et envisagez de démarrer une animation directement à partir de ce code, vérifiez si la bibliothèque d’animations ne contient pas déjà une animation ou une transition correspondant à votre scénario d’interface utilisateur. Les animations de la bibliothèque s’exécutent de façon homogène sur toutes les applications Windows Runtime et sont plus faciles à utiliser.
@@ -335,7 +335,7 @@ Jusqu’à présent nous vous avons montré les animations personnalisées qui s
 * [Vue d’ensemble des propriétés de dépendance](https://docs.microsoft.com/windows/uwp/xaml-platform/dependency-properties-overview)
 * [Image clé et des animations de la fonction d’accélération](key-frame-and-easing-function-animations.md)
 * [Animations de storyboard pour les états visuels](https://docs.microsoft.com/previous-versions/windows/apps/jj819808(v=win.10))
-* [Modèles de contrôle](https://docs.microsoft.com/windows/uwp/controls-and-patterns/control-templates)
+* [Modèles de contrôles](https://docs.microsoft.com/windows/uwp/controls-and-patterns/control-templates)
 * [**table de montage séquentiel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard)
 * [**Storyboard.TargetProperty**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v=vs.95))
  

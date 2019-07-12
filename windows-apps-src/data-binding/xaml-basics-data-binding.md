@@ -5,12 +5,12 @@ keywords: XAML, UWP, Prise en main
 ms.date: 08/30/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 21a053934d7391d12f7cd987026524b9ff4c279d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 707c2ed110498f4ef18fea31ace87d1fd2434112
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57639984"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820344"
 ---
 # <a name="create-data-bindings"></a>Créer des liaisons de données
 
@@ -20,22 +20,22 @@ Dans ce didacticiel, vous allez apprendre à remplacer votre texte modèle à l'
 
 Vous allez commencer avec une version simplifiée de l’exemple PhotoLab. Cette version de démarrage comprend la couche de données complète, ainsi que des dispositions de pages XAML de base et exclut de nombreuses fonctionnalités afin que le code soit plus facile à parcourir. Ce didacticiel ne génère pas l’application complète, donc veillez à examiner la version définitive pour voir des fonctionnalités telles que les animations personnalisées et le support téléphonique. Vous pouvez trouver la version finale dans le dossier racine du référentiel [Windows-appsample-photo-lab](https://github.com/Microsoft/Windows-appsample-photo-lab). 
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
-* [Visual Studio 2017 et la dernière version du SDK Windows 10](https://developer.microsoft.com/windows/downloads).
+* [Visual Studio 2019 et la dernière version du SDK Windows 10](https://developer.microsoft.com/windows/downloads).
 
-## <a name="part-0-get-the-code"></a>Notamment le tome 0 Obtenir le code
-Le point de départ de ce laboratoire se trouve dans le référentiel d’exemples PhotoLab, dans le dossier [xaml-basics-starting-points/data-binding](https://github.com/Microsoft/Windows-appsample-photo-lab/tree/master/xaml-basics-starting-points/data-binding). Après avoir cloné ou téléchargé le référentiel, vous pouvez modifier le projet en ouvrant PhotoLab.sln avec Visual Studio 2017.
+## <a name="part-0-get-the-code"></a>Partie 0 : Obtenir le code
+Le point de départ de ce laboratoire se trouve dans le référentiel d’exemples PhotoLab, dans le dossier [xaml-basics-starting-points/data-binding](https://github.com/Microsoft/Windows-appsample-photo-lab/tree/master/xaml-basics-starting-points/data-binding). Une fois que vous avez cloné ou téléchargé le référentiel, vous pouvez modifier le projet en ouvrant PhotoLab.sln avec Visual Studio 2019.
 
 L’application PhotoLab comporte deux pages principales :
 
 **MainPage.xaml :** présente un affichage de galerie de photos, ainsi que des informations sur chaque fichier d’image.
 ![MainPage](../design/basics/images/xaml-basics/mainpage.png)
 
-**DetailPage.xaml :** affiche une seule photo une fois qu'elle a été sélectionnée. Un menu d'édition volant permet de modifier la photo, de la renommer et de l'enregistrer.
+**DetailPage.xaml :** affiche une seule photo une fois qu'elle a été sélectionnée. Un menu d’édition volant permet de modifier la photo, de la renommer et de l’enregistrer.
 ![DetailPage](../design/basics/images/xaml-basics/detailpage.png)
 
-## <a name="part-1-replace-the-placeholders"></a>Partie 1 : Remplacez les espaces réservés
+## <a name="part-1-replace-the-placeholders"></a>Partie 1 : Remplacez les espaces réservés
 
 Vous allez créer des liaisons à usage unique dans le modèle de données XAML pour afficher les images réelles et les métadonnées d’image à la place du contenu de l’espace réservé. 
 
@@ -160,7 +160,7 @@ Dans l’exemple PhotoLab, une utilisation possible d'une telle liaison consiste
               ItemsSource="{x:Bind Images}" 
     ```
 
-    Le **Images** propriété est de type **ObservableCollection\<ImageFileInfo\>**, de sorte que les éléments affichent dans le **GridView** sont de type **ImageFileInfo**. Cela correspond à la valeur **x:DataType** décrite dans la partie 1. 
+    Le **Images** propriété est de type **ObservableCollection\<ImageFileInfo\>** , de sorte que les éléments affichent dans le **GridView** sont de type **ImageFileInfo**. Cela correspond à la valeur **x:DataType** décrite dans la partie 1. 
 
 Toutes les liaisons que nous avons examinées jusqu'à présent sont des liaisons à usage unique en lecture seule, ce qui est le comportement par défaut des expressions brutes **x:Bind**. Les données sont chargées uniquement lors de l’initialisation, ce qui donne des liaisons à hautes performances, idéales pour prendre en charge plusieurs vues complexes de jeux de données volumineux. 
 
@@ -171,7 +171,7 @@ private ObservableCollection<ImageFileInfo> Images { get; }
     = new ObservableCollection<ImageFileInfo>();
 ```
 
-Le **Images** valeur de propriété ne change jamais, mais étant donné que la propriété est de type **ObservableCollection\<T\>**, le *contenu* de la collection peut être modifiée, et la liaison sera automatiquement remarquer les modifications et mettre à jour l’interface utilisateur. 
+Le **Images** valeur de propriété ne change jamais, mais étant donné que la propriété est de type **ObservableCollection\<T\>** , le *contenu* de la collection peut être modifiée, et la liaison sera automatiquement remarquer les modifications et mettre à jour l’interface utilisateur. 
 
 Pour tester cela, nous allons ajouter temporairement un bouton qui supprime l’image actuellement sélectionnée. Ce bouton ne se trouve pas dans la version définitive, car la sélection d’une image vous redirige vers une page de détails. Toutefois, le comportement de **ObservableCollection\<T\>**  est toujours important dans l’exemple PhotoLab finale, car le XAML est initialisé dans le constructeur de page (via le  **InitializeComponent** appel de méthode), mais la **Images** collection est remplie plus tard dans le **OnNavigatedTo** (méthode). 
 
@@ -203,7 +203,7 @@ Maintenant, exécutez l’application et utilisez le bouton pour supprimer quelq
 > [!Note]
 > Par défi, essayez d’ajouter deux boutons qui déplacent l’image sélectionnée vers le haut ou vers le bas dans la liste, puis établissez une liaison x:Bind entre leurs événements Click et deux nouvelles méthodes similaires à DeleteSelectedImage.
  
-## <a name="part-3-set-up-the-zoom-slider"></a>Partie 3 : Configurer le curseur de zoom 
+## <a name="part-3-set-up-the-zoom-slider"></a>Partie 3 : Configurer le curseur de zoom 
 
 Dans cette partie, vous allez créer des liaisons à sens unique entre un contrôle dans le modèle de données et le curseur de zoom, qui se trouve en dehors du modèle. Vous apprendrez également que vous pouvez utiliser une liaison de données avec de nombreuses propriétés de contrôle, pas seulement celles les plus évidentes comme **TextBlock.Text** et **Image.Source**. 
 
@@ -220,7 +220,7 @@ Dans cette partie, vous allez créer des liaisons à sens unique entre un contr�
               Margin="{StaticResource LargeItemMargin}">
     ```
     
-    **Après avoir**
+    **Après**
     ```xaml
     <DataTemplate x:Key="ImageGridView_DefaultItemTemplate" 
                   x:DataType="local:ImageFileInfo">
@@ -312,7 +312,7 @@ Contrairement aux propriétés de contrôle intégrées, vos propriétés person
             Margin="{StaticResource LargeItemMargin}">
     ```
     
-    **Après avoir**
+    **Après**
     ```xaml
     <DataTemplate x:Key="ImageGridView_DefaultItemTemplate" 
                   x:DataType="local:ImageFileInfo">
@@ -595,5 +595,5 @@ Comme vous l'avez peut-être remarqué, si vous modifiez le niveau de zoom sur l
     
 Vous disposez normalement de toutes les informations nécessaires dans ce didacticiel, mais si vous avez besoin de plus de conseils, il suffit d'un clic pour accéder à la documentation sur la liaison de données. Commencez ici :
 
-+ [extension de balisage {x : Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)
++ [{x:Bind} markup extension](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)
 + [Présentation détaillée de la liaison de données](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)

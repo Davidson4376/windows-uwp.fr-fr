@@ -5,12 +5,12 @@ ms.date: 06/28/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d0f6cdf4818743e3b5a3cc7c5a6b13f69f40afa
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: f0549aa1e20d8ed787eed550f4a7e7171a812831
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318461"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820190"
 ---
 # <a name="my-people-sharing"></a>Partage de mes contacts
 
@@ -20,7 +20,7 @@ La fonctionnalité Mes Contact permet aux utilisateurs d’épingler des contact
 
 ## <a name="requirements"></a>Configuration requise
 
-+ Windows 10 et Microsoft Visual Studio 2017. Pour en savoir plus sur l’installation, voir [Prendre en main Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
++ Windows 10 et Microsoft Visual Studio 2019. Pour en savoir plus sur l’installation, voir [Prendre en main Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
 + Connaissances de base de C# ou d’un langage de programmation orienté objet similaire. Pour vous familiariser avec C#, voir [Créer une application « Hello, world »](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
 
 ## <a name="overview"></a>Vue d'ensemble
@@ -50,7 +50,7 @@ Pour déclarer la prise en charge de votre application en tant que cible de part
 </Applications>
 ```
 
-**Après avoir**
+**Après**
 
 ```xml
 <Applications>

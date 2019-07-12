@@ -5,12 +5,12 @@ ms.date: 10/12/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c94d27e87853b570268e3a39fe941c817b3eda6a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 19756730177485c6d16ad9a42ff1174eba8ca3b9
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57590974"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820307"
 ---
 # <a name="getting-started-with-uwp-app-development-on-xbox-one"></a>Prise en main du développement d’applications UWP sur Xbox One
 
@@ -20,20 +20,20 @@ Pour configurer correctement votre PC et votre console Xbox One pour le dévelop
 
 Avant de commencer, vous devez effectuer les opérations suivantes :
 -   Configurer un ordinateur sur lequel la dernière version de Windows 10.
-<!-- -  Install Microsoft Visual Studio 2015 Update 3 or Microsoft Visual Studio 2017.
+<!-- -  Install Microsoft Visual Studio 2015 Update 3 or Microsoft Visual Studio 2019.
 
     > [!NOTE]
-    > Visual Studio 2017 is required if you are using the Windows 10, build 15063 SDK. -->
+    > Visual Studio 2019 is required if you are using the Windows 10, build 15063 SDK. -->
 
 - Vérifier que vous disposez d’au moins 5 Go d’espace libre sur votre console Xbox One.
 
 ## <a name="setting-up-your-development-pc"></a>Configuration de votre PC de développement
 
-1.  Installer Visual Studio 2015 Update 3 ou Visual Studio 2017.
+1.  Installer Visual Studio 2015 Update 3, Visual Studio 2017 ou Visual Studio 2019.
 
-    Si vous installez Visual Studio 2015 Update 3, assurez-vous que vous choisissez **personnalisé** installer, puis sélectionnez le **outils développement d’applications universelles Windows** case à cocher – il n’est pas installer de la partie de la valeur par défaut. Si vous êtes développeur en C++, assurez-vous de choisir **Installation personnalisée** et de sélectionner **C++**.
+    Si vous installez Visual Studio 2015 Update 3, assurez-vous que vous choisissez **personnalisé** installer, puis sélectionnez le **outils développement d’applications universelles Windows** case à cocher – il n’est pas installer de la partie de la valeur par défaut. Si vous êtes développeur en C++, assurez-vous de choisir **Installation personnalisée** et de sélectionner **C++** .
 
-    Si vous installez Visual Studio 2017, veillez à choisir la charge de travail **Développement de plateforme Windows universelle**. Si vous êtes un développeur C++, dans le **Résumé** volet de droite, sous **développement de plateforme Windows universelle**, assurez-vous que vous sélectionnez le **outils de plateforme Windows universelle C++** case à cocher. Il n’est pas partie de l’installation par défaut.
+    Si vous installez Visual Studio 2017 ou Visual Studio 2019, assurez-vous que vous choisissez la **développement de plateforme Windows universelle** charge de travail. Si vous êtes un développeur C++, dans le **Résumé** volet de droite, sous **développement de plateforme Windows universelle**, assurez-vous que vous sélectionnez le **outils de plateforme Windows universelle C++** case à cocher. Il n’est pas partie de l’installation par défaut.
 
     Pour plus d’informations, consultez [configurer votre UWP sur un environnement de développement Xbox](development-environment-setup.md).
 
@@ -78,11 +78,11 @@ Pour plus d’informations, consultez [configurer votre UWP sur un environnement
 
 7. Il ne vous reste plus qu’à vous détendre et à profiter de votre première application exécutée sur la console.  
 
-## <a name="thats-it"></a>C’est tout !
+## <a name="thats-it"></a>C’est tout !
 
 ![Hello World](images/getting-started-hello-world.png)
 
-## <a name="see-also"></a>Voir également  
-- [Forum aux questions](frequently-asked-questions.md)  
+## <a name="see-also"></a>Voir aussi  
+- [Forum Aux Questions](frequently-asked-questions.md)  
 - [Problèmes connus avec UWP sur Xbox Developer Program](known-issues.md)
 - [UWP sur Xbox One](index.md) 

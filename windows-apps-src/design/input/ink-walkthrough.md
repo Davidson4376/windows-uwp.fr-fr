@@ -6,12 +6,12 @@ keywords: Ink, entrée manuscrite, didacticiel
 ms.date: 01/25/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: be7005e64a431d65006315fbee551e5c6c3a2a6f
-ms.sourcegitcommit: 7676d4b4c323e665302c2dfca3c763751a47afa3
+ms.openlocfilehash: 929d72da46c52cfdb510f1e1b6a97ddcbbe066d5
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58343278"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820568"
 ---
 # <a name="tutorial-support-ink-in-your-uwp-app"></a>Tutoriel : Entrée manuscrite prise en charge dans votre application UWP
 
@@ -29,14 +29,14 @@ Nous nous concentrons sur les éléments suivants :
 
 Pour plus d’informations sur l’implémentation de ces fonctionnalités, voir [Interactions du stylet et Windows Ink dans les applications UWP](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions).
 
-## <a name="introduction"></a>Introduction
+## <a name="introduction"></a>Présentation
 
 Avec Windows Ink, vous pouvez fournir à vos clients l’équivalent numérique de quasiment n’importe quelle expérience manuscrite imaginable, depuis des notes manuscrites rapides et des annotations dans des démonstrations sur tableau blanc, en passant par des croquis techniques et architecturaux ou encore pour vos travaux personnels.
 
 ## <a name="prerequisites"></a>Prérequis
 
 * Un ordinateur (ou un appareil virtuel) exécutant la version actuelle de Windows 10
-* [Visual Studio 2017 et le RS2 SDK](https://developer.microsoft.com/windows/downloads)
+* [Visual Studio 2019 et le RS2 SDK](https://developer.microsoft.com/windows/downloads)
 * [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * Selon votre configuration, vous devrez peut-être installer le [Microsoft.NETCore.UniversalWindowsPlatform](https://www.nuget.org/packages/Microsoft.NETCore.UniversalWindowsPlatform) NuGet package et activer **mode développeur** dans vos paramètres système (Paramètres -> mise à jour & Sécurité -> pour les développeurs -> fonctionnalités de développement d’utilisation).
 * Si vous débutez dans le développement d’applications de plateforme Windows universelle (UWP) avec Visual Studio, consultez les rubriques suivantes avant de démarrer ce didacticiel :  
@@ -64,14 +64,14 @@ Téléchargez cet exemple Visual Studio et ce code source à partir de [GitHub](
 
 Ces objets fournissent la majeure partie de l’expérience d’entrée manuscrite pour les applications UWP.
 
-| Component | Description |
+| Composant | Description |
 | --- | --- |
 | [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) | Un contrôle de plateforme XAML UI qui, par défaut, reçoit et affiche toutes les entrées à partir d’un stylet comme un trait d’encre ou un trait d’effacement. |
 | [**InkPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPresenter) | Un objet code-behind, instancié avec un contrôle [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) (exposé par le biais de la propriété [**InkCanvas.InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.InkPresenter)). Cet objet fournit toutes les fonctionnalités d’entrée manuscrite par défaut exposées par l’élément [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas), ainsi qu’un ensemble complet d’API pour plus de personnalisation. |
 | [**InkToolbar**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkToolbar) | Un contrôle de plateforme XAML UI contenant une collection personnalisable et extensible de boutons qui activent des fonctionnalités de l’encre dans associé à un [ **InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas). |
 | [**IInkD2DRenderer**](https://docs.microsoft.com/windows/desktop/api/inkrenderer/nn-inkrenderer-iinkd2drenderer)<br/>Nous n'abordons pas cette fonctionnalité ici ; pour plus d’informations, consultez [Exemple d’entrée manuscrite complexe](https://go.microsoft.com/fwlink/p/?LinkID=620314). | Permet le rendu des traits d’encre sur le contexte d’appareil Direct2D désigné d’une application Windows universelle, au lieu du contrôle [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) par défaut. |
 
-## <a name="step-1-run-the-sample"></a>Étape 1 : Exécuter l’exemple
+## <a name="step-1-run-the-sample"></a>Étape 1 : Exécution de l'exemple
 
 Une fois que vous avez téléchargé l’exemple d’application RadialController, vérifiez qu’elle s’exécute :
 1. Ouvrez l’exemple de projet dans Visual Studio.
@@ -88,7 +88,7 @@ Ouvre la fenêtre d’application, et une fois qu'un écran de démarrage se ser
 
 OK, nous vous proposons désormais l’application UWP de base que nous allons utiliser tout au long de ce didacticiel. Dans les étapes suivantes, nous ajouterons nos fonctionnalités d’entrée manuscrite.
 
-## <a name="step-2-use-inkcanvas-to-support-basic-inking"></a>Étape 2 : Utilisez InkCanvas pour prendre en charge l’écriture manuscrite de base
+## <a name="step-2-use-inkcanvas-to-support-basic-inking"></a>Étape 2 : Utilisez InkCanvas pour prendre en charge l’écriture manuscrite de base
 
 Vous avez probablement déjà remarqué que l’application, dans sa forme initiale, ne vous permet pas de dessiner avec le stylet (bien que vous puissiez utiliser le stylet comme périphérique de pointage standard pour interagir avec l’application). 
 
@@ -125,7 +125,7 @@ Exécutez de nouveau l’application. Lancez-vous et dessinez, écrivez votre no
 
 ![Entrée manuscrite de base](images/ink/ink-app-step1-name-small.png)
 
-## <a name="step-3-support-inking-with-touch-and-mouse"></a>Étape 3 : Prend en charge la saisie manuscrite avec tactiles et de la souris
+## <a name="step-3-support-inking-with-touch-and-mouse"></a>Étape 3 : Prend en charge la saisie manuscrite avec tactiles et de la souris
 
 Vous remarquerez que, par défaut, l'entrée manuscrite est prise en charge uniquement pour la saisie effectuée à l'aide du stylet. Si vous tentez d’écrire ou de dessiner avec votre doigt, votre souris ou votre pavé tactile, vous serez déçu.
 
@@ -155,7 +155,7 @@ Exécutez de nouveau l’application et vous constaterez que tous vos rêves d'e
 > [!NOTE]
 > Lorsque vous spécifiez les types de périphérique d’entrée, vous devez indiquer la prise en charge pour chaque type d'entrée spécifique (y compris le stylet), car cette propriété remplace le paramètre par défaut [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas).
 
-## <a name="step-4-add-an-ink-toolbar"></a>Étape 4 : Ajouter une barre d’outils de l’encre
+## <a name="step-4-add-an-ink-toolbar"></a>Étape 4 : Ajouter une barre d’outils de l’encre
 
 L'élément [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) est un contrôle de plateforme UWP qui fournit un ensemble extensible et personnalisable de boutons en vue de l’activation des fonctionnalités relatives à l’entrée manuscrite. 
 
@@ -193,7 +193,7 @@ Exécutez de nouveau l’application pour voir [**InkToolbar**](https://docs.mic
 </td>
 <td>
 
-Voici un exemple d’**[InkToolbar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar)** personnalisée (à partir du bloc-croquis dans l’espace de travail Windows Ink).
+Voici un exemple d’ **[InkToolbar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar)** personnalisée (à partir du bloc-croquis dans l’espace de travail Windows Ink).
 
 ![InkToolbar à partir du bloc-croquis dans l’espace de travail Windows Ink](images/ink/ink-inktoolbar-sketchpad-small.png)
 
@@ -203,7 +203,7 @@ Pour en savoir plus sur la personnalisation d’une [InkToolbar](https://docs.mi
 </tr>
 </table>
 
-## <a name="step-5-support-handwriting-recognition"></a>Étape 5 : Prise en charge de la reconnaissance d’écriture manuscrite
+## <a name="step-5-support-handwriting-recognition"></a>Étape 5 : Prise en charge de la reconnaissance d’écriture manuscrite
 
 Maintenant que vous pouvez écrire et dessiner dans votre application, nous allons essayer de rendre ces dessins utiles.
 
@@ -392,7 +392,7 @@ Voici le même organigramme après la reconnaissance de forme.
 ![Organigramme d’entrée manuscrite d’origine](images/ink/ink-app-step6-shapereco2-small.png)
 
 
-## <a name="step-7-save-and-load-ink"></a>Étape 7 : Enregistrer et charger l’encre
+## <a name="step-7-save-and-load-ink"></a>Étape 7 : Enregistrer et charger l’encre
 
 Bien, vous avez terminé de griffonner et vous êtes content de vous, toutefois vous pensez modifier quelques petites choses ultérieurement ? Vous pouvez enregistrer vos traits d’encre dans un fichier au format ISF (Ink Serialized Format) et les charger afin de les modifier à chaque fois que vous vous sentez inspiré. 
 
@@ -464,7 +464,7 @@ Félicitations, vous avez terminé la **entrée : Prise en charge de l’encre 
 
 ## <a name="related-articles"></a>Articles connexes
 
-* [Interactions du stylet et entrée manuscrite de Windows dans les applications UWP](pen-and-stylus-interactions.md)
+* [Interactions avec le stylet et Windows Ink dans les applications UWP](pen-and-stylus-interactions.md)
 
 ### <a name="samples"></a>Exemples
 

@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1df93195578c1e7c6fd87ab7403375a1a3dcc825
-ms.sourcegitcommit: 4aef8c01ba9321401d5729a1ec6d46452ee76faf
+ms.openlocfilehash: 8ec2b10b402db7398dad6643355e064c26318170
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67468908"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820603"
 ---
 # <a name="resolve-submission-errors"></a>Résoudre les erreurs d’envoi
 
@@ -25,7 +25,7 @@ Si une erreur de compilation s'affiche, assurez-vous que vous êtes en mesure de
 
 ## <a name="desktop-application"></a>Application de bureau
 
-Si vous planifiez de soumettre un package qui contient les fichiers binaires de Win32 et UWP, assurez-vous que vous créez ce package en utilisant le projet d’empaquetage de Windows qui est disponible dans Visual Studio 2017 Update 4. Si vous créez le package à l’aide d’un modèle de projet UWP, vous n’êtes peut-être pas en mesure d’envoyer qui l’empaqueter pour le Store ou le chargement de version test sur les autres ordinateurs. Même si le package a été publié avec succès, il peut se comporter de façon inattendue sur des PC de l’utilisateur. Pour plus d’informations, consultez [empaqueter une application à l’aide de Visual Studio (pont du bureau)]( https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net).
+Si vous planifiez de soumettre un package qui contient les fichiers binaires de Win32 et UWP, assurez-vous que vous créez ce package en utilisant le projet d’empaquetage de Windows qui est disponible dans Visual Studio 2017 Update 4 et versions ultérieures. Si vous créez le package à l’aide d’un modèle de projet UWP, vous n’êtes peut-être pas en mesure d’envoyer qui l’empaqueter pour le Store ou le chargement de version test sur les autres ordinateurs. Même si le package a été publié avec succès, il peut se comporter de façon inattendue sur des PC de l’utilisateur. Pour plus d’informations, consultez [empaqueter une application à l’aide de Visual Studio (pont du bureau)]( https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net).
 
 ## <a name="windows-phone-8x-and-earlier"></a>Windows Phone 8.x et versions antérieures
 

@@ -5,12 +5,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 69facfe9b1cdac408fe1fd63dfa144de072dfdfd
-ms.sourcegitcommit: 4aef8c01ba9321401d5729a1ec6d46452ee76faf
+ms.openlocfilehash: 480029fd98a302fcc166067cbb383d7e9f8d1829
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67468981"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820544"
 ---
 # <a name="responsive-layouts-with-xaml"></a>Dispositions dynamiques avec XAML
 
@@ -207,7 +207,7 @@ Cet exemple produit le même résultat que le précédent, mais utilise la synta
                 <VisualState>
                     <VisualState.StateTriggers>
                         <!-- VisualState to be triggered when the
-                             window width is >=720 effective pixels. -->
+                             window width is >=640 effective pixels. -->
                         <AdaptiveTrigger MinWindowWidth="640" />
                     </VisualState.StateTriggers>
 
@@ -392,7 +392,7 @@ else
 Vous pouvez également utiliser des critères différents pour déterminer à quelle page accéder. Pour plus d’exemples, consultez l’exemple de [Vues multiples personnalisées](https://go.microsoft.com/fwlink/p/?LinkId=620636), qui utilise la fonction [**GetIntegratedDisplaySize**](https://docs.microsoft.com/windows/desktop/api/sysinfoapi/nf-sysinfoapi-getintegrateddisplaysize) pour vérifier la taille physique d’un affichage intégré.
 
 ## <a name="related-topics"></a>Rubriques connexes
-- [Tutoriel : Créer des dispositions ADAPTATIF](../basics/xaml-basics-adaptive-layout.md)
+- [Tutoriel : Créer des dispositions ADAPTATIF](../basics/xaml-basics-adaptive-layout.md)
 - [Exemples de techniques de réactivité (GitHub)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlResponsiveTechniques)
 - [Exemples de déclencheurs d’état (GitHub)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlStateTriggers)
 - [Adaptées plusieurs vues, exemple (GitHub)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlTailoredMultipleViews)

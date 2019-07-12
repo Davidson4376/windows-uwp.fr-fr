@@ -5,12 +5,12 @@ ms.date: 06/28/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 58bf8df4551c8bcfc663d2c832bef3a879ff6350
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 67a96b8423d589036ef1c6896f056d097282dc33
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317976"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820223"
 ---
 # <a name="adding-my-people-support-to-an-application"></a>Ajout de la prise en charge de Mes Contacts à une application
 
@@ -20,7 +20,7 @@ La fonctionnalité Mes contacts permet aux utilisateurs d’épingler les contac
 
 ## <a name="requirements"></a>Configuration requise
 
-+ Windows 10 et Microsoft Visual Studio 2017. Pour en savoir plus sur l’installation, voir [Prendre en main Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
++ Windows 10 et Microsoft Visual Studio 2019. Pour en savoir plus sur l’installation, voir [Prendre en main Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
 + Connaissances de base de C# ou d’un langage de programmation orienté objet similaire. Pour vous familiariser avec C#, voir [Créer une application « Hello, world »](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
 
 ## <a name="overview"></a>Vue d'ensemble
@@ -53,7 +53,7 @@ Pour déclarer la prise en charge du contrat de mes contacts, ouvrez votre appli
 
 ```
 
-**Après avoir**
+**Après**
 
 ```xml
 <Package
@@ -121,7 +121,7 @@ Par défaut, votre application s’affiche uniquement dans le volet de contact p
 </Applications>
 ```
 
-**Après avoir**
+**Après**
 
 ```Csharp
 <Applications>
@@ -185,11 +185,11 @@ Si vous souhaitez que les contacts épinglés à la barre des tâches reçoivent
 
 Pour qu'un badge soit appliqué à une contact, le nœud toast de niveau supérieur doit inclure le paramètre hint-people pour indiquer le contact expéditeur ou associé. Ce paramètre peut prendre l'une des valeurs suivantes :
 + **Adresse de messagerie** 
-    + Exemple mailto:johndoe@mydomain.com
+    + Par exemple, [https://doi.org/10.13012/J8PN93H8](mailto:johndoe@mydomain.com)
 + **Numéro de téléphone** 
-    + Exemple tél : 888-888-8888
+    + Par exemple, tél : 888-888-8888
 + **ID distant** 
-    + Exemple remoteid:1234
+    + Par exemple, remoteid:1234
 
 Voici un exemple de procédure pour voir si une notification toast est liée à une personne spécifique :
 ```XML

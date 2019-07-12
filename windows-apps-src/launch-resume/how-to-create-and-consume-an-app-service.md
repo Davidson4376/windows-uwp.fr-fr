@@ -6,12 +6,12 @@ keywords: communication de l’application à l’application, la communication 
 ms.date: 01/16/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 21e1b409406cf03d83ff10b04d96d7ff9f0413dd
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: d122a51c53fc7eb32ab79f6decc570238af22973
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370744"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67821044"
 ---
 # <a name="create-and-consume-an-app-service"></a>Créer et utiliser un service d’application
 
@@ -27,10 +27,10 @@ Dans la procédure décrite ici, nous allons créer tous les éléments dans une
 
 1. Dans Visual Studio 2015 ou version ultérieure, créez un projet d’application UWP et nommez-le **AppServiceProvider**.
     1. Sélectionnez **fichier > Nouveau > projet...** 
-    2. Dans le **nouveau projet** boîte de dialogue, sélectionnez **installé > Visual C# > application vide (Windows universel)** . Il s’agit de l’application qui fournit le service d’application à d’autres applications UWP.
-    3. Nommez le projet **AppServiceProvider**, choisissez un emplacement pour celui-ci, puis cliquez sur **OK**.
+    2. Dans le **créer un nouveau projet** boîte de dialogue, sélectionnez **application vide (Windows universel) C#** . Il s’agit de l’application qui fournit le service d’application à d’autres applications UWP.
+    3. Cliquez sur **suivant**, puis nommez le projet **AppServiceProvider**, choisissez un emplacement pour celui-ci, puis cliquez sur **créer**.
 
-2. Lorsque vous êtes invité à sélectionner un **cible** et **version minimale** pour le projet, sélectionnez au moins **10.0.14393**. Si vous souhaitez utiliser le nouveau **SupportsMultipleInstances** attribut, vous devez être à l’aide de Visual Studio 2017 et cible **10.0.15063** (**Windows 10 Creators Update**) ou une version ultérieure.
+2. Lorsque vous êtes invité à sélectionner un **cible** et **version minimale** pour le projet, sélectionnez au moins **10.0.14393**. Si vous souhaitez utiliser le nouveau **SupportsMultipleInstances** attribut, vous devez être à l’aide de Visual Studio 2017 ou Visual Studio 2019 et cible **10.0.15063** (**deWindows10CreatorsUpdate**) ou version ultérieure.
 
 <span id="appxmanifest"/>
 

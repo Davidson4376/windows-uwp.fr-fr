@@ -6,12 +6,12 @@ ms.date: 08/22/2017
 ms.topic: article
 keywords: windows 10, uwp, jeux, exemples, directx, principes de base
 ms.localizationpriority: medium
-ms.openlocfilehash: 21dcbbcc1fde25877592fafe9e8372e269a72a42
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: f04c17609976e8bd8f6c1c6143ed7b992b0bb3c5
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368491"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820621"
 ---
 # <a name="marble-maze-sample-fundamentals"></a>Notions de base de l’exemple Marble Maze
 
@@ -25,7 +25,7 @@ Cette rubrique présente les principales caractéristiques du projet Marble Maz
 
 Ce document traite certains points importants relatifs à la planification et au développement de votre jeu de plateforme Windows universelle (UWP).
 
--   Utilisez le modèle Visual C++ **Application DirectX 11 (Windows universel)** dans Visual Studio pour créer votre jeu UWP DirectX.
+-   Utilisez le **application de DirectX 11 (Universal Windows - C++/CX)** modèle dans Visual Studio pour créer votre jeu DirectX UWP.
 -   Windows Runtime fournit des classes et des interfaces vous permettant de développer des applications UWP grâce à une approche orientée objet plus moderne.
 -   Utiliser des références d’objet avec le symbole circonflexe (^) pour gérer la durée de vie des variables de Windows Runtime, [Microsoft::wrl :: comptr](https://docs.microsoft.com/cpp/windows/comptr-class) pour gérer la durée de vie des objets COM, et [std::shared\_ptr](https://docs.microsoft.com/cpp/standard-library/shared-ptr-class) ou [std::unique\_ptr](https://docs.microsoft.com/cpp/standard-library/unique-ptr-class) pour gérer la durée de vie de tous les autres segments de mémoire alloués C++ objets.
 -   Dans la majorité des cas, utilisez la gestion des exceptions plutôt que les codes de résultats pour gérer les erreurs inattendues.
@@ -36,19 +36,19 @@ Ce document traite certains points importants relatifs à la planification et au
 
 Si vous avez téléchargé et extrait l’exemple, vous pouvez ouvrir le fichier **MarbleMaze_VS2017.sln** (dans le dossier **C++** ) dans Visual Studio pour visualiser le code.
 
-Nous sommes partis d’un projet existant pour la création du projet Visual Studio pour Marble Maze. Toutefois, si vous ne disposez pas déjà d’un projet offrant les fonctionnalités de base nécessaires à votre jeu pour UWP en DirectX, nous vous recommandons de créer un projet à partir du modèle Visual Studio **Application DirectX 11 (Windows universel)** qui fournit une application 3D avec les fonctionnalités de base en question. Pour cela, procédez comme suit:
+Nous sommes partis d’un projet existant pour la création du projet Visual Studio pour Marble Maze. Toutefois, si vous n’avez pas déjà un projet existant qui fournit les fonctionnalités de base qui nécessite de votre jeu DirectX UWP, nous vous recommandons de créer un projet basé sur Visual Studio **application de DirectX 11 (Universal Windows - C++/CX)** modèle, car elle fournit une application opérationnelle 3D de base. Pour ce faire, procédez comme suit :
 
-1. Dans Visual Studio 2017, sélectionnez **Fichier > Nouveau > Projet...**
+1. Dans Visual Studio 2019, sélectionnez **fichier > Nouveau > projet...**
 
-2. Dans la fenêtre **Nouveau projet**, dans le volet gauche, sélectionnez **Installé > Modèles > Visual C++** .
+2. Dans le **créer un nouveau projet** fenêtre, sélectionnez **application de DirectX 11 (Universal Windows - C++/CX)** . Si vous ne voyez pas cette option, vous ne pouvez pas avoir les composants requis installés&mdash;consultez [modifier Visual 2019 de Studio en ajoutant ou supprimant des charges de travail et composants](https://docs.microsoft.com/visualstudio/install/modify-visual-studio) pour plus d’informations sur la façon d’installer des composants supplémentaires .
 
-3. Dans la liste du milieu, sélectionnez **Application DirectX 11 (Windows universel)** . Si cette option n'apparaît pas, il se peut que les composants requis ne soient pas installés&mdash;voir [Modifier Visual Studio 2017 en ajoutant ou en supprimant des charges de travail et des composants](https://docs.microsoft.com/visualstudio/install/modify-visual-studio) pour en savoir plus sur l’installation de composants supplémentaires.
+![Nouveau projet](images/vs2019-marble-maze-sample-fundamentals-1.png)
 
-4. Donnez à votre projet un **Nom**, un **Emplacement** pour les fichiers à stocker et un **Nom de solution**, puis cliquez sur **OK**.
+3. Sélectionnez **suivant**, puis entrez un **nom_projet**, un **emplacement** pour les fichiers à stocker et un **nom de la Solution**, puis sélectionnez  **Créer**.
 
-![Nouveau projet](images/marble-maze-sample-fundamentals-1.png)
 
-L’un des paramètres de projet importants du modèle **Application DirectX 11 (Windows universel)** est l’option **/ZW** qui permet au programme d’utiliser les extensions de langage Windows Runtime. Cette option est activée par défaut lorsque vous utilisez le modèle Visual Studio. Voir [Définition des options du compilateur](https://docs.microsoft.com/cpp/build/reference/setting-compiler-options) pour plus d’informations sur la définition des options du compilateur dans Visual Studio.
+
+Un des paramètres de projet importants du **DirectX 11 application (Universal Windows - C++/CX)** modèle est le **/ZW** option, qui permet au programme d’utiliser les extensions de langage Windows Runtime. Cette option est activée par défaut lorsque vous utilisez le modèle Visual Studio. Voir [Définition des options du compilateur](https://docs.microsoft.com/cpp/build/reference/setting-compiler-options) pour plus d’informations sur la définition des options du compilateur dans Visual Studio.
 
 > **Attention**    le **/ZW** option n’est pas compatible avec les options telles que **/CLR**. Dans le cas de **/clr**, cela signifie que vous ne pouvez pas cibler .NET Framework et Windows Runtime à partir du même projet Visual C++.
 

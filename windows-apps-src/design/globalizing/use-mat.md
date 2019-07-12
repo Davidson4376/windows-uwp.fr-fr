@@ -1,21 +1,21 @@
 ---
-Description: Le kit de ressources Multilingual App Toolkit (MAT) 4.0 est intégré à Microsoft Visual Studio 2017 pour fournir aux applications UWP un support de traduction, la gestion des fichiers de traduction et des outils d'éditeur.
+Description: Le Multilingual App Toolkit (MAT) 4.0 s’intègre à Microsoft Visual Studio 2019 pour fournir des applications UWP avec la prise en charge, la gestion de fichier de traduction et outils d’édition.
 title: Utiliser le kit de ressources Multilingual App Toolkit
 template: detail.hbs
 ms.date: 01/23/2018
 ms.topic: article
 keywords: windows 10, uwp, globalisation, adaptabilité, localisation
 ms.localizationpriority: medium
-ms.openlocfilehash: 49f03a1ae5ed0ea1a602103e2181c252c8c29c2f
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 428238f9d8a3468ab308841850ac13e8da22961f
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319330"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820583"
 ---
 # <a name="use-the-multilingual-app-toolkit-40"></a>Utiliser le Kit de ressources Multilingual App Toolkit 4.0
 
-Le kit de ressources Multilingual App Toolkit (MAT) 4.0 est intégré à Microsoft Visual Studio 2017 pour fournir aux applications UWP un support de traduction, la gestion des fichiers de traduction et des outils d'éditeur. Voici quelques-unes des propositions de valeur du kit de ressources.
+Le Multilingual App Toolkit (MAT) 4.0 s’intègre à Microsoft Visual Studio 2019 pour fournir des applications UWP avec la prise en charge, la gestion de fichier de traduction et outils d’édition. Voici quelques-unes des propositions de valeur du kit de ressources.
 
 - Assistance dans la gestion des modifications de ressources et d'état de la traduction lors du développement.
 - Fourniture d'une interface utilisateur pour le choix des langues en fonction des fournisseurs de traduction configurés.
@@ -38,10 +38,10 @@ Consultez également [Directives en matière de globalisation](guidelines-and-ch
 
 Le kit de ressources Multilingual App Toolkit 4.0 (MAT 4.0) est divisé en deux parties, chacune équipée de son propre installateur.
 
-- [Extension Multilingual App Toolkit 4.0 Visual Studio 2017](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308). Cette partie contient l'extension MAT 4.0 pour Visual Studio 2017 sous la forme d'un installateur .vsix.
+- [Multilingual App Toolkit 4.0 Extension pour Visual Studio 2017 et versions ultérieures](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308). Il contient l’extension de fond 4.0 pour 2019 a Visual Studio, sous la forme d’un programme d’installation .vsix.
 - [Éditeur Multilingual App Toolkit 4.0](https://developer.microsoft.com/en-us/windows/develop/multilingual-app-toolkit). Cette partie contient l'outil Multilingual Editor autonome pour MAT 4.0 sous la forme d'un installateur .msi. Il comprend également l'extension MAT 4.0 pour Visual Studio 2015 et pour Visual Studio 2013.
 
-Si vous utilisez Visual Studio 2017, téléchargez et exécutez les deux installateurs l'un après l'autre. Si vous utilisez Visual Studio 2015 ou Visual Studio 2013, téléchargez et exécutez l'installateur .msi.
+Si vous utilisez Visual Studio 2017 ou Visual Studio 2019, puis téléchargez et exécutez les deux programmes d’installation, une après l’autre. Si vous utilisez Visual Studio 2015 ou Visual Studio 2013, téléchargez et exécutez l'installateur .msi.
 
 ### <a name="step-3-enable-the-multilingual-app-toolkit-for-your-project"></a>Étape 3. Activer le kit de ressources Multilingual App Toolkit pour votre projet
 
@@ -75,7 +75,7 @@ Dans la boîte de dialogue Langues de traduction, les cases de toutes les langue
 
 Une fois la langue ajoutée au projet, elle ne peut pas être supprimée en cochant la case dans la boîte de dialogue Langues de traduction. Pour supprimer une langue, cliquez avec le bouton droit sur le fichier .xlf spécifique à la langue et sélectionnez **Supprimer**. La confirmation a également pour effet de supprimer les fichiers Ressources (.resw) correspondants.
 
-### <a name="step-5-test-your-app-using-pseudo-language"></a>Étape 5. Tester votre application à l’aide d'une pseudo-langue
+### <a name="step-5-test-your-app-using-pseudo-language"></a>Étape 5. Tester votre application à l’aide d'une pseudo-langue
 
 La pseudo-langue est une modification artificielle du produit de logiciel. Elle vise à simuler une véritable localisation de langue, mais elle reste lisible pour les locuteurs natifs. La pseudo-traduction remplace les caractères et rallonge la chaîne de ressource pour détecter tout problème ou bogue d'adaptabilité potentiel aux prémices du cycle du projet et avant le démarrage de la mise à l'épreuve de la localisation.
 

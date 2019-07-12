@@ -1,26 +1,29 @@
 ---
-title: Canaux de push autre à l’aide de Webpush et VAPID dans UWP
+title: Chaînes de remplacement push à l’aide de VAPID dans UWP
 description: Instructions pour l’utilisation des canaux de push autre avec le protocole VAPID à partir d’une application UWP
 ms.date: 01/10/2017
 ms.topic: article
 keywords: Windows 10, uwp, API WinRT, WNS
 localizationpriority: medium
-ms.openlocfilehash: bf224b6c0997ce8af86ab2919a1d0513f619a8a3
-ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.openlocfilehash: 6512eb891967b6c17bc4845d5e47639ae3c97d31
+ms.sourcegitcommit: 0c97c025d751082db3424cb9941bf6688d9b7381
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59067824"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67835022"
 ---
-# <a name="alternate-push-channels-using-webpush-and-vapid-in-uwp"></a>Canaux de push autre à l’aide de Webpush et VAPID dans UWP 
-À partir de Fall Creators Update, les applications UWP peuvent utiliser des push de web avec l’authentification VAPID pour envoyer des notifications push.  
+# <a name="alternate-push-channels-using-vapid-in-uwp"></a>Chaînes de remplacement push à l’aide de VAPID dans UWP 
+À partir de Fall Creators Update, les applications UWP peuvent utiliser authentification VAPID pour envoyer des notifications push.  
 
-## <a name="introduction"></a>Introduction
+> [!NOTE]
+> Ces API est destinées aux navigateurs web qui héberge d’autres sites Web et de la création des canaux en leur nom.  Si vous souhaitez pour ajouter des notifications de webpush à votre application web, nous vous recommandons de que suivre les normes W3C et WhatWG pour la création d’un travail de service et en envoyant une notification.
+
+## <a name="introduction"></a>Présentation
 L’introduction de la norme de push web permet de sites Web peuvent agir plus comme les applications, même lorsque les utilisateurs ne sont pas sur le site Web, l’envoi de notifications.
 
 Le protocole d’authentification VAPID a été créé pour autoriser les sites Web pour s’authentifier auprès des serveurs de push dans un fournisseur de façon indépendante. Avec tous les fournisseurs à l’aide du protocole VAPID, sites Web peuvent envoyer des notifications push sans connaître le navigateur sur lequel il est en cours d’exécution. Il s’agit une amélioration significative sur l’implémentation d’un protocole de push différents pour chaque plateforme. 
 
-Les applications UWP peuvent utiliser webpush et VAPID pour envoyer des notifications push avec ces avantages. Ces protocoles peuvent gagner du temps de développement pour les nouvelles applications et simplifier la prise en charge multiplateforme pour les applications existantes. En outre, les applications d’entreprise ou des versions test d’applications peut maintenant envoyer des notifications sans l’enregistrer dans le Microsoft Store. J’espère que vous ouvrirez ainsi les nouvelles façons d’interagir avec les utilisateurs sur toutes les plateformes.  
+Les applications UWP peuvent utiliser VAPID pour envoyer des notifications push avec ces avantages. Ces protocoles peuvent gagner du temps de développement pour les nouvelles applications et simplifier la prise en charge multiplateforme pour les applications existantes. En outre, les applications d’entreprise ou des versions test d’applications peut maintenant envoyer des notifications sans l’enregistrer dans le Microsoft Store. J’espère que vous ouvrirez ainsi les nouvelles façons d’interagir avec les utilisateurs sur toutes les plateformes.  
 
 ## <a name="alternate-channels"></a>Autres canaux 
 Dans la plateforme Windows universelle, ces canaux VAPID est appelées des autres canaux et fournissent des fonctionnalités similaires à un canal de push web. Ils peuvent déclencher une tâche d’arrière-plan d’application pour exécuter, activer le chiffrement de message et pour plusieurs canaux à partir d’une seule application. Pour plus d’informations sur la différence entre les différents types de canaux, consultez [en choisissant le bon canal](channel-types.md).

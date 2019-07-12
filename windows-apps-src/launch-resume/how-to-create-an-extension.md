@@ -5,12 +5,12 @@ keywords: extension d’application, service d’application, arrière-plan
 ms.date: 10/05/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a7bb6f719f95766c07c1e5f92b50148cf0f2cce
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 2cfb3be556cb681bc9ed2d9d46bb86304182e5ca
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57642364"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67821028"
 ---
 # <a name="create-and-host-an-app-extension"></a>Créer et héberger une extension d’application
 
@@ -18,7 +18,7 @@ Cet article vous montre comment créer une extension d’application UWP et l�
 
 Cet article est accompagné d’un exemple de code :
 - Téléchargez et décompressez [Exemple de code Math Extension](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/MathExtensionSample.zip).
-- Dans Visual Studio 2017, ouvrez MathExtensionSample.sln. Définissez le type de build sur x86 (**Générer** > **Gestionnaire de configurations**, puis modifiez la **Plateforme** sur **x86** pour les deux projets).
+- Dans Visual Studio 2019, ouvrez MathExtensionSample.sln. Définissez le type de build sur x86 (**Générer** > **Gestionnaire de configurations**, puis modifiez la **Plateforme** sur **x86** pour les deux projets).
 - Déployer la solution : **Build** > **déployer la Solution**.
 
 ## <a name="introduction-to-app-extensions"></a>Présentation des extensions d’applications
@@ -41,7 +41,7 @@ De manière générale, pour configurer une relation d’extension d’applicati
 4. Définir le mode de communication des hôtes et de leurs extensions.
 5. Utiliser l’API [Windows.ApplicationModel.AppExtensions](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.AppExtensions) dans l’application hôte pour accéder aux extensions.
 
-Nous allons voir comment procéder en examinant l’[exemple de code Math Extension](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/MathExtensionSample.zip) qui implémente une calculatrice hypothétique à laquelle vous pouvez ajouter de nouvelles fonctions à l’aide d’extensions. Dans Microsoft Visual Studio 2017, chargez **MathExtensionSample.sln** à partir de l’exemple de code.
+Nous allons voir comment procéder en examinant l’[exemple de code Math Extension](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/MathExtensionSample.zip) qui implémente une calculatrice hypothétique à laquelle vous pouvez ajouter de nouvelles fonctions à l’aide d’extensions. Dans Microsoft Visual Studio 2019, chargez **MathExtensionSample.sln** à partir de l’exemple de code.
 
 ![Exemple de code Math Extension](images/mathextensionhost-calctab.png)
 
@@ -126,7 +126,7 @@ La signification des attributs `<uap3:AppExtension>` est la suivante :
 |**ID**| Identifie de façon unique cette extension. Dans la mesure où il peut y avoir plusieurs extensions qui utilisent le même nom de contrat d’extension (imaginez une application de peinture qui prend en charge plusieurs extensions), vous pouvez utiliser l’ID pour les distinguer. Les hôtes d’extension d’application peuvent utiliser l’ID afin de déduire des informations à propos du type d’extension. Par exemple, vous pouvez avoir une extension conçue pour une application de bureau et une autre pour un appareil mobile, avec l’ID comme facteur de différenciation. Vous pouvez également utiliser l'élément **Properties**, décrit ci-dessous, à cette fin.| :heavy_check_mark: |
 |**DisplayName**| Peut servir à partir de votre application hôte pour identifier l’extension pour l’utilisateur. Il peut être interrogé à partir du [nouveau système de gestion de ressources](https://docs.microsoft.com/windows/uwp/app-resources/using-mrt-for-converted-desktop-apps-and-games) (`ms-resource:TokenName`) et utiliser ce dernier à des fins de localisation. Le contenu localisé est chargé à partir du package d’extension d’application, et non de l’application hôte. | |
 |**Description** | Peut servir à partir de votre application hôte pour décrire l’extension pour l’utilisateur. Il peut être interrogé à partir du [nouveau système de gestion de ressources](https://docs.microsoft.com/windows/uwp/app-resources/using-mrt-for-converted-desktop-apps-and-games) (`ms-resource:TokenName`) et utiliser ce dernier à des fins de localisation. Le contenu localisé est chargé à partir du package d’extension d’application, et non de l’application hôte. | |
-|**Dossier public**|Nom d’un dossier, relatif à la racine de package, où vous pouvez partager du contenu avec l’hôte d’extension. Par convention, le nom est « Public », mais vous pouvez utiliser n’importe quel nom qui correspond à un dossier dans votre extension.| :heavy_check_mark: |
+|**PublicFolder**|Nom d’un dossier, relatif à la racine de package, où vous pouvez partager du contenu avec l’hôte d’extension. Par convention, le nom est « Public », mais vous pouvez utiliser n’importe quel nom qui correspond à un dossier dans votre extension.| :heavy_check_mark: |
 
 `<uap3:Properties>` est un élément facultatif qui contient des métadonnées personnalisées qui peuvent lire les ordinateurs hôtes lors de l’exécution. Dans l’exemple de code, l’extension est implémentée comme un service d’application, de sorte que l’hôte a besoin d’un moyen pour obtenir le nom de ce service d’application afin de pouvoir l’appeler. Le nom du service d’application est défini dans l'élément <Service>, que nous avons défini (nous aurions pu l'appeler comme nous le souhaitions). L’hôte dans l’exemple de code recherche cette propriété lors de l’exécution pour connaître le nom du service d’application.
 
