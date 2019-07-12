@@ -562,6 +562,8 @@
           href: globalizing/use-mat.md
         - name: "FAQ et résolution des problèmes liés au kit de ressources Multilingual\_App\_Toolkit\_4.0"
           href: globalizing/mat-faq-troubleshooting.md
+        - name: Utiliser la page de codes UTF-8
+          href: globalizing/use-utf8-code-page.md
         - name: Préparer votre application pour le changement d’ère du Japon
           href: globalizing/japanese-era-change.md
     - name: Recommandations en matière d’aide de l’application
