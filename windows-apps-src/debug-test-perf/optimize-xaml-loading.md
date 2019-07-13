@@ -6,12 +6,12 @@ ms.date: 08/10/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: aacf51cc320a0835f906e91806b686a88907640e
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: f46967cd26f10510e2620229fee0eec13ca7f52a
+ms.sourcegitcommit: 7bbc24d770bf23a8d7e2b234503aad743eb354f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317617"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67852054"
 ---
 # <a name="optimize-your-xaml-markup"></a>Optimiser votre balisage XAML
 
@@ -159,7 +159,7 @@ Utilisez l'[attribut x:Key](../xaml-platform/x-key-attribute.md) pour référenc
 
 ### <a name="resourcedictionary-in-a-usercontrol"></a>ResourceDictionary dans un UserControl
 
-Un ResourceDictionary défini dans un [UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol) entraîne une pénalité. La plateforme crée une copie d’un tel ResourceDictionary pour chaque instance du UserControl. Si le UserControl est énormément utilisé, déplacez le ResourceDictionary en dehors du UserControl et placez-le au niveau de la page.
+Un ResourceDictionary défini dans un [UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol) entraîne une pénalité. La plateforme crée une copie d’un tel ResourceDictionary pour chaque instance du UserControl. Si vous avez un composant UserControl qui est très utilisé, puis déplacer le ResourceDictionary hors le UserControl et mettez-la à niveau de la page.
 
 ### <a name="resource-and-resourcedictionary-scope"></a>Étendue Ressource et ResourceDictionary
 
@@ -423,7 +423,7 @@ Les contrôles et dictionnaires intégrés dans XAML, qui sont fournis par l’i
 
 Pour vérifier si vous possédez XBF2, ouvrez votre application dans un éditeur binaire ; les 12e et 13e octets correspondent à 00 02 si vous possédez XBF2.
 
-## <a name="related-articles"></a>Articles associés
+## <a name="related-articles"></a>Articles connexes
 
 - [Meilleures pratiques pour les performances de démarrage de votre application](best-practices-for-your-app-s-startup-performance.md)
 - [Optimiser votre disposition XAML](optimize-your-xaml-layout.md)
