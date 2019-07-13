@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: f384ca56-f2b2-4793-b251-f7f5735376bb
 ms.localizationpriority: medium
-ms.openlocfilehash: 0629201b695f6df6f7f3e2084a73d72b10b82be5
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 478c4a16902329e1dd9267e0339dca0e0dcf3539
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63813614"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321966"
 ---
 # <a name="application-development-for-windows-as-a-service"></a>Développement d’applications pour Windows en tant que service
 
@@ -160,4 +160,4 @@ Faites-nous savoir comment votre application se comporte par rapport aux builds 
 Le site web [Ready for Windows](https://go.microsoft.com/fwlink/?LinkID=780580) est un répertoire de logiciels prenant en charge Windows 10. Il est destiné aux administrateurs informatiques d’entreprises et d’organisations du monde entier qui envisagent d’utiliser Windows 10 pour leurs déploiements. Les administrateurs informatiques peuvent consulter le site pour voir si les logiciels déployés dans leur entreprise sont pris en charge dans Windows 10.
 
 ## <a name="related-topics"></a>Rubriques connexes
-[Options de maintenance de Windows 10 pour les mises à jour et les mises à niveau](https://technet.microsoft.com/itpro/windows/manage/introduction-to-windows-10-servicing)
+[Options de maintenance de Windows 10 pour les mises à jour et les mises à niveau](https://docs.microsoft.com/windows/manage/introduction-to-windows-10-servicing)

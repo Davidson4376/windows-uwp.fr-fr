@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: fb4249b2-f93c-4993-9e4d-57a62c04be66
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e1eba68d1046892a67d779d353fd9b2e6bf224e
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: b4ce91e32b14bdf81b40b24e810e0bd86bcaa99b
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66366942"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321090"
 ---
 # <a name="creating-a-3d-javascript-game-using-threejs"></a>Création d’un jeu JavaScript 3D à l’aide de three.js
 
@@ -34,7 +34,7 @@ Vous souhaitez avoir un aperçu de l’application que nous allons développer a
 ## <a name="requirements"></a>Configuration requise
 
 Pour jouer avec ce projet, vous aurez besoin des éléments suivants :
--   Un ordinateur Windows (physique ou virtuel) exécutant la version actuelle de Windows 10.
+-   Un ordinateur (ou une machine virtuelle) Windows exécutant la version actuelle de Windows 10.
 -   Une copie de Visual Studio. Visual Studio Community Edition peut être téléchargé gratuitement à partir de la [page d’accueil de Visual Studio](https://visualstudio.com/).
 Ce projet utilise la bibliothèque JavaScript **three.js**. **three.js** est publié sous la licence MIT. Cette bibliothèque est déjà présente dans le projet (recherchez `js/libs` dans la vue Explorateur de solutions). Vous trouverez plus d’informations sur cette bibliothèque sur la page d’accueil de [**three.js**](https://threejs.org/).
 
@@ -1081,10 +1081,10 @@ Revenez en haut de la page pour voir le [CodePen final](#introduction) !
 
 
 ## <a name="publishing-to-the-microsoft-store"></a>Publication sur le Microsoft Store
-Maintenant que vous disposez d’une application UWP, il est possible de la publier dans le Microsoft Store (en supposant que vous l’avez tout d’abord améliorée !). La procédure comprend quelques étapes.
+Maintenant que vous disposez d'une application UWP, vous pouvez la publier dans le Microsoft Store (à condition toutefois de l'avoir préalablement améliorée !). La procédure se décompose en plusieurs étapes.
 
 1.  Vous devez être [enregistré](https://developer.microsoft.com/store/register) en tant que développeur Windows.
-2.  Vous devez utiliser la [liste de vérification](https://docs.microsoft.com/windows/uwp/publish/app-submissions) de soumission d’applications.
-3.  L’application doit être soumise pour [certification](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process).
-Pour plus d’informations, voir [Publication de votre application UWP](https://developer.microsoft.com/store/publish-apps).
+2.  Vous devez utiliser la [liste de vérification](https://docs.microsoft.com/windows/uwp/publish/app-submissions) de soumission d'applications.
+3.  L'application doit être soumise pour [certification](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process).
+Pour plus d’informations, voir [Publication de votre application UWP](https://docs.microsoft.com/windows/uwp/publish/).
 

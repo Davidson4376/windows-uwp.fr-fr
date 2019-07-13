@@ -6,12 +6,12 @@ ms.topic: article
 keywords: prise en main, uwp, windows 10, piste d’apprentissage, disposition, formulaire
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: cd3fb1c294ac81f42bb53c23d307eed49a6708fd
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 2e64392e1de5f6061b802acc0a2eed81c3e750fb
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64564578"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318805"
 ---
 # <a name="create-and-customize-a-form"></a>Créer et personnaliser un formulaire
 
@@ -182,4 +182,4 @@ Voici un résumé rapide des API et des autres documents utiles pour vous aider 
 | [Didacticiel sur la disposition adaptative](../design/basics/xaml-basics-adaptive-layout.md) | Expérience interactive pas à pas sur les dispositions adaptatives et la conception réactive. |
 | [Base de données de commandes de clients](https://github.com/Microsoft/Windows-appsample-customers-orders-database) | Observez la disposition et les formulaires en action sur un exemple professionnel de plusieurs pages. |
 | [Galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) | Découvrez une sélection de contrôles XAML et la manière dont ils sont implémentés. |
-| [Exemples de code supplémentaires](https://developer.microsoft.com//windows/samples) | Choisissez **Contrôles, disposition et texte** dans la liste déroulante des catégories pour voir des exemples de code connexes. |
+| [Exemples de code supplémentaires](https://developer.microsoft.com/windows/samples) | Choisissez **Contrôles, disposition et texte** dans la liste déroulante des catégories pour voir des exemples de code connexes. |

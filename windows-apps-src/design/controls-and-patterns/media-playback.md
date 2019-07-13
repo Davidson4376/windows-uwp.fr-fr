@@ -9,12 +9,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b212ff435e58bdb8766972d1832bbf0690db3ed1
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 5e93a1806d1d2add4b3b1c3ee02417a43d574d3c
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66364743"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319393"
 ---
 # <a name="media-player"></a>Lecteur multimédia
 
@@ -143,7 +143,7 @@ private void LoadMediaFromString(string path)
 }
 ```
 
-Pour définir la source de média sur un fichier multimédia incorporé dans l’application, initialisez un [URI](https://docs.microsoft.com/uwp/api/windows.foundation.uri.) avec le chemin préfixé de **ms-appx:///** , créez un [MediaSource](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource) avec l’URI, puis définissez la propriété [Source](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) sur l’URI. Par exemple, pour un fichier nommé **video1.mp4** situé dans un sous-dossier **Videos**, le chemin est de type : **ms-appx:///Videos/video1.mp4**
+Pour définir la source de média sur un fichier multimédia incorporé dans l’application, initialisez un [URI](https://docs.microsoft.com/uwp/api/windows.foundation.uri) avec le chemin préfixé de **ms-appx:///** , créez un [MediaSource](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource) avec l’URI, puis définissez la propriété [Source](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) sur l’URI. Par exemple, pour un fichier nommé **video1.mp4** situé dans un sous-dossier **Videos**, le chemin est de type : **ms-appx:///Videos/video1.mp4**
 
 Ce code définit la propriété [Source](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) du [MediaPlayerElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement) défini précédemment en XAML sur **ms-appx:///Videos/video1.mp4**.
 

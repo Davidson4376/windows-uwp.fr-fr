@@ -5,12 +5,12 @@ keywords: nouveautés, mise à jour, fonctionnalités, conseils aux développeur
 ms.date: 07/11/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 22a3a9614a4488791a36f81a3d4dedac572111b4
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 4030796e942c76ccf32e04dbf951cac68718a6a5
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63780259"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320388"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-july-2018"></a>Nouveautés apportées dans la documentation du développeur Windows en juillet 2018
 
@@ -22,7 +22,7 @@ La documentation du développeur Windows est constamment mise à jour avec des i
 
 ### <a name="progressive-web-apps-on-windows"></a>Applications web progressives sur Windows
 
-Les [Applications web progressives (PWA)](https://developer.microsoft.com/windows/pwa) sont simplement des applications web qui sont [progressivement améliorées](https://wikipedia.org/wiki/Progressive_enhancement) à l’aide de fonctionnalités de type application native sur des plateformes et moteurs de navigateur compatibles. Il s’agit, par exemple, de l’installation par lancement à partir de l’écran d’accueil, de la prise en charge hors connexion et de notifications Push. Sous Windows 10 avec le moteur Microsoft Edge (EdgeHTML), les PWA bénéficient de l’avantage supplémentaire de s’exécuter [indépendamment de la fenêtre du navigateur en tant qu’applications UWP.](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/windows-features)
+Les [Applications web progressives (PWA)](https://developer.microsoft.com/windows/pwa) sont simplement des applications web qui sont [progressivement améliorées](https://www.wikipedia.org/wiki/Progressive_enhancement) à l’aide de fonctionnalités de type application native sur des plateformes et moteurs de navigateur compatibles. Il s’agit, par exemple, de l’installation par lancement à partir de l’écran d’accueil, de la prise en charge hors connexion et de notifications Push. Sous Windows 10 avec le moteur Microsoft Edge (EdgeHTML), les PWA bénéficient de l’avantage supplémentaire de s’exécuter [indépendamment de la fenêtre du navigateur en tant qu’applications UWP.](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/windows-features)
 
 ![Image de PWA en action](images/progressive-web-apps.jpg)
 
@@ -48,11 +48,9 @@ Les kits de ressources Adobe XD et Adobe Illustrator ont été mis à jour avec 
 
 ### <a name="webvr"></a>WebVR
 
-Nous avons ajouté plusieurs nouvelles rubriques à la [documentation sur WebVR](https://docs.microsoft.com/microsoft-edge/webvr/
-) :
+Nous avons ajouté plusieurs nouvelles rubriques à la [documentation sur WebVR](https://docs.microsoft.com/microsoft-edge/webvr/) :
 
-* [Qu’est-ce que WebVR ?](https://docs.microsoft.com/microsoft-edge/webvr/what-is-webvr
-) Explique ce qu’est WebVR, pourquoi l’utiliser et comment commencer à développer en conséquence.
+* [Qu’est-ce que WebVR ?](https://docs.microsoft.com/microsoft-edge/webvr/what-is-webvr) Explique ce qu’est WebVR, pourquoi l’utiliser et comment commencer à développer en conséquence.
 
 * [WebVR dans les applications web progressives](https://docs.microsoft.com/microsoft-edge/webvr/webvr-in-pwas). Apprenez à ajouter WebVR à une application web progressive (PWA).
 

@@ -6,12 +6,12 @@ ms.date: 03/06/2017
 ms.topic: article
 keywords: windows 10, uwp, première application, hello world
 ms.localizationpriority: medium
-ms.openlocfilehash: d9a7f0302dfdc9f9fa980f0fe93a3371328f9e5c
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 65dfc7b5f9a870f3ccdd5c0c046b996a01c06a00
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66367433"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321208"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>Créer une application « Hello World » (XAML)
 
@@ -57,9 +57,9 @@ Vous allez apprendre à effectuer les opérations suivantes :
     ![Fenêtre Nouveau projet](images/win10-cs-01.png)
 
 > [!NOTE]
-> Si vous utilisez Visual Studio pour la première fois, il est possible que la boîte de dialogue Paramètres s’affiche et vous demande d’activer le **Mode développeur**. Le mode développeur est un paramètre qui permet d’accéder à certaines fonctionnalités, telles que l’autorisation d’exécuter des applications directement plutôt qu’uniquement à partir du Microsoft Store. Pour plus d’informations, consultez [Activer votre appareil pour le développement](enable-your-device-for-development.md). Pour continuer avec ce guide, sélectionnez le **Mode développeur**, cliquez sur **Oui** et fermez la boîte de dialogue.
+> Si vous utilisez Visual Studio pour la première fois, il est possible que la boîte de dialogue Paramètres s’affiche et vous demande d’activer le **Mode développeur**. Le mode développeur est un paramètre qui permet d’accéder à certaines fonctionnalités, telles que l’autorisation d’exécuter des applications directement plutôt qu’uniquement à partir du Store. Pour plus d’informations, consultez [Activer votre appareil pour le développement](enable-your-device-for-development.md). Pour continuer avec ce guide, sélectionnez le **Mode développeur**, cliquez sur **Oui** et fermez la boîte de dialogue.
 
- ![Boîte de dialogue d’activation du Mode développeur](images/win10-cs-00.png)
+ ![Boîte de dialogue d’activation du mode développeur](images/win10-cs-00.png)
 
 5.  La boîte de dialogue Version cible/Version minimale s’affiche. Les paramètres par défaut étant appropriés pour ce didacticiel, sélectionnez **OK** pour créer le projet.
 
@@ -240,8 +240,8 @@ Pour apprendre à utiliser XAML et mettre en place les contrôles utilisés par 
 ## <a name="see-also"></a>Voir aussi
 
 * [Votre première application](your-first-app.md)
-* [Publier votre application UWP](https://developer.microsoft.com/store/publish-apps)
-* [Articles sur les procédures de développement d’applications UWP](https://developer.microsoft.com/windows/apps/develop)
+* [Publier votre application UWP](https://docs.microsoft.com/windows/uwp/publish/)
+* [Articles sur les procédures de développement d’applications UWP](https://docs.microsoft.com/windows/uwp/develop/)
 * [Exemples de code pour les développeurs UWP](https://developer.microsoft.com/windows/samples)
 * [Qu’est-ce qu’une application Windows universelle ?](universal-application-platform-guide.md)
 * [Créer un compte Windows](sign-up.md)

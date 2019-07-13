@@ -3,16 +3,16 @@ Description: Découvrez comment implémenter la navigation vers l’arrière afi
 title: Historique de navigation et navigation vers l’arrière (applications Windows)
 template: detail.hbs
 op-migration-status: ready
-ms.date: 4/9/2019
+ms.date: 04/09/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e3ab6760ed3eff1d284e51205de261796db0fb2
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: de2e70a09f75ed5380a47bed225c0689eb029e89
+ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63799165"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67713799"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>Historique de navigation et navigation vers l’arrière pour les applications UWP
 
@@ -31,7 +31,17 @@ Pour créer un bouton Précédent, utilisez le contrôle [Button](../controls-an
 ![Bouton Précédent dans l’angle supérieur gauche de l’interface utilisateur de l’application](images/back-nav/BackEnabled.png)
 
 ```xaml
-<Button Style="{StaticResource NavigationBackButtonNormalStyle}"/>
+<Page>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Button Style="{StaticResource NavigationBackButtonNormalStyle}"/>
+
+    </Grid>
+</Page>
 ```
 
 Si votre application possède un objet [CommandBar](../controls-and-patterns/app-bars.md) supérieur, le contrôle Button de 44 pixels de haut ne s’aligne pas correctement sur les contrôles AppBarButtons de 48 pixels. Pour éviter ce problème, alignez le haut du contrôle Button dans la limite de 48 pixels.
@@ -39,8 +49,23 @@ Si votre application possède un objet [CommandBar](../controls-and-patterns/app
 ![Bouton Précédent dans la barre de commandes supérieure](images/back-nav/CommandBar.png)
 
 ```xaml
-<Button VerticalAlignment="Top" HorizontalAlignment="Left" 
-Style="{StaticResource NavigationBackButtonNormalStyle}"/>
+<Page>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <CommandBar>
+            <CommandBar.Content>
+                <Button Style="{StaticResource NavigationBackButtonNormalStyle}" VerticalAlignment="Top"/>
+            </CommandBar.Content>
+        
+            <AppBarButton Icon="Delete" Label="Delete"/>
+            <AppBarButton Icon="Save" Label="Save"/>
+        </CommandBar>
+    </Grid>
+</Page>
 ```
 
 Pour réduire le déplacement des éléments d’interface utilisateur dans votre application, affichez un bouton Précédent désactivé lorsque vous n’avez plus rien dans la pile arrière (consultez l’exemple de code ci-dessous). Toutefois, si vous pensez que votre application n’aura jamais de pile arrière, vous n’avez pas du tout besoin d’afficher le bouton Précédent.
@@ -287,17 +312,6 @@ Auparavant, les applications UWP utilisaient [AppViewBackButtonVisibility](http
 Si votre application continue d’utiliser [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility), l’interface utilisateur du système affichera le bouton Précédent du système à l’intérieur de la barre de titre. (Les interactions utilisateur et l’apparence du bouton Précédent sont identiques à celles des builds précédentes.)
 
 ![Bouton Précédent de la barre de titre](images/nav-back-pc.png)
-
-### <a name="system-back-bar"></a>Barre Précédent système
-
-> [!NOTE]
-> « Barre Précédent système » est uniquement une description, pas un nom officiel.
-
-La barre Précédent système est une « bande » qui est insérée entre la bande d’onglets et la zone de contenu de l’application. La bande s’étend sur toute la largeur de l’application et le bouton Précédent se trouve sur son bord gauche. La hauteur verticale de la bande est de 32 pixels pour garantir une taille de cible tactile adéquate pour le bouton Précédent.
-
-La barre Précédent système s’affiche de façon dynamique, en fonction de la visibilité du bouton Précédent. Lorsque le bouton Précédent est visible, la barre Précédent système est insérée et déplace le contenu de l’application de 32 pixels vers le bas sous la bande d’onglets. Lorsque le bouton Précédent est masqué, la barre Précédent système est supprimée de manière dynamique, le contenu de l’application étant décalé de 32 pixels vers le haut contre la bande d’onglets. Pour éviter que l’interface utilisateur de votre application ne se déplace vers le haut ou vers le bas, nous vous recommandons de représenter un [bouton Précédent dans l’application](#back-button).
-
-Les [personnalisations de la barre de titre](../shell/title-bar.md) s’appliquent à la fois à la bande d’onglets et à la barre Précédent système de l’application. Si votre application spécifie des propriétés de couleur du premier plan et de l’arrière-plan avec[ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar), les couleurs s’appliquent à la bande d’onglets et à la barre Précédent système.
 
 ## <a name="guidelines-for-custom-back-navigation-behavior"></a>Recommandations sur le comportement personnalisé de navigation vers l’arrière
 

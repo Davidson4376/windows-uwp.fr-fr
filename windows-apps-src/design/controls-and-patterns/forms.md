@@ -5,12 +5,12 @@ template: detail.hbs
 ms.date: 11/07/2017
 ms.topic: article
 keywords: windows 10, uwp, fluent
-ms.openlocfilehash: 8a57f13e168a248569bca1beeceed7b4f6c89f69
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: ff071a2a98c533ad7c089b28165f026de00ba68f
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63794216"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319093"
 ---
 # <a name="forms"></a>Formulaires
 Un formulaire est un groupe de contrôles qui collectent des données auprès de l’utilisateur et les envoient. Les formulaires sont généralement utilisés pour les pages de paramètres, les enquêtes, la création de comptes et bien plus encore. 
@@ -149,7 +149,7 @@ Commande | Utilisez
 ### <a name="additional-controls"></a>Contrôles supplémentaires 
 Pour obtenir la liste complète des contrôles UWP, consultez [Index des contrôles par fonction](controls-by-function.md).
 
-Pour les contrôles d’interface utilisateur personnalisés et plus complexes, consultez les ressources UWP disponibles auprès de sociétés comme [Telerik](https://www.telerik.com/), [SyncFusion](https://www.syncfusion.com/products/uwp), [DevExpress](https://www.devexpress.com/Products/NET/Controls/Win10Apps/), [Infragistics](https://www.infragistics.com/products/universal-windows-platform), [ComponentOne](https://www.componentone.com/Studio/Platform/UWP) et [ActiPro](https://www.actiprosoftware.com/products/controls/universal).
+Pour les contrôles d’interface utilisateur personnalisés et plus complexes, consultez les ressources UWP disponibles auprès de sociétés comme [Telerik](https://www.telerik.com/), [SyncFusion](https://www.syncfusion.com/uwp-ui-controls), [DevExpress](https://www.devexpress.com/Products/NET/Controls/Win10Apps/), [Infragistics](https://www.infragistics.com/products/universal-windows-platform), [ComponentOne](https://www.componentone.com/Studio/Platform/UWP) et [ActiPro](https://www.actiprosoftware.com/products/controls/universal).
 
 ## <a name="one-column-form-example"></a>Exemple de formulaire monocolonne
 Cet exemple utilise un [mode liste](lists.md) [maître/détail](master-details.md) acrylique et un contrôle [NavigationView](navigationview.md).

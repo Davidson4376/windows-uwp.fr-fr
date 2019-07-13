@@ -10,18 +10,18 @@ design-contact: kimsea
 dev-contact: niallm
 ms.custom: 19H1
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ea4dc1d77c5cf7199d084d4646b5862599a1d54
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: dc696c9a57e84e2caade6a2623a72a6048b65621
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63794422"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319105"
 ---
-# <a name="teaching-tip"></a>Conseil d’apprentissage
+# <a name="teaching-tip"></a>Conseil éducatif
 
 Un conseil d’apprentissage est un menu volant semi-persistant riche en contenu qui fournit des informations contextuelles. Il est souvent utilisé pour fournir à l’utilisateur des informations, des rappels et des enseignements concernant des fonctionnalités nouvelles ou importantes susceptibles d’améliorer son expérience.
 
-**API importantes :** [Classe TeachingTip](https://docs.microsoft.com/en-us/uwp/api/microsoft.ui.xaml.controls.teachingtip)
+**API importantes :** [Classe TeachingTip](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.teachingtip?view=winui-2.2)
 
 La fermeture d’un conseil d’apprentissage peut résulter d’un abandon interactif ou d’une action explicite. Un conseil d’apprentissage peut cibler un élément d’interface utilisateur spécifique avec son extension ou être utilisé sans extension ou cible.
 

@@ -5,12 +5,12 @@ keywords: nouveautés, mise à jour, fonctionnalités, conseils aux développeur
 ms.date: 12/14/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a79edb39cc4bfa5794d79d68f4fb8d5b0e976105
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: c715a48e0f9d6dea5939e6363441b0300544c252
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63806073"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321905"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-december-2017"></a>Nouveautés apportées dans la documentation du développeur Windows en décembre 2017
 
@@ -44,7 +44,7 @@ Sur les appareils qui prennent en charge les interactions tactiles, ajoutez des 
 
 ### <a name="microsoft-collaborate"></a>Microsoft Collaborate
 
-Le portail Microsoft Collaborate fournit des outils et des services qui permettent de simplifier la collaboration en ingénierie au sein de l'écosystème Microsoft. Il permet de partager des éléments de travail (bogues, demandes de fonctionnalités, etc.) et de diffuser du contenu (builds, documents, spécifications). [En savoir plus](https://docs.microsoft.com/en-us/collaborate).
+Le portail Microsoft Collaborate fournit des outils et des services qui permettent de simplifier la collaboration en ingénierie au sein de l'écosystème Microsoft. Il permet de partager des éléments de travail (bogues, demandes de fonctionnalités, etc.) et de diffuser du contenu (builds, documents, spécifications). [En savoir plus](https://docs.microsoft.com/collaborate/).
 
 ![Microsoft Collaborate dans l'Espace partenaires](images/microsoft_collaborate_screenshot.PNG)
 
@@ -52,7 +52,7 @@ Le portail Microsoft Collaborate fournit des outils et des services qui permett
 
 Visual Studio 2017 version 15.5 a mis à jour le modèle **Projet de création de packages d'application Windows** afin qu'il soit beaucoup plus facile d'y inclure un projet UWP. Il n'est plus nécessaire d'utiliser un projet de création de package JavaScript, puis d'ajuster manuellement le manifeste du package.  
 
-Pour obtenir des conseils sur l'utilisation de ce nouveau modèle pour empaqueter votre application de bureau, consultez [Créer un package d'application à l'aide de Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-packaging-dot-net).
+Pour obtenir des conseils sur l'utilisation de ce nouveau modèle pour empaqueter votre application de bureau, consultez [Créer un package d'application à l'aide de Visual Studio](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net).
 
 Pour obtenir des instructions sur l'ajout d'un projet UWP à votre package, consultez [Étendre votre application de bureau avec des composants UWP modernes](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-extend).
 

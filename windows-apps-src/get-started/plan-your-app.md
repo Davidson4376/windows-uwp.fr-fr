@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 43423bc1475e446fcc0c6ab3f0d65b5a844d19d2
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 97407ec48eaac3415980b9313092b21e9532250a
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66370679"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321108"
 ---
 #  <a name="building-a-complex-universal-windows-platform-uwp-app"></a>Création d’une application de plateforme Windows universelle (UWP) complexe
 
@@ -220,7 +220,7 @@ Pour en savoir plus sur l’utilisation des différentes surfaces, voir <!--[Com
 
 ![Conception d’une application pour PC ou appareils mobiles](images/ux-budgettracker1-md-notablet.png)
 
-Pour plus d’informations sur la conception pour différentes tailles d’écran, voir [Tailles d’écran et points d’arrêt pour la conception réactive](https://docs.microsoft.com/en-us/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design).
+Pour plus d’informations sur la conception pour différentes tailles d’écran, voir [Tailles d’écran et points d’arrêt pour la conception réactive](https://docs.microsoft.com/windows/uwp/design/layout/screen-sizes-and-breakpoints-for-responsive-design).
 
 ## <a name="make-a-good-first-impression"></a>Faire une bonne première impression
 
@@ -238,4 +238,4 @@ Gardez à l’esprit ce que vous voulez que vos utilisateurs pensent, ressentent
 
 Pour éviter d’avoir à effectuer trop de changements plus tard, validez votre conception ou votre prototype par rapport aux recommandations, impressions des utilisateurs et exigences avant de pousser le développement trop loin. À chaque fonctionnalité correspondent des recommandations d’expérience utilisateur pour vous aider à perfectionner votre application, et des conditions à remplir pour la publication de votre application dans le Microsoft Store. Vous pouvez utiliser le [Kit de certification des applications Windows](https://developer.microsoft.com/windows/develop/app-certification-kit) pour tester la conformité technique aux exigences du Windows Store. Vous pouvez également utiliser les outils d’analyse des performances de Microsoft Visual Studio pour proposer à vos utilisateurs la meilleure expérience possible, quel que soit le scénario.
 
-Utilisez la liste de [recommandations détaillées relatives à l’expérience utilisateur pour les applications UWP](https://developer.microsoft.com/windows/design) afin de ne pas oublier de fonctionnalités importantes. Utilisez les [outils de performances Visual Studio](https://docs.microsoft.com/visualstudio/profiling/profiling-tools?view=vs-2015) pour analyser les performances de chacun des scénarios de votre application.
+Utilisez la liste de [recommandations détaillées relatives à l’expérience utilisateur pour les applications UWP](https://developer.microsoft.com/windows/apps/design) afin de ne pas oublier de fonctionnalités importantes. Utilisez les [outils de performances Visual Studio](https://docs.microsoft.com/visualstudio/profiling/profiling-tools?view=vs-2015) pour analyser les performances de chacun des scénarios de votre application.

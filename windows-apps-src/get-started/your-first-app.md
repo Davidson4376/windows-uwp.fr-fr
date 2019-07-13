@@ -6,12 +6,12 @@ ms.date: 01/25/2017
 ms.topic: article
 keywords: windows 10, uwp, première application, c#, c++, JavaScript
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e42f627624cb559a84b7da73958f7aa93b0fee2
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: c6f66d90e96b0dfe941e4311ebf79cd3b9b5f4ae
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64564550"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67318749"
 ---
 # <a name="create-your-first-app"></a>Créer votre première application
 
@@ -65,7 +65,7 @@ Valorisez vos compétences web afin de développer des applications à l’aide 
 
 Les applications web peuvent être facilement empaquetées dans l’infrastructure UWP en tant qu’applications web hébergées et promues sur le Microsoft Store.
 
-* [Applications web hébergées](https://developer.microsoft.com/windows/bridges/hosted-web-apps)
+* [Applications web hébergées](https://developer.microsoft.com/windows/pwa)
 * [Convertir votre application web en application UWP](../porting/hwa-create-windows.md)
 
 

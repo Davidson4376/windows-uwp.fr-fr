@@ -6,12 +6,12 @@ ms.topic: article
 keywords: prise en main, uwp, windows 10, piste d’apprentissage, fichiers, e/s de fichier, lire un fichier, écrire un fichier, créer un fichier, écrire du texte, lire du texte
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 5480638e201dca8a5eb5363d7a5944422c626f67
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 29cfeef852f240548f1cd961f73766346da7afa4
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66366890"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321132"
 ---
 # <a name="work-with-files"></a>Utiliser des fichiers
 
@@ -145,4 +145,4 @@ Voici un résumé rapide des API et d’autres documents utiles pour vous aider 
 | [Exemple d’accès aux fichiers](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess) | Montre comment créer, lire, écrire, copier et supprimer un fichier. |
 | [Exemple de sélecteur de fichiers](https://code.msdn.microsoft.com/windowsapps/File-picker-sample-9f294cba) | Montre comment accéder aux fichiers et aux dossiers en permettant à l’utilisateur de les choisir à l’aide d’une interface utilisateur et comment enregistrer un fichier de sorte que l’utilisateur puisse spécifier le nom, le type de fichier et l’emplacement du fichier à enregistrer. |
 | [Exemple JSON](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Json) | Indique comment encoder et décoder des objets, des tableaux, des chaînes, des chiffres et des valeurs booléennes JSON (JavaScript Object Notation) à l’aide de l’[espace de noms Windows.Data.Json](https://docs.microsoft.com/uwp/api/Windows.Data.Json). |
-| [Exemples de code supplémentaires](https://developer.microsoft.com//windows/samples) | Choisissez **Fichiers, dossiers et bibliothèques** dans la liste déroulante des catégories. |
+| [Exemples de code supplémentaires](https://developer.microsoft.com/windows/samples) | Choisissez **Fichiers, dossiers et bibliothèques** dans la liste déroulante des catégories. |

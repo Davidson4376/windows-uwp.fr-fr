@@ -1,16 +1,16 @@
 ---
 title: Utiliser une base de données SQL Server dans une application UWP
 description: Utilisez une base de données SQL Server dans une application UWP.
-ms.date: 3/28/2019
+ms.date: 03/28/2019
 ms.topic: article
 keywords: windows 10, uwp, SQL Server, base de données
 ms.localizationpriority: medium
-ms.openlocfilehash: f8986f14872d4e5de2c45bba264de6619ef07141
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 487497fd3b715f6d497eb76b8da6a3e60903772a
+ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66360149"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67713775"
 ---
 # <a name="use-a-sql-server-database-in-a-uwp-app"></a>Utiliser une base de données SQL Server dans une application UWP
 Votre application peut se connecter directement à une base de données SQL Server, puis stocker et récupérer des données à l’aide de classes de l’espace de noms [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient?redirectedfrom=MSDN).
@@ -242,8 +242,8 @@ Voir [Utiliser une base de données SQLite dans une application UWP](sqlite-dat
 
 **Partager du code entre différentes applications sur différentes plateformes**
 
-Voir [Partager du code entre une application de bureau et une application UWP](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-migrate).
+Consultez [Partager du code entre une application de bureau et une application UWP](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-migrate).
 
-**Ajouter des pages maître/détail avec les back ends Azure SQL**
+**Ajouter des pages maître/détail avec les back-ends Azure SQL**
 
-Voir [Exemple de base de données de commandes de clients](https://github.com/Microsoft/Windows-appsample-customers-orders-database).
+Consultez [Exemple de base de données de commandes des clients](https://github.com/Microsoft/Windows-appsample-customers-orders-database).

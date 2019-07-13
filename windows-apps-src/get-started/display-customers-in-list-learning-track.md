@@ -6,12 +6,12 @@ ms.topic: article
 keywords: prise en main, uwp, windows 10, piste d’apprentissage, liaison de données, liste
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: a949479a021d4f8de592d1991773dd2e31e9769c
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: c4d339a1eedb798f11d5567be6a48ec2269cf8ac
+ms.sourcegitcommit: 280193dfe5a106fc6b4c85df3ac40535547b855c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64564481"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67235159"
 ---
 # <a name="display-customers-in-a-list"></a>Afficher des clients dans une liste
 
@@ -110,7 +110,7 @@ Vous avez affiché les clients dans une liste, mais la liaison de données B=bin
 
 Si vous avez suivi les extraits de code antérieurs, la liaison que vous avez apportée utilise x:Bind et ne spécifie pas de mode, ce qui produit une liaison à usage unique. Si vous souhaitez modifier vos clients directement à partir de l’interface utilisateur, vous devez la remplacer par une liaison bidirectionnelle, afin que les modifications des données soient transférées vers les objets client. [Présentation détaillée de la liaison de données](../data-binding/data-binding-in-depth.md) contient des informations supplémentaires.
 
-La liaison bidirectionnelle met également à jour l’interface utilisateur si la source de données est modifiée. Pour que cela fonctionne, vous devez implémenter [**INotifyPropertyChanged**](https://msdn.microsoft.com/library/system.componentmodel.inotifypropertychanged(d=robot).aspx) sur la source et vous assurer que ses méthodes setter de propriété déclenchent l’événement **PropertyChanged**. Une pratique courante consiste à les faire appeler une méthode d’assistance telle que la méthode **OnPropertyChanged**, comme illustré ci-dessous :
+La liaison bidirectionnelle met également à jour l’interface utilisateur si la source de données est modifiée. Pour que cela fonctionne, vous devez implémenter [**INotifyPropertyChanged**](https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged?redirectedfrom=MSDN) sur la source et vous assurer que ses méthodes setter de propriété déclenchent l’événement **PropertyChanged**. Une pratique courante consiste à les faire appeler une méthode d’assistance telle que la méthode **OnPropertyChanged**, comme illustré ci-dessous :
 
 ```csharp
 public class Customer : INotifyPropertyChanged
@@ -170,7 +170,7 @@ Voici un résumé rapide des API et des autres documents utiles pour vous aider 
 | [Binding](../xaml-platform/binding-markup-extension.md) | Documentation sur l’ancienne extension de balisage Binding. |
 | [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) | Contrôle d’interface utilisateur qui affiche des éléments de données dans une pile verticale. |
 | [TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) | Contrôle de texte de base pour l’affichage de données de texte modifiables dans l’interface utilisateur. |
-| [INotifyPropertyChanged](https://msdn.microsoft.com/library/system.componentmodel.inotifypropertychanged(d=robot).aspx) | Interface pour rendre les données observables, en fournissant une liaison de données. |
+| [INotifyPropertyChanged](https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged?redirectedfrom=MSDN) | Interface pour rendre les données observables, en fournissant une liaison de données. |
 | [ItemsControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsControl) | La propriété **ItemsSource** de cette classe permet à un contrôle ListView d’établir une liaison avec une source de données. |
 
 ### <a name="useful-docs"></a>Documents utiles

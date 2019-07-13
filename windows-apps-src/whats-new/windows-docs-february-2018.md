@@ -5,12 +5,12 @@ keywords: nouveautés, mise à jour, fonctionnalités, conseils aux développeur
 ms.date: 02/05/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 421fb7c973c1aaa4e9e1924548d7f11439fd5350
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: e02c253e9fe2e3bd25485c8af0429b19a65886cf
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63780304"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320403"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-february-2018"></a>Nouveautés apportées dans la documentation du développeur Windows en février 2018
 
@@ -73,4 +73,4 @@ Les lanceurs 3D offrent un moyen unique pour les utilisateurs de placer une repr
 
 ### <a name="motion-controller-tracking"></a>Suivi des contrôleurs de mouvement
 
-Les contrôleurs de mouvement représentent les mains d’un utilisateur dans Windows Mixed Reality. [Regardez la vidéo](https://www.youtube.com/watch?v=rkDpRllbLII) pour savoir comment les contrôleurs de mouvement fonctionnent lorsqu’ils sont à la fois à l’intérieur et à l’extérieur du champ de vision du casque de réalité mixte et [apprenez-en davantage sur le suivi des contrôleurs ici.](https://developer.microsoft.com/windows/mixed-reality/motion_controllers#controller_tracking_state%E2%80%9D)
+Les contrôleurs de mouvement représentent les mains d’un utilisateur dans Windows Mixed Reality. [Regardez la vidéo](https://www.youtube.com/watch?v=rkDpRllbLII) pour savoir comment les contrôleurs de mouvement fonctionnent lorsqu’ils sont à la fois à l’intérieur et à l’extérieur du champ de vision du casque de réalité mixte et [apprenez-en davantage sur le suivi des contrôleurs ici.](https://docs.microsoft.com/windows/mixed-reality/motion-controllers#controller_tracking_state%E2%80%9D)

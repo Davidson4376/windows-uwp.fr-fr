@@ -2,16 +2,16 @@
 title: Préparer votre application pour le changement d’ère du Japon
 description: Découvrez le changement d’ère du Japon de mai 2019 et comment préparer votre application.
 ms.assetid: 5A945F9A-8632-4038-ADD6-C0568091EF27
-ms.date: 4/26/2019
+ms.date: 04/26/2019
 ms.topic: article
 keywords: windows 10, uwp, adaptabilité, localisation, Japon, ère
 ms.localizationpriority: high
-ms.openlocfilehash: 54d66d0426e5f0c41d48b93ba96781786d6fab92
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 7e8250ccae96ed835aba2a2a993fdde9ae31a884
+ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66363779"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67714121"
 ---
 # <a name="prepare-your-application-for-the-japanese-era-change"></a>Préparer votre application pour le changement d’ère du Japon
 

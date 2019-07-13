@@ -3,15 +3,15 @@ ms.assetid: 54973C62-9669-4988-934E-9273FB0425FD
 title: Activer votre appareil pour le développement
 description: Configurez votre appareil Windows 10 pour le développement et le débogage.
 keywords: Commencer avec une licence de développeur Visual Studio, appareil avec licence de développeur activée
-ms.date: 4/9/2019
+ms.date: 04/09/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: f927d8bce1e59ba9a8ed9b0f3f08ce3575c6d7bd
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 9c1979f8e8232ee3bfd2e2961307608bf8da7836
+ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66367019"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67714145"
 ---
 # <a name="enable-your-device-for-development"></a>Activer votre appareil pour le développement
 
@@ -56,7 +56,7 @@ Par défaut, vous pouvez uniquement installer des applications de plateforme Win
 
 ### <a name="sideload-apps"></a>Charger la version test des applications
 
-Le paramètre Charger la version test des applications est généralement utilisé par des sociétés ou des écoles qui ont besoin d’installer des applications personnalisées sur des appareils gérés, sans passer par le Microsoft Store, ou par toute personne devant exécuter des applications à partir de sources tierces. Dans ce cas, l’organisation applique généralement une stratégie visant à désactiver le paramètre *Applications UWP*, comme le montre l’image précédente de la page des paramètres. L’organisation fournit aussi le certificat nécessaire et l’emplacement d’installation pour le chargement indépendant des applications. Pour plus d’informations, voir les articles TechNet [Charger la version test des applications dans Windows 10](https://technet.microsoft.com/library/mt269549.aspx) et [Prendre en main le déploiement d’applications dans Microsoft Intune](https://technet.microsoft.com/library/dn646955.aspx).
+Le paramètre Charger la version test des applications est généralement utilisé par des sociétés ou des écoles qui ont besoin d’installer des applications personnalisées sur des appareils gérés, sans passer par le Microsoft Store, ou par toute personne devant exécuter des applications à partir de sources tierces. Dans ce cas, l’organisation applique généralement une stratégie visant à désactiver le paramètre *Applications UWP*, comme le montre l’image précédente de la page des paramètres. L’organisation fournit aussi le certificat nécessaire et l’emplacement d’installation pour le chargement indépendant des applications. Pour plus d’informations, voir les articles TechNet [Charger la version test des applications dans Windows 10](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10) et [Prendre en main le déploiement d’applications dans Microsoft Intune](https://docs.microsoft.com/intune/deploy-use/add-apps).
 
 Informations spécifiques à la famille d’appareils
 
@@ -94,7 +94,7 @@ Pour en savoir plus sur Portail d’appareil, consultez [Vue d’ensemble du por
 
 Pour obtenir des instructions d’installation spécifiques pour l’appareil, voir :
 - [Portail d’appareil pour Bureau](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-desktop)
-- [Portail d’appareil pour HoloLens](https://developer.microsoft.com/windows/holographic/using_the_windows_device_portal)
+- [Portail d’appareil pour HoloLens](https://developer.microsoft.com/mixed-reality)
 - [Portail d’appareil pour IoT](https://developer.microsoft.com/windows/iot/docs/DevicePortal)
 - [Portail d’appareil pour appareils mobiles](../debug-test-perf/device-portal-mobile.md)
 - [Portail d’appareil pour Xbox](../xbox-apps/device-portal-xbox.md)
@@ -238,8 +238,8 @@ Erreur : DEP0700 : Échec de l’inscription de l’application.
 ## <a name="see-also"></a>Voir aussi
 
 * [Votre première application](your-first-app.md)
-* [Publier votre application UWP](https://developer.microsoft.com/store/publish-apps)
-* [Articles sur les procédures de développement d’applications UWP](https://developer.microsoft.com/windows/apps/develop)
+* [Publier votre application UWP](https://docs.microsoft.com/windows/uwp/publish/)
+* [Articles sur les procédures de développement d’applications UWP](https://docs.microsoft.com/windows/uwp/develop/)
 * [Exemples de code pour les développeurs UWP](https://developer.microsoft.com/windows/samples)
 * [Qu’est-ce qu’une application UWP ?](universal-application-platform-guide.md)
 * [Créer un compte Windows](sign-up.md)

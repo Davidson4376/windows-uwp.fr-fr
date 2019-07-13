@@ -5,12 +5,12 @@ keywords: application web hébergée, HWA, API REST, application avec page uniqu
 ms.date: 05/10/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: c38a7182cd27abcfb0de66c721f0e06b95b695d5
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: b1b837d6585507311dc2246d42f3094ce8b07421
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66366983"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67321173"
 ---
 # <a name="create-a-single-page-web-app-with-rest-api-backend"></a>Créer une application web avec page unique avec une API REST principale
 
@@ -233,7 +233,7 @@ Cette couche de notre programme représente les cartes mémoire elles-mêmes et 
  - Ce code [guess.js](https://raw.githubusercontent.com/Microsoft/Windows-tutorials-web/master/Single-Page-App-with-REST-API/backend/data/guess.js?token=ACEfkvY69Zr1AZQ4iXgfCgDxeinT21bBks5ZFhYBwA%3D%3D) dans votre fichier **data\guess.js**
  - Ce code [new.js](https://raw.githubusercontent.com/Microsoft/Windows-tutorials-web/master/Single-Page-App-with-REST-API/backend/data/new.js?token=ACEfkiqeDN0HjZ4-gIKRh3wfVZPSlEmgks5ZFhYPwA%3D%3D) dans votre fichier **data\new.js**
 
-Par souci de simplicité, nous stockons notre tableau de jeu dans une variable globale (`global.board`) sur notre serveur Node. Toutefois dans la pratique, vous utiliseriez le stockage dans le cloud (comme le [Cloud Datastore](https://cloud.google.com/datastore/) de Google ou Azure [DocumentDB](https://azure.microsoft.com/en-us/services/documentdb/)) pour faire de cette installation un service d’API de mémoire de jeu viable, prenant en charge simultanément plusieurs jeux et joueurs.
+Par souci de simplicité, nous stockons notre tableau de jeu dans une variable globale (`global.board`) sur notre serveur Node. Toutefois dans la pratique, vous utiliseriez le stockage dans le cloud (comme le [Cloud Datastore](https://cloud.google.com/datastore/) de Google ou Azure [DocumentDB](https://azure.microsoft.com/services/cosmos-db/)) pour faire de cette installation un service d’API de mémoire de jeu viable, prenant en charge simultanément plusieurs jeux et joueurs.
 
 Assurez-vous d’avoir enregistré toutes les modifications dans VS Code, lancez à nouveau votre serveur (F5 dans VS Code ou `npm start` à partir du shell, puis accédez à [https://localhost:8000](https://localhost:8000)) pour tester l’API de jeu.
 
@@ -284,7 +284,7 @@ Si vous avez réussi toutes les étapes jusqu’à présent et si Azure diffuse 
 
 ### <a name="going-further"></a>Aller plus loin
 
-Pour faire de l’API du jeu de mémoire un service principal viable pour une application de production, vous devez développer le code pour prendre en charge plusieurs jeux et joueurs. Pour ce faire, vous devrez probablement raccorder l’[authentification](https://swagger.io/docs/specification/authentication/) (pour la gestion des identités des joueurs), une [base de données NoSQL](https://docs.microsoft.com/en-us/azure/documentdb/) (pour le suivi des jeux et des joueurs) et certains éléments de base de [tests d’unité](https://apigee.com/about/blog/developer/swagger-test-templates-test-your-apis) correspondant à votre API.
+Pour faire de l’API du jeu de mémoire un service principal viable pour une application de production, vous devez développer le code pour prendre en charge plusieurs jeux et joueurs. Pour ce faire, vous devrez probablement raccorder l’[authentification](https://swagger.io/docs/specification/authentication/) (pour la gestion des identités des joueurs), une [base de données NoSQL](https://azure.microsoft.com/blog/dear-documentdb-customers-welcome-to-azure-cosmos-db/) (pour le suivi des jeux et des joueurs) et certains éléments de base de [tests d’unité](https://apigee.com/about/blog/api-technology/swagger-test-templates-test-your-apis) correspondant à votre API.
 
 Voici quelques ressources utiles pour aller plus loin :
 
@@ -292,7 +292,7 @@ Voici quelques ressources utiles pour aller plus loin :
 
  - [Documentation Azure Web + Mobile](https://docs.microsoft.com/en-us/azure/#pivot=services&panel=web)
 
- - [Documentation Azure DocumentDB](https://docs.microsoft.com/en-us/azure/documentdb/index)
+ - [Documentation Azure DocumentDB](https://azure.microsoft.com/blog/dear-documentdb-customers-welcome-to-azure-cosmos-db/)
 
 ## <a name="part-ii-build-a-single-page-web-application"></a>Partie II : Générer une application web à page unique
 
@@ -575,7 +575,7 @@ Le système de grille permet de créer jusqu’à 12 colonnes. Dans la mesure o�
 ### <a name="5-add-a-card-flip-animation-with-css-transforms"></a>5. Ajouter une animation de retournement de carte avec des transformations CSS
 Remplacez le fichier style.css dans memory\public\stylesheets par le fichier style.css à partir du dossier de démarrage.
 
-L’ajout d’un mouvement de retournement à l’aide de la [transformation CSS](https://docs.microsoft.com/en-us/microsoft-edge/dev-guide/css/transforms) confère aux cartes un mouvement de retournement réaliste, en 3D. Les cartes du jeu sont créées à l’aide de la structure de code HTML suivante et ajoutées de manière programmée au tableau du jeu (dans la fonction `drawGameBoard()` illustrée précédemment).
+L’ajout d’un mouvement de retournement à l’aide de la [transformation CSS](https://developer.mozilla.org/docs/Web/CSS/CSS_Transforms) confère aux cartes un mouvement de retournement réaliste, en 3D. Les cartes du jeu sont créées à l’aide de la structure de code HTML suivante et ajoutées de manière programmée au tableau du jeu (dans la fonction `drawGameBoard()` illustrée précédemment).
 
 ``` html
 <div class="flipContainer">
@@ -642,6 +642,6 @@ Voici quelques ressources utiles pour aller plus loin :
 
  - [Déployer votre projet de développement d’applications pour les sites web Azure](https://docs.microsoft.com/azure/cosmos-db/documentdb-nodejs-application#_Toc395783182)
 
- - [Convertir votre application web en une application UWP (plateforme Windows universelle)](https://docs.microsoft.com/en-us/windows/uwp/porting/hwa-create-windows)
+ - [Convertir votre application web en une application UWP (plateforme Windows universelle)](https://docs.microsoft.com/microsoft-edge/progressive-web-apps)
 
- - [Publier des applications Windows](https://developer.microsoft.com/en-us/store/publish-apps)
+ - [Publier des applications Windows](https://docs.microsoft.com/windows/uwp/publish/)

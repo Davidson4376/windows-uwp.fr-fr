@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: e671c61058ec1c048fbb1b547cc79060a7cd0d0a
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 5a885be33cfd9170d4324c096814d381a92e7d3d
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66364337"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319495"
 ---
 # <a name="rich-text-block"></a>Bloc de texte enrichi
 
@@ -168,4 +168,4 @@ Voir les articles Typographie et Recommandations concernant les polices.
 
 
 **Pour les développeurs (autres)**
-- [String.Length, propriété](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
+- [String.Length, propriété](https://docs.microsoft.com/dotnet/api/system.string.length?redirectedfrom=MSDN#System_String_Length)

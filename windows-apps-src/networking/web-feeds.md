@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a9d3b4b9b404ab2c0828ea302f0c564ae1c8e7b4
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: bc422f57cdc268ea517aff729a9c3e57c80acf69
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66372782"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67320610"
 ---
 # <a name="rssatom-feeds"></a>Flux RSS/Atom
 
@@ -60,7 +60,7 @@ Pour vous assurer que votre application UWP est prête à être utilisée en ré
 
 Nous allons maintenant examiner du code qui illustre comment extraire un flux puis afficher chaque élément qu’il contient. Avant de pouvoir configurer et envoyer la requête, nous allons définir quelques variables que nous utiliserons durant l’opération et initialiser une instance de [**SyndicationClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication.SyndicationClient), qui définit les méthodes et propriétés que nous utiliserons pour extraire et afficher le flux.
 
-Le constructeur [**Uri**](https://docs.microsoft.com/uwp/api/windows.foundation.uri.) lève une exception si l’élément *uriString* passé au constructeur n’est pas un URI valide. Par conséquent, nous validons *uriString* à l’aide d’un bloc try/catch.
+Le constructeur [**Uri**](https://docs.microsoft.com/uwp/api/windows.foundation.uri.-ctor#Windows_Foundation_Uri__ctor_System_String_) lève une exception si l’élément *uriString* passé au constructeur n’est pas un URI valide. Par conséquent, nous validons *uriString* à l’aide d’un bloc try/catch.
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -93,13 +93,13 @@ try {
 }
 ```
 
-Ensuite, nous configurerons la requête en définissant les informations d’identification de serveur (propriété [**ServerCredential**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.servercredential)), les informations d’identification de proxy (propriété [**ProxyCredential**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.proxycredential)) et les en-têtes HTTP (méthode [**SetRequestHeader**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.setrequestheader)) nécessaires. Une fois les paramètres de requête de base configurés, un objet [**Uri**](https://docs.microsoft.com/uwp/api/windows.foundation.uri.) valide est créé à l’aide d’une chaîne d’URI de flux fournie par l’application. L’objet **Uri** est ensuite transmis à la fonction [**RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync) pour demander le flux.
+Ensuite, nous configurerons la requête en définissant les informations d’identification de serveur (propriété [**ServerCredential**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.servercredential)), les informations d’identification de proxy (propriété [**ProxyCredential**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.proxycredential)) et les en-têtes HTTP (méthode [**SetRequestHeader**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.setrequestheader)) nécessaires. Une fois les paramètres de requête de base configurés, un objet [**Uri**](https://docs.microsoft.com/uwp/api/windows.foundation.uri) valide est créé à l’aide d’une chaîne d’URI de flux fournie par l’application. L’objet **Uri** est ensuite transmis à la fonction [**RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync) pour demander le flux.
 
 En supposant que le contenu de flux souhaité a été renvoyé, l’exemple de code itère chaque élément de flux et appelle **displayCurrentItem** (que nous allons définir ensuite), pour afficher les éléments et leur contenu sous forme de liste dans l’interface utilisateur.
 
 Vous devez écrire du code capable de gérer les exceptions au moment où vous appelez la plupart des méthodes réseau asynchrones. Votre gestionnaire d’exceptions peut récupérer des informations plus détaillées sur la cause de l’exception dans le but d’analyser l’échec et de prendre des décisions appropriées.
 
-La méthode [**RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync) lève une exception si aucune connexion n’a pu être établie avec le serveur HTTP ou si l’[**Uri**](https://docs.microsoft.com/uwp/api/windows.foundation.uri.) ne pointe pas vers un flux AtomPub ou RSS valide. L’exemple de code JavaScript utilise une fonction **onError** pour intercepter les exceptions, et affiche des informations plus détaillées sur l’exception si une erreur se produit.
+La méthode [**RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync) lève une exception si aucune connexion n’a pu être établie avec le serveur HTTP ou si l’[**Uri**](https://docs.microsoft.com/uwp/api/windows.foundation.uri) ne pointe pas vers un flux AtomPub ou RSS valide. L’exemple de code JavaScript utilise une fonction **onError** pour intercepter les exceptions, et affiche des informations plus détaillées sur l’exception si une erreur se produit.
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp

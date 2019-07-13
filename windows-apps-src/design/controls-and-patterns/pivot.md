@@ -10,12 +10,12 @@ design-contact: kimsea
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 232da8afeccf5d82f65b51ae0a40905b3433d412
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: e975c47ae783fe9984950cf30cc82844b344aa7c
+ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66364543"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67319273"
 ---
 # <a name="pivot"></a>Pivot
 
@@ -145,7 +145,7 @@ Vous pouvez utiliser la propriété [SelectedItem](https://docs.microsoft.com/uw
 
 Vous pouvez utiliser les propriétés [LeftHeader](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pivot.leftheader) et [RightHeader](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pivot.rightheader) pour ajouter d’autres contrôles à l’en-tête du sélecteur de vue.
 
-Par exemple, vous pouvez ajouter une [CommandBar](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/app-bars) dans le RightHeader du contrôle Pivot.
+Par exemple, vous pouvez ajouter une [CommandBar](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/app-bars) dans le RightHeader du contrôle Pivot.
 
 ```xaml
 <Pivot>
@@ -191,7 +191,7 @@ Le contrôle est disponible en deux modes :
 
 ## <a name="get-the-sample-code"></a>Obtenir l’exemple de code
 
-- [Exemple de galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) : affichez tous les contrôles XAML dans un format interactif.
+- [Exemple de Galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) : tous les contrôles XAML dans un format interactif.
 
 ## <a name="related-topics"></a>Rubriques connexes
 
