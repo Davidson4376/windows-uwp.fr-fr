@@ -834,6 +834,8 @@
           href: ../cpp-and-winrt-apis/interop-winrt-cx.md
         - name: Passer de WRL à C++/WinRT
           href: ../cpp-and-winrt-apis/move-to-winrt-from-wrl.md
+        - name: 'Passer de C# à C++/WinRT'
+          href: ../cpp-and-winrt-apis/move-to-winrt-from-csharp.md
         - name: Interopérabilité avec ABI
           href: ../cpp-and-winrt-apis/interop-winrt-abi.md
         - name: Références fortes et faibles
