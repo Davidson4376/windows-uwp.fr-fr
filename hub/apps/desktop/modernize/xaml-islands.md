@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 8ceb314424ae2611e141ef866a84c08e55b0ba2d
-ms.sourcegitcommit: f9a30bfd1e8eab50d0b1db97dd2f650ce66b5d34
+ms.openlocfilehash: 52338ef4d3850b5cf4a2caa0e2d6f93341897285
+ms.sourcegitcommit: 734aa941dc675157c07bdeba5059cb76a5626b39
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67690884"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68141816"
 ---
 # <a name="host-uwp-xaml-controls-in-desktop-apps-xaml-islands"></a>Contrôle de l’hôte UWP XAML dans les applications de bureau (îles XAML)
 
@@ -43,7 +43,7 @@ Les applications WPF et Windows Forms peuvent utiliser une sélection de contrô
 
 Les contrôles UWP encapsulées suivants pour l’implémentation XAML îles sont actuellement disponibles pour les applications WPF et Windows Forms.
 
-| Commande | Minimale prise en charge du système d’exploitation | Description |
+| Contrôle | Minimale prise en charge du système d’exploitation | Description |
 |-----------------|-------------------------------|-------------|
 | [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)<br>[InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) | Windows 10, version 1903 | Fournir un barres d’outils de l’aire de conception et connexes pour l’interaction utilisateur Windows encrage dans votre application de bureau Windows Forms ou WPF. |
 | [MediaPlayerElement](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mediaplayerelement) | Windows 10, version 1903 | Incorpore une vue qui transmet en continu et restitue le contenu multimédia par exemple une vidéo dans votre application de bureau Windows Forms ou WPF. |
@@ -51,7 +51,7 @@ Les contrôles UWP encapsulées suivants pour l’implémentation XAML îles son
 
 Outre les contrôles inclus dans un wrapper pour XAML (îles), le Kit de ressources de communauté Windows fournit également les contrôles suivants pour l’hébergement de contenu web.
 
-| Commande | Minimale prise en charge du système d’exploitation | Description |
+| Contrôle | Minimale prise en charge du système d’exploitation | Description |
 |-----------------|-------------------------------|-------------|
 | [WebView](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webview) | Windows 10, version 1803 | Utilise le moteur de rendu Microsoft Edge pour afficher le contenu web. |
 | [WebViewCompatible](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webviewcompatible) | Windows 7 | Fournit une version de **WebView** qui est compatible avec plusieurs versions de système d’exploitation. Ce contrôle utilise le moteur de rendu Microsoft Edge pour afficher le contenu web sur Windows 10 version 1803 et versions ultérieure et le moteur de rendu d’Internet Explorer pour afficher le contenu web sur les versions antérieures de Windows 10, Windows 8.x et Windows 7. |
@@ -72,24 +72,24 @@ Les API qui s’affichent en bas de ce diagramme sont livrés avec le SDK Window
 
 Îles de XAML nécessite Windows 10, version 1903 et versions ultérieure. Pour utiliser des îlots de XAML dans votre application, vous devez tout d’abord configurer votre projet.
 
-### <a name="step-1-modify-your-project-to-use-windows-runtime-apis"></a>Étape 1 : Modifier votre projet pour utiliser Windows Runtime APIs
+### <a name="step-1-modify-your-project-to-use-windows-runtime-apis"></a>Étape 1 : Modifier votre projet pour utiliser Windows Runtime APIs
 
 Pour obtenir des instructions, consultez [cet article](desktop-to-uwp-enhance.md#set-up-your-project).
 
-### <a name="step-2-enable-xaml-island-support-in-your-project"></a>Étape 2 : Prise en charge de l’île de XAML activer dans votre projet
+### <a name="step-2-enable-xaml-island-support-in-your-project"></a>Étape 2 : Prise en charge de l’île de XAML activer dans votre projet
 
 Apportez l’une des modifications suivantes à votre projet pour activer la prise en charge de l’île de XAML. Pour plus d’informations, consultez [ce billet de blog](https://techcommunity.microsoft.com/t5/Windows-Dev-AppConsult/Using-XAML-Islands-on-Windows-10-19H1-fixing-the-quot/ba-p/376330#M117).
 
-#### <a name="option-1-package-your-application-in-an-msix-package"></a>Option 1 : Empaqueter votre application dans un package MSIX  
+#### <a name="option-1-package-your-application-in-an-msix-package"></a>Option 1 : Empaqueter votre application dans un package MSIX  
 
 Installer Windows 10, version 1903 SDK (ou une version ultérieure). Ensuite, empaqueter votre application dans un package MSIX en ajoutant un [projet d’empaquetage Windows Application](https:/docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) à votre solution et ajouter une référence à votre projet WPF ou Windows Forms.
 
-#### <a name="option-2-set-the-maxversiontested-value-in-your-assembly-manifest"></a>Option 2 : Définissez la valeur de maxVersionTested dans votre manifeste d’assembly
+#### <a name="option-2-set-the-maxversiontested-value-in-your-assembly-manifest"></a>Option 2 : Définissez la valeur de maxversiontested dans votre manifeste d’assembly
 
-Si vous ne souhaitez empaqueter votre application dans un package MSIX, vous pouvez ajouter un [manifeste d’application](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests) à votre projet et ajoutez le **maxVersionTested** élément dans le manifeste de pour spécifier que votre application est compatible avec Windows 10, version 1903 ou version ultérieure.
+Si vous ne souhaitez empaqueter votre application dans un package MSIX, vous pouvez ajouter un [manifeste d’application](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests) à votre projet et ajoutez le **maxversiontested** élément dans le manifeste de pour spécifier que votre application est compatible avec Windows 10, version 1903 ou version ultérieure.
 
 1. Si vous ne disposez pas d’une application de manifeste dans votre projet, ajoutez un nouveau fichier XML à votre projet et nommez-le **App.manifest**. Pour une application WPF ou Windows Forms, assurez-vous que vous affectez également la **manifeste** propriété **. app.manifest** dans le **Application** page de votre [projet propriétés](https://docs.microsoft.com/visualstudio/ide/reference/application-page-project-designer-csharp?view=vs-2019#resources).
-2. Dans votre manifeste d’application, incluez le **compatibilité** élément et les éléments enfants indiqués dans l’exemple suivant. Remplacez le **Id** attribut de la **maxVersionTested** élément avec le numéro de version de Windows 10 que vous ciblez (il doit s’agir de Windows 10, version 1903 ou une version ultérieure).
+2. Dans votre manifeste d’application, incluez le **compatibilité** élément et les éléments enfants indiqués dans l’exemple suivant. Remplacez le **Id** attribut de la **maxversiontested** élément avec le numéro de version de Windows 10 que vous ciblez (il doit s’agir de Windows 10, version 1903 ou une version ultérieure).
 
     ```xml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -105,7 +105,7 @@ Si vous ne souhaitez empaqueter votre application dans un package MSIX, vous pou
     ```
 
 > [!NOTE]
-> Lorsque vous ajoutez un **maxVersionTested** élément à un manifeste d’application dans un C++ Win32 de projet (à l’aide d’un modèle de projet d’Application de bureau Windows dans Visual Studio), vous pouvez voir l’avertissement de build suivant dans votre projet : `manifest authoring warning 81010002: Unrecognized Element "maxversiontested" in namespace "urn:schemas-microsoft-com:compatibility.v1"` . Cet avertissement n’indique pas que rien ne va pas dans votre projet, et il peut être ignoré.
+> Lorsque vous ajoutez un **maxversiontested** élément à un manifeste d’application, vous pouvez voir l’avertissement dans votre projet de build suivante : `manifest authoring warning 81010002: Unrecognized Element "maxversiontested" in namespace "urn:schemas-microsoft-com:compatibility.v1"`. Cet avertissement n’indique pas que rien ne va pas dans votre projet, et il peut être ignoré.
 
 ## <a name="feature-roadmap"></a>Feuille de route de fonctionnalité
 

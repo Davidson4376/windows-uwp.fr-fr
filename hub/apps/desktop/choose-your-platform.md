@@ -7,12 +7,12 @@ ms.date: 03/18/2019
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 996bbaf4dd05ce5b24e536459c6d7d009a53fa19
-ms.sourcegitcommit: f167775291cbc566b72b0859ae6b426d848c5c89
+ms.openlocfilehash: 2a4de1a43e60250e7efc2faf70f3c49e8253beb3
+ms.sourcegitcommit: 734aa941dc675157c07bdeba5059cb76a5626b39
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66266405"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68141799"
 ---
 # <a name="choose-your-app-platform"></a>Choisir votre plateforme d’application
 
@@ -36,7 +36,7 @@ Cet article décrit ces plateformes plus en détail et vous permet de détermine
 
 ## <a name="uwp"></a>UWP
 
-UWP est la plateforme de pointe pour jeux et applications Windows 10. Il est une plateforme hautement personnalisable qui utilise le balisage XAML pour séparer l’expérience utilisateur (présentation) à partir du code (logique métier). UWP est approprié pour les applications nécessitant une interface utilisateur sophistiquée, la personnalisation des styles et des scénarios de graphiques. UWP a également une prise en charge intégrée pour le [Fluent Design System](/windows/uwp/design/fluent-design-system/) pour la valeur par défaut, l’expérience utilisateur rencontrer et fournit l’accès à la [Windows Runtime (WinRT) API](/windows/uwp/get-started/universal-application-platform-guide#how-the-universal-windows-platform-relates-to-windows-runtime-apis). En adoptant Fluent, UWP prend automatiquement en charge les méthodes d’entrée courantes telles que l’encre, tactile, gamepad, clavier et souris.
+UWP est la plateforme de pointe pour jeux et applications Windows 10. Il est une plateforme hautement personnalisable qui utilise le balisage XAML pour séparer l’expérience utilisateur (présentation) à partir du code (logique métier). UWP est adapté aux applications de bureau qui requièrent une interface utilisateur sophistiquée, personnalisation des styles et des scénarios de graphiques. UWP a également une prise en charge intégrée pour le [Fluent Design System](/windows/uwp/design/fluent-design-system/) pour la valeur par défaut, l’expérience utilisateur rencontrer et fournit l’accès à la [Windows Runtime (WinRT) API](/windows/uwp/get-started/universal-application-platform-guide#how-the-universal-windows-platform-relates-to-windows-runtime-apis). En adoptant Fluent, UWP prend automatiquement en charge les méthodes d’entrée courantes telles que l’encre, tactile, gamepad, clavier et souris.
 
 Non seulement vous pouvez utiliser UWP pour créer des applications de bureau pour les PC Windows, mais UWP est également la seule plateforme prise en charge pour les applications Xbox, HoloLens et Surface Hub. UWP est notre plateforme d’application plus récente, de pointe.
 
@@ -83,7 +83,7 @@ Voici quelques extraits de quel l’API Win32 et C++ offre à vous permettent de
 -   Programmation générique efficace, de type sécurisé à l’aide de modèles.
 -   Des algorithmes et des conteneurs efficaces et sûr.
 -   DirectX, notamment Direct3D et DirectCompute (Notez que UWP offre également l’interopérabilité DirectX).
--   C++ AMP.
+-   C++AMP.
 
 Pour plus d’informations, consultez [prise en main les applications de bureau Windows qui utilisent l’API Win32](/windows/desktop/desktop-programming) et [technologies de l’application de bureau](/windows/desktop/desktop-app-technologies).
 

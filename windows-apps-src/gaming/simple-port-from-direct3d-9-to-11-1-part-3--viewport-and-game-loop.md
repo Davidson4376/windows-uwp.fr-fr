@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, jeux, portage, boucle de jeu, direct3d 9, directx 11
 ms.localizationpriority: medium
-ms.openlocfilehash: bd6a17b5e1684fbee21965158295dba123737bd6
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 9b3a18d9ee63a2ecded07f8b779195d5274b6210
+ms.sourcegitcommit: 734aa941dc675157c07bdeba5059cb76a5626b39
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66367913"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68141831"
 ---
 # <a name="port-the-game-loop"></a>Porter la boucle de jeu
 
@@ -21,7 +21,7 @@ ms.locfileid: "66367913"
 
 -   [Partie 1 : Initialiser Direct3D 11](simple-port-from-direct3d-9-to-11-1-part-1--initializing-direct3d.md)
 -   [Partie 2 : Convertir le framework de rendu](simple-port-from-direct3d-9-to-11-1-part-2--rendering.md)
--   Partie 3 : Porter la boucle de jeu
+-   Partie 3 : Porter la boucle de jeu
 
 
 Montre comment implémenter une fenêtre pour un jeu de plateforme Windows universelle (UWP) et comment récupérer la boucle de jeu, notamment comment créer une interface [**IFrameworkView**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.IFrameworkView) pour contrôler une classe [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) en plein écran. Partie 3 de la procédure pas à pas [Porter une application Direct3D 9 simple vers DirectX 11 et UWP](walkthrough--simple-port-from-direct3d-9-to-11-1.md).
@@ -33,7 +33,7 @@ Pour configurer une fenêtre de bureau avec une fenêtre d’affichage Direct3D 
 
 L’environnement UWP possède un système beaucoup plus simple. Au lieu de configurer une fenêtre traditionnelle, un jeu du Microsoft Store qui utilise DirectX implémente l’interface [**IFrameworkView**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.IFrameworkView). Cette interface existe pour les applications et jeux DirectX pour s’exécuter directement dans une classe [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) à l’intérieur du conteneur d’application.
 
-> **Remarque**    Windows fournit des pointeurs managés aux ressources telles que l’objet d’application source et le [ **CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow). Consultez [**gérer sur l’opérateur Object (^)** ]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx.
+> **Remarque**    Windows fournit des pointeurs managés aux ressources telles que l’objet d’application source et le [ **CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow). Consultez [ **gérer sur l’opérateur Object (^)** ](https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx).
 
  
 

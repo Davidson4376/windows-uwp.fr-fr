@@ -1,6 +1,6 @@
 ---
 description: Ce didacticiel montre comment ajouter des interfaces utilisateur UWP XAML, créer des packages MSIX et incorporer d’autres composants modernes dans votre application WPF.
-title: Migrer le Contoso application de notes de frais vers .NET Core 3
+title: Effectuer une migration de l'application Contoso Expenses vers .NET Core 3
 ms.topic: article
 ms.date: 06/27/2019
 ms.author: mcleans
@@ -8,14 +8,14 @@ author: mcleanbyron
 keywords: Windows 10, uwp, WinForms, wpf, xaml (îles)
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: e718de7a22873ccf347e60c661f724ce3abdd2cf
-ms.sourcegitcommit: 1eec0e4fd8a5ba82803fdce6e23fcd01b9488523
+ms.openlocfilehash: 6e303e7059edd72fcdeb5455f450e6ece9d58e02
+ms.sourcegitcommit: 734aa941dc675157c07bdeba5059cb76a5626b39
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67420134"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68141849"
 ---
-# <a name="part-1-migrate-the-contoso-expenses-app-to-net-core-3"></a>Partie 1 : Migrer le Contoso application de notes de frais vers .NET Core 3
+# <a name="part-1-migrate-the-contoso-expenses-app-to-net-core-3"></a>Partie 1 : Effectuer une migration de l'application Contoso Expenses vers .NET Core 3
 
 Il s’agit de la première partie d’un didacticiel qui montre comment moderniser une application de bureau WPF exemple nommée dépenses de Contoso. Pour une vue d’ensemble du didacticiel, configuration requise et des instructions pour télécharger l’exemple d’application, consultez [didacticiel : Moderniser une application WPF](modernize-wpf-tutorial.md).
   
@@ -162,7 +162,7 @@ Pour configurer les packages NuGet pour la **ContosoExpenses.Core** projet :
 
 5. Recherchez le `MvvmLightLibsStd10` du package et l’installer. C’est la version .NET Standard de la `MvvmLightLibs` package. Pour ce package, l’auteur a choisi pour créer un package de la version .NET Standard de la bibliothèque dans un package distinct à la version de .NET Framework.
 
-    !MvvmLightsLibs package[](images/wpf-modernize-tutorial/MvvmLightsLibsPackage.png)
+    ![Package de MvvmLightsLibs](images/wpf-modernize-tutorial/MvvmLightsLibsPackage.png)
 
 6. Dans le **ContosoExpenses.Core** de projet, cliquez sur le **dépendances** nœud et choisissez **ajouter une référence**.
 
