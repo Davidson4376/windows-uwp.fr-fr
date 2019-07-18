@@ -5,16 +5,16 @@ keywords: nouveautés, mise à jour, fonctionnalités, conseils aux développeur
 ms.date: 05/07/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 69df2bbe8bc91fcf4a2631c0f257fc44851c24f2
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 9adf5a80595e00a30098044536d1ecfe4fd62279
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63805864"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820495"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-may-2018"></a>Nouveautés apportées dans la documentation du développeur Windows en mai 2018
 
-La documentation du développeur Windows est constamment mise à jour afin d’intégrer les informations sur les nouvelles fonctionnalités disponibles pour les développeurs sur la plateforme Windows. Les vues d’ensemble des fonctionnalités, les conseils aux développeurs, les vidéos et les exemples ci-après ont été mis à disposition au mois de mai pour coïncider avec la conférence [Microsoft Build 2018](https://www.microsoft.com/build) destinée aux développeurs.
+La documentation du développeur Windows est constamment mise à jour afin d’intégrer les informations sur les nouvelles fonctionnalités disponibles pour les développeurs sur la plateforme Windows. Les vues d’ensemble des fonctionnalités, les conseils aux développeurs, les vidéos et les exemples ci-après ont été mis à disposition au mois de mai pour coïncider avec la conférence [Microsoft Build 2018](https://www.microsoft.com/build/) destinée aux développeurs.
 
 [Installez les outils et le kit de développement logiciel (SDK)](https://go.microsoft.com/fwlink/?LinkId=821431) sur Windows 10 et vous pourrez ainsi [créer une application universelle Windows](../get-started/create-uwp-apps.md) ou explorer la procédure permettant d’utiliser votre [code d’application existant sur Windows](../porting/index.md).
 
@@ -55,7 +55,7 @@ En outre, nous avons réécrit les pages suivantes avec de toutes nouvelles info
 
 ### <a name="app-installer-files-in-visual-studio"></a>Fichiers du Programme d’installation d’application dans Visual Studio
 
-Il est désormais possible de créer des fichiers Programme d’installation d’application avec la mise à jour 15.7 de Visual Studio 2017. [Découvrez comment utiliser Visual Studio pour créer un fichier Programme d’installation d’application](../packaging/create-appinstallerfile-vs.md) et activer les mises à jour automatiques pour vos applications. Si vous rencontrez des problèmes, consultez la page [Résoudre les problèmes d’installation avec le fichier du programme d’installation d’application](../packaging/troubleshoot-appinstaller-issues.md) pour afficher les problèmes courants et les solutions afférentes.
+Il est désormais possible de créer des fichiers Programme d’installation d’application avec Visual Studio 2017, Update 15.7 et versions ultérieures. [Découvrez comment utiliser Visual Studio pour créer un fichier Programme d’installation d’application](../packaging/create-appinstallerfile-vs.md) et activer les mises à jour automatiques pour vos applications. Si vous rencontrez des problèmes, consultez la page [Résoudre les problèmes d’installation avec le fichier du programme d’installation d’application](../packaging/troubleshoot-appinstaller-issues.md) pour afficher les problèmes courants et les solutions afférentes.
 
 ### <a name="edge-webview-control-for-windows-forms-and-wpf-applications"></a>Contrôle Edge WebView pour les applications Windows Forms et WPF
 
@@ -87,7 +87,7 @@ Les packages facultatifs dans votre application peuvent maintenant contenir du c
 
 ### <a name="page-transitions"></a>Transitions de page
 
-Les [transitions de page](../design/motion/page-transitions.md) permettent aux utilisateurs de naviguer entre les pages d’une application. Elles permettent aux utilisateurs de mieux comprendre où ils se trouvent dans la hiérarchie de navigation et fournissent des informations sur les relations entre les pages.
+Les [transitions de page](../design/motion/page-transitions.md) permettent aux utilisateurs de naviguer entre les pages d'une application. Elles permettent aux utilisateurs de mieux comprendre où ils se trouvent dans la hiérarchie de navigation et fournissent des informations sur les relations entre les pages.
 
 ### <a name="project-rome"></a>Projet Rome
 

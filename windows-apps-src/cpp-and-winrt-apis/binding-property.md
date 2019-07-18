@@ -1,16 +1,16 @@
 ---
 description: Une propriété qui peut être efficacement liée à un contrôle XAML est appelée propriété *observable*. Cette rubrique montre comment implémenter et utiliser une propriété observable, et comment y lier un contrôle XAML.
 title: Contrôles XAML ; liaison à une propriété C++/WinRT
-ms.date: 04/24/2019
+ms.date: 06/21/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, XAML, contrôle, liaison, propriété
 ms.localizationpriority: medium
-ms.openlocfilehash: 2fe5c03eebd2b68e98ae908ea4624471fbd2b3d2
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 25ce3164ece443c8c1d95bccbc2bfb57e3347a55
+ms.sourcegitcommit: a7a1e27b04f0ac51c4622318170af870571069f6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65627666"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67717653"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrt-property"></a>Contrôles XAML ; liaison à une propriété C++/WinRT
 Une propriété qui peut être efficacement liée à un contrôle XAML est appelée propriété *observable*. Ce concept est basé sur le modèle de conception logicielle appelé *modèle observateur*. Cette rubrique montre comment implémenter des propriétés observables en [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) et y lier des contrôles XAML.
@@ -210,7 +210,7 @@ Si vous omettez l’inclure `BookstoreViewModel.idl` (voir le listing`MainPage.i
 
 Pour résoudre l’erreur que nous devrions voir, vous devez maintenant copier les stubs accesseur de la propriété **MainViewModel** à partir des fichiers générés (`\Bookstore\Bookstore\Generated Files\sources\MainPage.h` et `MainPage.cpp`) et dans `\Bookstore\Bookstore\MainPage.h` et `MainPage.cpp`. Les étapes à suivre sont décrites ci-après.
 
-Dans `\Bookstore\Bookstore\MainPage.h`, incluez `BookstoreViewModel.h`, qui déclare le type d’implémentation pour **BookstoreViewModel** (c’est-à-dire **winrt::Bookstore::implementation::BookstoreViewModel**). Ajoutez un membre privé pour stocker le modèle d’affichage. Notez que la fonction accesseur de la propriété (et le membre m_mainViewModel) est implémentée en termes de type projeté pour **BookstoreViewModel** (c’est-à-dire **Bookstore::BookstoreViewModel**). Le type d’implémentation se trouvant dans le même projet (unité de compilation) que l’application, nous construisons m_mainViewModel via la surcharge du constructeur qui prend `nullptr_t`. Supprimez également la propriété **MyProperty**.
+Dans `\Bookstore\Bookstore\MainPage.h`, incluez `BookstoreViewModel.h`, qui déclare le type d’implémentation pour **BookstoreViewModel** (c’est-à-dire **winrt::Bookstore::implementation::BookstoreViewModel**). Ajoutez un membre privé pour stocker le modèle d’affichage. Notez que la fonction accesseur de la propriété (et le membre m_mainViewModel) est implémentée en termes de type projeté pour **BookstoreViewModel** (c’est-à-dire **Bookstore::BookstoreViewModel**). Le type d’implémentation se trouvant dans le même projet (unité de compilation) que l’application, nous construisons m_mainViewModel par le biais de la surcharge du constructeur qui accepte **std::nullptr_t**. Supprimez également la propriété **MyProperty**.
 
 ```cppwinrt
 // MainPage.h
@@ -276,6 +276,28 @@ Lancez à présent le processus de génération et exécutez le projet. Cliquez 
 
 ## <a name="using-the-binding-markup-extension-with-cwinrt"></a>Utilisation de l’extension de balisage {Binding} avec C++/WinRT
 Pour la version actuellement publiée de C++/WinRT, pour pouvoir utiliser l’extension de balisage {Binding}, vous devrez implémenter les interfaces [ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider) et [ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty).
+
+## <a name="element-to-element-binding"></a>Liaison d’élément à élément
+
+Vous pouvez lier la propriété d’un élément XAML à celle d’un autre élément XAML. Voici un exemple qui illustre cette opération dans le balisage.
+
+```xaml
+<TextBox x:Name="myTextBox" />
+<TextBlock Text="{x:Bind myTextBox.Text, Mode=OneWay}" />
+```
+
+Vous devez déclarer l’entité XAML nommée `myTextBox` comme propriété en lecture seule dans votre fichier Midl (.idl).
+
+```idl
+// MainPage.idl
+runtimeclass MainPage : Windows.UI.Xaml.Controls.Page
+{
+    MainPage();
+    Windows.UI.Xaml.Controls.TextBox myTextBox{ get; };
+}
+```
+
+La raison est la suivante : tous les types que le compilateur XAML doit valider (notamment ceux utilisés dans [{x:Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)) sont lus à partir de métadonnées Windows (WinMD). Il vous suffit donc d’ajouter la propriété en lecture seule à votre fichier Midl. Ne l’implémentez pas, car le code-behind XAML généré automatiquement fournit l’implémentation pour vous.
 
 ## <a name="important-apis"></a>API importantes
 * [INotifyPropertyChanged::PropertyChanged](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged)

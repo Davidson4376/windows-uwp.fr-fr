@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, questions, fréquentes, FAQ, forum aux questions
 ms.localizationpriority: medium
-ms.openlocfilehash: 914cf884b97d14af523cc61b0fcce719104783ba
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 01ff6fb443550287330d6fe503c3d49d81e2142c
+ms.sourcegitcommit: a7a1e27b04f0ac51c4622318170af870571069f6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66721690"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67717644"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>Forum aux questions sur C++/WinRT
 Réponses aux questions que vous êtes susceptibles de vous poser sur la création et l’utilisation d’API Windows Runtime avec [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
@@ -54,6 +54,24 @@ Si le symbole non résolu est une fonction libre de Windows Runtime, telle que [
 ```
 
 Il est important de résoudre le plus d’erreurs de l’éditeur de liens possible en liant **WindowsApp.lib** au lieu d’une autre bibliothèque de liens statiques, sinon votre application échouera aux tests du [Kit de certification des applications Windows](../debug-test-perf/windows-app-certification-kit.md) utilisés par Visual Studio et par le Microsoft Store pour valider les soumissions (ce qui signifie que votre application ne pourra pas être ingérée par le Microsoft Store).
+
+## <a name="why-am-i-getting-a-class-not-registered-exception"></a>Pourquoi suis-je confronté à l’exception « classe non enregistrée » ?
+
+Quand vous construisez une classe runtime ou accédez à un membre statique, une exception est levée au moment du runtime avec une valeur HRESULT égale à REGDB_E_CLASSNOTREGISTERED.
+
+L’une des causes de cette exception provient de l’impossibilité de charger votre composant Windows Runtime. Vérifiez que le fichier de métadonnées Windows Runtime du composant (`.winmd`) porte le même nom que le fichier binaire du composant (`.dll`), qui est également le nom du projet et le nom de l’espace de noms racine. Vérifiez également que les métadonnées Windows Runtime et le fichier binaire ont été correctement copiés par le processus de génération dans le dossier `Appx` de l’application consommatrice. Vérifiez enfin que le fichier `AppxManifest.xml` de l’application consommatrice (également dans le dossier `Appx`) contient un élément **&lt;InProcessServer&gt;** qui déclare correctement la classe activable et le nom du fichier binaire.
+
+### <a name="uniform-construction"></a>Construction uniforme
+
+Cette erreur peut également se produire si vous essayez d’instancier une classe runtime implémentée localement par le biais de l’un des constructeurs du type projeté (autre que son constructeur **std::nullptr_t**). Pour ce faire, vous avez besoin de la fonctionnalité C++/WinRT 2.0, souvent appelée « construction uniforme ». Toutefois, pour instancier vos classes runtime implémentées localement *sans* faire appel à la construction uniforme, consultez [Contrôles XAML ; liaison à une propriété C++/WinRT](binding-property.md).
+
+Si vous *souhaitez* une construction uniforme, celle-ci est activée par défaut pour les nouveaux projets. Pour un projet existant, vous devez accepter la construction uniforme en configurant l’outil `cppwinrt.exe`. Dans Visual Studio, affectez *Oui* à la propriété de projet **Propriétés communes** > **C++/WinRT** > **Optimisé**. `<CppWinRTOptimized>true</CppWinRTOptimized>` est alors ajouté à votre fichier projet. Cela revient à ajouter le commutateur `-opt[imize]` lors de l’appel de `cppwinrt.exe` à partir de la ligne de commande.
+
+Quand vous générez votre projet *sans* ce paramètre, votre projection C++/WinRT résultante appelle [**RoGetActivationFactory**](/windows/win32/api/roapi/nf-roapi-rogetactivationfactory) pour accéder aux constructeurs et aux membres statiques de votre classe runtime. Cela nécessite que les classes soient inscrites et que votre module implémente le point d’entrée [**DllGetActivationFactory**](/previous-versions/br205771(v=vs.85)).
+
+Quand vous générez votre projet *avec* le commutateur `-opt[imize]`, votre projet contourne **RoGetActivationFactory** pour les classes de votre composant, ce qui vous permet de les construire (sans avoir besoin de les inscrire) de la même manière que si elles se trouvaient en dehors de votre composant.
+
+Pour utiliser la construction uniforme, vous devez également changer le fichier `.cpp` de chaque implémentation en `#include <Sub/Namespace/ClassName.g.cpp>` après avoir inclus le fichier d’en-tête d’implémentation.
 
 ## <a name="should-i-implement-windowsfoundationiclosableuwpapiwindowsfoundationiclosable-and-if-so-how"></a>Dois-je implémenter [**Windows::Foundation::IClosable**](/uwp/api/windows.foundation.iclosable) et, si ou, comment ?
 Si vous disposez d’une classe runtime qui libère les ressources dans son destructeur, et que cette classe runtime est conçue pour être utilisée à partir de l’extérieur de son unité de compilation d’implémentation (c’est un composant Windows Runtime destiné à une utilisation générale par les applications clientes Windows Runtime), nous vous recommandons d’implémenter également **IClosable** pour prendre en charge l’utilisation de votre classe runtime par les langages qui n’offrent pas de finalisation déterministe. Vérifiez que vos ressources sont libérées si le destructeur, [**IClosable::Close**](/uwp/api/windows.foundation.iclosable.close) ou les deux sont appelés. **IClosable::Close** peut être appelé un nombre de fois arbitraire.
@@ -155,5 +173,24 @@ Le modèle recommandé ci-dessus s’applique non seulement à C++/WinRT, mais a
 ## <a name="how-do-i-turn-a-string-into-a-typemdashfor-navigation-for-example"></a>Comment convertir une chaîne en type, par exemple pour la navigation ?
 À la fin de l’[exemple de code d’affichage Navigation](/windows/uwp/design/controls-and-patterns/navigationview#code-example) (qui est pour la plupart en C#) se trouve un extrait de code C++/WinRT illustrant comment procéder.
 
+## <a name="how-do-i-resolve-ambiguities-with-getcurrenttime-andor-try"></a>Comment faire pour résoudre les ambiguïtés avec GetCurrentTime et/ou TRY ?
+
+Le fichier d’en-tête `winrt/Windows.UI.Xaml.Media.Animation.h` déclare une méthode nommée **GetCurrentTime**, tandis que `windows.h` (par le biais de `winbase.h`) définit une macro nommée **GetCurrentTime**. Quand les deux entrent en conflit, le compilateur C++ génère « *Erreur C4002 : trop d’arguments pour l’appel de macro de type fonction GetCurrentTime* ».
+
+De même, `winrt/Windows.Globalization.h` déclare une méthode nommée **TRY**, tandis que `afx.h` définit une macro nommée **GetCurrentTime**. Quand un conflit se produit, le compilateur C++ génère « *Erreur C2334 : jetons inattendus avant '{' ; corps apparent de la fonction ignoré* ».
+
+Pour résoudre l’un de ces problèmes ou les deux, procédez comme suit.
+
+```cppwinrt
+#pragma push_macro("GetCurrentTime")
+#pragma push_macro("TRY")
+#undef GetCurrentTime
+#undef TRY
+#include <winrt/include_your_cppwinrt_headers_here.h>
+#include <winrt/include_your_cppwinrt_headers_here.h>
+#pragma pop_macro("TRY")
+#pragma pop_macro("GetCurrentTime")
+```
+
 > [!NOTE]
-> Si cette rubrique n’a pas répondu à votre question, vous pouvez rechercher de l’aide en accédant à la page de la [Communauté de développeurs Visual Studio C++](https://developercommunity.visualstudio.com/spaces/62/index.html) ou en utilisant la [balise `c++-winrt` sur Stack Overflow](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt).
+> Si cette rubrique n’a pas répondu à votre question, vous pouvez rechercher de l’aide en accédant à la page de la [Communauté de développeurs Visual Studio C++](https://developercommunity.visualstudio.com/spaces/62/index.html) ou en utilisant le mot-clé [`c++-winrt` sur Stack Overflow](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt).

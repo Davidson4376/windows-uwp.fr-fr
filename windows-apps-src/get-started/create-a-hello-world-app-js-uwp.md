@@ -6,24 +6,24 @@ ms.date: 03/06/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 682a69726b20be52a3217f49bed4947b8b621230
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 0b5423c9aae607d4f6ffe14b755c8f73e013d8b6
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64564502"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820977"
 ---
 # <a name="create-a-hello-world-app-js"></a>Créer une application « Hello World » (JS)
 
 Ce didacticiel vous explique comment utiliser JavaScript et HTML pour créer une simple application « Hello World » ciblant la plateforme Windows universelle (UWP) sur Windows 10. Dans Microsoft Visual Studio, un seul projet vous permet de générer une application qui s’exécute sur n’importe quel appareil Windows 10.
 
 > [!NOTE]
-> Ce didacticiel utilise Visual Studio Community 2017. Si vous utilisez une autre version de Visual Studio, son aspect peut vous sembler légèrement différent.
+> Ce tutoriel utilise Visual Studio Community 2019. Si vous utilisez une autre version de Visual Studio, son aspect peut être légèrement différent.
 
 
 Vous allez apprendre à effectuer les opérations suivantes :
 
--   créer un projet **Visual Studio 10** qui cible **Windows 10** et la **plateforme Windows universelle (UWP)** ;
+-   créer un projet **Visual Studio 2019** qui cible **Windows 10** et la **plateforme Windows universelle (UWP)**  ;
 -   ajouter du contenu HTML et JavaScript ;
 -   exécuter le projet sur l’ordinateur local dans Visual Studio.
 
@@ -35,20 +35,18 @@ Vous allez apprendre à effectuer les opérations suivantes :
 
 ## <a name="step-1-create-a-new-project-in-visual-studio"></a>Étape 1 : Créer un projet dans Visual Studio.
 
-1.  Ouvrez Visual Studio.
+1.  Lancez Visual Studio 2019.
 
-2.  À partir du menu **Fichier**, sélectionnez **Nouveau &gt; Projet...** pour ouvrir la boîte de dialogue *Nouveau projet*.
+2.  Dans le menu **Fichier**, sélectionnez **Nouveau > Projet...** pour ouvrir la boîte de dialogue *Créer un projet*.
 
-3.  Dans la liste de modèles de gauche, ouvrez **Installés > Modèles > JavaScript**, puis choisissez **Windows universel** pour afficher la liste des modèles de projet UWP.
+3.  Choisissez **Application vide (Windows universel) JavaScript**, puis sélectionnez **Suivant**.
 
-    (Si aucun modèle universel n’apparaît, c’est qu’il vous manque les composants permettant de créer des applications UWP. Vous pouvez répéter la procédure d’installation et ajouter la prise en charge UWP en cliquant sur **Ouvrir le programme d’installation de Visual Studio** dans la boîte de dialogue *Nouveau projet*. Voir [Préparation](get-set-up.md)
+    (Si aucun modèle universel n’apparaît, c’est qu’il vous manque les composants permettant de créer des applications UWP. Vous pouvez répéter la procédure d’installation et ajouter la prise en charge UWP en cliquant sur **Ouvrir le programme d’installation de Visual Studio** dans la boîte de dialogue *Créer un projet*. Voir [Préparation](get-set-up.md)
 
-4.  Choisissez le modèle **Application vide (Windows universel)** , puis entrez « HelloWorld » comme **Nom**. Sélectionnez **OK**.
-
-    ![Fenêtre Nouveau projet](images/win10-js-01.png)
+4.  Dans la boîte de dialogue *Configurer votre nouveau projet*, entrez « HelloWorld » comme **Nom de projet**, puis sélectionnez **Créer**.
 
 > [!NOTE]
-> Si vous utilisez Visual Studio pour la première fois, il est possible que la boîte de dialogue Paramètres s’affiche et vous demande d’activer le **Mode développeur**. Le mode développeur est un paramètre qui permet d’accéder à certaines fonctionnalités, telles que l’autorisation d’exécuter des applications directement plutôt qu’uniquement à partir du Store. Pour plus d’informations, consultez [Activer votre appareil pour le développement](enable-your-device-for-development.md). Pour continuer avec ce guide, sélectionnez le **Mode développeur**, cliquez sur **Oui** et fermez la boîte de dialogue.
+> Si vous utilisez Visual Studio pour la première fois, il est possible que la boîte de dialogue Paramètres s'affiche et vous demande d'activer le **Mode développeur**. Le mode développeur est un paramètre qui permet d’accéder à certaines fonctionnalités, telles que l’autorisation d’exécuter des applications directement plutôt qu’uniquement à partir du Store. Pour plus d’informations, consultez [Activer votre appareil pour le développement](enable-your-device-for-development.md). Pour continuer avec ce guide, sélectionnez le **Mode développeur**, cliquez sur **Oui** et fermez la boîte de dialogue.
 
  ![Boîte de dialogue d’activation du mode développeur](images/win10-cs-00.png)
 

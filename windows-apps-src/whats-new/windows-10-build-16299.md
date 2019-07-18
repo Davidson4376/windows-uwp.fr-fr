@@ -5,16 +5,16 @@ keywords: nouveautés, nouveauté, mise à jour, mises à jour, fonctionnalités
 ms.date: 11/02/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: bf9b6461bb3f1783be2157cde2f89462d0480099
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: bc0172246c14459113ae1952f5db880ecf44e9d9
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66372882"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820988"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-16299"></a>Nouveautés de Windows 10 pour les développeurs, build 16299
 
-Windows 10, build 16299 (également appelé Fall Creators Update ou version 1709), en combinaison avec Visual Studio 2017 et le kit de développement logiciel mis à jour, fournit des outils, des fonctionnalités et une expérience propres à produire des applications remarquables dédiées à la plateforme Windows universelle. [Installez les outils et le kit de développement logiciel (SDK)](https://go.microsoft.com/fwlink/?LinkId=821431) sur Windows 10 et vous pourrez ainsi [créer une application universelle Windows](../get-started/create-uwp-apps.md) ou explorer la procédure permettant d’utiliser votre [code d’application existant sur Windows](../porting/index.md).
+Windows 10, build 16299 (également appelé Fall Creators Update ou version 1709), en combinaison avec Visual Studio 2019 et le SDK mis à jour, fournit des outils, des fonctionnalités et une expérience propres à produire des applications remarquables dédiées à la plateforme Windows universelle. [Installez les outils et le kit de développement logiciel (SDK)](https://go.microsoft.com/fwlink/?LinkId=821431) sur Windows 10 et vous pourrez ainsi [créer une application universelle Windows](../get-started/create-uwp-apps.md) ou explorer la procédure permettant d’utiliser votre [code d’application existant sur Windows](../porting/index.md).
 
 Voici une collection des fonctionnalités nouvelles et améliorées de cette version, accompagnée d’instructions, susceptibles d’intéresser les développeurs Windows. Pour obtenir une liste complète des nouveaux espaces de noms ajoutés au kit de développement logiciel (SDK) Windows, consultez [Modifications apportées aux API de Windows 10 build 16299](windows-10-build-16299-api-diff.md). Pour en savoir plus sur les fonctionnalités phares de Windows 10, consultez [Nouveautés intéressantes de Windows 10](https://go.microsoft.com/fwlink/?LinkId=823181). Consultez également [Fonctionnalités de la plateforme de développement Windows](https://developer.microsoft.com/windows/platform/features) pour bénéficier d’une vue d’ensemble des ajouts passés et futurs relatifs à la plateforme Windows.
 
@@ -43,7 +43,7 @@ Informations sur l’appareil de jeu | En raison des différentes fonctionnalit�
 Mode jeu | Les API [Mode Jeu](https://docs.microsoft.com/previous-versions/windows/desktop/gamemode/game-mode-portal) pour la plateforme Windows universelle (UWP) vous permettent de créer une expérience de jeu optimale, en tirant parti du mode jeu de Windows 10. Ces API sont situées dans l’en-tête **&lt;expandedresources.h&gt;** .
 Analyse du jeu | La [classe GameMonitor](https://docs.microsoft.com/uwp/api/windows.gaming.ui.gamemonitor) permet à une application d’obtenir l’état d’autorisation d’analyse du jeu de l’appareil et, potentiellement, invite l’utilisateur à activer l’analyse du jeu.
 TruePlay | [TruePlay](https://aka.ms/trueplay) fournit aux développeurs un nouvel ensemble d’outils pour lutter contre la tricherie dans leurs jeux sur PC. Un jeu inscrit dans TruePlay s’exécute au sein d’un processus protégé, ce qui réduit la probabilité d’une classe d’attaques courantes. Les API TruePlay pour la plateforme Windows universelle (UWP) autorisent des interactions limitées entre les jeux et le système de surveillance de jeu sur les PC Windows 10. Ces API sont situées dans l’en-tête **&lt;gamemonitor.h&gt;** .
-Xbox Live | Nous avons ajouté de la documentation pour les développeurs Xbox Live, à la fois pour les jeux du Kit de développement Xbox (XDK) et de la plateforme Windows universelle (UWP). </br>* Consultez le [Guide du développeur Xbox Live](https://docs.microsoft.com/gaming/xbox-live//index.md) pour savoir comment utiliser les API Xbox Live afin de connecter votre jeu au réseau social de jeux Xbox Live. </br>Avec le [Programme Créateurs Xbox Live](https://docs.microsoft.com/gaming/xbox-live//get-started-with-creators/get-started-with-xbox-live-creators.md), tout développeur de jeux UWP peut développer et publier un jeu Xbox Live à la fois sur PC et sur Xbox One. </br>Consultez la [Vue d’ensemble du programme pour les développeurs Xbox Live](https://docs.microsoft.com/gaming/xbox-live//developer-program-overview.md) pour plus d’informations sur les programmes et les fonctionnalités disponibles pour les développeurs Xbox Live.
+Xbox Live | Nous avons ajouté de la documentation pour les développeurs Xbox Live, à la fois pour les jeux du Kit de développement Xbox (XDK) et de la plateforme Windows universelle (UWP). </br>* Consultez le [Guide du développeur Xbox Live](https://docs.microsoft.com/gaming/xbox-live/index.md) pour savoir comment utiliser les API Xbox Live afin de connecter votre jeu au réseau social de jeux Xbox Live. </br>Avec le [Programme Créateurs Xbox Live](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md), tout développeur de jeux UWP peut développer et publier un jeu Xbox Live à la fois sur PC et sur Xbox One. </br>Consultez la [Vue d’ensemble du programme pour les développeurs Xbox Live](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md) pour plus d’informations sur les programmes et les fonctionnalités disponibles pour les développeurs Xbox Live.
 
 ## <a name="develop-windows-apps"></a>Développer des applications Windows
 

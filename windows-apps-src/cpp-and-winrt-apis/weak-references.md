@@ -6,18 +6,20 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, forte, faible, référence
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 46a0e21295ba430671be4e36ab213e182c2b1737
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 77fcd8369b2df3fdb42facf9d2b2a1d93188322b
+ms.sourcegitcommit: 8b4c1fdfef21925d372287901ab33441068e1a80
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66721632"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67844322"
 ---
 # <a name="strong-and-weak-references-in-cwinrt"></a>Références fortes et faibles en C++/WinRT
 
 L’environnement Windows Runtime est un système avec décompte des références. Dans un tel système, il est important de connaître la signification des références fortes et faibles (ainsi que des références qui ne sont ni fortes ni faibles, comme le pointeur implicite *this*), et de faire la distinction entre elles. Comme vous le verrez dans cette rubrique, le fait de savoir gérer ces références correctement est indispensable pour bénéficier d’un système fiable qui s’exécute correctement et éviter les plantages imprévisibles. En fournissant des fonctions d’assistance qui prennent entièrement en charge la projection de langage, [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) fait la moitié du travail nécessaire à la création de systèmes plus complexes, simplement et correctement.
 
 ## <a name="safely-accessing-the-this-pointer-in-a-class-member-coroutine"></a>Accès sécurisé au pointeur *this* dans une coroutine de membre de classe
+
+Pour plus d’informations sur les coroutines et les exemples de code, consultez [Opérations concurrentes et asynchrones avec C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency).
 
 Le listing de code ci-dessous montre un exemple typique d’une coroutine, qui est une fonction membre d’une classe. Vous pouvez copier-coller cet exemple dans les fichiers spécifiés, dans un nouveau projet **Windows Console Application (C++/WinRT)**
 
@@ -59,16 +61,18 @@ int main()
 
 **MyClass::RetrieveValueAsync** s’exécute pendant un certain temps, puis finit par retourner une copie du membre de données `MyClass::m_value`. L’appel de **RetrieveValueAsync** entraîne la création d’un objet asynchrone, et cet objet a un pointeur implicite *this* (par le biais duquel `m_value` devient accessible).
 
+N’oubliez pas que, dans une coroutine, l’exécution est synchrone jusqu’au premier point d’interruption, où le contrôle est retourné à l’appelant. Dans **RetrieveValueAsync**, le premier `co_await` est le premier point d’interruption. En attendant que la coroutine reprenne son exécution (environ cinq secondes plus tard, dans ce cas), tout peut arriver au pointeur implicite *this* par lequel nous accédons à `m_value`.
+
 Voici la séquence complète des événements.
 
 1. Dans **main**, une instance de **MyClass** est créée (`myclass_instance`).
 2. L’objet `async` est créé, et pointe vers `myclass_instance` (via son pointeur *this*).
-3. La fonction **winrt::Windows::Foundation::IAsyncAction::get** se bloque pendant quelques secondes, puis retourne le résultat de **RetrieveValueAsync**.
+3. La fonction **winrt::Windows::Foundation::IAsyncAction::get** atteint son premier point d’interruption, se bloque pendant quelques secondes, puis retourne le résultat de **RetrieveValueAsync**.
 4. **RetrieveValueAsync** retourne la valeur de `this->m_value`.
 
-L’étape 4 est sécurisée tant que le pointeur *this* est valide.
+L’étape 4 est sécurisée tant que *this* reste valide.
 
-Mais, que se passe-t-il si l’instance de classe est détruite avant la fin de l’opération asynchrone ? L’instance de classe peut devenir hors de portée avant la fin de la méthode asynchrone pour de nombreuses raisons. Toutefois, nous pouvons le simuler en définissant l’instance de classe sur `nullptr`.
+Mais que se passe-t-il si l’instance de classe est détruite avant la fin de l’opération asynchrone ? L’instance de classe peut devenir hors de portée avant la fin de la méthode asynchrone pour de nombreuses raisons. Toutefois, nous pouvons le simuler en affectant `nullptr` à l’instance de classe.
 
 ```cppwinrt
 int main()
@@ -193,7 +197,9 @@ int main()
 }
 ```
 
-Dans ce modèle, le destinataire de l’événement a un gestionnaire d’événements lambda avec des dépendances à son pointeur *this*. Chaque fois que la durée de vie du destinataire de l’événement dépasse celle de la source d’événements, elle dépasse également celle de ces dépendances. Et, dans ce cas (qui est courant), le modèle fonctionne bien. Certains de ces cas sont évidents, par exemple, lorsqu’une page d’interface utilisateur gère un événement déclenché par un contrôle qui se trouve dans la page. La durée de vie de la page dépasse celle du bouton, par conséquent, la durée de vie du gestionnaire dépasse également celle du bouton. Ceci est vrai chaque fois que le destinataire est le propriétaire de la source (comme membre de données, par exemple), ou chaque fois que le destinataire et la source sont frère/sœur et appartiennent directement à un autre objet. Si vous êtes certain que vous avez un cas où le gestionnaire ne survivra pas au *this* dont il dépend, vous pouvez capturer *this* normalement, sans considération pour la durée de vie forte ou faible.
+Dans ce modèle, le destinataire de l’événement a un gestionnaire d’événements lambda avec des dépendances à son pointeur *this*. Chaque fois que la durée de vie du destinataire de l’événement dépasse celle de la source d’événements, elle dépasse également celle de ces dépendances. Et, dans ce cas (qui est courant), le modèle fonctionne bien. Certains de ces cas sont évidents, par exemple, lorsqu’une page d’interface utilisateur gère un événement déclenché par un contrôle qui se trouve dans la page. La durée de vie de la page dépasse celle du bouton, par conséquent, la durée de vie du gestionnaire dépasse également celle du bouton. Ceci est vrai chaque fois que le destinataire est le propriétaire de la source (comme membre de données, par exemple), ou chaque fois que le destinataire et la source sont frère/sœur et appartiennent directement à un autre objet. Il existe un autre cas ne présentant aucun risque. Il s’agit du moment où la source d’événements déclenche ses événements de manière synchrone. Vous pouvez alors révoquer votre gestionnaire en ayant la certitude qu’aucun événement supplémentaire ne sera reçu.
+
+Quand il existe un cas où vous êtes certain que le gestionnaire ne survivra pas au *this* dont il dépend, vous pouvez capturer *this* normalement, sans tenir compte de la durée de vie forte ou faible.
 
 Il existe cependant des cas où *this* ne survit pas à son utilisation dans un gestionnaire (y compris les gestionnaires d’événements de progression et d’achèvement déclenchés par des actions et opérations asynchrones), et il est important de savoir comment les gérer.
 

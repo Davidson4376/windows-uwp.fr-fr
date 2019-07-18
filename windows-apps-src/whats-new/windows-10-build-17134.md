@@ -5,16 +5,16 @@ keywords: nouveautés, nouveauté, mise à jour, mises à jour, fonctionnalités
 ms.date: 04/10/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b7fe830e07c1daf95928ab747259cb57aaa7a9f
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: dc35dc50b8dc523aff5478b3ec19c3daeed9dafb
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66371338"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820450"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17134"></a>Nouveautés de Windows 10 pour les développeurs, build 17134
 
-Windows 10, build 17134 (également appelé mise à jour d’avril ou version 1803), en combinaison avec Visual Studio 2017 et le kit de développement logiciel mis à jour, fournit des outils, des fonctionnalités et une expérience propres à produire des applications remarquables dédiées à la plateforme Windows universelle. [Installez les outils et le kit de développement logiciel (SDK)](https://go.microsoft.com/fwlink/?LinkId=821431) sur Windows 10 et vous pourrez ainsi [créer une application universelle Windows](../get-started/create-uwp-apps.md) ou explorer la procédure permettant d’utiliser votre [code d’application existant sur Windows](../porting/index.md).
+Windows 10, build 17134 (également appelé mise à jour d’avril ou version 1803), en combinaison avec Visual Studio 2019 et le SDK mis à jour, fournit des outils, des fonctionnalités et une expérience propres à produire des applications remarquables dédiées à la plateforme Windows universelle. [Installez les outils et le kit de développement logiciel (SDK)](https://go.microsoft.com/fwlink/?LinkId=821431) sur Windows 10 et vous pourrez ainsi [créer une application universelle Windows](../get-started/create-uwp-apps.md) ou explorer la procédure permettant d’utiliser votre [code d’application existant sur Windows](../porting/index.md).
 
 Voici une collection des fonctionnalités nouvelles et améliorées de cette version, accompagnée d’instructions, susceptibles d’intéresser les développeurs Windows. Pour obtenir une liste complète des nouveaux espaces de noms ajoutés au kit de développement logiciel (SDK) Windows, consultez [Modifications apportées aux API de Windows 10 build 17134](windows-10-build-17134-api-diff.md). Pour en savoir plus sur les fonctionnalités phares de Windows 10, consultez [Nouveautés intéressantes de Windows 10](https://go.microsoft.com/fwlink/?LinkId=823181). Consultez également [Fonctionnalités de la plateforme de développement Windows](https://developer.microsoft.com/windows/platform/features) pour bénéficier d’une vue d’ensemble des ajouts passés et futurs relatifs à la plateforme Windows.
 
@@ -102,7 +102,7 @@ Windows Machine Learning vous permet de développer des applications qui évalue
 
 ### <a name="motion-controller-tracking"></a>Suivi des contrôleurs de mouvement
 
-Les contrôleurs de mouvement représentent les mains d’un utilisateur dans Windows Mixed Reality. [Regardez la vidéo](https://www.youtube.com/watch?v=rkDpRllbLII) pour savoir comment les contrôleurs de mouvement fonctionnent lorsqu’ils sont à la fois à l’intérieur et à l’extérieur du champ de vision du casque de réalité mixte et [apprenez-en davantage sur le suivi des contrôleurs ici.](https://developer.microsoft.com/windows/mixed-reality/motion_controllers#controller_tracking_state%E2%80%9D)
+Les contrôleurs de mouvement représentent les mains d’un utilisateur dans Windows Mixed Reality. [Regardez la vidéo](https://www.youtube.com/watch?v=rkDpRllbLII) pour savoir comment les contrôleurs de mouvement fonctionnent lorsqu’ils sont à la fois à l’intérieur et à l’extérieur du champ de vision du casque de réalité mixte et [apprenez-en davantage sur le suivi des contrôleurs ici.](https://docs.microsoft.com/windows/mixed-reality/motion-controllers#controller_tracking_state%E2%80%9D)
 
 ### <a name="package-a-net-app-in-visual-studio"></a>Créer un package d’application .NET dans Visual Studio
 

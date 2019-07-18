@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projeté, projection, gérer, événement, délégué
 ms.localizationpriority: medium
-ms.openlocfilehash: 00870a196517f975d2736298513be7567f3dd29e
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 194fd9041b76acb1ef76288fed21c8098462b406
+ms.sourcegitcommit: 8b4c1fdfef21925d372287901ab33441068e1a80
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64745054"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67844338"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrt"></a>Gérer des événements en utilisant des délégués en C++/WinRT
 
@@ -18,6 +18,15 @@ Cette rubrique montre comment inscrire et révoquer des délégués de gestion d
 
 > [!NOTE]
 > Pour plus d’informations sur l’installation et l’utilisation de l’extension VSIX (Visual Studio Extension) C++/WinRT et du package NuGet (qui fournissent ensemble la prise en charge des modèles et des builds de projet), consultez [Prise en charge de Visual Studio pour C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+
+## <a name="using-visual-studio-2019-to-add-an-event-handler"></a>Utilisation de Visual Studio 2019 pour ajouter un gestionnaire d’événements
+
+L’utilisation de l’IU (interface utilisateur) du Concepteur XAML dans Visual Studio 2019 est un moyen pratique d’ajouter un gestionnaire d’événements à votre projet. Une fois votre page XAML ouverte dans le Concepteur XAML, sélectionnez le contrôle dont vous souhaitez gérer l’événement. Dans la page de propriétés de ce contrôle, cliquez sur l’icône en forme d’éclair pour lister tous les événements générés par le contrôle. Double-cliquez ensuite sur l’événement à gérer. Par exemple, *OnClicked*.
+
+Le Concepteur XAML ajoute le prototype de fonction de gestionnaire d’événements approprié (et une implémentation de stub) à vos fichiers sources, que vous pouvez remplacer par votre propre implémentation.
+
+> [!NOTE]
+> En règle générale, il n’est pas nécessaire que vos gestionnaires d’événements soient décrits dans votre fichier Midl (`.idl`). Ainsi, le Concepteur XAML n’ajoute pas de prototypes de fonction de gestionnaire d’événements à votre fichier Midl. Il les ajoute uniquement à vos fichiers `.h` et `.cpp`.
 
 ## <a name="register-a-delegate-to-handle-an-event"></a>Inscrire un délégué pour gérer un événement
 
@@ -49,7 +58,7 @@ MainPage::MainPage()
 ```
 
 > [!IMPORTANT]
-> Lorsque vous inscrivez le délégué, l’exemple de code ci-dessus passe un pointeur *ceci* brut (pointant vers l’objet actif). Pour savoir comment établir une référence forte ou faible à l’objet actif, consultez la sous-section **Si vous utilisez une fonction membre en tant que délégué** dans la section [Accès sécurisé au pointeur *this* avec un délégué de gestion des événements](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate).
+> Lorsque vous inscrivez le délégué, l’exemple de code ci-dessus passe un pointeur *ceci* brut (pointant vers l’objet actif). Pour savoir comment établir une référence forte ou faible à l’objet actuel, consultez [Si vous utilisez une fonction membre comme délégué](weak-references.md#if-you-use-a-member-function-as-a-delegate).
 
 Il existe d’autres façons de construire un **RoutedEventHandler**. Vous trouverez ci-dessous le bloc de syntaxe extrait de la rubrique de documentation relative à [**RoutedEventHandler**](/uwp/api/windows.ui.xaml.routedeventhandler) (choisir *C++/WinRT* dans la liste déroulante **Langage** en haut à droite de la page web). Notez les différents constructeurs : l’un d’entre eux prend une expression lambda ; un autre une fonction gratuite, et un autre (celui que nous avons utilisé ci-dessus) prend un objet et un pointeur-vers-fonction-membre.
 
@@ -177,8 +186,11 @@ Button::Click_revoker Click(winrt::auto_revoke_t,
 > [!NOTE]
 > Dans l’exemple de code ci-dessus, `Button::Click_revoker` est un alias de type pour `winrt::event_revoker<winrt::Windows::UI::Xaml::Controls::Primitives::IButtonBase>`. Un modèle semblable s’applique à tous les événements C++/WinRT. Chaque événement Windows Runtime a une surcharge de fonction revoke qui retourne un revoker d’événement, et le type de ce revoker est un membre de la source d’événements. Pour prendre un autre exemple, l’événement [**CoreWindow::SizeChanged**](/uwp/api/windows.ui.core.corewindow.sizechanged) a une surcharge de fonction d’inscription qui retourne une valeur de type **CoreWindow::SizeChanged_revoker**.
 
-
 Vous pouvez envisager de révoquer les gestionnaires dans un scénario de navigation de page. Si vous naviguez à plusieurs reprises dans une page, puis revenez en arrière, vous pourriez alors révoquer tous les gestionnaires lorsque vous quittez la page. Autre possibilité, si vous réutilisez la même instance de page, vérifiez la valeur de votre jeton et ne faites l’inscription que si elle n’a pas encore été définie (`if (!m_token){ ... }`). Une troisième option consiste à stocker un révocateur d’événement dans la page en tant que membre de données. Et une quatrième option, comme décrit plus loin dans cette rubrique, consiste à capturer une référence forte ou faible à l’objet *this* dans votre fonction lambda.
+
+### <a name="if-your-auto-revoke-delegate-fails-to-register"></a>Si votre délégué à révocation automatique ne parvient pas à s’inscrire
+
+Si vous essayez de spécifier [**winrt::auto_revoke**](/uwp/cpp-ref-for-winrt/auto-revoke-t) quand vous inscrivez un délégué, et si le résultat est une exception [**winrt::hresult_no_interface**](/uwp/cpp-ref-for-winrt/error-handling/hresult-no-interface), cela signifie généralement que la source de l’événement ne prend pas en charge les références faibles. Il s’agit d’une situation courante dans l’espace de noms [**Windows.UI.Composition**](/uwp/api/windows.ui.composition), par exemple. Dans ce cas, vous ne pouvez pas utiliser la fonctionnalité de révocation automatique. Vous devez révoquer manuellement vos gestionnaires d’événements.
 
 ## <a name="delegate-types-for-asynchronous-actions-and-operations"></a>Types délégués pour les actions et opérations asynchrones
 

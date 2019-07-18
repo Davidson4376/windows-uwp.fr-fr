@@ -9,12 +9,12 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 31b90866a0f612fb8f488d11e7d989380f14da99
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 0352e01363fc077439325eba4f74fe97febac33c
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63784804"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820552"
 ---
 # <a name="app-icons-and-logos"></a>Icônes et logos d’application 
 
@@ -105,18 +105,18 @@ For more information, see [App screenshots, images, and trailers in the Microsof
 
 Visual Studio fournit un outil très utile pour la gestion des icônes d’application appelé **Concepteur de manifeste**. 
 
-> Si vous ne disposez pas de Visual Studio 2017, plusieurs versions sont disponibles, dont une gratuite (Visual Studio 2017 Community Edition), les autres versions proposant des essais gratuits. Vous pouvez les télécharger ici : [https://developer.microsoft.com/windows/downloads](https://developer.microsoft.com/windows/downloads)
+> Si vous ne disposez pas de Visual Studio 2019, plusieurs versions sont disponibles, dont une gratuite (Visual Studio 2019 Community Edition), les autres versions proposant des essais gratuits. Vous pouvez les télécharger ici : [https://developer.microsoft.com/windows/downloads](https://developer.microsoft.com/windows/downloads)
 
 
 Pour lancer le Concepteur de manifeste :
 <!-- 1. Use Visual Studio to open a UWP project.
 2. In the **Solution Explorer**, double-click the package.appmanifest file. 
 
-    ![The Visual Studio 2017 Solution Explorer](images/icons/vs-solution-explorer.png)
+    ![The Visual Studio 2019 Solution Explorer](images/icons/vs-solution-explorer.png)
 
     Visual Studio displays the manifest designer.
 
-    ![The Visual Studio 2017 manifest designer](images/icons/vs-manfiest-designer.png)
+    ![The Visual Studio 2019 manifest designer](images/icons/vs-manfiest-designer.png)
 3. Click the **Visual Assets** tab.
 
     ![The Visual Assets tab](images/icons/vs-manfiest-designer-visual-assets.png) -->
@@ -135,7 +135,7 @@ Pour lancer le Concepteur de manifeste :
         2. Dans l’**Explorateur de solutions**, double-cliquez sur le fichier Package.appmxanifest.
     :::column-end:::
     :::column:::
-        ![The Visual Studio 2017 Manifest Designer](images/icons/vs-solution-explorer.png)
+        ![The Visual Studio 2019 Manifest Designer](images/icons/vs-solution-explorer.png)
     :::column-end:::
 :::row-end:::
 :::row:::

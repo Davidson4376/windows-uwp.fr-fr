@@ -6,18 +6,18 @@ ms.date: 10/03/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 2b172844e75d9af3d0112e03f155708af3ca6bed
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: d393ee92be8768861da0fb0783372c8bafc6f815
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63780350"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67821112"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17763"></a>Nouveautés de Windows 10 pour les développeurs, build 17763
 
-Windows 10, build 17763 (également appelée mise à jour d'octobre 2018 ou version 1809), en combinaison avec Visual Studio 2017 et le kit de développement logiciel mis à jour, fournit des outils, des fonctionnalités et une expérience propres à produire des applications remarquables dédiées à la plateforme Windows universelle. [Installez les outils et le kit de développement logiciel (SDK)](https://go.microsoft.com/fwlink/?LinkId=821431) sur Windows 10 et vous pourrez ainsi [créer une application universelle Windows](../get-started/create-uwp-apps.md) ou explorer la procédure permettant d’utiliser votre [code d’application existant sur Windows](../porting/index.md).
+Windows 10, build 17763 (également appelée mise à jour d’octobre 2018 ou version 1809), en combinaison avec Visual Studio 2019 et le SDK mis à jour, fournit des outils, des fonctionnalités et une expérience propres à produire des applications remarquables dédiées à la plateforme Windows universelle. [Installez les outils et le kit de développement logiciel (SDK)](https://go.microsoft.com/fwlink/?LinkId=821431) sur Windows 10 et vous pourrez ainsi [créer une application universelle Windows](../get-started/create-uwp-apps.md) ou explorer la procédure permettant d’utiliser votre [code d’application existant sur Windows](../porting/index.md).
 
-Voici une collection des fonctionnalités nouvelles et améliorées de cette version, accompagnée d'instructions, susceptibles d'intéresser les développeurs Windows. Pour obtenir une liste complète des nouveaux espaces de noms ajoutés au kit de développement logiciel (SDK) Windows, consultez [Modifications apportées aux API de Windows 10 build 17763](windows-10-build-17763-api-diff.md). Pour en savoir plus sur les fonctionnalités phares de Windows 10, consultez [Nouveautés intéressantes de Windows 10](https://go.microsoft.com/fwlink/?LinkId=823181). Consultez également [Fonctionnalités de la plateforme de développement Windows](https://developer.microsoft.com/windows/platform/features) pour bénéficier d'une vue d'ensemble des ajouts passés et futurs relatifs à la plateforme Windows.
+Voici une collection des fonctionnalités nouvelles et améliorées de cette version, accompagnée d'instructions, susceptibles d'intéresser les développeurs Windows. Pour obtenir une liste complète des nouveaux espaces de noms ajoutés au kit de développement logiciel (SDK) Windows, consultez [Modifications apportées aux API de Windows 10 build 17763](windows-10-build-17763-api-diff.md). Pour en savoir plus sur les fonctionnalités phares de Windows 10, consultez [Nouveautés intéressantes de Windows 10](https://go.microsoft.com/fwlink/?LinkId=823181). Consultez également [Fonctionnalités de la plateforme de développement Windows](https://developer.microsoft.com/windows/platform/features) pour bénéficier d’une vue d’ensemble des ajouts passés et futurs relatifs à la plateforme Windows.
 
 ## <a name="design--ui"></a>Conception et interface utilisateur
 
@@ -97,15 +97,15 @@ C++/WinRT est la nouvelle méthode de création et d'utilisation des API d'exéc
 
 ### <a name="get-started-for-devs-create-and-customize-a-form-on-windows-10"></a>Prise en main pour les développeurs : créer et personnaliser un formulaire sous Windows 10
 
-La [documentation de prise en main](../get-started/index.md) destinée aux développeurs Windows fournit désormais une expérience pratique des tâches de développement d'applications de base. Cette vidéo vous présente une de ces rubriques et couvre les bases de la création d'une interface utilisateur de formulaire dans votre application. [Regardez la vidéo](https://www.youtube.com/watch?v=AgngKzq4hKI&feature=youtu.be) pour voir le code en action, puis [consultez la rubrique vous-même.](https://aka.ms/CreateForms)
+La [documentation de prise en main](../get-started/index.md) destinée aux développeurs Windows fournit désormais une expérience pratique des tâches de développement d’applications de base. Cette vidéo vous présente une de ces rubriques et couvre les bases de la création d’une interface utilisateur de formulaire dans votre application. [Regardez la vidéo](https://www.youtube.com/watch?v=AgngKzq4hKI&feature=youtu.be) pour voir le code en action, puis [consultez la rubrique vous-même.](https://aka.ms/CreateForms)
 
-### <a name="enhance-your-bot-with-project-personality-chat"></a>Améliorez votre bot avec Project Personality Chat
+### <a name="enhance-your-bot-with-project-personality-chat"></a>Améliorer votre bot avec Project Personality Chat
 
-Project Personality Chat vous permet d'ajouter un personnage personnalisable à vos bots conversationnels. En l'intégrant au kit de développement logiciel (SDK) Microsoft Bot Framework, vous pouvez ajouter des fonctions de conversation pour interagir avec les clients sur le mode de la conversation. [Regardez la vidéo](https://www.youtube.com/watch?v=5C_uD8g2QKg&feature=youtu.be) pour savoir comment l'implémenter, puis [essayez notre démo interactive](https://aka.ms/PersonalityChat) pour bénéficier d'une expérience pratique.
+Project Personality Chat vous permet d’ajouter un personnage personnalisable à vos bots conversationnels. En l’intégrant au Kit de développement logiciel (SDK) Microsoft Bot Framework, vous pouvez ajouter des fonctions de conversation pour interagir avec les clients sur le mode de la conversation. [Regardez la vidéo](https://www.youtube.com/watch?v=5C_uD8g2QKg&feature=youtu.be) pour savoir comment l'implémenter, puis [essayez notre démo interactive](https://aka.ms/PersonalityChat) pour bénéficier d'une expérience pratique.
 
 ### <a name="multi-instance-uwp-apps"></a>Applications UWP à instances multiples
 
-Windows vous permet désormais d'exécuter plusieurs instances de votre application UWP, chacune dans son propre processus. [Regardez la vidéo](https://www.youtube.com/watch?v=clnnf4cigd0&feature=youtu.be) pour apprendre à créer une application qui prend en charge cette fonctionnalité, puis [lisez la documentation destinée aux développeurs](../launch-resume/multi-instance-uwp.md) pour obtenir des instructions sur la procédure et l'intérêt de cette fonctionnalité.
+Windows vous permet désormais d’exécuter plusieurs instances de votre application UWP, chacune dans un processus distinct. [Regardez la vidéo](https://www.youtube.com/watch?v=clnnf4cigd0&feature=youtu.be) pour apprendre à créer une application qui prend en charge cette fonctionnalité, puis [lisez la documentation destinée aux développeurs](../launch-resume/multi-instance-uwp.md) pour obtenir des instructions sur la procédure et l'intérêt de cette fonctionnalité.
 
 ### <a name="xbox-live-unity-plugin"></a>Plug-in Xbox Live Unity
 
@@ -113,11 +113,11 @@ Le plug-in Xbox Live pour Unity prend en charge l'ajout de signatures, de statis
 
 ### <a name="one-dev-question"></a>One Dev Question
 
-Dans le cadre de la série de vidéos One Dev Question, des développeurs Microsoft expérimentés répondent à des questions sur le développement, la culture d'équipe et l'histoire de Windows.
+Dans le cadre de la série de vidéos One Dev Question, des développeurs Microsoft expérimentés répondent à des questions sur le développement, la culture d’équipe et l’histoire de Windows.
 
-* [Raymond Chen sur le développement et l'histoire de Windows](https://www.youtube.com/playlist?list=PLWs4_NfqMtoxjy3LrIdf2oamq1coolpZ7)
+* [Raymond Chen sur le développement et l’histoire de Windows](https://www.youtube.com/playlist?list=PLWs4_NfqMtoxjy3LrIdf2oamq1coolpZ7)
 
-* [Larry Osterman sur le développement et l'histoire de Windows](https://www.youtube.com/playlist?list=PLWs4_NfqMtoyPUkYGpJU0RzvY6PBSEA4K)
+* [Larry Osterman sur le développement et l’histoire de Windows](https://www.youtube.com/playlist?list=PLWs4_NfqMtoyPUkYGpJU0RzvY6PBSEA4K)
 
 * [Aaron Gustafson sur les applications web progressives](https://www.youtube.com/playlist?list=PLWs4_NfqMtoyPHoI-CIB71mEq-om6m35I)
 

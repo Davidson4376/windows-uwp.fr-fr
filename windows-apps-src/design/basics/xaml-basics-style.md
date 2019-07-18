@@ -5,22 +5,22 @@ keywords: XAML, UWP, Bien démarrer
 ms.date: 08/31/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: d540b41620110a41676d08f5e6239efd0ef4ca46
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 804f1994e187d3b09ed4dcb2186105cf615f5de0
+ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66361231"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67820502"
 ---
 # <a name="tutorial-create-custom-styles"></a>Tutoriel : Créer des styles personnalisés
 
 Ce tutoriel vous montre comment personnaliser l’interface utilisateur de notre application XAML. Avertissement : ce tutoriel peut impliquer ou non une licorne. (Ce n'est pas une blague !)  
 
 ## <a name="prerequisites"></a>Conditions préalables
-* [Visual Studio 2017 et le SDK Windows 10 (10.0.15063.468 ou version ultérieure)](https://developer.microsoft.com/windows/downloads)
+* [Visual Studio 2019 et SDK Windows 10 (10.0.15063.468 ou ultérieur)](https://developer.microsoft.com/windows/downloads)
 
 ## <a name="part-0-get-the-code"></a>Partie 0 : Obtenir le code
-Le point de départ de ce laboratoire se trouve dans le référentiel d’exemples PhotoLab, dans le dossier [xaml-basics-starting-points/style/](https://github.com/Microsoft/Windows-appsample-photo-lab/tree/master/xaml-basics-starting-points/style). Après avoir cloné ou téléchargé le référentiel, vous pouvez modifier le projet en ouvrant PhotoLab.sln avec Visual Studio 2017.
+Le point de départ de ce laboratoire se trouve dans le référentiel d’exemples PhotoLab, dans le dossier [xaml-basics-starting-points/style/](https://github.com/Microsoft/Windows-appsample-photo-lab/tree/master/xaml-basics-starting-points/style). Après avoir cloné ou téléchargé le dépôt, vous pouvez modifier le projet en ouvrant PhotoLab.sln avec Visual Studio 2019.
 
 L’application PhotoLab comporte deux pages principales :
 
@@ -54,7 +54,7 @@ Le curseur d’exposition ajuste l’exposition de l’image : faites-le glisse
 
 2. Dans le panneau de l’Explorateur de solutions, double-cliquez sur **DetailPage.xaml** pour l'ouvrir. 
 
-    ![Fichier DetailPage.xaml dans l’Explorateur de solutions de Visual Studio 2017.](../basics/images/xaml-basics/style-detail-page-explorer.png)
+    ![Fichier DetailPage.xaml dans l’Explorateur de solutions de Visual Studio 2019.](../basics/images/xaml-basics/style-detail-page-explorer.png)
 
 3. Utilisez un élément Polygon pour créer une forme d’arrière-plan pour le curseur d'exposition.
 
@@ -63,7 +63,7 @@ Le curseur d’exposition ajuste l’exposition de l’image : faites-le glisse
     <!-- TODO reduce size -->
     ![Une licorne](../basics/images/xaml-basics/unicorn.png)
     
-    > **En savoir plus :** L'article [Dessiner des formes](https://docs.microsoft.com/en-us/windows/uwp/graphics/drawing-shapes) vous explique tout ce que vous devez savoir sur les formes XAML. 
+    > **En savoir plus :** L'article [Dessiner des formes](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/shapes) vous explique tout ce que vous devez savoir sur les formes XAML. 
     
     Nous voulons créer un widget d'aspect triangulaire, qui ressemble à la forme dessinée sur le contrôle de volume d’une chaîne stéréo.
     

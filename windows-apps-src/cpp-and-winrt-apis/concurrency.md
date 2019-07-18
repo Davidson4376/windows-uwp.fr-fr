@@ -1,16 +1,16 @@
 ---
 description: Cette rubrique présente les manières dont vous pouvez à la fois créer et utiliser des objets asynchrones Windows Runtime avec C++/WinRT.
 title: Opérations concurrentes et asynchrones avec C++/WinRT
-ms.date: 04/24/2019
+ms.date: 07/08/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, concurrence, asynchrone, async
 ms.localizationpriority: medium
-ms.openlocfilehash: 910d7a7ca2aaebac6dd462d7104b26a989cf8814
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: cbabf38f41ae940f5c92944154638eae7016e043
+ms.sourcegitcommit: 7585bf66405b307d7ed7788d49003dc4ddba65e6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66721659"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67660096"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrt"></a>Opérations concurrentes et asynchrones avec C++/WinRT
 
@@ -230,12 +230,16 @@ IASyncAction DoWorkAsync(Param const& value)
 }
 ```
 
-Dans une coroutine, l’exécution est synchrone jusqu’au premier point d’interruption, sur lequel le contrôle est retourné à l’appelant. Le temps que la coroutine reprenne, tout peut arriver à la valeur source référencée par un paramètre de référence. Du point de vue de la coroutine, un paramètre de référence a une durée de vie non contrôlée. Ainsi, dans l’exemple ci-dessus, nous sommes sûrs d’accéder à *value* jusqu’au `co_await`, mais pas après celui-ci. Nous ne pouvons pas non plus transmettre en toute sécurité *value* à **DoOtherWorkAsync** s’il y a un risque que cette fonction s’interrompe à son tour et essaye d’utiliser *value* après sa reprise. Pour sécuriser l’utilisation des paramètres après une interruption et une reprise, vos coroutines doivent utiliser « passer par valeur » par défaut pour être sûr qu’elles capturent par valeur et éviter les problèmes de durée de vie. Les cas où vous pouvez vous écarter de ces recommandations car vous êtes certain que la méthode est sécurisée seront rares.
+Dans une coroutine, l’exécution est synchrone jusqu’au premier point d’interruption, sur lequel le contrôle est retourné à l’appelant. Le temps que la coroutine reprenne, tout peut arriver à la valeur source référencée par un paramètre de référence. Du point de vue de la coroutine, un paramètre de référence a une durée de vie non contrôlée. Ainsi, dans l’exemple ci-dessus, nous sommes sûrs d’accéder à *value* jusqu’au `co_await`, mais pas après celui-ci. Si *value* est détruit par l’appelant, toute tentative pour y accéder plus tard dans la coroutine entraîne une altération de la mémoire. Nous ne pouvons pas non plus transmettre en toute sécurité *value* à **DoOtherWorkAsync** s’il y a un risque que cette fonction s’interrompe à son tour et essaye d’utiliser *value* après sa reprise.
+
+Pour sécuriser l’utilisation des paramètres après une interruption et une reprise, vos coroutines doivent employer le passage par valeur par défaut. Ainsi, vous avez la garantie qu’elles effectuent des captures par valeur. De plus, cela vous permet d’éviter les problèmes de durée de vie. Les cas où vous pouvez vous écarter de ces recommandations car vous êtes certain que la méthode est sécurisée seront rares.
 
 ```cppwinrt
 // Coroutine
-IASyncAction DoWorkAsync(Param value);
+IASyncAction DoWorkAsync(Param value); // not const&
 ```
+
+Avec le passage par valeur, l’argument doit être peu coûteux à déplacer ou à copier. Cela est généralement le cas d’un pointeur intelligent.
 
 On pourrait également considérer comme recommandé (sauf si vous voulez déplacer la valeur) le passage par la valeur const. Cela n’aura aucun effet sur la valeur source à partir de laquelle vous effectuez une copie, mais cela rend l’intention claire, et peut aider si vous modifiez la copie par inadvertance.
 
@@ -245,6 +249,38 @@ IASyncAction DoWorkAsync(Param const value);
 ```
 
 Voir également [Vecteurs et tableaux standard](std-cpp-data-types.md#standard-arrays-and-vectors), qui aborde la manière de passer un vecteur standard dans un appelé asynchrone.
+
+Si vous ne pouvez pas changer la signature de votre coroutine, mais que vous pouvez changer l’implémentation, créez une copie locale avant le premier `co_await`.
+
+```cppwinrt
+IASyncAction DoWorkAsync(Param const& value)
+{
+    auto safe_value = value;
+    // It's ok to access both safe_value and value here.
+
+    co_await DoOtherWorkAsync();
+
+    // It's ok to access only safe_value here (not value).
+}
+```
+
+Si `Param` est coûteux à copier, extrayez simplement les parties dont vous avez besoin avant le premier `co_await`.
+
+```cppwinrt
+IASyncAction DoWorkAsync(Param const& value)
+{
+    auto safe_data = value.data;
+    // It's ok to access safe_data, value.data, and value here.
+
+    co_await DoOtherWorkAsync();
+
+    // It's ok to access only safe_data here (not value.data, nor value).
+}
+```
+
+## <a name="safely-accessing-the-this-pointer-in-a-class-member-coroutine"></a>Accès sécurisé au pointeur *this* dans une coroutine de membre de classe
+
+Consultez [Références fortes et faibles en C++/WinRT](/windows/uwp/cpp-and-winrt-apis/weak-references#safely-accessing-the-this-pointer-in-a-class-member-coroutine).
 
 ## <a name="offloading-work-onto-the-windows-thread-pool"></a>Déchargement de tâches sur le pool de threads Windows
 
@@ -723,6 +759,23 @@ int main()
     // Do other work here.
 }
 ```
+
+**winrt::fire_and_forget** est également utile en tant que type de retour de votre gestionnaire d’événements quand vous devez y effectuer des opérations asynchrones. Voici un exemple (consultez également [Références fortes et faibles en C++/WinRT](/windows/uwp/cpp-and-winrt-apis/weak-references#safely-accessing-the-this-pointer-in-a-class-member-coroutine)).
+
+```cppwinrt
+winrt::fire_and_forget MyClass::MyMediaBinder_OnBinding(MediaBinder const&, MediaBindingEventArgs args)
+{
+    auto lifetime{ get_strong() }; // Prevent *this* from prematurely being destructed.
+    auto ensure_completion{ unique_deferral(args.GetDeferral()) }; // Take a deferral, and ensure that we complete it.
+
+    auto file{ co_await StorageFile::GetFileFromApplicationUriAsync(Uri(L"ms-appx:///video_file.mp4")) };
+    args.SetStorageFile(file);
+
+    // The destructor of unique_deferral completes the deferral here.
+}
+```
+
+Le premier argument (l’*expéditeur*) n’est pas nommé, car nous ne l’utilisons jamais. C’est la raison pour laquelle nous préférons le conserver en tant que référence. Mais notez que *args* est passé par valeur. Consultez la section [Passage de paramètres](#parameter-passing) ci-dessus.
 
 ## <a name="important-apis"></a>API importantes
 * [concurrency::task, classe](/cpp/parallel/concrt/reference/task-class)

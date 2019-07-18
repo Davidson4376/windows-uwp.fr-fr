@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: f8e74688d0f7048276b12680237b85663d7e2b81
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: a91c080805bca5d536aad3755ca7edf052d1fe0e
+ms.sourcegitcommit: b8087f8b6cf8367f8adb7d6db4581d9aa47b4861
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66214734"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67414059"
 ---
 # <a name="contributing-to-uwp-conceptual-documentation"></a>Contribution à la documentation conceptuelle UWP
 
@@ -48,7 +48,7 @@ Pour apporter d’importantes modifications à un article existant, ajouter ou m
 
 Lorsque vous créez une requête de tirage dans le référentiel interne, assurez-vous de fusionner votre branche personnelle dans la branche à partir de laquelle elle a été créée.
 
-Après avoir soumis votre requête de tirage, celle-ci est évaluée par rapport à une [liste de contrôle qualité du contenu](https://review.docs.microsoft.com/windows-authoring-guide/managing-contributions/editorial-checklist?branch=master) pour s’assurer qu’elle répond à nos normes de base. Si la requête est satisfaisante, elle est affectée à un membre de l’équipe de documentation UWP en vue d’une vérification ultérieure. Sinon, vous êtes averti des modifications à apporter.
+Une fois que vous avez soumis votre demande de tirage (pull request), celle-ci est évaluée par [PR Merger](https://review.docs.microsoft.com/help/contribute/prmerger-overview?branch=master) pour vérifier sa conformité à nos standards de base. En cas de réussite, vous pouvez la commenter avec `#sign-off` et la transmettre à un membre de l’équipe de documentation UWP pour un passage en revue plus approfondi. En cas d’échec, vous êtes informé des changements à apporter pour permettre sa validation.
 
 Les réviseurs assignés peuvent approuver ou rejeter la requête de tirage ou collaborer avec vous pour apporter d’autres modifications. Les réviseurs ne fusionneront pas la requête de tirage tant que vous ne l’avez pas approuvée vous-même.
 
