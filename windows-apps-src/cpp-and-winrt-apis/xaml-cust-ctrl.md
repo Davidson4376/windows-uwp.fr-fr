@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, XAML, personnalisé, basé sur modèle, contrôle
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 01ace91737602d768e71c564abceb28a7d19f9fb
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: c0b2d8fb17b90bc55834f6bf2200b22af9352ef6
+ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64745021"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68270080"
 ---
 # <a name="xaml-custom-templated-controls-with-cwinrt"></a>Contrôles XAML personnalisés (basés sur un modèle) avec C++/WinRT
 
