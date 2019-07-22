@@ -9,12 +9,12 @@ ms.topic: hub-page
 title: Documentation Windows
 description: Trouvez les documents dédiés aux développeurs, au matériel et aux professionnels de l’informatique qui vous aideront à créer et gérer votre solution Windows.
 localizationpriority: medium
-ms.openlocfilehash: a58310793dd43f3c1970ced7d9365690670bb6a2
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 8bd9a7e4e9575c725830481339438912af193ee3
+ms.sourcegitcommit: afb5157ec4bcb6588ac4cf74352688b30ed32257
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317713"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68349198"
 ---
 <div id="main" class="v2">
   <div class="container">
@@ -82,7 +82,7 @@ ms.locfileid: "67317713"
             <a data-default="true" href="#developer">Développeur</a>
             <ul id="developer">
                 <li>
-                    <a href="#developer-all">tout</a>
+                    <a href="#developer-all">tous</a>
                     <ul id="developer-all" class="cardsC">
                         <li>
                             <div class="container intro">
@@ -222,7 +222,49 @@ ms.locfileid: "67317713"
                                 </div>
                             </a>
                         </li>
-                       <li>
+                        <li>
+                            <div class="container">
+                                <p>Créer avec Windows</p>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="/windows/python/index">
+                                <div class="cardSize">
+                                    <div class="cardPadding">
+                                        <div class="card">
+                                            <div class="cardImageOuter">
+                                                <div class="cardImage bgdAccent1">
+                                                    <img data-scaleimage="/media/hubs/windows/win_developer-uwp.svg?branch=master" alt="" />
+                                                </div>
+                                            </div>
+                                            <div class="cardText">
+                                                <h3>Développer avec Python</h3>
+                                                <p>Vous créez des applications web multiplateformes, automatisez des tâches courantes avec un script ou apprenez Python dans un environnement éducatif pour la première fois ? Nous allons vous aider à préparer tout ce dont vous avez besoin pour développer avec Python sur Windows.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <!-- <li>
+                            <a href="/windows/nodejs/index">
+                                <div class="cardSize">
+                                    <div class="cardPadding">
+                                        <div class="card">
+                                            <div class="cardImageOuter">
+                                                <div class="cardImage bgdAccent1">
+                                                    <img data-scaleimage="/media/hubs/windows/win_developer-desktop.svg?branch=master" alt="" />
+                                                </div>
+                                            </div>
+                                            <div class="cardText">
+                                                <h3>Develop with NodeJS<</h3>
+                                                <p>If you love JavaScript and want to build a quick web app with Express, a server-side app with Meteor, a data-heavy enterprise app with Sails, a desktop app with Electron, or an online multi-player game with Socket.io, we'll help you get set up to develop using Node.js on Windows.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li> -->
                     </ul>
                 </li>
             </ul>
@@ -376,7 +418,7 @@ ms.locfileid: "67317713"
             </ul>
         </li>
         <li>
-            <a href="#it-pro">Professionnel de l’informatique</a>
+            <a href="#it-pro">Professionnels de l’informatique</a>
             <ul id="it-pro">
                 <li>
                     <a href="#it-pro1"></a>

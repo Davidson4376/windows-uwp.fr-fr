@@ -1,6 +1,7 @@
 - name: Créer des applications pour Windows
-  href: apps/index.md
   items:
+    - name: Vue d’ensemble
+      href: apps/index.md
     - name: Créer des applications de bureau
       items:
         - name: Vue d’ensemble
@@ -63,3 +64,19 @@
       href: apps/accessibility.md
     - name: Fonctionnalités et technologies
       href: apps/features-and-technologies.md
+- name: Créer avec Windows
+  items:
+    - name: Développer avec Python
+      items:
+        - name: Vue d’ensemble
+          href: python/index.md
+        - name: Bien démarrer pour les débutants
+          href: python/get-started/python-for-education.md
+        - name: Bien démarrer avec le développement web
+          href: python/get-started/python-for-web.md
+        - name: Bien démarrer avec l’automatisation
+          href: python/get-started/python-for-scripting.md
+        - name: FAQ
+          href: python/faqs.md
+        - name: Ressources
+          href: python/resources.md
