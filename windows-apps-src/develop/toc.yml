@@ -842,6 +842,10 @@
           href: ../cpp-and-winrt-apis/weak-references.md
         - name: Objets agiles
           href: ../cpp-and-winrt-apis/agile-objects.md
+        - name: Diagnostic des allocations directes
+          href: ../cpp-and-winrt-apis/diag-direct-alloc.md
+        - name: Détails sur les destructeurs
+          href: ../cpp-and-winrt-apis/details-about-destructors.md
         - name: Exemple C++/WinRT WinUI simple
           href: ../cpp-and-winrt-apis/simple-winui-example.md
         - name: Langage C++

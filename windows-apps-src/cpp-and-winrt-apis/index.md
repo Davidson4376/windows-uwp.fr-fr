@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection
 ms.localizationpriority: medium
-ms.openlocfilehash: 7be1fe8f23d51ecff6dbee30ad6ebecc6d65b4d8
-ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
+ms.openlocfilehash: 5a65fe882057370f9d0ca603157279b3aa7429fb
+ms.sourcegitcommit: 02cc7aaa408efe280b089ff27484e8bc879adf23
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68270025"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68387021"
 ---
 # <a name="cwinrt"></a>C++/WinRT
 
@@ -65,6 +65,8 @@ C++/WinRT offre de meilleures performances et génère des fichiers binaires plu
 | [Interopérabilité entre C++/WinRT et ABI](interop-winrt-abi.md) | Cette rubrique montre comment effectuer des conversions entre des objets de l’interface binaire d’application (ABI) et C++/WinRT. |
 | [Références fortes et faibles en C++/WinRT](weak-references.md) | L’environnement Windows Runtime est un système avec décompte des références ; dans un tel système, il est important de connaître la signification des références fortes et faibles, et de faire la distinction entre elles. |
 | [Objets agiles](agile-objects.md) | Un objet agile est un objet qui est accessible à partir de n’importe quel thread. Vos types C++/WinRT sont agiles par défaut, mais vous pouvez le refuser. |
+| [Diagnostic des allocations directes](diag-direct-alloc.md) | Cette rubrique décrit de façon détaillée la fonctionnalité C++/WinRT 2.0 qui vous permet de diagnostiquer l’erreur de créer un objet de type implémentation sur la pile, plutôt que d’utiliser la famille d’assistants [**winrt::make**](/uwp/cpp-ref-for-winrt/make), comme vous le devriez. |
+| [Détails sur les destructeurs](details-about-destructors.md) | C++/WinRT 2.0 vous permet de différer la destruction de vos types implémentation et de créer des requêtes en toute sécurité pendant la destruction. Cette rubrique décrit ces fonctionnalités et explique quand les utiliser. |
 | [Exemple de bibliothèque d’IU Windows C++/WinRT simple](simple-winui-example.md) | Cette rubrique vous guide dans le processus d’ajout d’une prise en charge simple de WinUI dans un projet C++/WinRT. |
 
 ### <a name="topics-about-the-c-language"></a>Rubriques sur le langage C++
