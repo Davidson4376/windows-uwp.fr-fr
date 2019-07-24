@@ -2,51 +2,51 @@
 ms.assetid: 96361CAF-C347-4671-9721-8208CE118CA4
 title: Création de packages d’application UWP
 description: Pour distribuer ou vendre votre application de plateforme Windows universelle (UWP), vous devez créer un package d’application pour elle.
-ms.date: 06/10/2019
+ms.date: 07/17/2019
 ms.topic: article
 keywords: windows 10, uwp
 f1_keywords:
 - vs.packagewizard
 - vs.storeassociationwizard
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f24d91231b4da1a4a456846faceb604d9ee450d
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 1038913732c8b25a5baa3daf2c04176ff747a85f
+ms.sourcegitcommit: 2062d06567ef087ad73507a03ecc726a7d848361
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319853"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68303594"
 ---
 # <a name="package-a-uwp-app-with-visual-studio"></a>Package d’une application UWP avec Visual Studio
 
 Pour vendre ou distribuer votre application de plateforme Windows universelle (UWP) à d’autres utilisateurs, vous devez la mettre en package. Si vous ne souhaitez pas distribuer votre application via le Microsoft Store, vous pouvez charger le package d’application directement sur un appareil ou le distribuer via une [Installation web](installing-UWP-apps-web.md). Cet article décrit le processus de configuration, de création et de test d’un package d’application UWP à l'aide de Visual Studio. Pour plus d’informations sur la gestion et déploiement d'applications cœur de métier (LOB), consultez [Gestion d'applications d'entreprise](https://docs.microsoft.com/windows/client-management/mdm/enterprise-app-management).
 
-Dans Windows 10, vous pouvez envoyer un package d’application, d’offre groupée d’applications ou d’un fichier de chargement du package application complète pour [partenaires](https://partner.microsoft.com/dashboard). De ces options, vous soumettre un téléchargement de fichier de package d’application pour fournir la meilleure expérience.
+Dans Windows 10, vous pouvez envoyer un package d’application, un bundle d’applications ou un fichier de téléchargement de package d’application complet à l' [espace partenaires](https://partner.microsoft.com/dashboard). Parmi ces options, l’envoi d’un fichier de téléchargement de package d’application offre la meilleure expérience.
 
 ## <a name="types-of-app-packages"></a>Types de packages d’application
 
-- **Package d’application (.appx ou .msix)**  
-    Un fichier contenant votre application dans un format pouvant être chargé de manière indépendante sur un appareil. N’importe quel fichier de package d’application unique créé par Visual Studio est **pas** destiné à être soumis à des partenaires et doit être utilisé pour le chargement indépendant et uniquement à des fins de test. Si vous souhaitez soumettre votre application au Partner Center, utilisez le chargement de fichier de package d’application.  
+- **Package d’application (. AppX ou. msix)**  
+    Un fichier contenant votre application dans un format pouvant être chargé de manière indépendante sur un appareil. Un fichier de package d’application unique créé par Visual Studio n’est **pas** destiné à être soumis à l’espace partenaires et doit être utilisé à des fins de chargement et de test uniquement. Si vous souhaitez soumettre votre application à l’espace partenaires, utilisez le fichier de chargement du package d’application.  
 
-- **Offre groupée d’applications (.appxbundle ou .msixbundle)**  
+- **Bundle d’applications (. appxbundle ou. msixbundle)**  
     Un ensemble d'applications désigne un type de package pouvant contenir plusieurs packages d'application, chacun étant généré pour prendre en charge une architecture d'appareil spécifique. Par exemple, un ensemble d'applications peut contenir trois packages d'application distincts pour les configurations x86, x64 et ARM. Les ensembles d'applications doivent être générés autant que possible. En effet, ils permettent aux applications d'être disponibles à un éventail d'appareils des plus larges.  
 
-- **Fichier de chargement de Package d’application (.appxupload ou .msixupload)**  
-    Un fichier unique pouvant contenir plusieurs packages d'applications ou un ensemble d'applications pour prendre en charge diverses architectures de processeur. Le téléchargement de fichier de package d’application contient également un fichier de symboles à [analyser les performances de l’application](https://docs.microsoft.com/windows/uwp/publish/analytics) une fois que votre application a été publiée dans le Microsoft Store. Ce fichier sera automatiquement créé pour vous si vous empaquetez votre application avec Visual Studio avec l’intention de soumettre à des partenaires pour la publication.
+- **Fichier de chargement du package d’application (. appxupload ou. msixupload)**  
+    Un fichier unique pouvant contenir plusieurs packages d'applications ou un ensemble d'applications pour prendre en charge diverses architectures de processeur. Le fichier de téléchargement de package d’application contient également un fichier de symboles pour [analyser les performances](https://docs.microsoft.com/windows/uwp/publish/analytics) de l’application une fois que votre application a été publiée dans le Microsoft Store. Ce fichier sera automatiquement créé pour vous si vous empaquetez votre application avec Visual Studio dans le but de la soumettre à l’espace partenaires pour la publication.
 
 Voici un aperçu des étapes nécessaires pour préparer et créer un package d’application :
 
-1.  [Avant de créer un package pour votre application](#before-packaging-your-app). Suivez ces étapes pour vérifier que votre application est prête à être packagée pour la soumission des partenaires.
-2.  [Configurer un package d’application](#configure-an-app-package). Utilisez le concepteur de manifeste Visual Studio pour configurer le package. Par exemple, ajoutez des images de vignette et choisissez les orientations prises en charge par votre application.
+1.  [Avant de créer un package pour votre application](#before-packaging-your-app). Suivez ces étapes pour vous assurer que votre application est prête à être empaquetée pour l’envoi de l’espace partenaires.
+2.  [Configurer un package d’application.](#configure-an-app-package) Utilisez le concepteur de manifeste Visual Studio pour configurer le package. Par exemple, ajoutez des images de vignette et choisissez les orientations prises en charge par votre application.
 3.  [Créer un fichier de chargement de package d’application](#create-an-app-package-upload-file). Utilisez l’assistant de package d'application dans Microsoft Visual Studio pour créer un package d’application, puis certifiez votre package à l’aide du kit de certification des applications Windows.
 4.  [Chargez de manière indépendante votre package d’application](#sideload-your-app-package). Après le chargement indépendant de votre application sur un appareil, vous pouvez tester qu’elle fonctionne comme vous le souhaitez.
 
-Après avoir effectué les étapes ci-dessus, vous êtes prêt à distribuer votre application. Si vous avez une application (LOB large) line of business que vous ne prévoyez pas de vendre, car il est pour les utilisateurs internes uniquement, vous pouvez charger une version test cette application pour l’installer sur n’importe quel appareil Windows 10.
+Après avoir effectué les étapes ci-dessus, vous êtes prêt à distribuer votre application. Si vous avez une application métier que vous ne prévoyez pas de vendre, car elle est réservée uniquement aux utilisateurs internes, vous pouvez chargement cette application pour l’installer sur n’importe quel appareil Windows 10.
 
 ## <a name="before-packaging-your-app"></a>Avant de créer un package pour votre application
 
-1.  **Testez votre application.** Avant de packager votre application pour la soumission des partenaires, assurez-vous qu’il fonctionne comme prévu sur toutes les familles d’appareils que vous envisagez de prendre en charge. Ces familles d’appareils peuvent inclure des ordinateurs de bureau, des appareils portables, Surface Hub, Xbox, IoT, ou autres. Pour plus d’informations sur le déploiement et test de votre application à l’aide de Visual Studio, consultez [déploiement et débogage des applications UWP](../debug-test-perf/deploying-and-debugging-uwp-apps.md).
-2.  **Optimiser votre application.** Vous pouvez utiliser les outils de profilage et de débogage de Visual Studio pour optimiser les performances de votre application UWP. Par exemple, l’outil Chronologie pour la réactivité de l’interface utilisateur, l’outil Utilisation de la mémoire, l’outil Utilisation du processeur, etc. Pour plus d'informations sur l'utilisation de ces outils, consultez la rubrique [Vue d'ensemble de la fonctionnalité de profilage](https://docs.microsoft.com/visualstudio/profiling/profiling-feature-tour).
-3.  **Vérifier la compatibilité .NET Native (pour Visual Basic et C# applications).** Dans la plateforme Windows universelle, un nouveau compilateur natif améliore les performances d’exécution de votre application. Avec cette modification, vous devriez tester votre application dans cet environnement de compilation. Par défaut, la configuration de build **Release** active la chaîne d’outils .NET Native. Il est donc important de tester votre application avec cette configuration **Release** et de vérifier que votre application se comporte comme prévu. Certains problèmes courants de débogage qui peuvent se produire avec .NET Native sont expliqués plus en détail dans [Débogage des applications universelles Windows .NET Native](https://devblogs.microsoft.com/devops/debugging-net-native-windows-universal-apps/).
+1.  **Testez votre application.** Avant d’empaqueter votre application pour l’envoi de l’espace partenaires, assurez-vous qu’elle fonctionne comme prévu sur toutes les familles d’appareils que vous envisagez de prendre en charge. Ces familles d’appareils peuvent inclure des ordinateurs de bureau, des appareils portables, Surface Hub, Xbox, IoT, ou autres. Pour plus d’informations sur le déploiement et le test de votre application à l’aide de Visual Studio, consultez [déploiement et débogage d’applications UWP](../debug-test-perf/deploying-and-debugging-uwp-apps.md).
+2.  **Optimisez votre application.** Vous pouvez utiliser les outils de profilage et de débogage de Visual Studio pour optimiser les performances de votre application UWP. Par exemple, l’outil Chronologie pour la réactivité de l’interface utilisateur, l’outil Utilisation de la mémoire, l’outil Utilisation du processeur, etc. Pour plus d'informations sur l'utilisation de ces outils, consultez la rubrique [Vue d'ensemble de la fonctionnalité de profilage](https://docs.microsoft.com/visualstudio/profiling/profiling-feature-tour).
+3.  **Vérifiez .NET Native compatibilité (pour les applications C# vb et).** Dans la plateforme Windows universelle, un nouveau compilateur natif améliore les performances d’exécution de votre application. Avec cette modification, vous devriez tester votre application dans cet environnement de compilation. Par défaut, la configuration de build **Release** active la chaîne d’outils .NET Native. Il est donc important de tester votre application avec cette configuration **Release** et de vérifier que votre application se comporte comme prévu. Certains problèmes courants de débogage qui peuvent se produire avec .NET Native sont expliqués plus en détail dans [Débogage des applications universelles Windows .NET Native](https://devblogs.microsoft.com/devops/debugging-net-native-windows-universal-apps/).
 
 ## <a name="configure-an-app-package"></a>Configurer un package d’application
 
@@ -65,143 +65,146 @@ Le Concepteur de manifeste de Visual Studio vous permet de mettre à jour le fic
 
     À partir de l’onglet **Packaging**, vous pouvez entrer des données de publication. C’est ici que vous pouvez choisir le certificat à utiliser pour signer votre application. Toutes les applications UWP doivent être signées avec un certificat.
 
-    >[!IMPORTANT]
-    >Si vous publiez votre application dans le Microsoft Store, elle sera signée pour vous avec un certificat approuvé. Cela permet à l'utilisateur d'installer et d'exécuter votre application sans installer le certificat de signature d'application associé.
+    > [!NOTE]
+    > À compter de Visual Studio 2019, un certificat temporaire n’est plus généré dans les projets UWP. Pour créer ou exporter des certificats, utilisez les applets de commande PowerShell décrites dans [cet article](create-certificate-package-signing.md).
 
-    Si vous ne publiez pas votre application et souhaitez simplement charger un package d'application de manière indépendante, vous devez d'abord approuver le package. Pour approuver le package, le certificat doit être installé sur l'appareil de l'utilisateur. Pour plus d’informations sur le chargement indépendant, consultez [Activer votre appareil pour le développement](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development).
+    > [!IMPORTANT]
+    > Si vous publiez votre application dans le Microsoft Store, elle sera signée pour vous avec un certificat approuvé. Cela permet à l'utilisateur d'installer et d'exécuter votre application sans installer le certificat de signature d'application associé.
+
+    Si vous ne publiez pas votre application et souhaitez simplement charger un package d'application de manière indépendante, vous devez d'abord approuver le package. Pour approuver le package, le certificat doit être installé sur l'appareil de l'utilisateur. Pour plus d’informations sur le chargement indépendant, voir [Activer votre appareil pour le développement](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development).
 
 4.  Enregistrez votre fichier **Package.appxmanifest** une fois que vous avez apporté les modifications nécessaires pour votre application.
 
-Si vous distribuez votre application via le Microsoft Store, Visual Studio peut associer votre package le Store. Pour ce faire, cliquez sur le nom de votre projet dans l’Explorateur de solutions et choisissez **Store**->**associer l’application avec le Store**. Vous pouvez également le faire le **créer des Packages d’application** Assistant, ce qui est décrit dans la section suivante. Lorsque vous associez votre application, certains champs dans l’onglet Packages du concepteur de manifeste sont automatiquement mis à jour.
+Si vous distribuez votre application via le Microsoft Store, Visual Studio peut associer votre package au Windows Store. Pour ce faire, cliquez avec le bouton droit sur le nom de votre projet dans Explorateur de solutions et choisissez **Store**->**associer l’application**au Windows Store. Vous pouvez également effectuer cette opération dans l’Assistant **créer des packages d’application** , qui est décrit dans la section suivante. Lorsque vous associez votre application, certains champs dans l’onglet Packages du concepteur de manifeste sont automatiquement mis à jour.
 
 ## <a name="create-an-app-package-upload-file"></a>Créer un fichier de chargement de package d’application
 
-Pour distribuer une application via Microsoft Store, vous devez créer un package d’application (.appx ou .msix), offre groupée d’applications (.appxbundle ou .msixbundle) ou un fichier de chargement de package app (.appxupload ou .msixupload) et [soumettre l’application empaquetée pour partenaires](https://docs.microsoft.com/windows/uwp/publish/app-submissions). Bien qu’il soit possible d’envoyer un package ou application offre groupée d’applications pour les partenaires uniquement, nous recommandons que vous envoyez un téléchargement de fichier de package d’application. Vous pouvez créer un téléchargement de fichier de package d’application à l’aide de la **créer des Packages d’application** Assistant dans Visual Studio, ou vous pouvez en créer un manuellement à partir de packages d’application existant ou offres groupées d’applications.
+Pour distribuer une application via Microsoft Store vous devez créer un package d’application (. AppX ou. msix), un bundle d’applications (. appxbundle ou. msixbundle) ou un fichier de téléchargement de package d’application (. appxupload ou. msixupload) et [soumettre l’application empaquetée à l’espace partenaires](https://docs.microsoft.com/windows/uwp/publish/app-submissions). Bien qu’il soit possible d’envoyer un package d’application ou un bundle d’applications à l’espace partenaires seul, nous vous recommandons de soumettre un fichier de chargement de package d’application. Vous pouvez créer un fichier de téléchargement de package d’application à l’aide de l’Assistant **créer des packages d’application** dans Visual Studio, ou vous pouvez en créer un manuellement à partir de packages d’application ou de bundle d’applications existants.
 
 >[!NOTE]
-> Si vous souhaitez créer un package d’application (.appx ou .msix) ou d’une offre groupée d’applications (.appxbundle ou .msixbundle) manuellement, consultez [créer un package d’application avec l’outil MakeAppx.exe](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool).
+> Si vous souhaitez créer un package d’application (. AppX ou. msix) ou un bundle d’applications (. appxbundle ou. msixbundle) manuellement, consultez [créer un package d’application avec l’outil MakeAppx. exe](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool).
 
-### <a name="create-your-app-package-upload-file-using-visual-studio"></a>Créer votre fichier de chargement de package app à l’aide de Visual Studio
+### <a name="create-your-app-package-upload-file-using-visual-studio"></a>Créer un fichier de chargement de package d’application à l’aide de Visual Studio
 
 1.  Dans l’**Explorateur de solutions**, ouvrez la solution pour votre projet d’application UWP.
-2.  Cliquez avec le bouton droit sur le projet et choisissez **Store**->**Créer des packages d'application**. Si cette option est désactivée ou n’apparaît pas, vérifiez que le projet est bien un projet Windows universel.  
-    ![Menu contextuel avec la navigation à créer des Packages d’application](images/packaging-screen2.jpg)
+2.  Cliquez avec le bouton droit sur le projet et choisissez **Store**->**Create App Packages**. Si cette option est désactivée ou n’apparaît pas, vérifiez que le projet est bien un projet Windows universel.  
+    ![Menu contextuel avec navigation pour créer des packages d’application](images/packaging-screen2.jpg)
 
     L’assistant **Créer des packages d’application** s’affiche.
 
-3.  Sélectionnez **je souhaite créer des packages à télécharger dans le Microsoft Store à l’aide d’un nouveau nom d’application** dans la première boîte de dialogue puis **suivant**.  
-    ![Créer la fenêtre de boîte de dialogue de vos Packages indiqué](images/packaging-screen3.jpg)
+3.  Sélectionnez **je souhaite créer des packages à charger sur le Microsoft Store à l’aide d’un nouveau nom d’application** dans la première boîte de dialogue, puis cliquez sur **suivant**.  
+    ![Boîte de dialogue créer vos packages affichée](images/packaging-screen3.jpg)
 
-    Si vous avez déjà associé à votre projet avec une application dans le Store, vous avez également une option pour créer des packages pour l’application de Store associée. Si vous choisissez **je souhaite créer des packages pour le chargement indépendant**, Visual Studio ne génère pas le fichier package d’application téléchargement (.msixupload ou .appxupload) pour les envois de partenaires. Si vous souhaitez uniquement charger de manière indépendante votre application pour l’exécuter sur des appareils internes ou à des fins de test, vous pouvez sélectionner cette option. Pour plus d’informations sur le chargement indépendant, consultez [Activer votre appareil pour le développement](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development).
-4.  Sur la page suivante, connectez-vous avec votre compte de développeur pour les partenaires. Si vous ne disposez pas encore d’un compte de développeur, l’Assistant vous aidera à en créer un.
-    ![Créer la fenêtre de Packages d’application avec la sélection du nom application indiquée](images/packaging-screen4.jpg)
-5.  Sélectionnez le nom de l’application pour votre package à partir de la liste des applications actuellement inscrits à votre compte, ou réservez un nouveau si vous n’avez pas déjà réservé un centre de partenaires.  
-6.  Veillez à sélectionner les trois configurations d'architecture (x86, x64 et ARM) dans la boîte de dialogue **Sélectionner et configurer des packages** afin de garantir que le bon déploiement de votre application sur un large éventail d'appareils. Dans la zone de liste **Générer le lot d'applications**, sélectionnez **Toujours**. Un lot d’applications (.appxbundle ou .msixbundle) est préféré sur un fichier de package d’application unique, car elle contient une collection de packages d’applications configuré pour chaque type d’architecture de processeur. Lorsque vous choisissez de générer le bundle d’applications, le bundle d’applications sera inclus dans l’application finale téléchargement (.appxupload ou .msixupload) fichier de package, ainsi que les informations de débogage et d’analyse de cas d’incident. Si vous ne savez pas quelle(s) architecture(s) choisir ou si vous souhaitez en savoir plus sur les architectures utilisées par divers appareils, consultez [Architectures de package d’application](https://docs.microsoft.com/windows/uwp/packaging/device-architecture).  
-    ![Créer la fenêtre de Packages d’application avec la configuration de package indiquée](images/packaging-screen5.jpg)
-7.  Inclure les fichiers de symboles PDB complets à [analyser les performances de l’application](https://docs.microsoft.com/windows/uwp/publish/analytics) à partir du centre de partenaires une fois que votre application a été publiée. Configurez tous les détails supplémentaires, notamment la numérotation de version ou l'emplacement de sortie de l'application.
-8.  Cliquez sur **Créer** pour générer le package d'application. Si vous avez sélectionné une de la **je souhaite créer des packages à télécharger dans le Microsoft Store** options dans l’étape 3 et créent un package pour la soumission des partenaires, l’Assistant va créer un fichier de chargement de package (.appxupload ou .msixupload). Si vous avez sélectionné **je souhaite créer des packages pour le chargement indépendant** à l’étape 3, l’Assistant va créer un package d’application unique ou un lot d’applications en fonction de vos sélections à l’étape 6.
-9. Lorsque votre application est empaquetée, cette boîte de dialogue s’affiche et vous pouvez récupérer votre téléchargement de fichier de package d’application à partir de l’emplacement de sortie spécifié. À ce stade, vous pouvez [valider votre package d’application sur l’ordinateur local ou un ordinateur distant](#validate-your-app-package) et [automatiser les soumissions aux magasins](#automate-store-submissions).
-    ![Création de package terminée fenêtre avec les options de validation affichées](images/packaging-screen6.jpg)
+    Si vous avez déjà associé votre projet à une application du Windows Store, vous avez également la possibilité de créer des packages pour l’application de Store associée. Si vous choisissez de **créer des packages pour chargement**, Visual Studio ne génère pas le fichier de chargement du package d’application (. msixupload ou. appxupload) pour les soumissions de l’espace partenaires. Si vous souhaitez uniquement charger de manière indépendante votre application pour l’exécuter sur des appareils internes ou à des fins de test, vous pouvez sélectionner cette option. Pour plus d’informations sur le chargement indépendant, voir [Activer votre appareil pour le développement](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development).
+4.  Sur la page suivante, connectez-vous avec votre compte de développeur à l’espace partenaires. Si vous ne disposez pas encore d’un compte de développeur, l’Assistant vous aidera à en créer un.
+    ![Fenêtre créer des packages d’application avec la sélection du nom de l’application affichée](images/packaging-screen4.jpg)
+5.  Sélectionnez le nom de l’application pour votre package dans la liste des applications actuellement inscrites à votre compte, ou réservez-en un nouveau si vous ne l’avez pas encore réservé dans l’espace partenaires.  
+6.  Veillez à sélectionner les trois configurations d'architecture (x86, x64 et ARM) dans la boîte de dialogue **Sélectionner et configurer des packages** afin de garantir que le bon déploiement de votre application sur un large éventail d'appareils. Dans la zone de liste **Generate app bundle**, sélectionnez **Always**. Un bundle d’applications (. appxbundle ou. msixbundle) est préférable à un seul fichier de package d’application, car il contient une collection de packages d’application configurés pour chaque type d’architecture de processeur. Lorsque vous choisissez de générer l’offre groupée d’applications, l’offre groupée d’applications est incluse dans le fichier de téléchargement de package d’application (. appxupload ou. msixupload) final, ainsi que les informations analytiques de débogage et d’incident. Si vous ne savez pas quelle(s) architecture(s) choisir ou si vous souhaitez en savoir plus sur les architectures utilisées par divers appareils, consultez [Architectures de package d’application](https://docs.microsoft.com/windows/uwp/packaging/device-architecture).  
+    ![Fenêtre créer des packages d’application avec la configuration de package affichée](images/packaging-screen5.jpg)
+7.  Inclure des fichiers de symboles PDB complets pour [analyser les performances des applications](https://docs.microsoft.com/windows/uwp/publish/analytics) à partir de l’espace partenaires après la publication de votre application. Configurez tous les détails supplémentaires, notamment la numérotation de version ou l'emplacement de sortie de l'application.
+8.  Cliquez sur **Créer** pour générer le package d'application. Si vous avez sélectionné l’une des options **je souhaite créer des packages à télécharger dans les Microsoft Store à l'** étape 3 et que vous créez un package pour l’envoi de l’espace partenaires, l’Assistant crée un fichier de téléchargement de package (. appxupload ou. msixupload). Si vous avez choisi de **créer des packages pour chargement** à l’étape 3, l’Assistant crée soit un package d’application unique, soit un bundle d’applications en fonction de vos sélections à l’étape 6.
+9. Une fois votre application correctement empaquetée, cette boîte de dialogue s’affiche et vous pouvez récupérer le fichier de téléchargement de votre package d’application à partir de l’emplacement de sortie spécifié. À ce stade, vous pouvez [valider votre package d’application sur l’ordinateur local ou sur un ordinateur distant](#validate-your-app-package) et automatiser les soumissions du [magasin](#automate-store-submissions).
+    ![Fenêtre de création de package terminée avec les options de validation affichées](images/packaging-screen6.jpg)
 
-### <a name="create-your-app-package-upload-file-manually"></a>Créer votre téléchargement de fichier de package d’application manuellement
+### <a name="create-your-app-package-upload-file-manually"></a>Créer manuellement le fichier de téléchargement de votre package d’application
 
-1. Placez les fichiers suivants dans un dossier :
-    - Un ou plusieurs packages d’application (.msix ou .appx) ou un lot d’applications (.msixbundle ou .appxbundle).
-    - Un fichier .appxsym. Il s’agit d’un fichier .pdb compressé contenant des symboles publics de votre application utilisée pour [crash analytique](../publish/health-report.md) dans Partner Center. Vous pouvez omettre ce fichier, mais si vous le faites, aucune information d’analyse ou de débogage de blocage ne sera disponible pour votre application.
+1. Placez les fichiers suivants dans un dossier:
+    - Un ou plusieurs packages d’application (. msix ou. AppX) ou un bundle d’applications (. msixbundle ou. appxbundle).
+    - Un fichier. appxsym. Il s’agit d’un fichier. pdb compressé contenant les symboles publics de votre application utilisés pour l' [analyse des incidents](../publish/health-report.md) dans l’espace partenaires. Vous pouvez omettre ce fichier, mais si vous le faites, aucune information d’analyse ou de débogage sur incident ne sera disponible pour votre application.
 2. Compressez le dossier.
-3. Modifiez le nom d’extension dossier compressé de .zip en .msixupload ou .appxupload.
+3. Remplacez le nom de l’extension de dossier compressé par. msixupload ou. appxupload.
 
 ## <a name="validate-your-app-package"></a>Valider votre package d’application
 
-Validez votre application avant de le soumettre à des partenaires pour la certification sur un ordinateur local ou distant. Vous pouvez uniquement valider les versions Release pour votre package d’application et non les versions Debug. Pour plus d’informations sur la soumission de votre application pour les partenaires, consultez [envois d’application](https://docs.microsoft.com/windows/uwp/publish/app-submissions).
+Validez votre application avant de la soumettre à l’espace partenaires pour la certification sur un ordinateur local ou distant. Vous pouvez uniquement valider les versions Release pour votre package d’application et non les versions Debug. Pour plus d’informations sur l’envoi de votre application à l’espace partenaires, consultez la page envois de l' [application](https://docs.microsoft.com/windows/uwp/publish/app-submissions).
 
 ### <a name="validate-your-app-package-locally"></a>Valider votre package d’application localement
 
-1. Dans la dernière **création de Package terminée** page de la **créer des Packages d’application** Assistant, laissez le **ordinateur Local** option est sélectionnée et cliquez sur **lancer Kit de Certification des applications Windows**. Pour plus d’informations sur le test de votre application avec le Kit de certification des applications Windows, voir [Kit de certification des applications Windows](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit).
+1. Dans la page **fin** de la création du package final de l’Assistant **créer des packages d’application** , laissez l’option **ordinateur local** sélectionnée, puis cliquez sur **lancer le kit de certification des applications Windows**. Pour plus d’informations sur le test de votre application avec le Kit de certification des applications Windows, voir [Kit de certification des applications Windows](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit).
 
-    Le Kit de Certification des applications de Windows (Kit) effectue différents tests et retourne les résultats. Voir [Tests du kit de certification des applications Windows](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit-tests) pour plus d'informations spécifiques.
+    Le kit de certification des applications Windows (WACK) effectue différents tests et retourne les résultats. Voir [Tests du kit de certification des applications Windows](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit-tests) pour plus d'informations spécifiques.
 
-    Si vous avez un appareil Windows 10 distant que vous souhaitez utiliser pour le test, vous devrez installer le Kit de Certification des applications Windows manuellement sur cet appareil. La section suivante vous guidera lors de ces étapes. Une fois cette opération terminée, vous pouvez sélectionner **Remote machine**, puis cliquer sur **Launch Windows App Certification Kit** pour vous connecter à l’appareil distant et exécuter les tests de validation.
+    Si vous disposez d’un appareil Windows 10 distant que vous souhaitez utiliser pour le test, vous devez installer manuellement le kit de certification des applications Windows sur cet appareil. La section suivante vous guidera lors de ces étapes. Une fois cette opération terminée, vous pouvez sélectionner **Remote machine**, puis cliquer sur **Launch Windows App Certification Kit** pour vous connecter à l’appareil distant et exécuter les tests de validation.
 
-2. Une fois que le kit a terminé et que votre application a passé la certification, vous êtes prêt à soumettre votre application au centre de partenaires. Assurez-vous de charger le fichier approprié. Vous trouverez l’emplacement par défaut du fichier dans le dossier racine de votre solution `\[AppName]\AppPackages` et se termine avec l’extension de fichier .appxupload ou .msixupload. Le nom doit être au format `[AppName]_[AppVersion]_x86_x64_arm_bundle.appxupload` ou `[AppName]_[AppVersion]_x86_x64_arm_bundle.msixupload` si vous avez opté pour un lot d’applications avec l’ensemble de l’architecture de package sélectionné.
+2. Une fois que WACK est terminé et que votre application a passé la certification, vous êtes prêt à soumettre votre application à l’espace partenaires. Assurez-vous de charger le fichier approprié. L’emplacement par défaut du fichier se trouve dans le dossier racine de votre solution `\[AppName]\AppPackages` et se termine par l’extension de fichier. appxupload ou. msixupload. Le nom se présente sous la forme `[AppName]_[AppVersion]_x86_x64_arm_bundle.appxupload` ou `[AppName]_[AppVersion]_x86_x64_arm_bundle.msixupload` si vous avez opté pour un lot d’applications avec l’ensemble de l’architecture de package sélectionnée.
 
 ### <a name="validate-your-app-package-on-a-remote-windows10-device"></a>Valider votre package d’application sur un appareil Windows 10 distant
 
-1. Activer votre appareil Windows 10 pour le développement en suivant le [activer votre appareil pour le développement](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development) obtenir des instructions.
+1. Activez votre appareil Windows 10 pour le développement en suivant les instructions [activer votre appareil pour le développement](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development) .
     >[!IMPORTANT]
-    > Impossible de valider votre package d’application sur un appareil ARM distant pour Windows 10.
+    > Vous ne pouvez pas valider votre package d’application sur un appareil ARM distant pour Windows 10.
 2. Téléchargez et installez les outils de contrôle à distance de Visual Studio. Ils sont utilisés pour exécuter le kit de certification des applications Windows à distance. Vous pouvez obtenir plus d’informations sur ces outils, y compris sur l’endroit où les télécharger, en consultant [Exécuter les applications UWP sur un ordinateur distant](https://docs.microsoft.com/visualstudio/debugger/run-windows-store-apps-on-a-remote-machine?view=vs-2015).
-3. Télécharger requis [Kit de Certification des applications Windows](https://go.microsoft.com/fwlink/p/?LinkID=309666) , puis installez-le sur votre appareil Windows 10 distant.
+3. Téléchargez le [Kit de certification des applications Windows](https://go.microsoft.com/fwlink/p/?LinkID=309666) requis, puis installez-le sur votre appareil Windows 10 distant.
 4. Sur la page **Package Creation Completed** de l’Assistant, choisissez la case d’option **Remote Machine**, puis choisissez le bouton de sélection en regard du bouton **Test Connection**.
     >[!NOTE]
-    > Le **Machine distante** case d’option est disponible uniquement si vous avez sélectionné au moins une configuration de solution qui prend en charge la validation. Pour plus d’informations sur le test de votre application avec le Kit de certification des applications Windows, voir [Kit de certification des applications Windows](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit).
+    > La case d’option **ordinateur distant** est disponible uniquement si vous avez sélectionné au moins une configuration de solution qui prend en charge la validation. Pour plus d’informations sur le test de votre application avec le Kit de certification des applications Windows, voir [Kit de certification des applications Windows](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit).
 5. Spécifiez une forme d’appareil dans votre sous-réseau, ou fournissez le nom de serveur de nom de domaine (DNS, Domain Name System) ou l’adresse IP d’un appareil en dehors de votre sous-réseau.
 6. Dans la liste **Authentication Mode**, choisissez **None** si votre appareil ne requiert pas d’authentification avec vos informations d’identification Windows.
-7. Choisissez le bouton **Select**, puis le bouton **Launch Windows App Certification Kit**. Si les outils à distance sont en cours d’exécution sur cet appareil, Visual Studio s’y connecte, puis effectue les tests de validation. Consultez [Tests du kit de certification des applications Windows](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit-tests).
+7. Choisissez le bouton **Select**, puis le bouton **Launch Windows App Certification Kit**. Si les outils à distance sont en cours d’exécution sur cet appareil, Visual Studio s’y connecte, puis effectue les tests de validation. Voir [Tests du kit de certification des applications Windows](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit-tests).
 
-## <a name="automate-store-submissions"></a>Automatiser les soumissions de Store
+## <a name="automate-store-submissions"></a>Automatiser les soumissions du magasin
 
-À partir de Visual Studio 2019, vous pouvez envoyer le fichier .appxupload généré pour le Microsoft Store directement à partir de l’IDE d’en sélectionnant le **envoyer automatiquement pour le Microsoft Store, après la validation du Kit de Certification des applications Windows** option à la fin de la [Assistant de créer des Packages d’application](#create-your-app-package-upload-file-using-visual-studio). Cette fonctionnalité s’appuie sur Azure Active Directory pour accéder aux informations de compte de partenaires nécessaires pour publier votre application. Pour utiliser cette fonctionnalité, vous devez associer Azure Active Directory à votre compte espace partenaires et les récupérer plusieurs informations d’identification requises pour les envois.
+À compter de Visual Studio 2019, vous pouvez envoyer le fichier. appxupload généré au Microsoft Store directement à partir de l’IDE en sélectionnant l’option **Envoyer automatiquement au Microsoft Store après la validation du kit de certification des applications Windows** à la fin de la [Assistant Création de packages d’application](#create-your-app-package-upload-file-using-visual-studio). Cette fonctionnalité s’appuie sur Azure Active Directory pour accéder aux informations de compte de l’espace partenaires nécessaires à la publication de votre application. Pour utiliser cette fonctionnalité, vous devez associer Azure Active Directory à votre compte espace partenaires et récupérer plusieurs informations d’identification requises pour les soumissions.
 
 ### <a name="associate-azure-active-directory-with-your-partner-center-account"></a>Associer Azure Active Directory à votre compte espace partenaires
 
-Avant de pouvoir récupérer les informations d’identification sont requises pour les soumissions Store automatique, vous devez suivre ces étapes dans le [tableau de bord de partenaires](https://partner.microsoft.com/dashboard) si vous n'avez pas déjà fait.
+Avant de pouvoir récupérer les informations d’identification requises pour les envois automatiques du magasin, vous devez d’abord suivre ces étapes dans le [tableau de bord espace partenaires](https://partner.microsoft.com/dashboard) , si vous ne l’avez pas déjà fait.
 
-1. [Associer votre compte espace partenaires à Azure Active Directory votre organisation](https://docs.microsoft.com/windows/uwp/publish/associate-azure-ad-with-partner-center). Si votre organisation utilise déjà Office 365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’Azure AD. Sinon, vous pouvez créer un nouveau client à partir d’Azure AD au sein des partenaires sans frais supplémentaires.
+1. [Associez votre compte espace partenaires au Azure Active Directory de votre organisation](https://docs.microsoft.com/windows/uwp/publish/associate-azure-ad-with-partner-center). Si votre organisation utilise déjà Office 365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’Azure AD. Dans le cas contraire, vous pouvez créer un locataire Azure AD à partir de l’espace partenaires sans frais supplémentaires.
 
-2. [Ajouter une application Azure AD à votre compte Centre de partenaire](https://docs.microsoft.com/windows/uwp/publish/add-users-groups-and-azure-ad-applications#add-azure-ad-applications-to-your-partner-center-account). Cette application Azure AD représente l’application ou le service que vous utiliserez pour accéder aux soumissions pour votre compte Centre de développement. Vous devez affecter cette application à la **Manager** rôle. Si cette application existe déjà dans votre annuaire Azure AD, vous pouvez la sélectionner dans la page **Ajouter des applications Azure AD** pour l’ajouter à votre compte du Centre de développement. Sinon, vous pouvez créer une application Azure AD dans la page **Ajouter des applications Azure AD**.
+2. [Ajoutez une application Azure ad à votre compte espace partenaires](https://docs.microsoft.com/windows/uwp/publish/add-users-groups-and-azure-ad-applications#add-azure-ad-applications-to-your-partner-center-account). Cette Azure AD application représente l’application ou le service que vous allez utiliser pour accéder aux soumissions de votre compte Centre de développement. Vous devez affecter cette application au rôle **Gestionnaire** . Si cette application existe déjà dans votre annuaire Azure AD, vous pouvez la sélectionner dans la page **Ajouter des applications Azure AD** pour l’ajouter à votre compte du Centre de développement. Sinon, vous pouvez créer une application Azure AD dans la page **Ajouter des applications Azure AD**.
 
 ### <a name="retrieve-the-credentials-required-for-submissions"></a>Récupérer les informations d’identification requises pour les envois
 
-Ensuite, vous pouvez récupérer les informations d’identification de partenaires requises pour les envois : le **ID de locataire Azure**, le **ID Client** et **clé Client**.
+Ensuite, vous pouvez récupérer les informations d’identification de l’espace partenaires requises pour les envois: l' **ID de locataire Azure**, l' **ID client** et la **clé cliente**.
 
-1. Accédez à la [tableau de bord de partenaires](https://partner.microsoft.com/dashboard) et connectez-vous avec vos informations d’identification Azure AD.
+1. Accédez au tableau de bord de l' [espace partenaires](https://partner.microsoft.com/dashboard) et connectez-vous avec vos informations d’identification de Azure ad.
 
-2. Sur le tableau de bord de partenaires, sélectionnez l’icône d’engrenage (dans le coin supérieur droit du tableau de bord), puis **les paramètres du développeur**.
+2. Dans le tableau de bord de l’espace partenaires, sélectionnez l’icône d’engrenage (près de l’angle supérieur droit du tableau de bord), puis sélectionnez **paramètres du développeur**.
 
-3. Dans le **paramètres** menu dans le volet gauche, cliquez sur **utilisateurs**.
+3. Dans le menu **paramètres** du volet gauche, cliquez sur **utilisateurs**.
 
-4. Cliquez sur le nom de votre application Azure AD pour accéder aux paramètres de l’application. Dans cette page, copiez le **ID de locataire** et **ID Client** valeurs.
+4. Cliquez sur le nom de votre application Azure AD pour accéder aux paramètres de l’application. Dans cette page, copiez l' **ID de locataire** et les valeurs d' **ID client** .
 
-5. Dans le **clés** , cliquez sur **ajouter une nouvelle clé**. Sur l’écran suivant, copiez le **clé** valeur, qui correspond à la clé secrète client. Vous ne serez pas en mesure d’accéder à ces informations à nouveau une fois que vous quittez cette page, veillez à ne pas le perdre. Pour plus d’informations, voir [Gérer les clés pour une application Azure AD](https://docs.microsoft.com/windows/uwp/publish/add-users-groups-and-azure-ad-applications#manage-keys-for-an-azure-ad-application).
+5. Dans la section **clés** , cliquez sur **Ajouter une nouvelle clé**. Dans l’écran suivant, copiez la valeur de clé qui correspond à la **clé** secrète client. Vous ne pourrez plus accéder à ces informations une fois que vous aurez quitté cette page, veillez à ne pas les perdre. Pour plus d’informations, voir [Gérer les clés pour une application Azure AD](https://docs.microsoft.com/windows/uwp/publish/add-users-groups-and-azure-ad-applications#manage-keys-for-an-azure-ad-application).
 
-### <a name="configure-automatic-store-submissions-in-visual-studio"></a>Configurer automatiques soumissions de Store dans Visual Studio
+### <a name="configure-automatic-store-submissions-in-visual-studio"></a>Configurer les envois de banque automatique dans Visual Studio
 
-Après avoir terminé les étapes précédentes, vous pouvez configurer automatiques soumissions de Store dans Visual Studio 2019.
+Une fois les étapes précédentes terminées, vous pouvez configurer les envois de banque automatique dans Visual Studio 2019.
 
-1. À la fin de la [Assistant de créer des Packages d’application](#create-your-app-package-upload-file-using-visual-studio), sélectionnez **envoyer automatiquement pour le Microsoft Store, après la validation du Kit de Certification des applications Windows** et cliquez sur **reconfigurer**.
+1. À la fin de l' [Assistant Création de packages d’application](#create-your-app-package-upload-file-using-visual-studio), sélectionnez **envoyer automatiquement au Microsoft Store après la validation du kit de certification des applications Windows** , puis cliquez sur reconfigurer.
 
-2. Dans le **les paramètres d’envoi de Microsoft Store configurer** boîte de dialogue, entrez la clé de locataire Azure ID, ID de Client et Client.
+2. Dans la boîte de dialogue **configurer les paramètres d’envoi Microsoft Store** , entrez l’ID de locataire, l’ID de client et la clé client Azure.
 
-    ![Configurer les paramètres d’envoi de Microsoft Store](images/packaging-screen8.jpg)
+    ![Configurer les paramètres d’envoi Microsoft Store](images/packaging-screen8.jpg)
 
     > [!Important]
-    > Vos informations d’identification peuvent être enregistrées dans votre profil à utiliser dans les soumissions futures
+    > Vos informations d’identification peuvent être enregistrées dans votre profil pour être utilisées dans de futures soumissions.
 
 3. Cliquez sur **OK**.
 
-L’envoi démarre une fois le test kit ont terminé. Vous pouvez suivre la progression de la soumission dans le **vérifier et publier** fenêtre.
+La soumission démarre une fois le test WACK terminé. Vous pouvez suivre la progression de l’envoi dans la fenêtre **vérifier et publier** .
 
-![Vérifier et la progression de la publication](images/packaging-screen9.jpg)
+![Progression de la vérification et de la publication](images/packaging-screen9.jpg)
 
 ## <a name="sideload-your-app-package"></a>Charger de manière indépendante votre package d’application
 
-Des packages d’application UWP, les applications ne sont pas installées sur un appareil comme ils le sont dans les applications de bureau. En règle générale, vous téléchargez les applications UWP à partir du Microsoft Store, ce qui installe également l’application sur votre appareil automatiquement. Les applications peuvent être installées sans être publiées dans le Store (chargement indépendant). Cela vous permet d’installer et tester des applications à l’aide du package d’application de fichiers que vous avez créée. Si vous disposez d’une application que vous ne voulez pas vendre dans le Store (une application métier par exemple), vous pouvez charger cette application de manière indépendante pour que les autres utilisateurs de votre société puissent l’utiliser.
+Avec les packages d’application UWP, les applications ne sont pas installées sur un appareil, comme c’est le cas avec les applications de bureau. En règle générale, vous téléchargez les applications UWP à partir du Microsoft Store, ce qui installe également l’application sur votre appareil automatiquement. Les applications peuvent être installées sans être publiées dans le Store (chargement indépendant). Cela vous permet d’installer et de tester des applications à l’aide du fichier de package d’application que vous avez créé. Si vous disposez d’une application que vous ne voulez pas vendre dans le Windows Store (une application métier par exemple), vous pouvez charger cette application de manière indépendante pour que les autres utilisateurs de votre société puissent l’utiliser.
 
-Vous pouvez charger une version test de votre application sur un appareil cible, vous devez [activer votre appareil pour le développement](../get-started/enable-your-device-for-development.md).
+Avant de pouvoir chargement votre application sur un appareil cible, vous devez [activer votre appareil pour le développement](../get-started/enable-your-device-for-development.md).
 
-Chargement de version test votre application sur un appareil Windows 10 Mobile, utilisez le [WinAppDeployCmd.exe](install-universal-windows-apps-with-the-winappdeploycmd-tool.md) outil. Pour les ordinateurs de bureau, ordinateurs portables et tablettes, suivez les instructions ci-dessous.
+Pour chargement votre application sur un appareil Windows 10 mobile, utilisez l’outil [WinAppDeployCmd. exe](install-universal-windows-apps-with-the-winappdeploycmd-tool.md) . Pour les ordinateurs de bureau, les ordinateurs portables et les tablettes, suivez les instructions ci-dessous.
 
-### <a name="sideload-your-app-package-on-windows-10-anniversary-update-or-later"></a>Chargement de version test de votre application package sur la mise à jour anniversaire de Windows 10 ou version ultérieure
+### <a name="sideload-your-app-package-on-windows-10-anniversary-update-or-later"></a>Chargement votre package d’application sur la mise à jour anniversaire Windows 10 ou version ultérieure
 
-Introduite dans Windows 10 mise à jour anniversaire (Windows 10, version 1607), des packages d’application peuvent être installés simplement en double-cliquant sur le fichier de package d’application. Pour utiliser cela, accédez à votre package d’application ou d’un fichier de groupement d’application et double-cliquez dessus. [Programme d’installation de l’application](https://docs.microsoft.com/windows/msix/app-installer/app-installer-root) lance et fournit les informations de l’application de base mais aussi un bouton Installer, barre de progression d’installation et les messages d’erreur pertinentes.
+Introduite dans la mise à jour anniversaire Windows 10 (Windows 10, version 1607), les packages d’application peuvent être installés simplement en double-cliquant sur le fichier de package d’application. Pour ce faire, accédez à votre fichier de package d’application ou de lot d’applications, puis double-cliquez dessus. Le [programme d’installation](https://docs.microsoft.com/windows/msix/app-installer/app-installer-root) de l’application démarre et fournit les informations de base de l’application, ainsi qu’un bouton installer, la barre de progression de l’installation et tous les messages d’erreur pertinents.
 
 ![Affichage d'un programme d’installation d'application pour l’installation d’un exemple d’application appelée Contoso](images/appinstaller-screen.png)
 
 > [!NOTE]
-> Programme d’installation de l’application part du principe que l’application est approuvée par l’appareil. Si vous chargez de manière indépendante une application de développeur ou d’entreprise, vous devez installer le certificat de signature dans le magasin de personnes autorisées ou d'éditeurs autorisés sur l'appareil. Si vous ne savez pas comment procéder, voir [Installation de certificats de test](https://docs.microsoft.com/windows-hardware/drivers/install/installing-test-certificates).
+> Le programme d’installation de l’application suppose que l’application est approuvée par l’appareil. Si vous chargez de manière indépendante une application de développeur ou d’entreprise, vous devez installer le certificat de signature dans le magasin de personnes autorisées ou d'éditeurs autorisés sur l'appareil. Si vous ne savez pas comment procéder, voir [Installation de certificats de test](https://docs.microsoft.com/windows-hardware/drivers/install/installing-test-certificates).
 
-### <a name="sideload-your-app-package-on-previous-versions-of-windows"></a>Chargement indépendant de votre application du package sur les versions précédentes de Windows
+### <a name="sideload-your-app-package-on-previous-versions-of-windows"></a>Chargement de votre package d’application sur les versions précédentes de Windows
 
 1.  Copiez les dossiers pour la version de l'application à installer sur l’appareil cible.
 
@@ -217,10 +220,10 @@ Introduite dans Windows 10 mise à jour anniversaire (Windows 10, version 1607),
 
 2.  Sur l’appareil cible, ouvrez le dossier `*_Test`.
 3.  Cliquez avec le bouton droit sur le fichier **Add-AppDevPackage.ps1**. Choisissez **Exécuter avec PowerShell** et suivez les invites.  
-    ![Explorateur de fichiers accédé à un script PowerShell indiqué](images/packaging-screen7.jpg)
+    ![Explorateur de fichiers accédé au script PowerShell affiché](images/packaging-screen7.jpg)
 
-    Lorsque le package d’application a été installé, la fenêtre PowerShell affiche ce message : **Votre application a été installée correctement.**
+    Lorsque le package d’application a été installé, la fenêtre PowerShell affiche ce message: **Votre application a été correctement installée.**
     >[!TIP]
-    > Pour ouvrir le menu contextuel sur une tablette, touchez l’écran où vous souhaitez avec le bouton droit, maintenez jusqu'à ce qu’apparaisse un cercle complet, puis relevez votre doigt. Le menu contextuel s’ouvre quand vous levez le doigt.
+    > Pour ouvrir le menu contextuel sur une tablette, touchez l’écran où vous souhaitez cliquer avec le bouton droit, maintenez la touche enfoncée jusqu’à ce qu’un cercle complet apparaisse, puis soulevez le doigt. Le menu contextuel s’ouvre quand vous levez le doigt.
 
 4.  Cliquez sur le bouton Démarrer pour rechercher l'application par son nom, puis lancez-la.
