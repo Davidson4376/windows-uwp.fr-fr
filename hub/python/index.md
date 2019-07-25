@@ -7,17 +7,17 @@ ms.author: mattwoj
 manager: jken
 ms.topic: landing-page
 ms.date: 07/19/2019
-keywords: Windows, développement python
-ms.openlocfilehash: efaa587578fef891f9b870c9f357f19c5f8e5bb7
-ms.sourcegitcommit: afb5157ec4bcb6588ac4cf74352688b30ed32257
+keywords: windows, développement python, comment commencer avec python sur windows, python sur le sous-système windows pour linux, python avec wsl, configurer un environnement de développement pour python sur windows, IDE pour python sur Windows, où python est installé sur windows, exécuter python sur windows, python pour débutants sur windows
+ms.openlocfilehash: 7711230b141c57135e1cda3f68416f0ed5287eac
+ms.sourcegitcommit: 210034519678ba1a59744bc3a0b613b000921537
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68349332"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68473650"
 ---
 # <a name="develop-with-python-on-windows"></a>Développer avec Python sur Windows
 
-Que vous soyez développeur chevronné ou débutant, l’une des décisions les plus importantes que vous devez prendre est le type de matériel et l’environnement de développement à utiliser. Windows réalise actuellement des progrès significatifs pour mieux prendre en charge les développeurs Python. Commencez ici pour trouver des indications sur la façon de configurer votre environnement de développement, sur l’installation de vos outils sur Windows natif ou un sous-système Windows pour Linux, et sur la façon d’intégrer des outils comme VS Code et Git.
+Que vous soyez développeur chevronné ou que vous commenciez juste à développer avec Python, l’une des décisions les plus importantes que vous devez prendre concerne l’environnement de développement à utiliser. Commencez ici pour obtenir des indications sur la configuration de votre environnement de développement, sur l’installation de vos outils sur Windows natif ou un sous-système Windows pour Linux, et sur la façon d’intégrer des outils comme VS Code et Git. Actuellement, Windows apporte des améliorations significatives pour prendre en charge les développeurs Python, et nous aimerions vous aider à commencer.
 
 <ul class="cardsK panelContent">
     <li>

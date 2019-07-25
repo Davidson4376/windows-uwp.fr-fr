@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, forte, faible, référence
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 77fcd8369b2df3fdb42facf9d2b2a1d93188322b
-ms.sourcegitcommit: 8b4c1fdfef21925d372287901ab33441068e1a80
+ms.openlocfilehash: 3ad6bb9a98b0fe2a699580001698740e44cea14f
+ms.sourcegitcommit: cba3ba9b9a9f96037cfd0e07d05bd4502753c809
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67844322"
+ms.lasthandoff: 07/14/2019
+ms.locfileid: "67870318"
 ---
 # <a name="strong-and-weak-references-in-cwinrt"></a>Références fortes et faibles en C++/WinRT
 
@@ -197,12 +197,13 @@ int main()
 }
 ```
 
-Dans ce modèle, le destinataire de l’événement a un gestionnaire d’événements lambda avec des dépendances à son pointeur *this*. Chaque fois que la durée de vie du destinataire de l’événement dépasse celle de la source d’événements, elle dépasse également celle de ces dépendances. Et, dans ce cas (qui est courant), le modèle fonctionne bien. Certains de ces cas sont évidents, par exemple, lorsqu’une page d’interface utilisateur gère un événement déclenché par un contrôle qui se trouve dans la page. La durée de vie de la page dépasse celle du bouton, par conséquent, la durée de vie du gestionnaire dépasse également celle du bouton. Ceci est vrai chaque fois que le destinataire est le propriétaire de la source (comme membre de données, par exemple), ou chaque fois que le destinataire et la source sont frère/sœur et appartiennent directement à un autre objet. Il existe un autre cas ne présentant aucun risque. Il s’agit du moment où la source d’événements déclenche ses événements de manière synchrone. Vous pouvez alors révoquer votre gestionnaire en ayant la certitude qu’aucun événement supplémentaire ne sera reçu.
+Dans ce modèle, le destinataire de l’événement a un gestionnaire d’événements lambda avec des dépendances à son pointeur *this*. Chaque fois que la durée de vie du destinataire de l’événement dépasse celle de la source d’événements, elle dépasse également celle de ces dépendances. Et, dans ce cas (qui est courant), le modèle fonctionne bien. Certains de ces cas sont évidents, par exemple, lorsqu’une page d’interface utilisateur gère un événement déclenché par un contrôle qui se trouve dans la page. La durée de vie de la page dépasse celle du bouton, par conséquent, la durée de vie du gestionnaire dépasse également celle du bouton. Ceci est vrai chaque fois que le destinataire est le propriétaire de la source (comme membre de données, par exemple), ou chaque fois que le destinataire et la source sont frère/sœur et appartiennent directement à un autre objet.
 
 Quand il existe un cas où vous êtes certain que le gestionnaire ne survivra pas au *this* dont il dépend, vous pouvez capturer *this* normalement, sans tenir compte de la durée de vie forte ou faible.
 
 Il existe cependant des cas où *this* ne survit pas à son utilisation dans un gestionnaire (y compris les gestionnaires d’événements de progression et d’achèvement déclenchés par des actions et opérations asynchrones), et il est important de savoir comment les gérer.
 
+- Quand une source d’événements déclenche ses événements de façon *synchrone*, vous pouvez révoquer votre gestionnaire pour être sûr de ne plus recevoir d’événements. Toutefois, pour les événements asynchrones, un événement en cours peut atteindre votre objet une fois qu’il a commencé sa destruction, même après une révocation (en particulier lorsque vous révoquez au sein du destructeur). Vous pouvez atténuer le problème en recherchant un emplacement pour vous désabonner avant de commencer la destruction, mais vous découvrirez une solution robuste en continuant de lire cet article.
 - Si vous créez une coroutine pour implémenter une méthode asynchrone, alors cela est possible.
 - Dans de rares cas, avec certains objets du framework de l’interface utilisateur XAML ([**SwapChainPanel**](/uwp/api/windows.ui.xaml.controls.swapchainpanel), par exemple), cela est possible, si le destinataire est finalisé sans désinscription de la source d’événement.
 
@@ -252,7 +253,7 @@ Dans les deux cas, nous allons simplement capturer le pointeur *this* brut. Cela
 
 ### <a name="the-solution"></a>La solution
 
-La solution consiste à capturer une référence forte. Une référence forte *incrémente* le nombre de références et *préserve* l’objet actuel. Il vous suffit de déclarer une variable de capture (appelée `strong_this` dans cet exemple) et de l’initialiser avec un appel à [**implements.get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function), qui récupère une référence forte à notre pointeur *this*.
+La solution consiste à capturer une référence forte (ou, comme nous le verrons, une référence faible si celle-ci est plus appropriée). Une référence forte *incrémente* le nombre de références et *préserve* l’objet actuel. Il vous suffit de déclarer une variable de capture (appelée `strong_this` dans cet exemple) et de l’initialiser avec un appel à [**implements.get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function), qui récupère une référence forte à notre pointeur *this*.
 
 > [!IMPORTANT]
 > Étant donné que **get_strong** est une fonction membre du modèle struct **winrt::implements**, vous pouvez l’appeler uniquement à partir d’une classe qui dérive directement ou indirectement de **winrt::implements**, comme la classe C++/WinRT. Pour plus d’informations sur la dérivation à partir de **winrt::implements**, et pour obtenir des exemples, consultez [Créer des API avec C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis).
@@ -273,7 +274,7 @@ event_source.Event([strong_this { get_strong()}](auto&& ...)
 });
 ```
 
-Si une référence forte ne convient pas, vous pouvez appeler à la place [**implements::get_weak**](/uwp/cpp-ref-for-winrt/implements#implementsget_weak-function) pour récupérer une référence faible au pointeur *this*. Vérifiez simplement que vous pouvez toujours récupérer une référence forte avant d’accéder aux membres.
+Si une référence forte ne convient pas, vous pouvez appeler à la place [**implements::get_weak**](/uwp/cpp-ref-for-winrt/implements#implementsget_weak-function) pour récupérer une référence faible au pointeur *this*. Une référence faible ne maintient *pas* l’activité de l’objet actuel. Vérifiez donc simplement que vous pouvez toujours récupérer une référence forte à partir de la référence faible avant d’accéder aux membres.
 
 ```cppwinrt
 event_source.Event([weak_this{ get_weak() }](auto&& ...)
@@ -284,6 +285,8 @@ event_source.Event([weak_this{ get_weak() }](auto&& ...)
     }
 });
 ```
+
+Si vous capturez un pointeur brut, vous devrez vous assurer de maintenir l’objet pointé actif.
 
 ### <a name="if-you-use-a-member-function-as-a-delegate"></a>Si vous utilisez une fonction membre comme délégué
 
@@ -314,11 +317,15 @@ Pour une référence forte, appelez [**get_strong**](/uwp/cpp-ref-for-winrt/impl
 event_source.Event({ get_strong(), &EventRecipient::OnEvent });
 ```
 
+Capturer une référence forte signifie que votre objet deviendra éligible pour la destruction uniquement lorsque l’inscription du gestionnaire sera annulée et que tous les rappels en attente seront retournés. Toutefois, cette garantie n’est valide qu’au moment où l’événement est déclenché. Si votre gestionnaire d’événements est asynchrone, vous devrez fournir à votre coroutine une référence forte à l’instance de classe avant le premier point d’interruption (pour obtenir plus d’informations et du code, consultez la section [Accès sécurisé au pointeur *this* dans une coroutine de membre de classe](#safely-accessing-the-this-pointer-in-a-class-member-coroutine) plus haut dans cette rubrique). Cependant, cela crée une référence circulaire entre la source d’événement et votre objet que vous devez donc rompre explicitement en révoquant votre événement.
+
 Pour une référence faible, appelez [**get_weak**](/uwp/cpp-ref-for-winrt/implements#implementsget_weak-function). C++/WinRT garantit que le délégué résultant conserve une référence faible. À la dernière minute, et en arrière-plan, le délégué tente de résoudre la référence faible en une référence forte, et n’appelle la fonction membre qu’en cas de réussite.
 
 ```cppwinrt
 event_source.Event({ get_weak(), &EventRecipient::OnEvent });
 ```
+
+Si le délégué *appelle* votre fonction membre, C++/WinRT maintiendra votre objet actif jusqu’au retour de votre gestionnaire. Toutefois, votre gestionnaire retourne aux points d’interruption s’il est asynchrone. Vous devez donc fournir à votre coroutine une référence forte à l’instance de classe avant le premier point d’interruption. Une fois de plus, pour plus d’informations, consultez la section [Accès sécurisé au pointeur *this* dans une coroutine de membre de classe](#safely-accessing-the-this-pointer-in-a-class-member-coroutine) plus haut dans cette rubrique.
 
 ### <a name="a-weak-reference-example-using-swapchainpanelcompositionscalechanged"></a>Exemple de référence faible utilisant **SwapChainPanel::CompositionScaleChanged**
 

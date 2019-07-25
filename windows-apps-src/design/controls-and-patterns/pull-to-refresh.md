@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 2efd091d90a856e45d76c0b1357f30417812160a
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 8fdde696a0bc1dc7706f89ede5d525194e5d2830
+ms.sourcegitcommit: f0e539359b9766db0339ddbae3f7ccf0069011e8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63791531"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67885661"
 ---
 # <a name="pull-to-refresh"></a>Tirer pour actualiser
 
@@ -183,6 +183,8 @@ private void Visualizer_RefreshStateChanged(RefreshVisualizer sender, RefreshSta
 ## <a name="examples"></a>Exemples
 
 ### <a name="using-a-scrollviewer-in-a-refreshcontainer"></a>Utilisation d’un ScrollViewer dans un RefreshContainer
+> [!NOTE]
+> Le contenu d’un RefreshContainer doit être un contrôle avec défilement, par exemple ScrollViewer, GridView, ListView, etc. Définir le contenu sur un contrôle de type Grille provoquera un comportement non défini.
 
 Cet exemple montre comment utiliser la commande Tirer pour actualiser avec une visionneuse à défilement.
 

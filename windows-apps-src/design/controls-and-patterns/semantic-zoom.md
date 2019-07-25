@@ -11,12 +11,12 @@ pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c8cc237dec082096eb235237490e4f5d29cc6dd
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: c655fbf5582ae5abbb3f415e6e0778b9c64ca7fd
+ms.sourcegitcommit: 04683376dbdbff987601f546f058748442170068
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66364320"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68340832"
 ---
 # <a name="semantic-zoom"></a>Zoom sémantique
 
@@ -76,7 +76,7 @@ Un carnet d’adresses est un autre exemple de jeu de données dans lequel la na
 Le contrôle **SemanticZoom** n’a pas de représentation visuelle propre. Il s’agit d’un contrôle hôte qui gère la transition entre 2 autres contrôles qui fournissent les vues de votre contenu, généralement les contrôles **ListView** ou **GridView**.  Vous définissez les contrôles d’affichage sur les propriétés [ZoomedInView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.semanticzoom.zoomedinview) et [ZoomedOutView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.semanticzoom.zoomedoutview) de SemanticZoom.
 
 Les 3 éléments dont vous avez besoin pour un zoom sémantique sont les suivants :
-- Une source de données regroupées
+- Une source de données regroupées. (Les groupes sont définis par la définition GroupStyle dans la vue avec zoom avant.)
 - Une vue avec zoom avant qui affiche les données au niveau de l’élément.
 - Une vue avec zoom arrière qui affiche les données au niveau du groupe.
 

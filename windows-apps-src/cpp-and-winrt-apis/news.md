@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, actualités, nouveautés, nouveau
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 537150f6fc000794b11ef9236bfd88469d3f6b19
-ms.sourcegitcommit: 5d71c97b6129a4267fd8334ba2bfe9ac736394cd
+ms.openlocfilehash: 524d0f2d9e428e87187ca27747fbd1c54406d345
+ms.sourcegitcommit: 6cc8b231c1b970112d26a7696cc3e907082ef2be
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67800584"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68308441"
 ---
 # <a name="whats-new-in-cwinrt"></a>Nouveautés de C++/WinRT
 
@@ -28,7 +28,7 @@ Pour plus d’informations sur l’[ extension Visual Studio C++/WinRT (VSIX)](h
 
 - L’outil `cppwinrt.exe` est désormais inclus dans le package NuGet Microsoft.Windows.CppWinRT et il génère des en-têtes de projection de plateforme pour chaque projet à la demande. Par conséquent, l’outil `cppwinrt.exe` ne dépend plus du SDK Windows (même s’il est toujours fourni avec le SDK pour des raisons de compatibilité).
 - `cppwinrt.exe` génère maintenant des en-têtes de projection sous chaque dossier intermédiaire spécifique de la plateforme/configuration ($IntDir) pour activer des builds parallèles.
-- La prise en charge des builds C++/WinRT (propriétés/cibles) est maintenant entièrement documentée, au cas où vous souhaiteriez personnaliser manuellement vos fichiers projet. Consultez [Package NuGet Microsoft.Windows.CppWinRT](https://github.com/Microsoft/xlang/blob/master/src/package/cppwinrt/nuget/readme.md).
+- La prise en charge des builds C++/WinRT (propriétés/cibles) est maintenant entièrement documentée, au cas où vous souhaiteriez personnaliser manuellement vos fichiers projet. Consultez le fichier [Lisez-moi](https://github.com/microsoft/xlang/tree/master/src/package/cppwinrt/nuget/readme.md#customizing) du package NuGet Microsoft.Windows.CppWinRT.
 - De nombreuses corrections de bogues ont été effectuées.
 
 ### <a name="changes-to-cwinrt-for-version-20"></a>Modifications apportées à C++/WinRT pour la version 2.0

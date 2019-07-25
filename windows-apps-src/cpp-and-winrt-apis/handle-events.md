@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projeté, projection, gérer, événement, délégué
 ms.localizationpriority: medium
-ms.openlocfilehash: 194fd9041b76acb1ef76288fed21c8098462b406
-ms.sourcegitcommit: 8b4c1fdfef21925d372287901ab33441068e1a80
+ms.openlocfilehash: b64fbe93198af95402161873c1d68d0da41f33f7
+ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67844338"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68270112"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrt"></a>Gérer des événements en utilisant des délégués en C++/WinRT
 
@@ -126,7 +126,9 @@ MainPage::MainPage()
 
 ## <a name="revoke-a-registered-delegate"></a>Révoquer un délégué inscrit
 
-Lorsque vous inscrivez un délégué, un jeton vous est généralement retourné. Vous pouvez par la suite utiliser ce jeton pour révoquer votre délégué ; ce qui signifie que le délégué est désinscrit de l’événement et ne sera pas appelé si l’événement est de nouveau déclenché. Par souci de simplicité, aucun des exemples de code ci-dessus ne montre comment procéder. Toutefois, l’exemple de code suivant stocke le jeton dans le membre de données privées de la structure et révoque son gestionnaire dans le destructeur.
+Lorsque vous inscrivez un délégué, un jeton vous est généralement retourné. Vous pouvez par la suite utiliser ce jeton pour révoquer votre délégué ; ce qui signifie que le délégué est désinscrit de l’événement et ne sera pas appelé si l’événement est de nouveau déclenché.
+
+Par souci de simplicité, aucun des exemples de code ci-dessus ne montre comment procéder. Toutefois, l’exemple de code suivant stocke le jeton dans le membre de données privées de la structure et révoque son gestionnaire dans le destructeur.
 
 ```cppwinrt
 struct Example : ExampleT<Example>
@@ -150,6 +152,9 @@ private:
 ```
 
 Au lieu d’une référence forte, comme dans l’exemple ci-dessus, vous pouvez stocker une référence faible sur le bouton (voir [Références fortes et faibles en C++/WinRT](weak-references.md)).
+
+> [!NOTE]
+> Quand une source d’événements déclenche ses événements de façon synchrone, vous pouvez révoquer votre gestionnaire pour être sûr de ne plus recevoir d’événements. Toutefois, pour les événements asynchrones, un événement en cours peut atteindre votre objet une fois qu’il a commencé sa destruction, même après une révocation (en particulier lorsque vous révoquez au sein du destructeur). Vous pouvez atténuer le problème en recherchant un emplacement pour vous désabonner avant de commencer la destruction, mais vous découvrirez une solution robuste en consultant la section [Accès sécurisé au pointeur *this* avec un délégué de gestion des événements](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate).
 
 Autre possibilité, lorsque vous inscrivez un délégué, vous pouvez spécifier **winrt::auto_revoke** (qui est une valeur de type [**winrt::auto_revoke_t**](/uwp/cpp-ref-for-winrt/auto-revoke-t)) pour demander un révocateur d’événement (de type [**winrt::event_revoker**](/uwp/cpp-ref-for-winrt/event-revoker)). Le révocateur d'événement contient pour vous une référence faible à la source de l’événement (l’objet qui déclenche l’événement). Vous pouvez révoquer manuellement en appelant la fonction membre **event_revoker::revoke** ; mais le révocateur d'événement appelle cette fonction lui-même automatiquement lorsqu'il est hors de portée. La fonction **revoke** vérifie si la source d’événement existe toujours et, si tel est le cas, révoque votre délégué. Dans cet exemple, il n’est pas nécessaire de stocker la source d’événement ni d’avoir un destructeur.
 
