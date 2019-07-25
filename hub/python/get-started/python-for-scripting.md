@@ -10,12 +10,12 @@ ms.technology: hub
 keywords: Python, Windows 10, Microsoft, l’administration de système Python, l’automatisation de fichier Python, les scripts Python sur Windows, la configuration de Python sur Windows, l’environnement de développement Python sur Windows, l’environnement de développement Python sur Windows, Python avec PowerShell, scripts Python pour tâches du système de fichiers
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 0571d442d17cdac8989df10d7c11f3e762ab6fb6
-ms.sourcegitcommit: afb5157ec4bcb6588ac4cf74352688b30ed32257
+ms.openlocfilehash: b34bf61f4ce4d2157df572cfbbc9337fced6cf2f
+ms.sourcegitcommit: 210034519678ba1a59744bc3a0b613b000921537
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68349366"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68473666"
 ---
 # <a name="get-started-using-python-on-windows-for-scripting-and-automation"></a>Prise en main de Python sur Windows pour l’écriture de scripts et l’automatisation
 
@@ -23,10 +23,9 @@ Voici un guide pas à pas pour la configuration de votre environnement de dével
 
 ## <a name="set-up-your-development-environment"></a>Configurer votre environnement de développement
 
-Lorsque vous utilisez Python pour écrire des scripts qui effectuent des opérations de système de fichiers, nous vous recommandons [d’installer Python à partir de la Microsoft Store](https://www.microsoft.com/en-us/p/python-37/9nj46sx7x90p?activetab=pivot:overviewtab). 
+Lorsque vous utilisez Python pour écrire des scripts qui effectuent des opérations de système de fichiers, nous vous recommandons [d’installer Python à partir de la Microsoft Store](https://www.microsoft.com/en-us/p/python-37/9nj46sx7x90p?activetab=pivot:overviewtab). L’installation via le Microsoft Store utilise l’interpréteur de base Python3, mais gère la configuration de vos paramètres de chemin d’accès pour l’utilisateur actuel (évitant ainsi la nécessité d’un accès administrateur), en plus de fournir des mises à jour automatiques.
 
-> [!IMPORTANT]
-> Si vous utilisez Python sur Windows pour le **développement Web**, nous vous recommandons d’utiliser une configuration différente pour votre environnement de développement. Au lieu d’installer directement sur Windows, installez python via le sous-système Windows pour Linux. Vous trouverez une procédure pas à pas dans notre guide: [Prise en main de Python pour le développement Web sur Windows](./python-for-web.md). Si vous êtes novice en Python, essayez notre guide: [Commencez à utiliser Python sur Windows pour les débutants](./python-for-education.md). <br>Pour certains scénarios avancés, vous souhaiterez peut-être télécharger une version de Python spécifique directement à partir de [Python.org](https://www.python.org/downloads/windows/) ou envisager d’installer une [alternative](https://www.python.org/download/alternatives), telle que Anaconda, Jython, PyPy, WinPython, IronPython, etc. Nous vous recommandons de le faire uniquement si vous êtes un programmeur Python plus avancé avec une raison spécifique de choisir une autre implémentation.
+Si vous utilisez Python pour le **développement Web** sur Windows, nous vous recommandons une configuration différente à l’aide du sous-système Windows pour Linux. Vous trouverez une procédure pas à pas dans notre guide: [Prise en main de Python pour le développement Web sur Windows](./python-for-web.md). Si vous êtes novice en Python, essayez notre guide: [Commencez à utiliser Python sur Windows pour les débutants](./python-for-education.md). Pour certains scénarios avancés (tels que la nécessité d’accéder aux fichiers installés de Python ou de les modifier, de créer des copies de fichiers binaires ou d’utiliser directement des dll Python), vous pouvez télécharger une version de Python spécifique directement à partir de [Python.org](https://www.python.org/downloads/) ou envisager d’installer une [alternative](https://www.python.org/download/alternatives), telle que Anaconda, Jython, PyPy, WinPython, IronPython, etc. Nous vous recommandons de le faire uniquement si vous êtes un programmeur Python plus avancé avec une raison spécifique de choisir une autre implémentation.
 
 ## <a name="install-python"></a>Installer python
 

@@ -1,6 +1,6 @@
 ---
 title: Ressources pour le développement avec Python sur Windows
-description: Liste de ressources pour le développement avec Python sur Windows.
+description: Liste de ressources pour développer avec Python sur Windows.
 author: mattwojo
 ms.author: mattwoj
 manager: jken
@@ -10,12 +10,12 @@ ms.technology: hub
 keywords: Python, Microsoft, Windows 10, didacticiels, cours en ligne, Blogs, événements
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: ffcb2b280077d96b0405691976e04fc82959cf4c
-ms.sourcegitcommit: afb5157ec4bcb6588ac4cf74352688b30ed32257
+ms.openlocfilehash: a987043735dd433288fd53090cf3623b035fad7d
+ms.sourcegitcommit: 210034519678ba1a59744bc3a0b613b000921537
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68349375"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68473633"
 ---
 # <a name="resources-for-developing-with-python-on-windows"></a>Ressources pour le développement avec Python sur Windows
 
@@ -24,6 +24,8 @@ Liste de liens que nous recommandons pour les développeurs Python qui travaille
 ## <a name="general"></a>Généralités
 
 - [Blogs de développement Microsoft: Python](https://devblogs.microsoft.com/python/): Lisez les dernières mises à jour relatives à tous les éléments de Python chez Microsoft.
+
+- [Didacticiel détaillé sur le développement Linux sur Windows avec WSL et Visual Studio code](https://devblogs.microsoft.com/commandline/an-in-depth-tutorial-on-linux-development-on-windows-with-wsl-and-visual-studio-code/): Procédure pas à pas de configuration de votre environnement dev, création d’une application Python et débogage.
 
 - [Utilisation de Python sur Windows](https://docs.python.org/3/using/windows.html): Cette documentation Python.org fournit une vue d’ensemble du comportement spécifique à Windows que vous devez connaître lors de l’utilisation de Python sur Microsoft Windows.
 
