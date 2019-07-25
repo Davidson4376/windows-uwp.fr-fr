@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, introduction
 ms.localizationpriority: medium
-ms.openlocfilehash: da8452329e353c0bbb4b0cedbfe269fd239f9c78
-ms.sourcegitcommit: 5d71c97b6129a4267fd8334ba2bfe9ac736394cd
+ms.openlocfilehash: 87ab033ddd9de92922f043a069b793ca101307d0
+ms.sourcegitcommit: 6cc8b231c1b970112d26a7696cc3e907082ef2be
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67800569"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68308444"
 ---
 # <a name="introduction-to-cwinrt"></a>Introduction à C++/WinRT
 &nbsp;
@@ -62,7 +62,7 @@ Avec votre système défini comme décrit ci-dessus, vous pourrez créer et gén
 
 Avec C++/WinRT, vous pouvez également implémenter vos propres classes runtime en utilisant du code C++ standard, sans avoir recours à une programmation de style COM. Pour une classe runtime, vous décrivez seulement vos types dans un fichier IDL. `midl.exe` et `cppwinrt.exe` génèrent alors automatiquement vos fichiers de code source de modèle d’implémentation. Vous pouvez également implémenter simplement des interfaces en dérivant d’une classe de base C++/WinRT. Pour plus d’informations, consultez [Créer des API avec C++/WinRT](author-apis.md).
 
-Pour obtenir la liste des options de personnalisation de l’outil `cppwinrt.exe`, définies par le biais des propriétés du projet, consultez [https://github.com/microsoft/xlang/tree/master/src/package/cppwinrt/nuget/readme.md#customizing ].
+Pour obtenir la liste des options de personnalisation pour l’outil `cppwinrt.exe` qui est défini via les propriétés de projet, consultez le fichier [Lisez-moi](https://github.com/microsoft/xlang/tree/master/src/package/cppwinrt/nuget/readme.md#customizing) du package NuGet Microsoft.Windows.CppWinRT.
 
 Vous pouvez identifier un projet qui utilise la prise en charge MSBuild C++/WinRT par la présence du package NuGet **Microsoft.Windows.CppWinRT** installé dans le projet.
 
@@ -71,7 +71,7 @@ Voici les modèles de projet Visual Studio fournis par l’extension VSIX.
 ### <a name="blank-app-cwinrt"></a>Application vide (C++/WinRT)
 Modèle de projet pour une application de plateforme Windows universelle (UWP) qui possède une interface utilisateur XAML.
 
-Visual Studio fournit la prise en charge du compilateur XAML pour générer des stubs d’implémentation et d’en-tête à partir du fichier IDL (Interface Definition Language) (`.idl`) qui se trouve derrière chaque fichier de balisage XAML. Dans un fichier IDL, définissez toutes les classes runtime locales que vous souhaitez référencer dans les pages XAML de votre application, puis générez une fois le projet pour générer les modèles d’implémentation dans `Generated Files` et les définitions de type de stub dans `Generated Files\sources`. Utilisez ensuite ces définitions de type de stub comme référence pour implémenter vos classes runtime locales. Nous vous recommandons de déclarer chaque classe runtime dans son propre fichier IDL.
+Visual Studio fournit la prise en charge du compilateur XAML pour générer des stubs d’implémentation et d’en-tête à partir du fichier IDL (Interface Definition Language) (`.idl`) qui se trouve derrière chaque fichier de balisage XAML. Dans un fichier IDL, définissez toutes les classes runtime locales que vous souhaitez référencer dans les pages XAML de votre application, puis générez une fois le projet pour générer les modèles d’implémentation dans `Generated Files` et les définitions de type de stub dans `Generated Files\sources`. Utilisez ensuite ces définitions de type de stub comme référence pour implémenter vos classes runtime locales. Consultez [Factorisation des classes runtime dans des fichiers Midl (.idl)](/windows/uwp/cpp-and-winrt-apis/author-apis#factoring-runtime-classes-into-midl-files-idl).
 
 La prise en charge de l’aire de conception XAML dans Visual Studio 2019 pour C++/WinRT est proche de la parité avec C#. Dans Visual Studio 2019, vous pouvez utiliser l’onglet **Événements** de la fenêtre **Propriétés** pour ajouter des gestionnaires d’événements dans un projet C++/WinRT. Vous pouvez également ajouter manuellement des gestionnaires d’événements à votre code. Pour plus d’informations, consultez [Gérer des événements en utilisant des délégués en C++/WinRT](handle-events.md).
 
@@ -91,7 +91,7 @@ Modèle de projet pour un composant, en général pour une consommation à parti
 
 Ce modèle illustre la chaîne d’outils `midl.exe` > `cppwinrt.exe` où les métadonnées Windows Runtime (`.winmd`) sont générées à partir du fichier IDL, puis où les stubs d’implémentation et d’en-tête sont générés à partir des métadonnées Windows Runtime.
 
-Dans un fichier IDL, définissez les classes runtime dans votre composant, leur interface par défaut et toute autre interface qu’elles implémentent. Générez une fois le projet pour générer `module.g.cpp`, `module.h.cpp`, les modèles d’implémentation dans `Generated Files` et les définitions de type de stub dans `Generated Files\sources`. Utilisez ensuite ces définitions de type de stub comme référence pour implémenter les classes runtime dans votre composant. Nous vous recommandons de déclarer chaque classe runtime dans son propre fichier IDL.
+Dans un fichier IDL, définissez les classes runtime dans votre composant, leur interface par défaut et toute autre interface qu’elles implémentent. Générez une fois le projet pour générer `module.g.cpp`, `module.h.cpp`, les modèles d’implémentation dans `Generated Files` et les définitions de type de stub dans `Generated Files\sources`. Utilisez ensuite ces définitions de type de stub comme référence pour implémenter les classes runtime dans votre composant. Consultez [Factorisation des classes runtime dans des fichiers Midl (.idl)](/windows/uwp/cpp-and-winrt-apis/author-apis#factoring-runtime-classes-into-midl-files-idl).
 
 Regroupez le fichier binaire du composant Windows Runtime intégré et son fichier `.winmd` avec l’application UWP qui les consomme.
 
