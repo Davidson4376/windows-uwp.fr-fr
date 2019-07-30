@@ -1,19 +1,19 @@
 ---
 description: Ce guide vous aide à créer des interfaces utilisateur UWP Fluent directement dans vos applications WPF et Windows Forms
 title: Contrôles UWP dans les applications de bureau
-ms.date: 07/17/2019
+ms.date: 07/26/2019
 ms.topic: article
 keywords: Windows 10, UWP, Windows Forms, WPF, îlots XAML
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 79dcd6069a5746e04565db660e6f5c03988a94a4
-ms.sourcegitcommit: 2062d06567ef087ad73507a03ecc726a7d848361
+ms.openlocfilehash: 560d339476ef3cd45f30bfc678661fb0a4a11ee1
+ms.sourcegitcommit: f6af7aeb8506379a184207035c8e43288cb31453
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68303564"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68601540"
 ---
 # <a name="host-uwp-xaml-controls-in-desktop-apps-xaml-islands"></a>Héberger des contrôles XAML UWP dans les applications de bureau (îlots XAML)
 
@@ -74,42 +74,16 @@ Les API qui s’affichent en bas de ce diagramme sont livrés avec le SDK Window
 
 ## <a name="configure-your-project-to-use-xaml-islands"></a>Configurer votre projet pour utiliser des îlots XAML
 
-Les îlots XAML requièrent Windows 10, version 1903 et versions ultérieures. Pour utiliser des îlots XAML dans votre application, vous devez d’abord configurer votre projet.
+Les îlots XAML requièrent Windows 10, version 1903 et versions ultérieures. Pour utiliser des îlots XAML dans votre application, vous devez d’abord configurer votre projet:
 
-### <a name="wpf-and-windows-forms"></a>WPF et Windows Forms
+1. Modifiez votre projet pour qu’il utilise des API Windows Runtime. Pour obtenir des instructions, consultez [cet article](desktop-to-uwp-enhance.md#set-up-your-project).
+2. Installez l’un de ces packages NuGet dans votre projet. Veillez à installer la version 6.0.0-Preview 6.4 ou une version ultérieure du package.
+    * WPF Installer [Microsoft. Toolkit. WPF. UI. Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls)
+    * Windows Forms: [Microsoft. Toolkit. Forms. UI. Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls)
+    * C++32 [Microsoft. Toolkit. Win32. UI. XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication)
 
-* Modifiez votre projet pour qu’il utilise des API Windows Runtime. Pour obtenir des instructions, consultez [cet article](desktop-to-uwp-enhance.md#set-up-your-project).
-
-* Installez la dernière version du package NuGet [Microsoft. Toolkit. WPF. UI. Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls) (pour WPF) ou [Microsoft. Toolkit. Forms. UI. Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls) (pour Windows Forms) dans votre projet. Veillez à installer la version 6.0.0-Preview 6.4 ou une version ultérieure du package.
-
-### <a name="cwin32"></a>C++/Win32
-
-* Modifiez votre projet pour qu’il utilise des API Windows Runtime. Pour obtenir des instructions, consultez [cet article](desktop-to-uwp-enhance.md#set-up-your-project).
-* Faites une des actions suivantes :
-
-    **Empaquetez votre application dans un package MSIX**. L’empaquetage de votre application dans un [package MSIX](https://docs.microsoft.com/windows/msix/) fournit de nombreux avantages en matière de déploiement et d’exécution.
-    1. Installez le kit de développement logiciel (SDK) Windows 10, version 1903 (ou une version ultérieure).
-    2. Empaquetez votre application dans un package MSIX en ajoutant un [projet de packaging des applications Windows](https:/docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) à votre solution et en C++ajoutant une référence à votre projet/Win32.
-
-    **Définissez la valeur maxversiontested dans votre manifeste d’application**. Si vous ne souhaitez pas empaqueter votre application dans un package MSIX, avant de pouvoir utiliser des îlots XAML, vous devez ajouter un [manifeste d’application](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests) à votre projet et ajouter l’élément **maxversiontested** au manifeste pour spécifier que votre application est compatible avec Windows 10, version 1903 ou ultérieure.
-    1. Si vous ne disposez pas déjà d’un manifeste d’application dans votre projet, ajoutez un nouveau fichier XML à votre projet et nommez-le **app. manifest**.
-    2. Dans votre manifeste d’application, incluez l’élément **Compatibility** et les éléments enfants indiqués dans l’exemple suivant. Remplacez l’attribut **ID** de l’élément **maxversiontested** par le numéro de version de Windows 10 que vous ciblez (il doit s’agir de windows 10, version 1903 ou version ultérieure).
-
-        ```xml
-        <?xml version="1.0" encoding="UTF-8"?>
-        <assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
-            <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
-                <application>
-                    <!-- Windows 10 -->
-                    <maxversiontested Id="10.0.18362.0"/>
-                    <supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />
-                </application>
-            </compatibility>
-        </assembly>
-        ```
-
-        > [!NOTE]
-        > Quand vous ajoutez un élément **maxversiontested** à un manifeste d’application, l’avertissement de génération suivant peut s’afficher dans votre `manifest authoring warning 81010002: Unrecognized Element "maxversiontested" in namespace "urn:schemas-microsoft-com:compatibility.v1"`projet:. Cet avertissement n’indique pas que tout est incorrect dans votre projet et peut être ignoré.
+> [!NOTE]
+> Dans les versions antérieures de ces instructions, vous deviez ajouter l’élément **maxversiontested** à un manifeste d’application de votre projet. À compter de la dernière version d’évaluation des packages NuGet, vous n’avez plus besoin d’ajouter cet élément à votre manifeste.
 
 ## <a name="feature-roadmap"></a>Plan des fonctionnalités
 
