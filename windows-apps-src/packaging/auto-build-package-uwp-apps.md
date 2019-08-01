@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
-ms.openlocfilehash: de623240e275dda5b6fc4df9afee31e1adf9fd4f
-ms.sourcegitcommit: 04683376dbdbff987601f546f058748442170068
+ms.openlocfilehash: 838bd9cb790893ea24b57bb2b0bad49aa262fdbc
+ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68340849"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68682533"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>Configuration de builds automatisées pour votre application UWP
 
@@ -83,7 +83,7 @@ Pour télécharger un certificat pour votre Build automatisée:
 5. Si le certificat possède un mot de passe, nous vous recommandons de stocker votre mot de passe dans [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates) puis de lier le mot de passe à un [groupe de variables](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups). Vous pouvez utiliser la variable pour accéder au mot de passe à partir du pipeline.
 
 > [!NOTE]
-> À compter de Visual Studio 2019, un certificat temporaire n’est plus généré dans les projets UWP. Pour créer ou exporter des certificats, utilisez les applets de commande PowerShell décrites dans [cet article](create-certificate-package-signing.md).
+> À compter de Visual Studio 2019, un certificat temporaire n’est plus généré dans les projets UWP. Pour créer ou exporter des certificats, utilisez les applets de commande PowerShell décrites dans [cet article](/windows/msix/package/create-certificate-package-signing).
 
 ## <a name="configure-the-build-solution-build-task"></a>Configuration de la tâche Générer la solution
 
@@ -172,7 +172,7 @@ Le pipeline UWP par défaut n’enregistre pas les artefacts générés. Pour aj
     PathtoPublish: '$(build.artifactstagingdirectory)'
 ```
 
-Vous pouvez voir les artefacts générés dans  l’option artefacts de la page résultats de la Build.
+Vous pouvez voir les artefacts générés dans l’option artefacts de la page résultats de la Build.
 
 ![artefacts](images/building-screen6.png)
 
@@ -196,6 +196,6 @@ Ensuite, supprimez `AppxBundle` l’argument MSBuild de l’étape de générati
 ## <a name="related-topics"></a>Rubriques connexes
 
 - [Générez votre application .NET pour Windows](https://docs.microsoft.com/vsts/build-release/get-started/dot-net)
-- [Empaqueter des applications UWP](https://docs.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)
+- [Empaqueter des applications UWP](/windows/msix/package/packaging-uwp-apps)
 - [Chargement des applications métier dans Windows 10](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10)
-- [Créer un certificat pour la signature du package](https://docs.microsoft.com/windows/uwp/packaging/create-certificate-package-signing)
+- [Créer un certificat pour la signature du package](/windows/msix/package/create-certificate-package-signing)

@@ -1,38 +1,38 @@
 ---
-Description: La page de Packages est quand vous chargez tous les fichiers de package (.appxupload, .appx, .appxbundle et/ou .xap) pour l’application que vous envoyez.
+Description: La page packages vous permet de télécharger tous les fichiers de package (. appxupload,. AppX,. appxbundle et/ou. xap) pour l’application que vous envoyez.
 title: Chargement des packages d’application
 ms.assetid: B1BB810D-3EAA-4FB5-B03C-1F01AFB2DE36
 ms.date: 10/02/2018
 ms.topic: article
-keywords: Windows 10, uwp, packages, téléchargement, chargement du package
+keywords: Windows 10, UWP, packages, téléchargement, téléchargement de packages
 ms.localizationpriority: medium
-ms.openlocfilehash: 97735a8e860f7c941cc35d77a21496696683640f
-ms.sourcegitcommit: 4aef8c01ba9321401d5729a1ec6d46452ee76faf
+ms.openlocfilehash: 570ccc1329fd1b2f768ca528b75fe22b982bdaf6
+ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67468878"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68682621"
 ---
 # <a name="upload-app-packages"></a>Chargement des packages d’application
 
-Le **Packages** page est quand vous chargez tous les fichiers de package (.msix, .msixupload, .msixbundle, .appx, .appxupload et/ou .appxbundle) pour l’application que vous envoyez. Vous pouvez charger tous vos packages pour la même application sur cette page, et quand un client télécharge votre application, le Store fournira automatiquement chaque client avec le package qui convient mieux à leur appareil. Une fois vos packages chargés, vous verrez un tableau indiquant [les packages offerts aux familles d’appareils Windows 10 spécifiques](#device-family-availability) (et aux systèmes d’exploitation plus anciens, le cas échéant), classés par ordre.
+La page **packages** vous permet de télécharger tous les fichiers de package (. msix,. msixupload,. msixbundle,. AppX,. appxupload et/ou. appxbundle) pour l’application que vous envoyez. Vous pouvez télécharger tous vos packages pour la même application sur cette page, et quand un client télécharge votre application, le magasin fournit automatiquement à chaque client le package qui convient le mieux à son appareil. Une fois vos packages chargés, vous verrez un tableau indiquant [les packages offerts aux familles d’appareils Windows 10 spécifiques](#device-family-availability) (et aux systèmes d’exploitation plus anciens, le cas échéant), classés par ordre.
 
 > [!IMPORTANT]
-> À compter du 31 octobre 2018, produits nouvellement créé ne peut pas inclure les packages ciblant 8.x/Windows de Windows Phone 8.x ou une version antérieure. Pour plus d’informations, consultez ce [billet de blog](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store).
+> Depuis le 31 octobre 2018, les nouveaux produits ne peuvent pas inclure des packages ciblant Windows 8. x/Windows Phone 8. x ou une version antérieure. Pour plus d’informations, consultez ce billet de [blog](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store).
 
-Pour plus d’informations sur le contenu et sur la structure d’un package, voir [Exigences relatives au package de l’application](app-package-requirements.md). Vous souhaiterez également en savoir plus sur [comment numéros de version impact sur les packages qui sont remis à des clients spécifiques](package-version-numbering.md) et [comment gérer les packages pour différents scénarios](guidance-for-app-package-management.md).
+Pour plus d’informations sur le contenu et sur la structure d’un package, voir [Exigences relatives au package de l’application](app-package-requirements.md). Vous allez également apprendre [Comment les numéros de version affectent les packages livrés à des clients spécifiques](package-version-numbering.md) et [Comment gérer les packages pour différents scénarios](guidance-for-app-package-management.md).
 
 
 ## <a name="uploading-packages-to-your-submission"></a>Chargement de packages pour votre soumission
 
-Pour charger des packages, faites-les glisser dans le champ de chargement, ou cliquez pour parcourir vos fichiers. Le **Packages** page vous permettra de télécharger des fichiers .msix, .msixupload, .msixbundle, .appx, .appxupload et/ou .appxbundle.
+Pour charger des packages, faites-les glisser dans le champ de chargement, ou cliquez pour parcourir vos fichiers. La page **packages** vous permet de télécharger des fichiers. msix,. msixupload,. msixbundle,. AppX,. appxupload et/ou. appxbundle.
 
 > [!IMPORTANT]
-> Pour Windows 10, nous vous recommandons de télécharger le fichier .msixupload ou .appxupload ici plutôt que de .msix, .appx, .msixbundle ou .appxbundle.  Pour plus d’informations sur la création de packages d’applications UWP pour le Windows Store, consultez l’article [Créer un package d’application UWP avec Visual Studio](../packaging/packaging-uwp-apps.md).
+> Pour Windows 10, nous vous recommandons de télécharger le fichier. msixupload ou. appxupload ici plutôt que. msix,. AppX,. msixbundle ou. appxbundle.  Pour plus d’informations sur la création de packages d’applications UWP pour le Windows Store, consultez l’article [Créer un package d’application UWP avec Visual Studio](/windows/msix/package/packaging-uwp-apps).
 
 Si vous avez créé des [versions d’évaluation de package](package-flights.md) pour votre application, une liste déroulante apparaît avec l’option de copie des packages de l’une des versions d’évaluation de package. Sélectionnez la version d’évaluation de package comportant les packages que vous souhaitez intégrer. Vous pouvez transférer la totalité ou uniquement une partie des packages dans cette soumission.
 
-Si nous détectons des erreurs avec un package lors de la validation de cela, nous affichons un message pour vous permettre de savoir quel est le problème. Vous devez supprimer le package, résoudre le problème, essayez de télécharger à nouveau. Il se peut également que vous receviez des avertissements concernant des problèmes potentiels, sans que cela vous empêche de poursuivre votre soumission.
+Si nous détectons des erreurs avec un package lors de la validation, nous affichons un message pour vous informer de ce qui est incorrect. Vous devez supprimer le package, résoudre le problème, puis essayer de le télécharger à nouveau. Il se peut également que vous receviez des avertissements concernant des problèmes potentiels, sans que cela vous empêche de poursuivre votre soumission.
 
 
 ## <a name="device-family-availability"></a>Disponibilité de la famille d’appareils

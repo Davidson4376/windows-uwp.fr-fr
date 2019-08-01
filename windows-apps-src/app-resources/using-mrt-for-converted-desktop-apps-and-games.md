@@ -5,20 +5,20 @@ ms.date: 10/25/2017
 ms.topic: article
 keywords: windows 10, uwp, mrt, pri. ressources, jeux, centennial, desktop app converter, interface utilisateur multilingue, assembly satellite
 ms.localizationpriority: medium
-ms.openlocfilehash: 82050c92311ce8bb7457637a486943a5fed3e334
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 77cf9444e06920da0eae3ae430fe78c9f5a188ad
+ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359326"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68682542"
 ---
 # <a name="use-the-windows-10-resource-management-system-in-a-legacy-app-or-game"></a>Utiliser le système de gestion des ressources Windows 10 dans une application ou un jeu hérité
 
-Les applications et les jeux .NET et Win32 sont souvent traduits dans différentes langues, agrandissant ainsi leur marché global. Pour plus d’informations sur la proposition de valeur de la localisation de votre application, voir [Internationalisation et localisation](../design/globalizing/globalizing-portal.md). En plaçant votre application .NET ou Win32 ou votre jeu en tant que MSIX ou AppX package, vous pouvez exploiter le système de gestion de ressources pour charger les ressources d’application adaptés au contexte d’exécution. Cette rubrique détaillée décrit ces techniques.
+Les applications et les jeux .NET et Win32 sont souvent traduits dans différentes langues, agrandissant ainsi leur marché global. Pour plus d’informations sur la proposition de valeur de la localisation de votre application, voir [Internationalisation et localisation](../design/globalizing/globalizing-portal.md). En empaquetant votre application ou votre jeu .NET ou Win32 en tant que package MSIX ou AppX, vous pouvez tirer parti du système de gestion des ressources pour charger les ressources d’application adaptées au contexte d’exécution. Cette rubrique détaillée décrit ces techniques.
 
 Il existe plusieurs façons de localiser une application Win32 traditionnelle, mais Windows 8 a introduit un [nouveau système de gestion des ressources](https://docs.microsoft.com/previous-versions/windows/apps/jj552947(v=win.10)) qui fonctionne sur l’ensemble des langages de programmation et des types d’applications et fournit des fonctionnalités supplémentaires et allant au-delà de la simple localisation. Ce système est appelé « MRT » dans cette rubrique. Historiquement, cela signifiait « Modern Resource Technology », mais le terme « Modern » a été abandonné. Le gestionnaire de ressources peut également être appelé MRM (Gestionnaire de ressources modernes) ou PRI (Index de ressource de package).
 
-Associé à un déploiement basé sur AppX ou MSIX (par exemple, à partir du Microsoft Store), MRT peut fournir automatiquement les ressources applicables à la plupart pour un utilisateur donné / appareil ce qui réduit le téléchargement et la taille de votre application de l’installation. Cette réduction de la taille peut être significative pour les applications contenant une grande quantité de contenu localisé, et peut relever de l'ordre de plusieurs *gigaoctets* pour les jeux AAA. MRT confère des avantages supplémentaires, comme des listes localisées dans l’interpréteur de commandes Windows et le Microsoft Store, la logique de secours automatique lorsque la langue par défaut d’un utilisateur ne correspond pas à vos ressources disponibles.
+Combiné au déploiement basé sur MSIX ou AppX (par exemple, à partir de l’Microsoft Store), MRT peut fournir automatiquement les ressources les plus pertinentes pour un utilisateur/appareil donné, ce qui réduit le téléchargement et l’installation de la taille de votre application. Cette réduction de la taille peut être significative pour les applications contenant une grande quantité de contenu localisé, et peut relever de l'ordre de plusieurs *gigaoctets* pour les jeux AAA. MRT confère des avantages supplémentaires, comme des listes localisées dans l’interpréteur de commandes Windows et le Microsoft Store, la logique de secours automatique lorsque la langue par défaut d’un utilisateur ne correspond pas à vos ressources disponibles.
 
 Ce document décrit l’architecture haut niveau de MRT et fournit un guide de portage pour vous aider à migrer des applications héritées Win32 vers MRT avec des modifications de code minimales. Une fois la migration vers MRT effectuée, les avantages supplémentaires (par exemple, la possibilité de segmenter les ressources par facteur de montée ou par thème de système) seront disponibles aux développeurs. Veuillez noter que la localisation basée sur MRT fonctionne à la fois pour les applications UWP et les applications Win32 traitées par le pont de bureau (également appelée « Centennial »).
 
@@ -38,7 +38,7 @@ Dans de nombreux cas, vous pouvez continuer d'utiliser vos formats de localisati
 <tr>
 <td>Utilisez MRT pour identifier et localiser les ressources</td>
 <td>Condition préalable pour minimiser les tailles de téléchargement et de l’installation ; secours automatique de la langue</td>
-<td>Moyen</td>
+<td>Moyenne</td>
 </tr>
 <tr>
 <td>Créer des packs de ressources</td>
@@ -52,7 +52,7 @@ Dans de nombreux cas, vous pouvez continuer d'utiliser vos formats de localisati
 </tr>
 </table>
 
-## <a name="introduction"></a>Introduction
+## <a name="introduction"></a>Présentation
 
 La plupart des applications non triviales contiennent des éléments d’interface utilisateur appelés *ressources* qui sont dissociés du code de l’application (contrairement aux *valeurs codées en dur* qui sont créées dans le code source proprement dit). Il existe plusieurs raisons de préférer les ressources aux valeurs codées en dur : elles sont plus faciles à éditer pour les utilisateurs qui ne sont pas des développeurs, par exemple, mais l'une des raisons essentielles est qu'un tel choix permet à l'application de sélectionner différentes représentations de la même ressource logique au moment de l'exécution. Par l’exemple, le texte à afficher sur un bouton (ou l’image à afficher dans une icône) peut différer selon les langues comprises par l’utilisateur, les caractéristiques du périphérique d’affichage, ou l'activation de technologies d’assistance.
 
@@ -66,49 +66,49 @@ Voici un exemple simple d’une application dotée d'étiquettes de texte sur de
 
 Dans le graphique, le code d’application fait référence à trois noms de ressources logiques. Lors de l’exécution, la pseudo-fonction `GetResource` utilise MRT pour rechercher les noms des ressources dans le tableau de ressources (appelé fichier PRI) et trouver le candidat le plus approprié, sur la base des conditions ambiantes (langue de l’utilisateur et facteur d’échelle de l’affichage). Dans le cas des étiquettes, les chaînes sont utilisées directement. Dans le cas de l’image du logo, les chaînes sont interprétées comme noms de fichiers et les fichiers sont lus sur disque. 
 
-Si l’utilisateur parle d’une langue autre que l’anglais ou allemand ou a un facteur de mise à l’échelle de l’affichage autre que 100 % ou 300 %, MRT choisit le candidat correspondant le plus proche » » basé sur un ensemble de règles de secours (voir [système de gestion des ressources](https://docs.microsoft.com/previous-versions/windows/apps/jj552947(v=win.10)) pour en savoir plus en arrière-plan).
+Si l’utilisateur parle une langue autre que l’anglais ou l’allemand, ou a un facteur d’échelle d’affichage autre que 100% ou 300%, MRT choisit le candidat correspondant «le plus proche» en fonction d’un ensemble de règles de secours (voir [système de gestion des ressources](https://docs.microsoft.com/previous-versions/windows/apps/jj552947(v=win.10)) pour plus d’informations sur l’arrière-plan).
 
-Notez que MRT prend en charge les ressources qui sont adaptées à plus d’un qualificateur, par exemple, si l’image du logo contenu textuel incorporé qui devait également être localisée, le logo aurait quatre candidats : Mise à l’échelle/fr-100, DE/mise à l’échelle-100, mise à l’échelle/fr-300 et mise à l’échelle/DE-300.
+Notez que le MRT prend en charge des ressources adaptées à plusieurs qualificateurs. par exemple, si l’image du logo contenait du texte incorporé qui devait également être localisé, le logo aurait quatre candidats: FR/Scale-100, dé/Scale-100, fr/Scale-300 et DE//Scale-300.
 
 ### <a name="sections-in-this-document"></a>Sections dans ce document
 
 Les sections suivantes décrivent les tâches principales nécessaires à l’intégration de MRT avec votre application.
 
-#### <a name="phase-0-build-an-application-package"></a>Phase 0 : Générer un package d’application
+#### <a name="phase-0-build-an-application-package"></a>Phase 0: Créer un package d’application
 
 Cette section explique comment obtenir votre création d'application de bureau en tant que package d’application. Aucune fonctionnalité MRT n'est utilisée à ce stade.
 
-#### <a name="phase-1-localize-the-application-manifest"></a>Phase 1 : Localiser le manifeste d’application
+#### <a name="phase-1-localize-the-application-manifest"></a>Phase 1 : Localiser le manifeste de l’application
 
 Cette section décrit comment localiser le manifeste de votre application (de sorte que celle-ci s’affiche correctement dans l’interpréteur de commandes Windows), tout en continuer d'utiliser votre format de ressource hérité et les API pour empaqueter et localiser les ressources. 
 
-#### <a name="phase-2-use-mrt-to-identify-and-locate-resources"></a>Phase 2 : Utilisez MRT pour identifier et localiser les ressources
+#### <a name="phase-2-use-mrt-to-identify-and-locate-resources"></a>Phase 2: Utilisez MRT pour identifier et localiser les ressources
 
 Cette section décrit comment modifier votre code d’application (et éventuellement la disposition de la ressource) pour localiser les ressources à l’aide de MRT, tout en utilisant les API et les formats de ressource existants pour charger et consommer des ressources. 
 
-#### <a name="phase-3-build-resource-packs"></a>Phase 3 : Créer des packs de ressources
+#### <a name="phase-3-build-resource-packs"></a>Phase 3: Créer des packs de ressources
 
 Cette section décrit les modifications finales nécessaires pour séparer vos ressources en *packs de ressources* distincts, réduisant ainsi la taille de téléchargement (et l'installation) de votre application.
 
 ### <a name="not-covered-in-this-document"></a>Non traitée dans ce document.
 
-Après avoir terminé les Phases de 0 à 3 ci-dessus, vous aurez une application « groupe » qui peuvent être envoyées vers le Microsoft Store et qui sera de réduire le téléchargement et de taille pour les utilisateurs de l’installation en omettant les ressources dont ils n’ont pas besoin (par exemple, langues qu’ils ne parlent pas). Vous pouvez apporter des améliorations supplémentaires au niveau de la taille et des fonctionnalités de l’application en effectuant une étape finale.
+Une fois les phases 0-3 ci-dessus terminées, vous disposerez d’une application «bundle» qui peut être soumise à la Microsoft Store et qui réduira la taille de téléchargement et d’installation des utilisateurs en omettant les ressources dont ils n’ont pas besoin (par exemple, les langues qu’ils ne parlent pas). Vous pouvez apporter des améliorations supplémentaires au niveau de la taille et des fonctionnalités de l’application en effectuant une étape finale.
 
-#### <a name="phase-4-migrate-to-mrt-resource-formats-and-apis"></a>Phase 4 : Migration vers les API et les formats de ressources MRT
+#### <a name="phase-4-migrate-to-mrt-resource-formats-and-apis"></a>Phase 4: Migration vers les API et les formats de ressources MRT
 
 Cette phase n'est pas abordée dans ce document ; elle implique le transfert de vos ressources (notamment les chaînes) à partir des formats hérités, tels que des assemblys de ressources DLL d’interface utilisateur multilingue ou .NET vers des fichiers PRI. Cela peut permettre de gagner davantage d'espace au niveau des tailles de téléchargement et d'installation. Cela permet également d’utiliser d'autres fonctionnalités MRT, par exemple, la réduction des tailles de téléchargement et d’installation de l’image de fichiers en fonction du facteur d’échelle, des paramètres d’accessibilité, etc.
 
-## <a name="phase-0-build-an-application-package"></a>Phase 0 : Générer un package d’application
+## <a name="phase-0-build-an-application-package"></a>Phase 0: Créer un package d’application
 
-Avant d’apporter des modifications aux ressources de votre application, vous devez tout d’abord remplacer votre technologie de mise en package et d’installation actuelle par la technologie de création de packages et de déploiement UWP standard. Il existe trois façons de procéder :
+Avant d’apporter des modifications aux ressources de votre application, vous devez tout d’abord remplacer votre technologie de mise en package et d’installation actuelle par la technologie de création de packages et de déploiement UWP standard. Il y a trois manières pour effectuer cette opération :
 
-* Si vous avez une grande application de bureau avec un programme d’installation complexe ou vous utilisez un grand nombre de points d’extensibilité du système d’exploitation, vous pouvez utiliser l’outil Desktop App Converter pour générer la disposition de fichier UWP et informations de manifeste à partir de votre programme d’installation application (par exemple, un MSI).
-* Si vous avez une application de bureau plus petits avec relativement peu de fichiers ou un programme d’installation simple et sans crochets d’extensibilité, vous pouvez créer la disposition de fichier et manuellement les informations de manifeste.
-* Si vous êtes reconstruction à partir de la source et que vous souhaitez mettre à jour votre application pour être une pure application UWP, vous pouvez créer un nouveau projet dans Visual Studio et s’appuient sur l’IDE pour effectuer une grande partie du travail pour vous.
+* Si vous disposez d’une application de bureau de grande taille avec un programme d’installation complexe ou que vous utilisez un grand nombre de points d’extensibilité de système d’exploitation, vous pouvez utiliser l’outil Desktop App Converter pour générer les informations de mise en page et de manifeste du fichier UWP à partir de votre programme d’installation d’application existant (par exemple, un MSI).
+* Si vous disposez d’une application de bureau plus petite avec relativement peu de fichiers ou un simple programme d’installation et aucun hook d’extensibilité, vous pouvez créer manuellement la disposition des fichiers et les informations du manifeste.
+* Si vous procédez à une reconstruction à partir de la source et que vous souhaitez mettre à jour votre application pour qu’elle soit une application UWP pure, vous pouvez créer un projet dans Visual Studio et vous fier à l’IDE pour effectuer une grande partie du travail.
 
-Si vous souhaitez utiliser le [Desktop App Converter](https://aka.ms/converter), consultez [empaqueter une application de bureau à l’aide de la de Desktop App Converter](https://aka.ms/converterdocs) pour plus d’informations sur le processus de conversion. Vous trouverez un ensemble complet d’exemples de convertisseur de bureau sur [le pont du bureau vers UWP exemples de référentiel GitHub](https://github.com/Microsoft/DesktopBridgeToUWP-Samples).
+Si vous souhaitez utiliser le convertisseur d’application de [Bureau](https://aka.ms/converter), consultez empaqueter [une application de bureau à l’aide du convertisseur](https://aka.ms/converterdocs) d’application de bureau pour plus d’informations sur le processus de conversion. Vous trouverez un ensemble complet d’exemples de convertisseurs Desktop sur [le pont de bureau pour les exemples UWP GitHub référentiel](https://github.com/Microsoft/DesktopBridgeToUWP-Samples).
 
-Si vous souhaitez créer manuellement le package, vous devrez créer une structure de répertoires qui inclut les fichiers de tous les votre application (fichiers exécutables et de contenu, mais pas le code source) et un fichier manifeste du package (.appxmanifest). Vous trouverez un exemple dans [le Hello, World GitHub exemple](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/blob/master/Samples/HelloWorldSample/CentennialPackage/AppxManifest.xml), mais un fichier de manifeste de package de base qui s’exécute le poste de travail exécutable nommé `ContosoDemo.exe` se présente comme suit, où le <span style="background-color: yellow">mis en surbrillance de texte</span> serait remplacé par vos propres valeurs.
+Si vous souhaitez créer manuellement le package, vous devez créer une structure de répertoires qui comprend tous les fichiers de votre application (fichiers exécutables et contenu, mais pas le code source) et un fichier manifeste de package (. appxmanifest). Vous trouverez un exemple dans [l’exemple Hello, World GitHub](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/blob/master/Samples/HelloWorldSample/CentennialPackage/AppxManifest.xml), mais un fichier manifeste de package de base qui exécute l’exécutable de bureau `ContosoDemo.exe` nommé est le suivant, où le <span style="background-color: yellow">texte mis</span> en surbrillance serait remplacé par vos propres valeurs.
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -148,17 +148,17 @@ Si vous souhaitez créer manuellement le package, vous devrez créer une structu
 </Package>
 ```
 
-Pour plus d’informations sur le fichier manifeste du package et la disposition du package, consultez [manifeste de package d’application](https://docs.microsoft.com/en-us/uwp/schemas/appxpackage/appx-package-manifest).
+Pour plus d’informations sur le fichier manifeste du package et la disposition des packages, consultez [manifeste du package d’application](https://docs.microsoft.com/en-us/uwp/schemas/appxpackage/appx-package-manifest).
 
-Enfin, si vous utilisez Visual Studio pour créer un nouveau projet et de migrer votre code existant dans, voir [créer « Hello, world » application](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal). Vous pouvez inclure votre code existant dans le nouveau projet, mais vous devrez probablement apporter des modifications de code significatives (en particulier dans l’interface utilisateur) afin d’exécuter en tant qu’une application UWP pure. Ces modifications ne sont pas abordées dans ce document.
+Enfin, si vous utilisez Visual Studio pour créer un nouveau projet et migrer votre code existant dans, consultez [créer une application «Hello, World»](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal). Vous pouvez inclure votre code existant dans le nouveau projet, mais vous devrez probablement apporter des modifications de code significatives (en particulier dans l’interface utilisateur) afin de l’exécuter en tant qu’application UWP pure. Ces modifications ne sont pas abordées dans ce document.
 
 ## <a name="phase-1-localize-the-manifest"></a>Phase 1 : Localiser le manifeste
 
-### <a name="step-11-update-strings--assets-in-the-manifest"></a>Étape 1.1 : Mettre à jour les chaînes de & ressources dans le manifeste
+### <a name="step-11-update-strings--assets-in-the-manifest"></a>Étape 1.1 : Mettre à jour des chaînes & des ressources dans le manifeste
 
-Dans la Phase 0, vous avez créé un fichier de manifeste (.appxmanifest) du package de base pour votre application (selon les valeurs fournies pour le convertisseur, extraites le fichier MSI ou entrés manuellement dans le manifeste) mais il ne contiendra pas les informations localisées, et il prend en charge fonctionnalités supplémentaires, par exemple, lancement haute résolution vignette actifs, etc.
+En phase 0, vous avez créé un fichier manifeste du package de base (. appxmanifest) pour votre application (en fonction des valeurs fournies au convertisseur, extraites du MSI ou entrées manuellement dans le manifeste), mais il ne contient pas d’informations localisées et ne prend pas en charge fonctionnalités supplémentaires telles que les composants de la mosaïque de démarrage haute résolution, etc.
 
-Pour vérifier le que nom et la description de votre application sont correctement localisés, vous devez définir certaines ressources dans un ensemble de fichiers de ressources et mettre à jour le manifeste du package pour y fait référence.
+Pour vous assurer que le nom et la description de votre application sont correctement localisés, vous devez définir certaines ressources dans un ensemble de fichiers de ressources et mettre à jour le manifeste du package pour y faire référence.
 
 #### <a name="creating-a-default-resource-file"></a>Création d’un fichier de ressources par défaut
 
@@ -166,7 +166,7 @@ La première étape consiste à créer un fichier de ressources par défaut dans
 
 Si vous souhaitez créer les ressources manuellement :
 
-1. Créez un fichier XML appelé `resources.resw` et placez-le dans un sous-dossier `Strings\en-us` de votre projet. Utilisez le code BCP-47 approprié si votre langue par défaut n’est pas anglais (États-Unis).
+1. Créez un fichier XML appelé `resources.resw` et placez-le dans un sous-dossier `Strings\en-us` de votre projet. Utilisez le code BCP-47 approprié si votre langue par défaut n’est pas l’anglais (États-Unis).
 2. Dans le fichier XML, ajoutez le contenu suivant, le <span style="background-color: yellow">texte mis en surbrillance</span> étant remplacé par le texte correspondant à votre application, dans votre langue par défaut.
 
 > [!NOTE]
@@ -195,22 +195,22 @@ Si vous souhaitez créer les ressources manuellement :
 
 Si vous souhaitez utiliser le concepteur dans Visual Studio :
 
-1. Créer le `Strings\en-us` dossier (ou autre langage comme il convient) dans votre projet et ajoutez un **un nouvel élément** dans le dossier racine de votre projet, du nom par défaut de `resources.resw`. Veillez à choisir **le fichier de ressources (.resw)** et non **dictionnaire de ressources** -un dictionnaire de ressources est un fichier utilisé par les applications XAML.
+1. Créez le `Strings\en-us` dossier (ou un autre langage approprié) dans votre projet et ajoutez un **nouvel élément** au dossier racine de votre projet, en utilisant `resources.resw`le nom par défaut. Veillez à choisir le **fichier de ressources (. resw)** et non le **dictionnaire de ressources** . un dictionnaire de ressources est un fichier utilisé par les applications XAML.
 2. À l’aide du concepteur, entrez les chaînes suivantes (utilisent les mêmes `Names` mais remplacez les `Values` par le texte approprié à votre application) :
 
 <img src="images\editing-resources-resw.png"/>
 
 > [!NOTE]
-> Si vous démarrez avec le concepteur Visual Studio, vous pouvez toujours modifier le code XML directement en appuyant sur `F7`. Toutefois, si vous démarrez avec un fichier XML minimal, *le concepteur ne reconnaîtra pas le fichier*, car un grand nombre de métadonnées supplémentaires n'y figureront pas ; vous pouvez remédier à ce problème en copiant l’informations XSD réutilisable à partir d’un fichier généré par le concepteur dans votre fichier XML modifié manuellement.
+> Si vous démarrez avec le concepteur Visual Studio, vous pouvez toujours modifier directement le code XML en `F7`appuyant sur. Toutefois, si vous démarrez avec un fichier XML minimal, *le concepteur ne reconnaîtra pas le fichier*, car un grand nombre de métadonnées supplémentaires n'y figureront pas ; vous pouvez remédier à ce problème en copiant l’informations XSD réutilisable à partir d’un fichier généré par le concepteur dans votre fichier XML modifié manuellement.
 
 #### <a name="update-the-manifest-to-reference-the-resources"></a>Mise à jour du manifeste pour référencer les ressources
 
-Une fois que vous avez les valeurs définies dans le `.resw` fichier, l’étape suivante consiste à mettre à jour le manifeste pour référencer les chaînes de ressources. Là encore, vous pouvez modifier directement un fichier XML, ou utiliser le Concepteur de manifeste de Visual Studio.
+Une fois que les valeurs sont définies dans `.resw` le fichier, l’étape suivante consiste à mettre à jour le manifeste pour référencer les chaînes de ressources. Là encore, vous pouvez modifier directement un fichier XML, ou utiliser le Concepteur de manifeste de Visual Studio.
 
 Si vous modifiez directement le fichier XML, ouvrez le fichier `AppxManifest.xml` et apportez les modifications suivantes aux <span style="background-color: lightgreen">valeurs mises en surbrillance</span> ; utilisez *exactement* ce texte, et non pas un texte spécifique à votre application. Il n’est pas obligatoire d’utiliser ces noms de ressource exacts, vous pouvez choisir le vôtre, mais tout ce que vous choisissez doit correspondre exactement à l’ensemble du contenu du fichier `.resw`. Ces noms doivent correspondre aux `Names` que vous avez créés dans le fichier `.resw`, avec le préfixe `ms-resource:` et l’espace de noms `Resources/`. 
 
 > [!NOTE]
-> Nombre d’éléments du manifeste ont été omis dans cet extrait de code, ne supprimez pas quoi que ce soit !
+> De nombreux éléments du manifeste ont été omis de cet extrait de code. ne supprimez rien.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -234,32 +234,32 @@ Si vous modifiez directement le fichier XML, ouvrez le fichier `AppxManifest.xml
 </Package>
 ```
 
-Si vous utilisez le Concepteur de manifeste Visual Studio, ouvrez le fichier .appxmanifest et modifiez le <span style="background-color: lightgreen">mis en surbrillance les valeurs</span> des valeurs dans le **Application* onglet et le *empaquetage*onglet :
+Si vous utilisez le concepteur de manifeste Visual Studio, ouvrez le fichier. appxmanifest et modifiez les valeurs des <span style="background-color: lightgreen">valeurs</span> en surbrillance dans l’onglet **application* et l’onglet *Packaging* :
 
 <img src="images\editing-application-info.png"/>
 <img src="images\editing-packaging-info.png"/>
 
-### <a name="step-12-build-pri-file-make-an-msix-package-and-verify-its-working"></a>Étape 1.2 : Générer le fichier PRI, qu’un package MSIX et vérifiez qu’il fonctionne
+### <a name="step-12-build-pri-file-make-an-msix-package-and-verify-its-working"></a>Étape 1.2 : Créer un fichier PRI, créer un package MSIX et vérifier qu’il fonctionne
 
 Vous devez maintenant être en mesure de générer le fichier `.pri` et déployer l’application pour vérifier que les informations correctes (dans votre langue par défaut) s’affiche dans le Menu Démarrer.
 
 Si vous utilisez Visual Studio pour la création, appuyez simplement sur `Ctrl+Shift+B` pour générer le projet, puis faites un clic droit sur le projet et choisissez `Deploy` dans le menu contextuel.
 
-Si vous créez manuellement, suivez ces étapes pour créer un fichier de configuration pour `MakePRI` outil et pour générer le `.pri` fichier lui-même (vous trouverez plus d’informations dans [packaging d’application manuelle](https://docs.microsoft.com/en-us/windows/uwp/packaging/manual-packaging-root)) :
+Si vous effectuez la génération manuellement, procédez comme suit pour créer un fichier `MakePRI` de configuration pour l’outil `.pri` et pour générer le fichier lui-même (vous trouverez plus d’informations dans la section [packages d’applications manuelles](/windows/msix/package/manual-packaging-root)):
 
-1. Ouvrez une invite de commandes de développeur à partir de la **Visual Studio 2017** ou **Visual Studio 2019** dossier dans le menu Démarrer.
-2. Basculez vers le répertoire racine du projet (celui qui contient le fichier .appxmanifest et **chaînes** dossier).
-3. Saisissez la commande suivante, en remplaçant « contoso_demo.xml » par un nom approprié pour votre projet, et « en-US » par la langue par défaut de votre application (ou conservez en-US le cas échéant). Notez le fichier XML est créé dans le répertoire parent (**pas** dans le répertoire du projet) dans la mesure où il n’est pas partie de l’application (vous pouvez choisir n’importe quel autre annuaire que vous souhaitez, mais veillez à remplacer dans les futures commandes).
+1. Ouvrez une invite de commandes développeur à partir du dossier **Visual studio 2017** ou **Visual Studio 2019** dans le menu Démarrer.
+2. Basculez vers le répertoire racine du projet (celui qui contient le fichier. appxmanifest et le dossier Strings).
+3. Saisissez la commande suivante, en remplaçant « contoso_demo.xml » par un nom approprié pour votre projet, et « en-US » par la langue par défaut de votre application (ou conservez en-US le cas échéant). Notez que le fichier XML est créé dans le répertoire parent (et**non** dans le répertoire du projet), car il ne fait pas partie de l’application (vous pouvez choisir n’importe quel autre répertoire, mais veillez à le remplacer dans les commandes ultérieures).
 
     ```CMD
     makepri createconfig /cf ..\contoso_demo.xml /dq en-US /pv 10.0 /o
     ```
 
     Vous pouvez taper `makepri createconfig /?` pour voir ce que fait chaque paramètre, mais pour résumer :
-      * `/cf` définit le nom de fichier de Configuration (la sortie de cette commande)
-      * `/dq` définit les qualificateurs par défaut, dans ce cas, la langue `en-US`
-      * `/pv` définit la Version de la plateforme, dans ce cas Windows 10
-      * `/o` définit pour remplacer le fichier de sortie s’il existe
+      * `/cf`définit le nom de fichier de configuration (la sortie de cette commande)
+      * `/dq`définit les qualificateurs par défaut, dans ce cas le langage`en-US`
+      * `/pv`définit la version de la plateforme, dans ce cas Windows 10
+      * `/o`le définit pour remplacer le fichier de sortie s’il existe
 
 4. Maintenant que vous disposez d'un fichier de configuration, exécutez à nouveau `MakePRI` pour rechercher le disque afin de trouver les ressources et les inclure dans un fichier PRI. Remplacez « contoso_demop.xml » par le nom du fichier XML que vous avez utilisé dans l’étape précédente et veillez à spécifier le répertoire parent pour l’entrée et la sortie : 
 
@@ -271,8 +271,8 @@ Si vous créez manuellement, suivez ces étapes pour créer un fichier de config
       * `/pr` définit la racine du projet (dans ce cas, le répertoire actif)
       * `/cf` définit le nom de fichier de Configuration créé à l’étape précédente
       * `/of` définit le fichier de sortie 
-      * `/mf` Crée un fichier de mappage (de sorte que nous pouvons exclure des fichiers dans le package dans une étape ultérieure)
-      * `/o` définit pour remplacer le fichier de sortie s’il existe
+      * `/mf`crée un fichier de mappage (afin que nous puissions exclure des fichiers du package dans une étape ultérieure)
+      * `/o`le définit pour remplacer le fichier de sortie s’il existe
 
 5. Vous disposez désormais d'un fichier `.pri` avec les ressources de langue par défaut (par ex., en-US). Pour vérifier que celui-ci fonctionne correctement, vous pouvez exécuter la commande suivante :
 
@@ -281,34 +281,34 @@ Si vous créez manuellement, suivez ces étapes pour créer un fichier de config
     ```
 
     Vous pouvez saisir `makepri dump /?` pour voir ce que fait chaque paramètre, mais pour résumer :
-      * `/if` définit le nom de fichier d’entrée 
-      * `/of` définit le nom de fichier de sortie (`.xml` sera ajouté automatiquement)
-      * `/o` définit pour remplacer le fichier de sortie s’il existe
+      * `/if`définit le nom du fichier d’entrée 
+      * `/of`définit le nom du fichier`.xml` de sortie (est ajouté automatiquement)
+      * `/o`le définit pour remplacer le fichier de sortie s’il existe
 
-6. Enfin, vous pouvez ouvrir `.\resources.xml` dans un éditeur de texte et vérifiez qu’il répertorie vos valeurs `<NamedResource>` (comme `ApplicationDescription` et `PublisherDisplayName`) ainsi que les valeurs `<Candidate>` pour la langue par défaut que vous avez choisie (il y aura d'autres contenus au début du fichier ; ignorez cela pour le moment).
+6. Enfin, vous pouvez ouvrir `..\resources.xml` dans un éditeur de texte et vérifiez qu’il répertorie vos valeurs `<NamedResource>` (comme `ApplicationDescription` et `PublisherDisplayName`) ainsi que les valeurs `<Candidate>` pour la langue par défaut que vous avez choisie (il y aura d'autres contenus au début du fichier ; ignorez cela pour le moment).
 
-Vous pouvez ouvrir le fichier de mappage `.\resources.map.txt` pour vérifier qu’il contient les fichiers nécessaires à votre projet (y compris le fichier PRI, qui ne fait pas partie du répertoire du projet). Plus important encore, le fichier de mappage n'inclura *pas* une référence à votre fichier `resources.resw` car le contenu de ce fichier est déjà intégré au fichier PRI. Toutefois, il contiendra d'autres ressources comme les noms de fichiers de vos images.
+Vous pouvez ouvrir le fichier `..\resources.map.txt` de mappage pour vérifier qu’il contient les fichiers nécessaires à votre projet (y compris le fichier PRI, qui ne fait pas partie du répertoire du projet). Plus important encore, le fichier de mappage n'inclura *pas* une référence à votre fichier `resources.resw` car le contenu de ce fichier est déjà intégré au fichier PRI. Toutefois, il contiendra d'autres ressources comme les noms de fichiers de vos images.
 
 #### <a name="building-and-signing-the-package"></a>Création et signature du package 
 
 Maintenant que le fichier PRI est généré, vous pouvez créer et signer le package :
 
-1. Pour créer le package d’application, exécutez la commande suivante en remplaçant `contoso_demo.appx` par le nom de la MSIX/AppX fichier que vous souhaitez créer et veillant à choisir un autre répertoire pour le fichier (cet exemple utilise le répertoire parent ; elle peut être n’importe quel endroit doit mais **pas** être le répertoire du projet).
+1. Pour créer le package d’application, exécutez la commande suivante `contoso_demo.appx` en remplaçant par le nom du fichier MSIX/AppX que vous souhaitez créer et en veillant à choisir un autre répertoire pour le fichier (cet exemple utilise le répertoire parent; il peut se trouver n’importe où, mais  **n’est pas** le répertoire du projet).
 
     ```CMD
     makeappx pack /m AppXManifest.xml /f ..\resources.map.txt /p ..\contoso_demo.appx /o
     ```
 
     Vous pouvez saisir `makeappx pack /?` pour voir ce que fait chaque paramètre, mais pour résumer :
-      * `/m` définit le fichier Manifest à utiliser
-      * `/f` définit le mappage de fichier à utiliser (créé à l’étape précédente) 
-      * `/p` définit la sortie nom du Package
-      * `/o` définit pour remplacer le fichier de sortie s’il existe
+      * `/m`définit le fichier manifeste à utiliser
+      * `/f`définit le fichier de mappage à utiliser (créé à l’étape précédente) 
+      * `/p`définit le nom du package de sortie
+      * `/o`le définit pour remplacer le fichier de sortie s’il existe
 
-2. Une fois le package est créé, elle doit être signée. Le moyen le plus simple pour obtenir un certificat de signature est en créant un projet Windows universel vide dans Visual Studio et en copiant le `.pfx` fichier qu’il crée, mais vous pouvez en créer un manuellement à l’aide de la `MakeCert` et `Pvk2Pfx` utilitaires comme décrit dans [ Comment créer un package d’application certificat de signature](https://docs.microsoft.com/windows/desktop/appxpkg/how-to-create-a-package-signing-certificate).
+2. Une fois le package créé, il doit être signé. Le moyen le plus simple d’obtenir un certificat de signature consiste à créer un projet Windows universel vide dans Visual Studio `.pfx` et à copier le fichier qu’il crée, mais vous pouvez `MakeCert` en `Pvk2Pfx` créer un manuellement à l’aide des utilitaires et, comme décrit dans [ Comment créer un certificat de signature de package d’application](https://docs.microsoft.com/windows/desktop/appxpkg/how-to-create-a-package-signing-certificate).
 
     > [!IMPORTANT]
-    > Si vous créez manuellement un certificat de signature, assurez-vous que vous placez les fichiers dans un autre répertoire que votre projet de code source ou de la source du package, sinon qu'il peut obtenir inclus dans le cadre du package, y compris la clé privée !
+    > Si vous créez manuellement un certificat de signature, assurez-vous que vous placez les fichiers dans un répertoire différent de celui de votre projet source ou de votre source de package. sinon, il peut être inclus dans le package, y compris la clé privée!
 
 3. Pour signer le package, utilisez la commande suivante. Notez que le `Publisher` spécifié dans l'élément `Identity` du `AppxManifest.xml` doit correspondre au `Subject` du certificat (il ne s’agit **pas** de l'élément `<PublisherDisplayName>`, qui est le nom complet localisé à afficher aux utilisateurs). Comme toujours, remplacez les noms de fichiers `contoso_demo...` par les noms correspondants à votre projet, et (**très important**) vérifiez que le fichier `.pfx` ne se trouve pas dans le répertoire actif (sinon, il sera créé et inclus dans votre package, y compris la clé de signature privée !) :
 
@@ -317,9 +317,9 @@ Maintenant que le fichier PRI est généré, vous pouvez créer et signer le pac
     ```
 
     Vous pouvez saisir `signtool sign /?` pour voir ce que fait chaque paramètre, mais pour résumer :
-      * `/fd` définit l’algorithme de condensat de fichier (SHA256 est la valeur par défaut pour AppX)
-      * `/a` sélectionne automatiquement le meilleur certificat
-      * `/f` Spécifie le fichier d’entrée qui contient le certificat de signature
+      * `/fd`définit l’algorithme de synthèse de fichiers (SHA256 est la valeur par défaut pour AppX)
+      * `/a`sélectionne automatiquement le meilleur certificat
+      * `/f`Spécifie le fichier d’entrée qui contient le certificat de signature
 
 Enfin, vous pouvez maintenant double-cliquer sur le fichier `.appx` pour l’installer, ou, si vous préférez la ligne de commande, vous pouvez ouvrir une invite PowerShell, basculer sur le répertoire contenant le package et saisir ce qui suit (en remplaçant `contoso_demo.appx` par votre nom de package) :
 
@@ -339,27 +339,27 @@ Pour utiliser la ligne de commande :
     ```
     
     Vous pouvez exécuter `certutil -addstore /?` pour voir ce que fait chaque paramètre, mais pour résumer :
-      * `-addstore` Ajoute un certificat à un magasin de certificats
-      * `TrustedPeople` Indique le magasin dans lequel le certificat est placé.
+      * `-addstore`Ajoute un certificat à un magasin de certificats
+      * `TrustedPeople`indique le magasin dans lequel le certificat est placé
 
 Pour utiliser Windows Explorer :
 
 1. Accédez au dossier qui contient le fichier `.pfx`
 2. Double-cliquez sur le fichier `.pfx`et l'**Assistant d'importation de Certificat** doit apparaître
-3. Choisissez `Local Machine` et cliquez sur `Next`
-4. Acceptez l’invite d’élévation de contrôle de compte d’utilisateur administrateur, si elle s’affiche, puis cliquez sur `Next`
-5. Entrez le mot de passe pour la clé privée, le cas échéant, puis cliquez sur `Next`
-6. Sélectionnez `Place all certificates in the following store`
+3. Choisissez `Local Machine` et cliquez sur`Next`
+4. Acceptez l’invite d’élévation de l’administrateur du contrôle de compte d’utilisateur, si elle apparaît, puis cliquez sur`Next`
+5. Entrez le mot de passe de la clé privée, le cas échéant, puis cliquez sur`Next`
+6. Sélectionné`Place all certificates in the following store`
 7. Cliquez sur `Browse`, choisissez le dossier `Trusted People` (et **non pas** « Éditeurs approuvés »)
-8. Cliquez sur `Next` , puis `Finish`
+8. Cliquez `Next` sur, puis`Finish`
 
 Après avoir ajouté le certificat au magasin `Trusted People`, réessayez d’installer le package.
 
 Vous devez maintenant voir votre application apparaître dans la liste « Toutes les applications » du menu Démarrer, avec les informations appropriées extraites du fichier `.resw` / `.pri`. Si vous voyez une chaîne vide ou la chaîne `ms-resource:...`, cela signifie qu'une erreur est survenue : vérifiez vos modifications pour vous assurer qu’elles sont correctes. Si vous cliquez avec le bouton droit de la souris sur votre application dans le menu Démarrer, vous pouvez l’épingler sous forme de vignette et vérifier que les informations correctes s’y affichent également.
 
-### <a name="step-13-add-more-supported-languages"></a>Étape 1.3 : Ajouter plus de langues prises en charge
+### <a name="step-13-add-more-supported-languages"></a>Étape 1.3 : Ajouter d’autres langues prises en charge
 
-Une fois que les modifications ont été apportées pour le manifeste du package et l’initiale `resources.resw` fichier a été créé, l’ajout de langues supplémentaires est facile.
+Une fois les modifications apportées au manifeste du package et le `resources.resw` fichier initial créé, il est facile d’ajouter des langues supplémentaires.
 
 #### <a name="create-additional-localized-resources"></a>Créer d’autres ressources localisées
 
@@ -392,9 +392,9 @@ Par exemple, le fichier `Strings\de-DE\resources.resw` peut ressembler à ceci, 
 
 Les étapes suivantes supposent que vous avez ajouté des ressources pour `de-DE` et `fr-FR`, mais le même modèle peut être appliqué à n’importe quelle langue.
 
-#### <a name="update-the-package-manifest-to-list-supported-languages"></a>Mettre à jour le manifeste du package à la liste prise en charge des langues
+#### <a name="update-the-package-manifest-to-list-supported-languages"></a>Mettre à jour le manifeste du package pour répertorier les langues prises en charge
 
-Le manifeste du package doit être mis à jour à la liste les langues prises en charge par l’application. Desktop App Converter ajoute la langue par défaut, mais les autres doivent être ajoutées explicitement. Si vous modifiez le fichier `AppxManifest.xml` directement, mettez à jour le nœud `Resources` comme suit, en ajoutant autant d’éléments que nécessaire et en remplaçant les <span style="background-color: yellow"> langues appropriées prises en charge</span>, tout en vous assurant que la première entrée dans la liste est la langue par défaut (de secours). Dans cet exemple, la valeur par défaut est l'anglais (États-Unis) avec une prise en charge supplémentaire pour l’allemand (Allemagne) et le français (France) :
+Le manifeste du package doit être mis à jour pour répertorier les langues prises en charge par l’application. Desktop App Converter ajoute la langue par défaut, mais les autres doivent être ajoutées explicitement. Si vous modifiez le fichier `AppxManifest.xml` directement, mettez à jour le nœud `Resources` comme suit, en ajoutant autant d’éléments que nécessaire et en remplaçant les <span style="background-color: yellow"> langues appropriées prises en charge</span>, tout en vous assurant que la première entrée dans la liste est la langue par défaut (de secours). Dans cet exemple, la valeur par défaut est l'anglais (États-Unis) avec une prise en charge supplémentaire pour l’allemand (Allemagne) et le français (France) :
 
 ```xml
 <Resources>
@@ -404,7 +404,7 @@ Le manifeste du package doit être mis à jour à la liste les langues prises en
 </Resources>
 ```
 
-Si vous utilisez Visual Studio, aucune action n'est requise de votre part ; si vous examinez `Package.appxmanifest` vous devez voir la valeur <span style="background-color: yellow">x-generate</span> spéciale, ce qui permet au processus de génération d’insérer les langues qu’il trouve dans votre projet (sur la base des dossiers nommés avec des codes BCP-47). Notez qu’il ne s’agit pas d’une valeur valide pour un manifeste de package réel ; il fonctionne uniquement pour les projets Visual Studio :
+Si vous utilisez Visual Studio, aucune action n'est requise de votre part ; si vous examinez `Package.appxmanifest` vous devez voir la valeur <span style="background-color: yellow">x-generate</span> spéciale, ce qui permet au processus de génération d’insérer les langues qu’il trouve dans votre projet (sur la base des dossiers nommés avec des codes BCP-47). Notez qu’il ne s’agit pas d’une valeur valide pour un manifeste de package réel. elle fonctionne uniquement pour les projets Visual Studio:
 
 ```xml
 <Resources>
@@ -441,9 +441,9 @@ Pour tester les nouvelles modifications localisées, ajoutez simplement une nouv
 
 Maintenant, ouvrez le menu Démarrer et recherchez votre application : vous verrez des valeurs localisées pour la langue sélectionnée (les autres applications peuvent également apparaître localisées). Si vous ne voyez pas le nom localisé immédiatement, patientez quelques minutes jusqu'à ce que le cache du menu Démarrer soit réactualisé. Pour revenir à votre langue maternelle, définissez-la en tant que langue par défaut dans la liste des langues. 
 
-### <a name="step-14-localizing-more-parts-of-the-package-manifest-optional"></a>Étape 1.4 : Localisation de plusieurs parties du manifeste du package (facultatif)
+### <a name="step-14-localizing-more-parts-of-the-package-manifest-optional"></a>Étape 1.4 : Localisation de parties supplémentaires du manifeste du package (facultatif)
 
-Autres sections du manifeste du package peuvent être localisées. Par exemple, si votre application gère les extensions de fichier, le manifeste `windows.fileTypeAssociation` doit être doté d'une extension, à l’aide du <span style="background-color: lightgreen">texte mis en surbrillance en vert</span> exactement comme indiqué (dans la mesure où il fait référence à des ressources) et en remplaçant le <span style="background-color: yellow">texte surligné en jaune</span> avec des informations spécifiques à votre application :
+D’autres sections du manifeste de package peuvent être localisées. Par exemple, si votre application gère les extensions de fichier, le manifeste `windows.fileTypeAssociation` doit être doté d'une extension, à l’aide du <span style="background-color: lightgreen">texte mis en surbrillance en vert</span> exactement comme indiqué (dans la mesure où il fait référence à des ressources) et en remplaçant le <span style="background-color: yellow">texte surligné en jaune</span> avec des informations spécifiques à votre application :
 
 ```xml
 <Extensions>
@@ -482,7 +482,7 @@ Cela apparaîtra ensuite dans certaines parties de l’interface Windows, par ex
 
 Générez et testez le package comme avant, en testant les nouveaux scénarios qui doivent désormais afficher les nouvelles chaînes d’interface utilisateur.
 
-## <a name="phase-2-use-mrt-to-identify-and-locate-resources"></a>Phase 2 : Utilisez MRT pour identifier et localiser les ressources
+## <a name="phase-2-use-mrt-to-identify-and-locate-resources"></a>Phase 2: Utilisez MRT pour identifier et localiser les ressources
 
 La section précédente vous a montré comment utiliser MRT pour localiser le fichier manifeste de votre application afin que l’interpréteur de commandes Windows puisse afficher correctement le nom de l’application et d'autres métadonnées. Aucune modification du code n’est requise pour cet objet ; seule l’utilisation de fichiers `.resw` est requise ainsi que certains outils supplémentaires. Cette section vous montre comment utiliser MRT pour localiser les ressources dans vos formats de ressource existants, à l’aide de votre code de gestion des ressources existant, le tout avec un minimum de modifications.
 
@@ -492,12 +492,12 @@ Dans la mesure où il existe de nombreuses façons de localiser vos applications
 
 #### <a name="resource-file-layout"></a>Mise en page du fichier de ressources
 
-Cet article suppose que vos ressources localisées tous ont les mêmes noms de fichiers (par exemple, `contoso_demo.exe.mui` ou `contoso_strings.dll` ou `contoso.strings.xml`) mais qu’ils sont placés dans des dossiers différents avec des noms BCP-47 (`en-US`, `de-DE`, etc.). Il n’a pas d’importance des fichiers de ressources combien vous avez, quelles sont leurs noms, leurs-formats de fichiers / associés API sont, etc. La seule chose qui importe est que chaque *logique* ressource a le même nom de fichier (mais placée dans une autre *physique* directory). 
+Cet article suppose que vos ressources localisées ont toutes les mêmes noms de fichiers (par `contoso_demo.exe.mui` exemple `contoso_strings.dll` , `contoso.strings.xml`ou ou), mais qu’elles sont placées dans des dossiers différents avec`en-US`des `de-DE`noms BCP-47 (,, etc.). Peu importe le nombre de fichiers de ressources dont vous disposez, leurs noms, leurs formats de fichier/API associées, etc. La seule chose à faire est que chaque ressource *logique* a le même nom de fichier (mais placée dans un répertoire *physique* différent). 
 
 À titre de contre-exemple, si votre application utilise une structure de fichiers plate avec un seul répertoire `Resources` contenant les fichiers `english_strings.dll` et `french_strings.dll`, elle ne sera  pas mappée correctement sur MRT. Une meilleure structure serait un répertoire `Resources` avec des sous-répertoires et des fichiers `en\strings.dll` et `fr\strings.dll`. Il est également possible d’utiliser le même nom de fichier de base mais avec des qualificateurs incorporés, tel que `strings.lang-en.dll` et `strings.lang-fr.dll`, mais l’utilisation de répertoires avec des codes de langue est plus simple sur le plan conceptuel, aussi nous allons nous concentrer sur cette méthode.
 
 >[!NOTE]
-> Il est toujours possible d’utiliser MRT et les avantages de l’empaquetage même si vous ne pouvez pas suivre cet convention de nom de fichier Cela implique simplement plus de travail.
+> Il est toujours possible d’utiliser le programme MRT et les avantages de l’empaquetage même si vous ne pouvez pas suivre cette Convention d’affectation de noms de fichiers. Cela nécessite simplement plus de travail.
 
 Par exemple, l’application peut disposer d'un ensemble de commandes d’interface utilisateur personnalisées (utilisées pour les étiquettes des boutons etc.) dans un fichier texte simple nommé <span style="background-color: yellow">ui.txt</span>, figurant sous un dossier <span style="background-color: yellow">UICommands</span> :
 
@@ -521,7 +521,7 @@ Par exemple, l’application peut disposer d'un ensemble de commandes d’interf
 
 #### <a name="resource-loading-code"></a>Code de chargement de ressources
 
-Cet article suppose qu’à un moment donné dans votre code que vous souhaitez localiser le fichier qui contient une ressource localisée, charger et ensuite l’utiliser. Les API utilisées pour charger les ressources, les API utilisées pour extraire les ressources, etc. ne sont pas importantes. Dans le pseudo-code, il existe trois étapes :
+Cet article suppose que, à un moment donné dans votre code, vous souhaitez localiser le fichier qui contient une ressource localisée, le charger, puis l’utiliser. Les API utilisées pour charger les ressources, les API utilisées pour extraire les ressources, etc. ne sont pas importantes. Dans le pseudo-code, il existe trois étapes :
 
 <blockquote>
 <pre>
@@ -537,7 +537,7 @@ MRT requiert uniquement une modification des deux premières étapes de ce proce
 
 Par exemple, l’application peut utiliser l’API Win32 `GetUserPreferredUILanguages`, la fonction CRT `sprintf`et les API Win32 `CreateFile` pour remplacer les trois fonctions de pseudo-code ci-dessus, puis analyser manuellement le fichier texte à la recherche de paires `name=value`. (Les détails ne sont pas importants ; il s’agit simplement d’illustrer le fait que MRT n’a aucun impact sur les techniques utilisées pour gérer les ressources une fois qu’elles ont été détectées).
 
-### <a name="step-21-code-changes-to-use-mrt-to-locate-files"></a>Étape 2.1 : Modifications du code MRT permet de localiser les fichiers
+### <a name="step-21-code-changes-to-use-mrt-to-locate-files"></a>Étape 2.1 : Modifications du code pour utiliser MRT pour localiser des fichiers
 
 Il est très simple de basculer sur votre code pour utiliser MRT afin de rechercher des ressources. Cela nécessite d'utiliser quelques types WinRT et certaines lignes de code. Les principaux types que vous utiliserez sont les suivants :
 
@@ -578,7 +578,7 @@ Veuillez noter que le code ne demande **pas** un dossier de langue spécifique -
 
 #### <a name="loading-net-resources"></a>Chargement des ressources .NET
 
-Étant donné que .NET dispose d’un mécanisme intégré pour rechercher et charger des ressources (appelées « Assemblys satellites »), aucun code explicite n'est à remplacer comme dans l’exemple synthétique ci-dessus : dans .NET, vous devez simplement placer vos DLL de ressource dans les répertoires appropriés et ils seront automatiquement recherchés. Lorsqu’une application est empaquetée comme un MSIX pour ou que AppX à l’aide de packs de ressources, la structure de répertoires est quelque peu différente - plutôt qu’ayant les répertoires de ressources être des sous-répertoires du répertoire principal de l’application, ils sont des homologues de celui-ci (ou absent à all si l’utilisateur ne concernés le langage répertoriés dans leurs préférences). 
+Étant donné que .NET dispose d’un mécanisme intégré pour rechercher et charger des ressources (appelées « Assemblys satellites »), aucun code explicite n'est à remplacer comme dans l’exemple synthétique ci-dessus : dans .NET, vous devez simplement placer vos DLL de ressource dans les répertoires appropriés et ils seront automatiquement recherchés. Quand une application est empaquetée en tant que MSIX ou AppX à l’aide de packs de ressources, la structure de répertoires est quelque peu différente, plutôt que de faire en sorte que les répertoires de ressources soient des sous-répertoires du répertoire principal de l’application, mais qu’ils ne soient pas du tout présents si l’utilisateur n’a pas la langue indiquée dans ses préférences). 
 
 Par exemple, imaginons une application .NET avec la disposition suivante, où tous les fichiers existent sous le dossier `MainApp` :
 
@@ -649,7 +649,7 @@ void EnableMrtResourceLookup()
 L’exécution .NET déclenchera l’événement `AssemblyResolve` chaque fois qu’elle ne parvient pas à trouver les DLL de ressource ; à ce moment-là, le gestionnaire d’événement fourni localisera le fichier souhaité via MRT et retournera l’assembly.
 
 > [!NOTE]
-> Si votre application a déjà un `AssemblyResolve` gestionnaire à d’autres fins, vous devez intégrer le code de résolution de ressources dans votre code existant.
+> Si votre application a déjà un `AssemblyResolve` gestionnaire à d’autres fins, vous devrez intégrer le code de résolution des ressources avec votre code existant.
 
 #### <a name="loading-win32-mui-resources"></a>Chargement des ressources de l’interface utilisateur multilingue Win32
 
@@ -711,20 +711,20 @@ HRESULT GetMrtResourceHandle(LPCWSTR resourceFilePath,  HINSTANCE* resourceHandl
 }
 ```
 
-## <a name="phase-3-building-resource-packs"></a>Phase 3 : Packs de ressources de création
+## <a name="phase-3-building-resource-packs"></a>Phase 3: Création de packs de ressources
 
 Maintenant que vous avez un « fat pack » qui contient toutes les ressources, il existe deux manières de créer un package principal et des packages de ressources distincts afin de réduire les tailles de téléchargement et d'installation :
 
 * Utilisez un fat pack existant, exécutez-le par le biais de [l’outil Générateur de lot](https://aka.ms/bundlegen) pour créer automatiquement des packs de ressources. Il s’agit de l’approche à privilégier si vous disposez d’un système de génération qui produit déjà un fat pack que vous souhaitez post-traiter afin de générer les packs de ressources.
 * Produire directement les packages de ressource individuels et les intégrer dans un lot. Il s’agit de l’approche à privilégier si vous avez davantage de contrôle sur votre système de génération et que vous pouvez créer les packages directement.
 
-### <a name="step-31-creating-the-bundle"></a>Étape 3.1 : Création de l’application
+### <a name="step-31-creating-the-bundle"></a>Étape 3.1 : Création du bundle
 
 #### <a name="using-the-bundle-generator-tool"></a>À l’aide de l’outil de génération de lot
 
 Pour pouvoir utiliser l’outil de génération de lot, le fichier de configuration PRI créé pour le package doit être mis à jour manuellement pour supprimer la section `<packaging>`.
 
-Si vous utilisez Visual Studio, reportez-vous à [vous assurer que les ressources sont installées sur un appareil requière ou si un appareil](https://docs.microsoft.com/en-us/previous-versions/dn482043(v=vs.140)) pour plus d’informations sur la création de toutes les langues dans le package principal en créant les fichiers `priconfig.packaging.xml`et `priconfig.default.xml`.
+Si vous utilisez Visual Studio, reportez-vous à la rubrique pour vous [assurer que les ressources sont installées sur un appareil, qu’un appareil en ait besoin](https://docs.microsoft.com/en-us/previous-versions/dn482043(v=vs.140)) pour obtenir des informations sur la façon `priconfig.packaging.xml` de `priconfig.default.xml` générer toutes les langues dans le package principal en créant les fichiers et .
 
 Si vous modifiez manuellement les fichiers, procédez comme suit : 
 
@@ -753,7 +753,7 @@ Si vous modifiez manuellement les fichiers, procédez comme suit :
     makeappx pack /m AppXManifest.xml /f ..\resources.map.txt /p ..\contoso_demo.appx /o
     ```
 
-4. Une fois que le package a été créé, utilisez la commande suivante pour créer le groupe, en utilisant les noms de répertoires et les fichiers appropriés :
+4. Une fois le package créé, utilisez la commande suivante pour créer le bundle, à l’aide des noms de répertoire et de fichier appropriés:
 
     ```CMD
     BundleGenerator.exe -Package ..\contoso_demo.appx -Destination ..\bundle -BundleName contoso_demo
@@ -763,7 +763,7 @@ Vous pouvez maintenant passer à l’étape finale, signature (voir ci-dessous).
 
 #### <a name="manually-creating-resource-packages"></a>Création manuelle de packages de ressources
 
-La création manuelle de packages de ressources nécessite l’exécution d'un ensemble de commandes légèrement différent pour créer des fichiers `.pri` et `.appx` distincts ; ces derniers sont tous semblables aux commandes utilisées précédemment, par conséquent seules des explications minimales sont fournies. Remarque: Toutes les commandes supposent que le répertoire actif est le répertoire contenant le `AppXManifest.xml` fichier, mais tous les fichiers sont placés dans le répertoire parent (vous pouvez utiliser un autre répertoire, si nécessaire, mais vous ne devez pas polluent le répertoire du projet avec un des Ces fichiers). Comme toujours, remplacez les noms de fichier « Contoso » par vos propres noms de fichiers.
+La création manuelle de packages de ressources nécessite l’exécution d'un ensemble de commandes légèrement différent pour créer des fichiers `.pri` et `.appx` distincts ; ces derniers sont tous semblables aux commandes utilisées précédemment, par conséquent seules des explications minimales sont fournies. Remarque : Toutes les commandes supposent que le répertoire actif est le répertoire contenant `AppXManifest.xml` le fichier, mais que tous les fichiers sont placés dans le répertoire parent (vous pouvez utiliser un autre répertoire, si nécessaire, mais vous ne devez pas polluer le répertoire du projet avec l’un des ces fichiers). Comme toujours, remplacez les noms de fichier « Contoso » par vos propres noms de fichiers.
 
 1. Utilisez la commande suivante pour créer un fichier de configuration qui nomme **uniquement** la langue par défaut en tant que qualificateur par défaut - dans ce cas, `en-US` :
 
@@ -777,7 +777,7 @@ La création manuelle de packages de ressources nécessite l’exécution d'un e
     makepri new /pr . /cf ..\contoso_demo.xml /of ..\resources.pri /mf AppX /o
     ```
 
-3. Utilisez la commande suivante pour créer le package principal (qui contient les ressources de code exécutable et les langues par défaut). Comme toujours, renommez le fichier comme vous le souhaitez, bien que vous deviez placer le package dans un répertoire séparé pour faciliter la création du lot ultérieurement (cet exemple utilise le répertoire `.\bundle`) :
+3. Utilisez la commande suivante pour créer le package principal (qui contient les ressources de code exécutable et les langues par défaut). Comme toujours, renommez le fichier comme vous le souhaitez, bien que vous deviez placer le package dans un répertoire séparé pour faciliter la création du lot ultérieurement (cet exemple utilise le répertoire `..\bundle`) :
 
     ```CMD
     makeappx pack /m .\AppXManifest.xml /f ..\resources.map.txt /p ..\bundle\contoso_demo.main.appx /o
@@ -795,9 +795,9 @@ La création manuelle de packages de ressources nécessite l’exécution d'un e
     makeappx bundle /d ..\bundle /p ..\contoso_demo.appxbundle /o
     ```
 
-La signature de la dernière étape de création du package.
+La dernière étape de la création du package consiste à signer.
 
-### <a name="step-32-signing-the-bundle"></a>Étape 3.2 : Signature du bundle
+### <a name="step-32-signing-the-bundle"></a>Étape 3.2 : Signature du bundle
 
 Une fois que vous avez créé le fichier `.appxbundle` (soit par le biais de l’outil de génération de lot, soit manuellement) vous disposerez d'un seul fichier qui contiendra le package principal, ainsi que tous les packages de ressources. La dernière étape consiste à signer le fichier afin que Windows l'installe :
 

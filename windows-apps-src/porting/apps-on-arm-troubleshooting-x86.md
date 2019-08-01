@@ -5,12 +5,12 @@ ms.date: 05/09/2018
 ms.topic: article
 keywords: windows 10 s, toujours connecté, émulation x86 sur ARM, résolution des problèmes
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c29151ae2823aa70711bf002e8954148cc0861b
-ms.sourcegitcommit: f7e3782e24d46b2043023835c5b59d12d3b4ed4b
+ms.openlocfilehash: 480d9cd6508b149e0d4966bae8835c05d30db7af
+ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67345673"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68682747"
 ---
 # <a name="troubleshooting-x86-desktop-apps"></a>Résolution des problèmes relatifs aux applications de bureau x86
 >[!IMPORTANT]
@@ -21,7 +21,7 @@ Si une application de bureau x86 ne fonctionne pas de la même manière que sur 
 |Problème|Solution|
 |-----|--------|
 | Votre application repose sur un pilote qui n'a pas été désigné pour un ARM. | Recompilez votre pilote x86 pour l'ARM64. Consultez [Génération de pilotes ARM64 avec le kit WDK](https://docs.microsoft.com/en-us/windows-hardware/drivers/develop/building-arm64-drivers). |
-| Votre application est uniquement disponible pour un système x64. | Si vous développez pour le Microsoft Store, soumettez une version ARM de votre application. Pour plus d’informations, consultez [Architectures des packages d’applications](../packaging/device-architecture.md). Si vous êtes un développeur Win32, nous vous recommandons de recompiler votre application pour ARM64. Pour plus d’informations, voir [Version préliminaire de la prise en charge de Visual Studio du développement de Windows 10 sur ARM](https://blogs.windows.com/buildingapps/2018/05/08/visual-studio-support-for-windows-10-on-arm-development/). |
+| Votre application est uniquement disponible pour un système x64. | Si vous développez pour le Microsoft Store, soumettez une version ARM de votre application. Pour plus d’informations, consultez [Architectures des packages d’applications](/windows/msix/package/device-architecture). Si vous êtes un développeur Win32, nous vous recommandons de recompiler votre application pour ARM64. Pour plus d’informations, voir [Version préliminaire de la prise en charge de Visual Studio du développement de Windows 10 sur ARM](https://blogs.windows.com/buildingapps/2018/05/08/visual-studio-support-for-windows-10-on-arm-development/). |
 | Votre application utilise une version d'OpenGL ultérieure à la version 1.1 ou nécessite une version d'OpenGL à accélération matérielle. | S'il est disponible, utilisez le mode DirectX de l’application. Les applications x86 utilisant DirectX 9, DirectX 10, DirectX 11 et DirectX 12 fonctionneront sur ARM. Pour plus d’informations, consultez [Jeux et graphismes DirectX](https://docs.microsoft.com/windows/desktop/directx). |
 | Votre application x86 ne fonctionne pas comme prévu. | Essayez d'utiliser l'utilitaire de résolution des problèmes de compatibilité en suivant les recommandations de l'[Utilitaire de résolution des problèmes de compatibilité sur ARM](apps-on-arm-program-compat-troubleshooter.md). Pour certaines étapes de résolution d'autres problèmes, consultez l'article [Résolution des problèmes des applications x86 sur ARM](apps-on-arm-troubleshooting-x86.md). |
 
@@ -45,10 +45,10 @@ Les applications qui tentent d'attacher des composants Windows ou de charger leu
 ## <a name="debugging"></a>Débogage
 Pour étudier le comportement de votre application plus en détail, consultez [Débogage sur ARM](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/debugging-arm64) pour en savoir plus sur les outils et stratégies de débogage sur ARM.
 
-## <a name="virtual-machines"></a>Ordinateurs virtuels
+## <a name="virtual-machines"></a>Virtual Machines
 La plateforme Windows Hypervisor n'est pas prise en charge sur la plateforme PC mobile Qualcomm Snapdragon 835. De ce fait, l'exécution de machines virtuelles à l'aide d'Hyper-V ne fonctionnera pas. Nous continuons d'investir dans ces technologies sur les futurs circuits microprogrammés Qualcomm. 
 
-## <a name="dynamic-code-generation"></a>Génération de Code dynamique
-X86 applications de bureau sont émulées sur ARM64 par le système de génération d’instructions ARM64 lors de l’exécution. Cela signifie que si un x86 application de bureau empêche la génération de code dynamique ou de modification dans son processus, cette application ne peut pas être pris en charge pour s’exécuter en tant que x86 sur ARM64. 
+## <a name="dynamic-code-generation"></a>Génération de code dynamique
+Les applications de bureau x86 sont émulées sur ARM64 par le système générant des instructions ARM64 au moment de l’exécution. Cela signifie que si une application de bureau x86 empêche la génération ou la modification de code dynamique dans son processus, cette application ne peut pas être prise en charge pour s’exécuter en tant que x86 sur ARM64. 
 
-Il s’agit d’une atténuation de sécurité certaines applications activer sur leurs processus à l’aide [SetProcessMitigationPolicy](https://docs.microsoft.com/en-us/windows/desktop/api/processthreadsapi/nf-processthreadsapi-setprocessmitigationpolicy) API avec le `ProcessDynamicCodePolicy` indicateur. Pour s’exécuter correctement sur ARM64 comme un x86 processus, cette stratégie d’atténuation a doit être désactivée. 
+Il s’agit d’une atténuation de la sécurité que certaines applications activent sur leur processus `ProcessDynamicCodePolicy` à l’aide de l’API [SetProcessMitigationPolicy](https://docs.microsoft.com/en-us/windows/desktop/api/processthreadsapi/nf-processthreadsapi-setprocessmitigationpolicy) avec l’indicateur. Pour s’exécuter correctement sur ARM64 en tant que processus x86, cette stratégie d’atténuation doit être désactivée. 

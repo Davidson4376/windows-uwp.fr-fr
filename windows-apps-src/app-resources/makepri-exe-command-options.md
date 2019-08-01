@@ -6,23 +6,23 @@ ms.date: 04/10/2018
 ms.topic: article
 keywords: windows 10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
-ms.openlocfilehash: bc08376dafec8aad9d65ef5acd8d19943d242eed
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 24326c19688a0fa6f2300da50e6d13308b79ee2e
+ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57603394"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68682470"
 ---
 # <a name="makepriexe-command-line-options"></a>Options de ligne de commande de MakePri.exe
 
 [MakePri.exe](compile-resources-manually-with-makepri.md) inclut les commandes `createconfig`, `dump`, `new`, `resourcepack` et `versioned`. Cette rubrique détaille les options de ligne de commande utilisées avec ces commandes.
 
 > [!NOTE]
-> MakePri.exe est installé lorsque vous activez le **Kit de développement logiciel Windows pour les applications UWP managées** option lors de l’installation du Kit de développement logiciel Windows. Il est installé dans le chemin d’accès `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (ainsi que dans les dossiers nommés pour les autres architectures). Exemple : `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.
+> MakePri. exe est installé lorsque vous activez l’option **SDK Windows pour les applications gérées UWP** lors de l’installation du kit de développement logiciel (SDK) Windows. Il est installé dans le chemin `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` d’accès (et dans les dossiers nommés pour les autres architectures). Par exemple, `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.
 
-## <a name="getting-help-from-the-command-line"></a>Obtention d’aide en ligne de commande
+## <a name="getting-help-from-the-command-line"></a>Obtenir de l’aide à partir de la ligne de commande
 
-Vous pouvez exécuter `MakePri.exe help` ou `MakePri.exe /?` pour voir les commandes que vous pouvez utiliser avec MakePri.exe. Vous pouvez également émettre `MakePri.exe <command> /?` pour afficher des détails sur une commande et, dans de très rares cas, même `MakePri.exe <command> <option>` pour voir plus de détails sur une option.
+Vous pouvez exécuter `MakePri.exe help` ou `MakePri.exe /?` pour afficher les commandes que vous pouvez utiliser avec MakePri. exe. Vous pouvez également émettre `MakePri.exe <command> /?` pour voir des détails sur une commande et, dans de rares cas, même `MakePri.exe <command> <option>` pour voir des détails sur une option.
 
 ## <a name="makepri-commands"></a>Commandes MakePri
 
@@ -416,22 +416,22 @@ Pour `resourcepack` et `versioned`, au lieu de fournir un fichier PRI en tant qu
 
 **FILEPATH** est un jeton qui spécifie l’emplacement du fichier PRI d’entrée ou du fichier de schéma PRI.
 
-## <a name="47indexoptionsio-option"></a>&#47;Option de IndexOptions(io)
+## <a name="47indexoptionsio-option"></a>&#47;IndexOptions (IO) (option)
 
-Vous utilisez l’option options d’index (/ e/s) avec `new`, `resourcepack`, et `versioned` pour spécifier des options qui permettent de contrôler le comportement des indexeurs de la ressource. Options d’index sont désactivées par défaut.
+Vous utilisez l’option d’index (/IO) avec `new`, `resourcepack`et `versioned` pour spécifier des options qui fournissent un contrôle détaillé sur le comportement des indexeurs de ressources. Les options d’index sont désactivées par défaut.
 
 ```console
 /IndexOptions(io) <OPTIONS>
 ```
 
-**OPTIONS** est une liste séparée par des virgules constituée des options suivantes.
+**Options** est une liste séparée par des virgules constituée des options suivantes.
 
-- +/-HiddenFiles(hf). Index (+) ou ignorer (-) les fichiers et dossiers cachés.
-- +/-LinkedFiles(lf). Index (+) ou ignorer (-) lié des fichiers et dossiers.
+- +/-HiddenFiles (HF). Fichiers et dossiers masqués d’index (+) ou ignorés (-).
+- +/-LinkedFiles (LF). Index (+) ou ignorer les fichiers et dossiers liés.
 
 ## <a name="47mappingfilemf-option"></a>Option &#47;MappingFile(mf)
 
-Vous utilisez l’option de fichier de mappage (/mf) avec `new`, `resourcepack` et `versioned` pour générer un fichier de mappage. [MakeAppx.exe](../packaging/create-app-package-with-makeappx-tool.md) utilise le fichier de mappage pour générer les packages d’application.
+Vous utilisez l’option de fichier de mappage (/mf) avec `new`, `resourcepack` et `versioned` pour générer un fichier de mappage. [MakeAppx.exe](/windows/msix/package/create-app-package-with-makeappx-tool) utilise le fichier de mappage pour générer les packages d’application.
 
 ```console
 /MappingFile(mf) <MAPPINGFILETYPE>
@@ -501,7 +501,7 @@ Voici un exemple de condition d’erreur et le message d’erreur correspondant.
 
 | Condition d’erreur | Message d’erreur |
 | --------------- | ------------- |
-| Le nom du fichier de sortie est identique à un des noms de pack de ressources dans la configuration. | Configuration non valide : Nom de Pack de ressources <resource pack name> ne peut pas être le même que le fichier de sortie < outputfilename.pri >. |
+| Le nom du fichier de sortie est identique à un des noms de pack de ressources dans la configuration. | Configuration non valide: Le nom <resource pack name> du Pack de ressources ne peut pas être le même que le fichier de sortie < > OutputFileName. pri. |
 
 ## <a name="reversemaprm-option"></a>Options /ReverseMap(rm)
 
@@ -551,4 +551,4 @@ Pour fournir le numéro de version principale, utilisez l’attribut [resources@
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [MakePri.exe](compile-resources-manually-with-makepri.md)
+* [MakePri. exe](compile-resources-manually-with-makepri.md)

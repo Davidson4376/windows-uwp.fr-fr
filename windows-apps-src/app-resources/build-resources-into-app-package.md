@@ -6,18 +6,18 @@ ms.date: 11/14/2017
 ms.topic: article
 keywords: windows 10, uwp, ressources, image, MRT, qualificateur
 ms.localizationpriority: medium
-ms.openlocfilehash: 8bf2d34bc3dae20750f66c9116499a17444b798c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f7acabc9858f5a2fa0b6b76d752d2a342959f41f
+ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57627284"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68682509"
 ---
 # <a name="build-resources-into-your-app-package-instead-of-into-a-resource-pack"></a>Générer des ressources dans votre package d’application, plutôt que dans un pack de ressources
 
 Certains types d’applications (dictionnaires multilingues, outils de traduction, etc.) doivent remplacer le comportement par défaut d’un ensemble d’applications et générer des ressources dans le package d’application, plutôt que dans des packages de ressources distincts (ou des packs de ressources). Cette rubrique explique la procédure à suivre.
 
-Par défaut, lorsque vous générez un [ensemble d’applications (.appxbundle)](../packaging/packaging-uwp-apps.md), seules vos ressources par défaut pour la langue, la mise à l’échelle et le niveau de fonctionnalité DirectX sont intégrées dans le package d’application. Vos ressources traduites&mdash;et vos ressources adaptées aux échelles autres que celles par défaut et/ou aux niveaux de fonctionnalités DirectX&mdash;sont intégrées dans les packages de ressources et sont téléchargées uniquement sur les périphériques qui en ont besoin. Si un client achète votre application dans Microsoft Store à l’aide d’un périphérique dont la préférence linguistique a la valeur espagnol, seule votre application ainsi que le package de ressources en espagnol sont téléchargés et installés. Si ce même utilisateur change par la suite ses préférences linguistiques en français dans les **paramètres**, le package de ressources en français de votre application est téléchargé et installé. La même chose se produit avec vos ressources qualifiées pour la mise à l’échelle et le niveau de fonctionnalité DirectX. Pour la plupart des applications, ce comportement est très efficace : c’est exactement ce que le client et vous-même *souhaitez* voir se produire.
+Par défaut, lorsque vous générez un [ensemble d’applications (.appxbundle)](/windows/msix/package/packaging-uwp-apps), seules vos ressources par défaut pour la langue, la mise à l’échelle et le niveau de fonctionnalité DirectX sont intégrées dans le package d’application. Vos ressources traduites&mdash;et vos ressources adaptées aux échelles autres que celles par défaut et/ou aux niveaux de fonctionnalités DirectX&mdash;sont intégrées dans les packages de ressources et sont téléchargées uniquement sur les périphériques qui en ont besoin. Si un client achète votre application dans Microsoft Store à l’aide d’un périphérique dont la préférence linguistique a la valeur espagnol, seule votre application ainsi que le package de ressources en espagnol sont téléchargés et installés. Si ce même utilisateur change par la suite ses préférences linguistiques en français dans les **paramètres**, le package de ressources en français de votre application est téléchargé et installé. La même chose se produit avec vos ressources qualifiées pour la mise à l’échelle et le niveau de fonctionnalité DirectX. Pour la plupart des applications, ce comportement est très efficace : c’est exactement ce que le client et vous-même *souhaitez* voir se produire.
 
 Mais si votre application autorise l’utilisateur à modifier la langue à la volée à partir de l’application (plutôt que via les **paramètres**), ce comportement par défaut n’est pas approprié. Il est en effet préférable que toutes vos ressources linguistiques soit téléchargées sans condition et installées avec l’application une fois, puis qu’elles restent sur le périphérique. Toutes ces ressources doivent alors être générées dans votre package d’application, plutôt que dans des packages de ressources distincts.
 
@@ -48,7 +48,7 @@ Vous pouvez configurer Visual Studio pour qu’il génère des ressources dans v
 
 Pour vérifier que vos choix de fractionnement automatique sont pris en compte, recherchez le fichier `<ProjectFolder>\obj\<ReleaseConfiguration folder>\split.priconfig.xml`et confirmez que son contenu correspond à vos choix. Si tel est le cas, vous avez correctement configuré Visual Studio pour générer les ressources de votre choix dans le package d’application.
 
-Vous devez effectuer une étape finale. **Ceci est valable uniquement si vous avez supprimé le nom de qualificateur `Language`**. Vous devez spécifier l’union de toutes les langues prises en charge par votre application comme langue par défaut de votre application. Pour plus d’informations, consultez [Préciser les ressources par défaut que votre application utilise](specify-default-resources-installed.md). Voici ce que contiendrait votre fichier `priconfig.default.xml` si vous englobiez des ressources pour l’anglais, l’espagnol et le français dans votre package d’application.
+Vous devez effectuer une étape finale. **Ceci est valable uniquement si vous avez supprimé le nom de qualificateur `Language`** . Vous devez spécifier l’union de toutes les langues prises en charge par votre application comme langue par défaut de votre application. Pour plus d’informations, consultez [Préciser les ressources par défaut que votre application utilise](specify-default-resources-installed.md). Voici ce que contiendrait votre fichier `priconfig.default.xml` si vous englobiez des ressources pour l’anglais, l’espagnol et le français dans votre package d’application.
 
 ```xml
    <default>
@@ -89,7 +89,7 @@ Voici à quoi ressemble le fichier une fois que vous avez supprimé le premier n
 
 Enregistrez et fermez-le, puis générez une nouvelle fois votre projet.
 
-Vous devez effectuer une étape finale. **Ceci est valable uniquement si vous avez supprimé le nom de qualificateur `Language`**. Vous devez spécifier l’union de toutes les langues prises en charge par votre application comme langue par défaut de votre application. Pour plus d’informations, consultez [Préciser les ressources par défaut que votre application utilise](specify-default-resources-installed.md). Voici ce que contiendrait votre fichier de projet si vous englobiez des ressources pour l’anglais, l’espagnol et le français dans votre package d’application.
+Vous devez effectuer une étape finale. **Ceci est valable uniquement si vous avez supprimé le nom de qualificateur `Language`** . Vous devez spécifier l’union de toutes les langues prises en charge par votre application comme langue par défaut de votre application. Pour plus d’informations, consultez [Préciser les ressources par défaut que votre application utilise](specify-default-resources-installed.md). Voici ce que contiendrait votre fichier de projet si vous englobiez des ressources pour l’anglais, l’espagnol et le français dans votre package d’application.
 
 ```xml
 <AppxDefaultResourceQualifiers>Language=en;es;fr</AppxDefaultResourceQualifiers>
