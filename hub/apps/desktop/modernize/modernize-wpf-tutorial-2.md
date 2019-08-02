@@ -8,12 +8,12 @@ author: mcleanbyron
 keywords: Windows 10, UWP, Windows Forms, WPF, îlots XAML
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 07d2c957dff61a8b1ec9f9541ffeb9706da8a0e9
-ms.sourcegitcommit: 2062d06567ef087ad73507a03ecc726a7d848361
+ms.openlocfilehash: 4d504686e2ff50700e3f4bf242ef5d16be814894
+ms.sourcegitcommit: 3cc6eb3bab78f7e68c37226c40410ebca73f82a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68303571"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68729484"
 ---
 # <a name="part-2-add-a-uwp-inkcanvas-control-using-xaml-islands"></a>Partie 2 : Ajouter un contrôle InkCanvas UWP à l’aide d'îles XAML
 
@@ -29,7 +29,7 @@ Avant de pouvoir ajouter un contrôle **InkCanvas** à l’application Contoso d
 
     ![Menu gérer les packages NuGet dans Visual Studio](images/wpf-modernize-tutorial//ManageNuGetPackages.png)
 
-2. Dans la fenêtre **Gestionnaire de package NuGet** , cliquez sur **Parcourir**. Sélectionnez l’option **inclure la version préliminaire** , recherchez le `Microsoft.Toolkit.Wpf.UI.Controls` package et installez la dernière version préliminaire du package affichée dans les résultats. Veillez à installer la version 6.0.0-Preview 6.4 ou une version ultérieure.
+2. Dans la fenêtre **Gestionnaire de package NuGet** , cliquez sur **Parcourir**. Sélectionnez l’option **inclure la version préliminaire** , recherchez le `Microsoft.Toolkit.Wpf.UI.Controls` package et installez la dernière version préliminaire du package affichée dans les résultats. Veillez à installer la version 6.0.0-preview7 ou une version ultérieure.
 
     > [!NOTE]
     > Ce package contient toute l’infrastructure nécessaire pour l’hébergement des îlots XAML UWP dans une application WPF, y compris le contrôle UWP encapsulé dans **InkCanvas** . Un package similaire nommé `Microsoft.Toolkit.Forms.UI.Controls` est disponible pour les applications Windows Forms.

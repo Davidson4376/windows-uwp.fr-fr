@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 560d339476ef3cd45f30bfc678661fb0a4a11ee1
-ms.sourcegitcommit: f6af7aeb8506379a184207035c8e43288cb31453
+ms.openlocfilehash: 765fefa0b489e1620d7a37fe75acd02acb8d5ae8
+ms.sourcegitcommit: 3cc6eb3bab78f7e68c37226c40410ebca73f82a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68601540"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68729477"
 ---
 # <a name="host-uwp-xaml-controls-in-desktop-apps-xaml-islands"></a>Héberger des contrôles XAML UWP dans les applications de bureau (îlots XAML)
 
@@ -77,7 +77,7 @@ Les API qui s’affichent en bas de ce diagramme sont livrés avec le SDK Window
 Les îlots XAML requièrent Windows 10, version 1903 et versions ultérieures. Pour utiliser des îlots XAML dans votre application, vous devez d’abord configurer votre projet:
 
 1. Modifiez votre projet pour qu’il utilise des API Windows Runtime. Pour obtenir des instructions, consultez [cet article](desktop-to-uwp-enhance.md#set-up-your-project).
-2. Installez l’un de ces packages NuGet dans votre projet. Veillez à installer la version 6.0.0-Preview 6.4 ou une version ultérieure du package.
+2. Installez l’un de ces packages NuGet dans votre projet. Veillez à installer la version 6.0.0-preview7 ou une version ultérieure du package.
     * WPF Installer [Microsoft. Toolkit. WPF. UI. Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls)
     * Windows Forms: [Microsoft. Toolkit. Forms. UI. Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls)
     * C++32 [Microsoft. Toolkit. Win32. UI. XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication)
@@ -91,7 +91,7 @@ Les îlots XAML requièrent Windows 10, version 1903 et versions ultérieures. P
 
 * La version 1,0 des contrôles pour le .NET Framework 4.6.2 et versions ultérieures doit être publiée dans la [version 6,0 de la boîte à outils](https://github.com/windows-toolkit/WindowsCommunityToolkit/milestones).
 * La version 1,0 des contrôles pour .NET Core 3 est prévue pour une version ultérieure de la boîte à outils.
-* Si vous souhaitez tester les versions les plus récentes des versions 1,0 de ces contrôles pour le .NET Framework et .NET Core 3, consultez les packages NuGet **-preview 6.4** NuGet dans la Galerie de la [boîte à outils de la communauté UWP](https://dotnet.myget.org/gallery/uwpcommunitytoolkit) .
+* Si vous souhaitez essayer les derniers aperçus des versions 1,0 de ces contrôles pour la .NET Framework et .NET Core 3, consultez les packages NuGet **6.0.0-preview7** dans la Galerie de la boîte à outils de la [communauté UWP](https://dotnet.myget.org/gallery/uwpcommunitytoolkit) .
 
 Pour plus d’informations, consultez [ce billet de blog](https://blogs.windows.com/windowsdeveloper/2019/06/13/xaml-islands-v1-updates-and-roadmap).
 
