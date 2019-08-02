@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, questions, fréquentes, FAQ, forum aux questions
 ms.localizationpriority: medium
-ms.openlocfilehash: 01ff6fb443550287330d6fe503c3d49d81e2142c
-ms.sourcegitcommit: a7a1e27b04f0ac51c4622318170af870571069f6
+ms.openlocfilehash: 6bac3fec34467f29d9cf2cc3f1ce4e3754187745
+ms.sourcegitcommit: 7ece8a9a9fa75e2e92aac4ac31602237e8b7fde5
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67717644"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68485147"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>Forum aux questions sur C++/WinRT
 Réponses aux questions que vous êtes susceptibles de vous poser sur la création et l’utilisation d’API Windows Runtime avec [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
@@ -63,15 +63,9 @@ L’une des causes de cette exception provient de l’impossibilité de charger 
 
 ### <a name="uniform-construction"></a>Construction uniforme
 
-Cette erreur peut également se produire si vous essayez d’instancier une classe runtime implémentée localement par le biais de l’un des constructeurs du type projeté (autre que son constructeur **std::nullptr_t**). Pour ce faire, vous avez besoin de la fonctionnalité C++/WinRT 2.0, souvent appelée « construction uniforme ». Toutefois, pour instancier vos classes runtime implémentées localement *sans* faire appel à la construction uniforme, consultez [Contrôles XAML ; liaison à une propriété C++/WinRT](binding-property.md).
+Cette erreur peut également se produire si vous essayez d’instancier une classe runtime implémentée localement par le biais de l’un des constructeurs du type projeté (autre que son constructeur **std::nullptr_t**). Pour ce faire, vous avez besoin de la fonctionnalité C++/WinRT 2.0, souvent appelée « construction uniforme ». Si vous souhaitez vous abonner à cette fonctionnalité, pour plus d'informations et des exemples de code, consultez [Accepter la construction uniforme et l'accès à l’implémentation direct](/windows/uwp/cpp-and-winrt-apis/author-apis#opt-in-to-uniform-construction-and-direct-implementation-access).
 
-Si vous *souhaitez* une construction uniforme, celle-ci est activée par défaut pour les nouveaux projets. Pour un projet existant, vous devez accepter la construction uniforme en configurant l’outil `cppwinrt.exe`. Dans Visual Studio, affectez *Oui* à la propriété de projet **Propriétés communes** > **C++/WinRT** > **Optimisé**. `<CppWinRTOptimized>true</CppWinRTOptimized>` est alors ajouté à votre fichier projet. Cela revient à ajouter le commutateur `-opt[imize]` lors de l’appel de `cppwinrt.exe` à partir de la ligne de commande.
-
-Quand vous générez votre projet *sans* ce paramètre, votre projection C++/WinRT résultante appelle [**RoGetActivationFactory**](/windows/win32/api/roapi/nf-roapi-rogetactivationfactory) pour accéder aux constructeurs et aux membres statiques de votre classe runtime. Cela nécessite que les classes soient inscrites et que votre module implémente le point d’entrée [**DllGetActivationFactory**](/previous-versions/br205771(v=vs.85)).
-
-Quand vous générez votre projet *avec* le commutateur `-opt[imize]`, votre projet contourne **RoGetActivationFactory** pour les classes de votre composant, ce qui vous permet de les construire (sans avoir besoin de les inscrire) de la même manière que si elles se trouvaient en dehors de votre composant.
-
-Pour utiliser la construction uniforme, vous devez également changer le fichier `.cpp` de chaque implémentation en `#include <Sub/Namespace/ClassName.g.cpp>` après avoir inclus le fichier d’en-tête d’implémentation.
+Pour instancier vos classes runtime implémentées localement *sans* faire appel à la construction uniforme, consultez [Contrôles XAML ; liaison à une propriété C++/WinRT](binding-property.md).
 
 ## <a name="should-i-implement-windowsfoundationiclosableuwpapiwindowsfoundationiclosable-and-if-so-how"></a>Dois-je implémenter [**Windows::Foundation::IClosable**](/uwp/api/windows.foundation.iclosable) et, si ou, comment ?
 Si vous disposez d’une classe runtime qui libère les ressources dans son destructeur, et que cette classe runtime est conçue pour être utilisée à partir de l’extérieur de son unité de compilation d’implémentation (c’est un composant Windows Runtime destiné à une utilisation générale par les applications clientes Windows Runtime), nous vous recommandons d’implémenter également **IClosable** pour prendre en charge l’utilisation de votre classe runtime par les langages qui n’offrent pas de finalisation déterministe. Vérifiez que vos ressources sont libérées si le destructeur, [**IClosable::Close**](/uwp/api/windows.foundation.iclosable.close) ou les deux sont appelés. **IClosable::Close** peut être appelé un nombre de fois arbitraire.

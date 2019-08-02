@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 25dc7118fcb7d9c6e997fae458ef7846777b1262
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 2b0f5918b240bf5c28e49f2ede6f10dbeefcbbfc
+ms.sourcegitcommit: e13f06042a28a8455a211b8693a009098e150cd1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65983916"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68522088"
 ---
 # <a name="introduction-to-uwp-app-design"></a>Présentation de la conception des applications UWP
 
@@ -47,12 +47,12 @@ Vous pouvez ignorer la densité de pixels et la résolution d’écran réelle l
 
 :::row:::
     :::column span:::
-        The sizes, margins, and positions of UI elements should always be in **multiples of 4 epx** in your UWP apps.
+Les tailles, les marges et les positions des éléments de l’interface utilisateur doivent toujours être des **multiples de 4 epx** dans vos applications UWP.
 
-        UWP scales across a range of devices with scaling plateaus of 100%, 125%, 150%, 175%, 200%, 225%, 250%, 300%, 350%, and 400%. The base unit is 4 because it's the only integer that can be scaled by non-whole numbers (e.g. 4*1.5 = 6). Using multiples of four aligns all UI elements with whole pixels and ensures UI elements have crisp, sharp edges. (Note that text doesn't have this requirement; text can have any size and position.)
+UWP prend en charge différents appareils avec plateaux d'échelle de 100 %, 125 %, 150 %, 175 %, 200 %, 225 %, 250 %, 300 %, 350 % et 400 %. L’unité de base est 4, car il s’agit du seul entier pouvant être mis à l’échelle par des nombres non entiers (par exemple, 4*1,5 = 6). L’utilisation de multiples de quatre aligne tous les éléments d’interface utilisateur à pixels entiers et leur garantit des bords nets et vifs. (Notez que le texte n’est pas assujetti à cette exigence ; il peut en effet avoir n’importe quelle taille et position.)
     :::column-end:::
     :::column:::
-        ![grid](images/4epx.svg)
+![Grille](images/4epx.svg)
     :::column-end:::
 :::row-end:::
 
@@ -64,21 +64,21 @@ Puisque les applications UWP s'adaptent automatiquement à tous les appareils, l
 
 :::row:::
     :::column:::
-        When a UWP app is launched on any Windows 10 device, it launches in a [Window](/uwp/api/windows.ui.xaml.window) with a [Frame](/uwp/api/windows.ui.xaml.controls.frame), which can navigate between [Page](/uwp/api/windows.ui.xaml.controls.page) instances.
+Lorsqu’une application UWP est lancée sur n’importe quel appareil Windows 10, elle se lance dans une [Fenêtre](/uwp/api/windows.ui.xaml.window) avec un [Cadre](/uwp/api/windows.ui.xaml.controls.frame), qui peut naviguer entre des instances de [Page](/uwp/api/windows.ui.xaml.controls.page).
     :::column-end:::
     :::column:::
-        ![Frame](images/frame.svg)
+![Trame](images/frame.svg)
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-        You can think of your app's UI as a collection of pages. It's up to you to decide what should go on each page, and the relationships between pages.
+Vous pouvez considérer l’interface utilisateur de votre application comme une collection de pages. C’est à vous de choisir les éléments qui vont sur chaque page et les relations entre les pages.
 
-        To learn how you can organize your pages, see [Navigation basics](navigation-basics.md).
+Pour découvrir comment organiser vos pages, consultez [Notions de base sur la navigation](navigation-basics.md).
     :::column-end:::
     :::column:::
-        ![Frame](images/collection-pages.svg)
+![Trame](images/collection-pages.svg)
     :::column-end:::
 :::row-end:::
 
@@ -116,14 +116,14 @@ Les contrôles courants sont hautement personnalisables. Vous pouvez modifier la
 
 :::row:::
     :::column:::
-        Your UWP app will interact with the broader Windows experience with tiles and notifications in the Windows [Shell](../shell/tiles-and-notifications/creating-tiles.md).
+Votre application UWP interagira avec l’expérience Windows plus large des vignettes et des notifications dans le Windows [Shell](../shell/tiles-and-notifications/creating-tiles.md).
 
-        Tiles are displayed in the Start menu and when your app launches, and they provide a glimpse of what's going on in your app. Their power comes from the content behind them, and the intelligence and craft with which they're offered up.
+Les vignettes s'affichent dans le menu Démarrer et au lancement de votre application. Elles offrent un aperçu de ce qui se passe dans votre application. Elles s’appuient sur un solide contenu, et sur l’intelligence et le mode de conception qui sont à leur origine.
 
-        UWP apps have four tile sizes (small, medium, wide, and large) that can be customized with the app's icon and identity. For guidance on designing tiles for your UWP app, see [Guidelines for tile and icon assets](../shell/tiles-and-notifications/app-assets.md).
+Les applications UWP disposent de quatre tailles de vignettes (petite, moyenne, large et grande) qui peuvent être personnalisées avec l’icône et l’identité de l’application. Pour obtenir des conseils sur la conception de vignettes pour votre application UWP, consultez [Recommandations en matière de ressources de vignette et d’icône](../shell/tiles-and-notifications/app-assets.md).
     :::column-end:::
     :::column:::
-        ![tiles on start menu](images/shell.svg)
+![vignettes du menu Démarrer](images/shell.svg)
     :::column-end:::
 :::row-end:::
 
@@ -131,10 +131,10 @@ Les contrôles courants sont hautement personnalisables. Vous pouvez modifier la
 
 :::row:::
     :::column:::
-        UWP apps rely on smart interactions. You can design around a click interaction without having to know or define whether the click comes from a mouse, a stylus, or a tap of a finger. However, you can also design your apps for [specific input modes](../input/input-primer.md).
+Les applications UWP s’appuient sur des interactions intelligentes. Vous pouvez concevoir une fonction sur la base d’une interaction de clic sans savoir nécessairement si le clic provient d’un clic de la souris, d’un stylet ou d’une pression du doigt. Vous pouvez également concevoir vos applications pour des [modes de saisie spécifiques](../input/input-primer.md).
     :::column-end:::
     :::column:::
-        ![inputs](images/inputs.svg)
+![entrées](images/inputs.svg)
     :::column-end:::
 :::row-end:::
 

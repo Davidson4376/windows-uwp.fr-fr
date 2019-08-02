@@ -4,13 +4,13 @@ description: Comment utiliser les classes XamlUICommand et StandardUICommand (ai
 author: Karl-Bridge-Microsoft
 ms.service: ''
 ms.topic: overview
-ms.date: 03/11/2019
-ms.openlocfilehash: a85a101cd529bf487cbc97b93bb3905f28213c19
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.date: 07/23/2019
+ms.openlocfilehash: 338cae7b6238c3c773f409322600c8bee8c193f5
+ms.sourcegitcommit: 401c8ecaf74eee247f1ed0093028cc6558b4a605
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63793849"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68446379"
 ---
 # <a name="commanding-in-universal-windows-platform-uwp-apps-using-standarduicommand-xamluicommand-and-icommand"></a>Utilisation des commandes dans les applications de plateforme Windows universelle (UWP) à l’aide de StandardUICommand, XamlUICommand et ICommand
 
@@ -36,9 +36,11 @@ Les commandes peuvent être appelées directement par le biais d’interactions 
 
 Les commandes peuvent fonctionner sur un contexte spécifique au sein de votre application, telles que la suppression de texte ou l’annulation d’une action, ou elles peuvent être dépourvues de contexte, telles que la désactivation du son ou le réglage de la luminosité.
 
-L’illustration suivante montre deux interfaces de commande (un [CommandBar](app-bars.md) et un [CommandBarFlyout](command-bar-flyout.md) contextuel flottant) qui partagent un grand nombre de commandes.
+L’illustration suivante montre deux interfaces de commande (un [CommandBar](app-bars.md) et un [CommandBarFlyout](command-bar-flyout.md) contextuel flottant) qui partagent quelques commandes.
 
-![Exemple d’interface de commande](images/commanding/command-interface-example.png)
+![Barre de commandes dans Photos Microsoft](images/control-examples/command-bar-photos.png)<br>*Barre de commandes dans Photos Microsoft*
+
+![Menu contextuel dans la galerie Microsoft Photos](images/ContextMenu_example.png)<br>*Menu contextuel dans la galerie Microsoft Photos*
 
 ## <a name="command-interactions"></a>Interactions de commande
 
