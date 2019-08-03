@@ -6,12 +6,12 @@ keywords: Commencer avec une licence de développeur Visual Studio, appareil ave
 ms.date: 04/09/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c1979f8e8232ee3bfd2e2961307608bf8da7836
-ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
+ms.openlocfilehash: 09f115cad236582ccb0008c2274a7472ed4c0d55
+ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67714145"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68682666"
 ---
 # <a name="enable-your-device-for-development"></a>Activer votre appareil pour le développement
 
@@ -60,7 +60,7 @@ Le paramètre Charger la version test des applications est généralement utilis
 
 Informations spécifiques à la famille d’appareils
 
--   Pour la famille d’appareils de bureau : Vous pouvez installer un package d’application (.appx) et tout certificat nécessaire à l’exécution de l’application en exécutant le script Windows PowerShell créé avec le package (« Add-AppDevPackage.ps1 »). Pour plus d’informations, voir [Création de packages d’application UWP](../packaging/packaging-uwp-apps.md).
+-   Pour la famille d’appareils de bureau : Vous pouvez installer un package d’application (.appx) et tout certificat nécessaire à l’exécution de l’application en exécutant le script Windows PowerShell créé avec le package (« Add-AppDevPackage.ps1 »). Pour plus d’informations, voir [Création de packages d’application UWP](/windows/msix/package/packaging-uwp-apps).
 
 -   Pour la famille d’appareils mobiles : Si le certificat requis est déjà installé, vous pouvez appuyer sur le fichier pour installer tout fichier .appx reçu par courrier électronique ou sur une carte SD.
 

@@ -6,12 +6,12 @@ ms.date: 10/03/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: d393ee92be8768861da0fb0783372c8bafc6f815
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: faf3cdc1a3fab3bd0332b995c25b081d296a55bb
+ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67821112"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68682779"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17763"></a>Nouveautés de Windows 10 pour les développeurs, build 17763
 
@@ -83,7 +83,7 @@ Fonctionnalité | Description
 MSIX | [MSIX](https://docs.microsoft.com/windows/msix/overview) est le nouveau format d'empaquetage d'applications Windows. Il offre une expérience d'empaquetage moderne à toutes les applications Windows. Le format MSIX open source conserve les fonctionnalités des packages existants, tout en activant des fonctionnalités de déploiement modernes.
 Outil d’empaquetage MSIX | Le nouvel [​​outil d'empaquetage MSIX](https://docs.microsoft.com/windows/msix/mpt-overview) vous permet de ré-empaqueter vos applications de bureau existantes au format MSIX, même si vous n'avez pas accès à leur code source. Il peut être exécuté sur la ligne de commande ou via son interface utilisateur interactive.
 Prise en charge de Desktop App Converter pour MSIX | Vous pouvez utiliser [Desktop App Converter](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-root) pour générer un package MSIX à l'aide du paramètre `-MakeMSIX`.
-Prise en charge de l'outil MakeAppx.exe pour MSIX | Vous pouvez utiliser l'outil MakeAppx.exe afin de créer un package MSIX pour les applications UWP ou les applications de bureau traditionnelles. Cet outil est inclus dans le Kit de développement logiciel (SDK) Windows 10 et peut s’utiliser à partir d’une invite de commandes ou d’un fichier de script. </br> Pour les applications UWP, consultez [Créer un package d'application avec l'outil MakeAppx.exe](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool). </br> Pour les applications de bureau, consultez [Empaqueter une application de bureau manuellement](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-manual-conversion).
+Prise en charge de l'outil MakeAppx.exe pour MSIX | Vous pouvez utiliser l'outil MakeAppx.exe afin de créer un package MSIX pour les applications UWP ou les applications de bureau traditionnelles. Cet outil est inclus dans le Kit de développement logiciel (SDK) Windows 10 et peut s’utiliser à partir d’une invite de commandes ou d’un fichier de script. </br> Pour les applications UWP, consultez [Créer un package d'application avec l'outil MakeAppx.exe](/windows/msix/package/create-app-package-with-makeappx-tool). </br> Pour les applications de bureau, consultez [Empaqueter une application de bureau manuellement](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-manual-conversion).
 Framework de prise en charge de package | Le [Framework de prise en charge de package](https://docs.microsoft.com/windows/msix/package-support-framework-overview) est un kit open source qui vous aide à appliquer des correctifs à votre application de bureau existante lorsque vous n'avez pas accès au code source, afin qu'il puisse être exécuté dans un conteneur MSIX.
 API d'analyse du Microsoft Store | L'[API d'analyse du Microsoft Store](../monetize/access-analytics-data-using-windows-store-services.md) inclut désormais les nouvelles méthodes suivantes : </br> * [Obtenir des données d'insights pour votre application UWP](../monetize/get-insights-data-for-your-app.md) </br> * [Obtenir des données d'insights pour votre application de bureau](../monetize/get-insights-data-for-your-desktop-app.md) </br>* [Obtenir des blocs de mise à niveau pour votre application de bureau](../monetize/get-desktop-block-data.md) </br> * [Obtenir des informations concernant les blocs de mise à niveau pour votre application de bureau](../monetize/get-desktop-block-data-details.md)
 

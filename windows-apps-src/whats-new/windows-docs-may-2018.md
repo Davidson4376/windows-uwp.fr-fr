@@ -5,12 +5,12 @@ keywords: nouveautés, mise à jour, fonctionnalités, conseils aux développeur
 ms.date: 05/07/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9adf5a80595e00a30098044536d1ecfe4fd62279
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: d8b72501c298f3814092ec4567a5fb608c4bb88f
+ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820495"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68682765"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-may-2018"></a>Nouveautés apportées dans la documentation du développeur Windows en mai 2018
 
@@ -83,7 +83,7 @@ Le format d’empaquetage MSIX est un format open source, ce qui facilite pour n
 
 ### <a name="optional-packages-with-executable-code"></a>Packages facultatifs avec code exécutable
 
-Les packages facultatifs dans votre application peuvent maintenant contenir du code C# exécutable. [Découvrez comment utiliser Visual Studio pour configurer des packages complémentaires facultatifs afin de prendre en charge de votre package d’application principal.](../packaging/optional-packages-with-executable-code.md)
+Les packages facultatifs dans votre application peuvent maintenant contenir du code C# exécutable. [Découvrez comment utiliser Visual Studio pour configurer des packages complémentaires facultatifs afin de prendre en charge de votre package d’application principal.](/windows/msix/package/optional-packages)
 
 ### <a name="page-transitions"></a>Transitions de page
 
