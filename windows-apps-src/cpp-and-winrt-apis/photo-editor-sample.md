@@ -5,19 +5,19 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: Windows 10, uwp, standard, c++, cpp, winrt, projection, exemple, application, photo, éditeur
 ms.localizationpriority: medium
-ms.openlocfilehash: bbac9d6a6d08d327bf1bf55de5e86cbb1edd51ea
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 92aff51b6e5ba98d0f5fd157dd3a2dd57e861821
+ms.sourcegitcommit: f8c354def02d5c82d195e4f629e6470110268223
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64745190"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68623379"
 ---
 # <a name="photo-editor-cwinrt-sample-application"></a>Exemple d’application C++/WinRT Photo Editor
 
 > [!NOTE]
 > L’exemple est ciblé et testé pour Windows 10, version 1903 (10.0 ; Build 18362) et Visual Studio 2019. Si vous préférez, vous pouvez utiliser les propriétés du projet pour recibler le(s) projet(s) vers Windows 10, version 1809 (10.0 ; Build 17763), et/ou ouvrir l’exemple avec Visual Studio 2017.
 
-Vous pouvez dupliquer ou télécharger l’exemple d’application à partir du référentiel [Exemple d’application C++/WinRT Photo Editor](https://github.com/Microsoft/Windows-appsample-photo-editor) GitHub.
+Pour cloner ou télécharger l’exemple d’application, consultez [Photo Editor C++/WinRT sample application](/samples/microsoft/windows-appsample-photo-editor/photo-editor-cwinrt-sample-application/) dans la galerie des exemples de code.
 
 L'application Photo Editor est un exemple d’application de plateforme Windows universelle (UWP) qui illustre le développement à l'aide de la projection de langage [C++/WinRT](intro-to-using-cpp-with-winrt.md). L’exemple d’application vous permet de récupérer des photos à partir de la bibliothèque **Images**, puis de modifier l’image sélectionnée avec des effets de photo assortis. Dans le code source de l’exemple, vous verrez un certain nombre de pratiques courantes&mdash;comme la [liaison de données](binding-property.md) et les [actions et opérations asynchrones](concurrency.md)&mdash;effectuées à l’aide de la projection C++/WinRT. Voici quelques-unes des fonctionnalités spécifiques illustrées par l’exemple.
 
