@@ -1,26 +1,26 @@
 ---
 title: Accessibilité dans Windows 10
-description: Cette page fournit les informations qui vous permettront de commencer à développer des applications Windows accessibles.
+description: Cette page fournit des informations vous permettant de commencer à développer des applications Windows accessibles.
 ms.topic: article
 ms.date: 04/03/2019
 ms.localizationpriority: medium
 ms.author: kbridge
 author: Karl-Bridge-Microsoft
-keywords: Accessibilité dans Windows 10, d’accessibilité, la création d’applications win32 accessible, création d’applications UWP accessibles, création d’applications WPF accessibles, créer des applications WinForms accessibles
-ms.openlocfilehash: b818b99ebf896b2d2de219d2eedbfd101f3a5caa
-ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
+keywords: Accessibilité dans Windows 10, accessibilité, création d’applications Win32 accessibles, création d’applications UWP accessibles, création d’applications WPF accessibles, création d’applications WinForms accessibles
+ms.openlocfilehash: bb82103c030c436655630a37678bbec11e588f61
+ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66214994"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68867428"
 ---
 # <a name="accessibility-in-windows-10"></a>Accessibilité dans Windows 10
 
-![hero-accessibility-bar-smaller.png](images/hero-accessibility-bar-smaller.png)
+![Hero-Accessibility-bar-Smaller. png](images/hero-accessibility-bar-smaller.png)
 
-Applications accessibles sont conçues pour être inclus en améliorant la facilité d’utilisation pour autant de personnes en tant que contraintes possibles, y compris celles avec un handicap, préférences personnelles, des styles de travail spécifique, ou connaissance (par exemple, de conduite, cuisine, reflets et ainsi de suite).
+Les applications accessibles sont conçues pour être inclusives en améliorant l’utilisation du plus grand nombre de personnes possible, notamment celles handicapées, les préférences personnelles, les styles de travail spécifiques ou les contraintes de situation (telles que la conduite, la cuisson, les reflets, etc.).
 
-Cette page fournit des informations sur comment les différentes infrastructures de développement de Windows prennent en charge d’accessibilité pour les développeurs qui créent des applications Windows, les développeurs de technologie d’assistance créant des outils tels que les lecteurs d’écran et les loupes et test de logiciel ingénieurs créant des scripts automatisés pour tester des applications.
+Cette page fournit des informations sur la façon dont les différentes infrastructures de développement Windows prennent en charge l’accessibilité pour les développeurs qui créent des applications Windows, les développeurs de technologie d’assistance qui créent des outils tels que les lecteurs d’écran et les loupes, ainsi que les tests logiciels des ingénieurs qui créent des scripts automatisés pour tester des applications.
 
 ## <a name="platform-specific-documentation"></a>Documentation spécifique à la plateforme
 
@@ -28,7 +28,7 @@ Cette page fournit des informations sur comment les différentes infrastructures
     :::column:::
         ![Universal Windows Platform (UWP)](images/platform-uwp.png)
 
-        ### Universal Windows Platform (UWP)
+        **Universal Windows Platform (UWP)**
 
         Develop accessible apps and tools on the modern platform for Windows 10 applications and games on any Windows device (including PCs, phones, Xbox One, HoloLens, and more), and publish them to the Microsoft Store.
 
@@ -43,7 +43,7 @@ Cette page fournit des informations sur comment les différentes infrastructures
     :::column:::
         ![Win32 platform apps](images/platform-win32.png)
 
-        ### Win32 platform
+        **Win32 platform**
 
         Develop accessible apps and tools on the original platform for C/C++ Windows applications.
 
@@ -68,7 +68,7 @@ Cette page fournit des informations sur comment les différentes infrastructures
     :::column:::
         ![WPF platform](images/platform-wpf.png)
 
-        ### Windows Presentation Foundation (WPF)
+        **Windows Presentation Foundation (WPF)**
 
         Develop accessible apps and tools on the established platform for managed Windows applications with a XAML UI model and the .NET Framework.
 
@@ -91,7 +91,7 @@ Cette page fournit des informations sur comment les différentes infrastructures
     :::column:::
         ![Windows Forms platform apps](images/platform-winforms.png)
 
-        ### Windows Forms (WinForms)
+        **Windows Forms (WinForms)**
 
         Develop accessible apps and tools for managed Windows applications with a XAML UI model and the .NET Framework.
 

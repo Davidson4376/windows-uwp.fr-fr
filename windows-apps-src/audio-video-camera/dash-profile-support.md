@@ -6,12 +6,12 @@ ms.date: 02/15/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d680f7d4a3510f66cba74d1c8b30d8883b07369a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 268020c06be57d8ac300f1202046e52b6e1d2507
+ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57627204"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68867384"
 ---
 # <a name="dynamic-adaptive-streaming-over-http-dash-profile-support"></a>Prise en charge du profil DASH (Dynamic Adaptive Streaming over HTTP)
 
@@ -19,18 +19,18 @@ ms.locfileid: "57627204"
 ## <a name="supported-dash-profiles"></a>Profils DASH pris en charge
 Le tableau ci-après répertorie les profils DASH pris en charge pour les applications UWP.
 
-|Tag | Type de manifeste | Remarques|Version de juillet de Windows 10|Windows 10, version 1511|Windows 10, version 1607 |Windows 10, version 1607 |Windows 10, version 1703|
-|----------------|------|-------|-----------|--------------|---------|-------|--------|
-|urn:mpeg&#58;dash:profile:isoff-live:2011 | Statique |     |Prise en charge            |  Prise en charge              | Prise en charge        |Prise en charge| Prise en charge|
-|urn:mpeg&#58;dash:profile:isoff-main:2011 |        | Meilleur effort | Prise en charge            |  Prise en charge              | Prise en charge        |Prise en charge| Prise en charge|
-|urn:mpeg&#58;dash:profile:isoff-live:2011 | Mobile | $Time$ est pris en charge, mais $Number$ ne l’est pas dans les modèles de segment | Non prise en charge            | Non prise en charge              | Non prise en charge        |Non prise en charge| Prise en charge|
+|Tag | Type de manifeste | Notes|Version de juillet de Windows 10|Windows 10, version 1511|Windows 10, version 1607 |Windows 10, version 1607 |Windows 10, version 1703| Windows 10, version 1809
+|----------------|------|-------|-----------|--------------|---------|-------|--------|--------|
+|urn:mpeg&#58;dash:profile:isoff-live:2011 | Statique |     |Pris en charge            |  Pris en charge              | Pris en charge        |Pris en charge| Pris en charge| Pris en charge|
+|urn:mpeg&#58;dash:profile:isoff-main:2011 |        | Meilleur effort | Pris en charge            |  Pris en charge              | Pris en charge        |Pris en charge| Pris en charge| Pris en charge|
+|urn:mpeg&#58;dash:profile:isoff-live:2011 | dynamique | $Time$ est pris en charge, mais $Number$ ne l’est pas dans les modèles de segment | Non pris en charge            | Non pris en charge              | Non pris en charge        |Non pris en charge| Pris en charge| Pris en charge|
+|urn:mpeg&#58;dash:profile:isoff-on-demand:2011 |        |  | Non pris en charge            |  Non pris en charge              | Non pris en charge        |Non pris en charge| Non pris en charge| Pris en charge|
 
 
 ## <a name="unsupported-dash-profiles"></a>Profils DASH non pris en charge
 Les profils non répertoriés dans le tableau ci-dessus ne sont pas pris en charge, notamment les suivants :
 
 * urn:mpeg&#58;dash:profile:full:2011
-* urn:mpeg&#58;dash:profile:isoff-on-demand:2011
 * urn:mpeg&#58;dash:profile:mp2t-main:2011
 * urn:mpeg&#58;dash:profile:mp2t-simple:2011
 
@@ -38,7 +38,7 @@ Les profils non répertoriés dans le tableau ci-dessus ne sont pas pris en char
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Lecture de contenu multimédia](media-playback.md)
-* [Diffusion en continu adaptative](adaptive-streaming.md)
+* [Diffusion adaptative](adaptive-streaming.md)
  
 
  

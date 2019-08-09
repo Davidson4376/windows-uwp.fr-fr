@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
-ms.openlocfilehash: 838bd9cb790893ea24b57bb2b0bad49aa262fdbc
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+ms.openlocfilehash: 9df150d4a8873630a371fa2ad02e8c88bed7f42e
+ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682533"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68867739"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>Configuration de builds automatisées pour votre application UWP
 
@@ -80,7 +80,7 @@ Pour télécharger un certificat pour votre Build automatisée:
 
     ![Téléchargement d’un fichier sécurisé](images/secure-file2.png)
 
-5. Si le certificat possède un mot de passe, nous vous recommandons de stocker votre mot de passe dans [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates) puis de lier le mot de passe à un [groupe de variables](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups). Vous pouvez utiliser la variable pour accéder au mot de passe à partir du pipeline.
+5. Si la clé privée du certificat possède un mot de passe, nous vous recommandons de stocker votre mot de passe dans [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates) puis de lier le mot de passe à un [groupe de variables](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups). Vous pouvez utiliser la variable pour accéder au mot de passe à partir du pipeline. Notez qu’un mot de passe est pris en charge uniquement pour la clé privée. l’utilisation d’un fichier de certificat qui est lui-même protégé par mot de passe n’est pas prise en charge actuellement.
 
 > [!NOTE]
 > À compter de Visual Studio 2019, un certificat temporaire n’est plus généré dans les projets UWP. Pour créer ou exporter des certificats, utilisez les applets de commande PowerShell décrites dans [cet article](/windows/msix/package/create-certificate-package-signing).
@@ -100,7 +100,7 @@ Cette tâche compile toutes les solutions qui se trouvent dans le dossier de tra
 | AppxPackageSigningEnabled | true | Active la signature de package. |
 | PackageCertificateThumbprint | Empreinte de certificat | Cette valeur **doit** correspondre à l’empreinte numérique du certificat de signature ou être une chaîne vide. |
 | PackageCertificateKeyFile | path | Chemin d’accès du certificat à utiliser. Elle est extraite des métadonnées de fichier sécurisé. |
-| PackageCertificatePassword | Mot de passe | Mot de passe du certificat. Nous vous recommandons de stocker votre mot de passe dans [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates) et de lier le mot de passe au [groupe de variables](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups). Vous pouvez passer la variable à cet argument. |
+| PackageCertificatePassword | Mot de passe | Mot de passe de la clé privée dans le certificat. Nous vous recommandons de stocker votre mot de passe dans [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates) et de lier le mot de passe au [groupe de variables](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups). Vous pouvez passer la variable à cet argument. |
 
 ### <a name="configure-the-build"></a>Configurer la Build
 

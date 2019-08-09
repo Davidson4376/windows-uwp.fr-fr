@@ -6,12 +6,12 @@ ms.date: 03/19/2018
 ms.topic: article
 keywords: windows 10, uwp, API de collection du Microsoft Store, afficher produits
 ms.localizationpriority: medium
-ms.openlocfilehash: 700cb111f74a4534f2f5e1de70eddfb88b456aa7
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c071ca83381e47664e44ef506927c82a4687992d
+ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57596804"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68867718"
 ---
 # <a name="query-for-products"></a>Demander des produits
 
@@ -20,7 +20,7 @@ Utilisez cette méthode dans l’API de collection du Microsoft Store pour obte
 
 Cette méthode est conçue pour être appelée par votre service en réponse à un message de votre application. Votre service ne doit pas interroger régulièrement tous les utilisateurs en fonction d’une planification.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 
 Pour utiliser cette méthode, vous devez disposer des éléments suivants :
@@ -30,36 +30,36 @@ Pour utiliser cette méthode, vous devez disposer des éléments suivants :
 
 Pour plus d’informations, consultez [Gérer les droits sur les produits à partir d’un service](view-and-grant-products-from-a-service.md).
 
-## <a name="request"></a>Requête
+## <a name="request"></a>Demande
 
 ### <a name="request-syntax"></a>Syntaxe de la requête
 
-| Méthode | URI de requête                                                 |
+| Méthode | URI de demande                                                 |
 |--------|-------------------------------------------------------------|
-| POST   | ```https://collections.mp.microsoft.com/v6.0/collections/query``` |
+| PUBLIER   | ```https://collections.mp.microsoft.com/v6.0/collections/query``` |
 
 
 ### <a name="request-header"></a>En-tête de requête
 
-| En-tête         | Type   | Description                                                                                           |
+| Header         | type   | Description                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
-| Authorization  | chaîne | Obligatoire. Le jeton d’accès Azure AD sous la forme **PORTEUR** &lt; *jeton*&gt;.                           |
-| Host           | chaîne | Doit être défini sur la valeur **collections.mp.microsoft.com**.                                            |
-| Content-Length | nombre | Longueur du corps de la requête.                                                                       |
+| Authorization  | chaîne | Requis. Jeton d’accès Azure ad dans le *jeton*&gt;du **porteur** &lt;du formulaire.                           |
+| Hôte           | chaîne | Doit être défini sur la valeur **collections.mp.microsoft.com**.                                            |
+| Content-Length | number | Longueur du corps de la requête.                                                                       |
 | Content-Type   | chaîne | Spécifie le type de requête et de réponse. Actuellement, la seule valeur prise en charge est **application/json**. |
 
 
-### <a name="request-body"></a>Corps de la requête
+### <a name="request-body"></a>Corps de la demande
 
 | Paramètre         | Type         | Description         | Obligatoire |
 |-------------------|--------------|---------------------|----------|
-| beneficiaries     | UserIdentity | Objet UserIdentity qui représente l’utilisateur interrogé pour les produits. Pour plus d’informations, voir le tableau ci-dessous.    | Oui      |
+| beneficiaries     | répertorier&lt;les UserIdentity & gt | Liste d’objets UserIdentity qui représentent les utilisateurs interrogés pour les produits. Pour plus d’informations, voir le tableau ci-dessous.    | Oui      |
 | continuationToken | chaîne       | S’il existe plusieurs ensembles de produits, le corps de la réponse retourne un jeton de continuation lorsque la limite de la page est atteinte. Indiquez ce jeton de continuation ici dans les appels ultérieurs pour récupérer les produits restants.       | Non       |
-| maxPageSize       | nombre       | Nombre maximal de produits à retourner dans une réponse. La valeur par défaut et maximale est de 100.                 | Non       |
-| modifiedAfter     | DateHeure     | Si ce paramètre est spécifié, le service retourne uniquement les produits qui ont été modifiés après cette date.        | Non       |
+| maxPageSize       | number       | Nombre maximal de produits à retourner dans une réponse. La valeur par défaut et maximale est de 100.                 | Non       |
+| modifiedAfter     | datetime     | Si ce paramètre est spécifié, le service retourne uniquement les produits qui ont été modifiés après cette date.        | Non       |
 | parentProductId   | chaîne       | Si ce paramètre est spécifié, le service retourne uniquement les extensions correspondant à l’application spécifiée.      | Non       |
 | productSkuIds     | list&lt;ProductSkuId&gt; | Si ce paramètre est spécifié, le service retourne uniquement les produits applicables aux paires produit/référence fournies. Pour plus d’informations, voir le tableau ci-dessous.      | Non       |
-| productTypes      | liste&lt;chaîne&gt;       | Spécifie les types de produits à retourner dans les résultats de requête. Types de produit pris en charge : **Application**, **Durable** et **UnmanagedConsumable**.     | Oui       |
+| productTypes      | chaîne&lt;de liste&gt;       | Spécifie les types de produits à retourner dans les résultats de la requête. Types de produit pris en charge : **Application**, **Durable** et **UnmanagedConsumable**.     | Oui       |
 | validityType      | chaîne       | Si ce paramètre est défini sur **All**, tous les produits d’un utilisateur sont retournés, y compris les articles arrivés à expiration. S’il est défini sur **Valid**, seuls les produits qui sont valides à ce stade sont retournés (autrement dit, ils ont un état actif, une date de début &lt; maintenant et une date de fin &gt; maintenant). | Non       |
 
 
@@ -112,7 +112,7 @@ Content-Type: application/json
 }
 ```
 
-## <a name="response"></a>Réponse
+## <a name="response"></a>response
 
 
 ### <a name="response-body"></a>Corps de la réponse
@@ -127,28 +127,28 @@ L’objet CollectionItemContractV6 contient les paramètres ci-dessous.
 
 | Paramètre            | Type               | Description            | Obligatoire |
 |----------------------|--------------------|-------------------------|----------|
-| acquiredDate         | DateHeure           | Date à laquelle l’utilisateur a acquis l’article.                  | Oui      |
+| acquiredDate         | datetime           | Date à laquelle l’utilisateur a acquis l’article.                  | Oui      |
 | campaignId           | chaîne             | ID campagne fourni au moment de l’achat de cet article.                  | Non       |
 | devOfferId           | chaîne             | ID d’offre d’un achat dans l’application.              | Non       |
-| endDate              | DateHeure           | Date de fin de l’article.              | Oui      |
-| fulfillmentData      | chaîne             | Non applicable         | Non       |
-| inAppOfferToken      | chaîne             | La chaîne d’ID de produit spécifiés par les développeurs qui est assignée à l’élément dans l’espace partenaires. Un produit de l’exemple est ID *product123*. | Non       |
+| endDate              | datetime           | Date de fin de l’article.              | Oui      |
+| fulfillmentData      | chaîne             | N/A         | Non       |
+| inAppOfferToken      | chaîne             | Chaîne d’ID de produit spécifiée par le développeur et assignée à l’élément dans l’espace partenaires. Un exemple d’ID de produit est *product123*. | Non       |
 | itemId               | chaîne             | ID qui identifie cet élément de collection à partir des autres articles dont l’utilisateur est propriétaire. Cet ID est unique par produit.   | Oui      |
 | localTicketReference | chaîne             | L’ID du paramètre *localTicketReference* précédemment fourni dans le corps de la requête.                  | Oui      |
-| modifiedDate         | DateHeure           | Date de la dernière modification de cet article.              | Oui      |
+| modifiedDate         | datetime           | Date de la dernière modification de cet article.              | Oui      |
 | orderId              | chaîne             | Le cas échéant, référence de la commande par le biais de laquelle cet article a été obtenu.              | Non       |
 | orderLineItemId      | chaîne             | Le cas échéant, ligne d’article de la commande spécifique dans laquelle cet article a été obtenu.              | Non       |
 | ownershipType        | chaîne             | La chaîne *OwnedByBeneficiary*.   | Oui      |
 | productId            | chaîne             | [ID Store](in-app-purchases-and-trials.md#store-ids) pour le [produit](in-app-purchases-and-trials.md#products-skus-and-availabilities) dans le catalogue du Microsoft Store. Exemple d’ID Windows Store pour un produit : 9NBLGGH42CFD.          | Oui      |
-| productType          | chaîne             | Un des types de produits suivants : **Application**, **durables**, et **UnmanagedConsumable**.        | Oui      |
-| purchasedCountry     | chaîne             | Non applicable   | Non       |
+| productType          | chaîne             | L’un des types de produits suivants: **Application**, **durable**et **UnmanagedConsumable**.        | Oui      |
+| purchasedCountry     | chaîne             | N/A   | Non       |
 | purchaser            | IdentityContractV6 | Le cas échéant, représente l’identité de l’acheteur de l’article. Voir les détails de cet objet ci-dessous.        | Non       |
-| quantity             | nombre             | Quantité de l’article. Actuellement, il s’agit toujours de la valeur 1.      | Non       |
+| quantity             | number             | Quantité de l’article. Actuellement, il s’agit toujours de la valeur 1.      | Non       |
 | skuId                | chaîne             | [ID Store](in-app-purchases-and-trials.md#store-ids) pour la [référence (SKU)](in-app-purchases-and-trials.md#products-skus-and-availabilities) du produit dans le catalogue du Microsoft Store. Exemple d’ID Windows Store pour une référence (SKU) : 0010.     | Oui      |
 | skuType              | chaîne             | Type de référence. Valeurs possibles : **Trial**, **Full** et **Rental**.        | Oui      |
-| startDate            | DateHeure           | Date de début de validité de l’article.       | Oui      |
+| startDate            | datetime           | Date de début de validité de l’article.       | Oui      |
 | status               | chaîne             | État de l’article. Valeurs possibles : **Active**, **Expired**, **Revoked** et **Banned**.    | Oui      |
-| tags                 | chaîne             | Non applicable    | Oui      |
+| balises                 | chaîne             | N/A    | Oui      |
 | transactionId        | GUID               | ID de la transaction résultant de l’achat de cet article. Peut être utilisé pour signaler le traitement de la commande d’un article.      | Oui      |
 
 
@@ -204,7 +204,7 @@ Date: Tue, 22 Sep 2015 20:28:18 GMT
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Gérer les droits sur les produits à partir d’un service](view-and-grant-products-from-a-service.md)
-* [Déclaration de produits consommables remplies](report-consumable-products-as-fulfilled.md)
+* [Gérer les droits du produit à partir d’un service](view-and-grant-products-from-a-service.md)
+* [Signaler les produits consommables comme étant satisfaits](report-consumable-products-as-fulfilled.md)
 * [Accorder des produits gratuits](grant-free-products.md)
 * [Renouveler une clé d’ID de Microsoft Store](renew-a-windows-store-id-key.md)
