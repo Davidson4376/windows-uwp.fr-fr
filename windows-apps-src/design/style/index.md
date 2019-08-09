@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: 4df395d2-f10e-4e0e-9bf2-660f82b8a9fa
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 7d5da19fc9fdab324db2c162a3cb6792fa91f120
-ms.sourcegitcommit: 09edf480f2224e29e190fad8518f680c16e21c6d
+ms.openlocfilehash: f7cf1001333c1df2cd7e1906f57444b982814d25
+ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65065372"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68867696"
 ---
 # <a name="style-for-uwp-apps"></a>Style des applications UWP
 
@@ -22,60 +22,60 @@ Le style est ce qui permet à votre application de se distinguer des autres. Les
 
 :::row:::
     :::column:::
-        ![hero image](images/header-color.svg)
-        ### [Color](color.md)
-        Color provides intuitive wayfinding through an app's various levels of information and serves as a crucial tool for reinforcing the interaction model.
+![Image Hero](images/header-color.svg)
+### <a name="colorcolormd"></a>[Couleur](color.md)
+La couleur permet une orientation intuitive des différents niveaux d’information d’une application et joue un rôle crucial pour renforcer le modèle d’interaction.
     :::column-end:::
     :::column:::
-        ![hero image](images/header-typography.svg)
-        ### [Typography](typography.md)
-       En tant que représentation visuelle du langage, la typographie doit avant tout apporter de la clarté. Son style doit toujours être aligné sur cet objectif. Les instructions suivantes expliquent comment utiliser la typographie pour aider les utilisateurs à mieux comprendre le contenu. 
-    :::column-end:::
-:::row-end:::
-
-:::row:::
-    :::column:::
-        ![hero image](images/header-icons.svg)
-        ### [Icons](icons.md)
-        Good icons harmonize with typography and with the rest of the design language. They don’t mix metaphors, and they communicate only what’s needed, as speedily and simply as possible.
-    :::column-end:::
-    :::column:::
-        ![hero image](images/header-acrylic.svg)
-        ### [Acrylic](acrylic.md)
-        Create a sense of depth with acrylic, a brush that creates stunning, translucent surfaces.
+![Image Hero](images/header-typography.svg)
+### <a name="typographytypographymd"></a>[Typographie](typography.md)
+En tant que représentation visuelle du langage, la typographie doit avant tout apporter de la clarté. Son style doit toujours être aligné sur cet objectif. Les instructions suivantes expliquent comment utiliser la typographie pour aider les utilisateurs à mieux comprendre le contenu. 
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![hero image](images/header-reveal-highlight.svg)
-        ### [Reveal highlight](reveal.md)
-        Use light to illuminate important elements.
+![Image Hero](images/header-icons.svg)
+### <a name="iconsiconsmd"></a>[Icônes](icons.md)
+Des icônes efficaces s’harmonisent efficacement avec la typographie et avec le reste du langage de conception. Elles ne sont pas ambiguës, et communiquent un message sans superflu, aussi rapidement et simplement que possible.
     :::column-end:::
     :::column:::
-        ![hero image](images/header-reveal-focus.svg)
-        ### [Reveal focus](reveal-focus.md)
-        Reveal focus is a lighting effect for 10 foot experiences, such as Xbox One and television screens, and animates the border of focusable elements.
-    :::column-end:::
-:::row-end:::
-
-:::row:::
-    :::column:::
-        ![hero image](images/header-sound.svg)
-        ### [Sound](sound.md)
-        Sound helps complete an application's user experience, and gives them that extra audio edge they need to match the feel of Windows across all platforms.
-    :::column-end:::
-    :::column:::
-        ![hero image](images/header-writing-style.gif)
-        ### [Writing style](writing-style.md)
-        Writing style can make a big difference between an awful user experience and a better one.
+![Image Hero](images/header-acrylic.svg)
+### <a name="acrylicacrylicmd"></a>[Acrylique](acrylic.md)
+Créez une impression de profondeur avec l’acrylique, un pinceau qui crée des surfaces incroyables et translucides.
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-        ### [XAML styles](../controls-and-patterns/xaml-styles.md)
-        You can customize the appearance of your apps in many ways by using the XAML framework. Styles let you set control properties and reuse those settings for a consistent appearance across multiple controls.
+![Image Hero](images/header-reveal-highlight.svg)
+### <a name="reveal-highlightrevealmd"></a>[Effet Révéler](reveal.md)
+Utilisez la lumière pour éclairer les éléments importants.
+    :::column-end:::
+    :::column:::
+![Image Hero](images/header-reveal-focus.svg)
+### <a name="reveal-focusreveal-focusmd"></a>[Révéler focus](reveal-focus.md)
+Révéler focus est un effet de lumière pour les expériences à 3 mètres, comme Xbox One et les écrans de télévision, et anime la bordure des éléments pouvant faire l’objet d’un focus.
+    :::column-end:::
+:::row-end:::
+
+:::row:::
+    :::column:::
+![Image Hero](images/header-sound.svg)
+### <a name="soundsoundmd"></a>[Son](sound.md)
+Le son vient compléter l’expérience utilisateur d’une application et offre à l’utilisateur cette touche audio supplémentaire qui l’aide à reconnaître Windows sur l’ensemble des plateformes.
+    :::column-end:::
+    :::column:::
+![Image Hero](images/header-writing-style.gif)
+### <a name="writing-stylewriting-stylemd"></a>[Style d’écriture](writing-style.md)
+Le style d’écriture peut faire une grande différence entre une expérience utilisateur désastreuse et une meilleure.
+    :::column-end:::
+:::row-end:::
+
+:::row:::
+    :::column:::
+### <a name="xaml-stylescontrols-and-patternsxaml-stylesmd"></a>[Styles XAML](../controls-and-patterns/xaml-styles.md)
+Vous pouvez personnaliser l’apparence de vos applications de nombreuses manières à l’aide de l’infrastructure XAML. Les styles permettent de définir les propriétés des contrôles et de réutiliser ces paramètres pour uniformiser l’apparence de plusieurs contrôles.
     :::column-end:::
     :::column:::
     :::column-end:::

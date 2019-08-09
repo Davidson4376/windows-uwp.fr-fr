@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: d542c9809eb939553a851508886e34265f269263
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 43d63b1831766ecdf65fe1c1d7fd15457f728f83
+ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582717"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68867447"
 ---
 # <a name="dialogs-and-flyouts"></a>Boîtes de dialogue et menus volants
 
@@ -29,20 +29,20 @@ Les boîtes de dialogue et les menus volants sont des éléments temporaires d�
 
 :::row:::
     :::column:::
-        **Dialogs**
-        
-        ![Example of a dialog](../images/dialogs/dialog_RS2_delete_file.png)
+**Boîtes de dialogue**
 
-        Dialogs are modal UI overlays that provide contextual app information. Dialogs block interactions with the app window until being explicitly dismissed. They often request some kind of action from the user.
+![Exemple de boîte de dialogue](../images/dialogs/dialog_RS2_delete_file.png)
+
+Les boîtes de dialogue sont des superpositions d’interface utilisateur modales qui fournissent des informations contextuelles sur l’application. Les boîtes de dialogue bloquent les interactions avec la fenêtre de l’application jusqu’à ce qu’elles soient masquées explicitement. Elles exigent souvent une forme d’action de la part de l’utilisateur.
     :::column-end:::
     :::column::: 
-        **Flyouts**
+**Menus volants**
 
-        ![Example of a flyout](../images/flyout-example2.png)
+![Exemple de menu volant](../images/flyout-example2.png)
 
-        A flyout is a lightweight contextual popup that displays UI related to what the user is doing. It includes placement and sizing logic, and can be used to reveal a secondary control or show more detail about an item.
+Un menu volant est une fenêtre contextuelle légère qui affiche l’interface utilisateur liée aux opérations qu’effectue l’utilisateur. Il comprend une logique de placement et de dimensionnement, et peut être utilisé pour afficher un contrôle secondaire ou des détails supplémentaires sur un élément.
 
-        Unlike a dialog, a flyout can be quickly dismissed by tapping or clicking somewhere outside the flyout, pressing the Escape key or Back button, resizing the app window, or changing the device's orientation.
+Contrairement à une boîte de dialogue, un menu volant peut être fermé rapidement en appuyant ou en cliquant en dehors du menu volant, en appuyant sur la touche ÉCHAP ou le bouton Précédent, en redimensionnant la fenêtre d’application ou en modifiant l’orientation de l’appareil.
     :::column-end:::
 :::row-end:::
 

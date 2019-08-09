@@ -12,12 +12,12 @@ design-contact: jeffarn
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 1096bdab340c3f0fef24b5815423f72b0f5c8219
-ms.sourcegitcommit: cc0ef75f314658b14376eb60ef8e5bb4d7726e04
+ms.openlocfilehash: 31cf2134fb8f77809b75a5abf3e6980443452059
+ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65444168"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68867403"
 ---
 # <a name="motion-for-uwp-apps"></a>Animations pour les applications UWP
 
@@ -74,21 +74,21 @@ Un mouvement intelligent fournit des commentaires à l’utilisateur en relation
 
 :::row:::
     :::column:::
-        ### [Timing and easing](timing-and-easing.md)
-        Timing and easing are important elements that make motion feel natural for objects entering, exiting, or moving within the UI.
+### <a name="timing-and-easingtiming-and-easingmd"></a>[Minutage et accélération](timing-and-easing.md)
+Le minutage et l’accélération sont des éléments importants pour que le mouvement des objets entrant, sortant ou bougeant dans l’interface utilisateur paraisse naturel.
     :::column-end:::
     :::column:::
-        ### [Directionality and gravity](directionality-and-gravity.md)
-        Directional signals help provide a solid mental model of the journey a user takes across experiences. Directional movement is subject to forces like gravity, which reinforces the natural feel of the movement.
+### <a name="directionality-and-gravitydirectionality-and-gravitymd"></a>[Direction et gravité](directionality-and-gravity.md)
+Les signaux directionnels permettent de fournir un bon modèle mental du parcours que prend un utilisateur à travers les différentes expériences. Le mouvement directionnel est soumis à des forces comme la gravité, ce qui renforce l’impression naturel du mouvement.
     :::column-end:::
 :::row-end:::
 :::row:::
     :::column:::
-        ### [Page transitions](page-transitions.md)
-        Page transitions navigate users between pages in an app, providing feedback about the relationship between pages. They help users understand where they are in the navigation hierarchy.
+### <a name="page-transitionspage-transitionsmd"></a>[Transitions de page](page-transitions.md)
+Les transitions de page dirigent les utilisateurs entre les pages d’une application, en fournissant des commentaires sur la relation entre les pages. Elles aident les utilisateurs à comprendre où ils se trouvent dans la hiérarchie de navigation.
     :::column-end:::
     :::column:::
-        ### [Connected animation](connected-animation.md)
-        Connected animations let you create a dynamic and compelling navigation experience by animating the transition of an element between two different views.
+### <a name="connected-animationconnected-animationmd"></a>[Animation connectée](connected-animation.md)
+Les animations connectées vous permettent de créer une expérience de navigation dynamique et intéressante en animant la transition d’un élément entre deux vues.
     :::column-end:::
 :::row-end:::
