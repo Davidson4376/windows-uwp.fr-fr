@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 5fababa6903880c4c4aa70d93d36e49fd4ea89b5
-ms.sourcegitcommit: f4b64245cf784793b431f2c9d8bded6f321e7788
+ms.openlocfilehash: 63af76e0ee7faa757798f71c63b141e6b2262007
+ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67412108"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68867645"
 ---
 ![Notions de base de la conception](../images/downloads-2x.png)
 
@@ -96,7 +96,7 @@ Fonctions d’assistance, contrôles personnalisés et services d’application.
 
 :::row:::
     :::column:::
-        <a href="https://go.microsoft.com/fwlink/p/?LinkId=760394"><img src="images/tile-icon-generator.png" alt="Download the tile and icon generator"/></a>
+<a href="https://go.microsoft.com/fwlink/p/?LinkId=760394"><img src="images/tile-icon-generator.png" alt="Download the tile and icon generator"/></a>
     :::column-end:::
     :::column span="2":::
       **Générateur d’icônes et de vignettes Adobe Photoshop** Cet ensemble d’actions pour Adobe Photoshop génère les 68 vignettes et icônes recommandées à partir de seulement 7 fichiers. <br/><a href="https://go.microsoft.com/fwlink/p/?LinkId=760394">Télécharger le générateur de vignettes et d’icônes</a></p>
