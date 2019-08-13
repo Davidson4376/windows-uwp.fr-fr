@@ -5,17 +5,15 @@ author: mattwojo
 ms.author: mattwoj
 manager: jken
 ms.topic: article
-ms.prod: windows
-ms.technology: hub
 keywords: Python, Microsoft, Windows 10, didacticiels, cours en ligne, Blogs, événements
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: a987043735dd433288fd53090cf3623b035fad7d
-ms.sourcegitcommit: 210034519678ba1a59744bc3a0b613b000921537
+ms.openlocfilehash: 28a77b9e936acddb6158d865aef933f27444c5c9
+ms.sourcegitcommit: a28a32fff9d15ecf4a9d172cd0a04f4d993f9d76
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68473633"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68959063"
 ---
 # <a name="resources-for-developing-with-python-on-windows"></a>Ressources pour le développement avec Python sur Windows
 
@@ -78,7 +76,7 @@ Liste de liens que nous recommandons pour les développeurs Python qui travaille
 
 - [Générez des applications Django Python avec Microsoft Graph](https://docs.microsoft.com/graph/tutorials/python): Générez une application Web python django qui utilise l’API Microsoft Graph pour récupérer des informations de calendrier pour un utilisateur.
 
-- [Démonstration : Application Web API Bing ADS dans python](https://docs.microsoft.com/advertising/guides/walkthrough-web-application-python?view=bingads-13): Commencez à exécuter une application Web Microsoft Advertising à l’aide du kit de développement logiciel (SDK) python ADS de Bing, de l’IDE Visual Studio Code et de l’infrastructure Web Django.
+- [Procédure pas à pas : Application Web API Bing ADS dans python](https://docs.microsoft.com/advertising/guides/walkthrough-web-application-python?view=bingads-13): Commencez à exécuter une application Web Microsoft Advertising à l’aide du kit de développement logiciel (SDK) python ADS de Bing, de l’IDE Visual Studio Code et de l’infrastructure Web Django.
 
 <!-- ## Data Science and Machine Learning
 

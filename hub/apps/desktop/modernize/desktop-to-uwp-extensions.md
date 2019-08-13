@@ -8,12 +8,12 @@ ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: c47eba0e0f5969e978cde5575cf8ab05e589350e
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+ms.openlocfilehash: 87483c5d34cfb2b0bb266fb3d903e15d1b492187
+ms.sourcegitcommit: a28a32fff9d15ecf4a9d172cd0a04f4d993f9d76
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682480"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68959051"
 ---
 # <a name="integrate-your-packaged-desktop-app-with-windows-10-and-uwp"></a>Intégrer votre application de bureau packagée à Windows 10 et UWP
 
@@ -110,7 +110,7 @@ Pour ce faire, vous devez spécifier l’[identificateur programmatique (ProgID)
 
 ```XML
 <Extension Category="windows.fileTypeAssociation">
-<FileTypeAssociation Name="[AppID]">
+<FileTypeAssociation Name="[Name]">
          <MigrationProgIds>
             <MigrationProgId>"[ProgID]"</MigrationProgId>
         </MigrationProgIds>
@@ -120,10 +120,10 @@ Pour ce faire, vous devez spécifier l’[identificateur programmatique (ProgID)
 
 Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
 
-|Nom |Description |
+|Name |Description |
 |-------|-------------|
 |Category |Toujours ``windows.fileTypeAssociation``.
-|Nom |Un ID unique pour votre application. Cet ID est utilisé en interne pour générer un [identificateur programmatique (ProgID)](https://docs.microsoft.com/windows/desktop/shell/fa-progids) associé à votre association de type de fichier. Vous pouvez utiliser cet ID pour gérer les modifications dans les futures versions de votre application. |
+|Nom |Nom de l’Association de types de fichiers. Vous pouvez utiliser ce nom pour organiser et regrouper des types de fichiers. Le nom doit contenir tous les caractères minuscules, sans espace. |
 |MigrationProgId |[Identificateur programmatique (ProgID)](https://docs.microsoft.com/windows/desktop/shell/fa-progids) qui décrit l’application, le composant et la version de l’application de bureau à partir de laquelle vous souhaitez hériter des associations de fichiers.|
 
 #### <a name="example"></a>Exemple
@@ -137,7 +137,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
     <Application>
       <Extensions>
         <uap:Extension Category="windows.fileTypeAssociation">
-          <uap3:FileTypeAssociation Name="Contoso">
+          <uap3:FileTypeAssociation Name="myfiletypes">
             <rescap3:MigrationProgIds>
               <rescap3:MigrationProgId>Foo.Bar.1</rescap3:MigrationProgId>
               <rescap3:MigrationProgId>Foo.Bar.2</rescap3:MigrationProgId>
@@ -169,7 +169,7 @@ Vous pouvez associer votre application empaquetée à des extensions de type de 
 
 ```XML
 <Extension Category="windows.fileTypeAssociation">
-    <FileTypeAssociation Name="[AppID]">
+    <FileTypeAssociation Name="[Name]">
         <SupportedFileTypes>
             <FileType>"[file extension]"</FileType>
         </SupportedFileTypes>
@@ -179,10 +179,10 @@ Vous pouvez associer votre application empaquetée à des extensions de type de 
 
 Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
 
-|Name |Description |
+|Nom |Description |
 |-------|-------------|
 |Category |Toujours ``windows.fileTypeAssociation``.
-|Nom |Un ID unique pour votre application. Cet ID est utilisé en interne pour générer un [identificateur programmatique (ProgID)](https://docs.microsoft.com/windows/desktop/shell/fa-progids) associé à votre association de type de fichier. Vous pouvez utiliser cet ID pour gérer les modifications dans les futures versions de votre application.   |
+|Nom | Nom de l’Association de types de fichiers. Vous pouvez utiliser ce nom pour organiser et regrouper des types de fichiers. Le nom doit contenir tous les caractères minuscules, sans espace.   |
 |FileType |L’extension de fichier prise en charge par votre application. |
 
 #### <a name="example"></a>Exemple
@@ -196,9 +196,8 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
     <Application>
       <Extensions>
         <uap:Extension Category="windows.fileTypeAssociation">
-          <uap3:FileTypeAssociation Name="Contoso">
+          <uap3:FileTypeAssociation Name="mediafiles">
             <uap:SupportedFileTypes>
-            <uap:FileType>.txt</uap:FileType>
             <uap:FileType>.avi</uap:FileType>
             </uap:SupportedFileTypes>
           </uap3:FileTypeAssociation>
@@ -231,7 +230,7 @@ Vous pouvez ajouter des options à ce menu. Ces options donnent aux utilisateurs
 
 ```XML
 <Extension Category="windows.fileTypeAssociation">
-    <FileTypeAssociation Name="[AppID]">
+    <FileTypeAssociation Name="[Name]">
         <SupportedVerbs>
            <Verb Id="[ID]" Extended="[Extended]" Parameters="[parameters]">"[verb label]"</Verb>
         </SupportedVerbs>
@@ -241,10 +240,10 @@ Vous pouvez ajouter des options à ce menu. Ces options donnent aux utilisateurs
 
 Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
 
-|Nom |Description |
+|Name |Description |
 |-------|-------------|
 |Category | Toujours ``windows.fileTypeAssociation``.
-|Nom |Un ID unique pour votre application. |
+|Nom |Nom de l’Association de types de fichiers. Vous pouvez utiliser ce nom pour organiser et regrouper des types de fichiers. Le nom doit contenir tous les caractères minuscules, sans espace. |
 |Verb |Le nom qui apparaît dans le menu contextuel Explorateur de fichiers. Cette chaîne est localisable en utilisant ```ms-resource```.|
 |Id |L’ID unique du verbe. Si votre application est une application UWP, elle est transmise à votre application dans le cadre de ses arguments d’événement d’activation afin de pouvoir gérer la sélection de l’utilisateur de manière appropriée. Si votre application est une application empaquetée de confiance totale, elle reçoit des paramètres à la place (voir la puce suivante). |
 |Paramètres |La liste des paramètres et des valeurs d’arguments associés au verbe. Si votre application est une application empaquetée avec un niveau de confiance totale, ces paramètres sont passés à l’application en tant qu’arguments d’événement lorsque l’application est activée. Vous pouvez personnaliser le comportement de votre application en fonction de différents verbes d’activation. Si une variable peut contenir un chemin d’accès de fichier, placez la valeur du paramètre entre guillemets. Vous éviterez les problèmes qui se produisent dans les cas où le chemin d’accès contient des espaces. Si votre application est une application UWP, vous ne pouvez pas passer de paramètres. L’application reçoit l’ID à la place (voir la puce précédente).|
@@ -263,7 +262,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
     <Application>
       <Extensions>
         <uap:Extension Category="windows.fileTypeAssociation">
-          <uap3:FileTypeAssociation Name="Contoso">
+          <uap3:FileTypeAssociation Name="myfiletypes">
             <uap2:SupportedVerbs>
               <uap3:Verb Id="Edit" Parameters="/e &quot;%1&quot;">Edit</uap3:Verb>
               <uap3:Verb Id="Print" Extended="true" Parameters="/p &quot;%1&quot;">Print</uap3:Verb>
@@ -295,7 +294,7 @@ Vous pouvez vous assurer que les utilisateurs ouvrent par défaut votre nouvelle
 
 ```XML
 <Extension Category="windows.fileTypeAssociation">
-    <FileTypeAssociation Name="[AppID]" UseUrl="true" Parameters="%1">
+    <FileTypeAssociation Name="[Name]" UseUrl="true" Parameters="%1">
         <SupportedFileTypes>
             <FileType>"[FileExtension]"</FileType>
         </SupportedFileTypes>
@@ -308,9 +307,9 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 |Name |Description |
 |-------|-------------|
 |Category |Toujours ``windows.fileTypeAssociation``.
-|Nom |Un ID unique pour votre application. |
+|Nom |Nom de l’Association de types de fichiers. Vous pouvez utiliser ce nom pour organiser et regrouper des types de fichiers. Le nom doit contenir tous les caractères minuscules, sans espace. |
 |UseUrl |Indique s’il faut ouvrir les fichiers directement à partir d’une cible URL. Si vous ne définissez pas cette valeur, les tentatives effectuées par votre application pour ouvrir un fichier à l’aide d’une URL entraînent le premier téléchargement du fichier localement par le système. |
-|Paramètres |Paramètres facultatifs. |
+|Paramètres | Paramètres facultatifs. |
 |FileType |Les extensions de fichier appropriées. |
 
 #### <a name="example"></a>Exemple
@@ -324,7 +323,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
       <Application>
         <Extensions>
           <uap:Extension Category="windows.fileTypeAssociation">
-            <uap3:FileTypeAssociation Name="documenttypes" UseUrl="true" Parameters="%1">
+            <uap3:FileTypeAssociation Name="myfiletypes" UseUrl="true" Parameters="%1">
               <uap:SupportedFileTypes>
                 <uap:FileType>.txt</uap:FileType>
                 <uap:FileType>.doc</uap:FileType>
@@ -484,7 +483,7 @@ Spécifiez le comportement de votre application lorsqu’un utilisateur ouvre pl
 
 ```XML
 <Extension Category="windows.fileTypeAssociation">
-    <FileTypeAssociation Name="[AppID]" MultiSelectModel="[SelectionModel]">
+    <FileTypeAssociation Name="[Name]" MultiSelectModel="[SelectionModel]">
         <SupportedVerbs>
             <Verb Id="Edit" MultiSelectModel="[SelectionModel]">Edit</Verb>
         </SupportedVerbs>
@@ -496,10 +495,10 @@ Spécifiez le comportement de votre application lorsqu’un utilisateur ouvre pl
 
 Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
 
-|Nom |Description |
+|Name |Description |
 |-------|-------------|
 |Category |Toujours ``windows.fileTypeAssociation``.
-|Nom |Un ID unique pour votre application. |
+|Nom |Nom de l’Association de types de fichiers. Vous pouvez utiliser ce nom pour organiser et regrouper des types de fichiers. Le nom doit contenir tous les caractères minuscules, sans espace. |
 |MultiSelectModel |Voir ci-dessous |
 |FileType |Les extensions de fichier appropriées. |
 
@@ -525,7 +524,7 @@ Les applications de bureau empaquetées présentent les trois mêmes options que
     <Application>
       <Extensions>
         <uap:Extension Category="windows.fileTypeAssociation">
-          <uap3:FileTypeAssociation Name="myapp" MultiSelectModel="Document">
+          <uap3:FileTypeAssociation Name="myfiletypes" MultiSelectModel="Document">
             <uap2:SupportedVerbs>
               <uap3:Verb Id="Edit" MultiSelectModel="Player">Edit</uap3:Verb>
               <uap3:Verb Id="Preview" MultiSelectModel="Document">Preview</uap3:Verb>
@@ -559,7 +558,7 @@ Permettez aux utilisateurs d’afficher une image miniature du contenu du fichie
 
 ```XML
 <Extension Category="windows.fileTypeAssociation">
-    <FileTypeAssociation Name="[AppID]">
+    <FileTypeAssociation Name="[Name]">
         <SupportedFileTypes>
             <FileType>"[FileExtension]"</FileType>
         </SupportedFileTypes>
@@ -571,10 +570,10 @@ Permettez aux utilisateurs d’afficher une image miniature du contenu du fichie
 
 Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
 
-|Nom |Description |
+|Name |Description |
 |-------|-------------|
 |Category |Toujours ``windows.fileTypeAssociation``.
-|Name |Un ID unique pour votre application. |
+|Nom |Nom de l’Association de types de fichiers. Vous pouvez utiliser ce nom pour organiser et regrouper des types de fichiers. Le nom doit contenir tous les caractères minuscules, sans espace. |
 |FileType |Les extensions de fichier appropriées. |
 |Clsid   |L’ID de classe de votre application. |
 
@@ -591,7 +590,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
     <Application>
       <Extensions>
         <uap:Extension Category="windows.fileTypeAssociation">
-          <uap3:FileTypeAssociation Name="Contoso">
+          <uap3:FileTypeAssociation Name="myfiletypes">
             <uap2:SupportedFileTypes>
               <uap:FileType>.bar</uap:FileType>
             </uap2:SupportedFileTypes>
@@ -622,7 +621,7 @@ Permettez aux utilisateurs d’afficher un aperçu du contenu d’un fichier dan
 
 ```XML
 <Extension Category="windows.fileTypeAssociation">
-    <FileTypeAssociation Name="[AppID]">
+    <FileTypeAssociation Name="[Name]">
         <SupportedFileTypes>
             <FileType>"[FileExtension]"</FileType>
         </SupportedFileTypes>
@@ -636,7 +635,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 |Name |Description |
 |-------|-------------|
 |Category |Toujours ``windows.fileTypeAssociation``.
-|Nom |Un ID unique pour votre application. |
+|Nom |Nom de l’Association de types de fichiers. Vous pouvez utiliser ce nom pour organiser et regrouper des types de fichiers. Le nom doit contenir tous les caractères minuscules, sans espace. |
 |FileType |Les extensions de fichier appropriées. |
 |Clsid   |L’ID de classe de votre application. |
 
@@ -653,7 +652,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
     <Application>
       <Extensions>
         <uap:Extension Category="windows.fileTypeAssociation">
-          <uap3:FileTypeAssociation Name="Contoso">
+          <uap3:FileTypeAssociation Name="myfiletypes">
             <uap2SupportedFileTypes>
               <uap:FileType>.bar</uap:FileType>
                 </uap2SupportedFileTypes>
@@ -685,7 +684,7 @@ Pour plus d’informations sur le champ **Type** et les valeurs que vous pouvez 
 
 ```XML
 <Extension Category="windows.fileTypeAssociation">
-    <FileTypeAssociation Name="[AppID]">
+    <FileTypeAssociation Name="[Name]">
         <SupportedFileTypes>
             <FileType>"[FileExtension]"</FileType>
         </SupportedFileTypes>
@@ -698,10 +697,10 @@ Pour plus d’informations sur le champ **Type** et les valeurs que vous pouvez 
 
 Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
 
-|Nom |Description |
+|Name |Description |
 |-------|-------------|
 |Category |Toujours ``windows.fileTypeAssociation``.
-|Name |Un ID unique pour votre application. |
+|Nom |Nom de l’Association de types de fichiers. Vous pouvez utiliser ce nom pour organiser et regrouper des types de fichiers. Le nom doit contenir tous les caractères minuscules, sans espace. |
 |FileType |Les extensions de fichier appropriées. |
 |valeur |Une [Valeur de type](https://docs.microsoft.com/windows/desktop/properties/building-property-handlers-user-friendly-kind-names) valide. |
 
@@ -716,7 +715,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
     <Application>
       <Extensions>
         <uap:Extension Category="windows.fileTypeAssociation">
-           <uap:FileTypeAssociation Name="Contoso">
+           <uap:FileTypeAssociation Name="mediafiles">
              <uap:SupportedFileTypes>
                <uap:FileType>.m4a</uap:FileType>
                <uap:FileType>.mta</uap:FileType>
@@ -748,7 +747,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 
 ```XML
 <uap:Extension Category="windows.fileTypeAssociation">
-    <uap:FileTypeAssociation Name="[AppID]">
+    <uap:FileTypeAssociation Name="[Name]">
         <SupportedFileTypes>
             <FileType>.bar</FileType>
         </SupportedFileTypes>
@@ -762,7 +761,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
 |Nom |Description |
 |-------|-------------|
 |Category |Toujours ``windows.fileTypeAssociation``.
-|Nom |Un ID unique pour votre application. |
+|Nom |Nom de l’Association de types de fichiers. Vous pouvez utiliser ce nom pour organiser et regrouper des types de fichiers. Le nom doit contenir tous les caractères minuscules, sans espace. |
 |FileType |Les extensions de fichier appropriées. |
 |Clsid  |L’ID de classe de votre application. |
 
@@ -778,7 +777,7 @@ Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.
     <Application>
       <Extensions>
         <uap:Extension Category="windows.fileTypeAssociation">
-          <uap3:FileTypeAssociation Name="Contoso">
+          <uap3:FileTypeAssociation Name="myfiletypes">
             <uap:SupportedFileTypes>
               <uap:FileType>.bar</uap:FileType>
             </uap:SupportedFileTypes>
@@ -985,10 +984,10 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/3
 
 Vous trouverez la référence de schéma complète [ici](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-protocol).
 
-|Nom |Description |
+|Name |Description |
 |-------|-------------|
 |Category |Toujours ``windows.protocol``.
-|Nom |Le nom du protocole. |
+|Name |Le nom du protocole. |
 |Paramètres |Liste de paramètres et de valeurs à passer à votre application en tant qu’arguments d’événement lorsque l’application est activée. Si une variable peut contenir un chemin d’accès de fichier, placez la valeur du paramètre entre guillemets. Vous éviterez les problèmes qui se produisent dans les cas où le chemin d’accès contient des espaces. |
 
 ### <a name="example"></a>Exemple
@@ -1038,7 +1037,7 @@ Les utilisateurs et autres processus peuvent utiliser un alias pour démarrer vo
 </Extension>
 ```
 
-|Name |Description |
+|Nom |Description |
 |-------|-------------|
 |Category |Toujours ``windows.appExecutionAlias``.
 |Exécutable |Le chemin d’accès relatif du fichier exécutable à démarrer lorsque l’alias est appelé. |
@@ -1103,7 +1102,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10
 </Extension>
 ```
 
-|Nom |Description |
+|Name |Description |
 |-------|-------------|
 |Category |Toujours ``windows.startupTask``.|
 |Exécutable |Le chemin d’accès relatif au fichier exécutable à démarrer. |
@@ -1295,7 +1294,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
 
 Vous trouverez la référence de schéma complète [ici](/uwp/schemas/appxpackage/uapmanifestschema/element-uap4-sharedfonts).
 
-|Nom |Description |
+|Name |Description |
 |-------|-------------|
 |Category |Toujours ``windows.sharedFonts``.
 |Fichier |Le fichier qui contient les polices que vous souhaitez partager. |
