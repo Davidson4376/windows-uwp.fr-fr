@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 76196add0829dcfa0aa638a2d8ae6995fafce69e
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 1d162fcf9a0f1023c58792e8c9f7a0e22fac4440
+ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63820611"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68867757"
 ---
 # <a name="typography"></a>Typographie
 
@@ -25,16 +25,14 @@ Vous devez utiliser une police dans toute l’interface utilisateur de votre app
 
 ![Exemple de texte dans la police Segoe UI](images/type/segoe-sample.svg)
 
-Pour afficher les langues autres que l’anglais ou pour sélectionner une autre police pour votre application, consultez [Langues](#Languages) et [Polices](#Fonts) pour connaître nos polices recommandées pour les applications UWP.
+Pour afficher les langues autres que l’anglais ou pour sélectionner une autre police pour votre application, consultez [Langues](#languages) et [Polices](#fonts) pour connaître nos polices recommandées pour les applications UWP.
 
 :::row:::
     :::column:::
-        ![do](images/do.svg)
-        Pick one font for your UI.
+![à faire](images/do.svg) Sélectionner une seule police pour votre interface utilisateur.
     :::column-end:::
     :::column:::
-        ![don't](images/dont.svg)
-        Don't mix multiple fonts.
+![à ne pas faire](images/dont.svg) Utiliser plusieurs polices.
     :::column-end:::
 :::row-end:::
 
@@ -48,12 +46,10 @@ En raison du mode de fonctionnement du système de mise à l’échelle, la conc
 
 :::row:::
     :::column:::
-        ![do](images/do.svg)
-        Follow the UWP [type ramp](#type-ramp) sizing.
+![à faire](images/do.svg) Suivre le redimensionnement UWP [gamme de caractères](#type-ramp).
     :::column-end:::
     :::column:::
-        ![don't](images/dont.svg)
-        Use a font size smaller than 12 px.
+![à ne pas faire](images/dont.svg) Utiliser une taille de police inférieure à12 px.
     :::column-end:::
 :::row-end:::
 
@@ -61,10 +57,10 @@ En raison du mode de fonctionnement du système de mise à l’échelle, la conc
 
 :::row:::
     :::column:::
-        Users rely on visual hierarchy when scanning a page: headers summarize content, and body text provides more detail. To create a clear visual hierarchy in your app, follow the UWP type ramp.
+Les utilisateurs s’appuient sur la hiérarchie visuelle lors de l’analyse d’une page : les en-têtes résument le contenu et le texte du corps fournit d’autres informations. Pour créer une hiérarchie visuelle précise dans votre application, suivez la gamme de caractères UWP.
     :::column-end:::
     :::column:::
-        ![text block styles](images/type/type-hierarchy.svg)
+![Styles de bloc de texte](images/type/type-hierarchy.svg)
     :::column-end:::
 :::row-end:::
 
@@ -78,10 +74,10 @@ La gamme de caractères UWP établit des relations cruciales entre les styles de
 
 :::row:::
     :::column:::
-        You can access levels of the type ramp as XAML [static resources](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp). The styles follow the `*TextBlockStyle` naming convention.
+Vous pouvez accéder aux niveaux de la gamme de caractères en tant que [ressources statiques](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp) XAML. Les styles suivent la convention `*TextBlockStyle` d’attribution de noms.
     :::column-end:::
     :::column:::
-        ![text block styles](images/type/text-block-type-ramp.svg)
+![Styles de bloc de texte](images/type/text-block-type-ramp.svg)
     :::column-end:::
 :::row-end:::
 
@@ -97,16 +93,14 @@ La gamme de caractères UWP établit des relations cruciales entre les styles de
 
 :::row:::
     :::column:::
-        ![do](images/do.svg)
-        Use "Body" for most text.
+![à faire](images/do.svg)Utiliser « Corps » pour la majorité du texte.
 
-        Use "Base" for titles when space is constrained.
+Utilisez « Base » pour les titres lorsque l’espace est restreint.
     :::column-end:::
     :::column:::
-        ![don't](images/dont.svg)
-        Use "Caption" for primary action or any long strings.
+![à ne pas faire](images/dont.svg) Utiliser « Légende » pour une action principale ou des chaînes longues.
 
-        Use "Header" or "Subheader" if text needs to wrap.
+Utiliser « En-tête » ou « Sous-titre » si le texte doit faire l’objet d’un retour automatique à la ligne.
     :::column-end:::
 :::row-end:::
 
@@ -124,12 +118,10 @@ La valeur [TextAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.tex
 
 :::row:::
     :::column:::
-        ![do](images/do.svg)
-        Keep to 50–60 letters per line for ease of reading.
+![à faire](images/do.svg) Utiliser des lignes de 50 à 60 caractères afin de faciliter la lecture.
     :::column-end:::
     :::column:::
-        ![don't](images/dont.svg)
-        Less than 20 characters or more than 60 characters per line is difficult to read.
+![à ne pas faire](images/dont.svg) Utiliser des lignes de moins de 20 caractères ou de plus de 60 caractères qui rendent la lecture difficile.
     :::column-end:::
 :::row-end:::
 
@@ -145,12 +137,10 @@ Lorsque la quantité de texte s’étend au-delà de l’espace disponible, nous
 
 :::row:::
     :::column:::
-        ![do](images/do.svg)
-        Clip text, and wrap if multiple lines are enabled.
+![à faire](images/do.svg) Dérouter le texte et le renvoyer automatiquement à la ligne si plusieurs lignes sont activées.
     :::column-end:::
     :::column:::
-        ![don't](images/dont.svg)
-        Use ellipses to avoid visual clutter.
+![à ne pas faire](images/dont.svg) Utiliser des ellipses pour éviter tout encombrement visuel.
     :::column-end:::
 :::row-end:::
 
@@ -328,7 +318,7 @@ Les polices serif sont parfaites pour présenter de grandes quantités de texte.
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Segoe MDL2 Assets</td>
+<td align="left">Ressources Segoe MDL2</td>
 <td align="left">Normale</td>
 <td align="left">Police d’interface utilisateur pour les icônes d’application. Pour plus d’informations, voir l’article <a href="segoe-ui-symbol-font.md">Recommandations en matière d’icônes Segoe MDL2</a>.</td>
 </tr>

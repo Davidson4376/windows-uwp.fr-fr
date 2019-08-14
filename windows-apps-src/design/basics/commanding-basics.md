@@ -11,12 +11,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: ac2bd55d1cea25359c3c609148c7098532d76c46
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 8b33fe420e93c9ce78c625ad365ec8dc10e343ad
+ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63796411"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68867454"
 ---
 # <a name="command-design-basics-for-uwp-apps"></a>Informations de base relatives à la conception des commandes pour les applications UWP
 
@@ -48,52 +48,52 @@ L’utilisation d’éléments adéquats dans une interface de commande peut fai
 
 :::row:::
     :::column:::
-        ![button image](images/commanding/thumbnail-button.svg)
+![image du bouton](images/commanding/thumbnail-button.svg)
     :::column-end:::
     :::column span="2":::
-        <b>Buttons</b>
+<b>Boutons</b>
 
-        <a href="../controls-and-patterns/buttons.md" style="text-decoration:none">Buttons</a> trigger an immediate action. Examples include sending an email, submitting form data, or confirming an action in a dialog.
+Les <a href="../controls-and-patterns/buttons.md" style="text-decoration:none">boutons</a> déclenchent une action immédiate. Il peut s’agir de l’envoi d’un e-mail, de l’envoi des données d’un formulaire ou de la confirmation d’une action dans une boîte de dialogue.
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![list image](images/commanding/thumbnail-list.svg)
+![image de liste](images/commanding/thumbnail-list.svg)
     :::column-end:::
     :::column span="2":::
-        <b>Lists</b>
+<b>Listes</b>
 
-        <a href="../controls-and-patterns/lists.md" style="text-decoration:none">Lists</a> present items in a interactive list or a grid. Usually used for many options or display items. Examples include drop-down list, list box, list view and grid view.
+Les<a href="../controls-and-patterns/lists.md" style="text-decoration:none">listes</a>présentent les éléments dans une liste ou une grille interactives. Elles sont généralement utilisées pour de nombreuses options ou pour afficher les éléments. Il peut s’agir d’une liste déroulante, d’une zone de liste, d’un affichage de liste et d’un affichage de grille.
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![selection control image](images/commanding/thumbnail-selection.svg)
+![image de contrôle de sélection](images/commanding/thumbnail-selection.svg)
     :::column-end:::
     :::column span="2":::
-        <b>Selection controls</b>
+<b>Contrôles de sélection</b>
 
-        Lets users choose from a few options, such as when completing a survey or configuring app settings. Examples include <a href="../controls-and-patterns/checkbox.md">check box</a>, <a href="../controls-and-patterns/radio-button.md">radio button</a>, and <a href="../controls-and-patterns/toggles.md">toggle switch</a>.
+Ils permettent aux utilisateurs de choisir entre différentes options, par exemple, pour remplir un questionnaire ou configurer des paramètres d’application. Il peut s’agir d’une <a href="../controls-and-patterns/checkbox.md">case à cocher</a>, d’une <a href="../controls-and-patterns/radio-button.md">case d’option</a> et d’un <a href="../controls-and-patterns/toggles.md">bouton bascule</a>.
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![Calendar  image](images/commanding/thumbnail-calendar.svg)
+![Image de calendrier](images/commanding/thumbnail-calendar.svg)
     :::column-end:::
     :::column span="2":::
-        <b>Calendar, date and time pickers</b>
+<b>Sélecteurs de calendriers, de date et d’heure</b>
 
-        <a href="../controls-and-patterns/date-and-time.md">Calendar, date and time pickers</a> enable users to view and modify date and time info, such as when creating an event or setting an alarm. Examples include calendar date picker, calendar view, date picker, time picker.
+Les <a href="../controls-and-patterns/date-and-time.md">sélecteurs de calendriers, de date et d’heure</a> permettent aux utilisateurs d’afficher et de modifier les informations de date et d’heure, notamment pour créer un événement ou configurer d’une alarme. Il peut s’agir d’un sélecteur de date du calendrier, d’un affichage de calendrier, d’un sélecteur de date et d’un sélecteur d’heure.
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![Predictive text entry image](images/commanding/thumbnail-autosuggest.svg)
+![Image de saisie de texte prédictive](images/commanding/thumbnail-autosuggest.svg)
     :::column-end:::
     :::column span="2":::
-        <b>Predictive text entry</b>
+<b>Saisie de texte prédictive</b>
 
-        Provides suggestions as users type, such as when entering data or performing queries. Examples include <a href="../controls-and-patterns/auto-suggest-box.md">auto-suggest box</a>.<br>
+Elle fournit des suggestions au fur et à mesure que les utilisateurs entrent des données ou émettent des requêtes. Il peut s’agir d’une <a href="../controls-and-patterns/auto-suggest-box.md">zone de suggestion automatique</a>.<br>
 :::row-end:::
 
 Pour obtenir la liste complète de ces éléments, voir [Contrôles et éléments d’interface utilisateur](../controls-and-patterns/index.md).
@@ -110,36 +110,36 @@ Voici une liste de quelques-unes des surfaces de commande les plus courantes.
 
 :::row:::
     :::column:::
-        ![app canvas image](images/commanding/thumbnail-canvas.svg)
+![image de zones de dessin d’application](images/commanding/thumbnail-canvas.svg)
     :::column-end:::
     :::column span="2":::
-        <b>App canvas (content area)</b>
+<b>Zones de dessin d’application (zone de contenu)</b>
 
-        If a command is constantly needed for users to complete core scenarios, put it on the canvas. Because you can put commands near (or on) the objects they affect, putting commands on the canvas makes them easy and obvious to use. However, choose the commands you put on the canvas carefully. Too many commands on the app canvas take up valuable screen space and can overwhelm the user. If the command won't be frequently used, consider putting it in another command surface.
+Si une commande est nécessaire en tout temps pour permettre aux utilisateurs d’effectuer des scénarios de base, placez-la sur la zone de dessin. Comme vous pouvez placer les commandes près des objets qu’elles affectent (ou sur ceux-ci), le fait de les placer sur le Canvas rend leur utilisation facile et évidente. Toutefois, choisissez les commandes que vous placez sur le Canvas avec soin. S’il y a trop de commandes sur la zone de dessin de l’application, vous perdrez de l’espace précieux sur l’écran et risquez de submerger l’utilisateur. Si la commande n’est pas fréquemment utilisée, pensez à la placer sur une autre surface de commande.
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![commandbar image](images/commanding/thumbnail-commandbar.svg)
+![image CommandBar](images/commanding/thumbnail-commandbar.svg)
     :::column-end:::
     :::column span="2":::
-        <b>Command bars and menu bars</b>
+<b>Barres de commandes et barres de menus</b>
 
-        <a href="../controls-and-patterns/app-bars.md">Command bars</a> help organize commands and make them easy to access. Command bars can be placed at the top of the screen, at the bottom of the screen, or at both the top and bottom of the screen (a <a href="../controls-and-patterns/menus.md#create-a-menu-bar">MenuBar</a> can also be used when the functionality in your app is too complex for a command bar).
+Les <a href="../controls-and-patterns/app-bars.md">barres de commandes</a> simplifient l’organisation des commandes et en facilitent l’accès. Les barres de commandes peuvent être placées en haut de l’écran, en bas de l’écran, ou les deux (une <a href="../controls-and-patterns/menus.md#create-a-menu-bar">barre de menus</a> peut également être utilisée lorsque la fonctionnalité de votre application est trop complexe pour une barre de commandes).
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![context menu image](images/commanding/thumbnail-contextmenu.svg)
+![image de menu contextuel](images/commanding/thumbnail-contextmenu.svg)
     :::column-end:::
     :::column span="2":::
-        <b>Menus and context menus</b>
+<b>Menus et menus contextuels</b>
 
-        <p>Menus and context menus save space by organizing commands and hiding them until the user needs them. Users typically access a menu or context menu by clicking a button or right-clicking a control.</p> 
+<p>Les menus et les menus contextuels permettent de gagner de l’espace en organisant les commandes et en les masquant jusqu’à ce que l’utilisateur en ait besoin. Les utilisateurs accèdent généralement à un menu ou à un menu contextuel en cliquant sur un bouton ou en cliquant avec le bouton droit sur un contrôle.</p> 
 
-        <p>The <a href="../controls-and-patterns/command-bar-flyout.md">command bar flyout </a> is a type of contextual menu that combines the benefits of a command bar and a context menu into a single control. It can provide shortcuts to commonly-used actions and provide access to secondary commands that are only relevant in certain contexts, such as clipboard or custom commands.</p>
+<p>Le <a href="../controls-and-patterns/command-bar-flyout.md">menu volant de barre de commandes </a> est un type de menu contextuel qui regroupe les avantages d’une barre de commandes et d’un menu contextuel en un seul contrôle. Il peut fournir des raccourcis pour les actions fréquemment effectuées et un accès aux commandes secondaires qui ne sont pertinentes que dans certains contextes, comme le presse-papier ou les commandes personnalisées.</p>
 
-        <p>UWP also provides a set of traditional menus and context menus; for more info, see the <a href="../controls-and-patterns/menus.md">menus and context menus overview</a>.</p>
+<p>UWP fournit également un ensemble de menus traditionnels et de menus contextuels. Pour plus d’informations, consultez la <a href="../controls-and-patterns/menus.md">vue d’ensemble des menus et des menus contextuels</a>.</p>
 :::row-end:::
 
 ## <a name="provide-command-feedback"></a>Fournir des commentaires sur la commande 
@@ -153,32 +153,32 @@ Voici quelques solutions pour fournir des commentaires dans votre application.
 
 :::row:::
     :::column:::
-        ![commandbar content area image](images/commanding/thumbnail-commandbar2.svg)
+![image de la zone de contenu CommandBar](images/commanding/thumbnail-commandbar2.svg)
     :::column-end:::
     :::column span="2":::
-        <b>Command bar</b>
+<b>Barre de commandes</b>
 
-        The content area of the <a href="../controls-and-patterns/app-bars.md">command bar</a> is an intuitive place to communicate status to users if they'd like to see feedback.
+La zone de contenu de la <a href="../controls-and-patterns/app-bars.md">barre de commandes</a> est un espace intuitif pour communiquer le statut aux utilisateurs s’ils veulent voir les commentaires.
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![Flyout image](images/commanding/thumbnail-flyout.svg)
+![Image du menu volant](images/commanding/thumbnail-flyout.svg)
     :::column-end:::
     :::column span="2":::
-        <b>Flyouts</b>
+<b>Menus volants</b>
 
        Les <a href="../controls-and-patterns/dialogs-and-flyouts/index.md">menus volants</a> sont des fenêtres contextuelles légères qui peuvent être fermées en appuyant ou en cliquant quelque part à l’extérieur du menu volant.
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![Dialog image](images/commanding/thumbnail-dialog.svg)
+![Image de la boîte de dialogue](images/commanding/thumbnail-dialog.svg)
     :::column-end:::
     :::column span="2":::
-        <b>Dialog controls</b>
+<b>Contrôles de boîte de dialogue</b>
 
-        <a href="../controls-and-patterns/dialogs-and-flyouts/index.md">Dialog controls</a> are modal UI overlays that provide contextual app information. In most cases, dialogs block interactions with the app window until being explicitly dismissed, and often request some kind of action from the user. Dialogs can be disruptive and should only be used in certain situations. For more info, see the [When to confirm or undo actions](#when-to-confirm-or-undo-actions) section.
+Les <a href="../controls-and-patterns/dialogs-and-flyouts/index.md">contrôles de boîtes de dialogue</a> sont des superpositions d’interface utilisateur modales qui fournissent des informations contextuelles sur l’application. Dans la plupart des cas, les boîtes de dialogue bloquent les interactions avec la fenêtre de l’application jusqu’à ce qu’elles soient masquées explicitement. Elles demandent souvent un type d’action de l’utilisateur. Les boîtes de dialogue peuvent nuire à la fluidité de l’expérience et ne doivent être utilisées que dans certaines situations. Pour plus d’informations, voir la section [Quand confirmer ou annuler des actions](#when-to-confirm-or-undo-actions).
     :::column-end:::
 :::row-end:::
 
@@ -191,23 +191,23 @@ Même si l’interface utilisateur de votre application a été très bien conç
 
 :::row:::
     :::column:::
-        ![do image](images/do.svg)
+![Image d’action à faire](images/do.svg)
 
-        For actions that can't be undone and have major consequences, we recommend using a confirmation dialog. Examples of such actions include:
-        -   Overwriting a file
-        -   Not saving a file before closing
-        -   Confirming permanent deletion of a file or data
-        -   Making a purchase (unless the user opts out of requiring a confirmation)
-        -   Submitting a form, such as signing up for something
+Pour les actions qui ne peuvent pas être annulées et dont les conséquences sont importantes, nous vous recommandons d’utiliser une boîte de dialogue de confirmation. Exemples de telles actions :
+-   Remplacement d’un fichier
+-   Non-enregistrement d’un fichier avant la fermeture
+-   Confirmation de la suppression définitive d’un fichier ou de données
+-   Achat (sauf si l’utilisateur refuse de demander une confirmation)
+-   Envoi d’un formulaire, par exemple pour s’inscrire à un programme
     :::column-end:::
     :::column:::
-        ![do image](images/do.svg)
+![Image d’action à faire](images/do.svg)
 
-        For actions that can be undone, offering a simple undo command is usually enough. Examples of such actions include:
-        -   Deleting a file
-        -   Deleting an email (not permanently)
-        -   Modifying content or editing text
-        -   Renaming a file
+Pour les actions qui peuvent être annulées, une simple commande d’annulation est généralement suffisante. Exemples de telles actions :
+-   Suppression d’un fichier
+-   Suppression d’un e-mail (pas définitivement)
+-   Modification du contenu ou d’un texte
+-   Changement de nom d’un fichier
 :::row-end:::
 
 ##  <a name="optimize-for-specific-input-types"></a>Optimiser les types d’entrée spécifiques

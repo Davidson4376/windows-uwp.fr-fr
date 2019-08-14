@@ -6,12 +6,12 @@ keywords: Commencer avec une licence de développeur Visual Studio, appareil ave
 ms.date: 04/09/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 09f115cad236582ccb0008c2274a7472ed4c0d55
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+ms.openlocfilehash: 705ff7fab00d13123211feb747ea9a9f95b0cc43
+ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682666"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68867613"
 ---
 # <a name="enable-your-device-for-development"></a>Activer votre appareil pour le développement
 
@@ -46,6 +46,9 @@ Voici la page de paramètres pour la famille d’appareils de bureau.
 
 ## <a name="which-setting-should-i-choose-sideload-apps-or-developer-mode"></a>Quel paramètre choisir : Charger la version test des applications ou Mode développeur ?
 
+> [!NOTE]
+> Depuis l’arrivée de Windows Insider Build 18956, l’option de chargement de version test a été supprimée et le Mode développeur est maintenant une bascule. Pour plus d’informations sur le chargement de version test, consultez la section suivante. 
+
  Vous pouvez activer un appareil pour le développement ou simplement pour le chargement indépendant.
 
 -   *Applications du Microsoft Store* est le paramètre par défaut. Si vous ne développez pas des applications, ou si vous utilisez des applications internes spécifiques développées par votre entreprise, ce paramètre doit être activé.
@@ -55,6 +58,9 @@ Voici la page de paramètres pour la famille d’appareils de bureau.
 Par défaut, vous pouvez uniquement installer des applications de plateforme Windows universelle (UWP) à partir du Microsoft Store. La modification de ces paramètres en vue d’utiliser les fonctionnalités de développement peut entraîner la modification du niveau de sécurité de votre appareil. N’installez pas d’applications à partir de sources non vérifiées.
 
 ### <a name="sideload-apps"></a>Charger la version test des applications
+
+> [!NOTE]
+> Depuis l’arrivée de Windows Insider Build 18956, le chargement de version test est activé par défaut. Désormais, vous pouvez déployer un package MSIX signé sur un appareil sans configuration particulière. 
 
 Le paramètre Charger la version test des applications est généralement utilisé par des sociétés ou des écoles qui ont besoin d’installer des applications personnalisées sur des appareils gérés, sans passer par le Microsoft Store, ou par toute personne devant exécuter des applications à partir de sources tierces. Dans ce cas, l’organisation applique généralement une stratégie visant à désactiver le paramètre *Applications UWP*, comme le montre l’image précédente de la page des paramètres. L’organisation fournit aussi le certificat nécessaire et l’emplacement d’installation pour le chargement indépendant des applications. Pour plus d’informations, voir les articles TechNet [Charger la version test des applications dans Windows 10](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10) et [Prendre en main le déploiement d’applications dans Microsoft Intune](https://docs.microsoft.com/intune/deploy-use/add-apps).
 

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 01af8254-b073-445e-af4c-e474528f8aa3
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d485e6e2926f0065e090e7ef9d2bfab0683f396
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 343fa50dbe9a0574914dc96b9fac450475a69b0a
+ms.sourcegitcommit: 87ddc67d31668a6351206bda3546ffbabb7b4551
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318816"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68807847"
 ---
 # <a name="create-a-uwp-game-in-javascript"></a>Créer un jeu UWP en JavaScript
 
@@ -134,7 +134,7 @@ Recherchez le code ci-dessous et supprimez les commentaires (\\) sur la ligne qu
     ];
 ```
 
-JavaScript a besoin d'un peu d'aide pour le chargement de ressources telles que des images. Nous utilisons donc une fonctionnalité de la bibliothèque CreateJS, appelée [LoadQueue](https://www.createjs.com/docs/preloadjs/classes/LoadQueue.html), qui permet de précharger des images. Nous ne pouvons pas savoir combien de temps prendra le chargement des images. C'est pourquoi nous utilisons la fonctionnalité LoadQueue pour s'en occuper. Une fois les images disponibles, la file d'attente nous indiquera qu'elles sont prêtes. Pour ce faire, nous créons d'abord un nouvel objet qui répertorie toutes nos images, puis un objet LoadQueue. Vous pouvez voir dans le code suivant une configuration qui permet d'appeler la fonction **loadingComplete()** lorsque tout est prêt.
+JavaScript a besoin d'un peu d'aide pour le chargement de ressources telles que des images. Nous utilisons donc une fonctionnalité de la bibliothèque CreateJS, appelée [LoadQueue](https://www.createjs.com/docs/preloadjs/classes/LoadQueue.html), qui permet de précharger des images. Nous ne pouvons pas savoir combien de temps prendra le chargement des images précisément. C'est pourquoi nous utilisons la fonctionnalité LoadQueue. Une fois les images disponibles, la file d'attente nous indiquera qu'elles sont prêtes. Pour ce faire, nous créons d'abord un nouvel objet qui répertorie toutes nos images, puis un objet LoadQueue. Vous pouvez voir dans le code suivant une configuration qui permet d'appeler la fonction **loadingComplete()** lorsque tout est prêt.
 
 ```
     // Now we create a special queue, and finally a handler that is
