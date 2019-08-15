@@ -514,7 +514,7 @@ C++/CX fournit plusieurs types de données dans l'espace de noms **Platform**. C
 | **Platform::Object\^** | **winrt::Windows::Foundation::IInspectable** |
 | **Platform::String\^** | [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) |
 
-### <a name="port-platformagile-to-winrtagileref"></a>Porter **Platform::Agile\^** vers **winrt::agile_ref**
+### <a name="port-platformagile-to-winrtagile_ref"></a>Porter **Platform::Agile\^** vers **winrt::agile_ref**
 
 Le type **Platform::Agile\^** en C++/CX représente une classe Windows Runtime accessible à partir de n’importe quel thread. L’équivalent en C++/WinRT est [**winrt::agile_ref**](/uwp/cpp-ref-for-winrt/agile-ref).
 
@@ -534,7 +534,7 @@ winrt::agile_ref<Windows::UI::Core::CoreWindow> m_window;
 
 Vos options incluent l’utilisation d’une liste d’initialiseurs, un **std::array** ou un **std::vector**. Pour plus d’informations et des exemples de code, consultez [Listes d’initialiseurs standard](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-initializer-lists) et [Vecteurs et tableaux standard](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-arrays-and-vectors).
 
-### <a name="port-platformexception-to-winrthresulterror"></a>Porter **Platform::Exception\^** vers **winrt::hresult_error**
+### <a name="port-platformexception-to-winrthresult_error"></a>Porter **Platform::Exception\^** vers **winrt::hresult_error**
 
 Le type **Platform::Exception\^** se produit en C++/CX quand une API Windows Runtime retourne un HRESULT autre que S\_OK. L’équivalent en C++/WinRT est [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error).
 
@@ -596,7 +596,7 @@ winrt::Windows::Foundation::IInspectable var{ nullptr };
 
 **Platform::String\^** équivaut au type Windows Runtime HSTRING ABI. Pour C++/WinRT, l’équivalent est [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring). Mais avec C++/WinRT, vous pouvez appeler des API Windows Runtime à l’aide de types de chaînes étendues de la bibliothèque C++ standard comme **std::wstring** et/ou des littéraux de chaîne étendue. Pour obtenir plus d’informations et des exemples de code, voir [Gestion des chaînes en C++/WinRT](strings.md).
 
-Avec C++/CX, vous pouvez accéder à la propriété [**Platform::String::Data**](https://docs.microsoft.com/cpp/cppcx/platform-string-class?view=vs-2019#data) pour récupérer la chaîne en tant que tableau **const wchar_t\*\*** de style C (par exemple, pour le passer à **std::wcout**).
+Avec C++/CX, vous pouvez accéder à la propriété [**Platform::String::Data**](https://docs.microsoft.com/cpp/cppcx/platform-string-class?view=vs-2019#data) pour récupérer la chaîne en tant que tableau **const wchar_t\*** de style C (par exemple, pour le passer à **std::wcout**).
 
 ```cppcx
 auto var{ titleRecord->TitleName->Data() };

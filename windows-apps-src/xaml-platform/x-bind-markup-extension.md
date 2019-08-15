@@ -148,7 +148,7 @@ Ces propriétés fonctionnent essentiellement de la même manière que les propr
 > [!NOTE]
 > Si vous convertissez un balisage de **{Binding}** en **{x:Bind}** , soyez attentif aux différences de valeurs par défaut de la propriété **Mode**.
  
-> [**x : DefaultBindMode** ](https://docs.microsoft.com/windows/uwp/xaml-platform/x-defaultbindmode-attribute) peut être utilisé pour modifier le mode par défaut pour x : Bind pour un segment spécifique de l’arborescence de balisage. Le mode sélectionné appliquera sur cet élément et ses enfants toute expression x:Bind qui ne spécifie pas explicitement un mode dans le cadre de la liaison. OneTime est plus performante que OneWay. En effet, l'utilisation de OneWay provoque plus de code à générer pour le raccordement et la gestion de la détection des modifications.
+> [**x:DefaultBindMode**](https://docs.microsoft.com/windows/uwp/xaml-platform/x-defaultbindmode-attribute) peut être utilisé pour modifier le mode par défaut pour x : Bind pour un segment spécifique de l’arborescence de balisage. Le mode sélectionné appliquera sur cet élément et ses enfants toute expression x:Bind qui ne spécifie pas explicitement un mode dans le cadre de la liaison. OneTime est plus performante que OneWay. En effet, l'utilisation de OneWay provoque plus de code à générer pour le raccordement et la gestion de la détection des modifications.
 
 ## <a name="remarks"></a>Notes
 

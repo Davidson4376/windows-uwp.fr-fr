@@ -138,7 +138,7 @@ ElementSoundPlayer.Play(ElementSoundKind.GoBack);
 
 Le son **Focus** est le seul son implicite dans notre système. Cela signifie que lorsqu’un utilisateur n’interagit directement avec aucun élément, il entend quand même un son.
 
-Le placement du focus se produit quand un utilisateur parcourt une application, que ce soit au moyen d’un boîtier de commande, d’un clavier, d’une télécommande ou de Kinect. En règle générale, le son **Focus***n’est pas émis lors des événements PointerEntered ou de pointage avec la souris*.
+Le placement du focus se produit quand un utilisateur parcourt une application, que ce soit au moyen d’un boîtier de commande, d’un clavier, d’une télécommande ou de Kinect. En règle générale, le son **Focus** *n’est pas émis lors des événements PointerEntered ou de pointage avec la souris*.
 
 Pour configurer un contrôle afin qu’il lise le son **Focus** lorsqu’il reçoit le focus, appelez la méthode :
 
