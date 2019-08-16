@@ -5,17 +5,15 @@ author: mattwojo
 ms.author: mattwoj
 manager: jken
 ms.topic: article
-ms.prod: windows
-ms.technology: hub
 keywords: Python, Windows 10, Microsoft, l’administration de système Python, l’automatisation de fichier Python, les scripts Python sur Windows, la configuration de Python sur Windows, l’environnement de développement Python sur Windows, l’environnement de développement Python sur Windows, Python avec PowerShell, scripts Python pour tâches du système de fichiers
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: b34bf61f4ce4d2157df572cfbbc9337fced6cf2f
-ms.sourcegitcommit: 210034519678ba1a59744bc3a0b613b000921537
+ms.openlocfilehash: 93fdea3347cc15aa6231ff90fb18eb2f7defb201
+ms.sourcegitcommit: a28a32fff9d15ecf4a9d172cd0a04f4d993f9d76
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68473666"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68959067"
 ---
 # <a name="get-started-using-python-on-windows-for-scripting-and-automation"></a>Prise en main de Python sur Windows pour l’écriture de scripts et l’automatisation
 
@@ -41,7 +39,7 @@ Pour installer Python à l’aide de la Microsoft Store:
 
 ## <a name="install-visual-studio-code"></a>Installer Visual Studio Code
 
-En utilisant vs code comme éditeur de texte/environnement de développement intégré (IDE), vous pouvez tirer parti d' [IntelliSense](https://code.visualstudio.com/docs/editor/intellisense) (une aide à la saisie semi-automatique du code), de la [(permet](https://code.visualstudio.com/docs/python/linting) d’éviter d’effectuer des erreurs dans votre code), de la [prise en charge](https://code.visualstudio.com/docs/python/debugging) du débogage (vous aide à trouver des erreurs dans votre code après l’avoir exécuté), des [extraits de code](https://code.visualstudio.com/docs/editor/userdefinedsnippets) (modèles pour les petits blocs de code réutilisables) et des [tests unitaires](https://code.visualstudio.com/docs/python/unit-testing) (test de l’interface de votre code avec différents types d’entrée).
+En utilisant vs code comme éditeur de texte/environnement de développement intégré (IDE), vous pouvez tirer parti d'[IntelliSense](https://code.visualstudio.com/docs/editor/intellisense) (une aide à la saisie semi-automatique du code), de la [Linting](https://code.visualstudio.com/docs/python/linting) (permet d’éviter d’effectuer des erreurs dans votre code), de la [prise en charge du débogage](https://code.visualstudio.com/docs/python/debugging) (vous aide à trouver des erreurs dans votre code après l’avoir exécuté), des [extraits de code](https://code.visualstudio.com/docs/editor/userdefinedsnippets) (modèles pour les petits blocs de code réutilisables) et des [tests unitaires](https://code.visualstudio.com/docs/python/unit-testing) (test de l’interface de votre code avec différents types d’entrée).
 
 Téléchargez VS Code pour Windows et suivez les instructions d’installation [https://code.visualstudio.com](https://code.visualstudio.com):.
 

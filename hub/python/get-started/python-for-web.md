@@ -5,17 +5,15 @@ author: mattwojo
 ms.author: mattwoj
 manager: jken
 ms.topic: article
-ms.prod: windows
-ms.technology: hub
 keywords: Python, Windows 10, Microsoft, Python sur Windows, Python Web avec WSL, application Web Python avec sous-système Windows pour Linux, développement Web Python sur Windows, application flacon sur Windows, application Django sur Windows, Python Web, Web dev sur Windows, Django Web dev sur Windows, Windows Web dev avec Python, vs code python Web dev, extension WSL distante, Ubuntu, WSL, venv, PIP, extension Python Microsoft, exécuter Python sur Windows, utiliser Python sur Windows, générer avec Python sur Windows
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: eafe85ac7e954d1a76708b059a191c14526afff8
-ms.sourcegitcommit: 210034519678ba1a59744bc3a0b613b000921537
+ms.openlocfilehash: fa6da9f5151d9457aafd255c9d10c91e3d219cee
+ms.sourcegitcommit: a28a32fff9d15ecf4a9d172cd0a04f4d993f9d76
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68473691"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68959083"
 ---
 # <a name="get-started-using-python-for-web-development-on-windows"></a>Prise en main de Python pour le développement Web sur Windows
 
@@ -51,7 +49,7 @@ Vous pouvez vérifier la distribution Linux que vous utilisez actuellement en en
 
 ## <a name="set-up-visual-studio-code"></a>Configurer Visual Studio Code
 
-Tirez parti d' [IntelliSense](https://code.visualstudio.com/docs/editor/intellisense), [de](https://code.visualstudio.com/docs/python/linting)la défragmentation, de la [prise en charge](https://code.visualstudio.com/docs/python/debugging)du débogage, des [extraits de code](https://code.visualstudio.com/docs/editor/userdefinedsnippets)et des [tests unitaires](https://code.visualstudio.com/docs/python/unit-testing) à l’aide de vs code. VS Code s’intègre parfaitement au sous-système Windows pour Linux, en fournissant un [Terminal intégré](https://code.visualstudio.com/docs/editor/integrated-terminal) pour établir un flux de travail transparent entre votre éditeur de code et votre ligne de commande, en plus de la prise en charge [de Git pour le contrôle de version](https://code.visualstudio.com/docs/editor/versioncontrol#_git-support) avec git commun les commandes (Add, Commit, push, pull) sont intégrées directement dans l’interface utilisateur.
+Tirez parti d' [IntelliSense](https://code.visualstudio.com/docs/editor/intellisense), de la [défragmentation](https://code.visualstudio.com/docs/python/linting), de la [prise en chargedu débogage](https://code.visualstudio.com/docs/python/debugging), des [extraits de code](https://code.visualstudio.com/docs/editor/userdefinedsnippets) et des [tests unitaires](https://code.visualstudio.com/docs/python/unit-testing) à l’aide de vs code. VS Code s’intègre parfaitement au sous-système Windows pour Linux, en fournissant un [Terminal intégré](https://code.visualstudio.com/docs/editor/integrated-terminal) pour établir un flux de travail transparent entre votre éditeur de code et votre ligne de commande, en plus de la prise en charge [de Git pour le contrôle de version](https://code.visualstudio.com/docs/editor/versioncontrol#_git-support) avec git commun les commandes (Add, Commit, push, pull) sont intégrées directement dans l’interface utilisateur.
 
 1. [Téléchargez et installez vs code pour Windows](https://code.visualstudio.com). VS Code est également disponible pour Linux, mais le sous-système Windows pour Linux ne prend pas en charge les applications GUI. nous devons donc l’installer sur Windows. Ne vous inquiétez pas, vous serez toujours en mesure de l’intégrer à vos outils et à la ligne de commande Linux à l’aide de l’extension WSL distante.
 
