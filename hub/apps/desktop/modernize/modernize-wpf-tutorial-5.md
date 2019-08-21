@@ -8,23 +8,23 @@ author: mcleanbyron
 keywords: Windows 10, UWP, Windows Forms, WPF, îlots XAML
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 961157bc3d3429b56d3da24a46d71cbb5b84e7a3
-ms.sourcegitcommit: 3cc6eb3bab78f7e68c37226c40410ebca73f82a9
+ms.openlocfilehash: 940a81d21e071558d510e565785d1f52ca0bb1a3
+ms.sourcegitcommit: 6bb794c6e309ba543de6583d96627fbf1c177bef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68729500"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69643378"
 ---
 # <a name="part-5-package-and-deploy-with-msix"></a>Partie 5 : Créer un package et déployer avec MSIX
 
 Il s’agit de la dernière partie d’un didacticiel qui montre comment moderniser un exemple d’application de bureau WPF nommée Contoso depenses. Pour obtenir une vue d’ensemble du didacticiel, des conditions préalables et des instructions pour télécharger l’exemple [d’application, consultez le didacticiel: Moderniser une application](modernize-wpf-tutorial.md)WPF. Cet article suppose que vous avez déjà effectué la [partie 4](modernize-wpf-tutorial-4.md).
 
-Dans la [partie 4](modernize-wpf-tutorial-4.md) , vous avez appris que certaines API WinRT, y compris l’API notifications, nécessitent une identité de package avant de pouvoir être utilisées dans une application. Vous pouvez obtenir l’identité du package en empaquetant les dépenses de contoso à l’aide de [MSIX](https://docs.microsoft.com/windows/msix), le format d’empaquetage introduit dans Windows 10 pour empaqueter et déployer des applications Windows. MSIX offre des avantages à la table pour les développeurs et les professionnels de l’informatique, notamment:
+Dans la [partie 4](modernize-wpf-tutorial-4.md) , vous avez appris que certaines API WinRT, y compris l’API notifications, nécessitent une identité de package avant de pouvoir être utilisées dans une application. Vous pouvez obtenir l’identité du package en empaquetant les dépenses de contoso à l’aide de [MSIX](https://docs.microsoft.com/windows/msix), le format d’empaquetage introduit dans Windows 10 pour empaqueter et déployer des applications Windows. MSIX offre des avantages pour les développeurs et les professionnels de l’informatique, notamment:
 
 - Utilisation optimisée du réseau et espace de stockage.
 - Terminez la désinstallation, grâce à un conteneur léger dans lequel l’application est exécutée. Les clés de Registre et les fichiers temporaires ne sont pas conservés sur le système.
 - Découple les mises à jour du système d’exploitation des mises à jour et des personnalisations de l’application.
-- Simplifie le processus d’installation, de mise à jour et de désinstallation. 
+- Simplifie le processus d’installation, de mise à jour et de désinstallation.
 
 Dans cette partie du didacticiel, vous allez apprendre à empaqueter l’application Contoso depenses dans un package MSIX.
 
@@ -48,17 +48,17 @@ Visual Studio 2019 offre un moyen simple d’empaqueter une application de burea
 
 6. Dans le projet **ContosoExpenses. Package** , cliquez avec le bouton droit sur le nœud **applications** et choisissez **Ajouter une référence**. Ce nœud spécifie les applications de votre solution qui seront incluses dans le package.
 
-7. Dans la liste des projets, sélectionnez **ContosoExpenses. Core** , puis cliquez sur **OK**.
+6. Dans la liste des projets, sélectionnez **ContosoExpenses. Core** , puis cliquez sur **OK**.
 
-8. Développez le nœud **applications** et vérifiez que le projet **ContosoExpense. Core** est référencé et mis en surbrillance en gras. Cela signifie qu’il sera utilisé comme point de départ pour le package.
+7. Développez le nœud **applications** et vérifiez que le projet **ContosoExpense. Core** est référencé et mis en surbrillance en gras. Cela signifie qu’il sera utilisé comme point de départ pour le package.
 
-9. Cliquez avec le bouton droit sur le projet **ContosoExpenses. Package** , puis choisissez **définir comme projet de démarrage**.
+8. Cliquez avec le bouton droit sur le projet **ContosoExpenses. Package** , puis choisissez **définir comme projet de démarrage**.
 
-10. Dans Explorateur de solutions, cliquez avec le bouton droit sur le nœud de projet **ContosoExpenses. Package** , puis sélectionnez **modifier le fichier projet**.
+9. Dans Explorateur de solutions, cliquez avec le bouton droit sur le nœud de projet **ContosoExpenses. Package** , puis sélectionnez **modifier le fichier projet**.
 
-11. Recherchez l’élément `<Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />` dans le fichier.
+10. Recherchez l’élément `<Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />` dans le fichier.
 
-12. Remplacez cet élément par le code XML suivant.
+11. Remplacez cet élément par le code XML suivant.
 
     ``` xml
     <ItemGroup>
@@ -82,9 +82,9 @@ Visual Studio 2019 offre un moyen simple d’empaqueter une application de burea
     </Target>
     ```
 
-13. Enregistrez le fichier projet et fermez-le.
+12. Enregistrez le fichier projet et fermez-le.
 
-14. Appuyez sur **F5** pour démarrer l’application empaquetée dans le débogueur.
+13. Appuyez sur **F5** pour démarrer l’application empaquetée dans le débogueur.
 
 À ce stade, vous pouvez remarquer des modifications qui indiquent que l’application s’exécute maintenant en tant que package:
 
