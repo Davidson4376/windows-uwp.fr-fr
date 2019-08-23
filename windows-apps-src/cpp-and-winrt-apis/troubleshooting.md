@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, norme, c++, cpp, winrt, projection, résolution des problèmes, HRESULT, erreur
 ms.localizationpriority: medium
-ms.openlocfilehash: add3875e15ad747422b2e53e5d8f8438b61b3b20
-ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
+ms.openlocfilehash: 7c34ca6da522726f07e3f4ff5092b011bd15dd93
+ms.sourcegitcommit: 260d1a0b73ef422eb6875a3e3b52495a82630f06
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68270101"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69560158"
 ---
 # <a name="troubleshooting-cwinrt-issues"></a>Résolution des problèmes liés à C++/WinRT
 
@@ -41,7 +41,7 @@ Si votre application s’arrête et que vous savez simplement qu’une exception
 | Les tests du Kit de certification des applications Windows génèrent une erreur indiquant que l’une de vos classes runtime « *ne dérive pas d’une classe de base Windows. Toutes les classes composables doivent en définitive dériver d’un type de l’espace de noms Windows* ».|Toute classe runtime (que vous déclarez dans votre application) qui dérive d’une classe de base est appelée classe *composable*. La classe de base ultime d’une classe composable doit être un type provenant d’un espace de noms Windows.*, par exemple [**Windows.UI.Xaml.DependencyObject**](/uwp/api/windows.ui.xaml.dependencyobject). Pour plus d’informations, consultez [Contrôles XAML ; liaison à une propriété C++/WinRT](binding-property.md).|
 | Le compilateur C++ génère une erreur « *doit être de type WinRT* » pour une spécialisation de délégué EventHandler ou TypedEventHandler.|Utilisez **winrt::delegate&lt;...T&gt;** à la place. Consultez [Créer des événements en C++/WinRT](author-events.md).|
 | Le compilateur C++ génère une erreur « *doit être de type WinRT* » pour une spécialisation d’opération asynchrone Windows Runtime.|Retournez une [**tâche**](https://docs.microsoft.com/cpp/parallel/concrt/reference/task-class) PPL (Parallel Patterns Library) à la place. Consultez [Opérations concurrentes et asynchrones](concurrency.md).|
-| Le compilateur C++ génère l’« *erreur C2220 : avertissement traité en tant qu’erreur - aucun fichier 'object' généré* ».|Corrigez l’avertissement, ou affectez à **C/C++**  > **Général** > **Considérer les avertissements comme des erreurs** la valeur **Non (/WX-)** .|
+| Le compilateur C++ génère l’« *erreur C2220 : avertissement traité en tant qu’erreur - aucun fichier 'object' généré* ».|Corrigez l’avertissement ou affectez à **C/C++**  > **Général** > **Considérer les avertissements comme des erreurs** la valeur **Non (/WX-)** .|
 | Votre application plante, car un gestionnaire d’événements dans votre objet C++/WinRT est appelé après la destruction de l’objet.|Consultez [accès sécurisé au pointeur *this* avec un délégué de gestion des événements](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate).|
 | Le compilateur C++ génère l’« *erreur C2338 : ceci est réservé à la prise en charge des références faibles* ».|Vous demandez une référence faible pour un type qui a passé le struct de marqueur **winrt::no_weak_ref** en tant qu’argument de modèle à sa classe de base. Consultez [Refus de la prise en charge des références faibles](weak-references.md#opting-out-of-weak-reference-support).|
 | L’éditeur de liens C++ génère l’« *erreur LNK2019 : symbole externe non résolu* »|Consultez [Pourquoi l’éditeur de liens retourne-t-il une erreur « LNK2019 : symbole externe non résolu » ?](faq.md#why-is-the-linker-giving-me-a-lnk2019-unresolved-external-symbol-error).|

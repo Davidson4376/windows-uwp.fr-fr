@@ -8,16 +8,19 @@ ms.topic: article
 keywords: Python, Windows 10, Microsoft, l’administration de système Python, l’automatisation de fichier Python, les scripts Python sur Windows, la configuration de Python sur Windows, l’environnement de développement Python sur Windows, l’environnement de développement Python sur Windows, Python avec PowerShell, scripts Python pour tâches du système de fichiers
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 93fdea3347cc15aa6231ff90fb18eb2f7defb201
-ms.sourcegitcommit: a28a32fff9d15ecf4a9d172cd0a04f4d993f9d76
+ms.openlocfilehash: dbb7a60103c27f648ca8bf23f87dee06923f0cd9
+ms.sourcegitcommit: e9dc2711f0a0758727468f7ccd0d0f0eee3363e3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68959067"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69979329"
 ---
 # <a name="get-started-using-python-on-windows-for-scripting-and-automation"></a>Prise en main de Python sur Windows pour l’écriture de scripts et l’automatisation
 
 Voici un guide pas à pas pour la configuration de votre environnement de développement et la prise en main de Python pour l’écriture de scripts et l’automatisation des opérations de système de fichiers sur Windows.
+
+> [!NOTE]
+> Cet article traite de la configuration de votre environnement pour utiliser certaines bibliothèques utiles dans Python qui peuvent automatiser des tâches sur plusieurs plateformes, telles que la recherche dans votre système de fichiers, l’accès à Internet, l’analyse des types de fichiers, etc., à partir d’une approche centrée sur Windows. Pour les opérations spécifiques à Windows, consultez [ctypes](https://docs.python.org/3/library/ctypes.html), une bibliothèque de fonctions étrangères compatible C pour Python, [winreg](https://docs.python.org/3/library/winreg.html), et les fonctions qui exposent l’API du Registre Windows à python, et [python/WinRT](https://pypi.org/project/winrt/), qui permettent d’accéder aux API Windows Runtime à partir de Software.
 
 ## <a name="set-up-your-development-environment"></a>Configurer votre environnement de développement
 

@@ -9,20 +9,25 @@ ms.date: 05/20/2019
 ms.topic: article
 keywords: Windows 10, UWP, WNS, service de notification Windows, notification, Windows, pare-feu, dépannage, IP, trafic, entreprise, réseau, IPv4, VIP, nom de domaine complet, adresse IP publique
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f8a72eec46971fa27a4bd0dec112430f2eb3535
-ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
+ms.openlocfilehash: 817dec616a88f0b374bc019cbbf23f56fad94484
+ms.sourcegitcommit: 820704a73174e81da3dc00cf0603c0c82471cdfe
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68867311"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69908451"
 ---
-# <a name="allowing-windows-notification-traffic-through-enterprise-firewalls"></a>Autorisation du trafic de notification Windows via les pare-feu d’entreprise
+# <a name="enterprise-firewall-and-proxy-configurations-to-support-wns-traffic"></a>Pare-feu d’entreprise et configurations de proxy pour prendre en charge le trafic WNS
 
 ## <a name="background"></a>Présentation
-De nombreuses entreprises utilisent des pare-feu pour bloquer le trafic réseau indésirable. Malheureusement, cela peut également bloquer des éléments importants tels que les communications du service de notification Windows. Cela signifie que toutes les notifications envoyées via WNS seront supprimées. Pour éviter cela, les administrateurs réseau peuvent ajouter la liste des canaux WNS approuvés à leur liste d’exemptions pour permettre au trafic WNS de traverser le pare-feu. Vous trouverez ci-dessous plus d’informations sur la façon et les éléments à ajouter. 
+De nombreuses entreprises utilisent des pare-feu pour bloquer le trafic réseau indésirable. Malheureusement, cela peut également bloquer des éléments importants tels que les communications du service de notification Windows. Cela signifie que toutes les notifications envoyées via WNS seront supprimées dans certaines configurations réseau. Pour éviter cela, les administrateurs réseau peuvent ajouter la liste des canaux WNS approuvés à leur liste d’exemptions pour permettre au trafic WNS de traverser le pare-feu. Vous trouverez ci-dessous des informations supplémentaires sur la façon dont et les éléments à ajouter, ainsi que la prise en charge de différents types de proxy.
+
+## <a name="proxy-support"></a>Prise en charge du proxy
 
 > [!Note] 
-À partir de 6/24/2019, les clients Windows **ne prennent pas** en charge les proxies, la connexion à WNS doit être une connexion directe.
+Les clients Windows **ne prennent pas** en charge tous les proxies, la connexion à WNS doit être une connexion directe.
+
+**À venir!** Nous étudions activement différentes configurations réseau, proxies et pare-feu. Nous mettrons à jour cette page avec plus de détails sur les scénarios d’entreprise courants et la prise en charge de WNS rapidement.
+
 
 ## <a name="what-information-should-be-added-to-the-allowlist"></a>Les informations qui doivent être ajoutées à allowlist
 Vous trouverez ci-dessous une liste contenant les noms de domaine complets, les adresses IP virtuelles et les plages d’adresses IP utilisées par le service de notification Windows. 
