@@ -11,12 +11,12 @@ dev-contact: ''
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: e00c9860ca2aa8661581de265fff106c45b30ab5
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 7431e9e41c008471fccdb955a64d44316855de0d
+ms.sourcegitcommit: 77df36d2a7391cbc588d44c47ac02d0701092264
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319401"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69976226"
 ---
 # <a name="navigation-view"></a>Affichage de navigation
 
@@ -709,6 +709,29 @@ Cet exemple montre comment remplacer les ressources de thème dans App.xaml. Lor
     </Application.Resources>
 </Application>
 ```
+
+### <a name="top-whitespace"></a>Espace supérieur
+Certaines applications choisissent de [personnaliser la barre de titre de leur fenêtre](https://docs.microsoft.com/windows/uwp/design/shell/title-bar), en étendant éventuellement leur contenu dans la zone de barre de titre. Quand NavigationView est l’élément racine dans les applications qui étendent dans la barre de titre  **en utilisant l’API [ExtendViewIntoTitleBar](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.extendviewintotitlebar)** , le contrôle ajuste automatiquement la position de ses éléments interactifs pour éviter le chevauchement avec la [zone pouvant être glissée](https://docs.microsoft.com/windows/uwp/design/shell/title-bar#draggable-regions). 
+![Application étendant dans la barre de titre](images/navigation-view-with-titlebar-padding.png)
+
+Si votre application spécifie la zone pouvant être glissée en appelant la méthode [Window.SetTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.settitlebar) et que vous préférez que les boutons précédent et de menu soient plus près du haut de la fenêtre de votre application, définissez `IsTitleBarAutoPaddingEnabled` sur False.
+
+![Application qui s’étend dans la barre de titre sans remplissage supplémentaire](images/navigation-view-no-titlebar-padding.png)
+
+```Xaml
+<muxc:NavigationView x:Name="NavView" IsTitleBarAutoPaddingEnabled="False">
+```
+
+#### <a name="remarks"></a>Notes
+Pour ajuster davantage la position de la zone d’en-tête de NavigationView, remplacez la ressource de thème XAML *NavigationViewHeaderMargin*, par exemple dans vos ressources de page.
+
+```Xaml
+<Page.Resources>
+    <Thickness x:Key="NavigationViewHeaderMargin">12,0</Thickness>
+</Page.Resources>
+```
+
+Cette ressource de thème modifie la marge autour de [NavigationView.Header](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.header).
 
 ## <a name="related-topics"></a>Rubriques connexes
 
