@@ -8,39 +8,39 @@ ms.date: 11/14/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: dc13b53450c97ffcd3d44b58d564c813344abf0a
-ms.sourcegitcommit: ed32219e04f814a12ea018348e9cf678fcfd5e3a
+ms.openlocfilehash: 3958d69dc3142702eb2d2a41d6dba5ebeb9fa8ce
+ms.sourcegitcommit: 2fa2d2236870eaabc95941a95fd4e358d3668c0c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/19/2019
-ms.locfileid: "67253055"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70076380"
 ---
 # <a name="store-and-retrieve-settings-and-other-app-data"></a>Stocker et récupérer des paramètres et autres données d’application
 
-Les *données d’application* sont des données mutables spécifiques à une application particulière. Elles comprennent l’état d’exécution, les préférences utilisateur et d’autres paramètres. Les données d’application diffèrent des *données utilisateur* que l’utilisateur crée et gère en utilisant l’application. Elles incluent les fichiers de documents ou multimédias, les transcriptions de courrier électronique ou de communication ou les enregistrements de base de données dont le contenu a été créé par l’utilisateur. Les données utilisateur peuvent s’avérer utiles ou judicieuses pour plusieurs applications. Il s’agit souvent de données que l’utilisateur veut manipuler ou transmettre sous forme d’entité indépendante de l’application elle-même, par exemple un document.
+Les *données d’application* sont des données mutables qui sont créées et gérées par une application spécifique. Il comprend l’état d’exécution, les paramètres d’application, les préférences de l’utilisateur, le contenu de référence (par exemple, les définitions de dictionnaire dans une application de dictionnaire) et d’autres paramètres. Les données d’application diffèrent des *données utilisateur* que l’utilisateur crée et gère en utilisant l’application. Elles incluent les fichiers de documents ou multimédias, les transcriptions de courrier électronique ou de communication ou les enregistrements de base de données dont le contenu a été créé par l’utilisateur. Les données utilisateur peuvent s’avérer utiles ou judicieuses pour plusieurs applications. Il s’agit souvent de données que l’utilisateur veut manipuler ou transmettre sous forme d’entité indépendante de l’application elle-même, par exemple un document.
 
-**Remarque importante à propos des données d’application :** La durée de vie des données d’application est liée à celle de l’application. Si l’application est supprimée, toutes les données d’application sont par conséquent perdues. N’utilisez pas les données d’application pour stocker des données utilisateur ni d’autres éléments que les utilisateurs peuvent considérer comme précieux et irremplaçables. Nous vous conseillons d’utiliser les bibliothèques de l’utilisateur et Microsoft OneDrive pour stocker ce type d’informations. Les données d’application sont idéales pour le stockage des préférences utilisateur, paramètres et favoris spécifiques à l’application.
+**Remarque importante à propos des données d’application:** La durée de vie des données d’application est liée à celle de l’application. Si l’application est supprimée, toutes les données d’application sont par conséquent perdues. N’utilisez pas les données d’application pour stocker des données utilisateur ni d’autres éléments que les utilisateurs peuvent considérer comme précieux et irremplaçables. Nous vous conseillons d’utiliser les bibliothèques de l’utilisateur et Microsoft OneDrive pour stocker ce type d’informations. Les données d’application sont idéales pour le stockage des préférences utilisateur, paramètres et favoris spécifiques à l’application.
 
 ## <a name="types-of-app-data"></a>Types de données d’application
 
-
 Il existe deux types de données d’application : les fichiers et les paramètres.
 
--   **Paramètres**
+### <a name="settings"></a>Paramètres
 
-    Utilisez les paramètres pour stocker les préférences de l’utilisateur et les informations relatives à l’état de l’application. L’API de données d’application permet de créer et récupérer facilement des paramètres (exemples fournis plus loin dans cet article).
+Utilisez les paramètres pour stocker les préférences de l’utilisateur et les informations relatives à l’état de l’application. L’API de données d’application permet de créer et récupérer facilement des paramètres (exemples fournis plus loin dans cet article).
 
-    Voici les types de données que vous pouvez utiliser pour les paramètres d’application :
+Voici les types de données que vous pouvez utiliser pour les paramètres d’application :
 
-    -   **UInt8**, **Int16**, **UInt16**, **Int32**, **UInt32**, **Int64**, **UInt64**, **Single**, **Double**
-    -   **Boolean**
-    -   **Char16**, **String**
-    -   [**DateTime**](https://docs.microsoft.com/uwp/api/Windows.Foundation.DateTime), [**TimeSpan**](https://docs.microsoft.com/uwp/api/Windows.Foundation.TimeSpan)
-    -   **GUID**, [**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point), [**Size**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Size), [**Rect**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Rect)
-    -   [**ApplicationDataCompositeValue**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationDataCompositeValue): Un ensemble de paramètres d’application connexes qui doit être sérialisé et désérialisé de manière atomique. Utilisez des paramètres composites pour gérer facilement les mises à jour atomiques des paramètres interdépendants. Le système assure l’intégrité des paramètres composites lors d’accès simultanés et dans le cadre de l’itinérance. Les paramètres composites étant optimisés pour de faibles volumes de données, leur utilisation pour des jeux de données volumineux peut nuire aux performances.
--   **Fichiers**
+- **UInt8**, **Int16**, **UInt16**, **Int32**, **UInt32**, **Int64**, **UInt64**, **Single**, **Double**
+- **Boolean**
+- **Char16**, **String**
+- [**DateTime**](https://docs.microsoft.com/uwp/api/Windows.Foundation.DateTime), [ **TimeSpan**](https://docs.microsoft.com/uwp/api/Windows.Foundation.TimeSpan)
+- **GUID**, [**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point), [**Size**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Size), [**Rect**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Rect)
+- [**ApplicationDataCompositeValue**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationDataCompositeValue): Ensemble de paramètres d’application connexes qui doivent être sérialisés et désérialisés atomiquement. Utilisez des paramètres composites pour gérer facilement les mises à jour atomiques des paramètres interdépendants. Le système assure l’intégrité des paramètres composites lors d’accès simultanés et dans le cadre de l’itinérance. Les paramètres composites étant optimisés pour de faibles volumes de données, leur utilisation pour des jeux de données volumineux peut nuire aux performances.
 
-    Utilisez des fichiers pour stocker des données binaires ou pour activer vos propres types sérialisés personnalisés.
+### <a name="files"></a>Fichiers
+
+Utilisez des fichiers pour stocker des données binaires ou pour activer vos propres types sérialisés personnalisés.
 
 ## <a name="storing-app-data-in-the-app-data-stores"></a>Stockage des données d’application dans les magasins de données d’application
 
@@ -160,19 +160,19 @@ Les données itinérantes d’une application sont disponibles dans le Cloud du 
 
 ### <a name="roaming-data-dos-and-donts"></a>Pratiques conseillées et déconseillées en matière de données itinérantes
 
--   Utilisez l’itinérance pour les préférences utilisateur et les personnalisations, les liens et les petits fichiers de données. Par exemple, utilisez l’itinérance pour conserver la couleur d’arrière-plan choisie par un utilisateur sur tous les appareils.
--   Utilisez l’itinérance pour permettre aux utilisateurs de poursuivre une tâche sur plusieurs périphériques. Par exemple, utilisez l’itinérance pour des données d’application telles que le contenu d’un e-mail à l’état de brouillon ou la dernière page consultée dans une application de lecture.
--   Gérez l’événement [**DataChanged**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.datachanged) en mettant à jour les données d’application. Cet événement se produit juste après la fin de la synchronisation des données d’application à partir du cloud.
--   Utilisez l’itinérance pour les références au contenu plutôt que les données brutes. Par exemple, rendez une URL itinérante plutôt que le contenu d’un article en ligne.
--   Pour les paramètres importants, où le temps joue un rôle critique, utilisez le paramètre *HighPriority* associé à [**RoamingSettings**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingsettings).
--   Ne rendez pas itinérantes des données d’application spécifiques à un appareil. Certaines informations ne sont pertinentes que d’un point de vue local, par exemple le chemin d’accès d’un fichier local. Si vous décidez de rendre itinérantes des informations locales, assurez-vous que l’application peut récupérer son état d’exécution si ces informations ne sont pas valides sur l’appareil secondaire.
--   Ne rendez pas itinérants de grands ensembles de données d’application. Il existe une limite à la quantité de données d’application qu’une application peut utiliser de manière itinérante. Servez-vous de la propriété [**RoamingStorageQuota**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingstoragequota) pour atteindre cette limite. Si une application atteint cette limite, l’itinérance des données n’est plus possible tant que la taille du magasin de données d’application reste au-dessus de cette limite. Quand vous concevez votre application, vous devez penser à restreindre les grandes quantités de données pour éviter de dépasser cette limite. Par exemple, si l’enregistrement de l’état d’une partie demande 10 Ko, l’application pourrait autoriser l’utilisateur à conserver seulement 10 parties au maximum.
--   N’utilisez pas l’itinérance pour les données qui reposent sur une synchronisation instantanée. Windows ne garantit pas une synchronisation instantanée. L’itinérance peut être retardée de manière importante si un utilisateur est hors connexion ou sur un réseau dont la latence est élevée. Assurez-vous que votre interface utilisateur ne dépend pas d’une synchronisation instantanée.
--   N’utilisez pas l’itinérance de données qui changent fréquemment. Ainsi, si votre application effectue le suivi d’informations qui changent souvent, par exemple la position de lecture d’une chanson à la seconde près, ne stockez pas ces informations en tant que données d’application itinérantes. À la place, choisissez une représentation moins fréquente qui offre tout de même une expérience utilisateur intéressante, par exemple la chanson en cours de lecture.
+- Utilisez l’itinérance pour les préférences utilisateur et les personnalisations, les liens et les petits fichiers de données. Par exemple, utilisez l’itinérance pour conserver la couleur d’arrière-plan choisie par un utilisateur sur tous les appareils.
+- Utilisez l’itinérance pour permettre aux utilisateurs de poursuivre une tâche sur plusieurs périphériques. Par exemple, utilisez l’itinérance pour des données d’application telles que le contenu d’un e-mail à l’état de brouillon ou la dernière page consultée dans une application de lecture.
+- Gérez l’événement [**DataChanged**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.datachanged) en mettant à jour les données d’application. Cet événement se produit juste après la fin de la synchronisation des données d’application à partir du cloud.
+- Utilisez l’itinérance pour les références au contenu plutôt que les données brutes. Par exemple, rendez une URL itinérante plutôt que le contenu d’un article en ligne.
+- Pour les paramètres importants, où le temps joue un rôle critique, utilisez le paramètre *HighPriority* associé à [**RoamingSettings**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingsettings).
+- Ne rendez pas itinérantes des données d’application spécifiques à un appareil. Certaines informations ne sont pertinentes que d’un point de vue local, par exemple le chemin d’accès d’un fichier local. Si vous décidez de rendre itinérantes des informations locales, assurez-vous que l’application peut récupérer son état d’exécution si ces informations ne sont pas valides sur l’appareil secondaire.
+- Ne rendez pas itinérants de grands ensembles de données d’application. Il existe une limite à la quantité de données d’application qu’une application peut utiliser de manière itinérante. Servez-vous de la propriété [**RoamingStorageQuota**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingstoragequota) pour atteindre cette limite. Si une application atteint cette limite, l’itinérance des données n’est plus possible tant que la taille du magasin de données d’application reste au-dessus de cette limite. Quand vous concevez votre application, vous devez penser à restreindre les grandes quantités de données pour éviter de dépasser cette limite. Par exemple, si l’enregistrement de l’état d’une partie demande 10 Ko, l’application pourrait autoriser l’utilisateur à conserver seulement 10 parties au maximum.
+- N’utilisez pas l’itinérance pour les données qui reposent sur une synchronisation instantanée. Windows ne garantit pas une synchronisation instantanée. L’itinérance peut être retardée de manière importante si un utilisateur est hors connexion ou sur un réseau dont la latence est élevée. Assurez-vous que votre interface utilisateur ne dépend pas d’une synchronisation instantanée.
+- N’utilisez pas l’itinérance pour les données fréquemment modifiées. Ainsi, si votre application effectue le suivi d’informations qui changent souvent, par exemple la position de lecture d’une chanson à la seconde près, ne stockez pas ces informations en tant que données d’application itinérantes. À la place, choisissez une représentation moins fréquente qui offre tout de même une expérience utilisateur intéressante, par exemple la chanson en cours de lecture.
 
 ### <a name="roaming-pre-requisites"></a>Conditions préalables d’itinérance
 
-Tous les utilisateurs peuvent bénéficier de l’itinérance des données d’application s’ils utilisent un compte Microsoft pour se connecter à leur appareil. Toutefois, les utilisateurs et les administrateurs de stratégie de groupe peuvent désactiver l’itinérance des données d’application sur un appareil à tout moment. Si un utilisateur choisit de ne pas utiliser un compte Microsoft ou désactive les fonctionnalités d’itinérance des données, elle sera toujours en mesure d’utiliser votre application, mais les données d’application seront locales sur chaque appareil.
+Tous les utilisateurs peuvent bénéficier de l’itinérance des données d’application s’ils utilisent un compte Microsoft pour se connecter à leur appareil. Toutefois, les utilisateurs et les administrateurs de stratégie de groupe peuvent désactiver l’itinérance des données d’application sur un appareil à tout moment. Si un utilisateur choisit de ne pas utiliser un compte Microsoft ou désactive les fonctionnalités de données itinérantes, il peut toujours utiliser votre application, mais les données d’application sont locales sur chaque appareil.
 
 Les données stockées dans [**PasswordVault**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.PasswordVault) sont transférées uniquement si un utilisateur a « approuvé » un appareil. Si un appareil n’est pas approuvé, les données sécurisées dans ce coffre ne seront pas itinérantes.
 
@@ -198,9 +198,9 @@ Les données d’application ne sont itinérantes qu’entre les applications in
 
 Les développeurs peuvent verrouiller leur appareil pour déclencher une synchronisation des données d’application itinérantes. Si les données d’application ne semblent pas se transférer après un intervalle de temps donné, vérifiez les éléments suivants :
 
--   Vos données itinérantes ne dépassent pas la taille maximale (pour plus d’informations, voir [**RoamingStorageQuota**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingstoragequota)).
--   Vos fichiers sont fermés et publiés correctement.
--   Il existe au moins deux appareils qui exécutent la même version de l’application.
+- Vos données itinérantes ne dépassent pas la taille maximale (pour plus d’informations, voir [**RoamingStorageQuota**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingstoragequota)).
+- Vos fichiers sont fermés et publiés correctement.
+- Il existe au moins deux appareils qui exécutent la même version de l’application.
 
 
 ### <a name="register-to-receive-notification-when-roaming-data-changes"></a>S’inscrire pour recevoir les notifications sur les changements de données en itinérance
@@ -434,8 +434,8 @@ Vous pouvez éventuellement créer différentes versions des données d’applic
 
 ## <a name="related-articles"></a>Articles connexes
 
-* [**Windows.Storage.ApplicationData**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationData)
-* [**Windows.Storage.ApplicationData.RoamingSettings**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingsettings)
-* [**Windows.Storage.ApplicationData.RoamingFolder**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingfolder)
-* [**Windows.Storage.ApplicationData.RoamingStorageQuota**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingstoragequota)
-* [**Windows.Storage.ApplicationDataCompositeValue**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationDataCompositeValue)
+* [**Windows. Storage. ApplicationData**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationData)
+* [**Windows. Storage. ApplicationData. RoamingSettings**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingsettings)
+* [**Windows. Storage. ApplicationData. RoamingFolder**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingfolder)
+* [**Windows. Storage. ApplicationData. RoamingStorageQuota**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingstoragequota)
+* [**Windows. Storage. ApplicationDataCompositeValue**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationDataCompositeValue)

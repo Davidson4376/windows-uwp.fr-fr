@@ -8,16 +8,14 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: c3e73f9b-4839-4804-b379-c95b0ca4fbe8
 ms.localizationpriority: medium
-ms.openlocfilehash: bd2174c6bbfb84a3ea6c6956e1d0b02ed5c9be33
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: eeedb8352c712757b5fa188bd50b32d03d2b9484
+ms.sourcegitcommit: 0a5d9a14238c603460c42310ca9c3fc06d538406
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57621364"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70108875"
 ---
 # <a name="guidelines-for-app-help"></a>Recommandations en matière d’aide de l’application
-
-
 
 Du fait de la complexité de certaines applications, la fourniture d’une aide efficace sur ces dernières peut améliorer considérablement l’expérience des utilisateurs. L’inclusion d’informations d’aide n’est pas nécessaire pour toutes les applications, et le type d’aide à fournir peut varier sensiblement selon les applications.
 
@@ -35,15 +33,15 @@ Un utilisateur ne recherchera des informations d’aide que s’il a rencontré 
 
 Quel que soit le type de votre contenu d’aide, il doit présenter les caractéristiques suivantes :
 
--   **Facile à comprendre :** Aide qui déroute l’utilisateur est pire que sans l’aide du tout.
+-   **Facile à comprendre:** L’aide qui perturbe l’utilisateur est pire qu’aucune aide.
 
--   **Simple :** Utilisateurs recherchant aident souhaitez effacer des réponses présentés directement.
+-   **Facilement** Les utilisateurs qui recherchent l’aide veulent obtenir des réponses claires qui leur sont présentées directement.
 
--   **Pertinent :** Les utilisateurs ne souhaitez pas obligé de rechercher leur problème spécifique. Ils souhaitent obtenir directement l’aide la plus pertinente (appelée « aide contextuelle ») ou une interface facile à parcourir.
+-   **Nécessaire** Les utilisateurs ne veulent pas avoir à rechercher leur problème spécifique. Ils souhaitent obtenir directement l’aide la plus pertinente (appelée « aide contextuelle ») ou une interface facile à parcourir.
 
--   **Direct :** Lorsqu’un utilisateur a besoin d’aide, ils souhaitent voir aide. Si votre application comporte des pages permettant des signaler des bogues, de formuler des commentaires, de visualiser les Conditions de service ou d’autres fonctions similaires, vous pouvez inclure des liens vers ces pages dans votre contenu d’aide. Toutefois, ces informations doivent être proposées en tant que contenu secondaire sur la page d’aide principale, et non sous la forme d’éléments plus importants ou de même niveau.
+-   **Directe** Lorsqu’un utilisateur recherche de l’aide, il souhaite voir l’aide. Si votre application comporte des pages permettant des signaler des bogues, de formuler des commentaires, de visualiser les Conditions de service ou d’autres fonctions similaires, vous pouvez inclure des liens vers ces pages dans votre contenu d’aide. Toutefois, ces informations doivent être proposées en tant que contenu secondaire sur la page d’aide principale, et non sous la forme d’éléments plus importants ou de même niveau.
 
--   **Cohérence :** Quel que soit le type, aide fait toujours partie de votre application et doit être traitée comme toute autre partie de l’interface utilisateur. L’aide que vous proposez est soumise aux mêmes principes de facilité d’utilisation, d’accessibilité et de présentation graphique que le reste de votre application.
+-   **Conforme** Quel que soit le type, l’aide fait toujours partie de votre application et doit être traitée comme toute autre partie de l’interface utilisateur. L’aide que vous proposez est soumise aux mêmes principes de facilité d’utilisation, d’accessibilité et de présentation graphique que le reste de votre application.
 
 ## <a name="types-of-help"></a>Types d’aide
 
@@ -53,7 +51,7 @@ Il existe trois grandes catégories de contenu d’aide, chacune présentant de
 
 En règle générale, les utilisateurs doivent pouvoir tirer parti de toutes les fonctions essentielles de votre application sans aucune instruction. Toutefois, votre application peut dépendre de l’utilisation d’un mouvement spécifique ou comporter des fonctionnalités secondaires subtiles. Dans ce cas, utilisez une interface utilisateur d’instructions pour former les utilisateurs aux procédures d’exécution de tâches spécifiques.
 
-[Consultez les instructions pour l’interface utilisateur pédagogique](instructional-ui.md)
+[Consultez les instructions relatives à l’interface utilisateur pédagogique](instructional-ui.md)
 
 #### <a name="in-app-help"></a>Aide dans l’application
 
@@ -65,6 +63,6 @@ La méthode standard de présentation de l’aide consiste à afficher cette der
 
 Pour permettre aux utilisateurs d’accéder à des didacticiels détaillés, à des fonctions avancées ou à des bibliothèques de rubriques d’aide trop volumineuses pour tenir dans votre application, l’inclusion de liens vers des pages web externes constitue la solution idéale. Dans la mesure du possible, ces liens doivent être utilisés avec parcimonie, car ils font sortir l’utilisateur de l’application.
 
-[Consultez les instructions de l’aide externe](external-help.md)
+[Consulter les instructions pour l’aide externe](external-help.md)
 
 
