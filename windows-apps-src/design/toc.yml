@@ -533,13 +533,11 @@
           href: accessibility/practices-to-avoid.md
         - name: Homologues d’automation personnalisés
           href: accessibility/custom-automation-peers.md
-          items:
-            - name: Modèles de contrôle et interfaces
-              href: accessibility/control-patterns-and-interfaces.md
+        - name: Modèles de contrôle et interfaces
+          href: accessibility/control-patterns-and-interfaces.md
     - name: Paramètres d’application
-      href: app-settings/app-settings-and-data.md
       items:
-        - name: Recommandations
+        - name: Recommandations en matière de paramètres de l’application
           href: app-settings/guidelines-for-app-settings.md
         - name: Stocker et récupérer des paramètres et données d’application
           href: app-settings/store-and-retrieve-app-data.md
@@ -572,9 +570,10 @@
           href: globalizing/use-utf8-code-page.md
         - name: Préparer votre application pour le changement d’ère du Japon
           href: globalizing/japanese-era-change.md
-    - name: Recommandations en matière d’aide de l’application
-      href: in-app-help/guidelines-for-app-help.md
+    - name: Aide dans l’application
       items:
+        - name: Recommandations en matière d’aide de l’application
+          href: in-app-help/guidelines-for-app-help.md
         - name: Interface utilisateur d’instruction
           href: in-app-help/instructional-ui.md
         - name: Aide dans l’application
