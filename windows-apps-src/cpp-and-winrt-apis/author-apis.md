@@ -114,7 +114,7 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 ...
 ```
 
-Dans la mesure où votre type **App***est un* **IFrameworkViewSource**, vous pouvez simplement en transmettre un à **Run**.
+Dans la mesure où votre type **App** *est un* **IFrameworkViewSource**, vous pouvez simplement en transmettre un à **Run**.
 
 ```cppwinrt
 using namespace Windows::ApplicationModel::Core;
