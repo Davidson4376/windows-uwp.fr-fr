@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, introduction
 ms.localizationpriority: medium
-ms.openlocfilehash: 87ab033ddd9de92922f043a069b793ca101307d0
-ms.sourcegitcommit: 6cc8b231c1b970112d26a7696cc3e907082ef2be
+ms.openlocfilehash: 197f53df200026541a15120dfc97c187e5aa2e5b
+ms.sourcegitcommit: b186f70f0b1601b6b6a5db91d87d034f6b155e3b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68308444"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70063785"
 ---
 # <a name="introduction-to-cwinrt"></a>Introduction à C++/WinRT
 &nbsp;
@@ -33,7 +33,7 @@ Windows Runtime est basé sur les API COM (Component Object Model) et est conçu
 Quand vous naviguez dans des [API UWP Windows](https://docs.microsoft.com/uwp/api/), cliquez sur la zone de liste **Langage** en haut à droite, puis sélectionnez **C++/WinRT** pour afficher les blocs de syntaxe d’API tels qu’ils apparaissent dans la projection de langage C++/WinRT.
 
 ## <a name="visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package"></a>Prise en charge Visual Studio pour C++/WinRT, XAML, l’extension VSIX et le package NuGet
-Pour la prise en charge Visual Studio, vous aurez besoin de Visual Studio 2019 ou de Visual Studio 2017 (au moins la version 15.6 ; nous recommandons au moins la version 15.7). À partir de Visual Studio Installer, vous devez également installer (dans **Détails de l’installation** > **Développement pour la plateforme Windows universelle**) la ou les options des **Outils de plateforme Windows universelle C++ (v14x)** , si vous ne l’avez pas déjà fait. Et, dans **Paramètres Windows** > **Mise à jour et Sécurité** > **Pour les développeurs**, choisissez l’option **Mode développeur** plutôt que l’option **Charger la version des applications de façon indépendante**.
+Pour la prise en charge Visual Studio, vous aurez besoin de Visual Studio 2019 ou de Visual Studio 2017 (au moins la version 15.6 ; nous recommandons au moins la version 15.7). À partir de Visual Studio Installer, installez la charge de travail **Développement pour la plateforme Windows universelle**. Dans **Détails de l’installation** > **Développement pour la plateforme Windows universelle**, cochez la ou les options des **Outils de plateforme Windows universelle C++ (v14x)** , si vous ne l’avez pas déjà fait. Et, dans **Paramètres Windows** > **Mise à jour et Sécurité** > **Pour les développeurs**, choisissez l’option **Mode développeur** plutôt que l’option **Charger la version des applications de façon indépendante**.
 
 Nous vous recommandons de développer à l’aide des dernières versions de Visual Studio et du SDK Windows. Toutefois, si vous utilisez une version de C++/WinRT fournie avec le SDK Windows antérieure à 10.0.17763.0 (Windows 10, version 1809), pour utiliser les en-têtes d’espace de noms Windows mentionnés ci-dessus, vous aurez besoin de la version cible minimale 10.0.17134.0 du SDK Windows (Windows 10, version 1803) dans votre projet.
 
