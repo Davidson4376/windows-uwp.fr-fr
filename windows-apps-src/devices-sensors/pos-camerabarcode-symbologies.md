@@ -5,15 +5,15 @@ ms.date: 05/02/2018
 ms.topic: article
 keywords: windows 10, uwp, point de vente, pdv
 ms.localizationpriority: medium
-ms.openlocfilehash: 14cb42e0bd0f1bac307a9dfc1ac188d8b11d8cb8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: cc2aaaf4e9779cb2be712119fb1dacdf946952c5
+ms.sourcegitcommit: 0dec04de501a3db6b22dfd4a320fc09b5c4a21b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610324"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70243328"
 ---
 # <a name="symbologies"></a>Symbologies
-Cette rubrique fournit des codes-barres d’exemple pour chacun des symbologies pris en charge par le décodeur de code-barres logiciel fourni avec Windows 10, notamment : UPC/EAN, Code 39, Code 128, entrelacé 2 / 5, Databar omnidirectionnel, des histogrammes empilés, Code QR et GS1DWCode.
+Cette rubrique fournit des exemples de codes-barres pour chacun des symbologies pris en charge par le décodeur de codes-barres logiciel fourni avec Windows 10, notamment : UPC/EAN, code 39, Code 128, entrelacé 2 sur 5, barre omnidirectionnel, barre empilé, code QR et GS1DWCode.
 
 ## <a name="1d-symbologies"></a>Symbologies 1D
 
@@ -56,3 +56,9 @@ Scannez l’image d’un paquet ci-dessous avec votre application de scanneur de
 
 > [!NOTE]
 > Le décodeur logiciel intégré à Windows 10 est fourni avec l'autorisation de [*Digimarc Corporation*](https://www.digimarc.com/)
+
+## <a name="see-also"></a>Voir aussi
+
+### <a name="samples"></a>Exemples
+
+- [Exemple de scanneur de codes-barres](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/BarcodeScanner)
