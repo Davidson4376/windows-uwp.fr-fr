@@ -6,12 +6,12 @@ ms.date: 07/12/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9150fd34653e2beeeb8d8c1557cf9f77e95791e3
-ms.sourcegitcommit: e0ae346eadda864dcad1453cd1644668549e66e1
+ms.openlocfilehash: 0c5acc7d0d891785a7abd4f8976b0fb82bb3323b
+ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68603437"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70393628"
 ---
 # <a name="events-and-routed-events-overview"></a>Vue d’ensemble des événements et des événements routés
 
@@ -149,7 +149,7 @@ End Sub
 
 Remarque  Visual Studio et son aire de conception XAML favorisent généralement la technique de gestion des instances au lieu du mot clé **Handles** . Cela est dû au fait que l’établissement de la connexion des gestionnaires d’événements en XAML fait partie du flux de travail concepteur-développeur habituel et que la technique du mot-clé **Handles** est incompatible avec cette connexion des gestionnaires d’événements en XAML.
 
-Dans C++/CX, vous utilisez également la **+=** syntaxe, mais il existe des différences par rapport C# au format de base:
+Dans C++/CX, vous utilisez également la **+=** syntaxe, mais il existe des différences par rapport C# au format de base :
 
 - Il n’existe aucune inférence de délégué, donc vous devez utiliser **ref new** pour l’instance de délégué.
 - Le constructeur du délégué possède deux paramètres et requiert que l’objet cible soit le premier d’entre eux. En général, vous spécifiez **this**.
@@ -176,7 +176,7 @@ Il existe de rares cas où vous voulez supprimer explicitement des gestionnaires
 - les événements statiques personnalisés.
 - Gestionnaires des navigations au sein des pages.
 
-[**FrameworkElement.** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.unloaded) uncharged ou [**page. NavigatedFrom**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedfrom) sont des déclencheurs d’événements possibles qui ont des positions appropriées dans la gestion d’État et la durée de vie des objets, ce qui vous permet de les utiliser pour supprimer des gestionnaires pour d’autres événements.
+[**FrameworkElement. uncharged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.unloaded) ou [**page. NavigatedFrom**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedfrom) sont des déclencheurs d’événements possibles qui ont des positions appropriées dans la gestion d’État et la durée de vie des objets, ce qui vous permet de les utiliser pour supprimer des gestionnaires pour d’autres événements.
 
 Par exemple, vous pouvez supprimer un gestionnaire d’événements **nommé\_textBlock1 PointerEntered** de l’objet cible **textBlock1** à l’aide de ce code.
 
@@ -264,7 +264,7 @@ Parfois, des contrôles Windows Runtime spécifiques utilisent le concept **Hand
 
 Nous avons indiqué précédemment que l’affectation à **Handled** de la valeur **true** permettait d’empêcher l’appel de la plupart des gestionnaires d’événements. Toutefois, la méthode [**AddHandler**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.addhandler) propose une technique qui permet d’attacher un gestionnaire qui est toujours invoqué pour l’itinéraire, même si un autre gestionnaire antérieur dans l’itinéraire a affecté à **Handled** la valeur **true** dans les données d’événement partagées. Cette technique s’avère utile si un contrôle que vous utilisez a géré l’événement dans sa composition interne ou pour une logique propre à un contrôle, mais que vous avez quand même besoin d’y répondre sur une instance de contrôle, ou l’interface utilisateur de votre application. Vous devez toutefois l’utiliser avec précaution, car elle peut entrer en contradiction avec l’objectif de **Handled** et éventuellement interrompre les interactions prévues d’un contrôle.
 
-Seuls les événements routés qui ont un identificateur d’événement routé correspondant peuvent utiliser la technique de gestion des événements [**AddHandler**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.addhandler), car l’identificateur est une entrée requise de la méthode **AddHandler**. Voir la documentation de référence de [**AddHandler**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.addhandler) pour obtenir la liste des événements qui disposent d’identificateurs d’événements routés. Il s’agit, en grande partie, de la même liste d’événements routés que celle présentée précédemment. L’exception est que les deux derniers de la liste: [**GotFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gotfocus) et [**LostFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.lostfocus) n’ont pas d’identificateur d’événement routé. vous ne pouvez donc pas utiliser **AddHandler** pour ceux-ci.
+Seuls les événements routés qui ont un identificateur d’événement routé correspondant peuvent utiliser la technique de gestion des événements [**AddHandler**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.addhandler), car l’identificateur est une entrée requise de la méthode **AddHandler**. Voir la documentation de référence de [**AddHandler**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.addhandler) pour obtenir la liste des événements qui disposent d’identificateurs d’événements routés. Il s’agit, en grande partie, de la même liste d’événements routés que celle présentée précédemment. L’exception est que les deux derniers de la liste : [**GotFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gotfocus) et [**LostFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.lostfocus) n’ont pas d’identificateur d’événement routé. vous ne pouvez donc pas utiliser **AddHandler** pour ceux-ci.
 
 ## <a name="routed-events-outside-the-visual-tree"></a>Événements routés en dehors de l’arborescence visuelle
 
@@ -299,7 +299,7 @@ Dans le cadre de la définition d’événements personnalisés, la façon dont 
 - Pour C# et Visual Basic, vous définissez un événement CLR. Vous pouvez utiliser le modèle d’événement .NET standard, pourvu que vous n’utilisiez pas d’accesseurs personnalisés (**add**/**remove**). Conseils supplémentaires :
     - Pour le gestionnaire d’événements, il est conseillé d’utiliser [**System.EventHandler<TEventArgs>** ](https://docs.microsoft.com/dotnet/api/system.eventhandler-1?redirectedfrom=MSDN), car il possède une traduction intégrée vers le délégué d’événement générique Windows Runtime [**EventHandler<T>** ](https://docs.microsoft.com/uwp/api/windows.foundation.eventhandler).
     - Ne basez pas votre classe de données d’événements sur la classe [**System.EventArgs**](https://docs.microsoft.com/dotnet/api/system.eventargs?redirectedfrom=MSDN), car elle n’effectue pas de traduction vers Windows Runtime. Utilisez une classe de données d’événements existante ou aucune classe de base.
-    - Si vous utilisez des accesseurs personnalisés, voir [Événements personnalisés et accesseurs d’événement dans les composants Windows Runtime](https://docs.microsoft.com/previous-versions/windows/apps/hh972883(v=vs.140)).
+    - Si vous utilisez des accesseurs personnalisés, consultez [événements personnalisés et accesseurs d’événement dans Windows Runtime composants](https://docs.microsoft.com/previous-versions/windows/apps/hh972883(v=vs.140)).
     - Si vous ne savez pas exactement quel est le modèle d’événement .NET standard, voir la rubrique relative à la [Définition d’événements pour les classes Silverlight personnalisées](https://docs.microsoft.com/previous-versions/windows/). Elle est rédigée pour Microsoft Silverlight, mais elle constitue néanmoins un bon résumé du code et des concepts relatifs au modèle d’événement .NET standard.
 - Pour C++/CX, voir [Événements (C++/CX)](https://docs.microsoft.com/cpp/cppcx/events-c-cx).
     - Utilisez des références nommées même pour vos propres utilisations d’événements personnalisés. N’utilisez pas d’expression lambda pour les événements personnalisés, car cela peut créer une référence circulaire.

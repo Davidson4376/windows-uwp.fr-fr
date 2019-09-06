@@ -4,14 +4,14 @@ description: Assurez-vous que votre application répond aux exigences relatives 
 ms.assetid: 18FF1104-1F73-47E1-9C7B-E2AA036C18ED
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp, les tâches en arrière-plan
+keywords: Windows 10, UWP, tâche en arrière-plan
 ms.localizationpriority: medium
-ms.openlocfilehash: 31c0c272ae8ef2818ff1f26dc15dfb803c93e30b
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 5f7e64dca67f0327b6366cbca072e83d4bf4be60
+ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360920"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70393567"
 ---
 # <a name="guidelines-for-background-tasks"></a>Recommandations en matière de tâches en arrière-plan
 
@@ -24,26 +24,26 @@ Tenez compte des recommandations suivantes au moment de développer une tâche e
 
 Si vous utilisez une tâche en arrière-plan pour lire du contenu multimédia en arrière-plan, consultez [Lire du contenu multimédia en arrière-plan](https://docs.microsoft.com/windows/uwp/audio-video-camera/background-audio). Les informations fournies sur les améliorations apportées dans Windows 10 version 1607 vous simplifieront la vie.
 
-**Dans le processus et les tâches en arrière-plan out-of-process :** Windows 10, version 1607, introduite [tâches en arrière-plan dans le processus](create-and-register-an-inproc-background-task.md) qui vous permet d’exécuter du code de l’arrière-plan dans le même processus que votre application de premier plan. Pour déterminer s’il est préférable de disposer de tâches en arrière-plan in-process ou hors processus, prenez en compte les facteurs suivants :
+**Tâches en arrière-plan in-process et out-of-process :** Windows 10, version 1607, a introduit des [tâches en arrière-plan in-process](create-and-register-an-inproc-background-task.md) qui vous permettent d’exécuter du code en arrière-plan dans le même processus que votre application de premier plan. Pour déterminer s’il est préférable de disposer de tâches en arrière-plan in-process ou hors processus, prenez en compte les facteurs suivants :
 
-|Facteur | Impact |
+|Considération | Impact |
 |--------------|--------|
 |Résilience   | Si votre processus en arrière-plan s’exécute dans un autre processus, un blocage dans votre processus en arrière-plan ne bloque pas votre application au premier plan. De plus, l’activité en arrière-plan peut être arrêtée, même dans votre application, si elle s’exécute au-delà des limites de durée d’exécution. Séparer des tâches en arrière-plan dans une tâche distincte de l’application au premier plan peut être plus judicieux lorsque les processus au premier plan et en arrière-plan n’ont pas à communiquer entre eux (l’un des principaux avantages des tâches en arrière-plan in-process est qu’elles évitent toute communication entre les processus). |
 |Simplicité    | Les tâches en arrière-plan in-process ne nécessitent aucune communication entre les processus et sont moins complexes à écrire.  |
-|Déclencheurs disponibles | Tâches en arrière-plan dans le processus ne prennent pas en charge les déclencheurs suivants : [DeviceUseTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.deviceusetrigger?f=255&MSPPError=-2147217396), [DeviceServicingTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.deviceservicingtrigger) et **IoTStartupTask**. |
+|Déclencheurs disponibles | Les tâches en arrière-plan in-process ne prennent pas en charge les déclencheurs suivants : [DeviceUseTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.deviceusetrigger?f=255&MSPPError=-2147217396), [DeviceServicingTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.deviceservicingtrigger) et **IoTStartupTask**. |
 |VoIP | Les tâches en arrière-plan in-process ne prennent pas en charge l’activation d’une tâche en arrière-plan VoIP dans votre application. |  
 
-**Limite le nombre d’instances de déclencheur :** Il existe des limites au nombre d’instances de certains déclencheurs une application peut s’inscrire. Une application peut inscrire [ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger), [MediaProcessingTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.mediaprocessingtrigger) et [DeviceUseTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.deviceusetrigger?f=255&MSPPError=-2147217396) une seule fois par instance de l’application. Si une application dépasse cette limite, l’inscription lève une exception.
+**Limites du nombre d’instances de déclencheur :** Il existe des limites quant au nombre d’instances d’un déclencheur qu’une application peut inscrire. Une application peut inscrire [ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger), [MediaProcessingTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.mediaprocessingtrigger) et [DeviceUseTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.deviceusetrigger?f=255&MSPPError=-2147217396) une seule fois par instance de l’application. Si une application dépasse cette limite, l’inscription lève une exception.
 
-**Quotas d’UC :** Tâches en arrière-plan sont limitées par la quantité de temps de l’utilisation d’horloge qu'elles obtient basées sur le type de déclencheur. La plupart des déclencheurs sont limités à 30 secondes d’utilisation de l’horloge, mais certains ont une capacité d’exécution pouvant atteindre 10 minutes pour exécuter des tâches intensives. Les tâches en arrière-plan doivent être légères pour préserver l’autonomie de la batterie et assurer une meilleure expérience utilisateur pour les applications de premier plan. Pour plus d’informations sur les contraintes de ressource appliquées aux tâches en arrière-plan, consultez [Prendre en charge votre application avec des tâches en arrière-plan](support-your-app-with-background-tasks.md).
+**Quotas de processeur :** Les tâches en arrière-plan sont limitées par la durée d’utilisation de l’horloge sur le type de déclencheur. La plupart des déclencheurs sont limités à 30 secondes d’utilisation de l’horloge, mais certains ont une capacité d’exécution pouvant atteindre 10 minutes pour exécuter des tâches intensives. Les tâches en arrière-plan doivent être légères pour préserver l’autonomie de la batterie et assurer une meilleure expérience utilisateur pour les applications de premier plan. Pour plus d’informations sur les contraintes de ressource appliquées aux tâches en arrière-plan, consultez [Prendre en charge votre application avec des tâches en arrière-plan](support-your-app-with-background-tasks.md).
 
-**Gérer les tâches en arrière-plan :** Votre application doit obtenir la liste des tâches d’arrière-plan enregistrées, inscrire des gestionnaires de progression et l’achèvement et gérer ces événements de manière appropriée. Vos classes de tâches en arrière-plan doivent signaler la progression, l’annulation et l’achèvement des tâches. Pour plus d’informations, consultez [Gérer une tâche en arrière-plan annulée](handle-a-cancelled-background-task.md) et [Surveiller la progression et l’achèvement des tâches en arrière-plan](monitor-background-task-progress-and-completion.md).
+**Gérer les tâches en arrière-plan :** Votre application doit obtenir une liste des tâches d’arrière-plan inscrites, s’inscrire pour les gestionnaires de progression et de fin et gérer les événements de manière appropriée. Vos classes de tâches en arrière-plan doivent signaler la progression, l’annulation et l’achèvement des tâches. Pour plus d’informations, consultez [Gérer une tâche en arrière-plan annulée](handle-a-cancelled-background-task.md) et [Surveiller la progression et l’achèvement des tâches en arrière-plan](monitor-background-task-progress-and-completion.md).
 
-**Utilisez [BackgroundTaskDeferral](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskDeferral):** Si votre classe de tâche d’arrière-plan exécute du code asynchrone, veillez à utiliser les reports. Sinon votre tâche en arrière-plan peut être arrêtée prématurément lorsque le [exécuter](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.run) retours de méthode (ou le [OnBackgroundActivated](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onbackgroundactivated) méthode dans le cas des tâches en arrière-plan dans le processus). Pour plus d’informations, consultez [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-a-background-task.md).
+**Utilisez [BackgroundTaskDeferral](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskDeferral):** Si votre classe de tâche en arrière-plan exécute du code asynchrone, assurez-vous d’utiliser des reports. Sinon, votre tâche en arrière-plan peut se terminer prématurément lorsque la méthode [Run](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.run) retourne (ou la méthode [OnBackgroundActivated](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onbackgroundactivated) dans le cas des tâches en arrière-plan in-process). Pour plus d’informations, consultez [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-a-background-task.md).
 
 L’autre solution consiste à demander un report et à utiliser **async/await** pour exécuter des appels de méthode asynchrone. Fermez le report après les appels de la méthode **await**.
 
-**Mettre à jour le manifeste d’application :**  Pour les tâches en arrière-plan qui s’exécutent out-of-process, déclarez chaque tâche en arrière-plan dans le manifeste d’application, ainsi que le type de déclencheurs, avec qu'il est utilisé. Sinon, votre application ne pourra pas inscrire la tâche en arrière-plan lors de l’exécution.
+**Mettez à jour le manifeste d’application :**  Pour les tâches en arrière-plan qui s’exécutent hors processus, déclarez chaque tâche en arrière-plan dans le manifeste de l’application, ainsi que le type de déclencheur avec lequel elle est utilisée. Sinon, votre application ne pourra pas inscrire la tâche en arrière-plan lors de l’exécution.
 
 Si vous avez plusieurs tâches en arrière-plan, examinez si elles doivent s’exécuter dans le même processus hôte ou être réparties dans des processus hôte différents. Placez-les dans des processus hôte distincts si vous craignez que l'échec d'une seule tâche en une arrière-plan entraîne l'interruption des autres tâches en arrière-plan.  Utilisez l'entrée **Groupe de ressources** dans le concepteur de manifeste pour regrouper les tâches en arrière-plan dans des processus hôte différents. 
 
@@ -51,20 +51,20 @@ Pour définir le **Groupe de ressources**, ouvrez le concepteur Package.appxmani
 
 ![Configuration du groupe de ressources](images/resourcegroup.png)
 
-Consultez le [référence de schéma d’application](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-application) pour plus d’informations sur le paramètre de groupe de ressources.
+Pour plus d’informations sur le paramètre de groupe de ressources, consultez [Référence du schéma d’application](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-application) .
 
 Les tâches en arrière-plan qui s’exécutent dans le même processus que l’application au premier plan n’ont pas à se déclarer dans le manifeste de l’application. Pour plus d’informations sur la déclaration hors processus dans le manifeste, consultez [Déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md).
 
-**Préparer des mises à jour de l’application :** Si votre application sera être mis à jour, créer et inscrire un **ServicingComplete** tâche en arrière-plan (voir [SystemTriggerType](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType)) pour annuler l’inscription de tâches en arrière-plan pour la version précédente de l’application et inscrire le tâches en arrière-plan pour la nouvelle version. Le moment est également idéal pour effectuer des mises à jour d’application qui peuvent se révéler nécessaires hors du contexte d’exécution au premier plan.
+**Préparer les mises à jour des applications :** Si votre application est mise à jour, créez et inscrivez une tâche en arrière-plan **ServicingComplete** (consultez [SystemTriggerType](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType)) pour annuler l’inscription des tâches en arrière-plan pour la version précédente de l’application et enregistrer les tâches en arrière-plan pour la nouvelle version. Le moment est également idéal pour effectuer des mises à jour d’application qui peuvent se révéler nécessaires hors du contexte d’exécution au premier plan.
 
-**Demande pour exécuter des tâches en arrière-plan :**
+**Demande d’exécution des tâches en arrière-plan :**
 
-> **Important**  à compter de Windows 10, les applications ne sont plus requis doivent se trouver sur l’écran de verrouillage comme composant requis pour exécuter des tâches en arrière-plan.
+> **Important depuis Windows**10, les applications ne sont plus obligées de se trouver sur l’écran de verrouillage comme condition préalable à l’exécution des tâches en arrière-plan.  
 
 Les applications de plateforme Windows universelle (UWP) peuvent exécuter tous les types de tâches prises en charge, sans être épinglées à l’écran de verrouillage. Toutefois, les applications doivent appeler [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) avant d’inscrire tout type de tâche en arrière-plan. Cette méthode retourne [**BackgroundAccessStatus.DeniedByUser**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundAccessStatus) si l’utilisateur a explicitement refusé des autorisations de tâche en arrière-plan pour votre application dans les paramètres de l’appareil. Pour plus d’informations sur le choix de l’utilisateur autour de l’activité en arrière-plan et l’économiseur de batterie, voir [Optimiser l’activité en arrière-plan](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity). 
 ## <a name="background-task-checklist"></a>Liste de vérifications relatives aux tâches en arrière-plan
 
-*S’applique aux deux tâches d’arrière-plan dans-process et out-of-process*
+*S’applique aux tâches en arrière-plan in-process et out-of-process*
 
 -   Associez votre tâche en arrière-plan au déclencheur approprié.
 -   Ajoutez des conditions pour assurer une exécution aboutie de votre tâche en arrière-plan.
@@ -75,14 +75,14 @@ Les applications de plateforme Windows universelle (UWP) peuvent exécuter tous 
 
 *S’applique uniquement aux tâches en arrière-plan out-of-process*
 
--   Créez votre tâche en arrière-plan dans un composant Windows Runtime.
+-   Créez votre tâche en arrière-plan dans un composant Windows Runtime.
 -   N’affichez pas l’interface utilisateur hormis les toasts, vignettes et mises à jour de badge de la tâche en arrière-plan.
 -   Dans la méthode [Run](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.run), demandez des reports pour chaque appel de méthode asynchrone, puis fermez-les lorsque la méthode est terminée. Vous pouvez également utiliser un report avec **async/await**.
 -   Utilisez un dispositif de stockage persistant pour partager des données entre la tâche en arrière-plan et l’application.
 -   Déclarez chaque tâche en arrière-plan dans le manifeste de l’application, de même que le type de déclencheur avec lequel elle est utilisée. Vérifiez que le point d’entrée et les types de déclencheur sont corrects.
 -   Ne spécifiez aucun élément Executable dans le manifeste sauf si vous utilisez un déclencheur à exécuter dans le même contexte que l’application (comme le déclencheur [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger)).
 
-*S’applique uniquement aux tâches en arrière-plan en cours*
+*S’applique uniquement aux tâches en arrière-plan in-process*
 
 - Lors de l’annulation d’une tâche, vérifiez que le gestionnaire d’événements `BackgroundActivated` se ferme avant l’annulation ou la fin du processus.
 -   Écrivez des tâches en arrière-plan de courte durée. Les tâches en arrière-plan sont limitées à 30 secondes de l’utilisation de l’horloge.
@@ -93,7 +93,7 @@ Les applications de plateforme Windows universelle (UWP) peuvent exécuter tous 
 * [Créez et inscrivez une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md).
 * [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-a-background-task.md)
 * [Déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md)
-* [Lire des médias dans l’arrière-plan](https://docs.microsoft.com/windows/uwp/audio-video-camera/background-audio)
+* [Lire le média en arrière-plan](https://docs.microsoft.com/windows/uwp/audio-video-camera/background-audio)
 * [Gérer une tâche en arrière-plan annulée](handle-a-cancelled-background-task.md)
 * [Superviser la progression et l’exécution des tâches en arrière-plan](monitor-background-task-progress-and-completion.md)
 * [Inscrire une tâche en arrière-plan](register-a-background-task.md)
@@ -103,7 +103,7 @@ Les applications de plateforme Windows universelle (UWP) peuvent exécuter tous 
 * [Utiliser un déclencheur de maintenance](use-a-maintenance-trigger.md)
 * [Exécuter une tâche en arrière-plan en fonction d’un minuteur](run-a-background-task-on-a-timer-.md)
 * [Déboguer une tâche en arrière-plan](debug-a-background-task.md)
-* [Comment déclencher suspendre, reprendre, événements et d’arrière-plan dans les applications UWP (lors du débogage)](https://go.microsoft.com/fwlink/p/?linkid=254345)
+* [Comment déclencher des événements de suspension, de reprise et d’arrière-plan dans des applications UWP (lors du débogage)](https://go.microsoft.com/fwlink/p/?linkid=254345)
 
  
 

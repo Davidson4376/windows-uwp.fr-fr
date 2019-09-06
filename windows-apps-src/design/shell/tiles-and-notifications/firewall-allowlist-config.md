@@ -9,12 +9,12 @@ ms.date: 05/20/2019
 ms.topic: article
 keywords: Windows 10, UWP, WNS, service de notification Windows, notification, Windows, pare-feu, dépannage, IP, trafic, entreprise, réseau, IPv4, VIP, nom de domaine complet, adresse IP publique
 ms.localizationpriority: medium
-ms.openlocfilehash: 817dec616a88f0b374bc019cbbf23f56fad94484
-ms.sourcegitcommit: 820704a73174e81da3dc00cf0603c0c82471cdfe
+ms.openlocfilehash: 0ba6d2e678eee0d851b4f2e3897f9fc067b74580
+ms.sourcegitcommit: 3360db6bc975516e01913d3d73599c964a411052
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69908451"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70296980"
 ---
 # <a name="enterprise-firewall-and-proxy-configurations-to-support-wns-traffic"></a>Pare-feu d’entreprise et configurations de proxy pour prendre en charge le trafic WNS
 
@@ -23,8 +23,8 @@ De nombreuses entreprises utilisent des pare-feu pour bloquer le trafic réseau 
 
 ## <a name="proxy-support"></a>Prise en charge du proxy
 
-> [!Note] 
-Les clients Windows **ne prennent pas** en charge tous les proxies, la connexion à WNS doit être une connexion directe.
+> [!Note]
+> Les clients Windows **ne prennent pas** en charge tous les proxies, la connexion à WNS doit être une connexion directe.
 
 **À venir!** Nous étudions activement différentes configurations réseau, proxies et pare-feu. Nous mettrons à jour cette page avec plus de détails sur les scénarios d’entreprise courants et la prise en charge de WNS rapidement.
 
@@ -36,11 +36,11 @@ Vous trouverez ci-dessous une liste contenant les noms de domaine complets, les 
 > Nous vous suggérons vivement d’autoriser la liste par nom de domaine complet (FQDN), car ceux-ci ne seront pas modifiés. Si vous autorisez la liste par nom de domaine complet, vous n’avez pas besoin d’autoriser également les plages d’adresses IP.
 
 > [!IMPORTANT]
-> Les plages d’adresses IP seront modifiées périodiquement. pour cette raison, elles ne sont pas incluses dans cette page. Si vous souhaitez afficher la liste des plages d’adresses IP, vous pouvez télécharger le fichier à partir du centre de téléchargement: [Adresses IP virtuelles Windows notification service (WNS) et plages d’adresses IP](https://www.microsoft.com/download/details.aspx?id=44238). Vérifiez régulièrement pour vous assurer que vous disposez des informations les plus récentes. 
+> Les plages d’adresses IP seront modifiées périodiquement. pour cette raison, elles ne sont pas incluses dans cette page. Si vous souhaitez afficher la liste des plages d’adresses IP, vous pouvez télécharger le fichier à partir du centre de téléchargement : [Adresses IP virtuelles Windows notification service (WNS) et plages d’adresses IP](https://www.microsoft.com/download/details.aspx?id=44238). Vérifiez régulièrement pour vous assurer que vous disposez des informations les plus récentes. 
 
 
 ### <a name="fqdns-vips-and-ips"></a>Noms de domaine complets, adresses IP virtuelles et adresses IP
-Chacun des éléments du document XML suivant est expliqué dans le tableau qui le suit (en [termes et notations](#terms-and-notations). Les plages d’adresses IP ont été intentionnellement omises dans ce document pour vous inciter à utiliser uniquement les noms de domaine complets, car les noms de domaine complets restent constants. Toutefois, vous pouvez télécharger le fichier XML contenant la liste complète à partir du centre de téléchargement: [Adresses IP virtuelles Windows notification service (WNS) et plages d’adresses IP](https://www.microsoft.com/download/details.aspx?id=44238). Les nouvelles adresses IP virtuelles ou les plages d’adresses IP seront **effectives une semaine après leur téléchargement**.
+Chacun des éléments du document XML suivant est expliqué dans le tableau qui le suit (en [termes et notations](#terms-and-notations). Les plages d’adresses IP ont été intentionnellement omises dans ce document pour vous inciter à utiliser uniquement les noms de domaine complets, car les noms de domaine complets restent constants. Toutefois, vous pouvez télécharger le fichier XML contenant la liste complète à partir du centre de téléchargement : [Adresses IP virtuelles Windows notification service (WNS) et plages d’adresses IP](https://www.microsoft.com/download/details.aspx?id=44238). Les nouvelles adresses IP virtuelles ou les plages d’adresses IP seront **effectives une semaine après leur téléchargement**.
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -78,7 +78,7 @@ Vous trouverez ci-dessous des explications sur les notations et les éléments u
 
 
 ## <a name="microsoft-push-notifications-service-mpns-public-ip-ranges"></a>Plages d’adresses IP publiques du service de notifications push Microsoft (MPNS)
-Si vous utilisez le service de notification hérité, MPNS, les plages d’adresses IP que vous devrez ajouter à la liste verte sont disponibles dans le centre de téléchargement: [Plages d’adresses IP publiques du service de notifications push Microsoft (MPNS)](https://www.microsoft.com/download/details.aspx?id=44535).
+Si vous utilisez le service de notification hérité, MPNS, les plages d’adresses IP que vous devrez ajouter à la liste verte sont disponibles dans le centre de téléchargement : [Plages d’adresses IP publiques du service de notifications push Microsoft (MPNS)](https://www.microsoft.com/download/details.aspx?id=44535).
 
 
 ## <a name="related-topics"></a>Rubriques connexes

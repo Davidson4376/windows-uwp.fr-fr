@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: windows 10, uwp, jeux, développement de jeux
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a4e151851ef663055a4199b7ec9b8c1b168b578
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+ms.openlocfilehash: db510c1dc084fd1af986d618716854ed09cfc618
+ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682601"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70393609"
 ---
 # <a name="windows-10-game-development-guide"></a>Guide de développement de jeux Windows 10
 
@@ -262,7 +262,7 @@ Les forums de développement sont un lieu d’échange intéressant pour poser d
     </tr>
     <tr>
         <td>Forums de développeurs partenaires gérés Windows 10</td>
-        <td><a href="https://aka.ms/win10devforums">Forums de développement XBOX: Windows 10</a></td>
+        <td><a href="https://aka.ms/win10devforums">Forums de développement XBOX : Windows 10</a></td>
     </tr>
     <tr>
         <td>Forums DirectX</td>
@@ -560,9 +560,9 @@ Les applications Windows app en JavaScript peuvent accéder aux puissantes fonct
 </table>
 
 
-#### <a name="use-windows-runtime-components-to-combine-languages"></a>Combinaison des langages à l’aide des composants Windows Runtime
+#### <a name="use-windows-runtime-components-to-combine-languages"></a>Utiliser des composants de Windows Runtime pour combiner des langues
 
-Grâce à la plateforme UWP, vous combinez facilement des composants écrits dans différents langages. Créez des composants Windows Runtime en C++, C# ou Visual Basic, puis appelez-les à partir de JavaScript, C#, C++ ou Visual Basic. C’est là une méthode remarquable pour programmer des parties de votre jeu dans le langage de votre choix. Les composants vous permettent également d’utiliser les bibliothèques externes qui ne sont disponibles que dans un langage particulier ainsi que le code hérité que vous avez déjà écrit.
+Grâce à la plateforme UWP, vous combinez facilement des composants écrits dans différents langages. Créez Windows Runtime composants dans C++, C#ou Visual Basic, puis appelez-les à partir de JavaScript, C#, C++ou Visual Basic. C’est là une méthode remarquable pour programmer des parties de votre jeu dans le langage de votre choix. Les composants vous permettent également d’utiliser les bibliothèques externes qui ne sont disponibles que dans un langage particulier ainsi que le code hérité que vous avez déjà écrit.
 
 <table>
     <colgroup>
@@ -570,15 +570,15 @@ Grâce à la plateforme UWP, vous combinez facilement des composants écrits dan
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Création de composants Windows Runtime</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/winrt-components/creating-windows-runtime-components-in-cpp">Création de composants Windows Runtime</a></td>
+        <td>Comment créer des composants Windows Runtime</td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/winrt-components/creating-windows-runtime-components-in-cpp">Composants Windows Runtime avec C++/CX</a></td>
     </tr>
 </table>
 
 
 ### <a name="which-version-of-directx-should-your-game-use"></a>Quelle version de DirectX utiliser dans votre jeu ?
 
-Si vous choisissez DirectX pour votre jeu, vous devez choisir la version à utiliser: Microsoft Direct3D 12 ou Microsoft Direct3D 11.
+Si vous choisissez DirectX pour votre jeu, vous devez choisir la version à utiliser : Microsoft Direct3D 12 ou Microsoft Direct3D 11.
 
 DirectX 12 est plus rapide et plus efficace que n’importe quelle version précédente. Direct3D 12 permet des scènes plus riches, un plus grand nombre d’objets et des effets plus complexes. Il tire également mieux parti du matériel graphique moderne sur PC Windows 10 et Xbox One. Étant donné que Direct3D 12 fonctionne à un niveau très faible, il donne aux équipes de développement de graphiques expertes, ou aux équipes de développement de DirectX 11 expérimentées, les moyens de maximiser l’optimisation des graphiques.
 
@@ -591,7 +591,7 @@ Direct3D 11.3 est une API graphique de niveau faible, qui utilise le modèle de
     </colgroup>
     <tr>
         <td>Choix de Direct3D 12 ou Direct3D 11</td>
-        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d12/what-is-directx-12-">Qu’est-ce que Direct3D 12?</a></td>
+        <td><a href="https://docs.microsoft.com/windows/desktop/direct3d12/what-is-directx-12-">Qu’est-ce que Direct3D 12 ?</a></td>
     </tr>
     <tr>
         <td>Vue d’ensemble de Direct3D 11</td>
@@ -700,7 +700,7 @@ Unity prend en charge le développement de Direct3D 12 à partir d’Unity 5.4.
     </tr>
     <tr>
         <td>Ajouter LiveOps à l’aide de PlayFab</td>
-        <td><a href="https://api.playfab.com/docs/getting-started/unity-getting-started">Prise en main: effectuez votre premier appel d’API PlayFab à partir de votre jeu Unity</a></td>
+        <td><a href="https://api.playfab.com/docs/getting-started/unity-getting-started">Prise en main : effectuez votre premier appel d’API PlayFab à partir de votre jeu Unity</a></td>
     </tr>
     <tr>
         <td>Ajout d’interactivité à votre jeu à l’aide de Mixer Interactive</td>
@@ -800,7 +800,7 @@ Cocos2d-x est une suite d’outils et de moteurs de jeu open source multiplatefo
     </colgroup>
     <tr>
         <td>Cocos2d-x</td>
-        <td><a href="https://www.cocos2d-x.org/">Qu’est-ce que cocos2d-x?</a></td>
+        <td><a href="https://www.cocos2d-x.org/">Qu’est-ce que cocos2d-x ?</a></td>
     </tr>
     <tr>
         <td>Guide du programmeur Cocos2d-x</td>
@@ -812,7 +812,7 @@ Cocos2d-x est une suite d’outils et de moteurs de jeu open source multiplatefo
     </tr>
     <tr>
         <td>Ajouter LiveOps à l’aide de PlayFab</td>
-        <td><a href="https://api.playfab.com/docs/getting-started/cocos2d-x-getting-started-guide">Prise en main: effectuez votre premier appel d’API PlayFab à partir de votre jeu cocos2d</a></td>
+        <td><a href="https://api.playfab.com/docs/getting-started/cocos2d-x-getting-started-guide">Prise en main : effectuez votre premier appel d’API PlayFab à partir de votre jeu cocos2d</a></td>
     </tr>
 </table>
 
@@ -832,11 +832,11 @@ Unreal Engine 4 est une suite complète d’outils de développement de jeux de
     </tr>
     <tr>
         <td>Ajouter LiveOps à l’aide de PlayFab - C++</td>
-        <td><a href="https://api.playfab.com/docs/getting-started/unreal-cpp-getting-started">Prise en main: effectuez votre premier appel d’API PlayFab à partir de votre jeu inréel</a></td>
+        <td><a href="https://api.playfab.com/docs/getting-started/unreal-cpp-getting-started">Prise en main : effectuez votre premier appel d’API PlayFab à partir de votre jeu inréel</a></td>
     </tr>
     <tr>
         <td>Ajouter LiveOps à l’aide de PlayFab - Plans</td>
-        <td><a href="https://api.playfab.com/docs/getting-started/unreal-blueprints-getting-started">Prise en main: effectuez votre premier appel d’API PlayFab à partir de votre jeu inréel</a></td>
+        <td><a href="https://api.playfab.com/docs/getting-started/unreal-blueprints-getting-started">Prise en main : effectuez votre premier appel d’API PlayFab à partir de votre jeu inréel</a></td>
     </tr>
 </table>
 
@@ -937,7 +937,7 @@ Les guides indiqués ci-dessous sont excellents. Ils décrivent en détail les a
     </colgroup>
     <tr>
         <td>Présentation des applications de plateforme Windows universelle</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/get-started/whats-a-uwp">Qu’est-ce qu’une application plateforme Windows universelle?</a></td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/get-started/whats-a-uwp">Qu’est-ce qu’une application plateforme Windows universelle ?</a></td>
     </tr>
     <tr>
         <td>Vue d’ensemble de la plateforme UWP</td>
@@ -1018,7 +1018,7 @@ Voici quelques liens pour vous aider à faire migrer votre jeu de bureau Windows
     </colgroup>
     <tr>
         <td>Utilisez le code C++ existant pour le développement de jeux UWP</td>
-        <td><a href="https://docs.microsoft.com/cpp/porting/how-to-use-existing-cpp-code-in-a-universal-windows-platform-app">Procédure : Utiliser le C++ code existant dans une application UWP</a></td>
+        <td><a href="https://docs.microsoft.com/cpp/porting/how-to-use-existing-cpp-code-in-a-universal-windows-platform-app">Guide pratique pour Utiliser le C++ code existant dans une application UWP</a></td>
     </tr>
     <tr>
         <td>API UWP pour les API Win32 et COM</td>
@@ -1098,7 +1098,7 @@ Le respect de recommandations de couleur cohérentes dans votre jeu lui apporte 
     </colgroup>
     <tr>
         <td>Guide des couleurs</td>
-        <td><a href="https://assets.windowsphone.com/499cd2be-64ed-4b05-a4f5-cd0c9ad3f6a3/101_BestPractices_Color_InvariantCulture_Default.zip">Meilleures pratiques: Couleur</a></td>
+        <td><a href="https://assets.windowsphone.com/499cd2be-64ed-4b05-a4f5-cd0c9ad3f6a3/101_BestPractices_Color_InvariantCulture_Default.zip">Meilleures pratiques : Couleur</a></td>
     </tr>
 </table>
  
@@ -1114,7 +1114,7 @@ L’utilisation appropriée de la typographie améliore de nombreux aspects de v
     </colgroup>
     <tr>
         <td>Guide de la typographie</td>
-        <td><a href="https://go.microsoft.com/fwlink/?LinkId=535007">Meilleures pratiques: Typographie</a></td>
+        <td><a href="https://go.microsoft.com/fwlink/?LinkId=535007">Meilleures pratiques : Typographie</a></td>
     </tr>
 </table>
  
@@ -1130,7 +1130,7 @@ Une carte d’interface utilisateur est une disposition de la navigation et des 
     </colgroup>
     <tr>
         <td>Guide sur la carte d’interface utilisateur</td>
-        <td><a href="https://go.microsoft.com/fwlink/?LinkId=535008">Meilleures pratiques: Mappage d’IU</a></td>
+        <td><a href="https://go.microsoft.com/fwlink/?LinkId=535008">Meilleures pratiques : Mappage d’IU</a></td>
     </tr>
 </table>
 
@@ -1204,7 +1204,7 @@ Guides et références pour le développement de jeux DirectX.
     </tr>
     <tr>
         <td>Notions fondamentales sur DirectX 12 (vidéo)</td>
-        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Better-Power-Better-Performance-Your-Game-on-DirectX12">Meilleure puissance, meilleures performances: Votre jeu sur DirectX 12</a></td>
+        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Better-Power-Better-Performance-Your-Game-on-DirectX12">Meilleure puissance, meilleures performances : Votre jeu sur DirectX 12</a></td>
     </tr>
 </table>
 
@@ -1388,7 +1388,7 @@ Un module complémentaire (produit dans l’application) est un élément suppl�
 
 Pour optimiser les performances, tirez parti du mode jeu de Windows 10 pour proposer à vos joueurs la meilleure expérience de jeu possible en exploitant au mieux la capacité de leur matériel actuel.
 
-Le Kit Windows Performance Toolkit est composé d’outils d’analyse des performances qui génèrent des profils de performances détaillés des applications et des systèmes d’exploitation Windows. Il s’avère particulièrement précieux pour surveiller l’utilisation de la mémoire et améliorer les performances des jeux. Le Kit Windows Performance Toolkit est inclus dans le Kit de développement logiciel Windows 10 et dans Windows ADK. Ce kit est constitué de deux outils indépendants: L’enregistreur de performances Windows (WPR) et l’analyseur de performances Windows (WPA). ProcDump, qui fait partie de [Windows Sysinternals](https://technet.microsoft.com/sysinternals/default), est un utilitaire de ligne de commande qui surveille les pics d’utilisation d’UC et génère des fichiers de vidage lors des plantages de jeux. 
+Le Kit Windows Performance Toolkit est composé d’outils d’analyse des performances qui génèrent des profils de performances détaillés des applications et des systèmes d’exploitation Windows. Il s’avère particulièrement précieux pour surveiller l’utilisation de la mémoire et améliorer les performances des jeux. Le Kit Windows Performance Toolkit est inclus dans le Kit de développement logiciel Windows 10 et dans Windows ADK. Ce kit est constitué de deux outils indépendants : L’enregistreur de performances Windows (WPR) et l’analyseur de performances Windows (WPA). ProcDump, qui fait partie de [Windows Sysinternals](https://technet.microsoft.com/sysinternals/default), est un utilitaire de ligne de commande qui surveille les pics d’utilisation d’UC et génère des fichiers de vidage lors des plantages de jeux. 
 
 <table>
     <colgroup>
@@ -1555,7 +1555,7 @@ Vous allez utiliser l' [espace partenaires](https://partner.microsoft.com/dashbo
     </colgroup>
     <tr>
         <td>Apprenez à utiliser l’installation en continu et les packages facultatifs (vidéos)</td>
-        <td><a href="https://channel9.msdn.com/Events/Build/2017/B8093">Distribution d’applications UWP NextGen Firewall: Création d’applications basées sur des composants, extensibles et en continu</a></td>
+        <td><a href="https://channel9.msdn.com/Events/Build/2017/B8093">Distribution d’applications UWP NextGen Firewall : Création d’applications basées sur des composants, extensibles et en continu</a></td>
     </tr>
     <tr>
         <td>Diviser et regrouper du contenu pour activer l’installation en continu</td>
@@ -1755,7 +1755,7 @@ Xbox Live est le premier réseau de jeux qui connecte des millions de joueurs da
     </tr>
     <tr>
         <td>Comprendre quelles fonctionnalités sont disponibles en fonction du programme</td>
-        <td><a href="https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#feature-table">Vue d’ensemble du programme de développement: Tableau des fonctionnalités</a></td>
+        <td><a href="https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#feature-table">Vue d’ensemble du programme de développement : Tableau des fonctionnalités</a></td>
     </tr>
     <tr>
         <td>Liens vers des ressources utiles pour développer des jeux Xbox Live</td>
@@ -1842,11 +1842,11 @@ Xbox Live est le premier réseau de jeux qui connecte des millions de joueurs da
     </tr>
     <tr>
         <td>Matchmaking multiplateforme (vidéo)</td>
-        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Xbox-Live-Multiplayer-Introducing-services-for-cross-platform-matchmaking-and-gameplay">Xbox Live multijoueur: Présentation des services de la connexion et du jeu interplateformes</a></td>
+        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Xbox-Live-Multiplayer-Introducing-services-for-cross-platform-matchmaking-and-gameplay">Xbox Live multijoueur : Présentation des services de la connexion et du jeu interplateformes</a></td>
     </tr>
     <tr>
         <td>Jeu multiplateforme dans Fable Legends (vidéo)</td>
-        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Fable-Legends-Cross-device-Gameplay-with-Xbox-Live">Légendes Fable: Jeu entre appareils avec Xbox Live</a></td>
+        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Fable-Legends-Cross-device-Gameplay-with-Xbox-Live">Légendes Fable : Jeu entre appareils avec Xbox Live</a></td>
     </tr>
     <tr>
         <td>Xbox Live : Statistiques et succès (vidéo)</td>
