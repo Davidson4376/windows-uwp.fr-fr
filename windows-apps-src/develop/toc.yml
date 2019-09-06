@@ -933,11 +933,11 @@
     - name: Composants Windows Runtime
       href: ../winrt-components/index.md
       items:
-        - name: Création de composants Windows Runtime en C++/CX
+        - name: Composants Windows Runtime avec C++/CX
           href: ../winrt-components/creating-windows-runtime-components-in-cpp.md
-        - name: "Démonstration\_: Création d’un composant Windows Runtime de base en C++/CX et appel de ce composant à partir de JavaScript ou C#"
+        - name: Procédure pas à pas d’un composant Windows Runtime C++/CX
           href: ../winrt-components/walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md
-        - name: 'Création de composants Windows Runtime en C# et Visual Basic'
+        - name: 'Composants Windows Runtime avec C# et Visual Basic'
           href: ../winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md
           items:
             - name: "Événements et accesseurs d’événement personnalisés dans les composants Windows\_Runtime"
@@ -948,9 +948,9 @@
               href: ../winrt-components/diagnosing-windows-runtime-component-error-conditions.md
             - name: Distribution d’un composant Windows Runtime managé
               href: ../winrt-components/distributing-a-managed-windows-runtime-component.md
-            - name: Mappages .NET Framework des types Windows Runtime
+            - name: Mappages .NET des types Windows Runtime
               href: ../winrt-components/net-framework-mappings-of-windows-runtime-types.md
-        - name: "Démonstration\_: Création d’un composant Windows Runtime simple et appel de ce composant à partir de JavaScript"
+        - name: 'Procédure pas à pas d’un composant Windows Runtime C# ou Visual Basic'
           href: ../winrt-components/walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md
         - name: "Déclenchement d’événements dans les composants Windows\_Runtime"
           href: ../winrt-components/raising-events-in-windows-runtime-components.md
