@@ -1,23 +1,23 @@
 ---
-Description: Découvrez comment recevoir des paiements pour vos applications, les modules complémentaires (produits dans l’application) et la publication des bénéfices.
+Description: En savoir plus sur la réception de paiements pour vos applications, les modules complémentaires (produits dans l’application) et les revenus de la publicité.
 title: Rémunération
 ms.assetid: 37D1EF45-C4A8-4849-8819-3D4A4898215C
 ms.date: 03/05/2019
 ms.topic: article
 keywords: windows 10, uwp, paiements, ventes d’applications, revenu de l’application, revenu, frais d’utilisation du Store, mise en attente des paiements, pourcentage
 ms.localizationpriority: medium
-ms.openlocfilehash: f0e9439ee31c25657aac1f55dc277123f901209a
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 8a3c8bf0d2d203b650b2706c24dc4c20e88e2576
+ms.sourcegitcommit: 36f502e2449f49e82bd593d6aea0b71ac48d6bec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63790988"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70750560"
 ---
 # <a name="getting-paid"></a>Rémunération
-Voici quelques informations importantes concernant la réception du paiement pour vos applications, les modules complémentaires et les bénéfices de la publicité.
+Voici quelques informations importantes sur la réception des paiements pour vos applications, modules complémentaires et revenus publicitaires.
 
 > [!IMPORTANT]
-> Vous pouvez recevoir argent de ventes d’applications dans le Microsoft Store, vous devez [configurer votre compte de paiement et remplissez les formulaires fiscaux nécessaire](setting-up-your-payout-account-and-tax-forms.md).
+> Avant de pouvoir recevoir des sommes de l’application Sales dans le Microsoft Store, vous devez [configurer votre compte de paiement et remplir les formulaires fiscaux nécessaires](setting-up-your-payout-account-and-tax-forms.md).
 
 ## <a name="store-fee"></a>Frais d’utilisation du Windows Store
 
@@ -46,7 +46,7 @@ N'oubliez pas que le prix que vous sélectionnez peut inclure la taxe de vente o
 
 ## <a name="payout-reporting"></a>Rapports sur les paiements
 
-Vous pouvez accéder aux détails sur vos informations de paiement et télécharger des rapports dans le **synthèse des paiements** de [partenaires](https://partner.microsoft.com/dashboard). Pour plus d'informations sur les données figurant sur cette page et sur la façon dont nous classons vos revenus, consultez l'article [Synthèse des paiements](payout-summary.md).
+Vous pouvez accéder à des détails sur vos informations de paiement et télécharger des rapports dans le **Résumé** de paiement de l' [espace partenaires](https://partner.microsoft.com/dashboard). Pour plus d'informations sur les données figurant sur cette page et sur la façon dont nous classons vos revenus, consultez l'article [Synthèse des paiements](payout-summary.md).
 
 
 ## <a name="payout-timeframe"></a>Période de paiement
@@ -56,14 +56,14 @@ Les paiements sont effectués sur une base mensuelle (à condition que le seuil 
 
 ##  <a name="payout-hold-status"></a>État de mise en attente des paiements
 
-Par défaut, nous envoyons les paiements sur une base mensuelle comme décrit ci-dessus. Toutefois, vous avez la possibilité de mettre vos paiements en attente, auquel cas nous ne pouvons pas envoyer des paiements vers votre compte. Si vous choisissez de mettre vos paiements en attente, nous continuons à enregistrer les revenus que vous gagnez et à en fournir les détails dans votre **Résumé du paiement**. Toutefois, nous n’envoyons pas de paiement vers votre compte tant que vous n’avez pas annulé la mise en attente. 
+Par défaut, nous envoyons les paiements sur une base mensuelle comme décrit ci-dessus. Toutefois, vous avez la possibilité de mettre vos paiements pour un programme en attente, ce qui nous empêchera d’envoyer des paiements à votre compte. Si vous choisissez de mettre vos paiements en attente, nous continuons à enregistrer les revenus que vous gagnez et à en fournir les détails dans votre **Résumé du paiement**. Toutefois, nous n’envoyons pas de paiement vers votre compte tant que vous n’avez pas annulé la mise en attente.
 
-Pour mettre des paiements en attente, accédez à **Paramètres du compte**. Sous **Détails financiers**, dans la section **État de mise en attente des paiements**, basculez le curseur sur **Activé**. Vous pouvez modifier l’état de mise en attente du paiement à tout moment, mais n’oubliez pas que votre décision a un impact sur le paiement mensuel suivant. Par exemple, si vous voulez mettre en attente le paiement du mois d’avril, configurez l’état de mise en attente des paiements sur **Activé** avant la fin du mois de mars.
+Pour mettre vos paiements en attente, accédez à **paramètres du développeur**. Sous **paiement et taxes**, dans la section **attribution de profil de paiement et de taxe** , localisez le programme pour lequel vous souhaitez payer vos paiements. Cochez la case **conserver mon paiement** pour conserver les paiements pour ce programme. Vous pouvez modifier l’état de mise en attente du paiement à tout moment, mais n’oubliez pas que votre décision a un impact sur le paiement mensuel suivant. Par exemple, si vous voulez mettre en attente le paiement du mois d’avril, configurez l’état de mise en attente des paiements sur **Activé** avant la fin du mois de mars.
 
-Une fois que vous avez configuré l’état de mise en attente des paiements sur **Activé**, tous les paiements sont mis en attente jusqu’à ce que vous basculiez à nouveau le curseur sur **Désactivé**. Lorsque vous procédez ainsi, vous êtes inclus dans le cycle de paiement mensuel suivant (à condition que les seuils de paiement applicables aient été atteints). Par exemple, si vous avez mis vos paiements en attente, mais que vous souhaitez qu’un paiement soit généré en juin, vous devez configurer l’état de mise en attente des paiements sur **Désactivé** avant la fin du mois de mai.
+Une fois que vous avez défini votre état de blocage de paiement sur **activé**, tous les versements pour ce programme sont en attente jusqu’à ce que vous basculiez le curseur sur **désactivé**. Lorsque vous procédez ainsi, vous êtes inclus dans le cycle de paiement mensuel suivant (à condition que les seuils de paiement applicables aient été atteints). Par exemple, si vous avez mis vos paiements en attente, mais que vous souhaitez qu’un paiement soit généré en juin, vous devez configurer l’état de mise en attente des paiements sur **Désactivé** avant la fin du mois de mai.
 
 > [!NOTE]
-> Votre **paiement contiennent état** sélection s’applique à **tous les** des sources de revenus sont payés via le programme de développeur Windows dans le centre de partenaires (Microsoft Store, publier, place de marché Azure, etc..). Vous ne pouvez pas sélectionner des état de mise en attente différents pour chaque source de revenus.
+> L' **État d’attente de paiement** s’applique à chaque programme individuellement (Microsoft Store, publicité, place de marché Azure, etc.). Si vous souhaitez conserver les paiements sur tous vos programmes, vous devez conserver les paiements sur chaque programme individuellement.
 
 
  
