@@ -5,12 +5,12 @@ ms.date: 01/17/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, porter, migrer, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: 404a6985c95718363f3dbbc3b8f27a7793b28e86
-ms.sourcegitcommit: ba4a046793be85fe9b80901c9ce30df30fc541f9
+ms.openlocfilehash: 92088906078a3a705e5fae052a50fc914561c77c
+ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68328853"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70393458"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a>Passer de C++/CX à C++/WinRT
 
@@ -471,11 +471,11 @@ En outre, C++/CX vous permet de déréférencer une chaîne null **String^** . A
 | Opération | C++/CX | C++/WinRT|
 |-|-|-|
 | Catégorie de type de chaîne | Type de référence | Type de valeur |
-| **HSTRING** null projette sous la forme | `(String^)nullptr` | `hstring{ nullptr }` |
+| **HSTRING** null projette sous la forme | `(String^)nullptr` | `hstring{}` |
 | Est-ce que null et `""` sont identiques ? | Oui | Oui |
 | Validité de la valeur null | `s = nullptr;`<br>`s->Length == 0` (valide) | `s = nullptr;`<br>`s.size() == 0` (valide) |
 | Conversion boxing d’une chaîne | `o = s;` | `o = box_value(s);` |
-| Si `s` est `null` | `o = (String^)nullptr;`<br>`o == nullptr` | `o = box_value(hstring{nullptr});`<br>`o != nullptr` |
+| Si `s` est `null` | `o = (String^)nullptr;`<br>`o == nullptr` | `o = box_value(hstring{});`<br>`o != nullptr` |
 | Si `s` est `""` | `o = "";`<br>`o == nullptr` | `o = box_value(hstring{L""});`<br>`o != nullptr;` |
 | Conversion boxing d’une chaîne en conservant null | `o = s;` | `o = s.empty() ? nullptr : box_value(s);` |
 | Conversion boxing forcée d’une chaîne | `o = PropertyValue::CreateString(s);` | `o = box_value(s);` |

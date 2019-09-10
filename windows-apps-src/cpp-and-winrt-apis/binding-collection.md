@@ -5,16 +5,16 @@ ms.date: 04/24/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, XAML, contrôle, liaison, collection
 ms.localizationpriority: medium
-ms.openlocfilehash: 258ec5e0690753c8ad9c3b0648867666397039a5
-ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
+ms.openlocfilehash: a98056190d035910a8ed83d2f37799a98b685ce6
+ms.sourcegitcommit: eb683734801c1de5977db70e626609cf7e5b7654
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68270172"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70304512"
 ---
 # <a name="xaml-items-controls-bind-to-a-cwinrt-collection"></a>Contrôles d’éléments XAML ; liaison à une collection C++/WinRT
 
-Une collection qui peut être efficacement liée à un contrôle d’éléments XAML est appelée collection *observable*. Ce concept est basé sur le modèle de conception logicielle appelé *modèle observateur*. Cette rubrique montre comment implémenter des collections observables en [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) et y lier des contrôles d’éléments XAML.
+Une collection qui peut être efficacement liée à un contrôle d’éléments XAML est appelée collection *observable*. Ce concept est basé sur le modèle de conception logicielle appelé *modèle observateur*. Cette rubrique montre comment implémenter des collections observables en [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) et y lier des contrôles d’éléments XAML (pour des informations de référence, consultez [Liaison de données](/windows/uwp/data-binding).
 
 Si vous souhaitez suivre cette rubrique, nous vous recommandons de tout d’abord créer le projet décrit dans la section [Contrôles XAML ; liaison à une propriété C++/WinRT](binding-property.md). Cette rubrique ajoute plus de code à ce projet et complète les concepts abordés.
 

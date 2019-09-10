@@ -5,12 +5,12 @@ ms.date: 07/08/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projeté, projection, implémentation, implémenter, classe runtime, activation
 ms.localizationpriority: medium
-ms.openlocfilehash: 18dc65198d476204cfd54bd241fbd3c9ac401155
-ms.sourcegitcommit: 7ece8a9a9fa75e2e92aac4ac31602237e8b7fde5
+ms.openlocfilehash: ae8aca92d7eb7bc93ba4be99449d5e813238d744
+ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68485174"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70393495"
 ---
 # <a name="author-apis-with-cwinrt"></a>Créer des API avec C++/WinRT
 
@@ -126,7 +126,7 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 
 ## <a name="if-youre-authoring-a-runtime-class-in-a-windows-runtime-component"></a>Si vous créez une classe runtime dans un composant Windows Runtime
 
-Si votre type est empaqueté dans un composant Windows Runtime pour une utilisation à partir d’une application, il doit alors s’agir d’une classe runtime. Vous déclarez une classe runtime dans un fichier Microsoft Interface Definition Language (IDL) (.idl) (consultez [Factorisation des classes runtime dans des fichiers Midl (.idl)](#factoring-runtime-classes-into-midl-files-idl)).
+Si votre type est empaqueté dans un composant Windows Runtime pour être utilisé à partir d’une application, il doit alors s’agir d’une classe runtime. Vous déclarez une classe runtime dans un fichier Microsoft Interface Definition Language (IDL) (.idl) (consultez [Factorisation des classes runtime dans des fichiers Midl (.idl)](#factoring-runtime-classes-into-midl-files-idl)).
 
 Chaque fichier IDL génère un fichier `.winmd`, puis Visual Studio fusionne tous ces fichiers dans un seul fichier avec le même nom que votre espace de noms racine. Ce dernier fichier `.winmd` sera celui auquel les consommateurs de votre composant feront référence.
 
