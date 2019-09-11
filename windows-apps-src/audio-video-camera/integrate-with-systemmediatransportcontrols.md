@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 81065c214cc2b0583a99ac88cf1c3e4cd784658a
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: d2c8e05d2b01b110085ed82c19cecd251c9c6971
+ms.sourcegitcommit: c95915f8a13736705eab74951a12b2cf528ea612
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361686"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70876244"
 ---
 # <a name="integrate-with-the-system-media-transport-controls"></a>Intégration avec les contrôles de transport de média système
 
@@ -34,6 +34,11 @@ Si vous souhaitez ajouter ou modifier des métadonnées affichées pour vos él�
 [!code-cs[SetVideoProperties](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetSetVideoProperties)]
 
 [!code-cs[SetMusicProperties](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetSetMusicProperties)]
+
+
+> [!Note]
+> Les applications doivent définir une valeur pour la propriété [**type**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaitemdisplayproperties.type) , même si elles ne fournissent pas d’autres métadonnées de média devant être affichées par les contrôles de transport de média système. Cette valeur aide le système à gérer correctement votre contenu multimédia, y compris empêcher l’activation de l’économiseur d’écran pendant la lecture.
+
 
 ## <a name="use-commandmanager-to-modify-or-override-the-default-smtc-commands"></a>Utilisez CommandManager pour modifier ou remplacer les commandes par défaut des contrôles de transport de média système.
 Votre application peut modifier ou remplacer complètement le comportement des contrôles de transport de média système avec la classe [**MediaPlaybackCommandManager**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackCommandManager). Une instance du gestionnaire de commandes peut être récupérée pour chaque instance de la classe **MediaPlayer**, en accédant à la propriété [**CommandManager**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.commandmanager).
@@ -77,9 +82,9 @@ Comme mentionné précédemment dans cet article, les contrôles de transport de
 
 ## <a name="related-topics"></a>Rubriques connexes
 * [Lecture de contenu multimédia](media-playback.md)
-* [Lecture audio et vidéo MediaPlayer.](play-audio-and-video-with-mediaplayer.md)
-* [Contrôle manuel, le système de Transport de contrôles de média](system-media-transport-controls.md)
-* [Exemple de contrôles de transport de supports de système sur github](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls)
+* [Lire des fichiers audio et vidéo avec MediaPlayer](play-audio-and-video-with-mediaplayer.md)
+* [Contrôle manuel des contrôles de transport des médias système](system-media-transport-controls.md)
+* [Exemple de contrôles System Media tranport sur GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls)
  
 
  
