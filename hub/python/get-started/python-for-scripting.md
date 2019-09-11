@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Python, Windows 10, Microsoft, l’administration de système Python, l’automatisation de fichier Python, les scripts Python sur Windows, la configuration de Python sur Windows, l’environnement de développement Python sur Windows, l’environnement de développement Python sur Windows, Python avec PowerShell, scripts Python pour tâches du système de fichiers
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: dbb7a60103c27f648ca8bf23f87dee06923f0cd9
-ms.sourcegitcommit: e9dc2711f0a0758727468f7ccd0d0f0eee3363e3
+ms.openlocfilehash: 7ca9d5023a74610d6daa78f98ce03abf2a38e375
+ms.sourcegitcommit: 06bb87839fec26afd5d3a05c03d77b2cf1fb46e0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69979329"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70887314"
 ---
 # <a name="get-started-using-python-on-windows-for-scripting-and-automation"></a>Prise en main de Python sur Windows pour l’écriture de scripts et l’automatisation
 
@@ -96,20 +96,20 @@ Commençons par un script simple qui parcourt une arborescence de répertoires e
 3. Créez quelques répertoires à utiliser avec notre exemple de script:
 
     ```powershell
-    mkdir food, food/fruits, food/fruits/apples, food/fruits/oranges, food/vegetables
+    mkdir food, food\fruits, food\fruits\apples, food\fruits\oranges, food\vegetables
     ```
 
 4. Créez quelques fichiers dans ces répertoires à utiliser avec notre script:
 
     ```powershell
-    new-item food/fruits/banana.txt, food/fruits/strawberry.txt, food/fruits/blueberry.txt, food/fruits/apples/honeycrisp.txt, food/fruits/oranges/mandarin.txt, food/vegetables/carrot.txt
+    new-item food\fruits\banana.txt, food\fruits\strawberry.txt, food\fruits\blueberry.txt, food\fruits\apples\honeycrisp.txt, food\fruits\oranges\mandarin.txt, food\vegetables\carrot.txt
     ```
 
 5. Créez un nouveau fichier python dans votre répertoire python-scripts:
 
     ```powershell
     mkdir src
-    new-item src/list-directory-contents.py
+    new-item src\list-directory-contents.py
     ```
 
 6. Ouvrez votre projet dans VS Code en entrant:`code .`
@@ -126,14 +126,14 @@ Commençons par un script simple qui parcourt une arborescence de répertoires e
     ```python
     import os
 
-    root = '%s%s%s' % ('..', os.path.sep, 'food')
+    root = os.path.join('..', 'food')
     for directory, subdir_list, file_list in os.walk(root):
-        print('Directory: ' + directory)
+        print('Directory:', directory)
         for name in subdir_list:
-            print ('Subdirectory: ' + name)
+            print('Subdirectory:', name)
         for name in file_list:
-            print('File: ' + name)
-        print(os.linesep)
+            print('File:', name)
+        print()
     ```
 
 9. Ouvrez le terminal intégré VS Code (**Ctrl + '** , à l’aide du caractère d’impulsion) et entrez le répertoire src dans lequel vous venez d’enregistrer votre script Python:
@@ -151,24 +151,24 @@ Commençons par un script simple qui parcourt une arborescence de répertoires e
     La sortie doit ressembler à ceci:
 
     ```powershell
-    Directory: ../food
+    Directory: ..\food
     Subdirectory: fruits
     Subdirectory: vegetables
 
-    Directory: ../food\fruits
+    Directory: ..\food\fruits
     Subdirectory: apples
     Subdirectory: oranges
     File: banana.txt
     File: blueberry.txt
     File: strawberry.txt
 
-    Directory: ../food\fruits\apples
+    Directory: ..\food\fruits\apples
     File: honeycrisp.txt
 
-    Directory: ../food\fruits\oranges
+    Directory: ..\food\fruits\oranges
     File: mandarin.txt
 
-    Directory: ../food\vegetables
+    Directory: ..\food\vegetables
     File: carrot.txt
     ```
 
@@ -195,15 +195,15 @@ Cet exemple utilise les fichiers et répertoires que vous venez de créer, en re
     import datetime
     import os
 
-    root = '%s%s%s' % ('..', os.path.sep, 'food')
+    root = os.path.join('..', 'food')
     for directory, subdir_list, file_list in os.walk(root):
         for name in file_list:
-            source_name = '%s%s%s' % (directory, os.path.sep, name)
+            source_name = os.path.join(directory, name)
             timestamp = os.path.getmtime(source_name)
             modified_date = str(datetime.datetime.fromtimestamp(timestamp)).replace(':', '.')
-            target_name = '%s%s%s_%s' % (directory, os.path.sep, modified_date, name)
+            target_name = os.path.join(directory, f'{modified_date}_{name}')
 
-            print ('Renaming: %s to: %s' % (source_name, target_name))
+            print(f'Renaming: {source_name} to: {target_name}')
 
             os.rename(source_name, target_name)
     ```
@@ -220,7 +220,7 @@ Cet exemple utilise les fichiers et répertoires que vous venez de créer, en re
     Renaming: ..\food\fruits\oranges\mandarin.txt to: ..\food\fruits\oranges\2019-07-18 12.24.46.398151_mandarin.txt
     Renaming: ..\food\vegetables\carrot.txt to: ..\food\vegetables\2019-07-18 12.24.46.402496_carrot.txt
 
-    ~/src/python-scripting/src$ python3 .\list-directory-contents.py
+    PS C:\src\python-scripting\src> python3 .\list-directory-contents.py
     ..\food\
     Directory: ..\food
     Subdirectory: fruits
@@ -251,6 +251,6 @@ Nous espérons que vous avez appris quelques choses amusantes sur l’utilisatio
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
 - [Documents Python: Accès aux fichiers et](https://docs.python.org/3.7/library/filesys.html)aux répertoires: Documentation Python sur l’utilisation des systèmes de fichiers et l’utilisation de modules pour lire les propriétés des fichiers, manipuler des chemins d’accès de manière portable et créer des fichiers temporaires.
-- [Découvrez Python: Didacticiel](https://www.learnpython.org/en/String_Formatting)String_Formatting: En savoir plus sur l’utilisation de l’opérateur «%» pour la mise en forme des chaînes.
+- [Découvrez Python: Didacticiel](https://www.learnpython.org/en/String_Formatting)String_Formatting : En savoir plus sur l’utilisation de l’opérateur « % » pour la mise en forme des chaînes.
 - [10 méthodes de système de fichiers Python à connaître](https://towardsdatascience.com/10-python-file-system-methods-you-should-know-799f90ef13c2): Article de taille moyenne sur la manipulation de fichiers `os` et `shutil`de dossiers avec et.
 - [Guide Hitchhikers pour Python: Administration](https://docs.python-guide.org/scenarios/admin/)des systèmes: Un «guide consignes strictes» qui offre des vues d’ensemble et des meilleures pratiques sur les sujets liés à python. Cette section traite des outils et infrastructures d’administration système. Ce guide est hébergé sur GitHub pour vous permettre de créer des fichiers et de faire des contributions.
