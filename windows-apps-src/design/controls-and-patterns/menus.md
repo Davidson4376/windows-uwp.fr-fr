@@ -13,12 +13,12 @@ design-contact: kimsea
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e3465d108fc725c45999782eff80593832208b5
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 31371c2b2a4826939de428fb6d7c082b78d05843
+ms.sourcegitcommit: 6951827b7d0948618e1fbb082c28794c7f23f83c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319513"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70923151"
 ---
 # <a name="menus-and-context-menus"></a>Menus et menus contextuels
 
@@ -32,7 +32,7 @@ Les menus et les menus contextuels affichent une liste de commandes ou d’optio
 
 | **API de plateforme** | **API de la bibliothèque d’interface utilisateur Windows** |
 | - | - |
-| [classe MenuFlyout](/uwp/api/windows.ui.xaml.controls.menuflyout), [classe MenuBar](/uwp/api/windows.ui.xaml.controls.menubar), [propriété ContextFlyout](/uwp/api/windows.ui.xaml.uielement.contextflyout), [propriété FlyoutBase.AttachedFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout) | [MenuBar, classe](/uwp/api/microsoft.ui.xaml.controls.menubar) |
+| [classe MenuFlyout](/uwp/api/windows.ui.xaml.controls.menuflyout), [classe MenuBar](/uwp/api/windows.ui.xaml.controls.menubar), [propriété ContextFlyout](/uwp/api/windows.ui.xaml.uielement.contextflyout), [propriété FlyoutBase.AttachedFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase#xaml-attached-properties) | [MenuBar, classe](/uwp/api/microsoft.ui.xaml.controls.menubar) |
 
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
@@ -90,7 +90,7 @@ Si vous voulez ajouter des commandes (telles que couper, copier et coller) à un
 - Ont un point d’entrée unique (un menu Fichier en haut de l’écran, par exemple) qui est toujours affiché.
 - Sont généralement attachés à un bouton ou un élément de menu parent.
 - Sont appelés en cliquant avec le bouton gauche de la souris (ou par le biais d’une action équivalente, telles que l’appui avec votre doigt).
-- Sont associés à un élément via ses propriétés [Flyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button.flyout) ou [FlyoutBase.AttachedFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout), ou sont regroupés dans une barre de menus en haut de la fenêtre d’application.
+- Sont associés à un élément via ses propriétés [Flyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button.flyout) ou [FlyoutBase.AttachedFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase#xaml-attached-properties), ou sont regroupés dans une barre de menus en haut de la fenêtre d’application.
 
 ### <a name="context-menus"></a>Les menus contextuels :
 
