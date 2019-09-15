@@ -1,5 +1,5 @@
 ---
-Description: Découvrez comment utiliser des en-têtes pour regrouper visuellement vos notifications toast dans le centre de maintenance.
+Description: Découvrez comment utiliser des en-têtes pour regrouper visuellement vos notifications Toast dans le centre de maintenance.
 title: En-têtes de toast
 label: Toast headers
 template: detail.hbs
@@ -7,19 +7,19 @@ ms.date: 12/07/2017
 ms.topic: article
 keywords: windows 10, uwp, toast, en-tête, en-têtes de toast, notification, regrouper les toasts, centre de notifications
 ms.localizationpriority: medium
-ms.openlocfilehash: c7d1e3ce0a012d36bea671f87efb8df3a5d49b5f
-ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
+ms.openlocfilehash: af94b501b0e98515a1d3b3216f3a76a28fedab67
+ms.sourcegitcommit: 6e7665b457ec4585db19b70acfa2554791ad6e10
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67714085"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70987214"
 ---
 # <a name="toast-headers"></a>En-têtes de toast
 
 Vous pouvez regrouper visuellement un ensemble de notifications associées dans le centre de notifications en utilisant un en-tête de toast dans vos notifications.
 
 > [!IMPORTANT]
-> **Requiert le bureau Creators Update et 1.4.0 de bibliothèque de Notifications**: Vous devez exécuter les en-têtes de postes de travail de build 15063 ou une version ultérieure pour afficher le toast. Vous devez utiliser la version 1.4.0 ou une version ultérieure de la [bibliothèque NuGet UWP Community Toolkit Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) pour construire l’en-tête dans le contenu de votre toast. Les en-têtes sont uniquement pris en charge sur les appareils de bureau.
+> **Requiert les créateurs de Desktop Creators Update et 1.4.0 de la bibliothèque de notifications**: Vous devez exécuter Desktop Build 15063 ou une version ultérieure pour afficher les en-têtes Toast. Vous devez utiliser la version 1.4.0 ou une version ultérieure de la [bibliothèque NuGet UWP Community Toolkit Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) pour construire l’en-tête dans le contenu de votre toast. Les en-têtes sont uniquement pris en charge sur les appareils de bureau.
 
 Comme indiqué ci-dessous, cette conversation de groupe est unifiée sous un en-tête unique, « Camping !! ». Chaque message individuel dans la conversation est une notification toast distincte qui partage le même en-tête de toast.
 
@@ -77,7 +77,7 @@ Les utilisateurs peuvent cliquer sur les en-têtes pour obtenir des informations
 
 Par conséquent, les applications peuvent fournir des **Arguments** dans l’en-tête, comparables aux arguments de lancement du toast proprement dit.
 
-L’activation est gérée comme une [activation de toast normale](send-local-toast.md#handling-activation-1), ce qui signifie que vous pouvez récupérer ces arguments dans la méthode **OnActivated** de `App.xaml.cs`, comme vous le faites lorsque l’utilisateur clique sur le corps de votre toast ou sur un bouton de votre toast.
+L’activation est gérée comme une [activation de toast normale](send-local-toast.md#activation-handling), ce qui signifie que vous pouvez récupérer ces arguments dans la méthode **OnActivated** de `App.xaml.cs`, comme vous le faites lorsque l’utilisateur clique sur le corps de votre toast ou sur un bouton de votre toast.
 
 ```csharp
 protected override void OnActivated(IActivatedEventArgs e)
@@ -96,7 +96,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 L’en-tête sépare et regroupe visuellement les notifications. Il ne modifie aucune autre logistique concernant le nombre maximal de notifications qu’une application peut avoir (20) et le comportement « premier entré, premier sorti » de la liste des notifications.
 
-L’ordre des notifications dans les en-têtes sont comme suit... Pour une application donnée, la notification la plus récente de l’application (et le groupe de l’intégralité de l’en-tête s’il fait partie d’un en-tête) apparaît en premier.
+L’ordre des notifications dans les en-têtes est le suivant... Pour une application donnée, la notification la plus récente de l’application (et le groupe d’en-têtes entier dans le cas d’un en-tête) s’affiche en premier.
 
 L’**Id** peut être n’importe quelle chaîne de votre choix. Aucune restriction de longueur ou de caractère n’est appliquée aux propriétés de **ToastHeader**. La seule contrainte est que l’intégralité du contenu de votre toast XML ne peut pas dépasser 5 Ko.
 
@@ -107,5 +107,5 @@ Cliquer sur l’en-tête, tout comme cliquer sur le titre de l’application, n�
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-- [Envoyer une activation toast et handle locale](send-local-toast.md)
-- [Documentation de contenu de toast](adaptive-interactive-toasts.md)
+- [Envoyer un toast local et gérer l’activation](send-local-toast.md)
+- [Documentation sur le contenu Toast](adaptive-interactive-toasts.md)
