@@ -2,28 +2,30 @@
 ms.assetid: 3a17e682-40be-41b4-8bd3-fbf0b15259d6
 title: Créer une application « Hello World » (JS)
 description: Ce didacticiel vous explique comment utiliser JavaScript et HTML pour créer une simple application &\#0034;Hello, world&\#0034; ciblant la plateforme Windows universelle (UWP) sur Windows 10.
-ms.date: 03/06/2017
+ms.date: 09/12/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b5423c9aae607d4f6ffe14b755c8f73e013d8b6
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: 3f4ab5b177539bc286ce24d480cd949d43a51e17
+ms.sourcegitcommit: bd41fb6f59dfbd7021b14ff749b8b0f83f883c0f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820977"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70963621"
 ---
 # <a name="create-a-hello-world-app-js"></a>Créer une application « Hello World » (JS)
 
 Ce didacticiel vous explique comment utiliser JavaScript et HTML pour créer une simple application « Hello World » ciblant la plateforme Windows universelle (UWP) sur Windows 10. Dans Microsoft Visual Studio, un seul projet vous permet de générer une application qui s’exécute sur n’importe quel appareil Windows 10.
 
 > [!NOTE]
-> Ce tutoriel utilise Visual Studio Community 2019. Si vous utilisez une autre version de Visual Studio, son aspect peut être légèrement différent.
+> Ce didacticiel utilise Visual Studio Community 2017. Si vous utilisez une autre version de Visual Studio, son aspect peut être légèrement différent.
 
+> [!WARNING]
+> Le développement d’applications UWP JavaScript n’est pas pris en charge dans Visual Studio 2019. Vous devez utiliser Visual Studio 2017 pour développer une application UWP JavaScript.
 
 Vous allez apprendre à effectuer les opérations suivantes :
 
--   créer un projet **Visual Studio 2019** qui cible **Windows 10** et la **plateforme Windows universelle (UWP)**  ;
+-   Créer un projet **Visual Studio 2017** qui cible **Windows 10** et **UWP**.
 -   ajouter du contenu HTML et JavaScript ;
 -   exécuter le projet sur l’ordinateur local dans Visual Studio.
 
@@ -35,7 +37,7 @@ Vous allez apprendre à effectuer les opérations suivantes :
 
 ## <a name="step-1-create-a-new-project-in-visual-studio"></a>Étape 1 : Créer un projet dans Visual Studio.
 
-1.  Lancez Visual Studio 2019.
+1.  Lancez Visual Studio 2017.
 
 2.  Dans le menu **Fichier**, sélectionnez **Nouveau > Projet...** pour ouvrir la boîte de dialogue *Créer un projet*.
 
