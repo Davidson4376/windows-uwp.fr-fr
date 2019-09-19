@@ -5,12 +5,12 @@ ms.date: 04/02/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 154271e455996bee15ac01c2e41f55b0d9c08fe0
-ms.sourcegitcommit: 61194375c0889b73ee2b978c444c4b90a576b3e4
+ms.openlocfilehash: 4fbda33e044880b263feafbcf88b041abdadc310
+ms.sourcegitcommit: bf95c8b29145a224957a940512394e6aa97cb90f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 09/17/2019
-ms.locfileid: "71039138"
+ms.locfileid: "71061961"
 ---
 # <a name="layout-panels"></a>Panneaux de disposition
 
@@ -29,7 +29,7 @@ Plusieurs éléments sont à prendre en considération lors du choix d’un pann
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/RatingControl">ouvrir l’application et voir l’objet RatingControl en action</a>.</p>
+    <p>Si l’application de la <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong> est installée, <a href="xamlcontrolsgallery:/item/RelativePanel">consultez RelativePanel</a>, <a href="xamlcontrolsgallery:/item/StackPanel">StackPanel</a>, <a href="xamlcontrolsgallery:/item/Grid">Grid</a>, <a href="xamlcontrolsgallery:/item/VariableSizedWrapGrid">VariableSizedWrapGrid</a>et <a href="xamlcontrolsgallery:/item/Canvas">Canvas</a> in action.</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
