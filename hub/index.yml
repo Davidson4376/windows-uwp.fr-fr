@@ -1,0 +1,69 @@
+### YamlMime:Hub
+title: Documentation Windows
+summary: Informations pour les développeurs de logiciels, les ingénieurs matériels et les professionnels de l’informatique.
+brand: windows
+metadata:
+  title: Documentation Windows | Microsoft Docs
+  titleSuffix: ''
+  author: tedhudek
+  ms.author: tedhudek
+  ms.topic: hub-page
+  uhfHeaderId: MSDocsHeader-DocsL1
+  ms.openlocfilehash: 0cdab14a7301cdb20ca6986854523c5b6e834b21
+  ms.sourcegitcommit: bac5574a1f47a5b38c984a5482272c9e49a9c91e
+  ms.translationtype: HT
+  ms.contentlocale: fr-FR
+  ms.lasthandoff: 09/18/2019
+  ms.locfileid: "71100831"
+highlightedContent:
+  items:
+  - title: Obtenir Visual Studio et le kit SDK Windows
+    itemType: download
+    url: https://developer.microsoft.com/windows/downloads
+  - title: Télécharger le kit WDK
+    itemType: download
+    url: https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk
+  - title: Adhérer au programme Insider
+    itemType: overview
+    url: https://docs.microsoft.com/windows-insider
+  - title: Améliorer vos compétences
+    itemType: learn
+    url: https://docs.microsoft.com/learn/browse/?products=m365%2Cwindows
+additionalContent:
+  sections:
+  - items:
+    - title: Développement d’applications
+      links:
+      - text: Commencer à écrire des applications Windows 10
+        url: https://docs.microsoft.com/windows/apps
+      - text: Ajouter des fonctionnalités Windows 10 à vos applications
+        url: https://docs.microsoft.com/windows/apps/desktop/modernize/
+      - text: Développer avec Python sur Windows
+        url: https://docs.microsoft.com/windows/python/index
+      - text: Configurer le sous-système Windows pour Linux
+        url: https://docs.microsoft.com/windows/wsl/about
+      - text: Rechercher des exemples de code
+        url: https://developer.microsoft.com/windows/samples
+    - title: Développement de matériel
+      links:
+      - text: Découvrir comment créer des appareils
+        url: https://docs.microsoft.com/windows-hardware/get-started/index
+      - text: Développer des pilotes d’appareil
+        url: https://docs.microsoft.com/windows-hardware/drivers
+      - text: Créer des images Windows
+        url: https://docs.microsoft.com/windows-hardware/manufacture/
+      - text: Tester les performances et la compatibilité
+        url: https://docs.microsoft.com/windows-hardware/test
+      - text: Rechercher des exemples de pilote
+        url: https://docs.microsoft.com/samples/browse/?products=windows-wdk
+    - title: Administration informatique
+      links:
+      - text: Configurer et déployer Windows 10
+        url: https://docs.microsoft.com/windows/windows-10/
+      - text: Rechercher des informations sur les versions Windows 10
+        url: https://docs.microsoft.com/windows/release-information/
+      - text: Gérer Windows Server
+        url: https://docs.microsoft.com/windows-server/
+      - text: Bien démarrer avec Microsoft Store pour Entreprises
+        url: https://docs.microsoft.com/microsoft-store/
+  footer: '[Blogs](https://blogs.windows.com/) - [Twitter](https://twitter.com/windowsdocs) - [Stack Overflow](https://stackoverflow.com/questions/tagged/windows) - [Communauté des développeurs](https://social.msdn.microsoft.com/Forums/windowsdesktop)'
