@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: bc591f66505fa6e7019cb37fed636700d8dec709
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.openlocfilehash: 5905c494babfcbbe8dd93b85e30602ef490fcc81
+ms.sourcegitcommit: f0588a086cf2499968bf03b10c6bce5f518e90cb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393597"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71141944"
 ---
 # <a name="app-capability-declarations"></a>Déclarations des fonctionnalités d’application
 
@@ -31,7 +31,10 @@ Il existe plusieurs types de fonctionnalités.
 
 ## <a name="general-use-capabilities"></a>Fonctionnalités à usage général
 
-Les fonctionnalités à usage général s’appliquent aux scénarios d’application les plus courants.
+Les fonctionnalités d’utilisation générale sont spécifiées à l’aide d’éléments de **fonctionnalité** dans votre manifeste de package d’application. Ces fonctionnalités s’appliquent aux scénarios d’application les plus courants.
+
+> [!NOTE]
+> Tous les éléments de **fonctionnalité** doivent précéder les éléments [CustomCapability](#custom-capabilities) et [DeviceCapability](#device-capabilities) sous le nœud **Capabilities** du manifeste du package.
 
 | Scénario de fonctionnalité | Utilisation de la fonctionnalité |
 |---------------------|------------------|
@@ -59,10 +62,10 @@ Les fonctionnalités à usage général s’appliquent aux scénarios d’applic
 
 ## <a name="device-capabilities"></a>Fonctionnalités de l’appareil
 
-Les fonctionnalités d’appareil permettent à votre application d’accéder à des appareils et à des dispositifs internes. Les fonctionnalités d’appareil sont spécifiées avec l’élément **DeviceCapability** dans le manifeste du package de votre application. Cet élément peut exiger des éléments enfants supplémentaires et certaines fonctionnalités d’appareil doivent être ajoutées manuellement au manifeste du package. Pour plus d’informations, voir [Comment spécifier des fonctionnalités de périphérique dans un manifeste de package](https://docs.microsoft.com/uwp/schemas/appxpackage/how-to-specify-device-capabilities-in-a-package-manifest) et [**Référence de schéma DeviceCapability**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-devicecapability).
+Les fonctionnalités d’appareil permettent à votre application d’accéder à des appareils et à des dispositifs internes. Les fonctionnalités de l’appareil sont spécifiées à l’aide d’éléments **DeviceCapability** dans le manifeste de votre package d’application. Cet élément peut exiger des éléments enfants supplémentaires et certaines fonctionnalités d’appareil doivent être ajoutées manuellement au manifeste du package. Pour plus d’informations, voir [Comment spécifier des fonctionnalités de périphérique dans un manifeste de package](https://docs.microsoft.com/uwp/schemas/appxpackage/how-to-specify-device-capabilities-in-a-package-manifest) et [**Référence de schéma DeviceCapability**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-devicecapability).
 
 > [!NOTE]
-> Vous pouvez avoir plusieurs éléments **DeviceCapability** et **Capability** sous l’élément **Capabilities** , mais tous les éléments **DeviceCapability** doivent être placés après les éléments de **fonctionnalité** .
+> Vous pouvez avoir plusieurs éléments **DeviceCapability** sous l’élément **Capabilities** dans le manifeste du package. Tous les éléments **DeviceCapability** doivent être placés après tous les éléments **Capability** et [CustomCapability](#custom-capabilities) .
 
 | Scénario de fonctionnalité | Utilisation de la fonctionnalité |
 |---------------------|------------------|
@@ -107,6 +110,9 @@ Pour déclarer une fonctionnalité restreinte, modifiez le fichier source du man
 </Capabilities>
 </Package>
 ```
+
+> [!NOTE]
+> Tous les éléments de fonctionnalité restreinte doivent précéder les éléments [CustomCapability](#custom-capabilities) et [DeviceCapability](#device-capabilities) sous le nœud **Capabilities** du manifeste du package.
 
 ### <a name="restricted-capability-approval-process"></a>Processus d'approbation pour une fonctionnalité restreinte
 
@@ -243,6 +249,9 @@ Pour déclarer une fonctionnalité personnalisée, modifiez le fichier source du
 </Capabilities>
 </Package>
 ```
+
+> [!NOTE]
+> Tous les éléments **CustomCapability** doivent se trouver après tous les éléments de **fonctionnalité** et avant tous les éléments [DeviceCapability](#device-capabilities) sous le nœud **Capabilities** du manifeste du package.
 
 ## <a name="related-topics"></a>Rubriques connexes
 
