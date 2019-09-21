@@ -10,20 +10,18 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c5736e917d77415eeb6df53b3fd92f7ab584884
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 348d563322baf03aabc0e30fd9b39ee11673f271
+ms.sourcegitcommit: 61194375c0889b73ee2b978c444c4b90a576b3e4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63787443"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71039117"
 ---
 # <a name="rating-control"></a>Contrôle d’évaluation
 
 Le contrôle d’évaluation permet aux utilisateurs de visualiser et de définir des évaluations qui reflètent le degré de satisfaction vis-à-vis du contenu et des services. Les utilisateurs peuvent interagir avec le contrôle d’évaluation avec des mouvements tactiles, un stylet, une souris, un boîtier de commande ou un clavier. Les instructions de suivi montre comment utiliser les fonctionnalités du contrôle de l’évaluation pour fournir la flexibilité et la personnalisation.
 
 > **API importantes** : [Classe RatingControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.ratingcontrol)
-
-![Exemple de contrôle d’évaluation](images/rating_rs2_doc_ratings_intro.png)
 
 ## <a name="examples"></a>Exemples
 
@@ -40,6 +38,8 @@ Le contrôle d’évaluation permet aux utilisateurs de visualiser et de défini
 </td>
 </tr>
 </table>
+
+![Exemple de contrôle d’évaluation](images/rating_rs2_doc_ratings_intro.png)
 
 ### <a name="editable-rating-with-placeholder-value"></a>Évaluation modifiable avec valeur d’espace réservé
 

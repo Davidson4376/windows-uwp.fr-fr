@@ -11,12 +11,12 @@ dev-contact: ''
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 7431e9e41c008471fccdb955a64d44316855de0d
-ms.sourcegitcommit: 77df36d2a7391cbc588d44c47ac02d0701092264
+ms.openlocfilehash: c0d12b3b043546cd908fb474fa8ca9656d8dc56e
+ms.sourcegitcommit: bac5574a1f47a5b38c984a5482272c9e49a9c91e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69976226"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71100851"
 ---
 # <a name="navigation-view"></a>Affichage de navigation
 
@@ -532,9 +532,9 @@ private void NavView_ItemInvoked(muxc.NavigationView sender,
     }
 }
 
-<!-- NavView_SelectionChanged is not used in this example, but is shown for completeness.
-     You will typically handle either ItemInvoked or SelectionChanged to perform navigation,
-     but not both. -->
+// NavView_SelectionChanged is not used in this example, but is shown for completeness.
+// You will typically handle either ItemInvoked or SelectionChanged to perform navigation,
+// but not both.
 private void NavView_SelectionChanged(muxc.NavigationView sender,
                                       muxc.NavigationViewSelectionChangedEventArgs args)
 {
