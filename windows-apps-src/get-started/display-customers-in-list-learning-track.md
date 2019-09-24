@@ -6,12 +6,12 @@ ms.topic: article
 keywords: prise en main, uwp, windows 10, piste d’apprentissage, liaison de données, liste
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: c4d339a1eedb798f11d5567be6a48ec2269cf8ac
-ms.sourcegitcommit: 280193dfe5a106fc6b4c85df3ac40535547b855c
+ms.openlocfilehash: a63bcc73be0146a9f580ae3afe3684f85e51d00e
+ms.sourcegitcommit: 88431e67d282d9a2a4fe4afcb254310f90c7cd7e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67235159"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71127452"
 ---
 # <a name="display-customers-in-a-list"></a>Afficher des clients dans une liste
 
@@ -102,7 +102,7 @@ N’hésitez pas à consulter la documentation [ListView](../design/controls-and
 
 ## <a name="edit-your-customers-through-the-ui"></a>Modifier vos clients par le biais de l’interface utilisateur
 
-Vous avez affiché les clients dans une liste, mais la liaison de données B=binding vous permet d’en faire plus. Que se passe-t-il si vous pouvez modifier vos données directement à partir de l’interface utilisateur ? Pour ce faire, nous allons tout d’abord parler des trois modes de liaison de données :
+Vous avez affiché les clients dans une liste, mais la liaison de données vous permet d’en faire plus. Que se passe-t-il si vous pouvez modifier vos données directement à partir de l’interface utilisateur ? Pour ce faire, nous allons tout d’abord parler des trois modes de liaison de données :
 
 * *À usage unique* : Cette liaison de données est activée une seule fois et ne réagit pas aux modifications apportées.
 * *À sens unique* : Cette liaison de données met à jour l’interface utilisateur avec les modifications apportées à la source de données.

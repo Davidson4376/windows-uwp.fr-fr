@@ -6,12 +6,12 @@ ms.date: 04/19/2019
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: ff88332e0b44749bcd86e06adafeb596ca8678b3
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 1c535e4ea4ad3c93acb048de2050d5ae7a9c2c2b
+ms.sourcegitcommit: bf95c8b29145a224957a940512394e6aa97cb90f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63820636"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71061939"
 ---
 # <a name="control-size-and-density"></a>Taille et densité du contrôle
 
@@ -20,6 +20,22 @@ Utilisez une combinaison de taille et de densité du contrôle pour optimiser vo
 Par défaut, les applications UWP sont rendues avec une mise en page à faible densité (ou `Standard`). Toutefois, depuis WinUI 2.1, une option de mise en page à haute densité (ou `Compact`), pour une interface utilisateur riche en informations et des scénarios similaires spécialisés, est également prise en charge. Il est possible de la spécifier via une ressource de style de base (voir les exemples ci-dessous).
 
 Alors que la fonctionnalité et le comportement n’ont pas changé et restent cohérents entre les deux options de taille et de densité, la taille de police de corps par défaut a été mise à jour sur 14px pour tous les contrôles afin de prendre en charge ces deux options de densité. Cette taille de police est compatible entre les divers appareils et régions, et garantit que votre application demeure équilibrée et agréable pour les utilisateurs.
+
+## <a name="examples"></a>Exemples
+
+<table>
+<th align="left">Galerie de contrôles XAML<th>
+<tr>
+<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td>
+    <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/Compact Sizing">ouvrir l’application et voir la taille Compact en action</a>.</p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
 
 ## <a name="fluent-standard-sizing"></a>Taille Fluent Standard
 
@@ -77,6 +93,10 @@ Les exemples suivants montrent comment le style `Compact` peut être appliqué p
     </Grid.Resources>
 </Grid>
 ```
+
+## <a name="get-the-sample-code"></a>Obtenir l’exemple de code
+
+- [Exemple de Galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) : tous les contrôles XAML dans un format interactif.
 
 ## <a name="related-articles"></a>Articles connexes
 

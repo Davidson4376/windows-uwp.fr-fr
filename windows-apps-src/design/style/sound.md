@@ -12,18 +12,34 @@ design-contact: mattben
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: d0955e7a018472141b137935c5bc87a9f75a5c6d
-ms.sourcegitcommit: 0c5f81100986cc4b74b54cd1ca2debd283c5b7f6
+ms.openlocfilehash: ce81088495716e43a32dab94d1d47d399dd6a309
+ms.sourcegitcommit: bf95c8b29145a224957a940512394e6aa97cb90f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68375271"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71061917"
 ---
 # <a name="sound"></a>Son
 
 ![Image Hero](images/header-sound.svg)
 
 Il existe de nombreuses manières d’utiliser le son pour améliorer votre application. Vous pouvez utiliser les sons pour compléter d’autres éléments de l’interface utilisateur, afin de permettre aux utilisateurs de reconnaître les événements par un son. Le son peut être un élément d’interface utilisateur efficace pour les personnes souffrant de handicaps visuels. Vous pouvez utiliser le son pour créer une atmosphère qui immerge totalement l’utilisateur ; par exemple, vous pouvez lire une bande son fantaisiste en arrière-plan d’un jeu de puzzle ou utiliser des effets sonores menaçants pour un jeu d’horreur/de survie.
+
+## <a name="examples"></a>Exemples
+
+<table>
+<th align="left">Galerie de contrôles XAML<th>
+<tr>
+<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td>
+    <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/Sound">ouvrez l’application et voir l’effet Son en action</a>.</p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
 
 ## <a name="sound-global-api"></a>API de son globale
 
@@ -150,6 +166,10 @@ ElementSoundPlayer.Play(ElementSoundKind.Focus);
 En complément de l’appel de l’élément **ElementSound.Focus**, le système audio émet successivement par défaut 4 sons différents lors de chaque déclencheur de navigation. Cela signifie que le système n’émettra pas deux fois de suite les deux mêmes sons de focus.
 
 Cette fonctionnalité de lecture successive est destinée à empêcher que les sons de focus ne deviennent monotones ou gênants pour l’utilisateur ; les sons de focus sont ceux qui seront émis le plus souvent, et doivent donc se révéler les plus subtils.
+
+## <a name="get-the-sample-code"></a>Obtenir l’exemple de code
+
+- [Exemple de Galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) : tous les contrôles XAML dans un format interactif.
 
 ## <a name="related-articles"></a>Articles connexes
 

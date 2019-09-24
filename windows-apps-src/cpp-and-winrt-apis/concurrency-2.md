@@ -5,12 +5,12 @@ ms.date: 07/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, concurrence, asynchrone, async
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a275d5c91e03f9eb5b6348cda673d93e7132d7a
-ms.sourcegitcommit: 7ece8a9a9fa75e2e92aac4ac31602237e8b7fde5
+ms.openlocfilehash: 1170b8e1291afd166f210feb291b644d1c7ed546
+ms.sourcegitcommit: e5a154c7b6c1b236943738febdb17a4815853de5
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68485144"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71164825"
 ---
 # <a name="more-advanced-concurrency-and-asynchrony-with-cwinrt"></a>Concurrence et opérations asynchrones plus avancées avec C++/WinRT
 
@@ -219,7 +219,7 @@ co_await static_cast<no_switch>(async);
 
 Ainsi, au lieu de rechercher les trois fonctions **await_xxx** qui correspondent à **IAsyncXxx**, le compilateur C++ recherche des fonctions qui correspondent à **no_switch**.
 
-## <a name="a-deeper-dive-into-winrtresumeforeground"></a>Présentation approfondie de **WinRT::resume_foreground**
+## <a name="a-deeper-dive-into-winrtresume_foreground"></a>Présentation approfondie de **WinRT::resume_foreground**
 
 À partir [de C++/WinRT 2.0](/windows/uwp/cpp-and-winrt-apis/newsnews#news-and-changes-in-cwinrt-20), la fonction [**winrt::resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground) s’interrompt même si elle est appelée depuis le thread du répartiteur (dans les versions précédentes, elle pouvait occasionner des interblocages dans certains scénarios car elle n'était suspendue que si elle ne se trouvait pas déjà sur le thread du répartiteur).
 
@@ -745,6 +745,9 @@ int main()
     }
 }
 ```
+
+> [!NOTE]
+> **wait_for** utilise **std::chrono::duration** au niveau de l’interface, mais est limitée à une plage inférieure à celle fournie par **std::chrono::duration** (environ 49,7 jours).
 
 Dans cet exemple, la fonction **wait_for** attend environ cinq secondes, puis vérifie si l'opération est terminée. Une comparaison positive vous indique que l'objet asynchrone s'est correctement terminé et que vous en avez fini. Si vous attendez un résultat, vous pouvez simplement le suivre à l'aide d'un appel de la fonction **get** pour récupérer ce résultat.
 

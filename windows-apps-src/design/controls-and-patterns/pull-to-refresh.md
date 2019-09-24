@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 8fdde696a0bc1dc7706f89ede5d525194e5d2830
-ms.sourcegitcommit: f0e539359b9766db0339ddbae3f7ccf0069011e8
+ms.openlocfilehash: 2f276c1a4abb57c5505a39afc538cc6f7319a23d
+ms.sourcegitcommit: bf95c8b29145a224957a940512394e6aa97cb90f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67885661"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71061944"
 ---
 # <a name="pull-to-refresh"></a>Tirer pour actualiser
 
@@ -32,6 +32,22 @@ La commande Tirer pour actualiser permet à l’utilisateur de dérouler une lis
 Utilisez la commande Tirer pour actualiser lorsque vous avez une liste ou une grille de données que l’utilisateur est susceptible de vouloir actualiser régulièrement et si votre application est susceptible de s’exécuter sur des appareils à écran tactile.
 
 Vous pouvez également utiliser [RefreshVisualizer](/uwp/api/windows.ui.xaml.controls.refreshvisualizer) pour créer une expérience cohérente d’actualisation appelée d’autres manières, par exemple par un bouton Actualiser.
+
+## <a name="examples"></a>Exemples
+
+<table>
+<th align="left">Galerie de contrôles XAML<th>
+<tr>
+<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td>
+    <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/PullToRefresh">ouvrir l’application et voir l’objet PullToRefresh en action</a>.</p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
 
 ## <a name="refresh-controls"></a>Contrôles d’actualisation
 
@@ -332,6 +348,10 @@ public class ListItemData
     public string Body { get; set; }
 }
 ```
+
+## <a name="get-the-sample-code"></a>Obtenir l’exemple de code
+
+- [Exemple de Galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) : tous les contrôles XAML dans un format interactif.
 
 ## <a name="related-articles"></a>Articles connexes
 

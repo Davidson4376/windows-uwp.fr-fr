@@ -12,32 +12,47 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a574ff858f8eab3fa1984ecd883a786fa0e0f19c
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 8f45edc213d8abdfc43e834d023993b89249844d
+ms.sourcegitcommit: bf95c8b29145a224957a940512394e6aa97cb90f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66364721"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71061957"
 ---
 # <a name="lists"></a>Listes
 
 Les listes affichent et activent l’interaction avec du contenu basé sur des collections. Les quatre modèles de liste traités dans cet article sont les suivants :
 
--   Affichages Liste, principalement utilisés pour afficher des collections de contenus riches en texte
--   Affichages Grille, principalement utilisés pour afficher des collections de contenus riches en images
--   Listes déroulantes, permettant aux utilisateurs de choisir un élément dans une liste développée
--   Zones de liste, permettant aux utilisateurs de choisir un ou plusieurs éléments dans une zone pouvant défiler
+- Affichages Liste, principalement utilisés pour afficher des collections de contenus riches en texte
+- Affichages Grille, principalement utilisés pour afficher des collections de contenus riches en images
+- Listes déroulantes, permettant aux utilisateurs de choisir un élément dans une liste développée
+- Zones de liste, permettant aux utilisateurs de choisir un ou plusieurs éléments dans une zone pouvant défiler
 
 Des recommandations en matière de conception, des fonctionnalités et des exemples sont fournis pour chaque modèle de liste.
 
 > **API importantes** : [classe ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), [classe GridView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView), [classe ComboBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
-
 
 > <div id="main">
 > <strong>Windows 10 Fall Creators Update - Changement de comportement</strong>
 > </div>
 > Par défaut, au lieu d’effectuer la sélection, un stylet actif fait défiler ou parcourt une liste dans les applications UWP (comme l’interaction tactile, le pavé tactile et le stylet passif).
 > Si votre application repose sur le comportement précédent, vous pouvez remplacer le défilement du stylet et rétablir le comportement précédent. Pour plus d’informations, consultez la rubrique de référence de l’API pour la <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer">classe ScrollViewer</a>.
+
+## <a name="examples"></a>Exemples
+
+<table>
+<th align="left">Galerie de contrôles XAML<th>
+<tr>
+<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td>
+    <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, observez les contrôles <a href="xamlcontrolsgallery:/item/ListView">ListView</a>, <a href="xamlcontrolsgallery:/item/GridView">GridView</a>, <a href="xamlcontrolsgallery:/item/ComboBox">ComboBox</a> et <a href="xamlcontrolsgallery:/item/ListBox">ListBox</a> en action.</p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
 
 ## <a name="list-views"></a>Affichages de liste
 
@@ -47,9 +62,9 @@ Les affichages Liste permettent de classer des éléments et d’affecter des en
 
 Utilisez un affichage Liste pour :
 
--   Afficher une collection de contenus principalement composée de texte.
--   Naviguer dans une collection de contenu unique ou catégorisée.
--   Créer le volet principal dans le [modèle Maître/Détails](master-details.md). Un modèle Maître/Détails est souvent utilisé dans les applications de messagerie, dans lesquelles un volet (maître) contient une liste d’éléments sélectionnables, tandis que l’autre (détails) affiche une vue détaillée de l’élément sélectionné.
+- Afficher une collection de contenus principalement composée de texte.
+- Naviguer dans une collection de contenu unique ou catégorisée.
+- Créer le volet principal dans le [modèle Maître/Détails](master-details.md). Un modèle Maître/Détails est souvent utilisé dans les applications de messagerie, dans lesquelles un volet (maître) contient une liste d’éléments sélectionnables, tandis que l’autre (détails) affiche une vue détaillée de l’élément sélectionné.
 
 ### <a name="examples"></a>Exemples
 
@@ -59,8 +74,8 @@ Voici un affichage Liste simple montrant des données regroupées sur un télép
 
 ### <a name="recommendations"></a>Recommandations
 
--   Les éléments d’une liste doivent avoir le même comportement.
--   Si votre liste est répartie en groupes, vous pouvez utiliser un [zoom sémantique](semantic-zoom.md) pour permettre aux utilisateurs de naviguer plus facilement dans un contenu regroupé.
+- Les éléments d’une liste doivent avoir le même comportement.
+- Si votre liste est répartie en groupes, vous pouvez utiliser un [zoom sémantique](semantic-zoom.md) pour permettre aux utilisateurs de naviguer plus facilement dans un contenu regroupé.
 
 ### <a name="list-view-articles"></a>Articles sur l’affichage Liste
 <table>
@@ -110,9 +125,9 @@ Les affichages Grille conviennent pour l’organisation et l’exploration des c
 
 Utilisez un affichage Liste pour :
 
--   Afficher une collection de contenus composée essentiellement d’images.
--   Afficher des bibliothèques de contenu.
--   Mettre en forme les deux affichages de contenu associés à un [zoom sémantique](semantic-zoom.md).
+- Afficher une collection de contenus composée essentiellement d’images.
+- Afficher des bibliothèques de contenu.
+- Mettre en forme les deux affichages de contenu associés à un [zoom sémantique](semantic-zoom.md).
 
 ### <a name="examples"></a>Exemples
 
@@ -126,8 +141,8 @@ Un affichage Grille est une solution idéale pour une bibliothèque de contenu, 
 
 ### <a name="recommendations"></a>Recommandations
 
--   Les éléments d’une liste doivent avoir le même comportement.
--   Si votre liste est répartie en groupes, vous pouvez utiliser un [zoom sémantique](semantic-zoom.md) pour permettre aux utilisateurs de naviguer plus facilement dans un contenu regroupé.
+- Les éléments d’une liste doivent avoir le même comportement.
+- Si votre liste est répartie en groupes, vous pouvez utiliser un [zoom sémantique](semantic-zoom.md) pour permettre aux utilisateurs de naviguer plus facilement dans un contenu regroupé.
 
 ### <a name="grid-view-articles"></a>Articles sur l’affichage Grille
 <table>
@@ -167,10 +182,10 @@ Les listes déroulantes, également appelées zones de liste déroulante, démar
 
 ### <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
--   Utilisez une liste déroulante pour permettre aux utilisateurs de sélectionner une valeur unique parmi un ensemble d’éléments qui peuvent être représentés correctement à l’aide de simples lignes de texte.
--   Utilisez un affichage Liste ou Grille au lieu d’une zone de liste déroulante pour afficher des éléments contenant plusieurs lignes de texte ou images.
--   En présence de moins de cinq éléments, utilisez des [cases d’option](radio-button.md) (si un seul élément peut être sélectionné) ou des [cases à cocher](checkbox.md) (si plusieurs éléments peuvent être sélectionnés).
--   Utilisez cette zone de liste déroulante pour les éléments de sélection d’importance secondaire au sein de votre application. Si l’option par défaut est recommandée pour la plupart des utilisateurs dans la majorité des situations, l’affichage de tous les éléments à l’aide d’un affichage Liste risque d’attirer l’attention sur les options plus qu’il n’est nécessaire. Pour économiser de l’espace et éviter de distraire l’utilisateur, utilisez une zone de liste déroulante.
+- Utilisez une liste déroulante pour permettre aux utilisateurs de sélectionner une valeur unique parmi un ensemble d’éléments qui peuvent être représentés correctement à l’aide de simples lignes de texte.
+- Utilisez un affichage Liste ou Grille au lieu d’une zone de liste déroulante pour afficher des éléments contenant plusieurs lignes de texte ou images.
+- En présence de moins de cinq éléments, utilisez des [cases d’option](radio-button.md) (si un seul élément peut être sélectionné) ou des [cases à cocher](checkbox.md) (si plusieurs éléments peuvent être sélectionnés).
+- Utilisez cette zone de liste déroulante pour les éléments de sélection d’importance secondaire au sein de votre application. Si l’option par défaut est recommandée pour la plupart des utilisateurs dans la majorité des situations, l’affichage de tous les éléments à l’aide d’un affichage Liste risque d’attirer l’attention sur les options plus qu’il n’est nécessaire. Pour économiser de l’espace et éviter de distraire l’utilisateur, utilisez une zone de liste déroulante.
 
 ### <a name="examples"></a>Exemples
 
@@ -188,9 +203,9 @@ Si la collection figurant dans une zone de liste déroulante est suffisamment lo
 
 ### <a name="recommendations"></a>Recommandations
 
--   Limitez le contenu texte des éléments de zone de liste déroulante à une seule ligne.
--   Triez les éléments d’une zone de liste déroulante dans l’ordre le plus logique. Regroupez les options associées et placez les options les plus courantes en haut. Triez les noms par ordre alphabétique, les nombres par ordre numérique et les dates par ordre chronologique.
--   Pour créer une liste déroulante avec mise à jour dynamique pendant que l’utilisateur utilise les touches de direction (comme une liste déroulante de sélection de police), définissez SelectionChangedTrigger sur « Toujours ».  
+- Limitez le contenu texte des éléments de zone de liste déroulante à une seule ligne.
+- Triez les éléments d’une zone de liste déroulante dans l’ordre le plus logique. Regroupez les options associées et placez les options les plus courantes en haut. Triez les noms par ordre alphabétique, les nombres par ordre numérique et les dates par ordre chronologique.
+- Pour créer une liste déroulante avec mise à jour dynamique pendant que l’utilisateur utilise les touches de direction (comme une liste déroulante de sélection de police), définissez SelectionChangedTrigger sur « Toujours ».  
 
 ### <a name="text-search"></a>Recherche en texte
 
@@ -203,25 +218,25 @@ Une zone de liste permet à l’utilisateur de choisir un ou plusieurs élément
 
 ### <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
--   Une zone de liste peut être utile quand des éléments de la liste sont suffisamment importants pour être mis en avant, et quand l’écran offre suffisamment d’espace pour afficher la liste complète.
--   Une zone de liste doit attirer l’attention de l’utilisateur sur toutes les possibilités d’un choix important. En revanche, une liste déroulante attire initialement l’attention de l’utilisateur sur l’élément sélectionné.
--   Évitez d’utiliser une zone de liste dans les cas suivants :
-    -   Il existe un très petit nombre d’éléments pour la liste. Si une zone de liste à sélection unique comporte toujours les deux mêmes options, mieux vaut utiliser des [cases d’option](radio-button.md). Pensez également à utiliser des cases d’option quand 3 ou 4 éléments statiques figurent dans la liste.
-    -   La zone de liste est à sélection unique, et propose toujours les deux mêmes options, l’une étant l’inverse de l’autre (par exemple, « activé » et « désactivé »). Utilisez une case à cocher ou un bouton bascule.
-    -   Le nombre d’éléments est très élevé. Pour les longues listes, mieux vaut utiliser un affichage Grille ou Liste. Pour les très longues listes de données groupées, utilisez de préférence un zoom sémantique.
-    -   Les éléments sont des valeurs numériques contiguës. Si tel est le cas, pensez à utiliser un [curseur](slider.md).
-    -   Les éléments de sélection ont une importance secondaire dans le flux de votre application, ou l’option par défaut est recommandée pour la plupart des utilisateurs dans la majorité des situations. Dans ce cas, utilisez plutôt une liste déroulante.
+- Une zone de liste peut être utile quand des éléments de la liste sont suffisamment importants pour être mis en avant, et quand l’écran offre suffisamment d’espace pour afficher la liste complète.
+- Une zone de liste doit attirer l’attention de l’utilisateur sur toutes les possibilités d’un choix important. En revanche, une liste déroulante attire initialement l’attention de l’utilisateur sur l’élément sélectionné.
+- Évitez d’utiliser une zone de liste dans les cas suivants :
+    - Il existe un très petit nombre d’éléments pour la liste. Si une zone de liste à sélection unique comporte toujours les deux mêmes options, mieux vaut utiliser des [cases d’option](radio-button.md). Pensez également à utiliser des cases d’option quand 3 ou 4 éléments statiques figurent dans la liste.
+    - La zone de liste est à sélection unique, et propose toujours les deux mêmes options, l’une étant l’inverse de l’autre (par exemple, « activé » et « désactivé »). Utilisez une case à cocher ou un bouton bascule.
+    - Le nombre d’éléments est très élevé. Pour les longues listes, mieux vaut utiliser un affichage Grille ou Liste. Pour les très longues listes de données groupées, utilisez de préférence un zoom sémantique.
+    - Les éléments sont des valeurs numériques contiguës. Si tel est le cas, pensez à utiliser un [curseur](slider.md).
+    - Les éléments de sélection ont une importance secondaire dans le flux de votre application, ou l’option par défaut est recommandée pour la plupart des utilisateurs dans la majorité des situations. Dans ce cas, utilisez plutôt une liste déroulante.
 
 ### <a name="recommendations"></a>Recommandations
 
--   La plage idéale d’éléments dans une zone de liste est de 3 à 9.
--   Une zone de liste est efficace quand ses éléments peuvent varier de manière dynamique.
--   Dans la mesure du possible, la taille de la zone de liste doit être suffisante pour que vous n’ayez pas à faire défiler la liste des éléments.
--   Vérifiez qu’il n’y a aucune ambiguïté quand à la fonction de la zone de liste et aux éléments sélectionnés actuellement.
--   Réservez les effets visuels et les animations pour le retour tactile et pour l’état sélectionné des éléments.
--   Limitez le contenu textuel de l’élément de zone de liste à une seule ligne. Si les éléments sont visuels, vous pouvez personnaliser la taille. Si un élément contient plusieurs lignes de texte ou images, utilisez plutôt un affichage de Grille ou Liste.
--   Utilisez la police par défaut à moins que vos instructions de personnalisation imposent d’en utiliser une autre.
--   N’utilisez pas une zone de liste pour exécuter des commandes ou pour afficher ou masquer de manière dynamique d’autres contrôles.
+- La plage idéale d’éléments dans une zone de liste est de 3 à 9.
+- Une zone de liste est efficace quand ses éléments peuvent varier de manière dynamique.
+- Dans la mesure du possible, la taille de la zone de liste doit être suffisante pour que vous n’ayez pas à faire défiler la liste des éléments.
+- Vérifiez qu’il n’y a aucune ambiguïté quand à la fonction de la zone de liste et aux éléments sélectionnés actuellement.
+- Réservez les effets visuels et les animations pour le retour tactile et pour l’état sélectionné des éléments.
+- Limitez le contenu textuel de l’élément de zone de liste à une seule ligne. Si les éléments sont visuels, vous pouvez personnaliser la taille. Si un élément contient plusieurs lignes de texte ou images, utilisez plutôt un affichage de Grille ou Liste.
+- Utilisez la police par défaut à moins que vos instructions de personnalisation imposent d’en utiliser une autre.
+- N’utilisez pas une zone de liste pour exécuter des commandes ou pour afficher ou masquer de manière dynamique d’autres contrôles.
 
 ## <a name="selection-mode"></a>Mode de sélection
 
@@ -229,9 +244,9 @@ Le mode de sélection permet aux utilisateurs de sélectionner et d’exécuter 
 
 Il existe trois modes de sélection :
 
--   Unique : l’utilisateur ne peut sélectionner qu’un seul élément à la fois.
--   Multiple : l’utilisateur peut sélectionner plusieurs éléments sans utiliser de modificateur.
--   Étendu : l’utilisateur peut sélectionner plusieurs éléments avec un modificateur, par exemple, en maintenant la touche MAJ enfoncée.
+- Unique : l’utilisateur ne peut sélectionner qu’un seul élément à la fois.
+- Multiple : l’utilisateur peut sélectionner plusieurs éléments sans utiliser de modificateur.
+- Étendu : l’utilisateur peut sélectionner plusieurs éléments avec un modificateur, par exemple, en maintenant la touche MAJ enfoncée.
 
 L’appui sur un emplacement quelconque d’un élément entraîne la sélection de celui-ci. L’appui sur une action de la barre de commandes affecte tous les éléments sélectionnés. Si aucun élément n’est sélectionné, toutes les actions de la barre de commandes doivent être inactives, à l’exception de l’action Sélectionner tout.
 
@@ -259,6 +274,9 @@ Pour des recommandations relatives à la barre de commandes, voir [Recommandatio
 </tr>
 </table>
 
+## <a name="get-the-sample-code"></a>Obtenir l’exemple de code
+
+- [Exemple de Galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) : tous les contrôles XAML dans un format interactif.
 
 ## <a name="related-articles"></a>Articles connexes
 

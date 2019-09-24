@@ -8,15 +8,14 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: cad33c0f1b72bbd379be9b8f13ed648231f1a1ca
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 799913688f04421cae6b47f0d4b7db2fb1074ed4
+ms.sourcegitcommit: bf95c8b29145a224957a940512394e6aa97cb90f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319361"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71061926"
 ---
 # <a name="web-view"></a>Affichage web
- 
 
 Un contrôle d’affichage web incorpore dans votre application une vue qui affiche le contenu web à l’aide du moteur de rendu Microsoft Edge. Des liens hypertexte peuvent également apparaître et fonctionner dans un contrôle d’affichage web.
 
@@ -25,6 +24,22 @@ Un contrôle d’affichage web incorpore dans votre application une vue qui affi
 ## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
 Utilisez un contrôle d’affichage web pour afficher du contenu HTML à mise en forme enrichie à partir d’un serveur web distant, du code généré de manière dynamique ou des fichiers de contenu dans votre package d’application. Le contenu enrichi peut aussi contenir du code de script et communiquer entre le script et le code de votre application.
+
+## <a name="examples"></a>Exemples
+
+<table>
+<th align="left">Galerie de contrôles XAML<th>
+<tr>
+<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td>
+    <p>Si vous disposez de l’application <strong style="font-weight: semi-bold">Galerie de contrôles XAML</strong>, cliquez ici pour <a href="xamlcontrolsgallery:/item/WebView">ouvrir l’application et voir l’objet WebView en action</a>.</p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Obtenir l’application Galerie de contrôles XAML (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Obtenir le code source (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
 
 ## <a name="create-a-web-view"></a>Créer un affichage web
 
@@ -319,15 +334,10 @@ Un affichage web qui héberge le contenu en dehors du thread d’interface utili
 -   Les champs d’entrée doivent avoir une taille appropriée. Il se peut que les utilisateurs ne réalisent pas qu’ils peuvent zoomer pour entrer du texte.
 -   Si un affichage web n’a pas la même apparence que le reste de votre application, utilisez d’autres contrôles ou adoptez une autre approche pour accomplir les tâches en question. Si l’apparence de votre affichage web correspond au reste de votre application, l’expérience sera beaucoup plus fluide et transparente aux yeux des utilisateurs.
 
+## <a name="get-the-sample-code"></a>Obtenir l’exemple de code
 
+- [Exemple de Galerie de contrôles XAML](https://github.com/Microsoft/Xaml-Controls-Gallery) : tous les contrôles XAML dans un format interactif.
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Classe WebView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebView)
- 
-
- 
-
-
-
-
+- [Classe WebView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebView)
