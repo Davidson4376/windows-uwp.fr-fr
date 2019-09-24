@@ -6,15 +6,15 @@ ms.date: 03/23/2018
 ms.topic: article
 keywords: bien démarrer, windows 10, uwp, xaml, c#
 ms.localizationpriority: medium
-ms.openlocfilehash: c3f34d6ff8b23d23589d6899984f53fd6be34aca
-ms.sourcegitcommit: b9e2cd5232ad98f4ef367881b92000a3ae610844
+ms.openlocfilehash: 106e85fc0bd74740d99d5de6cb34c8b5a6e75e0f
+ms.sourcegitcommit: 7791596c25baf9d222729e057ecdf81b45a59f0c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67131930"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71205909"
 ---
-# <a name="get-started-with-windows-10-apps"></a>Bien démarrer avec les applications Windows 10 
- 
+# <a name="get-started-with-windows-10-apps"></a>Bien démarrer avec les applications Windows 10
+
 <p>Générez des applications qui fonctionnent sur tous les appareils Windows 10, ou améliorez vos applications existantes avec des fonctionnalités nouvelles et mises à jour.</p>  
 <ul class="cardsK panelContent">
     <li>
@@ -222,8 +222,7 @@ ms.locfileid: "67131930"
                 <div class="card">
                     <div class="cardText">
                         <h3>Vous débutez dans le développement ?</h3>
-                        <p><a href="//docs.microsoft.com/learn">Microsoft Learn</a></p>
-                        <p><a href="//www.linkedin.com/learning/learning-universal-windows-app-development/welcome">LinkedIn Learning</a></p>
+                        <p><a href="//docs.microsoft.com/en-us/learn/browse/?products=windows&resource_type=module">Windows sur Microsoft Learn</a></p>
                         </div>
                     </div>
                 </div>
@@ -235,7 +234,7 @@ ms.locfileid: "67131930"
                 <div class="card">
                     <div class="cardText">
                         <h3>Explorer les documents connexes</h3>
-                        <p><a href="//docs.microsoft.com/dotnet/csharp/index">Guide C#</a></p>
+                        <p><a href="//docs.microsoft.com/dotnet/csharp/">Guide C#</a></p>
                         <p><a href="//docs.microsoft.com/visualstudio/ide/">Visual Studio</a></p>
                     </div>
                 </div>
