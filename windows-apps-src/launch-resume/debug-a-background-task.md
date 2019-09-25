@@ -4,14 +4,14 @@ description: Découvrez comment déboguer une tâche en arrière-plan, notamment
 ms.assetid: 24E5AC88-1FD3-46ED-9811-C7E102E01E9C
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp, les tâches en arrière-plan
+keywords: Windows 10, UWP, tâche en arrière-plan
 ms.localizationpriority: medium
-ms.openlocfilehash: 11ebd180ebc3bc08b418f3b22ebed190bf73c18d
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: ad133a9b1eb22695e6ce5d8b3edba9ad3a138b68
+ms.sourcegitcommit: f1261aa6f7eeb62bf770a08b58ec4357bdc20c7e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66366204"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71224762"
 ---
 # <a name="debug-a-background-task"></a>Déboguer une tâche en arrière-plan
 
@@ -42,10 +42,13 @@ Les tâches en arrière-plan peuvent être déclenchées manuellement par le bia
 
 2.  Exécutez votre application dans le débogueur, puis déclenchez la tâche en arrière-plan à l’aide de la barre d’outils **Événements de cycle de vie**. Ce menu déroulant affiche le nom des tâches en arrière-plan qu’il est possible d’activer à l’aide de Visual Studio.
 
-    Pour que cette opération fonctionne, la tâche en arrière-plan, doit déjà être inscrite et doit toujours attendre le déclencheur. Par exemple, si une tâche en arrière-plan a été inscrite avec un TimeTrigger à déclenchement unique qui a déjà été déclenché, le lancement de la tâche via Visual Studio n’aura aucun effet.
+> [!NOTE]
+> Les options de la barre d’outils événements de cycle de vie ne sont pas affichées par défaut dans Visual Studio. Pour afficher ces options, cliquez avec le bouton droit sur la barre d’outils actuelle dans Visual Studio et assurez-vous que l’option **emplacement de débogage** est activée.
+
+    For this to work, the background task must already be registered and it must still be waiting for the trigger. For example, if a background task was registered with a one-shot TimeTrigger and that trigger has already fired, launching the task through Visual Studio will have no effect.
 
 > [!Note]
-> Impossible d’activer les tâches en arrière-plan en utilisant les déclencheurs suivants de cette manière : [**Déclencheur d’application**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.applicationtrigger), [ **MediaProcessing déclencheur**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.mediaprocessingtrigger), [ **ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger), [ **PushNotificationTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger)et les tâches en arrière-plan à l’aide un [ **SystemTrigger** ](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTrigger) avec la [  **SmsReceived** ](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType) déclencher type.  
+> Les tâches en arrière-plan utilisant les déclencheurs suivants ne peuvent pas être activées de cette manière : [**Déclencheur d’application**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.applicationtrigger), [**déclencheur MediaProcessing**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.mediaprocessingtrigger), [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger), [**PushNotificationTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger)et tâches en arrière-plan à l’aide d’un [**événement systemtrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTrigger) avec le type de déclencheur [**SmsReceived**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType) .  
 > Les déclencheurs **ApplicationTrigger** et **MediaProcessingTrigger** peuvent être déclarés manuellement dans le code avec `trigger.RequestAsync()`.
 
 ![Débogage de tâches en arrière-plan](images/debugging-activation.png)
@@ -78,8 +81,8 @@ L’activation de la tâche en arrière-plan dépend de trois éléments :
     Si vous suivez cette procédure et que le journal des événements indique un déclencheur ou point d’entrée incorrect pour la tâche en arrière-plan, votre application n’inscrit pas correctement la tâche en arrière-plan. Pour obtenir de l’aide sur cette tâche, voir [Inscrire une tâche en arrière-plan](register-a-background-task.md).
 
     1.  Ouvrez l’Observateur d’événements en accédant à l’écran de démarrage et en recherchant eventvwr.exe.
-    2.  Accédez à **journaux des applications et Services**  - &gt; **Microsoft**  - &gt; **Windows**  - &gt; **BackgroundTaskInfrastructure** dans l’Observateur d’événements.
-    3.  Dans le volet actions, sélectionnez **vue**  - &gt; **afficher les journaux d’analyse et de débogage** pour activer la journalisation des Diagnostics.
+    2.   - Accédez à **journaux des applications et des services** &gt; **Microsoft**  - **Windows** BackgroundTaskInfrastructure dans l’observateur d’événements. - &gt; &gt;
+    3.  Dans le volet Actions, sélectionnez **Afficher**  - &gt; **afficher les journaux d’analyse et de débogage** pour activer la journalisation des Diagnostics.
     4.  Sélectionnez le **journal de diagnostic**, puis cliquez sur **Activer le journal**.
     5.  Essayez à présent d’utiliser votre application pour inscrire et activer la tâche en arrière-plan une nouvelle fois.
     6.  Consultez les journaux de diagnostic à la recherche d’informations détaillées sur l’erreur. Cela comprend le point d’entrée inscrit pour la tâche en arrière-plan.
@@ -101,7 +104,7 @@ Si vous déployez une application utilisant des tâches en arrière-plan à l’
 -   Si la tâche en arrière-plan requiert un accès à l’écran de verrouillage, veillez à placer l’application sur l’écran de verrouillage avant d’essayer de déboguer la tâche en arrière-plan. Pour plus d’informations sur la spécification des options de manifeste pour les applications compatibles avec l’écran de verrouillage, consultez [Déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md).
 -   Les paramètres d’inscription de la tâche en arrière-plan sont validés au moment de l’inscription. Si l’un des paramètres d’inscription n’est pas valide, une erreur est renvoyée. Vérifiez que votre application gère de manière fluide les scénarios dans lesquels l’inscription de la tâche en arrière-plan échoue. En revanche, si votre application dépend d’un objet d’inscription valide après la tentative d’inscription d’une tâche, elle peut se bloquer.
 
-Pour plus d’informations sur l’utilisation de Visual Studio pour déboguer une tâche en arrière-plan, consultez [comment déclencher suspendre, reprendre, événements et d’arrière-plan dans les applications UWP](https://docs.microsoft.com/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio?view=vs-2015).
+Pour plus d’informations sur l’utilisation de VS pour déboguer une tâche en arrière-plan [, consultez Comment déclencher des événements de suspension, de reprise et d’arrière-plan dans les applications UWP](https://docs.microsoft.com/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio?view=vs-2015).
 
 ## <a name="related-topics"></a>Rubriques connexes
 
@@ -110,7 +113,7 @@ Pour plus d’informations sur l’utilisation de Visual Studio pour déboguer u
 * [Inscrire une tâche en arrière-plan](register-a-background-task.md)
 * [Déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md)
 * [Recommandations relatives aux tâches en arrière-plan](guidelines-for-background-tasks.md)
-* [Comment déclencher suspendre, reprendre, événements et d’arrière-plan dans les applications UWP](https://docs.microsoft.com/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio?view=vs-2015)
+* [Comment déclencher des événements de suspension, de reprise et d’arrière-plan dans des applications UWP](https://docs.microsoft.com/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio?view=vs-2015)
 * [Analyse de la qualité du code des applications UWP avec l’analyse du code Visual Studio](https://docs.microsoft.com/visualstudio/test/analyze-the-code-quality-of-store-apps-using-visual-studio-static-code-analysis?view=vs-2015)
 
  

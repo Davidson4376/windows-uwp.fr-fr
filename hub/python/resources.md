@@ -8,18 +8,18 @@ ms.topic: article
 keywords: Python, Microsoft, Windows 10, didacticiels, cours en ligne, Blogs, événements
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 28a77b9e936acddb6158d865aef933f27444c5c9
-ms.sourcegitcommit: a28a32fff9d15ecf4a9d172cd0a04f4d993f9d76
+ms.openlocfilehash: 3320cef0d3aaf48a2f93d65d93bf8876f1f997d6
+ms.sourcegitcommit: 7104ad5d01ad1c69a4ea0b3ba6732c1b2a98ec09
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68959063"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71249241"
 ---
 # <a name="resources-for-developing-with-python-on-windows"></a>Ressources pour le développement avec Python sur Windows
 
 Liste de liens que nous recommandons pour les développeurs Python qui travaillent sur des ordinateurs exécutant Windows 10.
 
-## <a name="general"></a>Généralités
+## <a name="general"></a>Général
 
 - [Blogs de développement Microsoft: Python](https://devblogs.microsoft.com/python/): Lisez les dernières mises à jour relatives à tous les éléments de Python chez Microsoft.
 
@@ -45,8 +45,7 @@ Liste de liens que nous recommandons pour les développeurs Python qui travaille
 
 - [Python et Visual Studio code](https://code.visualstudio.com/docs/languages/python): Vue d’ensemble de l’utilisation de Python avec VS Code.
 
-
-### <a name="online-courses"></a>Cours en ligne
+## <a name="online-courses"></a>Cours en ligne
 
 - [Présentation de Python sur Microsoft Learn](https://docs.microsoft.com/en-us/learn/modules/intro-to-python/): Essayez la plateforme de Microsoft Learn interactive et gagnez des points d’expérience pour terminer ce module en couvrant les principes fondamentaux de l’écriture de code python de base, de la déclaration de variables et de l’utilisation de l’entrée et de la sortie de la console. L’environnement du bac à sable (sandbox) interactif permet de démarrer facilement pour les personnes qui n’ont pas encore installé leur environnement de développement Python.
 
@@ -66,7 +65,7 @@ Liste de liens que nous recommandons pour les développeurs Python qui travaille
 
 - [Autres frameworks web python](https://wiki.python.org/moin/WebFrameworks): Liste de frameworks web Python avec de brèves descriptions de Python.org.
 
-- [Tutoriel : Créez une application ballon avec Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/translator/tutorial-build-flask-app-translation-synthesis): Créez une application Web de ballon qui utilise Azure Cognitive Services pour traduire du texte, analyser le sentiment et synthétiser le texte traduit en voix.
+- [Tutoriel : Créez une application ballon avec Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/translator/tutorial-build-flask-app-translation-synthesis): Créez une application Web de ballon qui utilise Azure Cognitive Services pour traduire du texte, analyser le sentiment et synthétiser le texte traduit en voix.
 
 - [Déployez une application Web Python sur une machine virtuelle dans Azure Stack](https://docs.microsoft.com/azure-stack/user/azure-stack-dev-start-howto-vm-python): Créez une machine virtuelle pour héberger votre application Web python dans Azure Stack.
 

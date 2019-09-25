@@ -73,7 +73,7 @@
     - name: Développer avec Python
       items:
         - name: Vue d’ensemble
-          href: python/index.md
+          href: python/index.yml
         - name: Bien démarrer pour les débutants
           href: python/get-started/python-for-education.md
         - name: Bien démarrer avec le développement web
