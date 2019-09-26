@@ -6,12 +6,12 @@ ms.date: 12/14/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1827f24e467c113034c5d0303aaebce0e603da2a
-ms.sourcegitcommit: 68121f21c899975f3634456a651ae8e1e53c19f7
+ms.openlocfilehash: 974d96f6ba2daf275ffd346f50571787d4eee925
+ms.sourcegitcommit: ad2940a12a7ee59ee7696cd23a03743eef84ca31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70841871"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71275748"
 ---
 # <a name="set-up-your-payout-account-and-tax-forms"></a>Configuration de votre compte de revenu et déclarations fiscales.
 
@@ -22,7 +22,7 @@ Si vous envisagez de référencer uniquement des applications gratuites (et que 
 > [!NOTE]
 > Dans [certains marchés](account-types-locations-and-fees.md#developer-account-and-app-submission-markets), les développeurs peuvent uniquement soumettre des applications gratuites. Si votre compte est enregistré sur l’un de ces marchés, vous n’aurez pas la possibilité de configurer un compte de paiement.
 
-Une fois que vous avez [configuré votre compte de développeur](opening-a-developer-account.md), vous devez effectuer deux opérations pour pouvoir vendre des applications (ou des modules complémentaires) dans le Microsoft Store :
+Une fois que vous avez [configuré votre compte de développeur](opening-a-developer-account.md), vous devez effectuer deux opérations pour pouvoir vendre des applications (ou des modules complémentaires) dans le Microsoft Store:
 
 - [Remplissez vos formulaires fiscaux](#tax-forms)
 - [Configurer votre compte de paiement](#payout-account)
@@ -34,7 +34,7 @@ Une fois que vous avez [configuré votre compte de développeur](opening-a-devel
 
 ### <a name="filling-out-your-tax-forms"></a>Remplissage de vos formulaires fiscaux
 
-Tout d’abord, vous devez créer un profil fiscal et l’affecter aux programmes auxquels vous participez. Vous pouvez créer votre *Profil fiscal* pour le Microsoft Store en procédant comme suit :
+Tout d’abord, vous devez créer un profil fiscal et l’affecter aux programmes auxquels vous participez. Vous pouvez créer votre *Profil fiscal* pour le Microsoft Store en procédant comme suit:
 
 - Spécifiez votre pays de résidence et votre nationalité.
 - Remplissez les déclarations fiscales appropriées.
@@ -80,7 +80,7 @@ Si vous résidez en dehors des États-Unis, vous pouvez tirer parti d’avantage
 Un compte de revenu est le compte bancaire vers lequel nous transférons l'argent de vos ventes. Vous pouvez afficher tous les comptes de paiement que vous avez entrés dans la page de profil.
 
 > [!NOTE]
-> Dans certains marchés, PayPal peut être utilisé pour votre compte de paiement. Consultez les [seuils de paiement, les méthodes et les délais](payment-thresholds-methods-and-timeframes.md) pour savoir si PayPal est pris en charge pour un marché spécifique et lisez les informations relatives à [PayPal](#paypal-info) ci-dessous pour plus de détails.
+> Dans certains marchés, PayPal peut être utilisé pour votre compte de paiement. Consultez les seuils de [paiement, les méthodes et les délais](payment-thresholds-methods-and-timeframes.md) pour savoir si PayPal est pris en charge pour un marché spécifique et lisez les informations relatives à [PayPal](#paypal-info) ci-dessous pour plus de détails.
 
 ### <a name="create-a-payment-profile"></a>Créer un profil de paiement
 
@@ -95,6 +95,9 @@ Un compte de revenu est le compte bancaire vers lequel nous transférons l'argen
     ![Sélection du type de compte de paiement](images/payout-account-type-selection.png)
 
 4. Sélectionnez un profil de paiement existant ou cliquez sur **créer un nouveau** profil de paiement pour créer un nouveau profil pour le mode de paiement choisi.
+
+> [!NOTE]
+> Si, pour une raison quelconque, votre compte n’est pas prêt à recevoir des fonds de Microsoft, vous pouvez activer la case à cocher **conserver mon paiement** . Vous continuerez à gagner vos ventes, mais les paiements ne seront pas distribués tant que vous n’aurez pas désactivé **conserver mon paiement.**
 
 ### <a name="create-a-bank-based-payment-profile"></a>Créer un profil de paiement basé sur la Banque
 
@@ -144,16 +147,16 @@ Vous pouvez modifier les profils de paiement existants si vous devez apporter de
 
 Selon votre pays ou votre région, vous avez la possibilité de créer un compte de paiement en saisissant vos informations PayPal. Avant de choisir PayPal comme option de compte de paiement, vérifiez les points suivants :
 
-- Vérifiez les [seuils de paiement, les méthodes et les délais](payment-thresholds-methods-and-timeframes.md) pour confirmer si PayPal est un mode de paiement pris en charge dans votre pays ou région.
+- Vérifiez les seuils de [paiement, les méthodes et les délais](payment-thresholds-methods-and-timeframes.md) pour confirmer si PayPal est un mode de paiement pris en charge dans votre pays ou région.
 - Consultez les FAQ ci-après. En fonction de votre situation, il se peut que PayPal ne soit pas l'option idéale pour votre compte de paiement et qu'un compte bancaire soit mieux adapté.
 
 Questions courantes concernant l'utilisation de PayPal comme mode de paiement :
 
-- **Quels sont les paramètres PayPal dont j’ai besoin pour recevoir des paiements ?** Vous devez vous assurer que votre compte PayPal ne bloque pas les paiements par eCheck. Ce paramètre peut être configuré sur la page des préférences de réception des paiements de votre compte PayPal. Pour plus d'informations, voir la [page de configuration du compte PayPal](https://go.microsoft.com/fwlink/p/?linkid=513139).
-- **Mon pays/région est-il pris en charge ?** Consultez [les seuils de paiement, les méthodes et les délais](payment-thresholds-methods-and-timeframes.md) pour savoir où Paypal est un mode de paiement pris en charge.
-- **Mon compte PayPal doit-il être inscrit dans le même pays ou la même région que mon compte espace partenaires ?** Non. Lorsque vous créez un compte PayPal, vous pouvez accepter la configuration par défaut. Vous ne devriez rencontrer aucun problème d’incompatibilité entre les différents pays ou régions et entre les différentes devises, à moins que vous n’ayez bloqué le paiement dans certaines devises. Ce paramètre peut être configuré sur la page des préférences de réception des paiements de votre compte PayPal.
-- **Dois-je accepter les paiements PayPal manuellement ?** Non. Les comptes PayPal demandent par défaut de valider manuellement chaque paiement, ce qui signifie que si vous n’acceptez pas le paiement dans un délai de 30 jours, celui-ci est rejeté. Vous pouvez modifier ce paramètre en désactivant l'option « Me demander » sur la page des paramètres supplémentaires de votre compte PayPal.
-- **Quelles sont les devises prises en charge par PayPal ?** Veuillez consulter la [page de support de PayPal](https://developer.paypal.com/docs/classic/api/currency-codes/#paypal) pour obtenir la liste actuelle
+- **Quels sont les paramètres PayPal dont j’ai besoin pour recevoir des paiements?** Vous devez vous assurer que votre compte PayPal ne bloque pas les paiements par eCheck. Ce paramètre peut être configuré sur la page des préférences de réception des paiements de votre compte PayPal. Pour plus d'informations, voir la [page de configuration du compte PayPal](https://go.microsoft.com/fwlink/p/?linkid=513139).
+- **Mon pays/région est-il pris en charge?** Consultez [les seuils de paiement, les méthodes et les délais](payment-thresholds-methods-and-timeframes.md) pour savoir où Paypal est un mode de paiement pris en charge.
+- **Mon compte PayPal doit-il être inscrit dans le même pays ou la même région que mon compte espace partenaires?** Non. Lorsque vous créez un compte PayPal, vous pouvez accepter la configuration par défaut. Vous ne devriez rencontrer aucun problème d’incompatibilité entre les différents pays ou régions et entre les différentes devises, à moins que vous n’ayez bloqué le paiement dans certaines devises. Ce paramètre peut être configuré sur la page des préférences de réception des paiements de votre compte PayPal.
+- **Dois-je accepter les paiements PayPal manuellement?** Non. Les comptes PayPal demandent par défaut de valider manuellement chaque paiement, ce qui signifie que si vous n’acceptez pas le paiement dans un délai de 30 jours, celui-ci est rejeté. Vous pouvez modifier ce paramètre en désactivant l'option « Me demander » sur la page des paramètres supplémentaires de votre compte PayPal.
+- **Quelles sont les devises prises en charge par PayPal?** Veuillez consulter la [page de support de PayPal](https://developer.paypal.com/docs/classic/api/currency-codes/#paypal) pour obtenir la liste actuelle
 
 ### <a name="specific-requirements-for-certain-countriesregions"></a>Exigences spécifiques pour certains pays/régions
 
