@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a02d562b73f61094f820e74a213614d80c4fb5e1
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: b68e736cc6d413196205f84467b7e159c53cb98e
+ms.sourcegitcommit: e7589fa25d8de86c36b6ce6d90d360337718ef93
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365846"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71311240"
 ---
 # <a name="mouse-interactions"></a>Interactions avec la souris
 
@@ -59,7 +59,7 @@ Un ensemble concis d’interactions avec la souris est utilisé de façon unifor
 <td align="left"><p>Cliquer avec le bouton droit pour sélectionner une commande</p></td>
 <td align="left"><p>Cliquez avec le bouton droit sur la barre de navigation (si elle est disponible) et la barre de l’application avec des commandes globales. Cliquez avec le bouton droit sur un élément pour le sélectionner et afficher la barre de l’application contenant des commandes contextuelles pour l’élément sélectionné.</p>
 <div class="alert">
-<strong>Remarque</strong>  avec le bouton droit pour afficher un menu contextuel si l’application ou la sélection de la barre de commandes n’est pas des comportements de l’interface utilisateur appropriées. Toutefois, nous vous recommandons vivement d’utiliser la barre de l’application pour tous les comportements des commandes.
+<strong></strong>Remarque  cliquez avec le bouton droit pour afficher un menu contextuel si les commandes de sélection ou de barre d’application ne sont pas des comportements d’interface utilisateur appropriés. Toutefois, nous vous recommandons vivement d’utiliser la barre de l’application pour tous les comportements des commandes.
 </div>
 <div>
  
@@ -84,9 +84,9 @@ Un ensemble concis d’interactions avec la souris est utilisé de façon unifor
 </tbody>
 </table>
 
-## <a name="mouse-input-events"></a>Événements d’entrée de souris
+## <a name="mouse-input-events"></a>Événements d’entrée de la souris
 
-La plupart des souris d’entrée peuvent être gérés via les événements routés d’entrée communs pris en charge par tous les [ **UIElement** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) objets. Par exemple :
+La plupart des entrées de la souris peuvent être gérées par le biais des événements d’entrée routés communs pris en charge par tous les objets [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) . Elles incluent notamment :
 
 - [**BringIntoViewRequested**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)
 - [**CharacterReceived**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.characterreceived)
@@ -97,13 +97,13 @@ La plupart des souris d’entrée peuvent être gérés via les événements rou
 - [**DragLeave**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragleave)
 - [**DragOver**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragover)
 - [**DragStarting**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragstarting)
-- [**Drop**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.drop)
+- [**Déplacez**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.drop)
 - [**DropCompleted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dropcompleted)
 - [**GettingFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gettingfocus)
-- [**GotFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gotfocus)
-- [**Maintenant**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.holding)
+- [**Vient**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gotfocus)
+- [**Détenteur**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.holding)
 - [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown)
-- [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup)
+- [**Événementiel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup)
 - [**LosingFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.losingfocus)
 - [**LostFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.lostfocus)
 - [**ManipulationCompleted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationcompleted)
@@ -122,13 +122,12 @@ La plupart des souris d’entrée peuvent être gérés via les événements rou
 - [**PointerWheelChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged)
 - [**PreviewKeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.previewkeydown)
 - [**PreviewKeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.previewkeyup)
-- [**PointerWheelChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged)
 - [**RightTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.righttapped)
-- [**L’appui sur**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.tapped)
+- [**Drainées**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.tapped)
 
-Toutefois, vous pouvez tirer parti des fonctionnalités spécifiques de chaque appareil (par exemple, les événements de roulette de souris) en utilisant les événements de pointeur, de mouvement et de manipulation dans [Windows.UI.Input](https://docs.microsoft.com/uwp/api/windows.ui.input).
+Toutefois, vous pouvez tirer parti des fonctionnalités spécifiques de chaque appareil (telles que les événements de roulette de la souris) à l’aide des événements pointeur, geste et manipulation dans [Windows. UI. Input](https://docs.microsoft.com/uwp/api/windows.ui.input).
 
-**Exemples :** Consultez notre [BasicInput exemple](https://go.microsoft.com/fwlink/p/?LinkID=620302), pour.
+**Extraits** Consultez notre [exemple BasicInput](https://go.microsoft.com/fwlink/p/?LinkID=620302)pour.
 
 ## <a name="guidelines-for-visual-feedback"></a>Recommandations en matière de retour visuel
 
@@ -166,4 +165,4 @@ Si vous avez besoin de personnaliser le curseur de la souris :
 - [Exemple d’entrée de base](https://go.microsoft.com/fwlink/p/?LinkID=620302)
 - [Exemple d’entrée à faible latence](https://go.microsoft.com/fwlink/p/?LinkID=620304)
 - [Exemple de mode d’interaction utilisateur](https://go.microsoft.com/fwlink/p/?LinkID=619894)
-- [Exemple d’éléments visuels de focus](https://go.microsoft.com/fwlink/p/?LinkID=619895)
+- [Exemples de visuels de focus](https://go.microsoft.com/fwlink/p/?LinkID=619895)
