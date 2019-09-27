@@ -6,12 +6,12 @@ ms.date: 04/17/2019
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 47cb292b1f5aeed9473cac0f27074f449dc67032
-ms.sourcegitcommit: b8087f8b6cf8367f8adb7d6db4581d9aa47b4861
+ms.openlocfilehash: b8ad9726397671bcb2b641d6769f014721a27a72
+ms.sourcegitcommit: f34deba1d4460d85ed08fe9648999fe03ff6a3dd
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67414110"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71317096"
 ---
 # <a name="modernize-your-desktop-apps"></a>Moderniser vos applications de bureau
 
@@ -32,15 +32,9 @@ Pour plus d’informations, consultez [Empaqueter des applications de bureau](/w
 
 ## <a name="net-core-3"></a>.NET Core 3
 
-.NET Core 3 est la nouvelle version majeure de .NET Core. La grande nouveauté de cette prochaine version est la prise en charge des applications de bureau Windows, notamment les applications Windows Forms et WPF. Vous pourrez exécuter toutes vos applications de bureau Windows, nouvelles et existantes, sur .NET Core 3 et tirer pleinement parti de cette nouvelle version de .NET Core. De plus, vous pourrez utiliser les contrôles UWP hébergés dans [XAML Islands](xaml-islands.md) dans toutes les applications Windows Forms et WPF qui ciblent .NET Core 3.
+.NET Core 3 est la dernière version majeure de .NET Core. La grande nouveauté de cette version est la prise en charge des applications de bureau Windows, notamment les applications Windows Forms et WPF. Vous pouvez exécuter vos applications de bureau Windows, nouvelles et existantes, sur .NET Core 3 et tirer pleinement parti de cette nouvelle version de .NET Core. De plus, vous pourrez utiliser les contrôles UWP hébergés dans [XAML Islands](xaml-islands.md) dans toutes les applications Windows Forms et WPF qui ciblent .NET Core 3.
 
-Pour plus d’informations, consultez les articles suivants :
-
-* [Annonce de .NET Core 3.0 Preview 1](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-preview-1-and-open-sourcing-windows-desktop-frameworks/)
-* [Annonce de .NET Core 3.0 Preview 2](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-preview-2/)
-* [Annonce de .NET Core 3.0 Preview 2](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-preview-3/)
-* [Annonce de .NET Core 3.0 Preview 4](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-preview-4/)
-* [Nouveautés de .NET Core 3.0](https://docs.microsoft.com/dotnet/core/whats-new/dotnet-core-3-0).
+Pour plus d’informations, consultez [Nouveautés de .NET Core 3.0](https://docs.microsoft.com/dotnet/core/whats-new/dotnet-core-3-0).
 
 ## <a name="uwp-apis"></a>API UWP
 

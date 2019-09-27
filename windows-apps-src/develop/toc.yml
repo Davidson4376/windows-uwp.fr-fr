@@ -816,7 +816,7 @@
           href: ../cpp-and-winrt-apis/agile-objects.md
         - name: Diagnostic des allocations directes
           href: ../cpp-and-winrt-apis/diag-direct-alloc.md
-        - name: Détails sur les destructeurs
+        - name: Points d’extension pour les types d’implémentation
           href: ../cpp-and-winrt-apis/details-about-destructors.md
         - name: Exemple C++/WinRT WinUI simple
           href: ../cpp-and-winrt-apis/simple-winui-example.md

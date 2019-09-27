@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection
 ms.localizationpriority: medium
-ms.openlocfilehash: 7554b635f76f7d00901ecb7936fdd0351d8dee75
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.openlocfilehash: 61a54edc236f94bec44420471a176a2014fcdb0d
+ms.sourcegitcommit: 50b0b6d6571eb80aaab3cc36ab4e8d84ac4b7416
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393469"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71329573"
 ---
 # <a name="cwinrt"></a>C++/WinRT
 
@@ -67,7 +67,7 @@ C++/WinRT offre de meilleures performances et génère des fichiers binaires plu
 | [Références fortes et faibles en C++/WinRT](weak-references.md) | L’environnement Windows Runtime est un système avec décompte des références ; dans un tel système, il est important de connaître la signification des références fortes et faibles, et de faire la distinction entre elles. |
 | [Objets agiles](agile-objects.md) | Un objet agile est un objet qui est accessible à partir de n’importe quel thread. Vos types C++/WinRT sont agiles par défaut, mais vous pouvez le refuser. |
 | [Diagnostic des allocations directes](diag-direct-alloc.md) | Cette rubrique décrit de façon détaillée la fonctionnalité C++/WinRT 2.0 qui vous permet de diagnostiquer l’erreur de créer un objet de type implémentation sur la pile, plutôt que d’utiliser la famille d’assistants [**winrt::make**](/uwp/cpp-ref-for-winrt/make), comme vous le devriez. |
-| [Détails sur les destructeurs](details-about-destructors.md) | C++/WinRT 2.0 vous permet de différer la destruction de vos types implémentation et de créer des requêtes en toute sécurité pendant la destruction. Cette rubrique décrit ces fonctionnalités et explique quand les utiliser. |
+| [Points d’extension pour vos types d’implémentation](details-about-destructors.md) | Ces points d’extension en C++/WinRT 2.0 vous permettent de différer la destruction de vos types d’implémentation, d’interroger en toute sécurité pendant la destruction et de raccorder l’entrée et la sortie de vos méthodes projetées. |
 | [Exemple de bibliothèque d’IU Windows C++/WinRT simple](simple-winui-example.md) | Cette rubrique vous guide dans le processus d’ajout d’une prise en charge simple de WinUI dans un projet C++/WinRT. |
 
 ### <a name="topics-about-the-c-language"></a>Rubriques sur le langage C++

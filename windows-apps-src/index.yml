@@ -1,0 +1,102 @@
+### YamlMime:Landing
+title: Documentation sur la plateforme Windows universelle
+summary: La plateforme Windows universelle (UWP) vous permet de créer des applications pour n’importe quel appareil Windows (console Xbox One, casque HoloLens, etc.) et de les publier dans le Windows Store.
+metadata:
+  title: Documentation UWP - Développeur d’applications UWP | Microsoft Docs
+  description: La plateforme Windows universelle (UWP) vous permet de créer des applications pour n’importe quel appareil Windows (console Xbox One, casque HoloLens, etc.) et de les publier dans le Windows Store.
+  ms.topic: landing-page
+  ms.collection: collection
+  ms.author: quradic
+  author: QuinnRadich
+  ms.date: 09/24/2019
+  ms.technology: uwp-conceptual-docs
+  keywords: windows uwp, universal windows platform, Windows Runtime APIs, windows api, windows api ref, winrt api, windows api reference, uwp api, uwp api reference, develop uwp, design uwp, publish uwp
+  ms.openlocfilehash: 4d1ca7d03cdbc3dd8eccd2e22ae88c217672179c
+  ms.sourcegitcommit: 50b0b6d6571eb80aaab3cc36ab4e8d84ac4b7416
+  ms.translationtype: HT
+  ms.contentlocale: fr-FR
+  ms.lasthandoff: 09/27/2019
+  ms.locfileid: "71329605"
+landingContent:
+- title: Vous débutez avec UWP ?
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Découvrir les bases du développement UWP
+      url: get-started/index.md
+    - text: Commencer à programmer une application UWP
+      url: get-started/create-uwp-apps.md
+  - linkListType: concept
+    links:
+    - text: Plateformes UWP et autres plateformes d’applications Windows
+      url: https://docs.microsoft.com/windows/apps/desktop/choose-your-platform
+  - linkListType: learn
+    links:
+    - text: Parcourir les cours Windows sur Microsoft Learn
+      url: https://docs.microsoft.com/learn/browse/?products=windows&resource_type=module
+    - text: Qu’est-ce qu’une application UWP ?
+      url: /get-started/universal-application-platform-guide.md
+- title: Dernières fonctionnalités
+  linkLists:
+  - linkListType: whats-new
+    links:
+    - text: Découvrir les toutes dernières fonctionnalités UWP
+      url: https://docs.microsoft.com/windows/uwp/whats-new/windows-10-version-latest
+    - text: Explorer les fonctionnalités à la une de Windows 10
+      url: https://developer.microsoft.com/windows/windows-10-for-developers
+  - linkListType: concept
+    links:
+    - text: Découvrir les nouveautés du langage C#
+      url: https://docs.microsoft.com/dotnet/csharp/index
+    - text: Explorer les nouvelles fonctionnalités de Visual Studio
+      url: https://docs.microsoft.com/visualstudio/ide/
+- title: Développer
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Créer des applications UWP pour Windows 10
+      url: develop/index.md
+    - text: Créer des jeux UWP pour Xbox et Windows 10
+      url: gaming/getting-started.md
+  - linkListType: reference
+    links:
+    - text: Parcourir la documentation de référence sur les API pour UWP
+      url: https://docs.microsoft.com/uwp/
+    - text: Explorer les exemples de code Windows
+      url: https://developer.microsoft.com/windows/samples
+  - linkListType: download
+    links:
+    - text: Obtenir les outils de développement Windows
+      url: https://developer.microsoft.com/windows/downloads
+- title: Concevoir
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Concevoir vos applications avec Fluent Design System
+      url: design/index.md
+  - linkListType: reference
+    links:
+    - text: Ajouter des contrôles IU avec la bibliothèque d’IU Windows
+      url: https://docs.microsoft.com/uwp/toolkits/winui/
+- title: Publier
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Publier votre application sur le Microsoft Store
+      url: publish/index.md
+    - text: Empaqueter et déployer votre application avec MSIX
+      url: /windows/msix
+  - linkListType: concept
+    links:
+    - text: Monétiser votre application
+      url: monetize/index.md
+- title: Communauté et support
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: '@WindowsDocs sur Twitter'
+      url: https://twitter.com/WindowsDocs
+    - text: OneDevMinute sur YouTube
+      url: https://aka.ms/OneDevMinute
+    - text: Support technique pour les développeurs Windows
+      url: https://developer.microsoft.com/windows/support
