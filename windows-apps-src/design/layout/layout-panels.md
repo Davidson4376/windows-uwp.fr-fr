@@ -5,12 +5,12 @@ ms.date: 04/02/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fbda33e044880b263feafbcf88b041abdadc310
-ms.sourcegitcommit: bf95c8b29145a224957a940512394e6aa97cb90f
+ms.openlocfilehash: 9322ba847aeb7eb64c2654e1105582478a0d3b47
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71061961"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340124"
 ---
 # <a name="layout-panels"></a>Panneaux de disposition
 
@@ -46,7 +46,7 @@ Avant d’aborder les panneaux individuels, étudions certaines propriétés com
 
 La plupart des panneaux de disposition XAML utilisent des propriétés jointes pour permettre à leurs éléments enfants d’informer le panneau parent sur la manière dont ils doivent être placés dans l’interface utilisateur. Les propriétés jointes utilisent la syntaxe *AttachedPropertyProvider.PropertyName*. Si des panneaux sont imbriqués dans d’autres panneaux, les propriétés jointes des éléments d’interface utilisateur spécifiant les caractéristiques de disposition à un parent sont interprétées par le panneau parent le plus proche uniquement.
 
-Voici un exemple de la façon dont vous pouvez définir la propriété jointe [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left?view=netframework-4.8) sur un contrôle Button en XAML. Cela informe l’élément Canvas parent que le contrôle Button doit être positionné à 50 pixels effectifs du bord gauche de l’élément Canvas.
+Voici un exemple de la façon dont vous pouvez définir la propriété jointe [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left) sur un contrôle Button en XAML. Cela informe l’élément Canvas parent que le contrôle Button doit être positionné à 50 pixels effectifs du bord gauche de l’élément Canvas.
 
 ```xaml
 <Canvas>
@@ -147,9 +147,9 @@ Dans un panneau StackPanel, si la taille d’un élément enfant n’est pas dé
 
 Le panneau [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) prend en charge les dispositions fluides et vous permet d’organiser des contrôles dans des dispositions constituées de plusieurs lignes et colonnes. Vous pouvez spécifier les lignes et les colonnes d’un panneau Grid à l’aide des propriétés [**RowDefinitions**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid.rowdefinitions) et [**ColumnDefinitions**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid.columndefinitions).
 
-Pour positionner les objets dans des cellules spécifiques du panneau Grid, utilisez les propriétés jointes [**Grid.Column**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.column?view=netframework-4.8) et [**Grid.Row**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.row?view=netframework-4.8).
+Pour positionner les objets dans des cellules spécifiques du panneau Grid, utilisez les propriétés jointes [**Grid.Column**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.column) et [**Grid.Row**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.row).
 
-Pour forcer le contenu à s’étendre sur plusieurs lignes et colonnes, utilisez les propriétés jointes [**Grid.RowSpan**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms605035(v=vs.95)) et [**Grid.ColumnSpan**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.columnspan?view=netframework-4.8).
+Pour forcer le contenu à s’étendre sur plusieurs lignes et colonnes, utilisez les propriétés jointes [**Grid.RowSpan**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms605035(v=vs.95)) et [**Grid.ColumnSpan**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.columnspan).
 
 Cet exemple XAML montre comment créer un élément Grid à deux lignes et deux colonnes.
 
@@ -245,7 +245,7 @@ Dans cet exemple, le nombre maximal de lignes dans chaque colonne est 3. La prem
 
 ## <a name="canvas"></a>Canevas
 
-Le panneau [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) positionne ses éléments enfants à l’aide de points de coordonnées fixes et ne prend pas en charge les dispositions fluides. Vous spécifiez les points des éléments enfants individuels en définissant les propriétés jointes [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left?view=netframework-4.8) et [**Canvas.Top**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.top?view=netframework-4.8) de chaque élément. L’élément Canvas parent lit les valeurs des propriétés jointes de ses enfants pendant la transmission de disposition [Arrange](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.arrange).
+Le panneau [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) positionne ses éléments enfants à l’aide de points de coordonnées fixes et ne prend pas en charge les dispositions fluides. Vous spécifiez les points des éléments enfants individuels en définissant les propriétés jointes [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left) et [**Canvas.Top**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.top) de chaque élément. L’élément Canvas parent lit les valeurs des propriétés jointes de ses enfants pendant la transmission de disposition [Arrange](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.arrange).
 
 Dans un élément Canvas, les objets peuvent se chevaucher, auquel cas un objet est dessiné sur un autre objet. Par défaut, l’élément Canvas restitue les objets enfants dans l’ordre dans lequel ils sont déclarés, de sorte que le dernier enfant est restitué en haut (chaque élément a une valeur ZIndex par défaut de 0). Il en va de même pour les autres panneaux intégrés. Toutefois, l’élément Canvas prend également en charge la propriété jointe [**Canvas.ZIndex**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc190397(v=vs.95)) que vous pouvez définir sur chacun des éléments enfants. Vous pouvez définir cette propriété dans le code pour changer l’ordre de dessin des éléments pendant l’exécution. L’élément avec la valeur Canvas.ZIndex la plus élevée est dessiné en dernier. Ainsi, il est dessiné au-dessus des autres éléments qui partagent le même espace ou qui se chevauchent. Notez que la valeur alpha (transparence) est respectée. Ainsi, même si des éléments se chevauchent, le contenu affiché dans les zones de chevauchement peut être fusionné si le contenu supérieur a une valeur alpha non maximale.
 

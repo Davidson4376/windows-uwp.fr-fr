@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f2442647d39c4142b50c0a2a9b1fbc2c0eb66ca
-ms.sourcegitcommit: be519a7ecff53696b853754c879db32be9a53289
+ms.openlocfilehash: ddd35e0365efcc8c224e717b66f53734af32123d
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69544916"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339755"
 ---
 # <a name="process-media-frames-with-mediaframereader"></a>Traiter des images multimédias avec MediaFrameReader
 
@@ -129,7 +129,7 @@ Il est désormais temps d’implémenter le gestionnaire d’événements **Fram
 
 Le contrôle **Image** peut afficher des images uniquement au format BRGA8, avec aucune valeur alpha ou avec des valeurs alpha prémultipliées. Si l’image arrivante n’est pas dans ce format, la méthode statique [**Convert**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.convert) est utilisée pour convertir l’image bitmap logicielle au format approprié.
 
-Ensuite, la méthode [**Interlocked.Exchange**](https://docs.microsoft.com/dotnet/api/system.threading.interlocked.exchange?redirectedfrom=MSDN#System_Threading_Interlocked_Exchange__1___0____0_) est utilisée pour remplacer la référence de l’image bitmap en entrée par l’image bitmap de la mémoire tampon d’arrière-plan. Cette méthode échange des références au cours d’une opération atomique thread-safe. Après le remplacement, l’ancienne image de mémoire tampon d’arrière-plan, désormais dans la variable *softwareBitmap*, est supprimée à des fins de nettoyage de ses ressources.
+Ensuite, la méthode [**Interlocked.Exchange**](https://docs.microsoft.com/dotnet/api/system.threading.interlocked.exchange#System_Threading_Interlocked_Exchange__1___0____0_) est utilisée pour remplacer la référence de l’image bitmap en entrée par l’image bitmap de la mémoire tampon d’arrière-plan. Cette méthode échange des références au cours d’une opération atomique thread-safe. Après le remplacement, l’ancienne image de mémoire tampon d’arrière-plan, désormais dans la variable *softwareBitmap*, est supprimée à des fins de nettoyage de ses ressources.
 
 Ensuite, l’instance [**CoreDispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher) associée à l’élément **Image** est utilisée pour créer une tâche qui s’exécutera sur le thread d’interface utilisateur en appelant [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync). Étant donné que les tâches asynchrones seront exécutées au sein de la tâche, l’expression lambda transmise à **RunAsync** est déclarée avec le mot-clé *async*.
 
@@ -169,7 +169,7 @@ La classe d’assistance **FrameRenderer** implémente les méthodes suivantes.
 ## <a name="use-multisourcemediaframereader-to-get-time-corellated-frames-from-multiple-sources"></a>Utiliser MultiSourceMediaFrameReader pour obtenir des images corrélées dans le temps à partir de plusieurs sources
 À partir de Windows 10, version 1607, vous pouvez utiliser [**MultiSourceMediaFrameReader**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereader) pour recevoir des images corrélées dans le temps à partir de plusieurs sources. Cette API facilite le traitement qui nécessite des images provenant de plusieurs sources et prises dans un court intervalle de temps, comme l'utilisation de la classe [**DepthCorrelatedCoordinateMapper**](https://docs.microsoft.com/uwp/api/windows.media.devices.core.depthcorrelatedcoordinatemapper). Une limitation de l’utilisation de cette nouvelle méthode réside dans le fait que les événements déclenchés à l’arrivée des images sont uniquement déclenchés à la cadence de la source de capture plus lente. Les images supplémentaires provenant de sources plus rapides seront supprimées. En outre, étant donné que le système s'attend à ce que les images arrivent de sources différentes à différentes cadences, il ne détecte pas automatiquement si une source a cessé complètement de générer des images. L’exemple de code de cette section montre comment utiliser un événement pour créer votre propre logique de délai d’expiration qui sera appelée si des images corrélées n'arrivent pas dans une limite de temps définie par l'application.
 
-Les étapes d’utilisation de [**MultiSourceMediaFrameReader**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereader) sont similaires aux étapes d’utilisation de [**MediaFrameReader**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameReader) décrites précédemment dans cet article. Cet exemple utilise une source de couleur et une source de profondeur. Déclarez des variables de chaîne pour stocker les ID de source d’images multimédias qui seront utilisés pour sélectionner des images à partir de chaque source. Déclarez ensuite un [**ManualResetEventSlim**](https://docs.microsoft.com/dotnet/api/system.threading.manualreseteventslim?view=netframework-4.7), un [**CancellationTokenSource**](https://docs.microsoft.com/dotnet/api/system.threading.cancellationtokensource?redirectedfrom=MSDN)et un [**EventHandler**](https://docs.microsoft.com/dotnet/api/system.eventhandler?redirectedfrom=MSDN) qui seront utilisés pour implémenter la logique de délai d’expiration pour cet exemple. 
+Les étapes d’utilisation de [**MultiSourceMediaFrameReader**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereader) sont similaires aux étapes d’utilisation de [**MediaFrameReader**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameReader) décrites précédemment dans cet article. Cet exemple utilise une source de couleur et une source de profondeur. Déclarez des variables de chaîne pour stocker les ID de source d’images multimédias qui seront utilisés pour sélectionner des images à partir de chaque source. Déclarez ensuite un [**ManualResetEventSlim**](https://docs.microsoft.com/dotnet/api/system.threading.manualreseteventslim), un [**CancellationTokenSource**](https://docs.microsoft.com/dotnet/api/system.threading.cancellationtokensource)et un [**EventHandler**](https://docs.microsoft.com/dotnet/api/system.eventhandler) qui seront utilisés pour implémenter la logique de délai d’expiration pour cet exemple. 
 
 [!code-cs[MultiFrameDeclarations](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetMultiFrameDeclarations)]
 
@@ -187,7 +187,7 @@ Après avoir initialisé l'objet **MediaCapture**, récupérez les objets [**Med
 
 Créez et initialisez le **MultiSourceMediaFrameReader** en appelant [**CreateMultiSourceFrameReaderAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.createmultisourceframereaderasync) et en transmettant un tableau de sources d’images que le lecteur utilisera. Inscrivez un gestionnaire d’événements pour l'événement [**FrameArrived**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereader.FrameArrived). Cet exemple crée une instance de la classe d'assistance **FrameRenderer** décrite précédemment dans cet article pour restituer les images vers un contrôle **Image**. Démarrez le lecteur d'images en appelant [**StartAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereader.StartAsync).
 
-Inscrivez un gestionnaire d'événements pour l'événement **CorellationFailed** déclaré précédemment dans cet exemple. Nous signalerons cet événement si l'une des sources d’images multimédias utilisées cesse de générer des images. Pour finir, appelez [**Task.Run**](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task.run?redirectedfrom=MSDN#System_Threading_Tasks_Task_Run_System_Action_) pour appeler la méthode d'assistance de délai d'expiration, **NotifyAboutCorrelationFailure**, sur un thread distinct. L’implémentation de cette méthode est illustrée plus loin dans cet article.
+Inscrivez un gestionnaire d'événements pour l'événement **CorellationFailed** déclaré précédemment dans cet exemple. Nous signalerons cet événement si l'une des sources d’images multimédias utilisées cesse de générer des images. Pour finir, appelez [**Task.Run**](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task.run#System_Threading_Tasks_Task_Run_System_Action_) pour appeler la méthode d'assistance de délai d'expiration, **NotifyAboutCorrelationFailure**, sur un thread distinct. L’implémentation de cette méthode est illustrée plus loin dans cet article.
 
 [!code-cs[InitMultiFrameReader](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetInitMultiFrameReader)]
 
@@ -195,7 +195,7 @@ L'événement **FrameArrived** est déclenché chaque fois qu’une nouvelle ima
 
 Obtenez le [**MultiSourceMediaFrameReference**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereference) associé à l’événement en appelant [**TryAcquireLatestFrame**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereader.TryAcquireLatestFrame). Obtenez le **MediaFrameReference** associé à chaque source d’images multimédia en appelant [**TryGetFrameReferenceBySourceId**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereference.trygetframereferencebysourceid), en transmettant les chaînes d’identification stockées lorsque le lecteur d’images a été initialisé.
 
-Appelez la méthode [**Set**](https://docs.microsoft.com/dotnet/api/system.threading.manualreseteventslim.set?redirectedfrom=MSDN#System_Threading_ManualResetEventSlim_Set) de l'objet **ManualResetEventSlim** pour signaler l'arrivée des images. Nous vérifierons cet événement dans la méthode **NotifyCorrelationFailure** qui s’exécute dans un thread distinct. 
+Appelez la méthode [**Set**](https://docs.microsoft.com/dotnet/api/system.threading.manualreseteventslim.set#System_Threading_ManualResetEventSlim_Set) de l'objet **ManualResetEventSlim** pour signaler l'arrivée des images. Nous vérifierons cet événement dans la méthode **NotifyCorrelationFailure** qui s’exécute dans un thread distinct. 
 
 Pour finir, effectuez tout traitement requis sur les images multimédias corrélées dans le temps. Cet exemple affiche simplement l'image de la source de profondeur.
 

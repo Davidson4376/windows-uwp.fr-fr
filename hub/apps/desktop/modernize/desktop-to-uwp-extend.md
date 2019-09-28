@@ -7,12 +7,12 @@ keywords: windows 10, uwp
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f1cc0e932a1dd413ed94e1fe5d9a3d1e6b0870c
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.openlocfilehash: 7359d28d968a2948e9f4049e2acc3c655edcfcb3
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393577"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339200"
 ---
 # <a name="extend-your-desktop-app-with-modern-uwp-components"></a>Étendez votre application de bureau avec des composants UWP modernes
 
@@ -175,7 +175,7 @@ Vous pouvez également ouvrir le **package.appxmanifest** dans le concepteur, ch
 
 ### <a name="start-the-uwp-app"></a>Démarrez l'application UWP.
 
-Tout d’abord, à partir de votre application de bureau créez un [Uri](https://docs.microsoft.com/dotnet/api/system.uri?redirectedfrom=MSDN) qui inclut le nom du protocole et les paramètres que vous souhaitez passer à l’application UWP. Appelez ensuite la méthode [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync).
+Tout d’abord, à partir de votre application de bureau créez un [Uri](https://docs.microsoft.com/dotnet/api/system.uri) qui inclut le nom du protocole et les paramètres que vous souhaitez passer à l’application UWP. Appelez ensuite la méthode [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync).
 
 ```csharp
 
@@ -220,7 +220,7 @@ protected override void OnActivated(Windows.ApplicationModel.Activation.IActivat
 }
 ```
 
-Dans le code derrière votre page XAML, substituez la ``OnNavigatedTo`` méthode pour utiliser les paramètres passés dans la page. Dans ce cas, nous allons utiliser la latitude et la longitude qui ont été transmises à cette page pour afficher un emplacement dans une carte.
+Dans le code derrière votre page XAML, remplacez la méthode ``OnNavigatedTo`` pour utiliser les paramètres transmis à la page. Dans ce cas, nous allons utiliser la latitude et la longitude qui ont été transmises à cette page pour afficher un emplacement dans une carte.
 
 ```csharp
 protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -295,9 +295,9 @@ Dans **Explorateur de solutions**, ouvrez le fichier **Package. appxmanifest** d
 </Extensions>  
 ```
 
-Indiquez le nom de l'exécutable généré par le projet UWP et le nom de la classe de point d’entrée. Ce balisage part du principe que le nom de l’exécutable de votre application UWP `ShareTarget.exe`est.
+Indiquez le nom de l'exécutable généré par le projet UWP et le nom de la classe de point d’entrée. Ce balisage part du principe que le nom de l’exécutable de votre application UWP est `ShareTarget.exe`.
 
-Vous devez également spécifier les types de fichiers qui peuvent être partagés avec votre application. Dans cet exemple, nous définissons l’application de bureau [PhotoStoreDemo WPF](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo) en tant que cible de partage pour les `Bitmap` images bitmap. nous allons donc spécifier pour le type de fichier pris en charge.
+Vous devez également spécifier les types de fichiers qui peuvent être partagés avec votre application. Dans cet exemple, nous définissons l’application de bureau [PhotoStoreDemo WPF](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo) en tant que cible de partage pour les images bitmap, afin de spécifier `Bitmap` pour le type de fichier pris en charge.
 
 <a id="override" />
 
@@ -366,7 +366,7 @@ Modifiez votre application de bureau pour rechercher et traiter le fichier parta
 Photos.Path = Windows.Storage.ApplicationData.Current.LocalFolder.Path;
 ```
 
-Pour les instances de l’application de bureau qui sont déjà ouvertes par l’utilisateur, nous pouvons également gérer l’événement [FileSystemWatcher](https://docs.microsoft.com/dotnet/api/system.io.filesystemwatcher?view=netframework-4.7.2) et transmettre le chemin d’accès à l’emplacement du fichier. Ainsi, toutes les instances ouvertes de l’application de bureau affichent la photo partagée.
+Pour les instances de l’application de bureau qui sont déjà ouvertes par l’utilisateur, nous pouvons également gérer l’événement [FileSystemWatcher](https://docs.microsoft.com/dotnet/api/system.io.filesystemwatcher) et transmettre le chemin d’accès à l’emplacement du fichier. Ainsi, toutes les instances ouvertes de l’application de bureau affichent la photo partagée.
 
 ```csharp
 ...

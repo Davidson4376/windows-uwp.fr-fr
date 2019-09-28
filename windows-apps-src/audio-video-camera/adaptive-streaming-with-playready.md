@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f87ecf0c3c90976295d85c1a995f1de091491974
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: e0f6ef206dc836e48bfc904767ff8c8c7bdca9db
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359179"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340040"
 ---
 # <a name="adaptive-streaming-with-playready"></a>Streaming adaptatif avec PlayReady
 
@@ -274,7 +274,7 @@ async void LicenseAcquisitionRequest(
 
 ## <a name="initializing-the-adaptivemediasource"></a>Lancement d’AdaptiveMediaSource
 
-Enfin, vous aurez besoin d’une fonction pour initialiser [AdaptiveMediaSource](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource), créée à partir d’un [URI](https://docs.microsoft.com/dotnet/api/system.uri?redirectedfrom=MSDN) et d’un [MediaElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement) donnés. L’**URI** doit être le lien vers le fichier multimédia (TLS ou DASH). L’élément **MediaElement** doit être défini dans votre code XAML.
+Enfin, vous aurez besoin d’une fonction pour initialiser [AdaptiveMediaSource](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource), créée à partir d’un [URI](https://docs.microsoft.com/dotnet/api/system.uri) et d’un [MediaElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement) donnés. L’**URI** doit être le lien vers le fichier multimédia (TLS ou DASH). L’élément **MediaElement** doit être défini dans votre code XAML.
 
 ```csharp
 async private void InitializeAdaptiveMediaSource(System.Uri uri, MediaElement m)
@@ -296,7 +296,7 @@ async private void InitializeAdaptiveMediaSource(System.Uri uri, MediaElement m)
 Vous pouvez appeler cette fonction dans n’importe quel événement gérant le début du streaming adaptatif, par exemple dans un événement de clic sur un bouton.
 
 ## <a name="see-also"></a>Voir aussi
-- [PlayReady DRM](playready-client-sdk.md)
+- [DRM PlayReady](playready-client-sdk.md)
 
 
 

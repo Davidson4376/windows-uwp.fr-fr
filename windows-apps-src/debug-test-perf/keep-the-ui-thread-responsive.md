@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c2314110b4967653b02db6c374e6c66375814d0
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: b9a129e8b780e85df2c38c50ab712641d3849a34
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317552"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339853"
 ---
 # <a name="keep-the-ui-thread-responsive"></a>Assurer la réactivité du thread de l’interface utilisateur
 
@@ -22,7 +22,7 @@ Votre application est pilotée par les événements, ce qui signifie que votre c
 
 Vous devez utiliser le thread d’interface utilisateur pour apporter la quasi-totalité des modifications au thread d’interface utilisateur, notamment la création de types d’interface utilisateur et l’accès à leurs membres. Vous ne pouvez pas mettre à jour l’interface utilisateur à partir d’un thread en arrière-plan, mais vous pouvez y publier un message avec la méthode [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) pour que le code soit exécuté sur ce thread.
 
-> **Remarque**  la seule exception est qu’il existe un thread de rendu distinct qui peut appliquer des modifications de l’interface utilisateur qui n’affectent pas modalitée d’entrée ou la disposition de base. Par exemple, de nombreuses animations et transitions qui n’affectent pas la disposition peuvent être exécutées sur ce thread de rendu.
+> **Remarque**  La seule exception est qu’il existe un thread de rendu distinct qui peut appliquer des modifications d’interface utilisateur qui n’affecteront pas la manière dont l’entrée est gérée ou la disposition de base. Par exemple, de nombreuses animations et transitions qui n’affectent pas la disposition peuvent être exécutées sur ce thread de rendu.
 
 ## <a name="delay-element-instantiation"></a>Retarder l’instanciation des éléments
 
@@ -31,7 +31,7 @@ Certaines des étapes les plus lentes dans une application incluent le démarrag
 -   Utilisez [x:Load attribute](../xaml-platform/x-load-attribute.md) ou [x:DeferLoadStrategy](https://docs.microsoft.com/windows/uwp/xaml-platform/x-deferloadstrategy-attribute) pour différer l’instanciation des éléments.
 -   Insérez les éléments par programme dans l’arborescence, à la demande.
 
-[**CoreDispatcher.RunIdleAsync** ](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runidleasync) files d’attente fonctionnent pour le thread d’interface utilisateur traiter lorsqu’il n’est pas occupé.
+Les files d’attente [**CoreDispatcher. RunIdleAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runidleasync) fonctionnent pour traiter le thread d’interface utilisateur lorsqu’il n’est pas occupé.
 
 ## <a name="use-asynchronous-apis"></a>Utiliser des API asynchrones
 
@@ -41,7 +41,7 @@ Pour que l’application reste réactive, la plateforme fournit des versions asy
 
 Codez les gestionnaires d’événements de sorte qu’ils effectuent rapidement leur retour. Dans les cas où une quantité considérable de tâches doivent être effectuées, planifiez-les sur un thread en arrière-plan et revenez.
 
-Vous pouvez planifier les tâches de manière asynchrone en utilisant l’opérateur **await** dans C#, l’opérateur **Await** dans Visual Basic ou des délégués dans C++. Cependant, cela ne garantit pas que les tâches ainsi planifiées seront toujours exécutées sur un thread en arrière-plan. La plupart des API de plateforme Windows universelle (UWP) planifient automatiquement les tâches sur le thread en arrière-plan, mais si vous appelez le code de votre application seulement avec l’opérateur **await** ou un délégué, ce délégué ou cette méthode s’exécute sur le thread de l’interface utilisateur. Vous devez indiquer explicitement que vous voulez exécuter le code de votre application sur un thread en arrière-plan. Dans C# et cela en passant de code de Visual Basic [ **Task.Run**](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task.run?redirectedfrom=MSDN#overloads).
+Vous pouvez planifier les tâches de manière asynchrone en utilisant l’opérateur **await** dans C#, l’opérateur **Await** dans Visual Basic ou des délégués dans C++. Cependant, cela ne garantit pas que les tâches ainsi planifiées seront toujours exécutées sur un thread en arrière-plan. La plupart des API de plateforme Windows universelle (UWP) planifient automatiquement les tâches sur le thread en arrière-plan, mais si vous appelez le code de votre application seulement avec l’opérateur **await** ou un délégué, ce délégué ou cette méthode s’exécute sur le thread de l’interface utilisateur. Vous devez indiquer explicitement que vous voulez exécuter le code de votre application sur un thread en arrière-plan. Dans C# et Visual Basic vous pouvez effectuer cette opération en transmettant le code à [Task. Run](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task.run).
 
 Gardez à l’esprit que les éléments d’interface utilisateur sont accessibles uniquement à partir du thread d’interface utilisateur. Utilisez le thread d’interface utilisateur pour accéder aux éléments d’interface utilisateur avant de lancer le travail en arrière-plan et/ou utilisez [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) ou [**CoreDispatcher.RunIdleAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runidleasync) sur le thread d’arrière-plan.
 
@@ -101,8 +101,8 @@ public class AsyncExample
 
 Dans cet exemple, le gestionnaire `NextMove_Click` effectue son retour lorsqu’il reçoit l’instruction **await** afin d’assurer la réactivité du thread d’interface utilisateur. Toutefois, l’exécution reprend dans ce gestionnaire à la fin de l’opération `ComputeNextMove` (qui est exécutée sur un thread en arrière-plan). Le reste du code du gestionnaire permet de mettre à jour l’interface utilisateur avec les résultats.
 
-> **Remarque**  il existe également un [ **ThreadPool** ](https://docs.microsoft.com/uwp/api/Windows.System.Threading.ThreadPool) et [ **ThreadPoolTimer** ](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer) API pour la plateforme Windows universelle, qui peut être utilisé pour des scénarios similaires. Pour plus d’informations, voir [Threads et programmation asynchrone](https://docs.microsoft.com/windows/uwp/threading-async/index).
+> **Remarque**  There’s également une API [**ThreadPool**](https://docs.microsoft.com/uwp/api/Windows.System.Threading.ThreadPool) et [**ThreadPoolTimer**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer) pour la série UWP, qui peut être utilisée dans des scénarios similaires. Pour plus d’informations, voir [Threads et programmation asynchrone](https://docs.microsoft.com/windows/uwp/threading-async/index).
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-* [Interactions de l’utilisateur personnalisé](https://docs.microsoft.com/windows/uwp/design/layout/index)
+* [Interactions utilisateur personnalisées](https://docs.microsoft.com/windows/uwp/design/layout/index)

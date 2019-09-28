@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 57532c45bdf6c2b8feb2af1277be74a0f8b2c759
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 34f315628af0ea181756f2456d4d0dfe70bf8377
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320300"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340553"
 ---
 # <a name="property-path-syntax"></a>Syntaxe de Property-path
 
@@ -50,11 +50,11 @@ Voici comment ce chemin d’accès est évalué :
 
 ### <a name="indexers"></a>Indexeurs
 
-Un chemin de propriété pour la liaison de données peut inclure des références à des propriétés indexées. Cela permet de lier des listes/vecteurs ordonnés ou des dictionnaires/mappages. Utilisez des crochets «\[\]» caractères pour indiquer une propriété indexée. Le contenu de ces crochets peut être soit un entier (pour la liste ordonnée), soit une chaîne sans guillemets (pour les dictionnaires). Vous pouvez également lier un dictionnaire où la clé est un entier. Vous pouvez utiliser différentes propriétés indexées dans le même chemin d’accès en séparant l’objet de la propriété à l’aide d’un point.
+Un chemin de propriété pour la liaison de données peut inclure des références à des propriétés indexées. Cela permet de lier des listes/vecteurs ordonnés ou des dictionnaires/mappages. Utilisez des crochets « \[ @ no__t-1 » pour indiquer une propriété indexée. Le contenu de ces crochets peut être soit un entier (pour la liste ordonnée), soit une chaîne sans guillemets (pour les dictionnaires). Vous pouvez également lier un dictionnaire où la clé est un entier. Vous pouvez utiliser différentes propriétés indexées dans le même chemin d’accès en séparant l’objet de la propriété à l’aide d’un point.
 
-Prenons par exemple un objet métier qui contient une liste de « Teams » (liste ordonnée). Chacune des équipes (teams) a un dictionnaire de « Players » où chaque joueur est indexé par le nom de famille. Un exemple de chemin de propriété à un lecteur spécifique de l’équipe du deuxième est : « Équipes\[1\]. Lecteurs\[Smith\]». (Vous utilisez 1 pour indiquer le deuxième élément de « Teams », car la liste est indexée à partir de zéro.)
+Prenons par exemple un objet métier qui contient une liste de « Teams » (liste ordonnée). Chacune des équipes (teams) a un dictionnaire de « Players » où chaque joueur est indexé par le nom de famille. Voici un exemple de chemin de propriété vers un lecteur spécifique sur la seconde équipe : «Teams @ no__t-01 @ no__t-1. Lecteurs @ no__t-2Smith @ no__t-3». (Vous utilisez 1 pour indiquer le deuxième élément de « Teams », car la liste est indexée à partir de zéro.)
 
-**Remarque**  prise en charge de l’indexation des sources de données C++ est limité ; consultez [liaison de données en profondeur](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth).
+**Notez**@no__t la prise en charge C++ de 1Indexing pour les sources de données est limitée. consultez la rubrique [liaison de données en profondeur](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth).
 
 ### <a name="attached-properties"></a>Propriétés jointes
 
@@ -70,7 +70,7 @@ Comme un chemin de propriété est interprété par un moteur de liaison et qu�
 
 ## <a name="property-path-for-animation-targeting"></a>Chemin de propriété pour le ciblage d’animation
 
-Une animation s’appuie sur le ciblage d’une propriété de dépendance où des valeurs de table de montage séquentiel sont appliquées durant l’animation. Pour identifier l’objet dans lequel une propriété d’animation existe, l’animation cible un élément par son nom ([attribut x:Name](x-name-attribute.md)). Il est souvent nécessaire de définir un chemin de propriété qui commence par l’objet identifié en tant que [**Storyboard.TargetName**](https://docs.microsoft.com/dotnet/api/system.windows.media.animation.storyboard.targetname?view=netframework-4.8) et se termine par la valeur de propriété de dépendance particulière à laquelle l’animation doit s’appliquer. Ce chemin de propriété est utilisé en tant que valeur de [**Storyboard.TargetProperty**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v=vs.95)).
+Une animation s’appuie sur le ciblage d’une propriété de dépendance où des valeurs de table de montage séquentiel sont appliquées durant l’animation. Pour identifier l’objet dans lequel une propriété d’animation existe, l’animation cible un élément par son nom ([attribut x:Name](x-name-attribute.md)). Il est souvent nécessaire de définir un chemin de propriété qui commence par l’objet identifié en tant que [**Storyboard.TargetName**](https://docs.microsoft.com/dotnet/api/system.windows.media.animation.storyboard.targetname) et se termine par la valeur de propriété de dépendance particulière à laquelle l’animation doit s’appliquer. Ce chemin de propriété est utilisé en tant que valeur de [**Storyboard.TargetProperty**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v=vs.95)).
 
 Pour plus d’informations sur la définition d’animations en XAML, voir [Animations dans une table de montage séquentiel](https://docs.microsoft.com/windows/uwp/graphics/storyboarded-animations).
 
@@ -84,19 +84,19 @@ Vous pouvez animer une propriété qui représente une sous-propriété de l’o
 
 ## <a name="specifying-a-particular-child-in-a-collection"></a>Spécification d’un enfant particulier dans une collection
 
-Pour spécifier un élément enfant dans une propriété de collection, vous pouvez utiliser un indexeur numérique. Utilisez des crochets «\[\]« valeur d’index de caractères autour de l’entier. Vous ne pouvez référencer que des listes ordonnées, pas des dictionnaires. Dans la mesure où une collection n’est pas une valeur qui peut être animée, l’utilisation d’un indexeur ne peut jamais représenter la propriété de fin d’un chemin de propriété.
+Pour spécifier un élément enfant dans une propriété de collection, vous pouvez utiliser un indexeur numérique. Utilisez des crochets « \[ @ no__t-1 » caractères autour de la valeur d’index d’entier. Vous ne pouvez référencer que des listes ordonnées, pas des dictionnaires. Dans la mesure où une collection n’est pas une valeur qui peut être animée, l’utilisation d’un indexeur ne peut jamais représenter la propriété de fin d’un chemin de propriété.
 
-Par exemple, pour spécifier que vous souhaitez animer la couleur de premier cesser de couleur dans un [ **LinearGradientBrush** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.LinearGradientBrush) qui est appliqué à un contrôle [ **arrière-plan** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.background) propriété, c’est le chemin de propriété : « (Control.Background). (GradientBrush.GradientStops) \[0\]. () GradientStop.Color) ». Notez que l’indexeur n’est pas la dernière étape du chemin d’accès et que la dernière étape, en particulier, doit faire référence à la propriété [**GradientStop.Color**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.gradientstop.color) de l’élément 0 de la collection pour lui appliquer une valeur animée [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color).
+Par exemple, pour spécifier que vous souhaitez animer la première couleur d’arrêt de couleur dans un [**LinearGradientBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.LinearGradientBrush) qui est appliqué à la propriété d' [**arrière-plan**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.background) d’un contrôle, il s’agit du chemin d’accès de la propriété : « (Control. Background) ». (GradientBrush. GradientStops) \[0 @ no__t-5. (GradientStop. Color)». Notez que l’indexeur n’est pas la dernière étape du chemin d’accès et que la dernière étape, en particulier, doit faire référence à la propriété [**GradientStop.Color**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.gradientstop.color) de l’élément 0 de la collection pour lui appliquer une valeur animée [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color).
 
 ## <a name="animating-an-attached-property"></a>Animation d’une propriété jointe
 
-Il ne s’agit pas d’un scénario répandu. Toutefois, il est possible d’animer une propriété jointe, du moment que cette dernière possède une valeur de propriété qui correspond à un type d’animation. Comme le nom permettant d’identifier une propriété jointe comprend déjà un point, vous devez mettre entre parenthèses le nom de la propriété jointe afin que le point ne soit pas considéré comme une étape de propriété d’objet. Par exemple, pour spécifier l’animation de la propriété jointe [**Grid.Row**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.row?view=netframework-4.8) d’un objet, utilisez le chemin de propriété « (Grid.Row) ».
+Il ne s’agit pas d’un scénario répandu. Toutefois, il est possible d’animer une propriété jointe, du moment que cette dernière possède une valeur de propriété qui correspond à un type d’animation. Comme le nom permettant d’identifier une propriété jointe comprend déjà un point, vous devez mettre entre parenthèses le nom de la propriété jointe afin que le point ne soit pas considéré comme une étape de propriété d’objet. Par exemple, pour spécifier l’animation de la propriété jointe [**Grid.Row**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.row) d’un objet, utilisez le chemin de propriété « (Grid.Row) ».
 
-**Remarque**  pour cet exemple, la valeur de [ **Grid.Row** ](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.row?view=netframework-4.8) est un **Int32** type de propriété. Par conséquent, vous ne pouvez pas l’animer avec une animation **Double**. À la place, définissez un [**ObjectAnimationUsingKeyFrames**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames) qui a des composants [**DiscreteObjectKeyFrame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.DiscreteObjectKeyFrame), où [**ObjectKeyFrame.Value**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.objectkeyframe.value) a la valeur d’un entier tel que « 0 » ou « 1 ».
+**Notez**  Pour cet exemple, la valeur de [**Grid. Row**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.row) est un type de propriété **Int32** . Par conséquent, vous ne pouvez pas l’animer avec une animation **Double**. À la place, définissez un [**ObjectAnimationUsingKeyFrames**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames) qui a des composants [**DiscreteObjectKeyFrame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.DiscreteObjectKeyFrame), où [**ObjectKeyFrame.Value**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.objectkeyframe.value) a la valeur d’un entier tel que « 0 » ou « 1 ».
 
 ## <a name="rules-for-the-properties-in-an-animation-targeting-property-path"></a>Règles des propriétés dans un chemin de propriété de ciblage d’animation
 
--   Le point de départ supposé du chemin de propriété est l’objet identifié par [**Storyboard.TargetName**](https://docs.microsoft.com/dotnet/api/system.windows.media.animation.storyboard.targetname?view=netframework-4.8).
+-   Le point de départ supposé du chemin de propriété est l’objet identifié par [**Storyboard.TargetName**](https://docs.microsoft.com/dotnet/api/system.windows.media.animation.storyboard.targetname).
 -   Tous les objets et propriétés référencés dans le chemin de propriété doivent être publics.
 -   La propriété de fin (dernière propriété nommée dans le chemin d’accès) doit être publique, être accessible en lecture/écriture et représenter une propriété de dépendance.
 -   La propriété de fin doit avoir un type de propriété pouvant être animé par l’une des classes générales des types d’animation (animations [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color), animations **Double**, animations [**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point), [**ObjectAnimationUsingKeyFrames**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames)).
@@ -107,15 +107,15 @@ La classe [**PropertyPath**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.
 
 La plupart du temps, vous pouvez appliquer [**PropertyPath**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyPath) en XAML, sans recourir à la moindre ligne de code. Mais dans certains cas, vous pouvez être amené à définir un objet **PropertyPath** avec du code et l’affecter à une propriété au moment de l’exécution.
 
-[**PropertyPath** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyPath) a un [ **PropertyPath(String)** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.propertypath.-ctor) constructeur et n’a pas un constructeur par défaut. La chaîne que vous passez à ce constructeur est une chaîne définie à l’aide de la syntaxe du chemin de propriété, comme nous l’avons expliqué précédemment. Vous utilisez également la même chaîne pour affecter [**Path**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.path) en tant qu’attribut XAML. La seule autre API de la classe **PropertyPath** est la propriété [**Path**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.propertypath.path), qui est accessible en lecture seule. Vous pouvez utiliser cette propriété comme chaîne de construction pour une autre instance de **PropertyPath**.
+[**PropertyPath**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyPath) a un constructeur [**PropertyPath (String)** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.propertypath.-ctor) et n’a pas de constructeur par défaut. La chaîne que vous passez à ce constructeur est une chaîne définie à l’aide de la syntaxe du chemin de propriété, comme nous l’avons expliqué précédemment. Vous utilisez également la même chaîne pour affecter [**Path**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.path) en tant qu’attribut XAML. La seule autre API de la classe **PropertyPath** est la propriété [**Path**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.propertypath.path), qui est accessible en lecture seule. Vous pouvez utiliser cette propriété comme chaîne de construction pour une autre instance de **PropertyPath**.
 
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Présentation détaillée de la liaison de données](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)
-* [Animations de storyboard](https://docs.microsoft.com/windows/uwp/graphics/storyboarded-animations)
-* [Extension de balisage {binding}](binding-markup-extension.md)
+* [Animations de Storyboard](https://docs.microsoft.com/windows/uwp/graphics/storyboarded-animations)
+* [{Binding} (extension de balisage)](binding-markup-extension.md)
 * [**PropertyPath**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.PropertyPath)
-* [**Liaison**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.Binding)
+* [**Liant**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.Binding)
 * [**Constructeur de liaison**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.-ctor)
 * [**DataContext**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext)
 

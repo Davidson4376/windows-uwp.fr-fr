@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: b27c5a0446bc9b329b09855f06d58a13723ece1c
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: f73bb15d2746dbac4403ca6daffb603588cf7a58
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317384"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340095"
 ---
 # <a name="access-keys"></a>Touches d’accès rapide
 
@@ -44,7 +44,7 @@ Les applications Microsoft Office offrent une prise en charge étendue des touc
 
 ![Badges KeyTip pour les touches d’accès rapide dans Microsoft Word](images/accesskeys/keytip-badges-word.png)
 
-_Badges de touche d’accès pour les clés d’accès dans Microsoft Word_
+_Badges de KeyTip pour les touches d’accès dans Microsoft Word_
 
 Pour ajouter une touche d’accès rapide à une commande, utilisez la **propriété AccessKey**. La valeur de cette propriété spécifie la séquence de touches d’accès rapide, le raccourci (si un seul caractère alphanumérique) et la touche d’accès.
 
@@ -72,11 +72,9 @@ Par exemple, Microsoft Word fournit deux étendues de clé d’accès : une po
 
 Les images suivantes présentent les deux étendues des touches d’accès rapide dans Word. Le premier exemple montre les touches d’accès rapide principales qui permettent à un utilisateur de sélectionner un onglet et d’autres commandes de niveau supérieur. Le second exemple présente les touches d’accès rapide secondaire pour l’onglet Accueil.
 
-![Clés d’accès primaire dans Microsoft Word](images/accesskeys/primary-access-keys-word.png)
-_clés d’accès primaire dans Microsoft Word_
+clés d’accès ![Primary dans Microsoft Word @ no__t-1_clés d’accès principales dans Microsoft Word_
 
-![Clés d’accès secondaire dans Microsoft Word](images/accesskeys/secondary-access-keys-word.png)
-_clés d’accès secondaire dans Microsoft Word_
+clés d’accès ![Secondary dans Microsoft Word @ no__t-1_clés d’accès secondaires dans Microsoft Word_
 
 Les touches d’accès rapide peuvent être dupliquées pour les éléments dans des étendues différentes. Dans l’exemple précédent, « 2 » est la touche d’accès rapide pour l’option Annuler dans l’étendue principale et pour l’option « Italique » dans l’étendue secondaire.
 
@@ -110,11 +108,11 @@ Nous montrons ici comment définir une étendue de touche d’accès.
 
 ![Touches d’accès rapide principales pour CommandBar](images/accesskeys/primary-access-keys-commandbar.png)
 
-_Étendue principal CommandBar et les clés d’accès pris en charge_
+_Étendue principale CommandBar et clés d’accès prises en charge_
 
 ![Touches d’accès rapide secondaires pour CommandBar](images/accesskeys/secondary-access-keys-commandbar.png)
 
-_Étendue secondaire CommandBar et les clés d’accès pris en charge_
+_Portée secondaire CommandBar et clés d’accès prises en charge_
 
 ### <a name="windows-10-creators-update-and-older"></a>Windows 10 Creators Update et versions antérieures
 
@@ -233,13 +231,13 @@ Des ressources pour chaque langue sont ajoutées à des dossiers de chaîne corr
 
 ![Dossiers de chaîne de ressources en anglais et en espagnol](images/accesskeys/resource-string-folders.png)
 
-_Dossiers de chaîne de ressources anglais et espagnol_
+_Dossiers de chaînes de ressources en anglais et espagnol_
 
 Les touches d’accès localisées sont spécifiées dans votre fichier de projets resources.resw :
 
 ![Indiquez la propriété AccessKey spécifiée dans le fichier resources.resw](images/accesskeys/resource-resw-file.png)
 
-_Spécifiez la propriété AccessKey spécifiée dans le fichier resources.resw_
+_Spécifiez la propriété AccessKey spécifiée dans le fichier Resources. resw_
 
 Pour plus d’informations, consultez [Traduire des ressources d’interface utilisateur ](https://docs.microsoft.com/previous-versions/windows/apps/hh965329(v=win.10))
 
@@ -251,21 +249,21 @@ En règle générale, l’emplacement par défaut de la touche d’accès est sa
 
 ![Exemple de placement automatique de la touche d’accès](images/accesskeys/auto-keytip-position.png)
 
-_Exemple de la touche accélératrice la sélection élective automatique_
+_Exemple d’emplacement de l’info-bulle automatique_
 
 Nous vous recommandons toutefois les éléments suivants, au cas où vous auriez besoin de plus de contrôle sur le positionnement de la touche d’accès :
 
-1.  **Principe de l’association évidente**: L’utilisateur peut associer facilement le contrôle avec la touche accélératrice.
+1.  **Principe d’association évident**: L’utilisateur peut facilement associer le contrôle à l’info-bulle.
 
     a.  La touche d’accès doit être **proche** de l’élément qui possède la touche d’accès rapide (le propriétaire).  
     b.  La touche d’accès doit **éviter des éléments de couverture activés** qui ont des touches d’accès rapide.   
     c.  Si une touche d’accès ne peut pas être placée proche de son propriétaire, elle doit le chevaucher. 
 
-2.  **Détectabilité**: L’utilisateur peut découvrir le contrôle avec la touche accélératrice rapidement.
+2.  **Découverte**: L’utilisateur peut découvrir rapidement le contrôle avec la touche accélératrice.
 
     a.  La touche d’accès ne **chevauche** jamais d’autres touches d’accès.  
 
-3.  **Analyse facile :** L’utilisateur « alléger » les touches accélératrices facilement.
+3.  **Analyse facile :** L’utilisateur peut facilement parcourir les conseils clés.
 
     a.  Les touches d’accès doivent être **alignées** entre elles et avec l’élément d’interface utilisateur.
     b.  Les touches d’accès doivent être **regroupées** autant que possible. 
@@ -274,11 +272,11 @@ Nous vous recommandons toutefois les éléments suivants, au cas où vous auriez
 
 Utilisez la propriété **KeyTipPlacementMode** afin de personnaliser le placement de la touche d’accès sur une base par élément ou par groupe.
 
-Les modes de sélection élective sont : Haut, bas, droite, gauche, masqué, Center et automatique.
+Les modes de placement sont les suivants : Haut, bas, droite, gauche, masqué, Centre et automatique.
 
 ![Modes de placement d’une touche d’accès](images/accesskeys/keytip-postion-modes.png)
 
-_Modes de sélection élective de touche_
+_Modes de positionnement des touches accélératrices_
 
 La ligne centrale de la commande est utilisée pour calculer l’alignement vertical et horizontal de la touche d’accès.
 
@@ -303,7 +301,7 @@ La propriété KeyTipHorizontalOffset indique jusqu’à quel endroit, vers la g
 
 ![Modes de placement d’une touche d’accès](images/accesskeys/keytip-offsets.png)
 
-_Définir les décalages verticaux et horizontaux pour une touche accélératrice_
+_Définir des décalages verticaux et horizontaux pour une touche accélératrice_
 
 ``` xaml
 <Button
@@ -320,7 +318,7 @@ L’emplacement d’une touche d’accès est automatiquement ajusté au bord de
 
 ![Modes de placement d’une touche d’accès](images/accesskeys/keytips-screen-edge.png)
 
-_Le bord d’écran entraîne la touche accélératrice se repositionner automatiquement_
+_Le bord de l’écran provoque le repositionnement automatique de l’info-bulle_
 
 ## <a name="key-tip-style"></a>Style des touches d’accès
 
@@ -330,7 +328,7 @@ Si vous avez besoin de spécifier vos propres styles de touche d’accès, utili
 
 ![Modes de placement d’une touche d’accès](images/accesskeys/keytip-customization.png)
 
-_Options de personnalisation des info-bulle de clé_
+_Options de personnalisation des touches accélératrices_
 
 Cet exemple montre comment modifier ces ressources d’application :
 
@@ -353,14 +351,14 @@ Cet exemple montre comment modifier ces ressources d’application :
 
 L’infrastructure XAML expose les propriétés d’automatisation qui permettent aux clients UI Automation de découvrir des informations sur des éléments dans l’interface utilisateur.
 
-Si vous spécifiez la propriété AccessKey sur une commande UIElement ou TextElement, vous pouvez utiliser la propriété [AutomationProperties.AccessKey](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.accesskey?view=netframework-4.8) afin d’obtenir cette valeur. Les clients d’accessibilité, tels que Narrateur, lisent la valeur de cette propriété à chaque fois qu’un élément obtient un focus.
+Si vous spécifiez la propriété AccessKey sur une commande UIElement ou TextElement, vous pouvez utiliser la propriété [AutomationProperties.AccessKey](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.accesskey) afin d’obtenir cette valeur. Les clients d’accessibilité, tels que Narrateur, lisent la valeur de cette propriété à chaque fois qu’un élément obtient un focus.
 
-## <a name="related-articles"></a>Articles associés
+## <a name="related-articles"></a>Articles connexes
 
-* [Interactions de clavier](keyboard-interactions.md)
+* [Interactions du clavier](keyboard-interactions.md)
 * [Accélérateurs de clavier](keyboard-accelerators.md)
 
 **Exemples**
-* [Galerie de contrôles XAML (également appelé XamlUiBasics)](https://github.com/Microsoft/Windows-universal-samples/tree/c2aeaa588d9b134466bbd2cc387c8ff4018f151e/Samples/XamlUIBasics)
+* [Galerie de contrôles XAML (alias XamlUiBasics)](https://github.com/Microsoft/Windows-universal-samples/tree/c2aeaa588d9b134466bbd2cc387c8ff4018f151e/Samples/XamlUIBasics)
 
 

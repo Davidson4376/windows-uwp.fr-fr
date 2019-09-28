@@ -10,12 +10,12 @@ dev_langs:
 - csharp
 - vb
 - cpp
-ms.openlocfilehash: ffb71812e192c8ca77d8f117a98e032f9e9814c9
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: d3892857baa29e2275845cb077e5ad9ea3166ada
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66366486"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340604"
 ---
 # <a name="attached-properties-overview"></a>Vue d’ensemble des propriétés jointes
 
@@ -27,7 +27,7 @@ Nous supposons que vous connaissez les principes de base des propriétés de dé
 
 ## <a name="attached-properties-in-xaml"></a>Propriétés jointes en XAML
 
-En XAML, les propriétés jointes sont définies à l’aide de la syntaxe _AttachedPropertyProvider.PropertyName_. Voici un exemple montrant comment définir [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left?view=netframework-4.8) en XAML.
+En XAML, les propriétés jointes sont définies à l’aide de la syntaxe _AttachedPropertyProvider.PropertyName_. Voici un exemple montrant comment définir [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left) en XAML.
 
 ```xaml
 <Canvas>
@@ -36,13 +36,13 @@ En XAML, les propriétés jointes sont définies à l’aide de la syntaxe _Atta
 ```
 
 > [!NOTE]
-> Nous les utilisons [ **Canvas.Left** ](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left?view=netframework-4.8) comme un exemple de propriété jointe sans entièrement expliquant pourquoi l’utiliser. Si vous voulez en savoir plus sur le rôle de **Canvas.Left** et la façon dont [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) gère ses enfants de disposition, voir la rubrique de référence [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) ou [Définir des dispositions avec XAML](https://docs.microsoft.com/windows/uwp/layout/layouts-with-xaml).
+> Nous utilisons simplement [**Canvas. Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left) comme exemple de propriété jointe sans expliquer en détail pourquoi vous pouvez l’utiliser. Si vous voulez en savoir plus sur le rôle de **Canvas.Left** et la façon dont [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) gère ses enfants de disposition, voir la rubrique de référence [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) ou [Définir des dispositions avec XAML](https://docs.microsoft.com/windows/uwp/layout/layouts-with-xaml).
 
 ## <a name="why-use-attached-properties"></a>Pourquoi utiliser des propriétés jointes ?
 
 Les propriétés jointes sont un moyen d’échapper aux conventions de codage qui pourraient empêcher différents objets d’une relation d’échanger des informations au moment de l’exécution. Il est certainement possible de placer des propriétés sur une classe de base courante afin que chaque objet puisse juste obtenir et définir ces propriétés. Mais au final, le nombre considérable de scénarios où vous souhaiterez le faire encombrera vos classes de base de propriétés partageables. Cette approche pourrait même créer des situations où seuls deux des centaines de descendants essaieraient d’utiliser une propriété. Cela ne constitue pas une bonne conception de classe. Pour résoudre ce problème, le concept des propriétés jointes permet à un objet d’affecter une valeur pour une propriété que sa propre structure de classe ne définit pas. La classe de définition peut lire cette valeur à partir des objets enfants au moment de l’exécution, après que les différents objets ont été créés dans une arborescence d’objets.
 
-Par exemple, des éléments enfants peuvent utiliser des propriétés jointes pour indiquer à leur élément parent la manière dont ils doivent être présentés dans l’interface utilisateur. C’est le cas avec la propriété jointe [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left?view=netframework-4.8). **Canvas.Left** est créée en tant que propriété jointe car elle est définie au niveau d’éléments contenus dans un élément [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas), et non dans la classe **Canvas** proprement dite. Tous les éléments enfants possibles utilisent alors **Canvas.Left** et [**Canvas.Top**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.top?view=netframework-4.8) pour spécifier leur décalage de disposition au sein du parent du conteneur de disposition **Canvas**. Les propriétés jointes permettent à ce scénario de fonctionner sans encombrer le modèle objet de l’élément de base de nombreuses propriétés qui s’appliquent chacune uniquement à un des nombreux conteneurs de disposition possibles. Au lieu de cela, la plupart des conteneurs de disposition implémentent leur propre jeu de propriétés jointes.
+Par exemple, des éléments enfants peuvent utiliser des propriétés jointes pour indiquer à leur élément parent la manière dont ils doivent être présentés dans l’interface utilisateur. C’est le cas avec la propriété jointe [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left). **Canvas.Left** est créée en tant que propriété jointe car elle est définie au niveau d’éléments contenus dans un élément [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas), et non dans la classe **Canvas** proprement dite. Tous les éléments enfants possibles utilisent alors **Canvas.Left** et [**Canvas.Top**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.top) pour spécifier leur décalage de disposition au sein du parent du conteneur de disposition **Canvas**. Les propriétés jointes permettent à ce scénario de fonctionner sans encombrer le modèle objet de l’élément de base de nombreuses propriétés qui s’appliquent chacune uniquement à un des nombreux conteneurs de disposition possibles. Au lieu de cela, la plupart des conteneurs de disposition implémentent leur propre jeu de propriétés jointes.
 
 Pour implémenter la propriété jointe, la classe [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) définit un champ statique [**DependencyProperty**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyProperty) nommé [**Canvas.LeftProperty**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.canvas.leftproperty). Ensuite, **Canvas** fournit les méthodes [**SetLeft**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.canvas.setleft) et [**GetLeft**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.canvas.getleft) comme accesseurs publics pour la propriété jointe, afin de permettre l’accès au paramètre XAML et à la valeur au moment de l’exécution. Pour XAML et le système de propriétés de dépendance, cet ensemble d’API obéit à un schéma qui autorise une syntaxe XAML spécifique pour les propriétés jointes et stocke la valeur dans la banque de propriétés de dépendance.
 
@@ -123,15 +123,15 @@ Le point figurant dans un nom de propriété jointe est un élément clé du mod
 - Pour spécifier une propriété jointe comme faisant partie du chemin cible d’une animation, mettez le nom de la propriété jointe entre parenthèses ("()") par exemple "(Canvas.Left)". Pour plus d’informations, voir [Syntaxe de PropertyPath](property-path-syntax.md).
 
 > [!WARNING]
-> Une limite de l’implémentation de Windows Runtime XAML est que vous ne pouvez pas animer une propriété jointe personnalisée.
+> Une limitation existante de l’implémentation XAML Windows Runtime est que vous ne pouvez pas animer une propriété jointe personnalisée.
 
-- Pour spécifier une propriété jointe en tant que la propriété cible pour une référence de ressource à partir d’un fichier de ressources à **x : Uid**, utiliser une syntaxe spéciale qui injecte un style de code, entièrement qualifié **à l’aide de :** déclaration à l’intérieur des crochets («\[\]»), pour créer un saut de portée délibérée. Par exemple, en supposant qu’il existe un élément `<TextBlock x:Uid="Title" />`, la clé de ressource dans le fichier de ressources qui cible le **Canvas.Top** valeur sur cette instance est « Title.\[ Using:Windows.UI.Xaml.Controls\]Canvas.Top ». Pour plus d’informations sur les fichiers de ressources et de XAML, consultez [Guide de démarrage rapide : Traduction de ressources de l’interface utilisateur](https://docs.microsoft.com/previous-versions/windows/apps/hh965329(v=win.10)).
+- Pour spécifier une propriété jointe en tant que propriété cible d’une référence de ressource d’un fichier de ressources à **x :uid**, utilisez une syntaxe spéciale qui injecte une déclaration de style code, entièrement qualifié **à l’aide de :** dans les crochets (« \[ @ no__t-3 »), à Créez un arrêt délibéré de l’étendue. Par exemple, en supposant qu’il existe un élément `<TextBlock x:Uid="Title" />`, la clé de ressource dans le fichier de ressources qui cible la valeur **Canvas. Top** de cette instance est « Title. \[using : Windows.UI.Xaml.Controls\]Canvas.Top ». Pour plus d’informations sur les fichiers de ressources et XAML, consultez [Quickstart : Traduction des ressources de l’interface utilisateur @ no__t-0.
 
 ## <a name="related-topics"></a>Rubriques connexes
 
 - [Propriétés jointes personnalisées](custom-attached-properties.md)
 - [Vue d’ensemble des propriétés de dépendance](dependency-properties-overview.md)
 - [Définir des dispositions avec XAML](https://docs.microsoft.com/windows/uwp/layout/layouts-with-xaml)
-- [Démarrage rapide : Traduction de ressources de l’interface utilisateur](https://docs.microsoft.com/previous-versions/windows/apps/hh943060(v=win.10))
+- [Démarrage rapide : Traduction des ressources de l’interface utilisateur @ no__t-0
 - [**SetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.setvalue)
 - [**GetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.getvalue)

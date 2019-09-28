@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d93e3f681d271fe9914b122896fdaedfd3e08868
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 579772bba55c93de38c3c43538ad14253dbc2572
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66362330"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339898"
 ---
 # <a name="optimize-animations-media-and-images"></a>Optimiser les animations, les éléments multimédia et les images
 
@@ -30,7 +30,7 @@ Tous les types d’animations suivants sont indépendants :
 
 -   Animations d’objet utilisant des images clés
 -   Animations d’une durée nulle
--   Animations sur les propriétés [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left?view=netframework-4.8) et [**Canvas.Top**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.top?view=netframework-4.8)
+-   Animations sur les propriétés [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left) et [**Canvas.Top**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.top)
 -   Animations sur la propriété [**UIElement.Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity)
 -   Animations sur des propriétés de type [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) lors du ciblage de la sous-propriété [**SolidColorBrush.Color**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color)
 -   Animations sur les propriétés [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) suivantes lors du ciblage de sous-propriétés des types de valeur de retour suivants :
@@ -38,7 +38,7 @@ Tous les types d’animations suivants sont indépendants :
     -   [**RenderTransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform)
     -   [**Transform3D**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.transform3d)
     -   [**Projection**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.projection)
-    -   [**Clip**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.clip)
+    -   [**Capture**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.clip)
 
 Les animations dépendantes ont un impact sur la disposition. Leur calcul nécessite des données supplémentaires du thread de l’interface utilisateur. Les animations dépendantes incluent les modifications apportées à des propriétés telles que [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) et [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height). Par défaut, les animations dépendantes ne sont pas exécutées et nécessitent d’être activées par le développeur de l’application. Lorsqu’elles sont activées, ces animations s’exécutent avec fluidité tant que le thread de l’interface utilisateur reste actif. En revanche, elles commencent à se cadencer si l’infrastructure ou l’application exécute en même temps beaucoup d’autres tâches sur le thread d’interface utilisateur.
 
@@ -54,7 +54,7 @@ Le contenu Web d’un contrôle [**WebView**](https://docs.microsoft.com/uwp/api
 
 L’animation d’un objet [**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement) est également une mauvaise idée. Au-delà de l’impact négatif sur les performances, elle peut provoquer des dégradations ou d’autres artefacts sur le contenu vidéo qui est lu.
 
-> **Remarque**    les recommandations contenues dans cet article pour **MediaPlayerElement** s’appliquent également aux [ **MediaElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement). L’objet **MediaPlayerElement** étant uniquement disponible dans Windows 10, version 1607, si vous créez une application pour une version précédente de Windows, vous avez besoin d’utiliser l’objet **MediaElement**.
+> **Remarque**   les recommandations de cet article pour **MediaPlayerElement** s’appliquent également à [**MediaElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement). L’objet **MediaPlayerElement** étant uniquement disponible dans Windows 10, version 1607, si vous créez une application pour une version précédente de Windows, vous avez besoin d’utiliser l’objet **MediaElement**.
 
 ### <a name="use-infinite-animations-sparingly"></a>Utiliser avec parcimonie les animations infinies
 
@@ -66,7 +66,7 @@ L’ajout d’un gestionnaire pour l’événement [**CompositionTarget.Renderin
 
 L’espace de noms [**Windows.UI.Xaml.Media.Animation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation) comprend une bibliothèque d’animations fluides à hautes performances qui offrent une apparence cohérente avec les autres animations Windows. Les classes pertinentes ont un nom qui contient « Theme » et sont décrites dans [Vue d’ensemble des animations](https://docs.microsoft.com/windows/uwp/graphics/animations-overview). Cette bibliothèque prend en charge de nombreuses situations courantes d’animation, comme l’animation du premier affichage de l’application et la création de transitions d’état et de contenu. Nous vous recommandons d’utiliser cette bibliothèque d’animations le plus souvent possible pour améliorer les performances et garantir une cohérence maximale pour l’interface utilisateur UWP.
 
-> **Remarque**    la bibliothèque d’animations ne pouvez pas animer toutes les propriétés possibles. Dans le cas de scénarios XAML dans lesquels la bibliothèque d’animations ne s’applique pas, voir [Animations dans une table de montage séquentiel](https://docs.microsoft.com/windows/uwp/graphics/storyboarded-animations).
+> **Remarque**   la bibliothèque d’animations ne peut pas animer toutes les propriétés possibles. Dans le cas de scénarios XAML dans lesquels la bibliothèque d’animations ne s’applique pas, voir [Animations dans une table de montage séquentiel](https://docs.microsoft.com/windows/uwp/graphics/storyboarded-animations).
 
 
 ### <a name="animate-compositetransform3d-properties-independently"></a>Animer indépendamment les propriétés CompositeTransform3D
@@ -197,7 +197,7 @@ Dans les scénarios ci-dessus, la définition d’une taille de décodage explic
 
 Vous devez toujours associer un [**BitmapImage**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapImage) à l’arborescence live avant de définir la source. Dès lors qu’un élément ou pinceau image est spécifié dans le balisage, ce sera automatiquement le cas. Des exemples sont fournis ci-dessous sous le titre « Exemples d’arborescences dynamiques ». Vous devez toujours éviter d’utiliser [**SetSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsource) et utiliser plutôt [**SetSourceAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync) lors de la définition d’une source de flux. Il est conseillé d’éviter de masquer du contenu image (soit avec zéro opacité ou avec une visibilité réduite) dans l’attente du déclenchement de l’événement [**ImageOpened**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.imageopened). L’exécution de cette opération est laissée à l’appréciation de chacun : vous ne pourrez pas profiter du décodage automatique à la bonne taille si vous l’exécutez. Si votre application doit masquer le contenu image initialement, alors elle doit également définir la taille de décodage explicitement si possible.
 
-**Exemples d’arborescence Live**
+**Exemples d’arborescences dynamiques**
 
 Exemple 1 (correct) : Uniform Resource Identifier (URI) spécifié dans le balisage.
 
@@ -219,7 +219,7 @@ myImage.Source = bitmapImage;
 bitmapImage.UriSource = new URI("ms-appx:///Assets/cool-image.png", UriKind.RelativeOrAbsolute);
 ```
 
-Exemple 2 code-behind (incorrect), définition UriSource de la BitmapImage avant de vous connecter à l’arborescence.
+Exemple 2 code-behind (Bad) : définition du UriSource de BitmapImage avant de le connecter à l’arborescence.
 
 ```csharp
 var bitmapImage = new BitmapImage();
@@ -263,7 +263,7 @@ Votre application doit utiliser [**SoftwareBitmap**](https://docs.microsoft.com/
 
 ### <a name="use-getthumbnailasync-for-thumbnails"></a>Utiliser GetThumbnailAsync pour les miniatures
 
-Un exemple d’utilisation des images mises à l’échelle : la création des miniatures. Bien que vous puissiez utiliser [**DecodePixelWidth**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelwidth) et [**DecodePixelHeight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelheight) pour fournir des petites versions des images, UWP fournit des API plus efficaces pour récupérer les miniatures. [**GetThumbnailAsync** ](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getthumbnailasync) fournit les miniatures pour les images qui ont déjà mis en cache du système de fichiers. Vous obtenez ainsi une bien meilleure performance qu’avec les API XAML, car l’image n’a pas besoin d’être ouverte ou décodée.
+Un exemple d’utilisation des images mises à l’échelle : la création des miniatures. Bien que vous puissiez utiliser [**DecodePixelWidth**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelwidth) et [**DecodePixelHeight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelheight) pour fournir des petites versions des images, UWP fournit des API plus efficaces pour récupérer les miniatures. [**GetThumbnailAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getthumbnailasync) fournit les miniatures pour les images dont le système de fichiers est déjà mis en cache. Vous obtenez ainsi une bien meilleure performance qu’avec les API XAML, car l’image n’a pas besoin d’être ouverte ou décodée.
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp

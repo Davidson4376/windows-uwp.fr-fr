@@ -6,12 +6,12 @@ ms.date: 08/30/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: baac4498fcc6dd65d106166f73ca89db89cbfc6b
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: eec1de013efce7b23cd89e81f659a5cc530638c4
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67821002"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339968"
 ---
 # <a name="enterprise"></a>Entreprise
 
@@ -78,7 +78,7 @@ Consultez [Partager du code entre une application de bureau et une application U
 
 ### <a name="sql-server-connectivity"></a>Connectivité SQL Server
 
-Votre application peut se connecter directement à une base de données SQL Server, puis stocker et récupérer des données à l’aide de classes de l’espace de noms [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient?redirectedfrom=MSDN&view=netframework-4.7.2).
+Votre application peut se connecter directement à une base de données SQL Server, puis stocker et récupérer des données à l’aide de classes de l’espace de noms [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient).
 
 Consultez [Utiliser une base de données SQL Server dans une application UWP](https://docs.microsoft.com/en-us/windows/uwp/data-access/sql-server-databases).
 
@@ -125,7 +125,7 @@ Les applications métier ont souvent besoin de communiquer avec des données ou 
 |-------|-------------|
 | [Notions de base relatives aux réseaux](https://docs.microsoft.com/windows/uwp/networking/networking-basics) | Cette procédure pas à pas explique les concepts de mise en réseau de base pertinents pour toutes les applications UWP, quels que soient les protocoles de communication utilisés.  |
 | [Quelle technologie réseau ?](https://docs.microsoft.com/windows/uwp/networking/which-networking-technology) | Une vue d’ensemble des technologies de réseau disponibles pour les applications UWP, avec des conseils qui vous aideront à choisir les technologies appropriées pour votre application. |
-| [Sérialisation XML et SOAP](https://docs.microsoft.com/dotnet/framework/serialization/xml-and-soap-serialization) | La sérialisation XML convertit les objets en un flux XML conforme à un langage XSD (définition de schéma XML) spécifique. Pour effectuer une conversion entre XML et une classe fortement typée, vous pouvez utiliser la classe [XDocument](https://docs.microsoft.com/dotnet/api/system.xml.linq.xdocument?redirectedfrom=MSDN) native ou une bibliothèque externe. |
+| [Sérialisation XML et SOAP](https://docs.microsoft.com/dotnet/framework/serialization/xml-and-soap-serialization) | La sérialisation XML convertit les objets en un flux XML conforme à un langage XSD (définition de schéma XML) spécifique. Pour effectuer une conversion entre XML et une classe fortement typée, vous pouvez utiliser la classe [XDocument](https://docs.microsoft.com/dotnet/api/system.xml.linq.xdocument) native ou une bibliothèque externe. |
 | [Sérialisation JSON](https://docs.microsoft.com/uwp/api/Windows.Data.Json) | La sérialisation JSON (JavaScript Object Notation) est un format populaire utilisé pour la communication avec les API REST. Le [Newtonsoft Json.NET](https://www.newtonsoft.com/json), qui est entièrement pris en charge par les applications UWP. |
 
 ## <a name="devices"></a>Appareils

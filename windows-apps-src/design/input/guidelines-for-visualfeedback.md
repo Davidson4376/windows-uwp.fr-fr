@@ -1,5 +1,5 @@
 ---
-Description: Utiliser des commentaires visuels pour afficher les utilisateurs lorsque leurs interactions avec une application UWP sont détectées, interprétées et gérées.
+Description: Utilisez les commentaires visuels pour montrer aux utilisateurs quand leurs interactions avec une application UWP sont détectées, interprétées et gérées.
 title: Retour visuel
 ms.assetid: bf2f3672-95f0-4c8c-9a72-0934f2d3b767
 label: Visual feedback
@@ -8,18 +8,18 @@ keywords: retour visuel, retour de focus, retour tactile, visualisation de conta
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ab5d8b12539b7669f3459e62159177bfd95269d
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 56260eb09bc834b2a71e9889b91f0bc439edaa30
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317155"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340466"
 ---
 # <a name="guidelines-for-visual-feedback"></a>Recommandations en matière de retour visuel
 
 Utilisez le retour visuel pour indiquer aux utilisateurs quand leurs interactions sont détectées, interprétées et gérées. Le retour visuel peut aider les utilisateurs en encourageant l’interaction. Il indique le succès d’une interaction et améliore ainsi le sentiment de contrôle de l’utilisateur. Il transmet également l’état du système et réduit les erreurs.
 
-> **API importantes** :  [**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input), [**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input), [**Windows.UI.Core**](https://docs.microsoft.com/uwp/api/Windows.UI.Core)
+> **API importantes** :  [**Windows. Devices. Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input), [**Windows. UI. Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input), [**Windows. UI. Core**](https://docs.microsoft.com/uwp/api/Windows.UI.Core)
 
 ## <a name="recommendations"></a>Recommandations
 
@@ -40,7 +40,7 @@ L’utilisation des contrôles de la plateforme XAML disponibles permet de garan
 > [!Important]
 > Nous ne conseillons pas de modifier le comportement d’interaction des mouvements intégrés.
 
-**Commentaires sur des appareils**
+**Commentaires sur les appareils**
 
 Le retour visuel dépend généralement du périphérique d’entrée (entrée tactile, pavé tactile, souris, stylo/stylet, clavier, etc.). Par exemple, le retour intégré pour une souris implique habituellement le déplacement et le changement du curseur, l’entrée tactile et le stylo nécessitent des visualisations de contact, et l’entrée et la navigation au clavier utilisent la mise en surbrillance et des rectangles de sélection.
 
@@ -65,7 +65,7 @@ Pour l'**expérience « 10-foot »** typique de l'utilisation de Xbox et de la
 **Propriétés de bordure**
 
 Les visuels du focus à haute visibilité sont composés de deux éléments : la bordure principale et la bordure secondaire. La bordure principale a une épaisseur de **2 px** et apparaît autour de la bordure secondaire *extérieure*. La bordure secondaire a une épaisseur de **1 px** et apparaît autour de la bordure principale *intérieure*.
-![Lignes de haute visibilité élément visuel de focus](images/FocusRectRedlines.png)
+Focus de visibilité de la @no__t 0High-ligne rouge-1
 
 Pour modifier l’épaisseur des bordures (principale ou secondaire), utilisez les propriétés **FocusVisualPrimaryThickness** ou **FocusVisualSecondaryThickness**, respectivement :
 ```XAML
@@ -73,7 +73,7 @@ Pour modifier l’épaisseur des bordures (principale ou secondaire), utilisez l
 ```
 ![Épaisseurs des marges des visuels du focus à haute visibilité](images/FocusMargin.png)
 
-La marge est une propriété de type [**Thickness**](https://docs.microsoft.com/dotnet/api/system.windows.thickness?redirectedfrom=MSDN) ; par conséquent, la marge peut être personnalisée afin d’apparaître uniquement sur certains côtés du contrôle. Voir ci-dessous : ![Haute visibilité focus marge visual épaisseur bas uniquement](images/FocusThicknessSide.png)
+La marge est une propriété de type [**Thickness**](https://docs.microsoft.com/dotnet/api/system.windows.thickness) ; par conséquent, la marge peut être personnalisée afin d’apparaître uniquement sur certains côtés du contrôle. Voir ci-dessous : ![High visibilité focus visuel marge inférieure uniquement @ no__t-1
 
 La marge est l’espace entre les limites de l’élément visuel du contrôle et le début de la *bordure secondaire* des visuels du focus. La marge par défaut est à **1px** des limites du contrôle. Vous pouvez modifier cette marge pour chaque contrôle, en modifiant la propriété **FocusVisualMargin** :
 ```XAML
@@ -81,7 +81,7 @@ La marge est l’espace entre les limites de l’élément visuel du contrôle e
 ```
 ![Différences des marges des visuels du focus à haute visibilité](images/FocusPlusMinusMargin.png)
 
-*Une marge négatif transmet la bordure direction opposée au centre du contrôle et une marge positif déplace la bordure de la vers le centre du contrôle.*
+*Une marge négative pousse la bordure à l’extérieur du centre du contrôle, et une marge positive déplace la bordure vers le centre du contrôle.*
 
 Pour désactiver les visuels du focus du contrôle, désactivez simplement **UseSystemFocusVisuals** :
 ```XAML
@@ -106,29 +106,29 @@ Pour modifier les couleurs pour chaque contrôle, modifiez simplement les propri
 <Slider Width="200" FocusVisualPrimaryBrush="DarkRed" FocusVisualSecondaryBrush="Pink"/>
 ```
 
-## <a name="related-articles"></a>Articles associés
+## <a name="related-articles"></a>Articles connexes
 
 **Pour les concepteurs**
-* [Instructions pour l’affichage panoramique](guidelines-for-panning.md)
+* [Instructions pour le panorama](guidelines-for-panning.md)
 
-**pour les développeurs**
-* [Interactions de l’utilisateur personnalisé](https://docs.microsoft.com/windows/uwp/design/layout/index)
+**Pour les développeurs**
+* [Interactions utilisateur personnalisées](https://docs.microsoft.com/windows/uwp/design/layout/index)
 
 **Exemples**
 * [Exemple d’entrée de base](https://go.microsoft.com/fwlink/p/?LinkID=620302)
 * [Exemple d’entrée à faible latence](https://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [Exemple de mode d’interaction utilisateur](https://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [Exemple d’éléments visuels de focus](https://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [Exemples de visuels de focus](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 
-**Exemples d’archive**
-* [Entrée : Exemple d’événements d’entrée utilisateur XAML](https://go.microsoft.com/fwlink/p/?linkid=226855)
-* [Entrée : Exemples de fonctionnalités d’appareil](https://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Entrée : Exemple de test d’atteinte tactile](https://go.microsoft.com/fwlink/p/?linkid=231590)
-* [XAML de défilement, panoramique et zoom d’exemple](https://go.microsoft.com/fwlink/p/?linkid=251717)
-* [Entrée : Exemple d’entrée manuscrite simplifiée](https://go.microsoft.com/fwlink/p/?linkid=246570)
-* [Entrée : Exemple de mouvements de Windows 8](https://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [Entrée : Manipulations et exemple de mouvements (C++)](https://go.microsoft.com/fwlink/p/?linkid=231605)
-* [Exemple d’entrée tactile de DirectX](https://go.microsoft.com/fwlink/p/?LinkID=231627)
+**Exemples d’archives**
+* @no__t 0Input : Exemples d’événements d’entrée d’utilisateur XAML @ no__t-0
+* @no__t 0Input : Fonctionnalités de l’appareil, exemple @ no__t-0
+* @no__t 0Input : Test d’atteinte tactile, exemple @ no__t-0
+* [Exemple de défilement XAML, panoramique et zoom](https://go.microsoft.com/fwlink/p/?linkid=251717)
+* @no__t 0Input : Exemple d’entrée manuscrite simplifié @ no__t-0
+* @no__t 0Input : Exemple de gestes Windows 8 @ no__t-0
+* @no__t 0Input : Manipulations et mouvements (C++), exemple @ no__t-1
+* [Exemple d’entrée tactile DirectX](https://go.microsoft.com/fwlink/p/?LinkID=231627)
  
 
  

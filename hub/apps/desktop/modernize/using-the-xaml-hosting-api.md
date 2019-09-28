@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 6c1f45b4bd3da74ea150c05800eba7ec10568894
-ms.sourcegitcommit: 6bb794c6e309ba543de6583d96627fbf1c177bef
+ms.openlocfilehash: cdcef66dc1f0026ff369eeb3f3c7881385d6e5ba
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69643406"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339292"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-c-win32-app"></a>Utilisation de l’API d’hébergement XAML UWP dans une application Win32 C++
 
@@ -146,7 +146,7 @@ Le processus de base de l’utilisation de l’API d’hébergement XAML pour h�
 
     1. Créez un objet **DesktopWindowXamlSource** et effectuez un cast de celui-ci en interface com **IDesktopWindowXamlSourceNative** ou **IDesktopWindowXamlSourceNative2** .
         > [!NOTE]
-        > Ces interfaces sont déclarées dans le fichier d’en-tête **Windows. UI. Xaml. Hosting. desktopwindowxamlsource. h** dans le SDK Windows. Par défaut, ce fichier se trouve dans% ProgramFiles (x86)% \ Windows\\Kits\10\Include < numéro\>de build \um.
+        > Ces interfaces sont déclarées dans le fichier d’en-tête **Windows. UI. Xaml. Hosting. desktopwindowxamlsource. h** dans le SDK Windows. Par défaut, ce fichier se trouve dans% ProgramFiles (x86)% \ Windows Kits\10\Include @ no__t-0 < numéro de build @ no__t-1\um.
 
     2. Appelez la méthode **AttachToWindow** de l’interface **IDesktopWindowXamlSourceNative** ou **IDesktopWindowXamlSourceNative2** , puis transmettez le handle de fenêtre de l’élément d’interface utilisateur parent dans votre application.
 
@@ -358,7 +358,7 @@ Pour héberger un contrôle UWP personnalisé, vous avez besoin des projets et c
 
 * **Contrôle UWP personnalisé**. Vous aurez besoin du code source du contrôle UWP personnalisé que vous souhaitez héberger pour pouvoir le compiler avec votre application. En règle générale, le contrôle personnalisé est défini dans un projet de bibliothèque de classes UWP que vous référencez dans C++ la même solution que votre projet Win32.
 
-* **Projet d’application UWP qui définit un objet XamlApplication**. Votre C++ projet Win32 doit avoir accès à une instance de la `Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication` classe fournie par le kit de pratiques de la communauté Windows. Ce type joue le rôle de fournisseur de métadonnées racine pour charger les métadonnées des types XAML UWP personnalisés dans les assemblys du répertoire actif de votre application. La méthode recommandée consiste à ajouter un projet **application vide (Windows universel)** à la même solution que votre C++ projet Win32 et à modifier la classe par défaut `App` de ce projet.
+* **Projet d’application UWP qui définit un objet XamlApplication**. Votre C++ projet Win32 doit avoir accès à une instance de la `Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication` classe fournie par le kit de pratiques de la communauté Windows. Ce type joue le rôle de fournisseur de métadonnées racine pour charger les métadonnées des types XAML UWP personnalisés dans les assemblys du répertoire actif de votre application. La méthode recommandée consiste à ajouter un projet **application vide (Windows universel)** à la même solution que votre C++ projet Win32 et à modifier la classe par défaut `App` dans ce projet.
   > [!NOTE]
   > Votre solution ne peut contenir qu’un seul projet qui `XamlApplication` définit un objet. Tous les contrôles UWP personnalisés de votre application partagent le `XamlApplication` même objet. Le projet qui définit l' `XamlApplication` objet doit inclure des références à toutes les autres bibliothèques et projets UWP utilisés pour héberger les contrôles UWP dans l’îlot XAML.
 
@@ -395,9 +395,9 @@ Pour gérer correctement l’entrée au clavier pour chaque îlot XAML, votre ap
 
   * **C++ Win32 :** : L’application peut appeler **PreTranslateMessage** directement dans sa boucle de message principale. Pour obtenir un exemple, consultez le fichier [XamlBridge. cpp](https://github.com/marb2000/XamlIslands/blob/master/1903_Samples/CppWinRT_Win32_App/SampleCppApp/XamlBridge.cpp#L6) dans l' [ C++ exemple Win32](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App).
 
-  * **WPF** L’application peut appeler **PreTranslateMessage** à partir du gestionnaire d’événements pour l’événement [ComponentDispatcher. ThreadFilterMessage](https://docs.microsoft.com/dotnet/api/system.windows.interop.componentdispatcher.threadfiltermessage?view=netframework-4.7.2) . Pour obtenir un exemple, consultez le fichier [WindowsXamlHostBase.focus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs#L177) dans le kit de pratiques de la communauté Windows.
+  * **WPF** L’application peut appeler **PreTranslateMessage** à partir du gestionnaire d’événements pour l’événement [ComponentDispatcher. ThreadFilterMessage](https://docs.microsoft.com/dotnet/api/system.windows.interop.componentdispatcher.threadfiltermessage) . Pour obtenir un exemple, consultez le fichier [WindowsXamlHostBase.focus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs#L177) dans le kit de pratiques de la communauté Windows.
 
-  * **Windows Forms :** L’application peut appeler **PreTranslateMessage** à partir d’une substitution pour la méthode [Control. PreprocessMessage](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.preprocessmessage?view=netframework-4.7.2) . Pour obtenir un exemple, consultez le fichier [WindowsXamlHostBase.KeyboardFocus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.KeyboardFocus.cs#L100) dans le kit de pratiques de la communauté Windows.
+  * **Windows Forms :** L’application peut appeler **PreTranslateMessage** à partir d’une substitution pour la méthode [Control. PreprocessMessage](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.preprocessmessage) . Pour obtenir un exemple, consultez le fichier [WindowsXamlHostBase.KeyboardFocus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.KeyboardFocus.cs#L100) dans le kit de pratiques de la communauté Windows.
 
 ### <a name="keyboard-focus-navigation"></a>Navigation au focus clavier
 
@@ -439,7 +439,7 @@ Lorsque l’utilisateur modifie la taille de l’élément d’interface utilisa
 
 L’infrastructure XAML UWP gère automatiquement les modifications DPI pour les contrôles UWP hébergés (par exemple, lorsque l’utilisateur fait glisser la fenêtre entre les moniteurs avec différentes résolutions d’écran). Pour une expérience optimale, nous recommandons que votre application Windows Forms, WPF ou C++ Win32 soit configurée pour prendre en charge la résolution par moniteur.
 
-Pour configurer votre application pour qu’elle prenne en charge la résolution par moniteur, ajoutez un [manifeste d’assembly côte à côte](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests) à votre projet et définissez l' **\<élément dpiAwareness\>** sur **PerMonitorV2**. Pour plus d’informations sur cette valeur, consultez la description de [DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2](https://docs.microsoft.com/windows/desktop/hidpi/dpi-awareness-context).
+Pour configurer votre application pour qu’elle prenne en charge la résolution par moniteur, ajoutez un [manifeste d’assembly côte à côte](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests) à votre projet et définissez l’élément **\<dpiAwareness @ no__t-3** sur **PerMonitorV2**. Pour plus d’informations sur cette valeur, consultez la description de [DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2](https://docs.microsoft.com/windows/desktop/hidpi/dpi-awareness-context).
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>

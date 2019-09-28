@@ -10,12 +10,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cppcx
-ms.openlocfilehash: dfe17fc64fd3e97f7562a7feca760b3a5d918f2e
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 0832e46794302a3ccc9eba81d4b0e9d93dd9be8c
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318012"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339668"
 ---
 # <a name="data-binding-overview"></a>Vue d’ensemble de la liaison de données
 
@@ -27,15 +27,15 @@ Dans cette rubrique, nous partons du principe que vous savez créer une applicat
 
 ## <a name="create-the-project"></a>Créer le projet
 
-Commencez par créer un projet **Application vide (Windows universel)** . Nommez-le « Quickstart ».
+Commencez par créer un projet **Application vide (universelle Windows)** . Nommez-le « Quickstart ».
 
 ## <a name="binding-to-a-single-item"></a>Liaison à un élément unique
 
 Chaque liaison se compose d’une cible et d’une source de liaison. En règle générale, la cible est une propriété d’un contrôle ou d’un autre élément d’interface utilisateur, et la source est une propriété d’une instance de classe (un modèle de données ou un modèle d’affichage). Cet exemple montre comment lier un contrôle à un élément unique. La cible est la propriété **Text** d’un contrôle **TextBlock**. La source est une instance d’une classe simple nommée **Recording**, qui représente un enregistrement audio. Examinons d’abord la classe.
 
-Si vous utilisez C# ou C++ / c++ / CX, ajoutez une nouvelle classe à votre projet, puis nommez la classe **enregistrement**.
+Si vous utilisez C# ou C++/CX, ajoutez une nouvelle classe à votre projet et nommez l' **enregistrement**de classe.
 
-Si vous utilisez [C++ / c++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), puis ajouter un nouveau **fichier Midl (.idl)** éléments au projet, nommé comme indiqué dans C++ / c++ / WinRT exemple l’intégralité du code ci-dessous. Remplacez le contenu de ces fichiers avec le [MIDL 3.0](/uwp/midl-3/intro) code indiqué dans la liste, générez le projet pour générer `Recording.h` et `.cpp` et `RecordingViewModel.h` et `.cpp`, puis ajoutez le code pour les fichiers générés pour correspondre à la liste. Pour plus d’informations sur ces fichiers générés et de les copier dans votre projet, consultez [XAML contrôle ; lier C + c++ / WinRT propriété](/windows/uwp/cpp-and-winrt-apis/binding-property).
+Si vous utilisez [ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), ajoutez de nouveaux éléments de **fichier MIDL (. idl)** au projet, nommés comme indiqué dans l' C++exemple de code/WinRT ci-dessous. Remplacez le contenu de ces nouveaux fichiers par le code [MIDL 3,0](/uwp/midl-3/intro) présenté dans la liste, générez le projet pour générer `Recording.h` et `.cpp`, `RecordingViewModel.h` et `.cpp`, puis ajoutez le code aux fichiers générés pour qu’ils correspondent à la liste. Pour plus d’informations sur ces fichiers générés et sur la façon de les copier dans votre projet, consultez [contrôles XAML C++; lier à une propriété/WinRT](/windows/uwp/cpp-and-winrt-apis/binding-property).
 
 ```csharp
 namespace Quickstart
@@ -223,7 +223,7 @@ namespace Quickstart
 
 Ensuite, exposez la classe de source de liaison à partir de la classe qui représente votre page de balisage. Pour ce faire, nous ajoutons une propriété de type **RecordingViewModel** à **MainPage**.
 
-Si vous utilisez [C++ / c++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), puis la première mise à jour `MainPage.idl`. Générez le projet pour régénérer `MainPage.h` et `.cpp`et fusionner les modifications dans ces fichiers générés dans celles de votre projet.
+Si vous utilisez [ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), commencez par mettre à jour `MainPage.idl`. Générez le projet pour régénérer `MainPage.h` et `.cpp`, puis fusionnez les modifications apportées à ces fichiers générés dans celles de votre projet.
 
 ```csharp
 namespace Quickstart
@@ -316,7 +316,7 @@ La dernière étape consiste à lier un contrôle **TextBlock** à la propriét�
 </Page>
 ```
 
-Si vous utilisez [C++ / c++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), vous devrez supprimer la **MainPage::ClickHandler** fonction afin que le projet à générer.
+Si vous utilisez [ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), vous devez supprimer la fonction **MainPage :: clickHandler** pour que le projet puisse être généré.
 
 Résultat :
 
@@ -324,9 +324,9 @@ Résultat :
 
 ## <a name="binding-to-a-collection-of-items"></a>Liaison à une collection d’éléments
 
-Un scénario courant consiste à créer une liaison à une collection d’objets métier. Dans C# et Visual Basic, la classe [**ObservableCollection&lt;T&gt;** ](https://docs.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1?redirectedfrom=MSDN) générique est un bon choix de collection pour la liaison de données, car elle implémente les interfaces [**INotifyPropertyChanged**](https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged?redirectedfrom=MSDN) et [**INotifyCollectionChanged**](https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged?redirectedfrom=MSDN). Ces interfaces envoient une notification de modification aux liaisons lorsque des éléments sont ajoutés ou supprimés ou qu’une propriété de la liste est elle-même modifiée. Si vous voulez que vos contrôles liés soient mis à jour avec les modifications apportées aux propriétés des objets de la collection, l’objet métier doit également implémenter **INotifyPropertyChanged**. Pour plus d’informations, voir [Présentation détaillée de la liaison de données](data-binding-in-depth.md).
+Un scénario courant consiste à créer une liaison à une collection d’objets métier. Dans C# et Visual Basic, la classe [**ObservableCollection&lt;T&gt;** ](https://docs.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1) générique est un bon choix de collection pour la liaison de données, car elle implémente les interfaces [**INotifyPropertyChanged**](https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged) et [**INotifyCollectionChanged**](https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged). Ces interfaces envoient une notification de modification aux liaisons lorsque des éléments sont ajoutés ou supprimés ou qu’une propriété de la liste est elle-même modifiée. Si vous voulez que vos contrôles liés soient mis à jour avec les modifications apportées aux propriétés des objets de la collection, l’objet métier doit également implémenter **INotifyPropertyChanged**. Pour plus d’informations, voir [Présentation détaillée de la liaison de données](data-binding-in-depth.md).
 
-Si vous utilisez [C++ / c++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), puis vous plus d’informations sur la liaison à une collection observable dans [XAML des éléments des contrôles ; lier C + c++ / WinRT collection](/windows/uwp/cpp-and-winrt-apis/binding-collection). Si vous lisez cette rubrique tout d’abord, puis l’intention de C / c++ / WinRT listing de code ci-dessous sera plus claire.
+Si vous utilisez [ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), vous pouvez en savoir plus sur la liaison à une collection observable dans les [contrôles d’éléments XAML ; lier à C++une collection/WinRT](/windows/uwp/cpp-and-winrt-apis/binding-collection). Si vous lisez d’abord cette rubrique, l’objectif de la C++liste de code/WinRT ci-dessous est plus clair.
 
 L’exemple suivant lie une classe [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) à une collection d’objets `Recording`. Commençons par ajouter la collection à notre modèle d’affichage. Il suffit d’ajouter ces nouveaux membres à la classe **RecordingViewModel**.
 
@@ -450,11 +450,11 @@ Ensuite, liez un contrôle [**ListView**](https://docs.microsoft.com/uwp/api/Win
 </Page>
 ```
 
-Nous n’avons pas encore fourni de modèle de données pour la classe **Recording**. Par conséquent, le mieux que l’infrastructure d’interface utilisateur puisse faire est d’appeler [**ToString**](https://docs.microsoft.com/dotnet/api/system.object.tostring?redirectedfrom=MSDN#System_Object_ToString) pour chaque élément de [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView). L’implémentation par défaut de **ToString** consiste à renvoyer le nom du type.
+Nous n’avons pas encore fourni de modèle de données pour la classe **Recording**. Par conséquent, le mieux que l’infrastructure d’interface utilisateur puisse faire est d’appeler [**ToString**](https://docs.microsoft.com/dotnet/api/system.object.tostring#System_Object_ToString) pour chaque élément de [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView). L’implémentation par défaut de **ToString** consiste à renvoyer le nom du type.
 
 ![Liaison d’un affichage liste](images/xaml-databinding1.png)
 
-Pour résoudre ce problème, nous pouvons override [ **ToString** ](https://docs.microsoft.com/dotnet/api/system.object.tostring?redirectedfrom=MSDN#System_Object_ToString) pour retourner la valeur de **OneLineSummary**, ou nous pouvons fournir un modèle de données. L’option de modèle de données est une solution habituelle et un plus flexible. Pour spécifier un modèle de données, vous devez utiliser la propriété [**ContentTemplate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.contentcontrol.contenttemplate) d’un contrôle de contenu ou la propriété [**ItemTemplate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) d’un contrôle d’éléments. Voici deux manières de créer un modèle de données pour **Recording** avec une illustration du résultat :
+Pour y remédier, nous pouvons soit remplacer [**ToString**](https://docs.microsoft.com/dotnet/api/system.object.tostring#System_Object_ToString) pour retourner la valeur de **OneLineSummary**, soit fournir un modèle de données. L’option de modèle de données est une solution plus habituelle et plus flexible. Pour spécifier un modèle de données, vous devez utiliser la propriété [**ContentTemplate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.contentcontrol.contenttemplate) d’un contrôle de contenu ou la propriété [**ItemTemplate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) d’un contrôle d’éléments. Voici deux manières de créer un modèle de données pour **Recording** avec une illustration du résultat :
 
 ```xml
 <ListView ItemsSource="{x:Bind ViewModel.Recordings}"
@@ -494,15 +494,15 @@ Pour en savoir plus sur la syntaxe XAML, consultez [Créer une interface utilisa
 
 Vous pouvez choisir d’afficher tous les détails des objets **Recording** dans les éléments [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView). Cependant, l’espace occupé à l’écran sera considérable. Au lieu de cela, vous pouvez afficher juste assez de données dans l’élément à identifier puis, lorsque l’utilisateur effectue une sélection, afficher tous les détails de l’élément sélectionné dans un élément d’interface utilisateur distinct appelé affichage détails. Cette disposition est également connue sous le nom d’affichage maître/détails ou d’affichage liste/détails.
 
-Il existe deux façons de procéder : Vous pouvez lier l’affichage de détails à la propriété [**SelectedItem**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selecteditem) de [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView). Ou vous pouvez utiliser un [ **CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource), auquel cas vous lier à la fois le **ListView** et le mode Détails pour le **CollectionViewSource**(cela donc s’occupe de l’élément actuellement sélectionné pour vous). Ces deux techniques sont présentées ci-dessous, et les deux offrent les mêmes résultats (indiqués dans l’illustration).
+Il existe deux façons de procéder : Vous pouvez lier l’affichage de détails à la propriété [**SelectedItem**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selecteditem) de [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView). Vous pouvez aussi utiliser un [**CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource), auquel cas vous liez à la fois le **ListView** et le mode Détails au **CollectionViewSource** (cela se charge pour vous de l’élément actuellement sélectionné). Les deux techniques sont présentées ci-dessous, et elles donnent les mêmes résultats (illustrés dans l’illustration).
 
 > [!NOTE]
 > Jusqu’à présent, nous avons uniquement utilisé l’[extension de balisage {x:Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension), mais les deux techniques que nous allons présenter ci-dessous requièrent l’[extension de balisage {Binding}](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension), plus souple (mais moins performante).
 
-Si vous utilisez C++ / c++ / extensions du composant WinRT ou Visual C++ (C++ / c++ / CX) puis à utiliser le [{Binding}](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension) extension de balisage, vous devrez ajouter la [ **BindableAttribute** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.BindableAttribute) à n’importe quelle classe runtime que vous souhaitez lier à l’attribut. Pour utiliser [{x : Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension), vous ne devez pas cet attribut.
+C++Si vous utilisez/WinRT ou les extensions C++ de composant VisualC++(/CX), pour utiliser l’extension de balisage [{Binding}](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension) , vous devez ajouter l’attribut [BindableAttribute](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.BindableAttribute) à toute classe Runtime à laquelle vous souhaitez établir une liaison. Pour utiliser [{x :bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension), vous n’avez pas besoin de cet attribut.
 
 > [!IMPORTANT]
-> Si vous utilisez [C++ / c++ / WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), puis le [ **BindableAttribute** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.BindableAttribute) attribut n’est disponible que si vous avez installé le SDK Windows version 10.0.17763.0 (Windows 10, version 1809 ), ou une version ultérieure. Sans cet attribut, vous devez implémenter le [ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider) et [ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty) interfaces afin d’être en mesure d’utiliser le [{Binding}](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension) balisage extension.
+> Si vous utilisez [ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), l’attribut [BindableAttribute](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.BindableAttribute) est disponible si vous avez installé le SDK Windows version 10.0.17763.0 (Windows 10, version 1809) ou version ultérieure. Sans cet attribut, vous devez implémenter les interfaces [ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider) et [ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty) afin de pouvoir utiliser l’extension de balisage [{Binding}](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension) .
 
 Tout d’abord, voici la technique [**SelectedItem**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selecteditem).
 
@@ -577,15 +577,15 @@ Ensuite, réglez les liaisons sur le contrôle [**ListView**](https://docs.micro
 Et voici le résultat identique dans chacun des cas.
 
 > [!NOTE]
-> Si vous utilisez C++, votre interface utilisateur ne se présenter exactement comme l’illustration ci-dessous : le rendu de la **ReleaseDateTime** propriété est différente. Consultez la section suivante pour plus d’informations.
+> Si vous utilisez, C++votre interface utilisateur ne ressemble pas exactement à l’illustration ci-dessous : le rendu de la propriété **ReleaseDateTime** est différent. Pour plus d’informations sur ce sujet, consultez la section suivante.
 
 ![Liaison d’un affichage liste](images/xaml-databinding4.png)
 
 ## <a name="formatting-or-converting-data-values-for-display"></a>Mise en forme ou conversion des valeurs de données pour l’affichage
 
-Il existe un problème avec le rendu ci-dessus. Le **ReleaseDateTime** propriété n’est pas seulement une date, il est un [ **DateTime** ](/uwp/api/windows.foundation.datetime) (si vous utilisez C++, il doit ensuite un [ **calendrier**](/uwp/api/windows.globalization.calendar)). Ainsi, dans C#, il est affiché avec une plus grande précision que nous avons besoin. Et en C++ il est rendu comme un nom de type. Une solution consiste à ajouter une propriété de chaîne pour le **enregistrement** classe qui retourne l’équivalent de `this.ReleaseDateTime.ToString("d")`. Cette propriété d’affectation de noms **ReleaseDate** indiquerait qu’il retourne une date et pas une date et heure. Nommer cette propriété **ReleaseDateAsString** indiquerait en plus qu’elle renvoie une chaîne.
+Il y a un problème avec le rendu ci-dessus. La propriété **ReleaseDateTime** n’est pas simplement une date, il s’agit d’une valeur [DateTime](/uwp/api/windows.foundation.datetime) ( C++si vous utilisez, il s’agit d’un [calendrier](/uwp/api/windows.globalization.calendar)). Ainsi, dans C#, elle est affichée avec une plus grande précision que nous n’en avons besoin. Et dans C++ , il est affiché sous la forme d’un nom de type. Une solution consiste à ajouter une propriété de type chaîne à la classe **d’enregistrement** qui retourne l’équivalent de `this.ReleaseDateTime.ToString("d")`. L’attribution d’un nom à la propriété **relâchée** indique qu’elle retourne une date, et non une date et une heure. Nommer cette propriété **ReleaseDateAsString** indiquerait en plus qu’elle renvoie une chaîne.
 
-Une solution plus souple consiste à utiliser un élément connu sous le nom de convertisseur de valeurs. Voici un exemple montrant comment créer votre propre convertisseur de valeurs. Si vous utilisez C#, puis ajoutez le code ci-dessous à votre `Recording.cs` fichier de code source. Si vous utilisez C++/WinRT, puis ajoutez un nouveau **fichier Midl (.idl)** élément au projet, nommé comme indiqué dans le C++/WinRT exemple l’intégralité du code ci-dessous, générez le projet pour générer `StringFormatter.h` et `.cpp`, ajoutez ces fichiers à votre projet, puis collez les listings de code dans les. Ajoutez également `#include "StringFormatter.h"` à `MainPage.h`.
+Une solution plus souple consiste à utiliser un élément connu sous le nom de convertisseur de valeurs. Voici un exemple montrant comment créer votre propre convertisseur de valeurs. Si vous utilisez C#, ajoutez le code ci-dessous à votre fichier de code source `Recording.cs`. Si vous utilisez C++/WinRT, ajoutez un nouvel élément de **fichier MIDL (. idl)** au projet, nommé comme indiqué dans la liste de C++l’exemple de code/WinRT ci-dessous, générez le projet pour générer `StringFormatter.h` et `.cpp`, ajoutez ces fichiers à votre projet, puis collez le codes dans ces listes. Ajoutez également `#include "StringFormatter.h"` à `MainPage.h`.
 
 ```csharp
 public class StringFormatter : Windows.UI.Xaml.Data.IValueConverter
@@ -704,9 +704,9 @@ public:
 ...
 ```
 
-> [REMARQUE !] Pour le C++/WinRT liste de code ci-dessus, en `StringFormatter.idl`, nous utilisons le [attribut par défaut](https://docs.microsoft.com/windows/desktop/midl/default) pour déclarer **IValueConverter** comme interface par défaut. Dans la liste, **StringFormatter** a uniquement un constructeur et aucune méthode, donc aucune interface par défaut n’est généré pour lui. Le `default` attribut est optimal si vous ne sont pas d’ajouter des membres d’instance à **StringFormatter**, car aucun QueryInterface ne doit appeler le **IValueConverter** méthodes. Ou bien, vous pouvez inviter une valeur par défaut **IStringFormatter** interface pour être généré, et vous faire qu’en annotant le runtime classe lui-même avec le [default_interface attribut](https://docs.microsoft.com/uwp/midl-3/predefined-attributes#the-default_interface-attribute). Cette option n’est optimale si vous ajoutez des membres d’instance à **StringFormatter** qui sont appelées plus souvent que les méthodes de **IValueConverter** sont, étant donné que puis aucun QueryInterface ne doit appeler le membres d’instance.
+> [Remarque !] Pour la C++liste de code/WinRT ci-dessus, dans `StringFormatter.idl`, nous utilisons l' [attribut default](https://docs.microsoft.com/windows/desktop/midl/default) pour déclarer **IValueConverter** comme interface par défaut. Dans la liste, **StringFormatter** a uniquement un constructeur et aucune méthode, donc aucune interface par défaut n’est générée pour celui-ci. L’attribut `default` est optimal si vous n’ajoutez pas de membres d’instance à **StringFormatter**, car aucune QueryInterface n’est nécessaire pour appeler les méthodes **IValueConverter** . Vous pouvez également demander à une interface **IStringFormatter** par défaut d’être générée. pour cela, vous pouvez annoter la classe Runtime proprement dite avec l' [attribut default_interface](https://docs.microsoft.com/uwp/midl-3/predefined-attributes#the-default_interface-attribute). Cette option est optimale si vous ajoutez des membres d’instance à des **StringFormatter** qui sont appelées plus souvent que les méthodes de **IValueConverter** sont, car aucune QueryInterface n’est nécessaire pour appeler les membres d’instance.
 
-Nous pouvons ajouter une instance de **StringFormatter** comme une ressource de page et l’utiliser dans la liaison de la **TextBlock** qui affiche le **ReleaseDateTime** propriété.
+À présent, nous pouvons ajouter une instance de **StringFormatter** en tant que ressource de page et l’utiliser dans la liaison du **TextBlock** qui affiche la propriété **ReleaseDateTime** .
 
 ```xml
 <Page.Resources>
@@ -719,14 +719,14 @@ Nous pouvons ajouter une instance de **StringFormatter** comme une ressource de 
 ...
 ```
 
-Comme vous pouvez le voir ci-dessus, nous utilisons pour mettre en forme de la flexibilité le balisage pour passer une chaîne de format dans le convertisseur par le biais du paramètre de convertisseur. Dans les exemples de code présentés dans cette rubrique, uniquement le C# convertisseur de valeurs utilise ce paramètre. Mais vous pouvez facilement passer d’une chaîne de format de style C++ en tant que paramètre de convertisseur et utiliser que dans votre convertisseur de valeurs avec une mise en forme de fonction comme **wprintf** ou **swprintf**.
+Comme vous pouvez le voir ci-dessus, pour la flexibilité de mise en forme, nous utilisons le balisage pour passer une chaîne de format dans le convertisseur par le biais du paramètre de convertisseur. Dans les exemples de code présentés dans cette rubrique, seul C# le convertisseur de valeur utilise ce paramètre. Toutefois, vous pouvez passer facilement C++une chaîne de format de style en tant que paramètre de convertisseur et l’utiliser dans votre convertisseur de valeurs avec une fonction de mise en forme telle que **wprintf** ou **swprintf**.
 
 Résultat :
 
 ![Affichage d’une date avec une mise en forme personnalisée](images/xaml-databinding5.png)
 
 > [!NOTE]
-> À compter de Windows 10, version 1607, l’infrastructure XAML fournit un convertisseur de valeur booléenne à visibilité intégré. Les mappages de convertisseur **true** à la **Visibility.Visible** valeur d’énumération et **false** à **Visibility.Collapsed** afin que vous pouvez lier un Propriété de visibilité booléenne sans création d’un convertisseur. Pour utiliser le convertisseur intégré, la version du SDK cible de votre application doit être 14393 ou une version ultérieure. Vous ne pouvez pas l’utiliser si votre application cible des versions antérieures de Windows 10. Pour plus d’informations sur les versions de la cible, consultez [code adaptatif de Version](https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
+> À partir de Windows 10, la version 1607, l’infrastructure XAML fournit un convertisseur de type booléen-à-visibilité intégré. Le convertisseur mappe **true** à la valeur d’énumération **Visibility. visible** et **false** à **Visibility. Collapsed** pour que vous puissiez lier une propriété Visibility à un booléen sans créer de convertisseur. Pour utiliser le convertisseur intégré, la version du SDK cible de votre application doit être 14393 ou une version ultérieure. Vous ne pouvez pas l’utiliser si votre application cible des versions antérieures de Windows 10. Pour plus d’informations sur les versions cibles, consultez [version-adaptative code](https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
 
 ## <a name="see-also"></a>Voir aussi
 * [Liaison de données](index.md)

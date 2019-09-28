@@ -6,12 +6,12 @@ ms.date: 07/13/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: cc5b3598f2d50a49aa9d51721c2c1eb1261c8aa8
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: 1107670e837dff294739e9ba38c7dea9004d1d62
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820510"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340345"
 ---
 # <a name="storyboarded-animations"></a>Animations dans une table de montage séquentiel
 
@@ -66,13 +66,13 @@ Examinons un exemple simple. Dans cet exemple XAML, la propriété [**Opacity**]
 
 Dans l’exemple précédent, la table de montage séquentiel animait la propriété [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) d’un [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle). La déclaration des animations ne s’effectue pas sur l’objet lui-même. Elle s’effectue dans la définition de chaque animation de table de montage séquentiel. Les tables de montage séquentiel sont en général définies dans du balisage XAML qui n’est pas à proximité de la définition d’interface utilisateur XAML de l’objet à animer. En fait, elles sont en général configurées comme une ressource XAML.
 
-Pour connecter une animation à une cible, vous devez référencer la cible avec son nom de programmation. Vous devez toujours appliquer l’[attribut x:Name](https://docs.microsoft.com/windows/uwp/xaml-platform/x-name-attribute) dans la définition de l’interface utilisateur XAML pour nommer l’objet que vous voulez animer. Vous devez ensuite cibler l’objet à animer en définissant [**Storyboard.TargetName**](https://docs.microsoft.com/dotnet/api/system.windows.media.animation.storyboard.targetname?view=netframework-4.8) dans la définition de l’animation. Pour la valeur de **Storyboard.TargetName**, vous devez utiliser la chaîne de nom de l’objet cible, qui est ce que vous avez défini auparavant et ailleurs avec l’attribut x:Name.
+Pour connecter une animation à une cible, vous devez référencer la cible avec son nom de programmation. Vous devez toujours appliquer l’[attribut x:Name](https://docs.microsoft.com/windows/uwp/xaml-platform/x-name-attribute) dans la définition de l’interface utilisateur XAML pour nommer l’objet que vous voulez animer. Vous devez ensuite cibler l’objet à animer en définissant [**Storyboard.TargetName**](https://docs.microsoft.com/dotnet/api/system.windows.media.animation.storyboard.targetname) dans la définition de l’animation. Pour la valeur de **Storyboard.TargetName**, vous devez utiliser la chaîne de nom de l’objet cible, qui est ce que vous avez défini auparavant et ailleurs avec l’attribut x:Name.
 
 ### <a name="targeting-the-dependency-property-to-animate"></a>Ciblage de la propriété de dépendance à animer
 
 Vous définissez la valeur de [**Storyboard.TargetProperty**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v=vs.95)) dans l’animation. Cela détermine quelle propriété spécifique de l’objet ciblé est animée.
 
-Parfois vous devez cibler une propriété qui n’est pas une propriété immédiate de l’objet cible, mais qui est imbriquée plus profondément dans une relation objet-propriété. Vous devez souvent faire cela afin d’explorer un ensemble de valeurs de propriétés et d’objets contributives jusqu’à ce que vous puissiez référencer un type de propriété qui peut être animé ([**Double**](https://docs.microsoft.com/dotnet/api/system.double?redirectedfrom=MSDN), [**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point), [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color)). Ce concept porte le nom de *ciblage indirect* et la syntaxe de ciblage d’une propriété de cette manière porte le nom de *chemin d’accès de propriété*.
+Parfois vous devez cibler une propriété qui n’est pas une propriété immédiate de l’objet cible, mais qui est imbriquée plus profondément dans une relation objet-propriété. Vous devez souvent faire cela afin d’explorer un ensemble de valeurs de propriétés et d’objets contributives jusqu’à ce que vous puissiez référencer un type de propriété qui peut être animé ([**Double**](https://docs.microsoft.com/dotnet/api/system.double), [**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point), [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color)). Ce concept porte le nom de *ciblage indirect* et la syntaxe de ciblage d’une propriété de cette manière porte le nom de *chemin d’accès de propriété*.
 
 Voici un exemple : Un exemple courant de scénario pour une animation de table de montage séquentiel consiste à changer la couleur d’une partie de l’interface utilisateur ou d’un contrôle d’une application afin d’indiquer l’état de ce contrôle. Supposons que vous vouliez animer le [**Foreground**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.foreground) d’un [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) pour qu’il soit vert au lieu d’être rouge. Vous vous attendez à ce qu’intervienne [**ColorAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ColorAnimation) et vous avez raison. Cependant, aucune des propriétés sur les éléments d’interface utilisateur qui modifient la couleur de l’objet n’est de type [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color). Elles sont en fait de type [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush). Par conséquent, pour votre animation, vous devez cibler la propriété [**Color**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) de la classe [**SolidColorBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) dont le type est dérivé de **Brush**. Ce type est en général utilisé pour les propriétés de couleur d’interface utilisateur. Voici ce que cela donne pour la formation d’un chemin d’accès de propriété pour le ciblage d’une propriété de votre animation :
 
@@ -93,9 +93,9 @@ Voici comment interpréter chacune des parties de la syntaxe :
 
 Voici une liste des scénarios de ciblage d’animation pour lesquels vous utiliserez probablement le ciblage de propriété indirect avec des chaînes de chemin d’accès de propriété qui sont similaires à la syntaxe que vous utiliserez :
 
-- Animer la [ **X** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.translatetransform.x) valeur d’un [ **TranslateTransform**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.TranslateTransform), comme appliqué à un [ **RenderTransform** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform): `(UIElement.RenderTransform).(TranslateTransform.X)`
-- Animer un [ **couleur** ](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) au sein d’un [ **GradientStop** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.GradientStop) d’un [ **LinearGradientBrush** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.LinearGradientBrush), comme appliqué à un [ **remplir**](/uwp/api/Windows.UI.Xaml.Shapes.Shape.Fill): `(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)`
-- Animer la [ **X** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.translatetransform.x) valeur d’un [ **TranslateTransform**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.TranslateTransform), c'est-à-dire 1 de 4 transformations dans un [  **TransformGroup**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.TransformGroup), comme appliqué à un [ **RenderTransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform):`(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)`
+- Animation de la valeur [**X**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.translatetransform.x) d’un [**TranslateTransform**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.TranslateTransform), telle qu’elle est appliquée à un [**RenderTransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform): `(UIElement.RenderTransform).(TranslateTransform.X)`
+- Animation d’une [**couleur**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) dans un [**GradientStop**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.GradientStop) d’un [**LinearGradientBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.LinearGradientBrush), telle qu’elle est appliquée à un [**Fill**](/uwp/api/Windows.UI.Xaml.Shapes.Shape.Fill): `(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)`
+- Animation de la valeur [**X**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.translatetransform.x) d’un [**TranslateTransform**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.TranslateTransform), qui est de 1 à 4 transformations dans un [**TransformGroup**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.TransformGroup), comme appliqué à un [**RenderTransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform): `(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)`
 
 Vous remarquerez que certains de ces exemples utilisent des crochets autour des nombres. Il s’agit d’indexeurs. Ils indiquent que le nom de la propriété qui les précède a pour valeur une collection dans laquelle vous voulez un élément (identifié par un index basé sur zéro).
 
@@ -107,11 +107,11 @@ Pour plus d’informations sur la façon d’utiliser un chemin d’accès de pr
 
 Le système d’animations de Windows Runtime comporte trois types spécifiques auxquels les animations de table de montage séquentiel peuvent s’appliquer :
 
--   [**Double**](https://docs.microsoft.com/dotnet/api/system.double?redirectedfrom=MSDN), peuvent être animées avec n’importe quel [ **DoubleAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.DoubleAnimation)
--   [**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point), peuvent être animées avec n’importe quel [ **PointAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PointAnimation)
--   [**Couleur**](https://docs.microsoft.com/uwp/api/Windows.UI.Color), peuvent être animées avec n’importe quel [ **ColorAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ColorAnimation)
+-   [**Double**](https://docs.microsoft.com/dotnet/api/system.double), peut être animé avec n’importe quel [ **DoubleAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.DoubleAnimation)
+-   [**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point), peut être animé avec un [ **PointAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PointAnimation)
+-   [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color), peut être animé avec un [ **ColorAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ColorAnimation)
 
-Il existe également un type d’animation [**Object**](https://docs.microsoft.com/dotnet/api/system.object?redirectedfrom=MSDN) généralisé pour les valeurs de référence d’objet dont nous parlerons plus tard.
+Il existe également un type d’animation [**Object**](https://docs.microsoft.com/dotnet/api/system.object) généralisé pour les valeurs de référence d’objet dont nous parlerons plus tard.
 
 ### <a name="specifying-the-animated-values"></a>Spécification des valeurs animées
 
@@ -125,9 +125,9 @@ Les types d’animation que nous vous avons présentés sont parfois appelés an
 -   Si vous ne spécifiez pas une valeur **To** ou une valeur **By**, la valeur de fin est la valeur de la propriété animée avant que l’animation s’exécute. Dans ce cas, il vaut mieux que vous ayez une valeur **From**, car autrement l’animation ne changera pas la valeur ; ses valeurs de début et de fin étant les mêmes.
 -   En général, une animation a au moins une des trois valeurs **From**, **By** ou **To**, mais jamais les trois.
 
-Revenons à l’exemple XAML précédent et examinons de nouveau les valeurs **From** et **To** et la valeur **Duration**. L’exemple anime la propriété [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) et le type de la propriété **Opacity** est [**Double**](https://docs.microsoft.com/dotnet/api/system.double?redirectedfrom=MSDN). Par conséquent, l’animation à utiliser ici est [**DoubleAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.DoubleAnimation).
+Revenons à l’exemple XAML précédent et examinons de nouveau les valeurs **From** et **To** et la valeur **Duration**. L’exemple anime la propriété [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) et le type de la propriété **Opacity** est [**Double**](https://docs.microsoft.com/dotnet/api/system.double). Par conséquent, l’animation à utiliser ici est [**DoubleAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.DoubleAnimation).
 
-`From="1.0" To="0.0"` Spécifie que lorsque l’animation s’exécute, le [ **opacité** ](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) propriété commence à la valeur 1 et s’anime à 0. Concernant la signification de ces valeurs [**Double**](https://docs.microsoft.com/dotnet/api/system.double?redirectedfrom=MSDN) pour la propriété **Opacity**, avec cette animation, l’objet sera opaque au début puis deviendra transparent.
+`From="1.0" To="0.0"` indique que lors de l’exécution de l’animation, la propriété [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) commence à la valeur 1 et s’anime à 0. Concernant la signification de ces valeurs [**Double**](https://docs.microsoft.com/dotnet/api/system.double) pour la propriété **Opacity**, avec cette animation, l’objet sera opaque au début puis deviendra transparent.
 
 ```xaml
 ...
@@ -140,7 +140,7 @@ Revenons à l’exemple XAML précédent et examinons de nouveau les valeurs **F
 ...
 ```
 
-`Duration="0:0:1"` Spécifie la durée pendant laquelle l’animation dure, autrement dit, la vitesse à laquelle le rectangle disparaît. Une propriété [**Duration**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.duration) est spécifiée sous la forme *hours*:*minutes*:*seconds*. La durée dans cet exemple est d’une seconde.
+`Duration="0:0:1"` spécifie la durée pendant laquelle l’animation dure, c’est-à-dire la vitesse à laquelle le rectangle apparaît. Une propriété [**Duration**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.duration) est spécifiée sous la forme *hours*:*minutes*:*seconds*. La durée dans cet exemple est d’une seconde.
 
 Pour plus d’informations sur les valeurs [**Duration**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Duration) et la syntaxe XAML, voir [**Duration**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Duration).
 
@@ -149,7 +149,7 @@ Pour plus d’informations sur les valeurs [**Duration**](https://docs.microsoft
 
 ### <a name="fromtoby-are-nullable"></a>From/To/By sont des propriétés Nullable.
 
-Nous avons mentionné précédemment que vous pouvez omettre **From**, **To** ou **By** et par conséquent utiliser les valeurs non animées actuelles en remplacement d’une valeur manquante. Le type des propriétés **From**, **To** ou **By** d’une animation n’est pas celui auquel vous vous attendiez. Par exemple, le type de la propriété [**DoubleAnimation.To**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.doubleanimation.easingfunction) n’est pas [**Double**](https://docs.microsoft.com/dotnet/api/system.double?redirectedfrom=MSDN). En fait, il s’agit du type [**Nullable**](https://docs.microsoft.com/dotnet/api/system.nullable-1?redirectedfrom=MSDN) pour **Double**. Et sa valeur par défaut est **null** et non 0. Cette valeur **null** indique au système d’animations que vous n’avez pas spécifiquement défini une valeur pour une propriété **From**, **To** ou **By**. Extensions de composant Visual C++ (C++ / c++ / CX) n’a pas un **Nullable** type, de sorte qu’il utilise [ **IReference** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.IReference_T_) à la place.
+Nous avons mentionné précédemment que vous pouvez omettre **From**, **To** ou **By** et par conséquent utiliser les valeurs non animées actuelles en remplacement d’une valeur manquante. Le type des propriétés **From**, **To** ou **By** d’une animation n’est pas celui auquel vous vous attendiez. Par exemple, le type de la propriété [**DoubleAnimation.To**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.doubleanimation.easingfunction) n’est pas [**Double**](https://docs.microsoft.com/dotnet/api/system.double). En fait, il s’agit du type [**Nullable**](https://docs.microsoft.com/dotnet/api/system.nullable-1) pour **Double**. Et sa valeur par défaut est **null** et non 0. Cette valeur **null** indique au système d’animations que vous n’avez pas spécifiquement défini une valeur pour une propriété **From**, **To** ou **By**. Les C++ extensions de composantsC++visuels (/CX) n’ont pas de type **Nullable** . par conséquent, elle utilise [IReference](https://docs.microsoft.com/uwp/api/Windows.Foundation.IReference_T_) à la place.
 
 ### <a name="other-properties-of-an-animation"></a>Autres propriétés d’une animation
 
@@ -169,7 +169,7 @@ Vous pouvez faire en sorte que l’animation exécute plusieurs itérations. Par
 
 Pour plus d’informations sur les valeurs [**RepeatBehavior**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.RepeatBehavior) et la syntaxe XAML, voir [**RepeatBehavior**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.RepeatBehavior).
 
-### <a name="fillbehaviorstop"></a>**FillBehavior="Stop"**
+### <a name="fillbehaviorstop"></a>**FillBehavior = "arrêter"**
 
 Par défaut, lorsqu’une animation se termine, l’animation conserve la valeur finale de **To** ou modifiée de **By** pour sa propriété de durée, même une fois celle-ci dépassée. Cependant, si vous définissez la valeur de la propriété [**FillBehavior**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.fillbehavior) sur [**FillBehavior.Stop**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FillBehavior), la valeur de la valeur animée avant que l’animation ait été appliquée est rétablie, ou plus précisément, la valeur effective déterminée par le système de propriétés de dépendance (pour plus d’informations sur cette distinction, voir [Vue d’ensemble des propriétés de dépendance](https://docs.microsoft.com/windows/uwp/xaml-platform/dependency-properties-overview)).
 
@@ -239,8 +239,8 @@ Une animation est indépendante si elle a les caractéristiques suivantes :
 
 -   La propriété [**Duration**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.duration) de l’animation est de 0 seconde (voir Avertissement).
 -   L’animation cible [**UIElement.Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity).
--   L’animation cible d’une valeur de la sous-propriété de ces [ **UIElement** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) propriétés : [**Transform3D**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.transform3d), [**RenderTransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform), [**Projection**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.projection), [**Clip**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.clip)
--   L’animation cible [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left?view=netframework-4.8) ou [**Canvas.Top**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.top?view=netframework-4.8).
+-   L’animation cible une valeur de sous-propriété de ces propriétés [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) : [**Transform3D**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.transform3d), [**RenderTransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform), [**projection**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.projection), [**clip**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.clip)
+-   L’animation cible [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left) ou [**Canvas.Top**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.top).
 -   L’animation cible une valeur [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) et utilise un [**SolidColorBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) pour animer sa propriété [**Color**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color).
 -   L’animation est de type [**ObjectAnimationUsingKeyFrames**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames).
 
@@ -265,7 +265,7 @@ Le fait que l’activation des animations dépendantes repose sur le développeu
 En tant que développeur d’application, vous pouvez également choisir d’appliquer un paramètre pour toute l’application qui désactive toujours les animations dépendantes, même celles où la propriété **EnableDependentAnimation** a la valeur **true**. Voir [**Timeline.AllowDependentAnimations**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.allowdependentanimations).
 
 > [!TIP]
-> Si vous utilisez le volet de l’Animation dans Blend pour Visual Studio 2019, chaque fois que vous essayez d’appliquer une animation dépendante à une propriété de l’état visuel, les avertissements sont affichés dans le concepteur. Avertissements seront affichent pas dans la sortie de génération ou de la liste d’erreurs. Si vous modifiez manuellement XAML, le concepteur n’affichera pas un avertissement. Lors de l’exécution lors du débogage, sortie de débogage du volet de sortie affiche un avertissement qui n’est pas indépendante de l’animation et sera ignorée.
+> Si vous utilisez le volet animation dans Blend pour Visual Studio 2019, chaque fois que vous tentez d’appliquer une animation dépendante à une propriété d’état visuel, des avertissements s’affichent dans le concepteur. Les avertissements ne s’affichent pas dans la sortie ou la Liste d’erreurs de la génération. Si vous modifiez du code XAML manuellement, le concepteur n’affiche pas d’avertissement. Au moment de l’exécution lors du débogage, la sortie de débogage du volet de sortie indique un avertissement indiquant que l’animation n’est pas indépendante et sera ignorée.
 
 
 ## <a name="starting-and-controlling-an-animation"></a>Démarrage et contrôle d’une animation
@@ -333,11 +333,11 @@ Jusqu’à présent nous vous avons montré les animations personnalisées qui s
 
 * [Syntaxe de chemin de propriété](https://docs.microsoft.com/windows/uwp/xaml-platform/property-path-syntax)
 * [Vue d’ensemble des propriétés de dépendance](https://docs.microsoft.com/windows/uwp/xaml-platform/dependency-properties-overview)
-* [Image clé et des animations de la fonction d’accélération](key-frame-and-easing-function-animations.md)
-* [Animations de storyboard pour les états visuels](https://docs.microsoft.com/previous-versions/windows/apps/jj819808(v=win.10))
+* [Animations de fonctions d’image clé et d’accélération](key-frame-and-easing-function-animations.md)
+* [Animations de storyboards pour les États visuels](https://docs.microsoft.com/previous-versions/windows/apps/jj819808(v=win.10))
 * [Modèles de contrôles](https://docs.microsoft.com/windows/uwp/controls-and-patterns/control-templates)
-* [**table de montage séquentiel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard)
-* [**Storyboard.TargetProperty**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v=vs.95))
+* [**S**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard)
+* [**Storyboard. TargetProperty**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v=vs.95))
  
 
  

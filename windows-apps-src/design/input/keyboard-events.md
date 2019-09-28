@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ef2007648c21e015aa2ae692d28efa56c922bf5
-ms.sourcegitcommit: 7585bf66405b307d7ed7788d49003dc4ddba65e6
+ms.openlocfilehash: 89257a4ec64458f5734c2b04c1e654a7c0c44f27
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67660196"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339905"
 ---
 # <a name="keyboard-events"></a>Événements de clavier
 
@@ -28,7 +28,7 @@ Les événements de clavier suivants peuvent se produire pour les claviers physi
 | Événement                                      | Description                    |
 |--------------------------------------------|--------------------------------|
 | [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) | Se produit lorsqu’une touche est enfoncée.  |
-| [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup)     | Se produit lorsqu’une touche est relâchée. |
+| [**Événementiel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup)     | Se produit lorsqu’une touche est relâchée. |
 
 > [!IMPORTANT]
 > Certains contrôles Windows Runtime gèrent les événements d’entrée en interne. Dans ces cas-là, il peut sembler qu’un événement d’entrée n’a pas lieu car votre écouteur d’événements n’appelle pas le gestionnaire associé. En général, ces touches sont gérées par le gestionnaire de classe pour fournir une prise en charge intégrée de l’accessibilité de base du clavier. Par exemple, la classe [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) substitue les événements [**OnKeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.onkeydown) pour la touche Espace et la touche Entrée (de même que [**OnPointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.onpointerpressed)) et les achemine vers l’événement [**Click**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) du contrôle. Quand un appui sur une touche est géré par la classe de contrôle, les événements [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) et [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) ne sont pas déclenchés.  
@@ -94,10 +94,10 @@ void MyProject::MainPage::Grid_KeyUp(
 
 Tous les événements de clavier utilisent [**KeyRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.KeyRoutedEventArgs) pour les données d’événements, et **KeyRoutedEventArgs** contient les propriétés suivantes :
 
--   [**Clé**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.key)
--   [**KeyStatus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.keystatus)
--   [**Handled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled)
--   [**OriginalSource** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.routedeventargs.originalsource) (héritée de [ **RoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.RoutedEventArgs))
+-   [**Essentiel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.key)
+-   [**Keystatus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.keystatus)
+-   [**Gérai**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled)
+-   [**OriginalSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.routedeventargs.originalsource) (héritée de [**RoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.RoutedEventArgs))
 
 ### <a name="key"></a>Touche
 
@@ -277,7 +277,7 @@ End Sub
 ```
 
 > [!NOTE]
-> La définition [**d’AutomationProperties.AcceleratorKey**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.acceleratorkey?view=netframework-4.8) ou [**d’AutomationProperties.AccessKey**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.accesskey?view=netframework-4.8) en XAML fournit des informations de chaîne qui documentent la touche de raccourci d’appel de cette action particulière. Les informations sont capturées par des clients Microsoft UI Automation, tels que le Narrateur, et généralement fournis directement à l’utilisateur.
+> La définition [**d’AutomationProperties.AcceleratorKey**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.acceleratorkey) ou [**d’AutomationProperties.AccessKey**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.accesskey) en XAML fournit des informations de chaîne qui documentent la touche de raccourci d’appel de cette action particulière. Les informations sont capturées par des clients Microsoft UI Automation, tels que le Narrateur, et généralement fournis directement à l’utilisateur.
 >
 > La définition d’**AutomationProperties.AcceleratorKey** ou d’**AutomationProperties.AccessKey** ne constitue pas une action proprement dite. Vous devrez quand même associer des gestionnaires pour les événements [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) ou [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) afin de mettre réellement en œuvre le comportement de la touche de raccourci dans l’application. De même, l’ornement de soulignement du texte n’est pas fourni automatiquement pour une touche d’accès. Si vous voulez afficher du texte souligné dans l’interface utilisateur, vous devez souligner le texte de manière explicite pour la touche en question dans votre mnémonique en insérant une mise en forme [**Underline**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Underline).
 
@@ -319,7 +319,7 @@ Le rôle de la propriété [**Handled**](https://docs.microsoft.com/uwp/api/wind
 
 ### <a name="addhandler-and-already-handled-keyboard-events"></a>AddHandler et événements de clavier déjà gérés
 
-Vous pouvez utiliser une technique spéciale pour associer des gestionnaires pouvant agir sur des événements déjà marqués comme étant gérés. Cette technique utilise le [ **AddHandler** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.addhandler) méthode pour inscrire un gestionnaire, plutôt que les attributs XAML ou syntaxe spécifique au langage pour l’ajout de gestionnaires, tels que += dans C\#.
+Vous pouvez utiliser une technique spéciale pour associer des gestionnaires pouvant agir sur des événements déjà marqués comme étant gérés. Cette technique utilise la méthode [**AddHandler**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.addhandler) pour inscrire un gestionnaire, au lieu d’utiliser des attributs XAML ou une syntaxe spécifique au langage pour ajouter des gestionnaires, tels que + = dans C @ no__t-2.
 
 L’une des limitations générales de cette technique est le fait que l’API **AddHandler** utilise un paramètre de type [**RoutedEvent**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.RoutedEvent) qui identifie l’événement routé en question. Tous les événements routés ne fournissent pas un identificateur **RoutedEvent** et cette considération affecte par conséquent les événements routés qui peuvent encore être gérés dans le cas [**Handled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled). Les événements [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) et [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) possèdent des identificateurs d’événements routés ([**KeyDownEvent**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydownevent) et [**KeyUpEvent**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyupevent)) sur [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement). Toutefois, les autres événements tels que [**TextBox.TextChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textchanged) ne possèdent pas d’identificateurs d’événements routés. Par conséquent, ils ne peuvent pas être utilisés pour la technique **AddHandler**.
 
@@ -327,7 +327,7 @@ L’une des limitations générales de cette technique est le fait que l’API *
 
 Vous pouvez remplacer les événements de touche pour certains contrôles spécifiques (tels que [**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)) pour garantir une navigation cohérente pour différents périphériques de saisie, notamment le clavier et le boîtier de commande.
 
-Dans l’exemple suivant, nous sous-classe le contrôle et que vous remplacez le comportement de l’événement KeyDown pour déplacer le focus sur le contrôle GridView de contenu lorsqu’une touche de direction est enfoncée.
+Dans l’exemple suivant, nous sous-classeons le contrôle et remplaçons le comportement de keydescend pour déplacer le focus vers le contenu GridView lorsqu’une touche de direction est enfoncée.
 
 ```csharp
   public class CustomGridView : GridView
@@ -383,13 +383,13 @@ Vous pouvez nettement faciliter et accélérer la saisie de données par les uti
 
 ## <a name="related-articles"></a>Articles connexes
 
-**Développeurs**
-* [Interactions de clavier](keyboard-interactions.md)
+**Les développeurs**
+* [Interactions du clavier](keyboard-interactions.md)
 * [Identification des périphériques d’entrée](identify-input-devices.md)
 * [Répondre à la présence du clavier tactile](respond-to-the-presence-of-the-touch-keyboard.md)
 
-**Concepteurs**
-* [Instructions de conception de clavier](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)
+**Contrôles**
+* [Instructions pour la conception du clavier](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)
 
 **Exemples**
 * [Exemple de clavier tactile](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
@@ -397,12 +397,12 @@ Vous pouvez nettement faciliter et accélérer la saisie de données par les uti
 * [Exemple d’entrée à faible latence](https://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [Exemples de visuels de focus](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 
-**Exemples d’archive**
+**Exemples d’archives**
 * [Exemple d’entrée](https://go.microsoft.com/fwlink/p/?linkid=226855)
-* [Entrée : Exemples de fonctionnalités d’appareil](https://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Entrée : Exemple de clavier tactile](https://go.microsoft.com/fwlink/p/?linkid=246019)
-* [Répondre à l’apparence de l’exemple le clavier visuel](https://go.microsoft.com/fwlink/p/?linkid=231633)
-* [Exemple de modification de texte XAML](https://go.microsoft.com/fwlink/p/?LinkID=251417)
+* @no__t 0Input : Fonctionnalités de l’appareil, exemple @ no__t-0
+* @no__t 0Input : Exemple de clavier tactile @ no__t-0
+* [Réponse à l’apparence de l’exemple de clavier visuel](https://go.microsoft.com/fwlink/p/?linkid=231633)
+* [Exemple d’édition de texte XAML](https://go.microsoft.com/fwlink/p/?LinkID=251417)
  
 
  

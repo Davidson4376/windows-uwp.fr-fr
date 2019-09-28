@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fba78a619f18d7da2e190758d73ac7a56b12fb9
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 1f35cbab511912bd9cf6616330f3e9e7737189fd
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360657"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339742"
 ---
 # <a name="display-the-camera-preview"></a>Afficher l’aperçu de l’appareil photo
 
@@ -24,7 +24,7 @@ Pour plus d’informations sur l’écriture d’une application d’appareil ph
 
 Afin que votre application puisse accéder à l’appareil photo d’un appareil, vous devez déclarer que cette application utilise les fonctionnalités de l’appareil *webcam* et *microphone*. 
 
-**Ajouter des fonctionnalités pour le manifeste d’application**
+**Ajouter des fonctionnalités au manifeste d’application**
 
 1.  Dans Microsoft Visual Studio, dans l’**Explorateur de solutions**, ouvrez le concepteur pour le manifeste de l’application en double-cliquant sur l’élément **package.appxmanifest**.
 2.  Sélectionnez l’onglet **Fonctionnalités**.
@@ -40,7 +40,7 @@ Utilisez un [**CaptureElement**](https://docs.microsoft.com/uwp/api/Windows.UI.X
 
 ## <a name="use-mediacapture-to-start-the-preview-stream"></a>Utiliser MediaCapture pour démarrer le flux d’aperçu
 
-L’objet [**MediaCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture) est l’interface de votre application pour l’appareil photo de l’appareil. Cette classe est membre de l’espace de noms Windows.Media.Capture. L’exemple de cet article utilise également des API à partir des espaces de noms [**Windows.ApplicationModel**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel) et [System.Threading.Tasks](https://docs.microsoft.com/dotnet/api/system.threading.tasks?redirectedfrom=MSDN), en plus de celles fournies par le modèle de projet par défaut.
+L’objet [**MediaCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture) est l’interface de votre application pour l’appareil photo de l’appareil. Cette classe est membre de l’espace de noms Windows.Media.Capture. L’exemple de cet article utilise également des API à partir des espaces de noms [**Windows.ApplicationModel**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel) et [System.Threading.Tasks](https://docs.microsoft.com/dotnet/api/system.threading.tasks), en plus de celles fournies par le modèle de projet par défaut.
 
 Ajoutez des directives using pour inclure les espaces de noms suivants dans le fichier .cs de votre page.
 
@@ -99,5 +99,5 @@ Dans le gestionnaire d’événements **Suspending**, vérifiez que la page est 
 ## <a name="related-topics"></a>Rubriques connexes
 
 * [Appareil photo](camera.md)
-* [Photo de base, vidéo, audio et de capture à MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [Obtenir une image d’aperçu](get-a-preview-frame.md)
+* [Capture de photos, vidéo et audio de base avec MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [Obtenir un aperçu du frame](get-a-preview-frame.md)

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e25b20943d73b303ea4aa674b8978f1517fcf15a
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 685f862ea0b381195db2670de45c35df67b5fcb9
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359680"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71339537"
 ---
 # <a name="uwp-components-and-optimizing-interop"></a>Composants UWP et optimisation de l’interopérabilité
 
@@ -22,7 +22,7 @@ Créez des applications de plateforme Windows universelle (UWP) qui utilisent de
 
 Si vous n’y prêtez pas attention, l’utilisation de composants UWP peut avoir une incidence considérable sur les performances de votre application. Cette section explique comment obtenir des performances optimales quand votre application utilise des composants UWP.
 
-### <a name="introduction"></a>Introduction
+### <a name="introduction"></a>Présentation
 
 L’interopérabilité peut avoir un impact important sur les performances et il peut arriver que vous y ayez recours sans vous en apercevoir. L’UWP traite automatiquement une grande part de l’interopérabilité avec ses composants pour que vous soyez plus productif et réutilisiez tout code écrit dans un autre langage. Nous vous recommandons de tirer parti de ce que l’UWP fait à votre place, mais sachez que cela peut avoir un impact sur les performances. Cette section indique ce que vous pouvez faire pour atténuer l’impact de l’interopérabilité sur les performances de votre application.
 
@@ -30,7 +30,7 @@ l’UWP comporte une bibliothèque de types accessible à partir de tout langage
 
 Quand vous développez une application UWP en C# ou Visual Basic, les deux types d’API les plus courants que vous utilisez sont les API UWP et les API .NET pour les applications UWP. En règle générale, les types qui sont définis dans UWP se trouvent dans des espaces de noms commençant par « Windows. », alors que les espaces de noms des types .NET commencent par « System. ». Il existe cependant quelques exceptions à cette règle. Les types dans .NET pour les applications UWP ne nécessitent pas d’interopérabilité quand ils sont utilisés. Si vous constatez de mauvaises performances pour des actions qui utilisent UWP, vous pouvez peut-être utiliser .NET pour les applications UWP à la place afin d’obtenir de meilleures performances.
 
-**Remarque**    la plupart des composants UWP fournis avec Windows 10 est implémentée dans C++ afin de vous franchir les limites de l’interopérabilité lorsque vous les utilisez à partir de C# ou Visual Basic. Comme toujours, observez le comportement de votre application pour déterminer si l’utilisation de composants UWP nuit à ses performances avant de modifier le code.
+**Remarque**   la plupart des composants UWP fournis avec Windows 10 sont mis en œuvre C++ dans, vous pouvez franchir les limites d’interopérabilité C# lorsque vous les utilisez à partir de ou Visual Basic. Comme toujours, observez le comportement de votre application pour déterminer si l’utilisation de composants UWP nuit à ses performances avant de modifier le code.
 
 Dans cette rubrique, l’expression « composants UWP » désigne les composants écrits dans un langage autre que C# ou Visual Basic.
 
@@ -46,7 +46,7 @@ Un nombre d’appels important dans une courte période est nécessaire pour que
 
 ### <a name="consider-using-net-for-uwp-apps"></a>Envisager d’utiliser .NET pour les applications UWP
 
-Dans certains cas, vous pouvez accomplir une tâche à l’aide de l’UWP ou de .NET pour les applications UWP. Nous vous conseillons de ne pas essayer de mélanger les types .NET et les types UWP. Essayez de n’utiliser qu’un seul type. Par exemple, vous pouvez analyser un flux de données xml à l’aide du type [**Windows.Data.Xml.Dom.XmlDocument**](https://docs.microsoft.com/uwp/api/Windows.Data.Xml.Dom.XmlDocument) (un type UWP) ou du type [**System.Xml.XmlReader**](https://docs.microsoft.com/dotnet/api/system.xml.xmlreader?redirectedfrom=MSDN) (un type .NET). Utilisez l’API de la même technologie que celle du flux. Par exemple, si vous lisez des données xml à partir d’un type [**MemoryStream**](https://docs.microsoft.com/dotnet/api/system.io.memorystream?redirectedfrom=MSDN), utilisez le type **System.Xml.XmlReader**, car les deux types sont des types .NET. Si vous lisez des données dans un fichier, utilisez le type **Windows.Data.Xml.Dom.XmlDocument**, car les API de fichier et **XmlDocument** sont des composants UWP.
+Dans certains cas, vous pouvez accomplir une tâche à l’aide de l’UWP ou de .NET pour les applications UWP. Nous vous conseillons de ne pas essayer de mélanger les types .NET et les types UWP. Essayez de n’utiliser qu’un seul type. Par exemple, vous pouvez analyser un flux de données xml à l’aide du type [**Windows.Data.Xml.Dom.XmlDocument**](https://docs.microsoft.com/uwp/api/Windows.Data.Xml.Dom.XmlDocument) (un type UWP) ou du type [**System.Xml.XmlReader**](https://docs.microsoft.com/dotnet/api/system.xml.xmlreader) (un type .NET). Utilisez l’API de la même technologie que celle du flux. Par exemple, si vous lisez des données xml à partir d’un type [**MemoryStream**](https://docs.microsoft.com/dotnet/api/system.io.memorystream), utilisez le type **System.Xml.XmlReader**, car les deux types sont des types .NET. Si vous lisez des données dans un fichier, utilisez le type **Windows.Data.Xml.Dom.XmlDocument**, car les API de fichier et **XmlDocument** sont des composants UWP.
 
 ### <a name="copy-window-runtime-objects-to-net-types"></a>Copier les objets Window Runtime dans les types .NET
 
@@ -80,7 +80,7 @@ Les types répertoriés dans [ **.NET for Windows apps**](https://dotnet.microso
 
 Vous devez effectuer des mesures sur votre application et déterminer si l’interopérabilité requiert une partie significative de la durée d’exécution de votre application avant d’optimiser les coûts liés à l’interopérabilité. Lors de l’analyse de votre application avec Visual Studio, il est très facile d’obtenir une limite supérieure des coûts d’interopérabilité à l’aide de l’affichage **Fonctions**, en examinant la durée inclusive consacrée aux méthodes qui appellent l’UWP.
 
-Si votre application est lente à cause de la surcharge liée à l’interopérabilité, vous pouvez améliorer ses performances en diminuant le nombre d’appels aux API UWP sur les chemins de code réactifs. Par exemple, lorsqu’un moteur de jeu doit effectuer une multitude de calculs physiques en demandant constamment la position et les dimensions de [**UIElements**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement), il peut le faire beaucoup plus rapidement en stockant les informations nécessaires de **UIElements** dans des variables locales. De cette manière, il effectue les calculs sur ces valeurs mises en cache, puis retourne le résultat final à **UIElements** une fois les calculs terminés. Prenons un autre exemple : lorsqu’une collection est souvent sollicitée par du code C# ou Visual Basic, il est plus judicieux d’utiliser une collection de l’espace de noms [**System.Collections**](https://docs.microsoft.com/dotnet/api/system.collections?redirectedfrom=MSDN) qu’une collection de l’espace de noms [**Windows.Foundation.Collections**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections). Vous pourriez également combiner des appels aux composants UWP. Cela est par exemple possible lors de l’utilisation des API [**Windows.Storage.BulkAccess**](https://docs.microsoft.com/uwp/api/Windows.Storage.BulkAccess).
+Si votre application est lente à cause de la surcharge liée à l’interopérabilité, vous pouvez améliorer ses performances en diminuant le nombre d’appels aux API UWP sur les chemins de code réactifs. Par exemple, lorsqu’un moteur de jeu doit effectuer une multitude de calculs physiques en demandant constamment la position et les dimensions de [**UIElements**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement), il peut le faire beaucoup plus rapidement en stockant les informations nécessaires de **UIElements** dans des variables locales. De cette manière, il effectue les calculs sur ces valeurs mises en cache, puis retourne le résultat final à **UIElements** une fois les calculs terminés. Prenons un autre exemple : lorsqu’une collection est souvent sollicitée par du code C# ou Visual Basic, il est plus judicieux d’utiliser une collection de l’espace de noms [**System.Collections**](https://docs.microsoft.com/dotnet/api/system.collections) qu’une collection de l’espace de noms [**Windows.Foundation.Collections**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections). Vous pourriez également combiner des appels aux composants UWP. Cela est par exemple possible lors de l’utilisation des API [**Windows.Storage.BulkAccess**](https://docs.microsoft.com/uwp/api/Windows.Storage.BulkAccess).
 
 ### <a name="building-a-uwp-component"></a>Création d’un composant UWP
 
